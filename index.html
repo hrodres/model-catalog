@@ -112,7 +112,6 @@
           <th data-k="output" class="num">Output<span class="arrow"></span></th>
           <th data-k="reasoning">Reasoning<span class="arrow"></span></th>
           <th data-k="tool_call">Tools<span class="arrow"></span></th>
-          <th data-k="multimodal">Multi<span class="arrow"></span></th>
           <th data-k="swebench" class="num">SWE-Bench<span class="arrow"></span></th>
           <th>Ficha</th>
         </tr>
@@ -205,7 +204,6 @@ function render() {
       <td class="num">${fmtCtx(m.output)}</td>
       <td>${cell(m.reasoning)}</td>
       <td>${cell(m.tool_call)}</td>
-      <td>${cell(m.multimodal)}</td>
       <td class="num">${m.swebench != null ? '<b>'+m.swebench+'</b>' : '<span class="no">—</span>'}</td>
       <td>${link}</td>
     </tr>`;
