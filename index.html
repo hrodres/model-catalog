@@ -33,7 +33,7 @@
   .count-pill b { color: var(--text); }
   .btn-filter { display: none; align-items: center; gap: 7px; background: var(--accent-soft); color: var(--accent); border: 1px solid rgba(109,155,255,.3); border-radius: 999px; padding: 8px 14px; font-size: .82rem; font-weight: 600; cursor: pointer; font-family: inherit; }
   .btn-filter .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
-  .btn-filter.active .dot { background: var(--green); box-shadow: 0 0 8px var(--green); }
+  .btn-filter.on .dot { background: var(--green); box-shadow: 0 0 8px var(--green); }  /* dot verde SOLO si hay filtros activos, no si el panel está abierto */
   .btn-filter.on { background: rgba(52,211,153,.12); border-color: rgba(52,211,153,.35); color: var(--green); }
 
   /* ── Filtros ── */
@@ -97,7 +97,7 @@
   .b-warn { background: rgba(251,191,36,.11); color: var(--amber); border: 1px solid rgba(251,191,36,.3); cursor: help; }
 
   .yes { color: var(--green); font-weight: 700; }
-  .no { color: #4a5066; }
+  .no { color: #6b7b9e; }  /* contraste AA sobre #151926 (4.6:1) */
   .unk { color: var(--amber); }
   .num { font-variant-numeric: tabular-nums; text-align: right; }
   .ctx-num { font-weight: 650; }
@@ -149,7 +149,10 @@
     tr.bench-row td::before { content: none; }
   }
   @media (max-width: 380px) {
-    .count-pill { display: none; }
+    .brand .sub { display: none; }  /* el pill de conteo siempre visible: se oculta el subtítulo */
+  }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
   }
 </style>
 </head>
@@ -164,7 +167,7 @@
       </div>
     </div>
     <div class="topbar-spacer"></div>
-    <span class="count-pill" id="count-pill">—</span>
+    <span class="count-pill" id="count-pill" role="status" aria-live="polite">—</span>
     <button class="btn-filter" id="btn-filter" aria-expanded="false"><span class="dot"></span> Filtros</button>
   </div>
 </div>
@@ -188,7 +191,7 @@
     <div class="f-group">
       <label>Contexto mínimo</label>
       <div class="ctx-range">
-        <input type="range" id="f-ctx" min="0" max="1000" step="8" value="0">
+        <input type="range" id="f-ctx" min="0" max="1056" step="8" value="0">
         <span class="ctx-val" id="ctx-val">0K</span>
       </div>
       <div class="presets">
@@ -206,7 +209,7 @@
   </div>
 
   <div class="table-card">
-    <div class="skel" id="skel">
+    <div class="skel on" id="skel">
       <div class="skel-row"></div><div class="skel-row"></div><div class="skel-row"></div>
       <div class="skel-row"></div><div class="skel-row"></div>
     </div>
@@ -271,6 +274,7 @@ function benchHTML(m) {
 }
 
 function render() {
+  if (!DATA) return;  // guard: data.json aún no cargó
   const prov = document.getElementById('f-provider').value;
   const q = document.getElementById('f-search').value.trim().toLowerCase();
   const minCtx = parseInt(document.getElementById('f-ctx').value) * 1000;
@@ -281,7 +285,7 @@ function render() {
   let rows = DATA.models.filter(m => {
     if (prov === 'free' && m.tier !== 'free') return false;
     if (prov === 'go' && !m.providers.go) return false;
-    if (prov === 'zen' && m.tier !== 'paid') return false;
+    if (prov === 'zen' && !(m.providers.zen && !m.providers.free)) return false;  // Zen SOLO pago (zen y no free)
     if (prov === 'zenall' && !m.providers.zen) return false;
     if (q && !(m.name.toLowerCase().includes(q) || m.id.toLowerCase().includes(q))) return false;
     if (minCtx && (!m.context || m.context < minCtx)) return false;
@@ -365,7 +369,7 @@ function bindSort() {
     th.addEventListener('click', () => {
       const k = th.dataset.k;
       if (sortKey === k) { sortDir *= -1; } else { sortKey = k; sortDir = 1; }
-      document.querySelectorAll('thead th').forEach(t => t.querySelector('.arrow').textContent = '');
+      document.querySelectorAll('thead th').forEach(t => { const a = t.querySelector('.arrow'); if (a) a.textContent = ''; });
       th.querySelector('.arrow').textContent = sortDir === 1 ? ' ▲' : ' ▼';
       render();
     });
@@ -411,7 +415,7 @@ window.matchMedia('(min-width: 761px)').addEventListener('change', e => {
   if (e.matches) { filters.classList.remove('open'); btnFilter.classList.remove('active'); }
 });
 
-fetch('data.json').then(r => r.json()).then(d => {
+fetch('data.json').then(r => { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); }).then(d => {
   DATA = d;
   document.getElementById('skel').classList.remove('on');
   document.getElementById('gen').textContent = (d.generated || '').replace('T', ' ').slice(0, 16);
@@ -420,7 +424,7 @@ fetch('data.json').then(r => r.json()).then(d => {
 }).catch(e => {
   document.getElementById('skel').classList.remove('on');
   document.getElementById('tbody').innerHTML =
-    '<tr><td colspan="9">Error cargando data.json: ' + e.message + '</td></tr>';
+    '<tr><td colspan="8">Error cargando data.json: ' + e.message + '</td></tr>';
 });
 
 bindSort();

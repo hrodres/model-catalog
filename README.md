@@ -8,7 +8,7 @@ Catálogo de modelos de **opencode-zen** (62) + **opencode-go** (26), con specs 
 
 | Archivo | Qué es |
 |---|---|
-| `index.html` | Web v1: tabla ordenable + filtros (provider, búsqueda, reasoning, tool call, contexto mínimo, SWE-Bench) |
+| `index.html` | Web v1.2: tabla ordenable + filtros (provider, búsqueda, reasoning, tool call, contexto mínimo con presets, SWE-Bench) + cards responsive móvil + topbar glassmorphism |
 | `data.json` | Datos generados (72 modelos, 71 con ficha models.dev) — desde v1.1 **sin aliases** (fuente única: aliases.json) + metadata `modelsdev_fetched`/`modelsdev_count` |
 | `aliases.json` | Tabla de aliases (componente crítico — espejo de `sync-zen-models.py`) |
 | `modelsdev.json` | Cache de models.dev (339 modelos) |
