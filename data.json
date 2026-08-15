@@ -1,0 +1,2473 @@
+{
+ "generated": "2026-08-15T12:34:52.223818+00:00",
+ "snapshot": "2026-08-15 12:34 UTC",
+ "counts": {
+  "total": 72,
+  "go": 26,
+  "zen": 62,
+  "free": 7,
+  "with_modelsdev": 71
+ },
+ "models": [
+  {
+   "id": "big-pickle",
+   "providers": {
+    "go": false,
+    "zen": true,
+    "free": true
+   },
+   "tier": "free",
+   "name": "big-pickle",
+   "desc": "Sin ficha en models.dev (solo catálogo opencode)",
+   "context": null,
+   "output": null,
+   "reasoning": null,
+   "tool_call": null,
+   "structured": null,
+   "multimodal": null,
+   "open_weights": null,
+   "release": "",
+   "last_updated": "",
+   "knowledge": "",
+   "swebench": null,
+   "benchmarks": {},
+   "md_url": null
+  },
+  {
+   "id": "claude-fable-5",
+   "providers": {
+    "go": false,
+    "zen": true,
+    "free": false
+   },
+   "tier": "paid",
+   "name": "Claude Fable 5",
+   "desc": "Claude model for creative writing, analysis, and controlled agent workflows",
+   "context": 1000000,
+   "output": 128000,
+   "reasoning": true,
+   "tool_call": true,
+   "structured": false,
+   "multimodal": true,
+   "open_weights": false,
+   "release": "2026-06-09",
+   "last_updated": "2026-06-09",
+   "knowledge": "2026-01-31",
+   "swebench": 95,
+   "benchmarks": {
+    "SWE-Bench Pro": 80.3,
+    "SWE-Bench Verified": 95,
+    "Terminal-Bench": 88,
+    "Humanity's Last Exam": 64.5,
+    "OSWorld-Verified": 85,
+    "FrontierCode": 29.3,
+    "GDPval-AA": 1932,
+    "AutomationBench": 17.4
+   },
+   "md_url": "https://models.dev/models/anthropic/claude-fable-5"
+  },
+  {
+   "id": "claude-haiku-4-5",
+   "providers": {
+    "go": false,
+    "zen": true,
+    "free": false
+   },
+   "tier": "paid",
+   "name": "Claude Haiku 4.5 (latest)",
+   "desc": "Fast Claude lane for lightweight agents, office tasks, and responsive chat",
+   "context": 200000,
+   "output": 64000,
+   "reasoning": true,
+   "tool_call": true,
+   "structured": false,
+   "multimodal": true,
+   "open_weights": false,
+   "release": "2025-10-15",
+   "last_updated": "2025-10-15",
+   "knowledge": "2025-02-28",
+   "swebench": null,
+   "benchmarks": {
+    "SWE-Bench Pro": 39.45
+   },
+   "md_url": "https://models.dev/models/anthropic/claude-haiku-4-5"
+  },
+  {
+   "id": "claude-opus-4-5",
+   "providers": {
+    "go": false,
+    "zen": true,
+    "free": false
+   },
+   "tier": "paid",
+   "name": "Claude Opus 4.5 (latest)",
+   "desc": "Flagship Claude model for deep reasoning, coding, and long-horizon agents",
+   "context": 200000,
+   "output": 64000,
+   "reasoning": true,
+   "tool_call": true,
+   "structured": false,
+   "multimodal": true,
+   "open_weights": false,
+   "release": "2025-11-24",
+   "last_updated": "2025-11-24",
+   "knowledge": "2025-05",
+   "swebench": null,
+   "benchmarks": {},
+   "md_url": "https://models.dev/models/anthropic/claude-opus-4-5"
+  },
+  {
+   "id": "claude-opus-4-6",
+   "providers": {
+    "go": false,
+    "zen": true,
+    "free": false
+   },
+   "tier": "paid",
+   "name": "Claude Opus 4.6",
+   "desc": "High-end Claude for difficult coding, planning, and slower expert reasoning",
+   "context": 1000000,
+   "output": 128000,
+   "reasoning": true,
+   "tool_call": true,
+   "structured": false,
+   "multimodal": true,
+   "open_weights": false,
+   "release": "2026-02-05",
+   "last_updated": "2026-03-13",
+   "knowledge": "2025-05-31",
+   "swebench": null,
+   "benchmarks": {
+    "SWE-Bench Pro": 11.8,
+    "SWE-Atlas Codebase QnA": 71.9,
+    "SWE-Atlas Refactoring": 35.58,
+    "SWE-Atlas Test Writing": 36.08,
+    "Artificial Analysis Coding Agent Index": 51.3,
+    "Terminal-Bench": 70.2
+   },
+   "md_url": "https://models.dev/models/anthropic/claude-opus-4-6"
+  },
+  {
+   "id": "claude-opus-4-7",
+   "providers": {
+    "go": false,
+    "zen": true,
+    "free": false
+   },
+   "tier": "paid",
+   "name": "Claude Opus 4.7",
+   "desc": "Stronger Opus tier for advanced software work and high-stakes reasoning",
+   "context": 1000000,
+   "output": 128000,
+   "reasoning": true,
+   "tool_call": true,
+   "structured": false,
+   "multimodal": true,
+   "open_weights": false,
+   "release": "2026-04-16",
+   "last_updated": "2026-04-16",
+   "knowledge": "2026-01-31",
+   "swebench": null,
+   "benchmarks": {
+    "SWE-Bench Pro": 36.4,
+    "Terminal-Bench": 71.4,
+    "SWE-Atlas Refactoring": 48.57,
+    "Artificial Analysis Coding Agent Index": 59.9,
+    "SWE-Atlas Codebase QnA": 71.7,
+    "GPQA Diamond": 94.2,
+    "Humanity's Last Exam": 54.7,
+    "OSWorld-Verified": 78
+   },
+   "md_url": "https://models.dev/models/anthropic/claude-opus-4-7"
+  },
+  {
+   "id": "claude-opus-4-8",
+   "providers": {
+    "go": false,
+    "zen": true,
+    "free": false
+   },
+   "tier": "paid",
+   "name": "Claude Opus 4.8",
+   "desc": "Top Claude Opus tier for the hardest reasoning, coding, and long-horizon agents",
+   "context": 1000000,
+   "output": 128000,
+   "reasoning": true,
+   "tool_call": true,
+   "structured": false,
+   "multimodal": true,
+   "open_weights": false,
+   "release": "2026-05-28",
+   "last_updated": "2026-05-28",
+   "knowledge": "2026-01",
+   "swebench": 88.6,
+   "benchmarks": {
+    "SWE-Bench Pro": 69.2,
+    "Terminal-Bench": 74.6,
+    "SWE-Bench Verified": 88.6,
+    "Humanity's Last Exam": 57.9,
+    "OSWorld-Verified": 83.4,
+    "FrontierCode": 13.4
+   },
+   "md_url": "https://models.dev/models/anthropic/claude-opus-4-8"
+  },
+  {
+   "id": "claude-opus-5",
+   "providers": {
+    "go": false,
+    "zen": true,
+    "free": false
+   },
+   "tier": "paid",
+   "name": "Claude Opus 5",
+   "desc": "Strongest Claude Opus model for coding, agents, and professional work",
+   "context": 1000000,
+   "output": 128000,
+   "reasoning": true,
+   "tool_call": true,
+   "structured": false,
+   "multimodal": true,
+   "open_weights": false,
+   "release": "2026-07-24",
+   "last_updated": "2026-07-24",
+   "knowledge": "2026-05",
+   "swebench": 96,
+   "benchmarks": {
+    "SWE-Bench Verified": 96,
+    "SWE-Bench Pro": 79.2,
+    "SWE-Bench Multilingual": 89.5,
+    "SWE-Bench Multimodal": 59.4,
+    "DeepSWE": 68.8,
+    "FrontierCode": 53.4,
+    "Frontier-Bench": 43.3,
+    "BrowseComp": 90.8,
+    "Humanity's Last Exam": 64.7,
+    "DeepSearchQA": 95,
+    "OSWorld": 70.6,
+    "GDPval-AA": 1861,
+    "AA-Briefcase": 1720,
+    "AutomationBench": 26,
+    "ARC-AGI-1": 97.5,
+    "ARC-AGI-2": 90.4,
+    "ARC-AGI-3": 30.2,
+    "HealthBench Professional": 59.8
+   },
+   "md_url": "https://models.dev/models/anthropic/claude-opus-5"
+  },
+  {
+   "id": "claude-sonnet-4",
+   "providers": {
+    "go": false,
+    "zen": true,
+    "free": false
+   },
+   "tier": "paid",
+   "name": "Claude Sonnet 4.5",
+   "desc": "Balanced Claude model for coding, analysis, agent workflows, and cost control",
+   "context": 200000,
+   "output": 64000,
+   "reasoning": true,
+   "tool_call": true,
+   "structured": false,
+   "multimodal": true,
+   "open_weights": false,
+   "release": "2025-09-29",
+   "last_updated": "2025-09-29",
+   "knowledge": "2025-07-31",
+   "swebench": null,
+   "benchmarks": {},
+   "md_url": "https://models.dev/models/anthropic/claude-sonnet-4-5-20250929"
+  },
+  {
+   "id": "claude-sonnet-4-5",
+   "providers": {
+    "go": false,
+    "zen": true,
+    "free": false
+   },
+   "tier": "paid",
+   "name": "Claude Sonnet 4.5 (latest)",
+   "desc": "Balanced Claude model for coding, analysis, agent workflows, and cost control",
+   "context": 200000,
+   "output": 64000,
+   "reasoning": true,
+   "tool_call": true,
+   "structured": false,
+   "multimodal": true,
+   "open_weights": false,
+   "release": "2025-09-29",
+   "last_updated": "2025-09-29",
+   "knowledge": "2025-07-31",
+   "swebench": null,
+   "benchmarks": {
+    "SWE-Bench Pro": 43.6
+   },
+   "md_url": "https://models.dev/models/anthropic/claude-sonnet-4-5"
+  },
+  {
+   "id": "claude-sonnet-4-6",
+   "providers": {
+    "go": false,
+    "zen": true,
+    "free": false
+   },
+   "tier": "paid",
+   "name": "Claude Sonnet 4.6",
+   "desc": "Claude workhorse for coding agents, careful analysis, and production cost control",
+   "context": 1000000,
+   "output": 64000,
+   "reasoning": true,
+   "tool_call": true,
+   "structured": false,
+   "multimodal": true,
+   "open_weights": false,
+   "release": "2026-02-17",
+   "last_updated": "2026-03-13",
+   "knowledge": "2025-08-31",
+   "swebench": null,
+   "benchmarks": {
+    "SWE-Atlas Codebase QnA": 70.3,
+    "SWE-Atlas Refactoring": 32.21,
+    "SWE-Atlas Test Writing": 31.76,
+    "Artificial Analysis Coding Agent Index": 49.4,
+    "SWE-Bench Pro": 14.9,
+    "Terminal-Bench": 67,
+    "Humanity's Last Exam": 46.8,
+    "OSWorld-Verified": 78.5
+   },
+   "md_url": "https://models.dev/models/anthropic/claude-sonnet-4-6"
+  },
+  {
+   "id": "claude-sonnet-5",
+   "providers": {
+    "go": false,
+    "zen": true,
+    "free": false
+   },
+   "tier": "paid",
+   "name": "Claude Sonnet 5",
+   "desc": "Everyday Claude agent model for coding, planning, browsing, and general work",
+   "context": 1000000,
+   "output": 128000,
+   "reasoning": true,
+   "tool_call": true,
+   "structured": false,
+   "multimodal": true,
+   "open_weights": false,
+   "release": "2026-06-30",
+   "last_updated": "2026-06-30",
+   "knowledge": "2026-01-31",
+   "swebench": 85.2,
+   "benchmarks": {
+    "SWE-Bench Verified": 85.2,
+    "SWE-Bench Pro": 63.2,
+    "SWE-Bench Multilingual": 78.3,
+    "Terminal-Bench": 80.4,
+    "OSWorld-Verified": 81.2,
+    "BrowseComp": 84.7,
+    "FrontierCode": 38.8
+   },
+   "md_url": "https://models.dev/models/anthropic/claude-sonnet-5"
+  },
+  {
+   "id": "deepseek-v4-flash",
+   "providers": {
+    "go": true,
+    "zen": true,
+    "free": false
+   },
+   "tier": "paid",
+   "name": "DeepSeek V4 Flash",
+   "desc": "Fast DeepSeek V4 lane for economical reasoning, coding, and long-context work",
+   "context": 1000000,
+   "output": 384000,
+   "reasoning": true,
+   "tool_call": true,
+   "structured": true,
+   "multimodal": false,
+   "open_weights": true,
+   "release": "2026-04-24",
+   "last_updated": "2026-04-24",
+   "knowledge": "2025-05",
+   "swebench": 79,
+   "benchmarks": {
+    "SWE-Bench Verified": 79
+   },
+   "md_url": "https://models.dev/models/deepseek/deepseek-v4-flash"
+  },
+  {
+   "id": "deepseek-v4-flash-free",
+   "providers": {
+    "go": false,
+    "zen": true,
+    "free": true
+   },
+   "tier": "free",
+   "name": "DeepSeek V4 Flash",
+   "desc": "Fast DeepSeek V4 lane for economical reasoning, coding, and long-context work",
+   "context": 1000000,
+   "output": 384000,
+   "reasoning": true,
+   "tool_call": true,
+   "structured": true,
+   "multimodal": false,
+   "open_weights": true,
+   "release": "2026-04-24",
+   "last_updated": "2026-04-24",
+   "knowledge": "2025-05",
+   "swebench": 79,
+   "benchmarks": {
+    "SWE-Bench Verified": 79
+   },
+   "md_url": "https://models.dev/models/deepseek/deepseek-v4-flash"
+  },
+  {
+   "id": "deepseek-v4-pro",
+   "providers": {
+    "go": true,
+    "zen": true,
+    "free": false
+   },
+   "tier": "paid",
+   "name": "DeepSeek V4 Pro",
+   "desc": "Open MoE flagship with million-token context for coding and long agent runs",
+   "context": 1000000,
+   "output": 384000,
+   "reasoning": true,
+   "tool_call": true,
+   "structured": true,
+   "multimodal": false,
+   "open_weights": true,
+   "release": "2026-04-24",
+   "last_updated": "2026-04-24",
+   "knowledge": "2025-05",
+   "swebench": 80.6,
+   "benchmarks": {
+    "SWE-Bench Verified": 80.6,
+    "Artificial Analysis Coding Agent Index": 50.1,
+    "SWE-Atlas Codebase QnA": 67.8,
+    "SWE-Bench Pro": 18,
+    "Terminal-Bench": 64.7
+   },
+   "md_url": "https://models.dev/models/deepseek/deepseek-v4-pro"
+  },
+  {
+   "id": "gemini-3-flash",
+   "providers": {
+    "go": false,
+    "zen": true,
+    "free": false
+   },
+   "tier": "paid",
+   "name": "Gemini 3 Flash Preview",
+   "desc": "New Gemini flash lane bringing frontier-style multimodal reasoning to cheaper runs",
+   "context": 1048576,
+   "output": 65536,
+   "reasoning": true,
+   "tool_call": true,
+   "structured": true,
+   "multimodal": true,
+   "open_weights": false,
+   "release": "2025-12-17",
+   "last_updated": "2025-12-17",
+   "knowledge": "2025-01",
+   "swebench": null,
+   "benchmarks": {
+    "SWE-Bench Pro": 34.63,
+    "SWE-Atlas Codebase QnA": 8.2,
+    "SWE-Atlas Refactoring": 10,
+    "SWE-Atlas Test Writing": 30.3
+   },
+   "md_url": "https://models.dev/models/google/gemini-3-flash-preview"
+  },
+  {
+   "id": "gemini-3.1-pro",
+   "providers": {
+    "go": false,
+    "zen": true,
+    "free": false
+   },
+   "tier": "paid",
+   "name": "Gemini 3.1 Pro Preview",
+   "desc": "Reasoning-first Gemini preview for agentic coding and complex problem solving",
+   "context": 1048576,
+   "output": 65536,
+   "reasoning": true,
+   "tool_call": true,
+   "structured": true,
+   "multimodal": true,
+   "open_weights": false,
+   "release": "2026-02-19",
+   "last_updated": "2026-02-19",
+   "knowledge": "2025-01",
+   "swebench": null,
+   "benchmarks": {
+    "SWE-Bench Pro": 15.1,
+    "Terminal-Bench": 68.3,
+    "SWE-Atlas Codebase QnA": 45.6,
+    "SWE-Atlas Refactoring": 33.81,
+    "SWE-Atlas Test Writing": 29.84,
+    "Artificial Analysis Coding Agent Index": 43,
+    "GPQA Diamond": 94.3,
+    "Humanity's Last Exam": 44.4,
+    "ARC-AGI-2": 77.1,
+    "MMMU Pro": 80.5,
+    "MCP Atlas": 78.2,
+    "OSWorld-Verified": 76.2,
+    "CharXiv Reasoning": 83.3,
+    "GDPval-AA": 1314
+   },
+   "md_url": "https://models.dev/models/google/gemini-3.1-pro-preview"
+  },
+  {
+   "id": "gemini-3.5-flash",
+   "providers": {
+    "go": false,
+    "zen": true,
+    "free": false
+   },
+   "tier": "paid",
+   "name": "Gemini 3.5 Flash",
+   "desc": "Fast Gemini model balancing multimodal reasoning, tool use, and cost",
+   "context": 1048576,
+   "output": 65536,
+   "reasoning": true,
+   "tool_call": true,
+   "structured": true,
+   "multimodal": true,
+   "open_weights": false,
+   "release": "2026-05-19",
+   "last_updated": "2026-05-19",
+   "knowledge": "2025-01",
+   "swebench": null,
+   "benchmarks": {
+    "Terminal-Bench": 76.2,
+    "SWE-Bench Pro": 55.1,
+    "MCP Atlas": 83.6,
+    "Toolathlon": 56.5,
+    "OSWorld-Verified": 78.4,
+    "MMMU Pro": 83.6,
+    "CharXiv Reasoning": 84.2,
+    "Humanity's Last Exam": 40.2,
+    "ARC-AGI-2": 72.1,
+    "GDPval-AA": 1656
+   },
+   "md_url": "https://models.dev/models/google/gemini-3.5-flash"
+  },
+  {
+   "id": "gemini-3.5-flash-lite",
+   "providers": {
+    "go": false,
+    "zen": true,
+    "free": false
+   },
+   "tier": "paid",
+   "name": "Gemini 3.5 Flash Lite",
+   "desc": "Fast Gemini model balancing multimodal reasoning, tool use, and cost",
+   "context": 1048576,
+   "output": 65536,
+   "reasoning": true,
+   "tool_call": true,
+   "structured": true,
+   "multimodal": true,
+   "open_weights": false,
+   "release": "2026-07-21",
+   "last_updated": "2026-07-21",
+   "knowledge": "2026-03",
+   "swebench": null,
+   "benchmarks": {
+    "SWE-Bench Pro": 54.2,
+    "Terminal-Bench": 54,
+    "MLE-Bench": 39.2,
+    "GDPval-AA": 1140,
+    "OSWorld-Verified": 74,
+    "CharXiv Reasoning": 76.5,
+    "GDM-MRCR": 21.3
+   },
+   "md_url": "https://models.dev/models/google/gemini-3.5-flash-lite"
+  },
+  {
+   "id": "gemini-3.6-flash",
+   "providers": {
+    "go": false,
+    "zen": true,
+    "free": false
+   },
+   "tier": "paid",
+   "name": "Gemini 3.6 Flash",
+   "desc": "Fast Gemini model balancing multimodal reasoning, tool use, and cost",
+   "context": 1048576,
+   "output": 65536,
+   "reasoning": true,
+   "tool_call": true,
+   "structured": true,
+   "multimodal": true,
+   "open_weights": false,
+   "release": "2026-07-21",
+   "last_updated": "2026-07-21",
+   "knowledge": "2026-03",
+   "swebench": null,
+   "benchmarks": {
+    "SWE-Bench Pro": 58.7,
+    "DeepSWE": 49,
+    "Terminal-Bench": 78,
+    "MLE-Bench": 63.9,
+    "GDPval-AA": 1421,
+    "OSWorld-Verified": 83,
+    "CharXiv Reasoning": 89.4,
+    "GDM-MRCR": 54
+   },
+   "md_url": "https://models.dev/models/google/gemini-3.6-flash"
+  },
+  {
+   "id": "gemini-3.7-flash",
+   "providers": {
+    "go": false,
+    "zen": true,
+    "free": false
+   },
+   "tier": "paid",
+   "name": "Gemini 3.7 Flash",
+   "desc": "High-efficiency Gemini model for agentic workflows, coding, and multimodal reasoning",
+   "context": 1048576,
+   "output": 65536,
+   "reasoning": true,
+   "tool_call": true,
+   "structured": true,
+   "multimodal": true,
+   "open_weights": false,
+   "release": "2026-08-13",
+   "last_updated": "2026-08-13",
+   "knowledge": "2026-03",
+   "swebench": null,
+   "benchmarks": {
+    "FrontierCode": 43.6,
+    "DeepSWE": 65.3,
+    "Terminal-Bench": 85.8,
+    "AutomationBench": 30.4,
+    "GDP.pdf": 34,
+    "GDM-MRCR": 97
+   },
+   "md_url": "https://models.dev/models/google/gemini-3.7-flash"
+  },
+  {
+   "id": "glm-5",
+   "providers": {
+    "go": true,
+    "zen": true,
+    "free": false
+   },
+   "tier": "paid",
+   "name": "GLM-5",
+   "desc": "General GLM flagship for coding, analysis, and tool-heavy engineering workflows",
+   "context": 204800,
+   "output": 131072,
+   "reasoning": true,
+   "tool_call": true,
+   "structured": false,
+   "multimodal": false,
+   "open_weights": true,
+   "release": "2026-02-12",
+   "last_updated": "2026-02-12",
+   "knowledge": "",
+   "swebench": 72.8,
+   "benchmarks": {
+    "SWE-Bench Verified": 72.8,
+    "SWE-Atlas Codebase QnA": 20.5,
+    "SWE-Atlas Refactoring": 24.24,
+    "SWE-Atlas Test Writing": 28.74
+   },
+   "md_url": "https://models.dev/models/zhipuai/glm-5"
+  },
+  {
+   "id": "glm-5.1",
+   "providers": {
+    "go": true,
+    "zen": true,
+    "free": false
+   },
+   "tier": "paid",
+   "name": "GLM-5.1",
+   "desc": "Strong GLM coding model for agentic engineering, terminals, and repository generation",
+   "context": 200000,
+   "output": 131072,
+   "reasoning": true,
+   "tool_call": true,
+   "structured": true,
+   "multimodal": false,
+   "open_weights": true,
+   "release": "2026-04-07",
+   "last_updated": "2026-04-07",
+   "knowledge": "",
+   "swebench": null,
+   "benchmarks": {
+    "Artificial Analysis Coding Agent Index": 52.7,
+    "SWE-Atlas Codebase QnA": 73.2,
+    "SWE-Bench Pro": 19.8,
+    "Terminal-Bench": 65.1
+   },
+   "md_url": "https://models.dev/models/zhipuai/glm-5.1"
+  },
+  {
+   "id": "glm-5.2",
+   "providers": {
+    "go": true,
+    "zen": true,
+    "free": false
+   },
+   "tier": "paid",
+   "name": "GLM-5.2",
+   "desc": "Open flagship GLM for long-horizon coding agents and million-token context work",
+   "context": 1000000,
+   "output": 131072,
+   "reasoning": true,
+   "tool_call": true,
+   "structured": true,
+   "multimodal": false,
+   "open_weights": true,
+   "release": "2026-06-13",
+   "last_updated": "2026-06-13",
+   "knowledge": "",
+   "swebench": null,
+   "benchmarks": {
+    "SWE-Bench Pro": 62.1,
+    "Terminal-Bench": 81,
+    "FrontierSWE": 74.4,
+    "Humanity's Last Exam": 54.7,
+    "CritPt": 20.9,
+    "AIME": 99.2,
+    "HMMT": 92.5,
+    "IMOAnswerBench": 91,
+    "GPQA Diamond": 91.2,
+    "NL2Repo": 48.9,
+    "DeepSWE": 46.2,
+    "Program Bench": 63.7,
+    "PostTrainBench": 34.3,
+    "SWE Marathon": 13,
+    "MCP Atlas": 76.8,
+    "Tool-Decathlon": 48.2
+   },
+   "md_url": "https://models.dev/models/zhipuai/glm-5.2"
+  },
+  {
+   "id": "glm-5.3",
+   "providers": {
+    "go": true,
+    "zen": false,
+    "free": false
+   },
+   "tier": "go",
+   "name": "GLM-5.3",
+   "desc": "Flagship GLM model for long-horizon coding, agents, and complex project delivery",
+   "context": 1000000,
+   "output": 131072,
+   "reasoning": true,
+   "tool_call": true,
+   "structured": true,
+   "multimodal": false,
+   "open_weights": false,
+   "release": "2026-08-14",
+   "last_updated": "2026-08-14",
+   "knowledge": "",
+   "swebench": null,
+   "benchmarks": {},
+   "md_url": "https://models.dev/models/zhipuai/glm-5.3"
+  },
+  {
+   "id": "gpt-5",
+   "providers": {
+    "go": false,
+    "zen": true,
+    "free": false
+   },
+   "tier": "paid",
+   "name": "GPT-5",
+   "desc": "Original GPT-5 workhorse for reasoning, coding, writing, and tool workflows",
+   "context": 400000,
+   "output": 128000,
+   "reasoning": true,
+   "tool_call": true,
+   "structured": true,
+   "multimodal": true,
+   "open_weights": false,
+   "release": "2025-08-07",
+   "last_updated": "2025-08-07",
+   "knowledge": "2024-09-30",
+   "swebench": null,
+   "benchmarks": {
+    "Aider Polyglot": 88,
+    "SWE-Bench Pro": 41.78
+   },
+   "md_url": "https://models.dev/models/openai/gpt-5"
+  },
+  {
+   "id": "gpt-5-codex",
+   "providers": {
+    "go": false,
+    "zen": true,
+    "free": false
+   },
+   "tier": "paid",
+   "name": "GPT-5-Codex",
+   "desc": "Coding-optimized GPT model for repository edits, reviews, and agentic software work",
+   "context": 400000,
+   "output": 128000,
+   "reasoning": true,
+   "tool_call": true,
+   "structured": true,
+   "multimodal": true,
+   "open_weights": false,
+   "release": "2025-09-15",
+   "last_updated": "2025-09-15",
+   "knowledge": "2024-09-30",
+   "swebench": null,
+   "benchmarks": {
+    "Artificial Analysis Coding Index": 38.9,
+    "SciCode": 40.9,
+    "Terminal-Bench Hard": 37.9
+   },
+   "md_url": "https://models.dev/models/openai/gpt-5-codex"
+  },
+  {
+   "id": "gpt-5-nano",
+   "providers": {
+    "go": false,
+    "zen": true,
+    "free": false
+   },
+   "tier": "paid",
+   "name": "GPT-5 Nano",
+   "desc": "Tiny GPT-5 lane for routing, extraction, classification, and bulk jobs",
+   "context": 400000,
+   "output": 128000,
+   "reasoning": true,
+   "tool_call": true,
+   "structured": true,
+   "multimodal": true,
+   "open_weights": false,
+   "release": "2025-08-07",
+   "last_updated": "2025-08-07",
+   "knowledge": "2024-05-30",
+   "swebench": null,
+   "benchmarks": {},
+   "md_url": "https://models.dev/models/openai/gpt-5-nano"
+  },
+  {
+   "id": "gpt-5.1",
+   "providers": {
+    "go": false,
+    "zen": true,
+    "free": false
+   },
+   "tier": "paid",
+   "name": "GPT-5.1",
+   "desc": "Sharper GPT-5 generation for coding, product work, and tool-assisted tasks",
+   "context": 400000,
+   "output": 128000,
+   "reasoning": true,
+   "tool_call": true,
+   "structured": true,
+   "multimodal": true,
+   "open_weights": false,
+   "release": "2025-11-13",
+   "last_updated": "2025-11-13",
+   "knowledge": "2024-09-30",
+   "swebench": null,
+   "benchmarks": {},
+   "md_url": "https://models.dev/models/openai/gpt-5.1"
+  },
+  {
+   "id": "gpt-5.1-codex",
+   "providers": {
+    "go": false,
+    "zen": true,
+    "free": false
+   },
+   "tier": "paid",
+   "name": "GPT-5.1 Codex",
+   "desc": "Codex GPT for repository edits, code review, and practical software agents",
+   "context": 400000,
+   "output": 128000,
+   "reasoning": true,
+   "tool_call": true,
+   "structured": true,
+   "multimodal": true,
+   "open_weights": false,
+   "release": "2025-11-13",
+   "last_updated": "2025-11-13",
+   "knowledge": "2024-09-30",
+   "swebench": null,
+   "benchmarks": {},
+   "md_url": "https://models.dev/models/openai/gpt-5.1-codex"
+  },
+  {
+   "id": "gpt-5.1-codex-max",
+   "providers": {
+    "go": false,
+    "zen": true,
+    "free": false
+   },
+   "tier": "paid",
+   "name": "GPT-5.1 Codex Max",
+   "desc": "Coding-optimized GPT model for repository edits, reviews, and agentic software work",
+   "context": 400000,
+   "output": 128000,
+   "reasoning": true,
+   "tool_call": true,
+   "structured": true,
+   "multimodal": true,
+   "open_weights": false,
+   "release": "2025-11-13",
+   "last_updated": "2025-11-13",
+   "knowledge": "2024-09-30",
+   "swebench": null,
+   "benchmarks": {},
+   "md_url": "https://models.dev/models/openai/gpt-5.1-codex-max"
+  },
+  {
+   "id": "gpt-5.1-codex-mini",
+   "providers": {
+    "go": false,
+    "zen": true,
+    "free": false
+   },
+   "tier": "paid",
+   "name": "GPT-5.1 Codex mini",
+   "desc": "Coding-optimized GPT model for repository edits, reviews, and agentic software work",
+   "context": 400000,
+   "output": 128000,
+   "reasoning": true,
+   "tool_call": true,
+   "structured": true,
+   "multimodal": true,
+   "open_weights": false,
+   "release": "2025-11-13",
+   "last_updated": "2025-11-13",
+   "knowledge": "2024-09-30",
+   "swebench": null,
+   "benchmarks": {},
+   "md_url": "https://models.dev/models/openai/gpt-5.1-codex-mini"
+  },
+  {
+   "id": "gpt-5.2",
+   "providers": {
+    "go": false,
+    "zen": true,
+    "free": false
+   },
+   "tier": "paid",
+   "name": "GPT-5.2",
+   "desc": "Reliable GPT generation for broad coding, writing, and tool-assisted product work",
+   "context": 400000,
+   "output": 128000,
+   "reasoning": true,
+   "tool_call": true,
+   "structured": true,
+   "multimodal": true,
+   "open_weights": false,
+   "release": "2025-12-11",
+   "last_updated": "2025-12-11",
+   "knowledge": "2025-08-31",
+   "swebench": null,
+   "benchmarks": {
+    "SWE-Bench Pro": 29.94
+   },
+   "md_url": "https://models.dev/models/openai/gpt-5.2"
+  },
+  {
+   "id": "gpt-5.2-codex",
+   "providers": {
+    "go": false,
+    "zen": true,
+    "free": false
+   },
+   "tier": "paid",
+   "name": "GPT-5.2 Codex",
+   "desc": "Code-specialist GPT for repository edits, reviews, and long-running software agents",
+   "context": 400000,
+   "output": 128000,
+   "reasoning": true,
+   "tool_call": true,
+   "structured": true,
+   "multimodal": true,
+   "open_weights": false,
+   "release": "2025-12-11",
+   "last_updated": "2025-12-11",
+   "knowledge": "2025-08-31",
+   "swebench": null,
+   "benchmarks": {
+    "SWE-Bench Pro": 41.04
+   },
+   "md_url": "https://models.dev/models/openai/gpt-5.2-codex"
+  },
+  {
+   "id": "gpt-5.3-codex",
+   "providers": {
+    "go": false,
+    "zen": true,
+    "free": false
+   },
+   "tier": "paid",
+   "name": "GPT-5.3 Codex",
+   "desc": "Coding-optimized GPT model for repository edits, reviews, and agentic software work",
+   "context": 400000,
+   "output": 128000,
+   "reasoning": true,
+   "tool_call": true,
+   "structured": true,
+   "multimodal": true,
+   "open_weights": false,
+   "release": "2026-02-05",
+   "last_updated": "2026-02-05",
+   "knowledge": "2025-08-31",
+   "swebench": null,
+   "benchmarks": {
+    "SWE-Atlas Codebase QnA": 32.6,
+    "SWE-Atlas Refactoring": 42.38,
+    "SWE-Atlas Test Writing": 38.98
+   },
+   "md_url": "https://models.dev/models/openai/gpt-5.3-codex"
+  },
+  {
+   "id": "gpt-5.3-codex-spark",
+   "providers": {
+    "go": false,
+    "zen": true,
+    "free": false
+   },
+   "tier": "paid",
+   "name": "GPT-5.3 Codex Spark",
+   "desc": "Coding-optimized GPT model for repository edits, reviews, and agentic software work",
+   "context": 128000,
+   "output": 32000,
+   "reasoning": true,
+   "tool_call": true,
+   "structured": true,
+   "multimodal": true,
+   "open_weights": false,
+   "release": "2026-02-05",
+   "last_updated": "2026-02-05",
+   "knowledge": "2025-08-31",
+   "swebench": null,
+   "benchmarks": {},
+   "md_url": "https://models.dev/models/openai/gpt-5.3-codex-spark"
+  },
+  {
+   "id": "gpt-5.4",
+   "providers": {
+    "go": false,
+    "zen": true,
+    "free": false
+   },
+   "tier": "paid",
+   "name": "GPT-5.4",
+   "desc": "Agent-ready GPT for coding and computer-use workflows at a lower cost",
+   "context": 1050000,
+   "output": 128000,
+   "reasoning": true,
+   "tool_call": true,
+   "structured": true,
+   "multimodal": true,
+   "open_weights": false,
+   "release": "2026-03-05",
+   "last_updated": "2026-03-05",
+   "knowledge": "2025-08-31",
+   "swebench": null,
+   "benchmarks": {
+    "SWE-Bench Pro": 18.9,
+    "SWE-Atlas Codebase QnA": 72.9,
+    "SWE-Atlas Refactoring": 44.29,
+    "SWE-Atlas Test Writing": 40,
+    "Artificial Analysis Coding Agent Index": 52.2,
+    "Terminal-Bench": 75.1,
+    "GPQA Diamond": 92.8,
+    "Humanity's Last Exam": 52.1,
+    "OSWorld-Verified": 75,
+    "BrowseComp": 82.7,
+    "GDPval": 83,
+    "ARC-AGI-2": 73.3,
+    "FrontierMath": 27.1,
+    "MMMU Pro": 81.2
+   },
+   "md_url": "https://models.dev/models/openai/gpt-5.4"
+  },
+  {
+   "id": "gpt-5.4-mini",
+   "providers": {
+    "go": false,
+    "zen": true,
+    "free": false
+   },
+   "tier": "paid",
+   "name": "GPT-5.4 mini",
+   "desc": "Strong small GPT for coding subagents, quick tool use, and high-volume work",
+   "context": 400000,
+   "output": 128000,
+   "reasoning": true,
+   "tool_call": true,
+   "structured": true,
+   "multimodal": true,
+   "open_weights": false,
+   "release": "2026-03-17",
+   "last_updated": "2026-03-17",
+   "knowledge": "2025-08-31",
+   "swebench": null,
+   "benchmarks": {
+    "SWE-Bench Pro": 54.4,
+    "Terminal-Bench": 60,
+    "MCP Atlas": 57.7,
+    "Toolathlon": 42.9,
+    "τ²-Bench Telecom": 93.4,
+    "GPQA Diamond": 88,
+    "Humanity's Last Exam": 28.2,
+    "OSWorld-Verified": 72.1,
+    "MMMU Pro": 76.6,
+    "OmniDocBench": 0.1263,
+    "OpenAI MRCR": 33.6,
+    "Graphwalks": 71.5
+   },
+   "md_url": "https://models.dev/models/openai/gpt-5.4-mini"
+  },
+  {
+   "id": "gpt-5.4-nano",
+   "providers": {
+    "go": false,
+    "zen": true,
+    "free": false
+   },
+   "tier": "paid",
+   "name": "GPT-5.4 nano",
+   "desc": "Cheapest GPT-5.4 lane for simple routing, extraction, and bulk automation",
+   "context": 400000,
+   "output": 128000,
+   "reasoning": true,
+   "tool_call": true,
+   "structured": true,
+   "multimodal": true,
+   "open_weights": false,
+   "release": "2026-03-17",
+   "last_updated": "2026-03-17",
+   "knowledge": "2025-08-31",
+   "swebench": null,
+   "benchmarks": {
+    "SWE-Bench Pro": 52.4,
+    "Terminal-Bench": 46.3,
+    "MCP Atlas": 56.1,
+    "Toolathlon": 35.5,
+    "τ²-Bench Telecom": 92.5,
+    "GPQA Diamond": 82.8,
+    "Humanity's Last Exam": 24.3,
+    "OSWorld-Verified": 39,
+    "MMMU Pro": 66.1,
+    "OmniDocBench": 0.2419,
+    "OpenAI MRCR": 33.1,
+    "Graphwalks": 50.8
+   },
+   "md_url": "https://models.dev/models/openai/gpt-5.4-nano"
+  },
+  {
+   "id": "gpt-5.4-pro",
+   "providers": {
+    "go": false,
+    "zen": true,
+    "free": false
+   },
+   "tier": "paid",
+   "name": "GPT-5.4 Pro",
+   "desc": "More exact GPT-5.4 tier for demanding professional reasoning and agent tasks",
+   "context": 1050000,
+   "output": 128000,
+   "reasoning": true,
+   "tool_call": true,
+   "structured": false,
+   "multimodal": true,
+   "open_weights": false,
+   "release": "2026-03-05",
+   "last_updated": "2026-03-05",
+   "knowledge": "2025-08-31",
+   "swebench": null,
+   "benchmarks": {
+    "GPQA Diamond": 94.4,
+    "Humanity's Last Exam": 58.7,
+    "BrowseComp": 89.3,
+    "GDPval": 82,
+    "FrontierMath": 38,
+    "ARC-AGI-1": 94.5,
+    "ARC-AGI-2": 83.3,
+    "FinanceAgent": 61.5,
+    "GeneBench": 25.6
+   },
+   "md_url": "https://models.dev/models/openai/gpt-5.4-pro"
+  },
+  {
+   "id": "gpt-5.5",
+   "providers": {
+    "go": false,
+    "zen": true,
+    "free": false
+   },
+   "tier": "paid",
+   "name": "GPT-5.5",
+   "desc": "Default frontier GPT for coding, computer use, research, and knowledge work",
+   "context": 1050000,
+   "output": 128000,
+   "reasoning": true,
+   "tool_call": true,
+   "structured": true,
+   "multimodal": true,
+   "open_weights": false,
+   "release": "2026-04-23",
+   "last_updated": "2026-04-23",
+   "knowledge": "2025-12-01",
+   "swebench": null,
+   "benchmarks": {
+    "SWE-Bench Pro": 24.9,
+    "Terminal-Bench": 82.7,
+    "SWE-Atlas Codebase QnA": 75,
+    "SWE-Atlas Refactoring": 44.79,
+    "SWE-Atlas Test Writing": 42.59,
+    "Artificial Analysis Coding Agent Index": 57.8,
+    "GPQA Diamond": 93.6,
+    "Humanity's Last Exam": 52.2,
+    "OSWorld-Verified": 78.7,
+    "BrowseComp": 84.4,
+    "MMMU Pro": 81.2,
+    "ARC-AGI-2": 85,
+    "FrontierMath": 35.4,
+    "GDPval": 84.9,
+    "MCP Atlas": 75.3,
+    "Toolathlon": 55.6,
+    "τ²-Bench Telecom": 98
+   },
+   "md_url": "https://models.dev/models/openai/gpt-5.5"
+  },
+  {
+   "id": "gpt-5.5-pro",
+   "providers": {
+    "go": false,
+    "zen": true,
+    "free": false
+   },
+   "tier": "paid",
+   "name": "GPT-5.5 Pro",
+   "desc": "Highest-accuracy GPT-5.5 tier for slower, precision-heavy reasoning and coding",
+   "context": 1050000,
+   "output": 128000,
+   "reasoning": true,
+   "tool_call": true,
+   "structured": true,
+   "multimodal": true,
+   "open_weights": false,
+   "release": "2026-04-23",
+   "last_updated": "2026-04-23",
+   "knowledge": "2025-12-01",
+   "swebench": null,
+   "benchmarks": {
+    "BrowseComp": 90.1,
+    "Humanity's Last Exam": 57.2,
+    "FrontierMath": 39.6,
+    "GDPval": 82.3,
+    "GeneBench": 33.2
+   },
+   "md_url": "https://models.dev/models/openai/gpt-5.5-pro"
+  },
+  {
+   "id": "gpt-5.6-luna",
+   "providers": {
+    "go": true,
+    "zen": true,
+    "free": false
+   },
+   "tier": "paid",
+   "name": "GPT-5.6 Luna",
+   "desc": "Cost-efficient GPT-5.6 model for fast, high-volume workloads",
+   "context": 1050000,
+   "output": 128000,
+   "reasoning": true,
+   "tool_call": true,
+   "structured": true,
+   "multimodal": true,
+   "open_weights": false,
+   "release": "2026-07-09",
+   "last_updated": "2026-07-09",
+   "knowledge": "2026-02-16",
+   "swebench": null,
+   "benchmarks": {
+    "SWE-Bench Pro": 62.7,
+    "Terminal-Bench": 84.7,
+    "DeepSWE": 67.2,
+    "GPQA Diamond": 92.3,
+    "FrontierMath": 78.6,
+    "BrowseComp": 83.3,
+    "OSWorld": 45.6,
+    "MMMU Pro": 78.4,
+    "Agents' Last Exam": 50.3,
+    "Toolathlon": 53.4,
+    "Artificial Analysis Intelligence Index": 51.2,
+    "Artificial Analysis Coding Agent Index": 74.6
+   },
+   "md_url": "https://models.dev/models/openai/gpt-5.6-luna"
+  },
+  {
+   "id": "gpt-5.6-sol",
+   "providers": {
+    "go": false,
+    "zen": true,
+    "free": false
+   },
+   "tier": "paid",
+   "name": "GPT-5.6 Sol",
+   "desc": "Frontier GPT-5.6 model for complex professional work, coding, and agentic workflows",
+   "context": 1050000,
+   "output": 128000,
+   "reasoning": true,
+   "tool_call": true,
+   "structured": true,
+   "multimodal": true,
+   "open_weights": false,
+   "release": "2026-07-09",
+   "last_updated": "2026-07-09",
+   "knowledge": "2026-02-16",
+   "swebench": null,
+   "benchmarks": {
+    "SWE-Bench Pro": 64.6,
+    "Terminal-Bench": 88.8,
+    "DeepSWE": 72.7,
+    "GPQA Diamond": 94.6,
+    "FrontierMath": 89,
+    "BrowseComp": 90.4,
+    "OSWorld": 62.6,
+    "MMMU Pro": 83,
+    "Agents' Last Exam": 52.7,
+    "Toolathlon": 58,
+    "Artificial Analysis Intelligence Index": 58.9,
+    "Artificial Analysis Coding Agent Index": 80
+   },
+   "md_url": "https://models.dev/models/openai/gpt-5.6-sol"
+  },
+  {
+   "id": "gpt-5.6-terra",
+   "providers": {
+    "go": false,
+    "zen": true,
+    "free": false
+   },
+   "tier": "paid",
+   "name": "GPT-5.6 Terra",
+   "desc": "Balanced GPT-5.6 model for capable, cost-efficient everyday work",
+   "context": 1050000,
+   "output": 128000,
+   "reasoning": true,
+   "tool_call": true,
+   "structured": true,
+   "multimodal": true,
+   "open_weights": false,
+   "release": "2026-07-09",
+   "last_updated": "2026-07-09",
+   "knowledge": "2026-02-16",
+   "swebench": null,
+   "benchmarks": {
+    "SWE-Bench Pro": 63.4,
+    "Terminal-Bench": 87.4,
+    "DeepSWE": 69.6,
+    "GPQA Diamond": 92.9,
+    "FrontierMath": 84.9,
+    "BrowseComp": 87.5,
+    "OSWorld": 50.2,
+    "MMMU Pro": 80.7,
+    "Agents' Last Exam": 50.4,
+    "Toolathlon": 53.1,
+    "Artificial Analysis Intelligence Index": 55,
+    "Artificial Analysis Coding Agent Index": 77.4
+   },
+   "md_url": "https://models.dev/models/openai/gpt-5.6-terra"
+  },
+  {
+   "id": "grok-4.5",
+   "providers": {
+    "go": true,
+    "zen": true,
+    "free": false
+   },
+   "tier": "paid",
+   "name": "Grok 4.5",
+   "desc": "xAI's Grok model for chat, coding, agentic tools, and lower hallucination risk",
+   "context": 500000,
+   "output": 500000,
+   "reasoning": true,
+   "tool_call": true,
+   "structured": true,
+   "multimodal": true,
+   "open_weights": false,
+   "release": "2026-07-08",
+   "last_updated": "2026-07-08",
+   "knowledge": "",
+   "swebench": null,
+   "benchmarks": {
+    "SWE-Bench Pro": 64.7,
+    "SWE-Bench Multilingual": 78,
+    "Terminal-Bench": 83.3,
+    "DeepSWE": 53,
+    "SWE Marathon": 29
+   },
+   "md_url": "https://models.dev/models/xai/grok-4.5"
+  },
+  {
+   "id": "grok-4.6",
+   "providers": {
+    "go": false,
+    "zen": true,
+    "free": false
+   },
+   "tier": "paid",
+   "name": "Grok 4.6",
+   "desc": "xAI's frontier model for long-running agents, coding, knowledge work, and visual projects",
+   "context": 500000,
+   "output": 500000,
+   "reasoning": true,
+   "tool_call": true,
+   "structured": true,
+   "multimodal": true,
+   "open_weights": false,
+   "release": "2026-08-12",
+   "last_updated": "2026-08-12",
+   "knowledge": "2026-02-01",
+   "swebench": null,
+   "benchmarks": {},
+   "md_url": "https://models.dev/models/xai/grok-4.6"
+  },
+  {
+   "id": "grok-build-0.1",
+   "providers": {
+    "go": false,
+    "zen": true,
+    "free": false
+   },
+   "tier": "paid",
+   "name": "Grok Build 0.1",
+   "desc": "Fast Grok coding model tuned for agentic engineering and iterative edits",
+   "context": 256000,
+   "output": 256000,
+   "reasoning": true,
+   "tool_call": true,
+   "structured": true,
+   "multimodal": true,
+   "open_weights": false,
+   "release": "2026-04-16",
+   "last_updated": "2026-04-16",
+   "knowledge": "",
+   "swebench": null,
+   "benchmarks": {},
+   "md_url": "https://models.dev/models/xai/grok-build-0.1"
+  },
+  {
+   "id": "hy3",
+   "providers": {
+    "go": true,
+    "zen": false,
+    "free": false
+   },
+   "tier": "go",
+   "name": "Hy3",
+   "desc": "Tencent Hy reasoning model for coding, instruction following, and agent tasks",
+   "context": 256000,
+   "output": 64000,
+   "reasoning": true,
+   "tool_call": true,
+   "structured": false,
+   "multimodal": false,
+   "open_weights": true,
+   "release": "2026-07-06",
+   "last_updated": "2026-07-06",
+   "knowledge": "",
+   "swebench": 78,
+   "benchmarks": {
+    "SWE-Bench Verified": 78
+   },
+   "md_url": "https://models.dev/models/tencent/hy3"
+  },
+  {
+   "id": "hy3-free",
+   "providers": {
+    "go": false,
+    "zen": true,
+    "free": true
+   },
+   "tier": "free",
+   "name": "Hy3 preview",
+   "desc": "Tencent Hy reasoning model for coding, instruction following, and agent tasks",
+   "context": 256000,
+   "output": 64000,
+   "reasoning": true,
+   "tool_call": true,
+   "structured": false,
+   "multimodal": false,
+   "open_weights": true,
+   "release": "2026-04-20",
+   "last_updated": "2026-04-20",
+   "knowledge": "",
+   "swebench": 74.4,
+   "benchmarks": {
+    "SWE-Bench Verified": 74.4
+   },
+   "md_url": "https://models.dev/models/tencent/hy3-preview"
+  },
+  {
+   "id": "hy3-preview",
+   "providers": {
+    "go": true,
+    "zen": false,
+    "free": false
+   },
+   "tier": "go",
+   "name": "Hy3 preview",
+   "desc": "Tencent Hy reasoning model for coding, instruction following, and agent tasks",
+   "context": 256000,
+   "output": 64000,
+   "reasoning": true,
+   "tool_call": true,
+   "structured": false,
+   "multimodal": false,
+   "open_weights": true,
+   "release": "2026-04-20",
+   "last_updated": "2026-04-20",
+   "knowledge": "",
+   "swebench": 74.4,
+   "benchmarks": {
+    "SWE-Bench Verified": 74.4
+   },
+   "md_url": "https://models.dev/models/tencent/hy3-preview"
+  },
+  {
+   "id": "kimi-k2.5",
+   "providers": {
+    "go": true,
+    "zen": true,
+    "free": false
+   },
+   "tier": "paid",
+   "name": "Kimi K2.5",
+   "desc": "Earlier Kimi frontier model for long-context agents, coding, and multimodal work",
+   "context": 262144,
+   "output": 262144,
+   "reasoning": true,
+   "tool_call": true,
+   "structured": true,
+   "multimodal": true,
+   "open_weights": true,
+   "release": "2026-01",
+   "last_updated": "2026-01",
+   "knowledge": "2025-01",
+   "swebench": 70.8,
+   "benchmarks": {
+    "SWE-Bench Verified": 70.8,
+    "SWE-Atlas Codebase QnA": 13.1,
+    "SWE-Atlas Refactoring": 20.95,
+    "SWE-Atlas Test Writing": 25.77
+   },
+   "md_url": "https://models.dev/models/moonshotai/kimi-k2.5"
+  },
+  {
+   "id": "kimi-k2.6",
+   "providers": {
+    "go": true,
+    "zen": true,
+    "free": false
+   },
+   "tier": "paid",
+   "name": "Kimi K2.6",
+   "desc": "Multimodal Kimi workhorse for agent loops, coding tasks, and visual context",
+   "context": 262144,
+   "output": 262144,
+   "reasoning": true,
+   "tool_call": true,
+   "structured": true,
+   "multimodal": true,
+   "open_weights": true,
+   "release": "2026-04-21",
+   "last_updated": "2026-04-21",
+   "knowledge": "2025-01",
+   "swebench": 80.2,
+   "benchmarks": {
+    "SWE-Bench Verified": 80.2,
+    "Artificial Analysis Coding Agent Index": 50.5,
+    "SWE-Atlas Codebase QnA": 59.8,
+    "SWE-Bench Pro": 27.3,
+    "Terminal-Bench": 64.3
+   },
+   "md_url": "https://models.dev/models/moonshotai/kimi-k2.6"
+  },
+  {
+   "id": "kimi-k2.7-code",
+   "providers": {
+    "go": true,
+    "zen": true,
+    "free": false
+   },
+   "tier": "paid",
+   "name": "Kimi K2.7 Code",
+   "desc": "Coding-focused Kimi model, stronger on long-horizon repo work with less overthinking",
+   "context": 262144,
+   "output": 262144,
+   "reasoning": true,
+   "tool_call": true,
+   "structured": true,
+   "multimodal": true,
+   "open_weights": true,
+   "release": "2026-06-12",
+   "last_updated": "2026-06-12",
+   "knowledge": "2025-01",
+   "swebench": null,
+   "benchmarks": {
+    "Kimi Code Bench": 62,
+    "Program Bench": 53.6,
+    "MLS Bench Lite": 35.1,
+    "MCP Atlas": 76,
+    "MCP Mark Verified": 81.1,
+    "Kimi Claw 24/7 Bench": 46.9
+   },
+   "md_url": "https://models.dev/models/moonshotai/kimi-k2.7-code"
+  },
+  {
+   "id": "kimi-k3",
+   "providers": {
+    "go": true,
+    "zen": true,
+    "free": false
+   },
+   "tier": "paid",
+   "name": "Kimi K3",
+   "desc": "Multimodal Kimi model with 1M context and toggleable max-effort thinking for long-horizon agent work",
+   "context": 1048576,
+   "output": 131072,
+   "reasoning": true,
+   "tool_call": true,
+   "structured": true,
+   "multimodal": true,
+   "open_weights": true,
+   "release": "2026-07-16",
+   "last_updated": "2026-07-16",
+   "knowledge": "",
+   "swebench": null,
+   "benchmarks": {
+    "DeepSWE": 67.5,
+    "Terminal-Bench": 88.3,
+    "FrontierSWE": 81.2,
+    "Program Bench": 77.8,
+    "SWE Marathon": 42,
+    "GDPval-AA": 1668,
+    "AA-Briefcase": 1548,
+    "AutomationBench": 30.8,
+    "JobBench": 52.9,
+    "SpreadsheetBench": 34.8,
+    "BrowseComp": 91.2,
+    "CharXiv Reasoning": 91.3,
+    "ZeroBench": 41
+   },
+   "md_url": "https://models.dev/models/moonshotai/kimi-k3"
+  },
+  {
+   "id": "laguna-s-2.1-free",
+   "providers": {
+    "go": false,
+    "zen": true,
+    "free": true
+   },
+   "tier": "free",
+   "name": "Laguna S 2.1",
+   "desc": "Agentic coding model from Poolside in the XS size class for local deployment",
+   "context": 1048576,
+   "output": 32768,
+   "reasoning": true,
+   "tool_call": true,
+   "structured": false,
+   "multimodal": false,
+   "open_weights": true,
+   "release": "2026-07-21",
+   "last_updated": "2026-07-21",
+   "knowledge": "",
+   "swebench": null,
+   "benchmarks": {},
+   "md_url": "https://models.dev/models/poolside/laguna-s-2.1"
+  },
+  {
+   "id": "mimo-v2-omni",
+   "providers": {
+    "go": true,
+    "zen": false,
+    "free": false
+   },
+   "tier": "go",
+   "name": "MiMo-V2-Omni",
+   "desc": "MiMo omni model for text, image, video, audio, and agents",
+   "context": 262144,
+   "output": 131072,
+   "reasoning": true,
+   "tool_call": true,
+   "structured": false,
+   "multimodal": true,
+   "open_weights": false,
+   "release": "2026-03-18",
+   "last_updated": "2026-03-18",
+   "knowledge": "2024-12",
+   "swebench": null,
+   "benchmarks": {},
+   "md_url": "https://models.dev/models/xiaomi/mimo-v2-omni"
+  },
+  {
+   "id": "mimo-v2-pro",
+   "providers": {
+    "go": true,
+    "zen": false,
+    "free": false
+   },
+   "tier": "go",
+   "name": "MiMo-V2-Pro",
+   "desc": "Earlier MiMo Pro model for multimodal agents, reasoning, and code tasks",
+   "context": 1048576,
+   "output": 131072,
+   "reasoning": true,
+   "tool_call": true,
+   "structured": false,
+   "multimodal": false,
+   "open_weights": false,
+   "release": "2026-03-18",
+   "last_updated": "2026-03-18",
+   "knowledge": "2024-12",
+   "swebench": null,
+   "benchmarks": {},
+   "md_url": "https://models.dev/models/xiaomi/mimo-v2-pro"
+  },
+  {
+   "id": "mimo-v2.5",
+   "providers": {
+    "go": true,
+    "zen": false,
+    "free": false
+   },
+   "tier": "go",
+   "name": "MiMo-V2.5",
+   "desc": "Open MiMo model for multimodal coding agents and long-context automation",
+   "context": 1048576,
+   "output": 131072,
+   "reasoning": true,
+   "tool_call": true,
+   "structured": false,
+   "multimodal": true,
+   "open_weights": true,
+   "release": "2026-04-22",
+   "last_updated": "2026-04-22",
+   "knowledge": "2024-12",
+   "swebench": null,
+   "benchmarks": {},
+   "md_url": "https://models.dev/models/xiaomi/mimo-v2.5"
+  },
+  {
+   "id": "mimo-v2.5-free",
+   "providers": {
+    "go": false,
+    "zen": true,
+    "free": true
+   },
+   "tier": "free",
+   "name": "MiMo-V2.5",
+   "desc": "Open MiMo model for multimodal coding agents and long-context automation",
+   "context": 1048576,
+   "output": 131072,
+   "reasoning": true,
+   "tool_call": true,
+   "structured": false,
+   "multimodal": true,
+   "open_weights": true,
+   "release": "2026-04-22",
+   "last_updated": "2026-04-22",
+   "knowledge": "2024-12",
+   "swebench": null,
+   "benchmarks": {},
+   "md_url": "https://models.dev/models/xiaomi/mimo-v2.5"
+  },
+  {
+   "id": "mimo-v2.5-pro",
+   "providers": {
+    "go": true,
+    "zen": false,
+    "free": false
+   },
+   "tier": "go",
+   "name": "MiMo-V2.5-Pro",
+   "desc": "Stronger MiMo Pro tier for multimodal reasoning and coding-agent execution",
+   "context": 1048576,
+   "output": 131072,
+   "reasoning": true,
+   "tool_call": true,
+   "structured": false,
+   "multimodal": false,
+   "open_weights": true,
+   "release": "2026-04-22",
+   "last_updated": "2026-04-22",
+   "knowledge": "2024-12",
+   "swebench": 78.9,
+   "benchmarks": {
+    "SWE-Bench Verified": 78.9,
+    "SWE-Bench Pro": 57.2,
+    "GPQA Diamond": 86.6
+   },
+   "md_url": "https://models.dev/models/xiaomi/mimo-v2.5-pro"
+  },
+  {
+   "id": "minimax-m2.5",
+   "providers": {
+    "go": true,
+    "zen": true,
+    "free": false
+   },
+   "tier": "paid",
+   "name": "MiniMax-M2.5",
+   "desc": "Prior MiniMax coding model for agent workflows, office edits, and automation",
+   "context": 204800,
+   "output": 131072,
+   "reasoning": true,
+   "tool_call": true,
+   "structured": false,
+   "multimodal": false,
+   "open_weights": true,
+   "release": "2026-02-12",
+   "last_updated": "2026-02-12",
+   "knowledge": "",
+   "swebench": 75.8,
+   "benchmarks": {
+    "SWE-Bench Verified": 75.8,
+    "SWE-Atlas Codebase QnA": 10.3,
+    "SWE-Atlas Refactoring": 19.52,
+    "SWE-Atlas Test Writing": 18.6
+   },
+   "md_url": "https://models.dev/models/minimax/MiniMax-M2.5"
+  },
+  {
+   "id": "minimax-m2.7",
+   "providers": {
+    "go": true,
+    "zen": true,
+    "free": false
+   },
+   "tier": "paid",
+   "name": "MiniMax-M2.7",
+   "desc": "Open MiniMax flagship for coding agents, office automation, and complex environments",
+   "context": 204800,
+   "output": 131072,
+   "reasoning": true,
+   "tool_call": true,
+   "structured": false,
+   "multimodal": false,
+   "open_weights": true,
+   "release": "2026-03-18",
+   "last_updated": "2026-03-18",
+   "knowledge": "",
+   "swebench": 79.9,
+   "benchmarks": {
+    "SWE-Bench Verified": 79.9,
+    "SWE-Bench Pro": 56.2,
+    "Terminal-Bench": 51.1
+   },
+   "md_url": "https://models.dev/models/minimax/MiniMax-M2.7"
+  },
+  {
+   "id": "minimax-m3",
+   "providers": {
+    "go": true,
+    "zen": true,
+    "free": false
+   },
+   "tier": "paid",
+   "name": "MiniMax-M3",
+   "desc": "MiniMax multimodal model for long-context coding, perception, and agent planning",
+   "context": 512000,
+   "output": 128000,
+   "reasoning": true,
+   "tool_call": true,
+   "structured": false,
+   "multimodal": true,
+   "open_weights": true,
+   "release": "2026-06-01",
+   "last_updated": "2026-06-01",
+   "knowledge": "",
+   "swebench": 80.5,
+   "benchmarks": {
+    "SWE-Bench Verified": 80.5,
+    "SWE-Bench Pro": 59,
+    "Terminal-Bench": 66,
+    "BrowseComp": 83.52,
+    "MCP Atlas": 74.2,
+    "OSWorld-Verified": 70.06
+   },
+   "md_url": "https://models.dev/models/minimax/MiniMax-M3"
+  },
+  {
+   "id": "muse-spark-1.2",
+   "providers": {
+    "go": false,
+    "zen": true,
+    "free": false
+   },
+   "tier": "paid",
+   "name": "Muse Spark 1.2",
+   "desc": "Muse Spark 1.2 is a coding-focused update to Muse Spark 1.1 with improvements in code generation, complex debugging, codebase understanding, and end-to-end developer workflows.",
+   "context": 1048576,
+   "output": 131072,
+   "reasoning": true,
+   "tool_call": true,
+   "structured": true,
+   "multimodal": true,
+   "open_weights": false,
+   "release": "2026-08-05",
+   "last_updated": "2026-08-05",
+   "knowledge": "",
+   "swebench": null,
+   "benchmarks": {},
+   "md_url": "https://models.dev/models/meta/muse-spark-1.2"
+  },
+  {
+   "id": "nemotron-3-ultra-free",
+   "providers": {
+    "go": false,
+    "zen": true,
+    "free": true
+   },
+   "tier": "free",
+   "name": "Nemotron 3 Ultra 550B A55B",
+   "desc": "Largest Nemotron 3 model for maximum open-weight reasoning and agent accuracy",
+   "context": 1000000,
+   "output": 128000,
+   "reasoning": true,
+   "tool_call": true,
+   "structured": false,
+   "multimodal": false,
+   "open_weights": true,
+   "release": "2026-06-04",
+   "last_updated": "2026-06-04",
+   "knowledge": "",
+   "swebench": 70.7,
+   "benchmarks": {
+    "SWE-Bench Verified": 70.7,
+    "SWE-Bench Multilingual": 67.7,
+    "Terminal-Bench": 56.4,
+    "GPQA": 87,
+    "Humanity's Last Exam": 37.4,
+    "LiveCodeBench": 89,
+    "MMLU-Pro": 86.8,
+    "BrowseComp": 44.4,
+    "IFBench": 81.7,
+    "GDPval": 46.7
+   },
+   "md_url": "https://models.dev/models/nvidia/nemotron-3-ultra-550b-a55b"
+  },
+  {
+   "id": "nemotron-3.5-lightning-free",
+   "providers": {
+    "go": false,
+    "zen": true,
+    "free": true
+   },
+   "tier": "free",
+   "name": "Nemotron 3.5 Lightning 30B A3B",
+   "desc": "Fast NVIDIA Nemotron MoE for reliable agentic tasks across enterprise workloads",
+   "context": 262144,
+   "output": 262144,
+   "reasoning": true,
+   "tool_call": true,
+   "structured": true,
+   "multimodal": false,
+   "open_weights": true,
+   "release": "2026-08-11",
+   "last_updated": "2026-08-11",
+   "knowledge": "",
+   "swebench": null,
+   "benchmarks": {},
+   "md_url": "https://models.dev/models/nvidia/nemotron-3.5-lightning"
+  },
+  {
+   "id": "qwen3.5-plus",
+   "providers": {
+    "go": true,
+    "zen": true,
+    "free": false
+   },
+   "tier": "paid",
+   "name": "Qwen3.5 Plus",
+   "desc": "Qwen vision-language model for visual reasoning, documents, and agent tasks",
+   "context": 1000000,
+   "output": 65536,
+   "reasoning": true,
+   "tool_call": true,
+   "structured": false,
+   "multimodal": true,
+   "open_weights": false,
+   "release": "2026-02-16",
+   "last_updated": "2026-02-16",
+   "knowledge": "2025-04",
+   "swebench": null,
+   "benchmarks": {},
+   "md_url": "https://models.dev/models/alibaba/qwen3.5-plus"
+  },
+  {
+   "id": "qwen3.6-plus",
+   "providers": {
+    "go": true,
+    "zen": true,
+    "free": false
+   },
+   "tier": "paid",
+   "name": "Qwen3.6 Plus",
+   "desc": "Earlier Qwen multimodal workhorse for million-token agent and document tasks",
+   "context": 1000000,
+   "output": 65536,
+   "reasoning": true,
+   "tool_call": true,
+   "structured": false,
+   "multimodal": true,
+   "open_weights": false,
+   "release": "2026-04-02",
+   "last_updated": "2026-04-02",
+   "knowledge": "2025-04",
+   "swebench": null,
+   "benchmarks": {},
+   "md_url": "https://models.dev/models/alibaba/qwen3.6-plus"
+  },
+  {
+   "id": "qwen3.7-max",
+   "providers": {
+    "go": true,
+    "zen": false,
+    "free": false
+   },
+   "tier": "go",
+   "name": "Qwen3.7 Max",
+   "desc": "Qwen frontier model tuned for agent frameworks, coding assistants, and long tasks",
+   "context": 1000000,
+   "output": 65536,
+   "reasoning": true,
+   "tool_call": true,
+   "structured": false,
+   "multimodal": false,
+   "open_weights": false,
+   "release": "2026-05-21",
+   "last_updated": "2026-05-21",
+   "knowledge": "",
+   "swebench": 80.4,
+   "benchmarks": {
+    "SWE-Bench Verified": 80.4,
+    "SWE-Bench Pro": 60.6,
+    "SWE-Bench Multilingual": 78.3,
+    "Terminal-Bench": 69.7,
+    "GPQA Diamond": 92.4,
+    "Humanity's Last Exam": 41.4,
+    "SciCode": 53.5,
+    "MCP Atlas": 76.4,
+    "NL2Repo": 47.2
+   },
+   "md_url": "https://models.dev/models/alibaba/qwen3.7-max"
+  },
+  {
+   "id": "qwen3.7-plus",
+   "providers": {
+    "go": true,
+    "zen": false,
+    "free": false
+   },
+   "tier": "go",
+   "name": "Qwen3.7 Plus",
+   "desc": "Multimodal Qwen workhorse for long-context agents, visual inputs, and coding",
+   "context": 1000000,
+   "output": 64000,
+   "reasoning": true,
+   "tool_call": true,
+   "structured": false,
+   "multimodal": true,
+   "open_weights": false,
+   "release": "2026-06-02",
+   "last_updated": "2026-06-02",
+   "knowledge": "2025-04",
+   "swebench": null,
+   "benchmarks": {},
+   "md_url": "https://models.dev/models/alibaba/qwen3.7-plus"
+  },
+  {
+   "id": "qwen3.8-max",
+   "providers": {
+    "go": true,
+    "zen": false,
+    "free": false
+   },
+   "tier": "go",
+   "name": "Qwen3.8 Max",
+   "desc": "2.4-trillion-parameter MoE flagship for coding, professional work, multimodal understanding, and long-horizon agentic workflows",
+   "context": 1000000,
+   "output": 131072,
+   "reasoning": true,
+   "tool_call": true,
+   "structured": false,
+   "multimodal": true,
+   "open_weights": false,
+   "release": "2026-08-03",
+   "last_updated": "2026-08-03",
+   "knowledge": "",
+   "swebench": null,
+   "benchmarks": {},
+   "md_url": "https://models.dev/models/alibaba/qwen3.8-max"
+  }
+ ],
+ "aliases": [
+  {
+   "id": "opencode-zen/big-pickle",
+   "alias": "🌱 big-pickle (Zen free)"
+  },
+  {
+   "id": "opencode-zen/claude-fable-5",
+   "alias": "💰 Claude Fable 5 (Zen)"
+  },
+  {
+   "id": "opencode-zen/claude-haiku-4-5",
+   "alias": "💰 Claude Haiku 4.5 (latest) (Zen)"
+  },
+  {
+   "id": "opencode-zen/claude-opus-4-5",
+   "alias": "💰 Claude Opus 4.5 (latest) (Zen)"
+  },
+  {
+   "id": "opencode-zen/claude-opus-4-6",
+   "alias": "💰 Claude Opus 4.6 (Zen)"
+  },
+  {
+   "id": "opencode-zen/claude-opus-4-7",
+   "alias": "💰 Claude Opus 4.7 (Zen)"
+  },
+  {
+   "id": "opencode-zen/claude-opus-4-8",
+   "alias": "💰 Claude Opus 4.8 (Zen)"
+  },
+  {
+   "id": "opencode-zen/claude-opus-5",
+   "alias": "💰 Claude Opus 5 (Zen)"
+  },
+  {
+   "id": "opencode-zen/claude-sonnet-4",
+   "alias": "💰 Claude Sonnet 4.5 (Zen)"
+  },
+  {
+   "id": "opencode-zen/claude-sonnet-4-5",
+   "alias": "💰 Claude Sonnet 4.5 (latest) (Zen)"
+  },
+  {
+   "id": "opencode-zen/claude-sonnet-4-6",
+   "alias": "💰 Claude Sonnet 4.6 (Zen)"
+  },
+  {
+   "id": "opencode-zen/claude-sonnet-5",
+   "alias": "💰 Claude Sonnet 5 (Zen)"
+  },
+  {
+   "id": "opencode-go/deepseek-v4-flash",
+   "alias": "🚀 DeepSeek V4 Flash (Go)"
+  },
+  {
+   "id": "opencode-zen/deepseek-v4-flash",
+   "alias": "💰 DeepSeek V4 Flash (Zen)"
+  },
+  {
+   "id": "opencode-zen/deepseek-v4-flash-free",
+   "alias": "🌱 DeepSeek V4 Flash (Zen free)"
+  },
+  {
+   "id": "opencode-go/deepseek-v4-pro",
+   "alias": "🚀 DeepSeek V4 Pro (Go)"
+  },
+  {
+   "id": "opencode-zen/deepseek-v4-pro",
+   "alias": "💰 DeepSeek V4 Pro (Zen)"
+  },
+  {
+   "id": "opencode-zen/gemini-3-flash",
+   "alias": "💰 Gemini 3 Flash Preview (Zen)"
+  },
+  {
+   "id": "opencode-zen/gemini-3.1-pro",
+   "alias": "💰 Gemini 3.1 Pro Preview (Zen)"
+  },
+  {
+   "id": "opencode-zen/gemini-3.5-flash",
+   "alias": "💰 Gemini 3.5 Flash (Zen)"
+  },
+  {
+   "id": "opencode-zen/gemini-3.5-flash-lite",
+   "alias": "💰 Gemini 3.5 Flash Lite (Zen)"
+  },
+  {
+   "id": "opencode-zen/gemini-3.6-flash",
+   "alias": "💰 Gemini 3.6 Flash (Zen)"
+  },
+  {
+   "id": "opencode-zen/gemini-3.7-flash",
+   "alias": "💰 Gemini 3.7 Flash (Zen)"
+  },
+  {
+   "id": "opencode-go/glm-5",
+   "alias": "🚀 GLM-5 (Go)"
+  },
+  {
+   "id": "opencode-zen/glm-5",
+   "alias": "💰 GLM-5 (Zen)"
+  },
+  {
+   "id": "opencode-go/glm-5.1",
+   "alias": "🚀 GLM-5.1 (Go)"
+  },
+  {
+   "id": "opencode-zen/glm-5.1",
+   "alias": "💰 GLM-5.1 (Zen)"
+  },
+  {
+   "id": "opencode-go/glm-5.2",
+   "alias": "🚀 GLM-5.2 (Go)"
+  },
+  {
+   "id": "opencode-zen/glm-5.2",
+   "alias": "💰 GLM-5.2 (Zen)"
+  },
+  {
+   "id": "opencode-go/glm-5.3",
+   "alias": "🚀 GLM-5.3 (Go)"
+  },
+  {
+   "id": "opencode-zen/gpt-5",
+   "alias": "💰 GPT-5 (Zen)"
+  },
+  {
+   "id": "opencode-zen/gpt-5-codex",
+   "alias": "💰 GPT-5-Codex (Zen)"
+  },
+  {
+   "id": "opencode-zen/gpt-5-nano",
+   "alias": "💰 GPT-5 Nano (Zen)"
+  },
+  {
+   "id": "opencode-zen/gpt-5.1",
+   "alias": "💰 GPT-5.1 (Zen)"
+  },
+  {
+   "id": "opencode-zen/gpt-5.1-codex",
+   "alias": "💰 GPT-5.1 Codex (Zen)"
+  },
+  {
+   "id": "opencode-zen/gpt-5.1-codex-max",
+   "alias": "💰 GPT-5.1 Codex Max (Zen)"
+  },
+  {
+   "id": "opencode-zen/gpt-5.1-codex-mini",
+   "alias": "💰 GPT-5.1 Codex mini (Zen)"
+  },
+  {
+   "id": "opencode-zen/gpt-5.2",
+   "alias": "💰 GPT-5.2 (Zen)"
+  },
+  {
+   "id": "opencode-zen/gpt-5.2-codex",
+   "alias": "💰 GPT-5.2 Codex (Zen)"
+  },
+  {
+   "id": "opencode-zen/gpt-5.3-codex",
+   "alias": "💰 GPT-5.3 Codex (Zen)"
+  },
+  {
+   "id": "opencode-zen/gpt-5.3-codex-spark",
+   "alias": "💰 GPT-5.3 Codex Spark (Zen)"
+  },
+  {
+   "id": "opencode-zen/gpt-5.4",
+   "alias": "💰 GPT-5.4 (Zen)"
+  },
+  {
+   "id": "opencode-zen/gpt-5.4-mini",
+   "alias": "💰 GPT-5.4 mini (Zen)"
+  },
+  {
+   "id": "opencode-zen/gpt-5.4-nano",
+   "alias": "💰 GPT-5.4 nano (Zen)"
+  },
+  {
+   "id": "opencode-zen/gpt-5.4-pro",
+   "alias": "💰 GPT-5.4 Pro (Zen)"
+  },
+  {
+   "id": "opencode-zen/gpt-5.5",
+   "alias": "💰 GPT-5.5 (Zen)"
+  },
+  {
+   "id": "opencode-zen/gpt-5.5-pro",
+   "alias": "💰 GPT-5.5 Pro (Zen)"
+  },
+  {
+   "id": "opencode-go/gpt-5.6-luna",
+   "alias": "🚀 GPT-5.6 Luna (Go)"
+  },
+  {
+   "id": "opencode-zen/gpt-5.6-luna",
+   "alias": "💰 GPT-5.6 Luna (Zen)"
+  },
+  {
+   "id": "opencode-zen/gpt-5.6-sol",
+   "alias": "💰 GPT-5.6 Sol (Zen)"
+  },
+  {
+   "id": "opencode-zen/gpt-5.6-terra",
+   "alias": "💰 GPT-5.6 Terra (Zen)"
+  },
+  {
+   "id": "opencode-go/grok-4.5",
+   "alias": "🚀 Grok 4.5 (Go)"
+  },
+  {
+   "id": "opencode-zen/grok-4.5",
+   "alias": "💰 Grok 4.5 (Zen)"
+  },
+  {
+   "id": "opencode-zen/grok-4.6",
+   "alias": "💰 Grok 4.6 (Zen)"
+  },
+  {
+   "id": "opencode-zen/grok-build-0.1",
+   "alias": "💰 Grok Build 0.1 (Zen)"
+  },
+  {
+   "id": "opencode-go/hy3",
+   "alias": "🚀 Hy3 (Go)"
+  },
+  {
+   "id": "opencode-zen/hy3-free",
+   "alias": "🌱 Hy3 preview (Zen free)"
+  },
+  {
+   "id": "opencode-go/hy3-preview",
+   "alias": "🚀 Hy3 preview (Go)"
+  },
+  {
+   "id": "opencode-go/kimi-k2.5",
+   "alias": "🚀 Kimi K2.5 (Go)"
+  },
+  {
+   "id": "opencode-zen/kimi-k2.5",
+   "alias": "💰 Kimi K2.5 (Zen)"
+  },
+  {
+   "id": "opencode-go/kimi-k2.6",
+   "alias": "🚀 Kimi K2.6 (Go)"
+  },
+  {
+   "id": "opencode-zen/kimi-k2.6",
+   "alias": "💰 Kimi K2.6 (Zen)"
+  },
+  {
+   "id": "opencode-go/kimi-k2.7-code",
+   "alias": "🚀 Kimi K2.7 Code (Go)"
+  },
+  {
+   "id": "opencode-zen/kimi-k2.7-code",
+   "alias": "💰 Kimi K2.7 Code (Zen)"
+  },
+  {
+   "id": "opencode-go/kimi-k3",
+   "alias": "🚀 Kimi K3 (Go)"
+  },
+  {
+   "id": "opencode-zen/kimi-k3",
+   "alias": "💰 Kimi K3 (Zen)"
+  },
+  {
+   "id": "opencode-zen/laguna-s-2.1-free",
+   "alias": "🌱 Laguna S 2.1 (Zen free)"
+  },
+  {
+   "id": "opencode-go/mimo-v2-omni",
+   "alias": "🚀 MiMo-V2-Omni (Go)"
+  },
+  {
+   "id": "opencode-go/mimo-v2-pro",
+   "alias": "🚀 MiMo-V2-Pro (Go)"
+  },
+  {
+   "id": "opencode-go/mimo-v2.5",
+   "alias": "🚀 MiMo-V2.5 (Go)"
+  },
+  {
+   "id": "opencode-zen/mimo-v2.5-free",
+   "alias": "🌱 MiMo-V2.5 (Zen free)"
+  },
+  {
+   "id": "opencode-go/mimo-v2.5-pro",
+   "alias": "🚀 MiMo-V2.5-Pro (Go)"
+  },
+  {
+   "id": "opencode-go/minimax-m2.5",
+   "alias": "🚀 MiniMax-M2.5 (Go)"
+  },
+  {
+   "id": "opencode-zen/minimax-m2.5",
+   "alias": "💰 MiniMax-M2.5 (Zen)"
+  },
+  {
+   "id": "opencode-go/minimax-m2.7",
+   "alias": "🚀 MiniMax-M2.7 (Go)"
+  },
+  {
+   "id": "opencode-zen/minimax-m2.7",
+   "alias": "💰 MiniMax-M2.7 (Zen)"
+  },
+  {
+   "id": "opencode-go/minimax-m3",
+   "alias": "🚀 MiniMax-M3 (Go)"
+  },
+  {
+   "id": "opencode-zen/minimax-m3",
+   "alias": "💰 MiniMax-M3 (Zen)"
+  },
+  {
+   "id": "opencode-zen/muse-spark-1.2",
+   "alias": "💰 Muse Spark 1.2 (Zen)"
+  },
+  {
+   "id": "opencode-zen/nemotron-3-ultra-free",
+   "alias": "🌱 Nemotron 3 Ultra 550B A55B (Zen free)"
+  },
+  {
+   "id": "opencode-zen/nemotron-3.5-lightning-free",
+   "alias": "🌱 Nemotron 3.5 Lightning 30B A3B (Zen free)"
+  },
+  {
+   "id": "opencode-go/qwen3.5-plus",
+   "alias": "🚀 Qwen3.5 Plus (Go)"
+  },
+  {
+   "id": "opencode-zen/qwen3.5-plus",
+   "alias": "💰 Qwen3.5 Plus (Zen)"
+  },
+  {
+   "id": "opencode-go/qwen3.6-plus",
+   "alias": "🚀 Qwen3.6 Plus (Go)"
+  },
+  {
+   "id": "opencode-zen/qwen3.6-plus",
+   "alias": "💰 Qwen3.6 Plus (Zen)"
+  },
+  {
+   "id": "opencode-go/qwen3.7-max",
+   "alias": "🚀 Qwen3.7 Max (Go)"
+  },
+  {
+   "id": "opencode-go/qwen3.7-plus",
+   "alias": "🚀 Qwen3.7 Plus (Go)"
+  },
+  {
+   "id": "opencode-go/qwen3.8-max",
+   "alias": "🚀 Qwen3.8 Max (Go)"
+  }
+ ]
+}

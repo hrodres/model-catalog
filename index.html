@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Model Catalog — OpenCode Zen/Go</title>
+<meta name="description" content="Catálogo de modelos OpenCode Zen/Go con specs y benchmarks de models.dev">
+<style>
+  :root {
+    --bg: #0f1117; --card: #1a1d27; --border: #2a2e3d; --text: #e6e8ef;
+    --muted: #8b90a3; --accent: #4f8cff; --green: #34d399; --red: #f87171;
+    --amber: #fbbf24; --go: #4f8cff; --zen: #a78bfa; --free: #34d399;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--bg); color: var(--text); font-family: -apple-system, "Segoe UI", Roboto, sans-serif; padding: 16px; }
+  .wrap { max-width: 1200px; margin: 0 auto; }
+  h1 { font-size: 1.4rem; margin-bottom: 4px; }
+  .sub { color: var(--muted); font-size: .85rem; margin-bottom: 16px; }
+  .sub b { color: var(--text); }
+
+  .filters { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 14px; margin-bottom: 14px; display: flex; flex-wrap: wrap; gap: 14px; align-items: flex-end; }
+  .f-group { display: flex; flex-direction: column; gap: 4px; }
+  .f-group label { font-size: .75rem; color: var(--muted); text-transform: uppercase; letter-spacing: .04em; }
+  input[type=search], select {
+    background: var(--bg); border: 1px solid var(--border); color: var(--text);
+    border-radius: 6px; padding: 8px 10px; font-size: .9rem; min-width: 180px;
+  }
+  .checks { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; padding-top: 14px; }
+  .checks label { display: flex; align-items: center; gap: 5px; font-size: .85rem; color: var(--text); text-transform: none; letter-spacing: 0; cursor: pointer; }
+  .ctx-range { display: flex; align-items: center; gap: 8px; }
+  input[type=range] { width: 140px; accent-color: var(--accent); }
+  .ctx-val { font-size: .85rem; color: var(--accent); font-weight: 600; min-width: 58px; }
+
+  .table-card { background: var(--card); border: 1px solid var(--border); border-radius: 10px; overflow-x: auto; }
+  table { width: 100%; border-collapse: collapse; font-size: .88rem; min-width: 860px; }
+  thead th {
+    text-align: left; padding: 10px 12px; color: var(--muted); font-size: .75rem;
+    text-transform: uppercase; letter-spacing: .05em; border-bottom: 1px solid var(--border);
+    cursor: pointer; user-select: none; white-space: nowrap; position: sticky; top: 0; background: var(--card);
+  }
+  thead th:hover { color: var(--accent); }
+  thead th .arrow { font-size: .7rem; margin-left: 3px; }
+  tbody td { padding: 9px 12px; border-bottom: 1px solid #222634; vertical-align: middle; }
+  tbody tr:hover { background: #212536; }
+  tr.off { display: none; }
+
+  .m-name { font-weight: 600; }
+  .m-id { color: var(--muted); font-size: .78rem; font-family: ui-monospace, monospace; }
+  .badge { display: inline-block; padding: 2px 8px; border-radius: 20px; font-size: .72rem; font-weight: 600; margin-right: 4px; white-space: nowrap; }
+  .b-free { background: rgba(52,211,153,.15); color: var(--free); border: 1px solid rgba(52,211,153,.35); }
+  .b-go { background: rgba(79,140,255,.15); color: var(--go); border: 1px solid rgba(79,140,255,.35); }
+  .b-zen { background: rgba(167,139,250,.15); color: var(--zen); border: 1px solid rgba(167,139,250,.35); }
+  .b-paid { background: rgba(248,113,113,.12); color: var(--red); border: 1px solid rgba(248,113,113,.35); }
+  .b-warn { background: rgba(251,191,36,.12); color: var(--amber); border: 1px solid rgba(251,191,36,.35); }
+
+  .yes { color: var(--green); font-weight: 700; }
+  .no { color: #565b6d; }
+  .unk { color: var(--amber); }
+  .num { font-variant-numeric: tabular-nums; text-align: right; }
+  .ctx-num { font-weight: 600; }
+  a.md-link { color: var(--accent); text-decoration: none; font-size: .8rem; white-space: nowrap; }
+  a.md-link:hover { text-decoration: underline; }
+
+  .count { margin: 10px 2px; color: var(--muted); font-size: .82rem; }
+  .count b { color: var(--text); }
+
+  footer { margin-top: 18px; color: var(--muted); font-size: .75rem; line-height: 1.6; }
+  footer a { color: var(--accent); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>🗂️ Model Catalog</h1>
+  <div class="sub">Modelos <b>opencode-zen</b> + <b>opencode-go</b> · specs y benchmarks de <b>models.dev</b> · snapshot: <span id="snap">—</span></div>
+
+  <div class="filters">
+    <div class="f-group">
+      <label>Provider</label>
+      <select id="f-provider">
+        <option value="all">Todos</option>
+        <option value="free">🌱 Free (Zen)</option>
+        <option value="go">🚀 Go</option>
+        <option value="zen">💰 Zen pago</option>
+      </select>
+    </div>
+    <div class="f-group">
+      <label>Buscar</label>
+      <input type="search" id="f-search" placeholder="nombre o id…">
+    </div>
+    <div class="f-group">
+      <label>Contexto mínimo</label>
+      <div class="ctx-range">
+        <input type="range" id="f-ctx" min="0" max="1000" step="8" value="0">
+        <span class="ctx-val" id="ctx-val">0K</span>
+      </div>
+    </div>
+    <div class="checks">
+      <label><input type="checkbox" id="f-reason"> Reasoning</label>
+      <label><input type="checkbox" id="f-tool"> Tool call</label>
+      <label><input type="checkbox" id="f-bench"> Con SWE-Bench</label>
+    </div>
+  </div>
+
+  <div class="count" id="count">—</div>
+  <div class="table-card">
+    <table id="tbl">
+      <thead>
+        <tr>
+          <th data-k="name">Modelo<span class="arrow"></span></th>
+          <th data-k="tier">Provider<span class="arrow"></span></th>
+          <th data-k="context" class="num">Contexto<span class="arrow"></span></th>
+          <th data-k="output" class="num">Output<span class="arrow"></span></th>
+          <th data-k="reasoning">Reasoning<span class="arrow"></span></th>
+          <th data-k="tool_call">Tools<span class="arrow"></span></th>
+          <th data-k="multimodal">Multi<span class="arrow"></span></th>
+          <th data-k="swebench" class="num">SWE-Bench<span class="arrow"></span></th>
+          <th>Ficha</th>
+        </tr>
+      </thead>
+      <tbody id="tbody"></tbody>
+    </table>
+  </div>
+
+  <footer>
+    Datos: <a href="https://models.dev" target="_blank" rel="noopener">models.dev</a> (MIT) + catálogos opencode · generado: <span id="gen">—</span><br>
+    Los modelos sin ficha en models.dev llevan badge ⚠️ · <a href="aliases.json" target="_blank">aliases.json</a> (tabla de aliases)
+  </footer>
+</div>
+
+<script>
+let DATA = null;
+let sortKey = 'name', sortDir = 1;
+
+function fmtCtx(n) {
+  if (!n) return '<span class="unk">—</span>';
+  if (n >= 1000000) return (n/1000000).toFixed(0) + 'M';
+  if (n >= 1000) return Math.round(n/1000) + 'K';
+  return n;
+}
+
+function badgeTier(tier) {
+  if (tier === 'free') return '<span class="badge b-free">🌱 free</span>';
+  if (tier === 'go') return '<span class="badge b-go">🚀 Go</span>';
+  return '<span class="badge b-paid">💰 Zen</span>';
+}
+
+function badgeNoMd() {
+  return '<span class="badge b-warn">⚠️ sin ficha</span>';
+}
+
+function cell(v, yes='yes', no='no') {
+  if (v === true) return '<span class="'+yes+'">✓</span>';
+  if (v === false) return '<span class="'+no+'">✗</span>';
+  return '<span class="unk">?</span>';
+}
+
+function render() {
+  const prov = document.getElementById('f-provider').value;
+  const q = document.getElementById('f-search').value.trim().toLowerCase();
+  const minCtx = parseInt(document.getElementById('f-ctx').value) * 1000;
+  const needReason = document.getElementById('f-reason').checked;
+  const needTool = document.getElementById('f-tool').checked;
+  const needBench = document.getElementById('f-bench').checked;
+
+  let rows = DATA.models.filter(m => {
+    if (prov === 'free' && m.tier !== 'free') return false;
+    if (prov === 'go' && !m.providers.go) return false;
+    if (prov === 'zen' && (m.tier !== 'paid')) return false;
+    if (q && !(m.name.toLowerCase().includes(q) || m.id.toLowerCase().includes(q))) return false;
+    if (minCtx && (!m.context || m.context < minCtx)) return false;
+    if (needReason && m.reasoning !== true) return false;
+    if (needTool && m.tool_call !== true) return false;
+    if (needBench && m.swebench == null) return false;
+    return true;
+  });
+
+  rows.sort((a, b) => {
+    let va = a[sortKey], vb = b[sortKey];
+    if (sortKey === 'name') { va = a.name.toLowerCase(); vb = b.name.toLowerCase(); }
+    if (sortKey === 'tier') { va = a.tier; vb = b.tier; }
+    if (sortKey === 'swebench') {
+      if (a.swebench == null && b.swebench == null) return 0;
+      if (a.swebench == null) return 1;   // sin benchmark, al final
+      if (b.swebench == null) return -1;
+      return (a.swebench - b.swebench) * sortDir;
+    }
+    if (va == null && vb == null) return 0;
+    if (va == null) return 1;
+    if (vb == null) return -1;
+    if (typeof va === 'number' && typeof vb === 'number') return (va - vb) * sortDir;
+    return String(va).localeCompare(String(vb)) * sortDir;
+  });
+
+  const tbody = document.getElementById('tbody');
+  tbody.innerHTML = rows.map(m => {
+    const provBadges = [];
+    if (m.providers.go) provBadges.push('<span class="badge b-go">Go</span>');
+    if (m.providers.zen) provBadges.push(m.providers.free ? '<span class="badge b-free">Zen free</span>' : '<span class="badge b-zen">Zen</span>');
+    if (!m.md_url) provBadges.push(badgeNoMd());
+    const link = m.md_url ? `<a class="md-link" href="${m.md_url}" target="_blank" rel="noopener">↗ models.dev</a>` : '<span class="muted">—</span>';
+    return `<tr>
+      <td><div class="m-name">${m.name}</div><div class="m-id">${m.id}</div></td>
+      <td>${badgeTier(m.tier)} ${provBadges.join(' ')}</td>
+      <td class="num"><span class="ctx-num">${fmtCtx(m.context)}</span></td>
+      <td class="num">${fmtCtx(m.output)}</td>
+      <td>${cell(m.reasoning)}</td>
+      <td>${cell(m.tool_call)}</td>
+      <td>${cell(m.multimodal)}</td>
+      <td class="num">${m.swebench != null ? '<b>'+m.swebench+'</b>' : '<span class="no">—</span>'}</td>
+      <td>${link}</td>
+    </tr>`;
+  }).join('');
+
+  const nFree = rows.filter(r => r.tier === 'free').length;
+  const nGo = rows.filter(r => r.providers.go).length;
+  const nZen = rows.filter(r => r.providers.zen).length;
+  document.getElementById('count').innerHTML =
+    `Mostrando <b>${rows.length}</b> modelos · 🌱 free ${nFree} · 🚀 Go ${nGo} · 💰 Zen ${nZen}`;
+}
+
+function bindSort() {
+  document.querySelectorAll('thead th[data-k]').forEach(th => {
+    th.addEventListener('click', () => {
+      const k = th.dataset.k;
+      if (sortKey === k) { sortDir *= -1; } else { sortKey = k; sortDir = 1; }
+      document.querySelectorAll('thead th').forEach(t => t.querySelector('.arrow').textContent = '');
+      th.querySelector('.arrow').textContent = sortDir === 1 ? ' ▲' : ' ▼';
+      render();
+    });
+  });
+}
+
+document.getElementById('f-provider').addEventListener('change', render);
+document.getElementById('f-search').addEventListener('input', render);
+document.getElementById('f-reason').addEventListener('change', render);
+document.getElementById('f-tool').addEventListener('change', render);
+document.getElementById('f-bench').addEventListener('change', render);
+document.getElementById('f-ctx').addEventListener('input', e => {
+  const k = parseInt(e.target.value);
+  document.getElementById('ctx-val').textContent = k >= 1000 ? (k/1000).toFixed(1)+'M' : k+'K';
+  render();
+});
+
+fetch('data.json').then(r => r.json()).then(d => {
+  DATA = d;
+  document.getElementById('snap').textContent = d.snapshot || '—';
+  document.getElementById('gen').textContent = (d.generated || '').replace('T', ' ').slice(0, 16);
+  render();
+}).catch(e => {
+  document.getElementById('tbody').innerHTML =
+    '<tr><td colspan="9">Error cargando data.json: ' + e.message + '</td></tr>';
+});
+
+bindSort();
+</script>
+</body>
+</html>

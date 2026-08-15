@@ -1,0 +1,357 @@
+{
+ "generated": "2026-08-15T12:34:52.223818+00:00",
+ "aliases": [
+  {
+   "id": "opencode-zen/big-pickle",
+   "alias": "🌱 big-pickle (Zen free)"
+  },
+  {
+   "id": "opencode-zen/claude-fable-5",
+   "alias": "💰 Claude Fable 5 (Zen)"
+  },
+  {
+   "id": "opencode-zen/claude-haiku-4-5",
+   "alias": "💰 Claude Haiku 4.5 (latest) (Zen)"
+  },
+  {
+   "id": "opencode-zen/claude-opus-4-5",
+   "alias": "💰 Claude Opus 4.5 (latest) (Zen)"
+  },
+  {
+   "id": "opencode-zen/claude-opus-4-6",
+   "alias": "💰 Claude Opus 4.6 (Zen)"
+  },
+  {
+   "id": "opencode-zen/claude-opus-4-7",
+   "alias": "💰 Claude Opus 4.7 (Zen)"
+  },
+  {
+   "id": "opencode-zen/claude-opus-4-8",
+   "alias": "💰 Claude Opus 4.8 (Zen)"
+  },
+  {
+   "id": "opencode-zen/claude-opus-5",
+   "alias": "💰 Claude Opus 5 (Zen)"
+  },
+  {
+   "id": "opencode-zen/claude-sonnet-4",
+   "alias": "💰 Claude Sonnet 4.5 (Zen)"
+  },
+  {
+   "id": "opencode-zen/claude-sonnet-4-5",
+   "alias": "💰 Claude Sonnet 4.5 (latest) (Zen)"
+  },
+  {
+   "id": "opencode-zen/claude-sonnet-4-6",
+   "alias": "💰 Claude Sonnet 4.6 (Zen)"
+  },
+  {
+   "id": "opencode-zen/claude-sonnet-5",
+   "alias": "💰 Claude Sonnet 5 (Zen)"
+  },
+  {
+   "id": "opencode-go/deepseek-v4-flash",
+   "alias": "🚀 DeepSeek V4 Flash (Go)"
+  },
+  {
+   "id": "opencode-zen/deepseek-v4-flash",
+   "alias": "💰 DeepSeek V4 Flash (Zen)"
+  },
+  {
+   "id": "opencode-zen/deepseek-v4-flash-free",
+   "alias": "🌱 DeepSeek V4 Flash (Zen free)"
+  },
+  {
+   "id": "opencode-go/deepseek-v4-pro",
+   "alias": "🚀 DeepSeek V4 Pro (Go)"
+  },
+  {
+   "id": "opencode-zen/deepseek-v4-pro",
+   "alias": "💰 DeepSeek V4 Pro (Zen)"
+  },
+  {
+   "id": "opencode-zen/gemini-3-flash",
+   "alias": "💰 Gemini 3 Flash Preview (Zen)"
+  },
+  {
+   "id": "opencode-zen/gemini-3.1-pro",
+   "alias": "💰 Gemini 3.1 Pro Preview (Zen)"
+  },
+  {
+   "id": "opencode-zen/gemini-3.5-flash",
+   "alias": "💰 Gemini 3.5 Flash (Zen)"
+  },
+  {
+   "id": "opencode-zen/gemini-3.5-flash-lite",
+   "alias": "💰 Gemini 3.5 Flash Lite (Zen)"
+  },
+  {
+   "id": "opencode-zen/gemini-3.6-flash",
+   "alias": "💰 Gemini 3.6 Flash (Zen)"
+  },
+  {
+   "id": "opencode-zen/gemini-3.7-flash",
+   "alias": "💰 Gemini 3.7 Flash (Zen)"
+  },
+  {
+   "id": "opencode-go/glm-5",
+   "alias": "🚀 GLM-5 (Go)"
+  },
+  {
+   "id": "opencode-zen/glm-5",
+   "alias": "💰 GLM-5 (Zen)"
+  },
+  {
+   "id": "opencode-go/glm-5.1",
+   "alias": "🚀 GLM-5.1 (Go)"
+  },
+  {
+   "id": "opencode-zen/glm-5.1",
+   "alias": "💰 GLM-5.1 (Zen)"
+  },
+  {
+   "id": "opencode-go/glm-5.2",
+   "alias": "🚀 GLM-5.2 (Go)"
+  },
+  {
+   "id": "opencode-zen/glm-5.2",
+   "alias": "💰 GLM-5.2 (Zen)"
+  },
+  {
+   "id": "opencode-go/glm-5.3",
+   "alias": "🚀 GLM-5.3 (Go)"
+  },
+  {
+   "id": "opencode-zen/gpt-5",
+   "alias": "💰 GPT-5 (Zen)"
+  },
+  {
+   "id": "opencode-zen/gpt-5-codex",
+   "alias": "💰 GPT-5-Codex (Zen)"
+  },
+  {
+   "id": "opencode-zen/gpt-5-nano",
+   "alias": "💰 GPT-5 Nano (Zen)"
+  },
+  {
+   "id": "opencode-zen/gpt-5.1",
+   "alias": "💰 GPT-5.1 (Zen)"
+  },
+  {
+   "id": "opencode-zen/gpt-5.1-codex",
+   "alias": "💰 GPT-5.1 Codex (Zen)"
+  },
+  {
+   "id": "opencode-zen/gpt-5.1-codex-max",
+   "alias": "💰 GPT-5.1 Codex Max (Zen)"
+  },
+  {
+   "id": "opencode-zen/gpt-5.1-codex-mini",
+   "alias": "💰 GPT-5.1 Codex mini (Zen)"
+  },
+  {
+   "id": "opencode-zen/gpt-5.2",
+   "alias": "💰 GPT-5.2 (Zen)"
+  },
+  {
+   "id": "opencode-zen/gpt-5.2-codex",
+   "alias": "💰 GPT-5.2 Codex (Zen)"
+  },
+  {
+   "id": "opencode-zen/gpt-5.3-codex",
+   "alias": "💰 GPT-5.3 Codex (Zen)"
+  },
+  {
+   "id": "opencode-zen/gpt-5.3-codex-spark",
+   "alias": "💰 GPT-5.3 Codex Spark (Zen)"
+  },
+  {
+   "id": "opencode-zen/gpt-5.4",
+   "alias": "💰 GPT-5.4 (Zen)"
+  },
+  {
+   "id": "opencode-zen/gpt-5.4-mini",
+   "alias": "💰 GPT-5.4 mini (Zen)"
+  },
+  {
+   "id": "opencode-zen/gpt-5.4-nano",
+   "alias": "💰 GPT-5.4 nano (Zen)"
+  },
+  {
+   "id": "opencode-zen/gpt-5.4-pro",
+   "alias": "💰 GPT-5.4 Pro (Zen)"
+  },
+  {
+   "id": "opencode-zen/gpt-5.5",
+   "alias": "💰 GPT-5.5 (Zen)"
+  },
+  {
+   "id": "opencode-zen/gpt-5.5-pro",
+   "alias": "💰 GPT-5.5 Pro (Zen)"
+  },
+  {
+   "id": "opencode-go/gpt-5.6-luna",
+   "alias": "🚀 GPT-5.6 Luna (Go)"
+  },
+  {
+   "id": "opencode-zen/gpt-5.6-luna",
+   "alias": "💰 GPT-5.6 Luna (Zen)"
+  },
+  {
+   "id": "opencode-zen/gpt-5.6-sol",
+   "alias": "💰 GPT-5.6 Sol (Zen)"
+  },
+  {
+   "id": "opencode-zen/gpt-5.6-terra",
+   "alias": "💰 GPT-5.6 Terra (Zen)"
+  },
+  {
+   "id": "opencode-go/grok-4.5",
+   "alias": "🚀 Grok 4.5 (Go)"
+  },
+  {
+   "id": "opencode-zen/grok-4.5",
+   "alias": "💰 Grok 4.5 (Zen)"
+  },
+  {
+   "id": "opencode-zen/grok-4.6",
+   "alias": "💰 Grok 4.6 (Zen)"
+  },
+  {
+   "id": "opencode-zen/grok-build-0.1",
+   "alias": "💰 Grok Build 0.1 (Zen)"
+  },
+  {
+   "id": "opencode-go/hy3",
+   "alias": "🚀 Hy3 (Go)"
+  },
+  {
+   "id": "opencode-zen/hy3-free",
+   "alias": "🌱 Hy3 preview (Zen free)"
+  },
+  {
+   "id": "opencode-go/hy3-preview",
+   "alias": "🚀 Hy3 preview (Go)"
+  },
+  {
+   "id": "opencode-go/kimi-k2.5",
+   "alias": "🚀 Kimi K2.5 (Go)"
+  },
+  {
+   "id": "opencode-zen/kimi-k2.5",
+   "alias": "💰 Kimi K2.5 (Zen)"
+  },
+  {
+   "id": "opencode-go/kimi-k2.6",
+   "alias": "🚀 Kimi K2.6 (Go)"
+  },
+  {
+   "id": "opencode-zen/kimi-k2.6",
+   "alias": "💰 Kimi K2.6 (Zen)"
+  },
+  {
+   "id": "opencode-go/kimi-k2.7-code",
+   "alias": "🚀 Kimi K2.7 Code (Go)"
+  },
+  {
+   "id": "opencode-zen/kimi-k2.7-code",
+   "alias": "💰 Kimi K2.7 Code (Zen)"
+  },
+  {
+   "id": "opencode-go/kimi-k3",
+   "alias": "🚀 Kimi K3 (Go)"
+  },
+  {
+   "id": "opencode-zen/kimi-k3",
+   "alias": "💰 Kimi K3 (Zen)"
+  },
+  {
+   "id": "opencode-zen/laguna-s-2.1-free",
+   "alias": "🌱 Laguna S 2.1 (Zen free)"
+  },
+  {
+   "id": "opencode-go/mimo-v2-omni",
+   "alias": "🚀 MiMo-V2-Omni (Go)"
+  },
+  {
+   "id": "opencode-go/mimo-v2-pro",
+   "alias": "🚀 MiMo-V2-Pro (Go)"
+  },
+  {
+   "id": "opencode-go/mimo-v2.5",
+   "alias": "🚀 MiMo-V2.5 (Go)"
+  },
+  {
+   "id": "opencode-zen/mimo-v2.5-free",
+   "alias": "🌱 MiMo-V2.5 (Zen free)"
+  },
+  {
+   "id": "opencode-go/mimo-v2.5-pro",
+   "alias": "🚀 MiMo-V2.5-Pro (Go)"
+  },
+  {
+   "id": "opencode-go/minimax-m2.5",
+   "alias": "🚀 MiniMax-M2.5 (Go)"
+  },
+  {
+   "id": "opencode-zen/minimax-m2.5",
+   "alias": "💰 MiniMax-M2.5 (Zen)"
+  },
+  {
+   "id": "opencode-go/minimax-m2.7",
+   "alias": "🚀 MiniMax-M2.7 (Go)"
+  },
+  {
+   "id": "opencode-zen/minimax-m2.7",
+   "alias": "💰 MiniMax-M2.7 (Zen)"
+  },
+  {
+   "id": "opencode-go/minimax-m3",
+   "alias": "🚀 MiniMax-M3 (Go)"
+  },
+  {
+   "id": "opencode-zen/minimax-m3",
+   "alias": "💰 MiniMax-M3 (Zen)"
+  },
+  {
+   "id": "opencode-zen/muse-spark-1.2",
+   "alias": "💰 Muse Spark 1.2 (Zen)"
+  },
+  {
+   "id": "opencode-zen/nemotron-3-ultra-free",
+   "alias": "🌱 Nemotron 3 Ultra 550B A55B (Zen free)"
+  },
+  {
+   "id": "opencode-zen/nemotron-3.5-lightning-free",
+   "alias": "🌱 Nemotron 3.5 Lightning 30B A3B (Zen free)"
+  },
+  {
+   "id": "opencode-go/qwen3.5-plus",
+   "alias": "🚀 Qwen3.5 Plus (Go)"
+  },
+  {
+   "id": "opencode-zen/qwen3.5-plus",
+   "alias": "💰 Qwen3.5 Plus (Zen)"
+  },
+  {
+   "id": "opencode-go/qwen3.6-plus",
+   "alias": "🚀 Qwen3.6 Plus (Go)"
+  },
+  {
+   "id": "opencode-zen/qwen3.6-plus",
+   "alias": "💰 Qwen3.6 Plus (Zen)"
+  },
+  {
+   "id": "opencode-go/qwen3.7-max",
+   "alias": "🚀 Qwen3.7 Max (Go)"
+  },
+  {
+   "id": "opencode-go/qwen3.7-plus",
+   "alias": "🚀 Qwen3.7 Plus (Go)"
+  },
+  {
+   "id": "opencode-go/qwen3.8-max",
+   "alias": "🚀 Qwen3.8 Max (Go)"
+  }
+ ]
+}
