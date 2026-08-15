@@ -9,9 +9,22 @@ Catálogo de modelos de **opencode-zen** (62) + **opencode-go** (26), con specs 
 | Archivo | Qué es |
 |---|---|
 | `index.html` | Web v1: tabla ordenable + filtros (provider, búsqueda, reasoning, tool call, contexto mínimo, SWE-Bench) |
-| `data.json` | Datos generados (72 modelos, 71 con ficha models.dev) |
+| `data.json` | Datos generados (72 modelos, 71 con ficha models.dev) — desde v1.1 **sin aliases** (fuente única: aliases.json) + metadata `modelsdev_fetched`/`modelsdev_count` |
 | `aliases.json` | Tabla de aliases (componente crítico — espejo de `sync-zen-models.py`) |
 | `modelsdev.json` | Cache de models.dev (339 modelos) |
+
+## v1.1 (auditoría N2 — 2026-08-15)
+
+Aprobada tras auditoría de 2 modelos (GLM 5.2 ✅ APROBAR 9/10 + Kimi K3 ✅ APROBAR CON CAMBIOS 8/10, sin rework obligatorio). Cambios:
+- **Provider sin duplicados** (badges limpios: 🌱/🚀/💜/⚠️)
+- **Benchmarks expandibles**: click en fila → chips con todos los benchmarks de models.dev
+- **Sufijo free** en nombre visible de variantes free
+- **Contador con ficha** (X/72 con ficha models.dev) + tooltip en ⚠️
+- **Filtro Zen (solo pago)** renombrado + nuevo **Zen (todos)**
+- **Presets de contexto** (0/32K/128K/1M) junto al slider
+- **Metadata**: `modelsdev_fetched` + `modelsdev_count` en data.json y footer
+- **Responsive**: cards en móvil (≤760px) vía media query
+- **aliases eliminados de data.json** — aliases.json es la única fuente
 
 ## Regenerar datos
 
