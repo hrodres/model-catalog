@@ -26,6 +26,16 @@ Aprobada tras auditoría de 2 modelos (GLM 5.2 ✅ APROBAR 9/10 + Kimi K3 ✅ AP
 - **Responsive**: cards en móvil (≤760px) vía media query
 - **aliases eliminados de data.json** — aliases.json es la única fuente
 
+## v1.2 (UX/UI móvil moderna — 2026-08-15)
+
+Implementada directamente (la auditoría GPT quedó bloqueada: gpt-5.6-luna en Go devuelve salida vacía en tareas reales, 7 intentos):
+- Topbar sticky con glassmorphism (backdrop-blur) + logo gradiente + contador pill
+- Filtros colapsables en móvil (botón "Filtros" con indicador de filtros activos)
+- Skeleton loading (shimmer) mientras carga data.json
+- Cards móviles rediseñadas: radius 14px, sombras, jerarquía clara, targets táctiles ≥44px
+- Micro-interacciones: flecha expandible que rota, fade-in, hover/focus states
+- Contador contextual ("X de 72" cuando hay filtros)
+
 ## Regenerar datos
 
 ```bash
