@@ -1,0 +1,22 @@
+{
+  "note": "Changelog manual — eventos de OpenCode (precios, cuotas, disponibilidad) anotados a mano. Los cambios de estado automáticos van en changelog-auto.json.",
+  "events": [
+    {
+      "date": "2026-08-16",
+      "text": "OpenCode Go recorta límites: Flash pasa a $15/mes de uso (antes $60) y 3.800 req/5h (antes ~31.650, -88%). Nuevas franjas peak/off-peak (peak 01-04 y 06-10 UTC).",
+      "source": "https://opencode.ai/docs/es/go"
+    },
+    {
+      "date": "2026-08-13",
+      "text": "Modelos Qwen (qwen3.7-max, qwen3.7-plus, qwen3.6-plus, qwen3.5-plus, qwen3.8-max) + grok-4.5 en error 503 del proveedor (outage, no bloqueo de cuenta)."
+    },
+    {
+      "date": "2026-08-11",
+      "text": "Solucionado bug de la cadena de fallbacks: sync-zen-models.py ahora solo construye cadenas con modelos accesibles (auth verificada). El selector y la web siguen mostrando el catálogo completo."
+    },
+    {
+      "date": "2026-08-15",
+      "text": "sync-opencode-models: fallo transitorio vespertino (fetch catálogo) — sin cambio de configuración; se resolvió solo al siguiente ciclo."
+    }
+  ]
+}

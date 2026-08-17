@@ -1,0 +1,52 @@
+{
+  "note": "Datos manuales — OpenCode no expone límites por API (403). Se actualizan a mano cuando cambien. Campo verified_at = última verificación contra docs oficiales (https://opencode.ai/docs/es/go).",
+  "source": "https://opencode.ai/docs/es/go",
+  "verified_at": "2026-08-17",
+  "tiers": {
+    "go_subscription": {
+      "name": "OpenCode Go",
+      "price": "$10/mes",
+      "verified_at": "2026-08-17"
+    },
+    "zen_credits": {
+      "name": "OpenCode Zen (pago por créditos)",
+      "price": "$9.99 créditos",
+      "verified_at": "2026-08-17"
+    }
+  },
+  "monthly_usage_bucket": {
+    "note": "Límite de uso mensual por modelo/grupo (cambió el 16/8/2026 — recorte)",
+    "date_changed": "2026-08-16",
+    "$15_grupo": [
+      "deepseek-v4-flash", "deepseek-v4-pro", "glm-5.3", "kimi-k3",
+      "gpt-5.6-luna", "grok-4.5", "qwen3.8-max", "mimo-v2.5-pro"
+    ],
+    "$60_grupo": [
+      "glm-5.2", "glm-5.1", "kimi-k2.7", "kimi-k2.6", "mimo-v2.5",
+      "minimax-m3", "minimax-m2.7", "qwen3.7-max", "qwen3.7-plus",
+      "qwen3.6-plus", "hy3"
+    ]
+  },
+  "rate_limits": {
+    "deepseek-v4-flash": {
+      "per_5h": 3800,
+      "per_week": 9450,
+      "per_month": 18900,
+      "note": "Antes del 16/8: ~31650 req/5h. Recorte -88%.",
+      "verified_at": "2026-08-17"
+    },
+    "global": {
+      "per_5h": 12,
+      "per_week": 30,
+      "per_month": 60,
+      "unit": "$",
+      "verified_at": "2026-08-17"
+    }
+  },
+  "pricing_peak_offpeak": {
+    "note": "Precios por 1M tokens. Horas peak: 01-04 y 06-10 UTC.",
+    "deepseek-v4-flash": {"off_peak": {"in": 0.22, "out": 0.66}, "peak": {"in": 0.44, "out": 1.32}},
+    "deepseek-v4-pro": {"off_peak": {"in": 0.44, "out": 1.32}, "peak": {"in": 0.88, "out": 2.64}},
+    "verified_at": "2026-08-17"
+  }
+}

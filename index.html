@@ -154,6 +154,84 @@
   @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
   }
+
+  /* ── Sección Estado OpenCode ── */
+  .oc-section { margin-top: 26px; }
+  .oc-head { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-bottom: 12px; }
+  .oc-head h2 { font-size: 1.02rem; font-weight: 700; letter-spacing: -.01em; }
+  .oc-head .oc-sub { font-size: .74rem; color: var(--muted); }
+  .oc-pulse { display: inline-flex; align-items: center; gap: 6px; font-size: .72rem; color: var(--muted); background: var(--card); border: 1px solid var(--border-soft); padding: 4px 11px; border-radius: 999px; margin-left: 2px; }
+  .oc-pulse .dotl { width: 7px; height: 7px; border-radius: 50%; background: var(--green); box-shadow: 0 0 8px var(--green); animation: pulse 2.2s infinite; }
+  @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: .35; } }
+
+  .tabs { display: flex; gap: 4px; flex-wrap: wrap; border-bottom: 1px solid var(--border); margin-bottom: 14px; }
+  .tab { background: none; border: none; color: var(--muted); font-family: inherit; font-size: .85rem; font-weight: 600; padding: 9px 15px; cursor: pointer; border-bottom: 2px solid transparent; margin-bottom: -1px; transition: color .15s, border-color .15s; }
+  .tab:hover { color: var(--text); }
+  .tab.on { color: var(--accent); border-bottom-color: var(--accent); }
+
+  .tab-panel { display: none; animation: fadeIn .2s ease; }
+  .tab-panel.on { display: block; }
+
+  .oc-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 16px; box-shadow: var(--shadow); }
+  .oc-card.small { padding: 12px 14px; margin-bottom: 12px; }
+
+  .legend { display: flex; gap: 14px; flex-wrap: wrap; font-size: .74rem; color: var(--muted); margin-top: 10px; }
+  .legend span { display: inline-flex; align-items: center; gap: 5px; }
+
+  /* Tabla de salud */
+  table.health { min-width: 640px; font-size: .84rem; }
+  table.health td { padding: 8px 12px; border-bottom: 1px solid var(--border-soft); }
+  table.health td.dots { white-space: nowrap; }
+  .hdot { display: inline-block; width: 11px; height: 11px; border-radius: 3px; margin-right: 3px; vertical-align: middle; }
+  .hdot.ok { background: var(--green); }
+  .hdot.down { background: var(--red); }
+  .hdot.na { background: #4a5470; }
+  .hdot.unk { background: var(--amber); }
+  .hdot.free { background: rgba(52,211,153,.35); }
+  .hstatus { font-weight: 700; font-size: .8rem; }
+  .hs-ok { color: var(--green); } .hs-down { color: var(--red); } .hs-na { color: var(--muted); } .hs-unk { color: var(--amber); } .hs-free { color: var(--green); opacity: .75; }
+  .fails-badge { display: inline-block; background: rgba(248,113,113,.12); color: var(--red); border: 1px solid rgba(248,113,113,.3); border-radius: 999px; padding: 1px 7px; font-size: .68rem; font-weight: 700; }
+
+  /* Resumen arriba de la tabla de salud */
+  .health-summary { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 14px; }
+  .hs-card { flex: 1; min-width: 110px; background: var(--bg-soft); border: 1px solid var(--border-soft); border-radius: 12px; padding: 11px 14px; text-align: center; }
+  .hs-card b { display: block; font-size: 1.35rem; font-weight: 800; letter-spacing: -.02em; }
+  .hs-card span { font-size: .68rem; color: var(--muted); text-transform: uppercase; letter-spacing: .05em; font-weight: 600; }
+  .hs-card.ok b { color: var(--green); } .hs-card.down b { color: var(--red); } .hs-card.na b { color: var(--muted); } .hs-card.free b { color: var(--green); opacity: .8; }
+
+  /* Línea de tiempo / changelog */
+  .timeline { list-style: none; max-height: 420px; overflow-y: auto; padding-right: 6px; }
+  .timeline li { display: flex; gap: 12px; padding: 9px 2px; border-bottom: 1px solid var(--border-soft); font-size: .84rem; line-height: 1.5; }
+  .timeline li:last-child { border-bottom: none; }
+  .tl-date { flex-shrink: 0; color: var(--accent); font-family: ui-monospace, monospace; font-size: .76rem; padding-top: 2px; font-variant-numeric: tabular-nums; }
+  .tl-tag { flex-shrink: 0; font-size: .68rem; font-weight: 700; padding: 2px 8px; border-radius: 6px; height: fit-content; margin-top: 2px; }
+  .tl-tag.added { background: rgba(52,211,153,.12); color: var(--green); border: 1px solid rgba(52,211,153,.3); }
+  .tl-tag.removed { background: rgba(248,113,113,.11); color: var(--red); border: 1px solid rgba(248,113,113,.3); }
+  .tl-tag.manual { background: rgba(109,155,255,.12); color: var(--accent); border: 1px solid rgba(109,155,255,.3); }
+  .tl-tag.auto { background: rgba(251,191,36,.1); color: var(--amber); border: 1px solid rgba(251,191,36,.3); }
+  .tl-text { flex: 1; }
+  .tl-empty { color: var(--muted); font-size: .84rem; padding: 14px 2px; }
+
+  /* Límites */
+  .lim-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; }
+  .lim-block { background: var(--bg-soft); border: 1px solid var(--border-soft); border-radius: 12px; padding: 13px 15px; }
+  .lim-block h4 { font-size: .74rem; color: var(--muted); text-transform: uppercase; letter-spacing: .06em; margin-bottom: 8px; font-weight: 700; }
+  .lim-block .row { display: flex; justify-content: space-between; gap: 10px; font-size: .82rem; padding: 3px 0; }
+  .lim-block .row b { font-variant-numeric: tabular-nums; }
+  .lim-block .model-grp { font-size: .76rem; color: var(--muted); margin-top: 4px; line-height: 1.5; }
+  .lim-block .model-grp code { background: var(--card); border: 1px solid var(--border-soft); border-radius: 5px; padding: 1px 5px; font-size: .7rem; color: var(--text); }
+  .verified-badge { display: inline-flex; align-items: center; gap: 5px; font-size: .68rem; color: var(--muted); background: var(--bg-soft); border: 1px solid var(--border-soft); padding: 2px 9px; border-radius: 999px; margin-top: 8px; }
+  .verified-badge.stale { color: var(--amber); border-color: rgba(251,191,36,.35); }
+  .oc-note { font-size: .72rem; color: var(--muted); margin-top: 10px; line-height: 1.6; }
+
+  .oc-err { color: var(--amber); font-size: .82rem; padding: 12px 2px; }
+
+  @media (max-width: 760px) {
+    .tabs { overflow-x: auto; flex-wrap: nowrap; -webkit-overflow-scrolling: touch; }
+    .tab { white-space: nowrap; padding: 10px 13px; }
+    .health-summary { gap: 6px; }
+    .hs-card { min-width: calc(50% - 6px); }
+  }
 </style>
 </head>
 <body>
@@ -229,6 +307,64 @@
         </thead>
         <tbody id="tbody"></tbody>
       </table>
+    </div>
+  </div>
+
+  <div class="oc-section" id="oc">
+    <div class="oc-head">
+      <h2>🩺 Estado OpenCode</h2>
+      <span class="oc-pulse"><span class="dotl"></span> check diario 05:45 · <span id="oc-updated">—</span></span>
+      <span class="oc-sub" id="oc-sub">disponibilidad, límites y evolución de los modelos</span>
+    </div>
+    <div class="tabs" role="tablist">
+      <button class="tab on" data-tab="health" role="tab">🟢 Salud</button>
+      <button class="tab" data-tab="limits" role="tab">💰 Límites y precios</button>
+      <button class="tab" data-tab="history" role="tab">📈 Evolución</button>
+      <button class="tab" data-tab="changes" role="tab">📜 Cambios</button>
+    </div>
+
+    <div class="tab-panel on" id="panel-health">
+      <div class="oc-card">
+        <div class="health-summary" id="health-summary">
+          <div class="hs-card skel-row" style="height:52px"></div>
+          <div class="hs-card skel-row" style="height:52px"></div>
+          <div class="hs-card skel-row" style="height:52px"></div>
+          <div class="hs-card skel-row" style="height:52px"></div>
+        </div>
+        <div class="table-scroll">
+          <table class="health" id="health-tbl">
+            <thead>
+              <tr><th>Modelo</th><th>Estado hoy</th><th>Racha</th><th>Últimos días</th></tr>
+            </thead>
+            <tbody id="health-tbody"><tr><td colspan="4" class="tl-empty">Cargando…</td></tr></tbody>
+          </table>
+        </div>
+        <div class="legend">
+          <span><span class="hdot ok"></span> operativo</span>
+          <span><span class="hdot down"></span> caído / error proveedor</span>
+          <span><span class="hdot unk"></span> no responde al probe</span>
+          <span><span class="hdot na"></span> no accesible con tu plan</span>
+          <span><span class="hdot free"></span> free (no se prueba, cuota)</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-panel" id="panel-limits">
+      <div class="oc-card">
+        <div id="limits-body"><div class="skel on"><div class="skel-row"></div><div class="skel-row"></div><div class="skel-row"></div></div></div>
+      </div>
+    </div>
+
+    <div class="tab-panel" id="panel-history">
+      <div class="oc-card">
+        <div id="history-body"><div class="skel on"><div class="skel-row"></div><div class="skel-row"></div></div></div>
+      </div>
+    </div>
+
+    <div class="tab-panel" id="panel-changes">
+      <div class="oc-card">
+        <div id="changes-body"><div class="skel on"><div class="skel-row"></div><div class="skel-row"></div><div class="skel-row"></div></div></div>
+      </div>
     </div>
   </div>
 
@@ -426,6 +562,248 @@ fetch('data.json').then(r => { if (!r.ok) throw new Error('HTTP ' + r.status); r
   document.getElementById('tbody').innerHTML =
     '<tr><td colspan="8">Error cargando data.json: ' + e.message + '</td></tr>';
 });
+
+/* ── Sección Estado OpenCode ── */
+const ST = {
+  status: null, hist: null, catalog: null, limits: null,
+  chAuto: null, chManual: null,
+};
+
+async function fetchJSON(url, fallback) {
+  try {
+    const r = await fetch(url);
+    if (!r.ok) throw new Error('HTTP ' + r.status);
+    return await r.json();
+  } catch (e) {
+    return fallback;
+  }
+}
+
+async function loadOC() {
+  const [status, hist, catalog, limits, chAuto, chManual] = await Promise.all([
+    fetchJSON('status.json', null),
+    fetchJSON('status_history.json', { days: {} }),
+    fetchJSON('catalog-history.json', { days: {}, events: [] }),
+    fetchJSON('limits.json', null),
+    fetchJSON('changelog-auto.json', { events: [] }),
+    fetchJSON('changelog-manual.json', { events: [] }),
+  ]);
+  ST.status = status; ST.hist = hist; ST.catalog = catalog;
+  ST.limits = limits; ST.chAuto = chAuto; ST.chManual = chManual;
+  renderHealth(); renderLimits(); renderHistory(); renderChanges();
+  if (status) {
+    document.getElementById('oc-updated').textContent = 'último check ' + (status.snapshot || '—');
+  } else {
+    document.getElementById('oc-updated').textContent = 'sin datos aún';
+  }
+}
+
+const ST_ICON = { ok: '✅', down: '⚠️', unk: '❓', na: 'ℹ️', free: '🌱' };
+const ST_CLS  = { ok: 'hs-ok', down: 'hs-down', unk: 'hs-unk', na: 'hs-na', free: 'hs-free' };
+const ST_LBL  = { ok: 'operativo', down: 'caído', unk: 'no responde', na: 'no accesible', free: 'free' };
+
+function shortId(id) {
+  if (id === 'big-pickle') return 'big-pickle';
+  return id.replace(/-(free)$/, '').replace(/-preview$/, '*');
+}
+
+function dotFor(st) {
+  return '<span class="hdot ' + st + '"></span>';
+}
+
+function renderHealth() {
+  if (!ST.status) {
+    document.getElementById('health-tbody').innerHTML =
+      '<tr><td colspan="4" class="tl-empty">status.json no disponible aún (primer check pendiente)</td></tr>';
+    return;
+  }
+  const m = ST.status.models || {};
+  const days = ST.hist.days || {};
+  const dates = Object.keys(days).sort();
+  const lastN = dates.slice(-14);
+  const counts = ST.status.counts || {};
+
+  const sum = document.getElementById('health-summary');
+  sum.innerHTML =
+    '<div class="hs-card ok"><b>' + (counts.ok ?? 0) + '</b><span>operativos</span></div>' +
+    '<div class="hs-card down"><b>' + (counts.down ?? 0) + '</b><span>caídos</span></div>' +
+    '<div class="hs-card na"><b>' + (counts.na ?? 0) + '</b><span>no accesibles</span></div>' +
+    '<div class="hs-card free"><b>' + (counts.free ?? 0) + '</b><span>free</span></div>';
+
+  const rows = Object.keys(m).sort((a, b) => {
+    const o = { ok: 0, na: 1, unk: 2, free: 3, down: 4 };
+    return (o[m[a].status] ?? 5) - (o[m[b].status] ?? 5) || a.localeCompare(b);
+  });
+
+  const tbody = document.getElementById('health-tbody');
+  tbody.innerHTML = rows.map(id => {
+    const e = m[id];
+    const dots = lastN.map(d => {
+      const s = (days[d] || {})[id];
+      return s ? dotFor(s) : '<span class="hdot" style="background:transparent;border:1px dashed #2a3040"></span>';
+    }).join('');
+    const fails = e.fails ? '<span class="fails-badge">×' + e.fails + '</span>' : '';
+    return '<tr>' +
+      '<td><span class="m-name">' + shortId(id) + '</span><div class="m-id">' + id + '</div></td>' +
+      '<td><span class="hstatus ' + (ST_CLS[e.status] || '') + '">' + (ST_ICON[e.status] || '❓') + ' ' + (ST_LBL[e.status] || e.status) + '</span></td>' +
+      '<td>' + fails + '</td>' +
+      '<td class="dots">' + dots + '</td>' +
+      '</tr>';
+  }).join('');
+}
+
+function money(n) {
+  if (n == null) return '—';
+  return '$' + parseFloat(n).toFixed(2);
+}
+
+function daysSince(dateStr) {
+  if (!dateStr) return null;
+  const d = new Date(dateStr + 'T00:00:00Z');
+  return Math.floor((Date.now() - d.getTime()) / 86400000);
+}
+
+function verifiedHTML(verified) {
+  const ds = daysSince(verified);
+  const stale = ds != null && ds > 14;
+  return '<span class="verified-badge' + (stale ? ' stale' : '') + '">🕒 verificado ' +
+    (ds == null ? '—' : (ds === 0 ? 'hoy' : 'hace ' + ds + 'd')) + (stale ? ' ⚠️ posiblemente obsoleto' : '') + '</span>';
+}
+
+function renderLimits() {
+  const el = document.getElementById('limits-body');
+  if (!ST.limits) {
+    el.innerHTML = '<div class="oc-note">limits.json no disponible — datos manuales pendientes de crear.</div>';
+    return;
+  }
+  const L = ST.limits;
+  let h = '';
+
+  const grp15 = (L.monthly_usage_bucket || {})['$15_grupo'] || [];
+  const grp60 = (L.monthly_usage_bracket || L.monthly_usage_bucket || {})['$60_grupo'] || [];
+  const rate = (L.rate_limits || {}).deepseek_v4_flash || {};
+  const global = (L.rate_limits || {}).global || {};
+  const pricing = (L.pricing_peak_offpeak || {}).deepseek_v4_flash || {};
+  const ver = L.verified_at;
+
+  h += '<div class="lim-grid">';
+
+  h += '<div class="lim-block"><h4>Cuota mensual de uso</h4>';
+  h += '<div class="row"><span>Modelos tier $15/mes</span><b>8</b></div>';
+  h += '<div class="model-grp">' + grp15.map(x => '<code>' + shortId(x) + '</code>').join(' ') + '</div>';
+  h += '<div class="row" style="margin-top:8px"><span>Modelos tier $60/mes</span><b>' + grp60.length + '</b></div>';
+  h += '<div class="model-grp">' + grp60.map(x => '<code>' + shortId(x) + '</code>').join(' ') + '</div>';
+  h += verifiedHTML(ver) + '</div>';
+
+  h += '<div class="lim-block"><h4>Rate limits — ' + shortId('deepseek-v4-flash') + '</h4>';
+  h += '<div class="row"><span>Por 5 h</span><b>' + (rate.per_5h ?? '—').toLocaleString() + ' req</b></div>';
+  h += '<div class="row"><span>Por semana</span><b>' + (rate.per_week ?? '—').toLocaleString() + '</b></div>';
+  h += '<div class="row"><span>Por mes</span><b>' + (rate.per_month ?? '—').toLocaleString() + '</b></div>';
+  if (rate.note) h += '<div class="oc-note">' + rate.note + '</div>';
+  h += verifiedHTML(ver) + '</div>';
+
+  h += '<div class="lim-block"><h4>Precio por 1M tokens — ' + shortId('deepseek-v4-flash') + '</h4>';
+  h += '<div class="row"><span>Off-peak in/out</span><b>' + money(pricing.off_peak && pricing.off_peak.in) + ' / ' + money(pricing.off_peak && pricing.off_peak.out) + '</b></div>';
+  h += '<div class="row"><span>Peak in/out</span><b>' + money(pricing.peak && pricing.peak.in) + ' / ' + money(pricing.peak && pricing.peak.out) + '</b></div>';
+  if ((L.pricing_peak_offpeak || {}).note) h += '<div class="oc-note">' + L.pricing_peak_offpeak.note + '</div>';
+  h += verifiedHTML(ver) + '</div>';
+
+  h += '<div class="lim-block"><h4>Límite global de gasto</h4>';
+  h += '<div class="row"><span>Por 5 h</span><b>' + money(global.per_5h) + '</b></div>';
+  h += '<div class="row"><span>Por semana</span><b>' + money(global.per_week) + '</b></div>';
+  h += '<div class="row"><span>Por mes</span><b>' + money(global.per_month) + '</b></div>';
+  h += verifiedHTML(ver) + '</div>';
+
+  h += '</div>';
+  h += '<div class="oc-note">' + (L.note || '') + ' · Fuente: ' + (L.source || '—') + '</div>';
+  el.innerHTML = h;
+}
+
+function renderHistory() {
+  const el = document.getElementById('history-body');
+  const events = (ST.catalog && ST.catalog.events) || [];
+  const days = ST.hist.days || {};
+  const dates = Object.keys(days).sort().reverse();
+
+  let h = '';
+  h += '<div class="oc-card small"><h4 style="font-size:.74rem;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px">Evolución del catálogo (' + dates.length + ' días registrados)</h4>';
+  if (events.length) {
+    h += '<ul class="timeline">';
+    events.slice().reverse().slice(-25).forEach(ev => {
+      const tag = ev.type === 'added'
+        ? '<span class="tl-tag added">+ nuevo</span>'
+        : '<span class="tl-tag removed">− eliminado</span>';
+      h += '<li><span class="tl-date">' + ev.date + '</span>' + tag +
+        '<span class="tl-text"><b>' + shortId(ev.id) + '</b> <span class="m-id">' + ev.id + '</span></span></li>';
+    });
+    h += '</ul>';
+  } else {
+    h += '<div class="tl-empty">Sin cambios detectados todavía — los siguientes checks diarios registrarán modelos nuevos o eliminados.</div>';
+  }
+  h += '</div>';
+
+  h += '<div class="oc-card small"><h4 style="font-size:.74rem;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px">Serie temporal por modelo (últimos ' + Math.min(dates.length, 14) + ' días)</h4>';
+  if (dates.length) {
+    const models = {};
+    dates.forEach(d => Object.keys(days[d] || {}).forEach(id => { models[id] = 1; }));
+    const ids = Object.keys(models).sort();
+    h += '<div class="table-scroll"><table class="health" style="min-width:520px"><thead><tr><th>Modelo</th><th>Historial</th></tr></thead><tbody>';
+    ids.forEach(id => {
+      const dots = dates.slice(0, 14).map(d => {
+        const s = (days[d] || {})[id];
+        return s ? dotFor(s) : '<span class="hdot" style="background:transparent;border:1px dashed #2a3040"></span>';
+      }).join('');
+      h += '<tr><td><span class="m-name">' + shortId(id) + '</span></td><td class="dots">' + dots + '</td></tr>';
+    });
+    h += '</tbody></table></div>';
+    h += '<div class="legend">' +
+      '<span><span class="hdot ok"></span> ok</span>' +
+      '<span><span class="hdot down"></span> caído</span>' +
+      '<span><span class="hdot na"></span> no accesible</span>' +
+      '<span><span class="hdot unk"></span> no responde</span>' +
+      '<span><span class="hdot free"></span> free</span></div>';
+  } else {
+    h += '<div class="tl-empty">Aún no hay historia — empieza a acumularse con el check de mañana.</div>';
+  }
+  h += '</div>';
+  el.innerHTML = h;
+}
+
+function renderChanges() {
+  const el = document.getElementById('changes-body');
+  const auto = (ST.chAuto && ST.chAuto.events) || [];
+  const manual = (ST.chManual && ST.chManual.events) || [];
+  const all = manual.map(e => Object.assign({}, e, { src: 'manual' }))
+    .concat(auto.map(e => Object.assign({}, e, { src: 'auto' })))
+    .sort((a, b) => (a.date || '').localeCompare(b.date || '') || (a.src === 'auto' ? 1 : -1));
+
+  if (!all.length) {
+    el.innerHTML = '<div class="tl-empty">Sin cambios registrados todavía.</div>';
+    return;
+  }
+  let h = '<ul class="timeline">';
+  all.slice().reverse().slice(-40).forEach(ev => {
+    const tag = ev.src === 'manual'
+      ? '<span class="tl-tag manual">📝 manual</span>'
+      : '<span class="tl-tag auto">🤖 auto</span>';
+    h += '<li><span class="tl-date">' + (ev.date || '—') + '</span>' + tag +
+      '<span class="tl-text">' + ev.text.replace(/</g, '&lt;').replace(/>/g, '&gt;') + '</span></li>';
+  });
+  h += '</ul>';
+  h += '<div class="oc-note">Los eventos automáticos de cambio de estado se generan al detectar diferencias entre checks diarios.</div>';
+  el.innerHTML = h;
+}
+
+// Tabs
+function switchTab(name) {
+  document.querySelectorAll('.tab').forEach(t => t.classList.toggle('on', t.dataset.tab === name));
+  document.querySelectorAll('.tab-panel').forEach(p => p.classList.toggle('on', p.id === 'panel-' + name));
+}
+document.querySelectorAll('.tab').forEach(t => {
+  t.addEventListener('click', () => switchTab(t.dataset.tab));
+});
+
+loadOC();
 
 bindSort();
 </script>

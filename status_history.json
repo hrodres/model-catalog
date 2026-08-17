@@ -1,0 +1,41 @@
+{
+ "days": {
+  "2026-08-17": {
+   "deepseek-v4-flash": "ok",
+   "deepseek-v4-pro": "ok",
+   "gemini-3.5-flash-lite": "down",
+   "glm-5": "ok",
+   "glm-5.1": "ok",
+   "glm-5.2": "ok",
+   "glm-5.3": "ok",
+   "gpt-5.6-luna": "ok",
+   "grok-4.5": "down",
+   "hy3": "ok",
+   "hy3-preview": "unk",
+   "kimi-k2.5": "down",
+   "kimi-k2.6": "down",
+   "kimi-k2.7-code": "ok",
+   "kimi-k3": "ok",
+   "mimo-v2-omni": "unk",
+   "mimo-v2-pro": "unk",
+   "mimo-v2.5": "ok",
+   "mimo-v2.5-pro": "ok",
+   "minimax-m2.5": "ok",
+   "minimax-m2.7": "ok",
+   "minimax-m3": "ok",
+   "muse-spark-1.2": "ok",
+   "qwen3.5-plus": "down",
+   "qwen3.6-plus": "down",
+   "qwen3.7-max": "down",
+   "qwen3.7-plus": "down",
+   "qwen3.8-max": "down",
+   "big-pickle": "free",
+   "deepseek-v4-flash-free": "free",
+   "hy3-free": "free",
+   "laguna-s-2.1-free": "free",
+   "mimo-v2.5-free": "free",
+   "nemotron-3-ultra-free": "free",
+   "nemotron-3.5-lightning-free": "free"
+  }
+ }
+}

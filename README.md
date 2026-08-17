@@ -8,12 +8,26 @@ Catálogo de modelos de **opencode-zen** (62) + **opencode-go** (26), con specs 
 
 | Archivo | Qué es |
 |---|---|
-| `index.html` | Web v1.2: tabla ordenable + filtros (provider, búsqueda, reasoning, tool call, contexto mínimo con presets, SWE-Bench) + cards responsive móvil + topbar glassmorphism |
+| `index.html` | Web v2.0: tabla ordenable + filtros + **sección Estado OpenCode** (4 tabs: Salud, Límites y precios, Evolución, Cambios) + cards responsive móvil + topbar glassmorphism |
 | `data.json` | Datos generados (72 modelos, 71 con ficha models.dev) — desde v1.1 **sin aliases** (fuente única: aliases.json) + metadata `modelsdev_fetched`/`modelsdev_count` |
 | `aliases.json` | Tabla de aliases (componente crítico — espejo de `sync-zen-models.py`) |
 | `modelsdev.json` | Cache de models.dev (339 modelos) |
+| `status.json` | Salud actual por modelo (200/401/503/…) — generado por `check-model-health.py` |
+| `status_history.json` | Serie temporal diaria por modelo (retención 120 días) |
+| `catalog-history.json` | Snapshots del catálogo público + eventos (added/removed) |
+| `limits.json` | Límites/precios **manuales** con `verified_at` (OpenCode no expone API — 403) |
+| `changelog-auto.json` | Eventos automáticos (cambios de estado detectados entre checks) |
+| `changelog-manual.json` | Cambios manuales anotados (recortes de cuota, outages…) |
 
-## v1.1 (auditoría N2 — 2026-08-15)
+## v2.0 (Estado OpenCode — consenso N2 2026-08-17)
+
+Aprobada tras auditoría de 2 modelos (GLM 5.3 + Kimi K3, APROBAR CON CAMBIOS 2-0).
+- **Tab Salud**: estado hoy por modelo + racha de fallos + sparkline de últimos 14 días + resumen numérico
+- **Tab Límites y precios**: cuotas mensuales ($15/$60), rate limits Flash, precio peak/off-peak, límite global de gasto — con badge de caducidad (alert si >14 días sin verificar)
+- **Tab Evolución**: eventos de catálogo (modelos nuevos/eliminados, diff del catálogo público) + serie temporal por modelo
+- **Tab Cambios**: changelog combinado automático + manual con fecha
+- `check-model-health.py` (NUEVO, independiente): prueba cada modelo con `max_tokens=1` (doble intento para 400), excluye Zen free (cuota global 100 req/día), semántica 200=✅/5xx=⚠️/401-403=ℹ️ no accesible/400-422=❓ no responde al probe, aborta si la auth global falla (conserva estado anterior), escrituras atómicas, timeouts 8s/modelo · 10 min global
+- Integrado en el refresh diario (paso 1.5 pre-commit)
 
 Aprobada tras auditoría de 2 modelos (GLM 5.2 ✅ APROBAR 9/10 + Kimi K3 ✅ APROBAR CON CAMBIOS 8/10, sin rework obligatorio). Cambios:
 - **Provider sin duplicados** (badges limpios: 🌱/🚀/💜/⚠️)
@@ -41,7 +55,12 @@ Implementada directamente (la auditoría GPT quedó bloqueada: gpt-5.6-luna en G
 ```bash
 python3 scripts/build-model-catalog.py
 # → regenera model-catalog/data.json + aliases.json + modelsdev.json
+
+python3 scripts/check-model-health.py
+# → regenera status.json + status_history.json + catalog-history.json + changelog-auto.json
 ```
+
+Ambos corren automáticamente cada día en el refresh (scripts/refresh-model-catalog.sh) — la web se despliega sola.
 
 El script:
 1. Descarga `https://models.dev/models.json`
