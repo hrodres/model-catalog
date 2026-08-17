@@ -681,9 +681,9 @@ function renderLimits() {
 
   const grp15 = (L.monthly_usage_bucket || {})['$15_grupo'] || [];
   const grp60 = (L.monthly_usage_bracket || L.monthly_usage_bucket || {})['$60_grupo'] || [];
-  const rate = (L.rate_limits || {}).deepseek_v4_flash || {};
+  const rate = (L.rate_limits || {})['deepseek-v4-flash'] || {};
   const global = (L.rate_limits || {}).global || {};
-  const pricing = (L.pricing_peak_offpeak || {}).deepseek_v4_flash || {};
+  const pricing = (L.pricing_peak_offpeak || {})['deepseek-v4-flash'] || {};
   const ver = L.verified_at;
 
   h += '<div class="lim-grid">';
