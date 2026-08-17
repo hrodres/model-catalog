@@ -136,14 +136,14 @@
     table, tbody, tr, td { display: block; width: 100%; }
     thead { display: none; }
     table { min-width: 0; }
-    tr.model-row { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 10px; padding: 10px 6px; box-shadow: var(--shadow); }
-    tbody td { border: none; padding: 5px 14px; display: flex; justify-content: space-between; align-items: center; min-height: 30px; }
+    tr.model-row { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 7px; padding: 6px 4px; box-shadow: var(--shadow); }
+    tbody td { border: none; padding: 2px 12px; display: flex; justify-content: space-between; align-items: center; min-height: 24px; }
     tbody td::before { content: attr(data-label); color: var(--muted); font-size: .66rem; text-transform: uppercase; letter-spacing: .05em; padding-right: 14px; font-weight: 600; }
     tbody td.num { text-align: right; }
     td .md-link { font-size: .76rem; }
-    td[data-label="Modelo"] { flex-direction: column; align-items: flex-start; gap: 6px; padding-top: 10px; padding-bottom: 10px; border-bottom: 1px solid var(--border-soft); margin-bottom: 6px; }
+    td[data-label="Modelo"] { flex-direction: column; align-items: flex-start; gap: 4px; padding-top: 7px; padding-bottom: 7px; border-bottom: 1px solid var(--border-soft); margin-bottom: 4px; }
     td[data-label="Modelo"]::before { content: none; }
-    .m-name { font-size: .98rem; }
+    .m-name { font-size: .93rem; }
     tr.bench-row.open { display: block; border: 1px solid var(--border); border-radius: var(--radius); margin: -6px 0 12px; background: var(--bg-soft); box-shadow: none; }
     tr.bench-row td { display: block; }
     tr.bench-row td::before { content: none; }
@@ -198,9 +198,7 @@
   }
 
   /* Título de sección catálogo */
-  .cat-head { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin: 26px 0 12px; padding-top: 22px; border-top: 1px solid var(--border-soft); }
-  .cat-head h2 { font-size: 1.02rem; font-weight: 700; letter-spacing: -.01em; }
-  .cat-head .cat-sub { font-size: .74rem; color: var(--muted); }
+  .acc.acc-cat { margin-top: 28px; }  /* separación con la sección Estado */
 
   .oc-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 16px; box-shadow: var(--shadow); }
   .oc-card.small { padding: 12px 14px; margin-bottom: 12px; }
@@ -274,7 +272,7 @@
     .acc summary { padding: 12px 14px; font-size: .86rem; min-height: 48px; }
     .acc .acc-badge { display: none; }  /* móvil: título limpio, datos dentro */
     .acc .acc-body { padding: 0 8px 12px; }
-    .cat-head { margin: 20px 0 10px; padding-top: 18px; }
+    .acc.acc-cat { margin-top: 20px; }
     .health-summary { gap: 6px; }
     .hs-card { min-width: calc(50% - 6px); }
 
@@ -404,12 +402,15 @@
     </details>
   </section>
 
-  <!-- ═══ Catálogo de modelos ═══ -->
-  <div class="cat-head">
-    <h2>🗂️ Catálogo de modelos</h2>
-    <span class="cat-sub">specs, contexto, reasoning, tools y benchmarks — toca una fila para expandir</span>
-  </div>
-
+  <!-- ═══ Catálogo de modelos (acordeón — plegado en móvil) ═══ -->
+  <details class="acc acc-cat" id="acc-catalog" open>
+    <summary aria-expanded="true">
+      <span class="acc-ico">🗂️</span>
+      <span class="acc-title">Catálogo de modelos</span>
+      <span class="acc-badge">specs, contexto, reasoning, tools y benchmarks — toca una fila para expandir</span>
+      <span class="acc-chev" aria-hidden="true">▼</span>
+    </summary>
+    <div class="acc-body">
   <div class="filters" id="filters">
     <div class="f-group">
       <label>Provider</label>
@@ -468,6 +469,8 @@
       </table>
     </div>
   </div>
+    </div>
+  </details>
 
   <footer>
     Datos: <a href="https://models.dev" target="_blank" rel="noopener">models.dev</a> (MIT) + catálogos opencode · generado: <span id="gen">—</span> · models.dev: <span id="mdf">—</span><br>
@@ -638,6 +641,10 @@ document.getElementById('tbody').addEventListener('click', e => {
   if (tr) toggleBench(tr.dataset.id);
 });
 
+// Catálogo como acordeón: plegado por defecto en móvil (menos scroll)
+const accCat = document.getElementById('acc-catalog');
+if (window.matchMedia('(max-width: 760px)').matches && accCat) accCat.open = false;
+
 // Filtros colapsables en móvil
 const btnFilter = document.getElementById('btn-filter');
 const filters = document.getElementById('filters');
@@ -645,11 +652,19 @@ btnFilter.addEventListener('click', () => {
   const open = filters.classList.toggle('open');
   btnFilter.classList.toggle('active', open);
   btnFilter.setAttribute('aria-expanded', open);
+  if (open) {
+    if (accCat) accCat.open = true;  // el panel vive dentro del acordeón del catálogo
+    filters.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
 });
 
-// Reset de filtros al cambiar a escritorio
+// Reset al cambiar a escritorio: cerrar panel móvil y reabrir catálogo
 window.matchMedia('(min-width: 761px)').addEventListener('change', e => {
-  if (e.matches) { filters.classList.remove('open'); btnFilter.classList.remove('active'); }
+  if (e.matches) {
+    filters.classList.remove('open');
+    btnFilter.classList.remove('active');
+    if (accCat) accCat.open = true;
+  }
 });
 
 fetch('data.json', {cache: 'no-cache'}).then(r => { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); }).then(d => {
