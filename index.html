@@ -226,11 +226,39 @@
 
   .oc-err { color: var(--amber); font-size: .82rem; padding: 12px 2px; }
 
+  /* Tabla de límites por modelo */
+  table.lim-tbl { width: 100%; border-collapse: collapse; font-size: .8rem; min-width: 760px; }
+  table.lim-tbl thead th { text-align: left; padding: 9px 10px; color: var(--muted); font-size: .68rem; text-transform: uppercase; letter-spacing: .05em; border-bottom: 1px solid var(--border); background: var(--bg-soft); white-space: nowrap; }
+  table.lim-tbl tbody td { padding: 8px 10px; border-bottom: 1px solid var(--border-soft); }
+  table.lim-tbl tbody tr:last-child td { border-bottom: none; }
+  .tier-badge { display: inline-block; padding: 2px 8px; border-radius: 999px; font-size: .68rem; font-weight: 700; }
+  .tier15 { background: rgba(52,211,153,.13); color: var(--green); border: 1px solid rgba(52,211,153,.3); }
+  .tier60 { background: rgba(251,191,36,.11); color: var(--amber); border: 1px solid rgba(251,191,36,.3); }
+  .var-chip { display: inline-block; background: var(--bg-soft); border: 1px solid var(--border); border-radius: 6px; padding: 1px 7px; font-size: .68rem; color: var(--muted); white-space: nowrap; }
+
   @media (max-width: 760px) {
     .tabs { overflow-x: auto; flex-wrap: nowrap; -webkit-overflow-scrolling: touch; }
     .tab { white-space: nowrap; padding: 10px 13px; }
     .health-summary { gap: 6px; }
     .hs-card { min-width: calc(50% - 6px); }
+
+    /* Tablas de salud en cards móviles — sin scroll horizontal */
+    table.health { min-width: 0 !important; font-size: .88rem; }
+    table.health thead { display: none; }
+    table.health tr { display: block; background: var(--bg-soft); border: 1px solid var(--border-soft); border-radius: 12px; margin-bottom: 9px; padding: 10px 12px; }
+    table.health td { display: block; border: none; padding: 3px 0; min-height: 0; }
+    table.health td.dots { white-space: normal; line-height: 2; padding-top: 6px; }
+    table.health td .m-id { font-size: .72rem; }
+    table.health td:empty { display: none; }
+
+    /* Tabla de límites en cards móviles */
+    table.lim-tbl { min-width: 0 !important; }
+    table.lim-tbl thead { display: none; }
+    table.lim-tbl tr { display: block; background: var(--bg-soft); border: 1px solid var(--border-soft); border-radius: 12px; margin-bottom: 10px; padding: 11px 13px; }
+    table.lim-tbl td { display: flex; justify-content: space-between; align-items: center; gap: 10px; border: none; padding: 4px 0; }
+    table.lim-tbl td::before { content: attr(data-label); color: var(--muted); font-size: .66rem; text-transform: uppercase; letter-spacing: .05em; font-weight: 600; }
+    table.lim-tbl td:first-child { flex-direction: column; align-items: flex-start; border-bottom: 1px solid var(--border-soft); margin-bottom: 5px; padding-bottom: 8px; }
+    table.lim-tbl td:first-child::before { content: none; }
   }
 </style>
 </head>
@@ -677,45 +705,53 @@ function renderLimits() {
     return;
   }
   const L = ST.limits;
-  let h = '';
-
-  const grp15 = (L.monthly_usage_bucket || {})['$15_grupo'] || [];
-  const grp60 = (L.monthly_usage_bracket || L.monthly_usage_bucket || {})['$60_grupo'] || [];
-  const rate = (L.rate_limits || {})['deepseek-v4-flash'] || {};
-  const global = (L.rate_limits || {}).global || {};
-  const pricing = (L.pricing_peak_offpeak || {})['deepseek-v4-flash'] || {};
   const ver = L.verified_at;
 
-  h += '<div class="lim-grid">';
-
-  h += '<div class="lim-block"><h4>Cuota mensual de uso</h4>';
-  h += '<div class="row"><span>Modelos tier $15/mes</span><b>8</b></div>';
-  h += '<div class="model-grp">' + grp15.map(x => '<code>' + shortId(x) + '</code>').join(' ') + '</div>';
-  h += '<div class="row" style="margin-top:8px"><span>Modelos tier $60/mes</span><b>' + grp60.length + '</b></div>';
-  h += '<div class="model-grp">' + grp60.map(x => '<code>' + shortId(x) + '</code>').join(' ') + '</div>';
-  h += verifiedHTML(ver) + '</div>';
-
-  h += '<div class="lim-block"><h4>Rate limits — ' + shortId('deepseek-v4-flash') + '</h4>';
-  h += '<div class="row"><span>Por 5 h</span><b>' + (rate.per_5h ?? '—').toLocaleString() + ' req</b></div>';
-  h += '<div class="row"><span>Por semana</span><b>' + (rate.per_week ?? '—').toLocaleString() + '</b></div>';
-  h += '<div class="row"><span>Por mes</span><b>' + (rate.per_month ?? '—').toLocaleString() + '</b></div>';
-  if (rate.note) h += '<div class="oc-note">' + rate.note + '</div>';
-  h += verifiedHTML(ver) + '</div>';
-
-  h += '<div class="lim-block"><h4>Precio por 1M tokens — ' + shortId('deepseek-v4-flash') + '</h4>';
-  h += '<div class="row"><span>Off-peak in/out</span><b>' + money(pricing.off_peak && pricing.off_peak.in) + ' / ' + money(pricing.off_peak && pricing.off_peak.out) + '</b></div>';
-  h += '<div class="row"><span>Peak in/out</span><b>' + money(pricing.peak && pricing.peak.in) + ' / ' + money(pricing.peak && pricing.peak.out) + '</b></div>';
-  if ((L.pricing_peak_offpeak || {}).note) h += '<div class="oc-note">' + L.pricing_peak_offpeak.note + '</div>';
-  h += verifiedHTML(ver) + '</div>';
-
-  h += '<div class="lim-block"><h4>Límite global de gasto</h4>';
-  h += '<div class="row"><span>Por 5 h</span><b>' + money(global.per_5h) + '</b></div>';
-  h += '<div class="row"><span>Por semana</span><b>' + money(global.per_week) + '</b></div>';
-  h += '<div class="row"><span>Por mes</span><b>' + money(global.per_month) + '</b></div>';
-  h += verifiedHTML(ver) + '</div>';
-
+  // Cabecera: suscripción + límites globales
+  let h = '<div class="lim-grid">';
+  const subs = L.subscription || {};
+  const glob = L.global_limits || {};
+  h += '<div class="lim-block"><h4>Suscripción</h4>';
+  h += '<div class="row"><span>OpenCode Go</span><b>$' + (subs.price_usd_month ?? 10) + '/mes</b></div>';
+  h += (subs.note ? '<div class="oc-note">' + subs.note + '</div>' : '');
   h += '</div>';
-  h += '<div class="oc-note">' + (L.note || '') + ' · Fuente: ' + (L.source || '—') + '</div>';
+  h += '<div class="lim-block"><h4>Límite global de gasto</h4>';
+  h += '<div class="row"><span>Por 5 h</span><b>$' + (glob.per_5h_usd ?? '—') + '</b></div>';
+  h += '<div class="row"><span>Por semana</span><b>$' + (glob.per_week_usd ?? '—') + '</b></div>';
+  h += '<div class="row"><span>Por mes</span><b>$' + (glob.per_month_usd ?? '—') + '</b></div>';
+  h += (glob.note ? '<div class="oc-note">' + glob.note + '</div>' : '');
+  h += verifiedHTML(ver) + '</div>';
+  h += '</div>';
+
+  // Notas (peak, overflow, privacidad)
+  if (L.peak_hours_note) h += '<div class="oc-note">⏰ ' + L.peak_hours_note + '</div>';
+  if (L.overflow_note) h += '<div class="oc-note">💡 ' + L.overflow_note + '</div>';
+  if (L.privacy_note) h += '<div class="oc-note">🔒 ' + L.privacy_note + '</div>';
+
+  // Tabla completa por modelo (pricing array)
+  const rows = L.pricing || [];
+  if (rows.length) {
+    h += '<div class="table-scroll" style="margin-top:14px"><table class="lim-tbl"><thead><tr>' +
+      '<th>Modelo</th><th>Variante</th><th>Tier</th><th class="num">In $/1M</th><th class="num">Out $/1M</th><th class="num">Cache R</th><th class="num">Req/5h</th><th class="num">Req/sem</th><th class="num">Req/mes</th>' +
+      '</tr></thead><tbody>';
+    rows.forEach(r => {
+      const tierCls = r.tier_usd === 15 ? 'tier15' : 'tier60';
+      h += '<tr>' +
+        '<td data-label="Modelo"><span class="m-name">' + (r.name || r.model) + '</span></td>' +
+        '<td data-label="Variante">' + (r.variant ? '<span class="var-chip">' + r.variant + '</span>' : '—') + '</td>' +
+        '<td data-label="Tier"><span class="tier-badge ' + tierCls + '">$' + r.tier_usd + '</span></td>' +
+        '<td data-label="In $/1M" class="num">' + money(r.in) + '</td>' +
+        '<td data-label="Out $/1M" class="num">' + money(r.out) + '</td>' +
+        '<td data-label="Cache R" class="num">' + (r.cache_read != null ? '$' + r.cache_read : '—') + '</td>' +
+        '<td data-label="Req/5h" class="num">' + (r.req_5h != null ? r.req_5h.toLocaleString('es') : '—') + '</td>' +
+        '<td data-label="Req/sem" class="num">' + (r.req_week != null ? r.req_week.toLocaleString('es') : '—') + '</td>' +
+        '<td data-label="Req/mes" class="num">' + (r.req_month != null ? r.req_month.toLocaleString('es') : '—') + '</td>' +
+        '</tr>';
+    });
+    h += '</tbody></table></div>';
+    h += '<div class="oc-note">' + (L.usage_patterns_note || '') + '</div>' + verifiedHTML(ver);
+  }
+  h += '<div class="oc-note">' + (L.note || '') + ' · Fuente: <a href="' + (L.source || '#') + '" target="_blank" rel="noopener">docs oficiales</a></div>';
   el.innerHTML = h;
 }
 
@@ -747,7 +783,7 @@ function renderHistory() {
     const models = {};
     dates.forEach(d => Object.keys(days[d] || {}).forEach(id => { models[id] = 1; }));
     const ids = Object.keys(models).sort();
-    h += '<div class="table-scroll"><table class="health" style="min-width:520px"><thead><tr><th>Modelo</th><th>Historial</th></tr></thead><tbody>';
+    h += '<div class="table-scroll"><table class="health" style="min-width:0"><thead><tr><th>Modelo</th><th>Historial</th></tr></thead><tbody>';
     ids.forEach(id => {
       const dots = dates.slice(0, 14).map(d => {
         const s = (days[d] || {})[id];
