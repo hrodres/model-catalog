@@ -164,13 +164,43 @@
   .oc-pulse .dotl { width: 7px; height: 7px; border-radius: 50%; background: var(--green); box-shadow: 0 0 8px var(--green); animation: pulse 2.2s infinite; }
   @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: .35; } }
 
-  .tabs { display: flex; gap: 4px; flex-wrap: wrap; border-bottom: 1px solid var(--border); margin-bottom: 14px; }
-  .tab { background: none; border: none; color: var(--muted); font-family: inherit; font-size: .85rem; font-weight: 600; padding: 9px 15px; cursor: pointer; border-bottom: 2px solid transparent; margin-bottom: -1px; transition: color .15s, border-color .15s; }
-  .tab:hover { color: var(--text); }
-  .tab.on { color: var(--accent); border-bottom-color: var(--accent); }
+  /* Pill-strip de resumen siempre visible */
+  .oc-strip { display: flex; gap: 6px; flex-wrap: wrap; align-items: center; margin-bottom: 12px; }
+  .strip-pill { display: inline-flex; align-items: center; gap: 5px; font-size: .74rem; font-weight: 700; padding: 5px 11px; border-radius: 999px; background: var(--card); border: 1px solid var(--border-soft); font-variant-numeric: tabular-nums; }
+  .strip-pill.ok { color: var(--green); border-color: rgba(52,211,153,.35); background: rgba(52,211,153,.08); }
+  .strip-pill.down { color: var(--amber); border-color: rgba(251,191,36,.35); background: rgba(251,191,36,.08); }
+  .strip-pill.free { color: var(--green); opacity: .8; border-color: rgba(52,211,153,.25); }
+  .strip-pill.check { color: var(--muted); font-weight: 500; }
+  .strip-pill.check b { color: var(--text); font-weight: 600; }
 
-  .tab-panel { display: none; animation: fadeIn .2s ease; }
-  .tab-panel.on { display: block; }
+  /* Acordeones */
+  .acc { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 10px; box-shadow: var(--shadow); overflow: hidden; }
+  .acc summary {
+    list-style: none; cursor: pointer; display: flex; align-items: center; gap: 10px;
+    padding: 13px 16px; font-size: .9rem; font-weight: 650; user-select: none;
+    min-height: 48px; transition: background .15s; -webkit-tap-highlight-color: transparent;
+  }
+  .acc summary::-webkit-details-marker { display: none; }
+  .acc summary::marker { content: none; }
+  .acc summary:hover { background: var(--card-hover); }
+  .acc summary:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; border-radius: var(--radius); }
+  .acc .acc-ico { flex-shrink: 0; font-size: .95rem; }
+  .acc .acc-title { flex: 1; min-width: 0; }
+  .acc .acc-badge { font-size: .68rem; color: var(--muted); font-weight: 500; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .acc .acc-chev { flex-shrink: 0; color: var(--muted); font-size: .72rem; transition: transform .22s ease; }
+  .acc[open] .acc-chev { transform: rotate(180deg); color: var(--accent); }
+  .acc .acc-body { padding: 0 12px 14px; animation: accIn .22s ease; }
+  .acc[open] summary { border-bottom: 1px solid var(--border-soft); }
+  @keyframes accIn { from { opacity: 0; transform: translateY(-4px); } to { opacity: 1; transform: none; } }
+  @media (prefers-reduced-motion: reduce) {
+    .acc .acc-body { animation: none; }
+    .acc .acc-chev { transition: none; }
+  }
+
+  /* Título de sección catálogo */
+  .cat-head { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin: 26px 0 12px; padding-top: 22px; border-top: 1px solid var(--border-soft); }
+  .cat-head h2 { font-size: 1.02rem; font-weight: 700; letter-spacing: -.01em; }
+  .cat-head .cat-sub { font-size: .74rem; color: var(--muted); }
 
   .oc-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 16px; box-shadow: var(--shadow); }
   .oc-card.small { padding: 12px 14px; margin-bottom: 12px; }
@@ -237,8 +267,14 @@
   .var-chip { display: inline-block; background: var(--bg-soft); border: 1px solid var(--border); border-radius: 6px; padding: 1px 7px; font-size: .68rem; color: var(--muted); white-space: nowrap; }
 
   @media (max-width: 760px) {
-    .tabs { overflow-x: auto; flex-wrap: nowrap; -webkit-overflow-scrolling: touch; }
-    .tab { white-space: nowrap; padding: 10px 13px; }
+    .oc-section { margin-top: 16px; }
+    .oc-head h2 { font-size: .95rem; }
+    .oc-strip { gap: 5px; }
+    .strip-pill { font-size: .7rem; padding: 5px 9px; min-height: 30px; }
+    .acc summary { padding: 12px 14px; font-size: .86rem; min-height: 48px; }
+    .acc .acc-badge { display: none; }  /* móvil: título limpio, datos dentro */
+    .acc .acc-body { padding: 0 8px 12px; }
+    .cat-head { margin: 20px 0 10px; padding-top: 18px; }
     .health-summary { gap: 6px; }
     .hs-card { min-width: calc(50% - 6px); }
 
@@ -279,6 +315,101 @@
 </div>
 
 <div class="wrap">
+  <!-- ═══ Estado OpenCode — PRIMERO, siempre visible ═══ -->
+  <section class="oc-section" id="oc" aria-label="Estado OpenCode">
+    <div class="oc-head">
+      <h2>🩺 Estado OpenCode</h2>
+      <span class="oc-pulse"><span class="dotl"></span> check diario 05:45</span>
+      <span class="oc-sub">disponibilidad, límites y evolución de los modelos</span>
+    </div>
+
+    <!-- Pill-strip: pulso de un vistazo, siempre visible -->
+    <div class="oc-strip" id="oc-strip" role="status" aria-live="polite">
+      <span class="strip-pill ok">? ✅</span>
+      <span class="strip-pill down">? ⚠️</span>
+      <span class="strip-pill free">? 🌱</span>
+      <span class="strip-pill check">check <b>—</b></span>
+    </div>
+
+    <!-- Acordeón 1: Salud (abierto por defecto) -->
+    <details class="acc" id="acc-health" open>
+      <summary aria-expanded="true">
+        <span class="acc-ico">🟢</span>
+        <span class="acc-title">Salud</span>
+        <span class="acc-badge" id="acc-badge-health">cargando…</span>
+        <span class="acc-chev" aria-hidden="true">▼</span>
+      </summary>
+      <div class="acc-body">
+        <div class="health-summary" id="health-summary">
+          <div class="hs-card skel-row" style="height:52px"></div>
+          <div class="hs-card skel-row" style="height:52px"></div>
+          <div class="hs-card skel-row" style="height:52px"></div>
+          <div class="hs-card skel-row" style="height:52px"></div>
+        </div>
+        <div class="table-scroll">
+          <table class="health" id="health-tbl">
+            <thead>
+              <tr><th>Modelo</th><th>Estado hoy</th><th>Racha</th><th>Últimos días</th></tr>
+            </thead>
+            <tbody id="health-tbody"><tr><td colspan="4" class="tl-empty">Cargando…</td></tr></tbody>
+          </table>
+        </div>
+        <div class="legend">
+          <span><span class="hdot ok"></span> operativo</span>
+          <span><span class="hdot down"></span> caído / error proveedor</span>
+          <span><span class="hdot unk"></span> no responde al probe</span>
+          <span><span class="hdot na"></span> no accesible con tu plan</span>
+          <span><span class="hdot free"></span> free (no se prueba, cuota)</span>
+        </div>
+      </div>
+    </details>
+
+    <!-- Acordeón 2: Límites y precios -->
+    <details class="acc" id="acc-limits">
+      <summary aria-expanded="false">
+        <span class="acc-ico">💰</span>
+        <span class="acc-title">Límites y precios</span>
+        <span class="acc-badge" id="acc-badge-limits">tiers, requests y $/1M tokens</span>
+        <span class="acc-chev" aria-hidden="true">▼</span>
+      </summary>
+      <div class="acc-body">
+        <div id="limits-body"><div class="skel on"><div class="skel-row"></div><div class="skel-row"></div><div class="skel-row"></div></div></div>
+      </div>
+    </details>
+
+    <!-- Acordeón 3: Evolución -->
+    <details class="acc" id="acc-history">
+      <summary aria-expanded="false">
+        <span class="acc-ico">📈</span>
+        <span class="acc-title">Evolución</span>
+        <span class="acc-badge" id="acc-badge-history">altas/bajas y serie temporal</span>
+        <span class="acc-chev" aria-hidden="true">▼</span>
+      </summary>
+      <div class="acc-body">
+        <div id="history-body"><div class="skel on"><div class="skel-row"></div><div class="skel-row"></div></div></div>
+      </div>
+    </details>
+
+    <!-- Acordeón 4: Cambios -->
+    <details class="acc" id="acc-changes">
+      <summary aria-expanded="false">
+        <span class="acc-ico">📜</span>
+        <span class="acc-title">Cambios</span>
+        <span class="acc-badge" id="acc-badge-changes">changelog manual + auto</span>
+        <span class="acc-chev" aria-hidden="true">▼</span>
+      </summary>
+      <div class="acc-body">
+        <div id="changes-body"><div class="skel on"><div class="skel-row"></div><div class="skel-row"></div><div class="skel-row"></div></div></div>
+      </div>
+    </details>
+  </section>
+
+  <!-- ═══ Catálogo de modelos ═══ -->
+  <div class="cat-head">
+    <h2>🗂️ Catálogo de modelos</h2>
+    <span class="cat-sub">specs, contexto, reasoning, tools y benchmarks — toca una fila para expandir</span>
+  </div>
+
   <div class="filters" id="filters">
     <div class="f-group">
       <label>Provider</label>
@@ -335,64 +466,6 @@
         </thead>
         <tbody id="tbody"></tbody>
       </table>
-    </div>
-  </div>
-
-  <div class="oc-section" id="oc">
-    <div class="oc-head">
-      <h2>🩺 Estado OpenCode</h2>
-      <span class="oc-pulse"><span class="dotl"></span> check diario 05:45 · <span id="oc-updated">—</span></span>
-      <span class="oc-sub" id="oc-sub">disponibilidad, límites y evolución de los modelos</span>
-    </div>
-    <div class="tabs" role="tablist">
-      <button class="tab on" data-tab="health" role="tab">🟢 Salud</button>
-      <button class="tab" data-tab="limits" role="tab">💰 Límites y precios</button>
-      <button class="tab" data-tab="history" role="tab">📈 Evolución</button>
-      <button class="tab" data-tab="changes" role="tab">📜 Cambios</button>
-    </div>
-
-    <div class="tab-panel on" id="panel-health">
-      <div class="oc-card">
-        <div class="health-summary" id="health-summary">
-          <div class="hs-card skel-row" style="height:52px"></div>
-          <div class="hs-card skel-row" style="height:52px"></div>
-          <div class="hs-card skel-row" style="height:52px"></div>
-          <div class="hs-card skel-row" style="height:52px"></div>
-        </div>
-        <div class="table-scroll">
-          <table class="health" id="health-tbl">
-            <thead>
-              <tr><th>Modelo</th><th>Estado hoy</th><th>Racha</th><th>Últimos días</th></tr>
-            </thead>
-            <tbody id="health-tbody"><tr><td colspan="4" class="tl-empty">Cargando…</td></tr></tbody>
-          </table>
-        </div>
-        <div class="legend">
-          <span><span class="hdot ok"></span> operativo</span>
-          <span><span class="hdot down"></span> caído / error proveedor</span>
-          <span><span class="hdot unk"></span> no responde al probe</span>
-          <span><span class="hdot na"></span> no accesible con tu plan</span>
-          <span><span class="hdot free"></span> free (no se prueba, cuota)</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="tab-panel" id="panel-limits">
-      <div class="oc-card">
-        <div id="limits-body"><div class="skel on"><div class="skel-row"></div><div class="skel-row"></div><div class="skel-row"></div></div></div>
-      </div>
-    </div>
-
-    <div class="tab-panel" id="panel-history">
-      <div class="oc-card">
-        <div id="history-body"><div class="skel on"><div class="skel-row"></div><div class="skel-row"></div></div></div>
-      </div>
-    </div>
-
-    <div class="tab-panel" id="panel-changes">
-      <div class="oc-card">
-        <div id="changes-body"><div class="skel on"><div class="skel-row"></div><div class="skel-row"></div><div class="skel-row"></div></div></div>
-      </div>
     </div>
   </div>
 
@@ -619,11 +692,38 @@ async function loadOC() {
   ST.status = status; ST.hist = hist; ST.catalog = catalog;
   ST.limits = limits; ST.chAuto = chAuto; ST.chManual = chManual;
   renderHealth(); renderLimits(); renderHistory(); renderChanges();
+  renderStrip();
   if (status) {
-    document.getElementById('oc-updated').textContent = 'último check ' + (status.snapshot || '—');
+    document.getElementById('acc-badge-health').textContent =
+      (status.counts ? (status.counts.ok ?? 0) + ' operativos de ' + Object.keys(status.models || {}).length : '') +
+      ' · check ' + (status.snapshot || '—');
   } else {
-    document.getElementById('oc-updated').textContent = 'sin datos aún';
+    document.getElementById('acc-badge-health').textContent = 'sin datos aún';
   }
+}
+
+// Pill-strip de resumen siempre visible
+function renderStrip() {
+  const strip = document.getElementById('oc-strip');
+  if (!ST.status) {
+    strip.innerHTML =
+      '<span class="strip-pill ok">? ✅</span>' +
+      '<span class="strip-pill down">? ⚠️</span>' +
+      '<span class="strip-pill free">? 🌱</span>' +
+      '<span class="strip-pill check">check <b>—</b></span>';
+    return;
+  }
+  const c = ST.status.counts || {};
+  const snap = ST.status.snapshot || '—';
+  // "17/8" → día/mes del snapshot
+  let snapShort = snap;
+  const m = /^(\d{4})-(\d{2})-(\d{2})/.exec(snap);
+  if (m) snapShort = parseInt(m[3], 10) + '/' + parseInt(m[2], 10);
+  strip.innerHTML =
+    '<span class="strip-pill ok">' + (c.ok ?? 0) + ' ✅</span>' +
+    '<span class="strip-pill down">' + (c.down ?? 0) + ' ⚠️</span>' +
+    '<span class="strip-pill free">' + (c.free ?? 0) + ' 🌱</span>' +
+    '<span class="strip-pill check">check <b>' + snapShort + '</b></span>';
 }
 
 const ST_ICON = { ok: '✅', down: '⚠️', unk: '❓', na: 'ℹ️', free: '🌱' };
@@ -830,13 +930,12 @@ function renderChanges() {
   el.innerHTML = h;
 }
 
-// Tabs
-function switchTab(name) {
-  document.querySelectorAll('.tab').forEach(t => t.classList.toggle('on', t.dataset.tab === name));
-  document.querySelectorAll('.tab-panel').forEach(p => p.classList.toggle('on', p.id === 'panel-' + name));
-}
-document.querySelectorAll('.tab').forEach(t => {
-  t.addEventListener('click', () => switchTab(t.dataset.tab));
+// Acordeones: sincronizar aria-expanded (details es accesible de nativo: teclado, lector de pantalla)
+document.querySelectorAll('details.acc').forEach(d => {
+  const sum = d.querySelector('summary');
+  const sync = () => sum.setAttribute('aria-expanded', d.open ? 'true' : 'false');
+  d.addEventListener('toggle', sync);
+  sync();
 });
 
 loadOC();
