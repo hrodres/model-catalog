@@ -2,6 +2,11 @@
   "note": "Changelog manual — eventos de OpenCode (precios, cuotas, disponibilidad) anotados a mano. Los cambios de estado automáticos van en changelog-auto.json.",
   "events": [
     {
+      "date": "2026-08-18",
+      "text": "OpenCode Go sube cuota de DeepSeek V4 Flash: $15→$30/mes de uso y 3.800→7.600 req/5h (duplica el recorte del 16/8). Detectado en docs oficiales al responder consulta de tiers.",
+      "source": "https://opencode.ai/docs/es/go"
+    },
+    {
       "date": "2026-08-16",
       "text": "OpenCode Go recorta límites: Flash pasa a $15/mes de uso (antes $60) y 3.800 req/5h (antes ~31.650, -88%). Nuevas franjas peak/off-peak (peak 01-04 y 06-10 UTC).",
       "source": "https://opencode.ai/docs/es/go"
