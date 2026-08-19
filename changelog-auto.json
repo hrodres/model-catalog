@@ -7,6 +7,86 @@
   {
    "date": "2026-08-18",
    "text": "qwen3.7-max: down → ok"
+  },
+  {
+   "date": "2026-08-19",
+   "text": "deepseek-v4-flash: ok → down"
+  },
+  {
+   "date": "2026-08-19",
+   "text": "deepseek-v4-pro: ok → down"
+  },
+  {
+   "date": "2026-08-19",
+   "text": "glm-5: ok → down"
+  },
+  {
+   "date": "2026-08-19",
+   "text": "glm-5.1: ok → down"
+  },
+  {
+   "date": "2026-08-19",
+   "text": "glm-5.2: ok → down"
+  },
+  {
+   "date": "2026-08-19",
+   "text": "glm-5.3: ok → down"
+  },
+  {
+   "date": "2026-08-19",
+   "text": "gpt-5.6-luna: ok → down"
+  },
+  {
+   "date": "2026-08-19",
+   "text": "hy3: ok → down"
+  },
+  {
+   "date": "2026-08-19",
+   "text": "hy3-preview: unk → down"
+  },
+  {
+   "date": "2026-08-19",
+   "text": "kimi-k2.7-code: ok → down"
+  },
+  {
+   "date": "2026-08-19",
+   "text": "kimi-k3: ok → down"
+  },
+  {
+   "date": "2026-08-19",
+   "text": "mimo-v2-omni: unk → down"
+  },
+  {
+   "date": "2026-08-19",
+   "text": "mimo-v2-pro: unk → down"
+  },
+  {
+   "date": "2026-08-19",
+   "text": "mimo-v2.5: ok → down"
+  },
+  {
+   "date": "2026-08-19",
+   "text": "mimo-v2.5-pro: ok → down"
+  },
+  {
+   "date": "2026-08-19",
+   "text": "minimax-m2.5: ok → down"
+  },
+  {
+   "date": "2026-08-19",
+   "text": "minimax-m2.7: ok → down"
+  },
+  {
+   "date": "2026-08-19",
+   "text": "minimax-m3: ok → down"
+  },
+  {
+   "date": "2026-08-19",
+   "text": "qwen3.6-plus: ok → down"
+  },
+  {
+   "date": "2026-08-19",
+   "text": "qwen3.7-max: ok → down"
   }
  ]
 }
