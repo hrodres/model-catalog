@@ -294,6 +294,61 @@
     table.lim-tbl td:first-child { flex-direction: column; align-items: flex-start; border-bottom: 1px solid var(--border-soft); margin-bottom: 5px; padding-bottom: 8px; }
     table.lim-tbl td:first-child::before { content: none; }
   }
+
+  /* ═══ F1 · Ficha de detalle (overlay + deep-link #/model/{id}) ═══ */
+  /* Enlace del nombre en la tabla → abre la ficha */
+  .m-name a.m-link { color: inherit; text-decoration: none; }
+  .m-name a.m-link:hover { color: var(--accent); text-decoration: underline; }
+  .m-name a.m-link:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 5px; }
+  /* El chevron pasa a ser <button> real (benchmarks siguen expandiéndose) */
+  button.expand-hint { background: transparent; padding: 0; font-family: inherit; line-height: 1; cursor: pointer; }
+  button.expand-hint:hover { color: var(--accent); border-color: var(--accent); }
+  button.expand-hint:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+  body.md-open { overflow: hidden; }
+  .md-overlay { position: fixed; inset: 0; z-index: 200; display: flex; align-items: center; justify-content: center; padding: 24px; }
+  .md-overlay[hidden] { display: none; }
+  .md-backdrop { position: absolute; inset: 0; background: rgba(4,6,12,.74); backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); animation: mdFade .18s ease; }
+  .md-panel { position: relative; width: min(780px, 100%); max-height: min(88vh, 920px); display: flex; flex-direction: column; background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: 0 24px 70px rgba(0,0,0,.6); overflow: hidden; animation: mdIn .2s ease; }
+  .md-panel:focus { outline: none; }
+  .md-panel:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
+  @keyframes mdFade { from { opacity: 0; } to { opacity: 1; } }
+  @keyframes mdIn { from { opacity: 0; transform: translateY(10px) scale(.985); } to { opacity: 1; transform: none; } }
+  .md-head { display: flex; align-items: flex-start; gap: 12px; padding: 15px 18px; border-bottom: 1px solid var(--border-soft); background: var(--bg-soft); flex-shrink: 0; }
+  .md-head-txt { flex: 1; min-width: 0; }
+  .md-head h2 { font-size: 1.05rem; font-weight: 700; letter-spacing: -.01em; line-height: 1.3; }
+  .md-head .m-id { margin-top: 3px; word-break: break-all; }
+  .md-close { flex-shrink: 0; width: 38px; height: 38px; border-radius: 10px; background: var(--card); border: 1px solid var(--border); color: var(--muted); font-size: .95rem; cursor: pointer; font-family: inherit; display: flex; align-items: center; justify-content: center; transition: color .15s, border-color .15s; }
+  .md-close:hover { color: var(--text); border-color: var(--accent); }
+  .md-close:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  .md-body { padding: 16px 18px 20px; overflow-y: auto; -webkit-overflow-scrolling: touch; overscroll-behavior: contain; }
+  .md-sec { margin-bottom: 18px; }
+  .md-sec:last-child { margin-bottom: 0; }
+  .md-sec h3 { font-size: .68rem; color: var(--muted); text-transform: uppercase; letter-spacing: .06em; font-weight: 700; margin-bottom: 9px; }
+  .md-desc { font-size: .88rem; line-height: 1.6; }
+  .md-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(168px, 1fr)); gap: 8px; }
+  .md-kv { background: var(--bg-soft); border: 1px solid var(--border-soft); border-radius: 10px; padding: 9px 12px; display: flex; justify-content: space-between; align-items: center; gap: 10px; font-size: .84rem; }
+  .md-kv span { color: var(--muted); font-size: .66rem; text-transform: uppercase; letter-spacing: .05em; font-weight: 600; }
+  .md-kv b { font-weight: 650; font-variant-numeric: tabular-nums; text-align: right; }
+  .md-badges { display: flex; gap: 6px; flex-wrap: wrap; align-items: center; }
+  .md-status { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+  .md-dots { line-height: 2; margin-top: 8px; }
+  .md-note { font-size: .73rem; color: var(--muted); line-height: 1.6; margin-top: 8px; }
+  .md-foot { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; border-top: 1px solid var(--border-soft); padding-top: 13px; margin-top: 4px; }
+  .md-loading { color: var(--muted); font-size: .86rem; padding: 6px 0; }
+
+  @media (max-width: 760px) {
+    .md-overlay { padding: 0; align-items: stretch; }
+    .md-panel { width: 100%; max-height: none; height: 100%; border: none; border-radius: 0; animation: mdSheet .22s ease; }
+    .md-head { padding: 12px 14px; padding-top: max(12px, env(safe-area-inset-top)); position: sticky; top: 0; }
+    .md-body { padding: 14px 14px calc(28px + env(safe-area-inset-bottom)); }
+    .md-close { width: 44px; height: 44px; }
+    .md-grid { grid-template-columns: 1fr 1fr; }
+  }
+  @keyframes mdSheet { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+  @media (prefers-reduced-motion: reduce) {
+    .md-panel, .md-backdrop { animation: none !important; }
+  }
 </style>
 </head>
 <body>
@@ -478,6 +533,21 @@
   </footer>
 </div>
 
+<!-- ═══ F1 · Overlay de ficha de modelo (fuera de .wrap, antes del script) ═══ -->
+<div class="md-overlay" id="md-overlay" hidden>
+  <div class="md-backdrop" id="md-backdrop"></div>
+  <div class="md-panel" id="md-panel" role="dialog" aria-modal="true" aria-labelledby="md-title" tabindex="-1">
+    <div class="md-head">
+      <div class="md-head-txt">
+        <h2 id="md-title">—</h2>
+        <div class="m-id" id="md-subid"></div>
+      </div>
+      <button class="md-close" id="md-close" type="button" aria-label="Cerrar ficha" title="Cerrar (Esc)">✕</button>
+    </div>
+    <div class="md-body" id="md-body"></div>
+  </div>
+</div>
+
 <script>
 let DATA = null;
 let sortKey = 'name', sortDir = 1;
@@ -557,8 +627,11 @@ function render() {
     const link = m.md_url ? `<a class="md-link" href="${m.md_url}" target="_blank" rel="noopener">↗ models.dev</a>` : '<span class="no">—</span>';
     const displayName = m.providers.free && !/\(free\)/i.test(m.name) ? m.name + ' <span class="badge b-free">free</span>' : m.name;
     const hasBench = Object.keys(m.benchmarks || {}).length > 0;
+    const chevron = hasBench
+      ? `<button class="expand-hint" type="button" data-bench-toggle="${m.id}" aria-expanded="false" aria-label="Mostrar u ocultar benchmarks de ${m.name.replace(/"/g,'&quot;')}">▼</button>`
+      : '';
     return `<tr class="model-row" data-id="${m.id}">
-      <td data-label="Modelo"><div class="m-name">${displayName}<span class="expand-hint">${hasBench ? '▼' : ''}</span></div><div class="m-id">${m.id}</div></td>
+      <td data-label="Modelo"><div class="m-name"><a class="m-link" href="#/model/${encodeURIComponent(m.id)}" title="Ver ficha completa">${displayName}</a>${chevron}</div><div class="m-id">${m.id}</div></td>
       <td data-label="Provider">${provBadges(m)}</td>
       <td data-label="Contexto" class="num"><span class="ctx-num">${fmtCtx(m.context)}</span></td>
       <td data-label="Output" class="num">${fmtCtx(m.output)}</td>
@@ -602,6 +675,9 @@ function toggleBench(id) {
   document.querySelectorAll('tr.model-row').forEach(r => {
     r.classList.toggle('expanded', r.dataset.id === id && anyOpen);
   });
+  document.querySelectorAll('button.expand-hint').forEach(b => {
+    b.setAttribute('aria-expanded', (b.dataset.benchToggle === id && anyOpen) ? 'true' : 'false');
+  });
 }
 
 function bindSort() {
@@ -637,8 +713,13 @@ document.querySelectorAll('.preset').forEach(b => {
   });
 });
 document.getElementById('tbody').addEventListener('click', e => {
+  // El chevron sigue expandiendo/plegando los benchmarks in-line
+  const btn = e.target.closest('button.expand-hint');
+  if (btn) { e.preventDefault(); toggleBench(btn.dataset.benchToggle); return; }
+  // Enlaces (ficha, models.dev) navegan por sí mismos
+  if (e.target.closest('a')) return;
   const tr = e.target.closest('tr.model-row');
-  if (tr) toggleBench(tr.dataset.id);
+  if (tr) mdNavigate(tr.dataset.id);
 });
 
 // Catálogo como acordeón: plegado por defecto en móvil (menos scroll)
@@ -673,6 +754,7 @@ fetch('data.json', {cache: 'no-cache'}).then(r => { if (!r.ok) throw new Error('
   document.getElementById('gen').textContent = (d.generated || '').replace('T', ' ').slice(0, 16);
   document.getElementById('mdf').textContent = (d.modelsdev_fetched || '—') + ' (' + (d.modelsdev_count || '?') + ' modelos)';
   render();
+  if (typeof mdOpenId !== 'undefined' && mdOpenId) mdRenderDetail(mdOpenId);  // deep-link abierto antes de los datos
 }).catch(e => {
   document.getElementById('skel').classList.remove('on');
   document.getElementById('tbody').innerHTML =
@@ -708,6 +790,7 @@ async function loadOC() {
   ST.limits = limits; ST.chAuto = chAuto; ST.chManual = chManual;
   renderHealth(); renderLimits(); renderHistory(); renderChanges();
   renderStrip();
+  if (typeof mdOpenId !== 'undefined' && mdOpenId) mdRenderDetail(mdOpenId);  // refresca precios/salud de la ficha abierta
   if (status) {
     document.getElementById('acc-badge-health').textContent =
       (status.counts ? (status.counts.ok ?? 0) + ' operativos de ' + Object.keys(status.models || {}).length : '') +
@@ -956,6 +1039,256 @@ document.querySelectorAll('details.acc').forEach(d => {
 loadOC();
 
 bindSort();
+
+/* ═════════════════════════════════════════════════════════
+   F1 · Ficha de detalle: overlay + router por hash (#/model/{id})
+   Sin librerías, sin History API (compatible con GitHub Pages).
+   ═════════════════════════════════════════════════════════ */
+const mdOverlay = document.getElementById('md-overlay');
+const mdPanel   = document.getElementById('md-panel');
+const mdTitle   = document.getElementById('md-title');
+const mdSubId   = document.getElementById('md-subid');
+const mdBodyEl  = document.getElementById('md-body');
+let mdOpenId = null;       // id actualmente mostrado (null = cerrado)
+let mdLastFocus = null;    // foco a devolver al cerrar
+let mdScrollY = 0;         // scroll del catálogo preservado
+let mdPushedHash = false;  // ¿el hash actual lo empujamos nosotros? (deep-link directo = false)
+
+function esc(s) {
+  return String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+}
+
+/* ── Router: hash → estado ── */
+function mdParseHash() {
+  const m = /^#\/model\/(.+)$/.exec(location.hash || '');
+  if (!m) return null;
+  try { return decodeURIComponent(m[1]); } catch (e) { return m[1]; }
+}
+
+// Navegar a la ficha: cambia el hash (deja huella en el historial → "atrás" cierra)
+function mdNavigate(id) {
+  const target = '#/model/' + encodeURIComponent(id);
+  if (location.hash === target) { mdRoute(); return; }
+  mdPushedHash = true;
+  location.hash = target;
+}
+
+// Cerrar. Si el hash lo empujamos nosotros, "atrás" es lo correcto (mantiene
+// la semántica del botón atrás). Si el usuario entró directo por deep-link,
+// history.back() se saldría del sitio → limpiamos el hash en su lugar.
+function mdCloseRequest() {
+  if (!mdParseHash()) { mdClose(); return; }
+  if (mdPushedHash) { history.back(); return; }
+  mdClose();
+  try {
+    history.replaceState(null, '', location.pathname + location.search);
+  } catch (e) {
+    location.hash = '';
+  }
+}
+
+function mdRoute() {
+  const id = mdParseHash();
+  if (id) mdOpen(id);
+  else { mdPushedHash = false; mdClose(); }
+}
+
+/* ── Apertura / cierre con gestión de foco ── */
+function mdOpen(id) {
+  const wasClosed = mdOpenId === null;
+  if (wasClosed) {
+    mdLastFocus = document.activeElement;
+    mdScrollY = window.scrollY || window.pageYOffset || 0;
+  }
+  mdOpenId = id;
+  mdRenderDetail(id);
+  mdOverlay.hidden = false;
+  document.body.classList.add('md-open');
+  if (wasClosed) mdPanel.focus({ preventScroll: true });
+  else mdPanel.scrollTop = 0;
+  mdBodyEl.scrollTop = 0;
+}
+
+function mdClose() {
+  if (mdOpenId === null) return;
+  const closedId = mdOpenId;
+  mdOpenId = null;
+  mdOverlay.hidden = true;
+  document.body.classList.remove('md-open');
+  const f = mdLastFocus;
+  mdLastFocus = null;
+  // Restaura el scroll del catálogo (los filtros nunca se tocan)
+  window.scrollTo({ top: mdScrollY, behavior: 'auto' });
+  // Devuelve el foco al disparador. Si desapareció (re-render de la tabla),
+  // cae al enlace de ese modelo; nunca dejar el foco dentro del panel oculto.
+  let dest = (f && f !== document.body && document.contains(f) && typeof f.focus === 'function') ? f : null;
+  if (!dest) {
+    dest = document.querySelector('tr.model-row[data-id="' + (window.CSS && CSS.escape ? CSS.escape(closedId) : closedId) + '"] a.m-link');
+  }
+  if (dest) dest.focus({ preventScroll: true });
+  else if (mdPanel.contains(document.activeElement)) {
+    if (document.activeElement.blur) document.activeElement.blur();
+  }
+}
+
+/* ── Datos auxiliares para la ficha ── */
+function mdModelById(id) {
+  if (!DATA || !DATA.models) return null;
+  return DATA.models.find(m => m.id === id) || null;
+}
+
+function kv(label, valueHTML) {
+  return '<div class="md-kv"><span>' + label + '</span><b>' + valueHTML + '</b></div>';
+}
+
+function mdPricingRows(id) {
+  const rows = (ST.limits && ST.limits.pricing) || [];
+  return rows.filter(r => r.model === id);
+}
+
+function mdPricingHTML(id) {
+  const rows = mdPricingRows(id);
+  if (!rows.length) {
+    return '<div class="md-note">Sin datos de precios/límites para este modelo en <code>limits.json</code> (solo se documentan los modelos del plan Go).</div>';
+  }
+  let h = '<div class="table-scroll"><table class="lim-tbl" style="min-width:560px"><thead><tr>' +
+    '<th>Variante</th><th>Tier</th><th class="num">In $/1M</th><th class="num">Out $/1M</th>' +
+    '<th class="num">Cache R</th><th class="num">Req/5h</th><th class="num">Req/sem</th><th class="num">Req/mes</th>' +
+    '</tr></thead><tbody>';
+  rows.forEach(r => {
+    const tierCls = r.tier_usd === 15 ? 'tier15' : 'tier60';
+    h += '<tr>' +
+      '<td data-label="Variante">' + (r.variant ? '<span class="var-chip">' + esc(r.variant) + '</span>' : '—') + '</td>' +
+      '<td data-label="Tier"><span class="tier-badge ' + tierCls + '">$' + esc(r.tier_usd) + '</span></td>' +
+      '<td data-label="In $/1M" class="num">' + money(r.in) + '</td>' +
+      '<td data-label="Out $/1M" class="num">' + money(r.out) + '</td>' +
+      '<td data-label="Cache R" class="num">' + (r.cache_read != null ? '$' + esc(r.cache_read) : '—') + '</td>' +
+      '<td data-label="Req/5h" class="num">' + (r.req_5h != null ? r.req_5h.toLocaleString('es') : '—') + '</td>' +
+      '<td data-label="Req/sem" class="num">' + (r.req_week != null ? r.req_week.toLocaleString('es') : '—') + '</td>' +
+      '<td data-label="Req/mes" class="num">' + (r.req_month != null ? r.req_month.toLocaleString('es') : '—') + '</td>' +
+      '</tr>';
+  });
+  h += '</tbody></table></div>';
+  return h;
+}
+
+function mdHealthHTML(id) {
+  const st = ST.status && ST.status.models ? ST.status.models[id] : null;
+  if (!st) return '<div class="md-note">Este modelo no está en el probe diario de salud.</div>';
+  const days = (ST.hist && ST.hist.days) || {};
+  const lastN = Object.keys(days).sort().slice(-14);
+  const dots = lastN.map(d => {
+    const s = (days[d] || {})[id];
+    return s ? dotFor(s) : '<span class="hdot" style="background:transparent;border:1px dashed #2a3040"></span>';
+  }).join('');
+  let h = '<div class="md-status">' +
+    '<span class="hstatus ' + (ST_CLS[st.status] || '') + '">' + (ST_ICON[st.status] || '❓') + ' ' +
+    esc(ST_LBL[st.status] || st.status) + '</span>' +
+    (st.code != null ? '<span class="var-chip">HTTP ' + esc(st.code) + '</span>' : '') +
+    (st.fails ? '<span class="fails-badge">×' + esc(st.fails) + ' fallos</span>' : '') +
+    '</div>';
+  if (dots) h += '<div class="md-dots">' + dots + '</div>';
+  h += '<div class="md-note">Último check: ' + esc((st.checked_at || '').replace('T', ' ').slice(0, 16)) +
+    ' · últimos ' + lastN.length + ' días registrados</div>';
+  return h;
+}
+
+/* ── Render de la ficha ── */
+function mdRenderDetail(id) {
+  if (!DATA) {
+    mdTitle.textContent = 'Cargando…';
+    mdSubId.textContent = id;
+    mdBodyEl.innerHTML = '<div class="md-loading">Cargando datos del catálogo…</div>';
+    return;
+  }
+  const m = mdModelById(id);
+  if (!m) {
+    mdTitle.textContent = 'Modelo no encontrado';
+    mdSubId.textContent = id;
+    mdBodyEl.innerHTML = '<div class="md-note">No hay ningún modelo con id <code>' + esc(id) +
+      '</code> en el catálogo actual. Puede que haya sido retirado — revisa la sección «Evolución».</div>';
+    return;
+  }
+
+  mdTitle.textContent = m.name;
+  mdSubId.textContent = m.id;
+
+  let h = '';
+
+  // Proveedores + tier
+  h += '<div class="md-sec"><div class="md-badges">' + provBadges(m) +
+    '<span class="badge ' + (m.tier === 'free' ? 'b-free' : 'b-paid') + '">tier: ' + esc(m.tier) + '</span>' +
+    '</div></div>';
+
+  // Descripción
+  if (m.desc) h += '<div class="md-sec"><div class="md-desc">' + esc(m.desc) + '</div></div>';
+
+  // Specs
+  h += '<div class="md-sec"><h3>Especificaciones</h3><div class="md-grid">' +
+    kv('Contexto', fmtCtx(m.context)) +
+    kv('Salida máx.', fmtCtx(m.output)) +
+    kv('Reasoning', cell(m.reasoning)) +
+    kv('Tool call', cell(m.tool_call)) +
+    kv('Structured', cell(m.structured)) +
+    kv('Multimodal', cell(m.multimodal)) +
+    kv('Open weights', cell(m.open_weights)) +
+    kv('Knowledge', m.knowledge ? esc(m.knowledge) : '<span class="unk">—</span>') +
+    kv('Release', m.release ? esc(m.release) : '<span class="unk">—</span>') +
+    kv('Actualizado', m.last_updated ? esc(m.last_updated) : '<span class="unk">—</span>') +
+    '</div></div>';
+
+  // Precios y límites
+  h += '<div class="md-sec"><h3>Precios y límites (plan Go)</h3>' + mdPricingHTML(m.id);
+  if (mdPricingRows(m.id).length && ST.limits) {
+    const g = ST.limits.global_limits || {};
+    h += '<div class="md-note">Límite global de gasto: $' + esc(g.per_5h_usd ?? '—') + '/5h · $' +
+      esc(g.per_week_usd ?? '—') + '/sem · $' + esc(g.per_month_usd ?? '—') + '/mes · ' +
+      verifiedHTML(ST.limits.verified_at) + '</div>';
+  }
+  h += '</div>';
+
+  // Estado de salud
+  h += '<div class="md-sec"><h3>Estado de salud</h3>' + mdHealthHTML(m.id) + '</div>';
+
+  // Benchmarks
+  const nb = Object.keys(m.benchmarks || {}).length;
+  h += '<div class="md-sec"><h3>Benchmarks (models.dev)' + (nb ? ' · ' + nb : '') + '</h3>' +
+    benchHTML(m) + '</div>';
+
+  // Pie: enlace a models.dev
+  h += '<div class="md-foot">' +
+    (m.md_url
+      ? '<a class="md-link" href="' + esc(m.md_url) + '" target="_blank" rel="noopener">↗ Ver en models.dev</a>'
+      : '<span class="md-note">Sin ficha en models.dev (solo catálogo opencode)</span>') +
+    '</div>';
+
+  mdBodyEl.innerHTML = h;
+}
+
+/* ── Eventos del overlay ── */
+document.getElementById('md-close').addEventListener('click', mdCloseRequest);
+document.getElementById('md-backdrop').addEventListener('click', mdCloseRequest);
+document.addEventListener('keydown', e => {
+  if (mdOpenId === null) return;
+  if (e.key === 'Escape') { e.preventDefault(); mdCloseRequest(); return; }
+  // Focus trap sencillo: mantiene el tabulador dentro del panel
+  if (e.key === 'Tab') {
+    const f = mdPanel.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
+    const list = Array.prototype.filter.call(f, el => el.offsetParent !== null || el === mdPanel);
+    if (!list.length) return;
+    const first = list[0], last = list[list.length - 1];
+    if (e.shiftKey && (document.activeElement === first || document.activeElement === mdPanel)) {
+      e.preventDefault(); last.focus();
+    } else if (!e.shiftKey && document.activeElement === last) {
+      e.preventDefault(); first.focus();
+    }
+  }
+});
+
+// Back/forward del navegador y deep-link directo
+window.addEventListener('hashchange', mdRoute);
+mdRoute();  // resuelve el hash inicial (se re-renderiza al llegar los datos)
 </script>
 </body>
 </html>
