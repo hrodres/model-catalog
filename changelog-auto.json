@@ -87,6 +87,10 @@
   {
    "date": "2026-08-19",
    "text": "qwen3.7-max: ok → down"
+  },
+  {
+   "date": "2026-08-20",
+   "text": "muse-spark-1.2: ok → down"
   }
  ]
 }

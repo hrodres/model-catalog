@@ -1,11 +1,11 @@
 {
- "generated": "2026-08-19T03:50:09.230207+00:00",
- "snapshot": "2026-08-19 03:50 UTC",
- "modelsdev_fetched": "2026-08-19 03:50 UTC",
- "modelsdev_count": 352,
+ "generated": "2026-08-20T03:50:15.557715+00:00",
+ "snapshot": "2026-08-20 03:50 UTC",
+ "modelsdev_fetched": "2026-08-20 03:50 UTC",
+ "modelsdev_count": 353,
  "counts": {
-  "total": 72,
-  "go": 26,
+  "total": 73,
+  "go": 28,
   "zen": 62,
   "free": 7,
   "with_modelsdev": 71
@@ -1907,7 +1907,7 @@
   {
    "id": "muse-spark-1.2",
    "providers": {
-    "go": false,
+    "go": true,
     "zen": true,
     "free": false
    },
@@ -1927,6 +1927,30 @@
    "swebench": null,
    "benchmarks": {},
    "md_url": "https://models.dev/models/meta/muse-spark-1.2"
+  },
+  {
+   "id": "muse-spark-1.2-contributor",
+   "providers": {
+    "go": true,
+    "zen": false,
+    "free": false
+   },
+   "tier": "go",
+   "name": "muse-spark-1.2-contributor",
+   "desc": "Sin ficha en models.dev (solo catálogo opencode)",
+   "context": null,
+   "output": null,
+   "reasoning": null,
+   "tool_call": null,
+   "structured": null,
+   "multimodal": null,
+   "open_weights": null,
+   "release": "",
+   "last_updated": "",
+   "knowledge": "",
+   "swebench": null,
+   "benchmarks": {},
+   "md_url": null
   },
   {
    "id": "nemotron-3-ultra-free",

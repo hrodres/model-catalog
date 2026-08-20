@@ -1,222 +1,228 @@
 {
- "generated": "2026-08-19T03:50:25.959842+00:00",
- "snapshot": "2026-08-19",
+ "generated": "2026-08-20T03:50:28.627318+00:00",
+ "snapshot": "2026-08-20",
  "note": "200=ok · 503=caído · 401/403=no accesible con tu plan · free=no probado (cuota)",
  "counts": {
-  "ok": 1,
-  "down": 27,
-  "na": 0,
+  "ok": 0,
+  "down": 28,
+  "na": 1,
   "free": 7
  },
  "models": {
   "deepseek-v4-flash": {
    "code": 429,
    "status": "down",
-   "checked_at": "2026-08-19T03:50:10.632370+00:00",
-   "fails": 1
+   "checked_at": "2026-08-20T03:50:16.819269+00:00",
+   "fails": 2
   },
   "deepseek-v4-pro": {
    "code": 429,
    "status": "down",
-   "checked_at": "2026-08-19T03:50:11.059222+00:00",
-   "fails": 1
+   "checked_at": "2026-08-20T03:50:17.221054+00:00",
+   "fails": 2
   },
   "gemini-3.5-flash-lite": {
    "code": 500,
    "status": "down",
-   "checked_at": "2026-08-19T03:50:11.518974+00:00",
-   "fails": 9
+   "checked_at": "2026-08-20T03:50:17.645785+00:00",
+   "fails": 10
   },
   "glm-5": {
    "code": 429,
    "status": "down",
-   "checked_at": "2026-08-19T03:50:11.925267+00:00",
-   "fails": 1
+   "checked_at": "2026-08-20T03:50:18.053511+00:00",
+   "fails": 2
   },
   "glm-5.1": {
    "code": 429,
    "status": "down",
-   "checked_at": "2026-08-19T03:50:12.376704+00:00",
-   "fails": 1
+   "checked_at": "2026-08-20T03:50:18.445247+00:00",
+   "fails": 2
   },
   "glm-5.2": {
    "code": 429,
    "status": "down",
-   "checked_at": "2026-08-19T03:50:12.849009+00:00",
-   "fails": 1
+   "checked_at": "2026-08-20T03:50:18.838965+00:00",
+   "fails": 2
   },
   "glm-5.3": {
    "code": 429,
    "status": "down",
-   "checked_at": "2026-08-19T03:50:13.377049+00:00",
-   "fails": 1
+   "checked_at": "2026-08-20T03:50:19.281682+00:00",
+   "fails": 2
   },
   "gpt-5.6-luna": {
    "code": 429,
    "status": "down",
-   "checked_at": "2026-08-19T03:50:13.792467+00:00",
-   "fails": 1
+   "checked_at": "2026-08-20T03:50:19.674454+00:00",
+   "fails": 2
   },
   "grok-4.5": {
    "code": 429,
    "status": "down",
-   "checked_at": "2026-08-19T03:50:14.223864+00:00",
-   "fails": 9
+   "checked_at": "2026-08-20T03:50:20.062491+00:00",
+   "fails": 10
   },
   "hy3": {
    "code": 429,
    "status": "down",
-   "checked_at": "2026-08-19T03:50:14.676281+00:00",
-   "fails": 1
+   "checked_at": "2026-08-20T03:50:20.491077+00:00",
+   "fails": 2
   },
   "hy3-preview": {
    "code": 429,
    "status": "down",
-   "checked_at": "2026-08-19T03:50:15.094071+00:00",
-   "fails": 1
+   "checked_at": "2026-08-20T03:50:20.890442+00:00",
+   "fails": 2
   },
   "kimi-k2.5": {
    "code": 429,
    "status": "down",
-   "checked_at": "2026-08-19T03:50:15.551040+00:00",
-   "fails": 5
+   "checked_at": "2026-08-20T03:50:21.317896+00:00",
+   "fails": 6
   },
   "kimi-k2.6": {
    "code": 429,
    "status": "down",
-   "checked_at": "2026-08-19T03:50:15.970992+00:00",
-   "fails": 5
+   "checked_at": "2026-08-20T03:50:21.748827+00:00",
+   "fails": 6
   },
   "kimi-k2.7-code": {
    "code": 429,
    "status": "down",
-   "checked_at": "2026-08-19T03:50:16.434486+00:00",
-   "fails": 1
+   "checked_at": "2026-08-20T03:50:22.188721+00:00",
+   "fails": 2
   },
   "kimi-k3": {
    "code": 429,
    "status": "down",
-   "checked_at": "2026-08-19T03:50:16.896868+00:00",
-   "fails": 1
+   "checked_at": "2026-08-20T03:50:22.604972+00:00",
+   "fails": 2
   },
   "mimo-v2-omni": {
    "code": 429,
    "status": "down",
-   "checked_at": "2026-08-19T03:50:17.313295+00:00",
-   "fails": 1
+   "checked_at": "2026-08-20T03:50:23.022284+00:00",
+   "fails": 2
   },
   "mimo-v2-pro": {
    "code": 429,
    "status": "down",
-   "checked_at": "2026-08-19T03:50:17.783047+00:00",
-   "fails": 1
+   "checked_at": "2026-08-20T03:50:23.684051+00:00",
+   "fails": 2
   },
   "mimo-v2.5": {
    "code": 429,
    "status": "down",
-   "checked_at": "2026-08-19T03:50:18.218514+00:00",
-   "fails": 1
+   "checked_at": "2026-08-20T03:50:24.108540+00:00",
+   "fails": 2
   },
   "mimo-v2.5-pro": {
    "code": 429,
    "status": "down",
-   "checked_at": "2026-08-19T03:50:18.629562+00:00",
-   "fails": 1
+   "checked_at": "2026-08-20T03:50:24.520468+00:00",
+   "fails": 2
   },
   "minimax-m2.5": {
    "code": 429,
    "status": "down",
-   "checked_at": "2026-08-19T03:50:19.069449+00:00",
-   "fails": 1
+   "checked_at": "2026-08-20T03:50:24.932415+00:00",
+   "fails": 2
   },
   "minimax-m2.7": {
    "code": 429,
    "status": "down",
-   "checked_at": "2026-08-19T03:50:19.501287+00:00",
-   "fails": 1
+   "checked_at": "2026-08-20T03:50:25.324117+00:00",
+   "fails": 2
   },
   "minimax-m3": {
    "code": 429,
    "status": "down",
-   "checked_at": "2026-08-19T03:50:19.966867+00:00",
-   "fails": 1
+   "checked_at": "2026-08-20T03:50:25.759264+00:00",
+   "fails": 2
   },
   "muse-spark-1.2": {
-   "code": 200,
-   "status": "ok",
-   "checked_at": "2026-08-19T03:50:23.781180+00:00",
+   "code": 429,
+   "status": "down",
+   "checked_at": "2026-08-20T03:50:26.187322+00:00",
+   "fails": 1
+  },
+  "muse-spark-1.2-contributor": {
+   "code": 403,
+   "status": "na",
+   "checked_at": "2026-08-20T03:50:26.565747+00:00",
    "fails": 0
   },
   "qwen3.5-plus": {
    "code": 429,
    "status": "down",
-   "checked_at": "2026-08-19T03:50:24.217588+00:00",
-   "fails": 9
+   "checked_at": "2026-08-20T03:50:26.962052+00:00",
+   "fails": 10
   },
   "qwen3.6-plus": {
    "code": 429,
    "status": "down",
-   "checked_at": "2026-08-19T03:50:24.646204+00:00",
-   "fails": 1
+   "checked_at": "2026-08-20T03:50:27.378883+00:00",
+   "fails": 2
   },
   "qwen3.7-max": {
    "code": 429,
    "status": "down",
-   "checked_at": "2026-08-19T03:50:25.092983+00:00",
-   "fails": 1
+   "checked_at": "2026-08-20T03:50:27.804803+00:00",
+   "fails": 2
   },
   "qwen3.7-plus": {
    "code": 429,
    "status": "down",
-   "checked_at": "2026-08-19T03:50:25.535698+00:00",
-   "fails": 9
+   "checked_at": "2026-08-20T03:50:28.236090+00:00",
+   "fails": 10
   },
   "qwen3.8-max": {
    "code": 429,
    "status": "down",
-   "checked_at": "2026-08-19T03:50:25.959762+00:00",
-   "fails": 9
+   "checked_at": "2026-08-20T03:50:28.627233+00:00",
+   "fails": 10
   },
   "big-pickle": {
    "code": null,
    "status": "free",
-   "checked_at": "2026-08-19T03:50:25.959823+00:00",
+   "checked_at": "2026-08-20T03:50:28.627297+00:00",
    "fails": 0
   },
   "deepseek-v4-flash-free": {
    "code": null,
    "status": "free",
-   "checked_at": "2026-08-19T03:50:25.959827+00:00",
+   "checked_at": "2026-08-20T03:50:28.627302+00:00",
    "fails": 0
   },
   "hy3-free": {
    "code": null,
    "status": "free",
-   "checked_at": "2026-08-19T03:50:25.959829+00:00",
+   "checked_at": "2026-08-20T03:50:28.627304+00:00",
    "fails": 0
   },
   "laguna-s-2.1-free": {
    "code": null,
    "status": "free",
-   "checked_at": "2026-08-19T03:50:25.959831+00:00",
+   "checked_at": "2026-08-20T03:50:28.627306+00:00",
    "fails": 0
   },
   "mimo-v2.5-free": {
    "code": null,
    "status": "free",
-   "checked_at": "2026-08-19T03:50:25.959833+00:00",
+   "checked_at": "2026-08-20T03:50:28.627308+00:00",
    "fails": 0
   },
   "nemotron-3-ultra-free": {
    "code": null,
    "status": "free",
-   "checked_at": "2026-08-19T03:50:25.959834+00:00",
+   "checked_at": "2026-08-20T03:50:28.627310+00:00",
    "fails": 0
   },
   "nemotron-3.5-lightning-free": {
    "code": null,
    "status": "free",
-   "checked_at": "2026-08-19T03:50:25.959836+00:00",
+   "checked_at": "2026-08-20T03:50:28.627312+00:00",
    "fails": 0
   }
  }
