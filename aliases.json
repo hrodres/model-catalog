@@ -1,5 +1,5 @@
 {
- "generated": "2026-08-20T03:50:15.557715+00:00",
+ "generated": "2026-08-21T03:50:15.314424+00:00",
  "aliases": [
   {
    "id": "opencode-zen/big-pickle",
@@ -314,16 +314,16 @@
    "alias": "💰 MiniMax-M3 (Zen)"
   },
   {
-   "id": "opencode-go/muse-spark-1.2",
-   "alias": "🚀 Muse Spark 1.2 (Go)"
-  },
-  {
    "id": "opencode-zen/muse-spark-1.2",
    "alias": "💰 Muse Spark 1.2 (Zen)"
   },
   {
    "id": "opencode-go/muse-spark-1.2-contributor",
    "alias": "🚀 muse-spark-1.2-contributor (Go)"
+  },
+  {
+   "id": "opencode-zen/muse-spark-1.2-contributor-free",
+   "alias": "🌱 muse-spark-1.2-contributor-free (Zen free)"
   },
   {
    "id": "opencode-zen/nemotron-3-ultra-free",
@@ -360,6 +360,10 @@
   {
    "id": "opencode-go/qwen3.8-max",
    "alias": "🚀 Qwen3.8 Max (Go)"
+  },
+  {
+   "id": "opencode-zen/x-preview-f-free",
+   "alias": "🌱 x-preview-f-free (Zen free)"
   }
  ]
 }

@@ -1,13 +1,13 @@
 {
- "generated": "2026-08-20T03:50:15.557715+00:00",
- "snapshot": "2026-08-20 03:50 UTC",
- "modelsdev_fetched": "2026-08-20 03:50 UTC",
+ "generated": "2026-08-21T03:50:15.314424+00:00",
+ "snapshot": "2026-08-21 03:50 UTC",
+ "modelsdev_fetched": "2026-08-21 03:50 UTC",
  "modelsdev_count": 353,
  "counts": {
-  "total": 73,
-  "go": 28,
-  "zen": 62,
-  "free": 7,
+  "total": 75,
+  "go": 27,
+  "zen": 64,
+  "free": 9,
   "with_modelsdev": 71
  },
  "models": [
@@ -1907,7 +1907,7 @@
   {
    "id": "muse-spark-1.2",
    "providers": {
-    "go": true,
+    "go": false,
     "zen": true,
     "free": false
    },
@@ -1937,6 +1937,30 @@
    },
    "tier": "go",
    "name": "muse-spark-1.2-contributor",
+   "desc": "Sin ficha en models.dev (solo catálogo opencode)",
+   "context": null,
+   "output": null,
+   "reasoning": null,
+   "tool_call": null,
+   "structured": null,
+   "multimodal": null,
+   "open_weights": null,
+   "release": "",
+   "last_updated": "",
+   "knowledge": "",
+   "swebench": null,
+   "benchmarks": {},
+   "md_url": null
+  },
+  {
+   "id": "muse-spark-1.2-contributor-free",
+   "providers": {
+    "go": false,
+    "zen": true,
+    "free": true
+   },
+   "tier": "free",
+   "name": "muse-spark-1.2-contributor-free",
    "desc": "Sin ficha en models.dev (solo catálogo opencode)",
    "context": null,
    "output": null,
@@ -2140,6 +2164,30 @@
    "swebench": null,
    "benchmarks": {},
    "md_url": "https://models.dev/models/alibaba/qwen3.8-max"
+  },
+  {
+   "id": "x-preview-f-free",
+   "providers": {
+    "go": false,
+    "zen": true,
+    "free": true
+   },
+   "tier": "free",
+   "name": "x-preview-f-free",
+   "desc": "Sin ficha en models.dev (solo catálogo opencode)",
+   "context": null,
+   "output": null,
+   "reasoning": null,
+   "tool_call": null,
+   "structured": null,
+   "multimodal": null,
+   "open_weights": null,
+   "release": "",
+   "last_updated": "",
+   "knowledge": "",
+   "swebench": null,
+   "benchmarks": {},
+   "md_url": null
   }
  ]
 }
