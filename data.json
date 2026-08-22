@@ -1,14 +1,14 @@
 {
- "generated": "2026-08-21T03:50:15.314424+00:00",
- "snapshot": "2026-08-21 03:50 UTC",
- "modelsdev_fetched": "2026-08-21 03:50 UTC",
- "modelsdev_count": 353,
+ "generated": "2026-08-22T03:50:14.993886+00:00",
+ "snapshot": "2026-08-22 03:50 UTC",
+ "modelsdev_fetched": "2026-08-22 03:50 UTC",
+ "modelsdev_count": 355,
  "counts": {
-  "total": 75,
-  "go": 27,
+  "total": 77,
+  "go": 29,
   "zen": 64,
   "free": 9,
-  "with_modelsdev": 71
+  "with_modelsdev": 72
  },
  "models": [
   {
@@ -422,6 +422,30 @@
     "SWE-Bench Verified": 79
    },
    "md_url": "https://models.dev/models/deepseek/deepseek-v4-flash"
+  },
+  {
+   "id": "deepseek-v4-flash-vision-exp",
+   "providers": {
+    "go": true,
+    "zen": false,
+    "free": false
+   },
+   "tier": "go",
+   "name": "DeepSeek V4 Flash Vision Exp",
+   "desc": "Experimental multimodal DeepSeek V4 Flash model for image understanding, coding, and agentic work",
+   "context": 1000000,
+   "output": 384000,
+   "reasoning": true,
+   "tool_call": true,
+   "structured": true,
+   "multimodal": true,
+   "open_weights": false,
+   "release": "2026-08-21",
+   "last_updated": "2026-08-21",
+   "knowledge": "",
+   "swebench": null,
+   "benchmarks": {},
+   "md_url": "https://models.dev/models/deepseek/deepseek-v4-flash-vision-exp"
   },
   {
    "id": "deepseek-v4-pro",
@@ -2034,6 +2058,30 @@
    "swebench": null,
    "benchmarks": {},
    "md_url": "https://models.dev/models/nvidia/nemotron-3.5-lightning"
+  },
+  {
+   "id": "ox-alpha-free",
+   "providers": {
+    "go": true,
+    "zen": false,
+    "free": false
+   },
+   "tier": "go",
+   "name": "ox-alpha-free",
+   "desc": "Sin ficha en models.dev (solo catálogo opencode)",
+   "context": null,
+   "output": null,
+   "reasoning": null,
+   "tool_call": null,
+   "structured": null,
+   "multimodal": null,
+   "open_weights": null,
+   "release": "",
+   "last_updated": "",
+   "knowledge": "",
+   "swebench": null,
+   "benchmarks": {},
+   "md_url": null
   },
   {
    "id": "qwen3.5-plus",

@@ -1,5 +1,5 @@
 {
- "generated": "2026-08-21T03:50:15.314424+00:00",
+ "generated": "2026-08-22T03:50:14.993886+00:00",
  "aliases": [
   {
    "id": "opencode-zen/big-pickle",
@@ -60,6 +60,10 @@
   {
    "id": "opencode-zen/deepseek-v4-flash-free",
    "alias": "🌱 DeepSeek V4 Flash (Zen free)"
+  },
+  {
+   "id": "opencode-go/deepseek-v4-flash-vision-exp",
+   "alias": "🚀 DeepSeek V4 Flash Vision Exp (Go)"
   },
   {
    "id": "opencode-go/deepseek-v4-pro",
@@ -332,6 +336,10 @@
   {
    "id": "opencode-zen/nemotron-3.5-lightning-free",
    "alias": "🌱 Nemotron 3.5 Lightning 30B A3B (Zen free)"
+  },
+  {
+   "id": "opencode-go/ox-alpha-free",
+   "alias": "🚀 ox-alpha-free (Go)"
   },
   {
    "id": "opencode-go/qwen3.5-plus",
