@@ -95,6 +95,10 @@
   {
    "date": "2026-08-21",
    "text": "muse-spark-1.2: down → ok"
+  },
+  {
+   "date": "2026-08-23",
+   "text": "gemini-3.5-flash-lite: down → unk"
   }
  ]
 }
