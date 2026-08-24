@@ -29,6 +29,8 @@ Catálogo de modelos del gateway OpenClaw con **tres proveedores**: **opencode-g
 
 ## Regenerar datos
 
+Los scripts viven en la raíz del workspace (fuera del repo); ejecuta los comandos desde ahí:
+
 ```bash
 python3 scripts/build-model-catalog.py   # → data.json + aliases.json + modelsdev.json
 python3 scripts/check-model-health.py    # → status*.json + health-state.json + changelogs
