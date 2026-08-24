@@ -89,16 +89,24 @@
   /* ── Tables ── */
   .table-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)}
   .table-scroll{overflow-x:auto}
-  table{width:100%;border-collapse:collapse;font-size:.87rem;min-width:760px}
+  table{width:100%;border-collapse:collapse;font-size:.87rem;min-width:0}
+  #tbl-cat{min-width:760px}
+  #tbl-price{min-width:520px}
+  table.health{min-width:520px}
   thead th{text-align:left;padding:11px 14px;color:var(--muted);font-size:.7rem;text-transform:uppercase;letter-spacing:.05em;border-bottom:1px solid var(--border);cursor:pointer;user-select:none;white-space:nowrap;background:var(--bg-soft)}
   thead th:hover{color:var(--accent)}
   thead th .ar{font-size:.66rem;margin-left:3px;opacity:.8}
   tbody td{padding:10px 14px;border-bottom:1px solid var(--border-soft);vertical-align:middle}
   tbody tr:last-child td{border-bottom:none}
   tbody tr:hover{background:var(--card-hover)}
+  tr.model-row{cursor:pointer}
   .num{font-variant-numeric:tabular-nums;text-align:right}
   .m-name{font-weight:650}
   .m-id{color:var(--muted);font-size:.72rem;font-family:ui-monospace,monospace;margin-top:2px}
+  a.m-link{color:var(--text)}
+  a.m-link:hover{color:var(--accent);text-decoration:underline}
+  .btn-ficha{background:var(--accent-soft);color:var(--accent);border:1px solid rgba(109,155,255,.35);border-radius:8px;padding:4px 10px;font-size:.72rem;font-weight:700;cursor:pointer;font-family:inherit;transition:all .15s;white-space:nowrap}
+  .btn-ficha:hover{background:var(--accent);color:#fff}
   .yes{color:var(--green);font-weight:700}
   .no{color:#6b7b9e}
 
@@ -227,7 +235,20 @@
     .bottomnav button .ico{font-size:1.15rem}
     .bottomnav button.active{color:var(--accent)}
     .kpi .kpi-val{font-size:1.45rem}
-    table{min-width:680px}
+    /* Tablas → tarjetas apiladas (sin scroll horizontal) */
+    .table-card{border:none;background:transparent;box-shadow:none;overflow:visible}
+    .table-scroll{overflow:visible}
+    table,thead,tbody,tr,td{display:block;width:100%}
+    thead{display:none}
+    table{min-width:0!important}
+    tbody tr{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);margin-bottom:8px;padding:6px 4px;box-shadow:var(--shadow)}
+    tbody td{border:none;padding:3px 12px;display:flex;justify-content:space-between;align-items:center;min-height:26px;gap:14px}
+    tbody td::before{content:attr(data-label);color:var(--muted);font-size:.66rem;text-transform:uppercase;letter-spacing:.05em;font-weight:600;flex-shrink:0}
+    tbody td.num{text-align:right}
+    td[data-label="Modelo"]{flex-direction:column;align-items:flex-start;border-bottom:1px solid var(--border-soft);margin-bottom:4px;padding-top:8px;padding-bottom:8px}
+    td[data-label="Modelo"]::before{content:none}
+    td[data-label="Historial (14 días)"]{flex-wrap:wrap;justify-content:space-between}
+    td[data-label="Historial (14 días)"] .dots{white-space:normal}
     .f-group{width:100%}
     input[type=search],select{width:100%;min-height:44px}
     .checks{width:100%;gap:10px 18px}
@@ -563,16 +584,17 @@ function render() {
       : '<span class="no">—</span>';
     let displayName = esc(m.name);
     if (m.providers.free && !/\(free\)/i.test(m.name)) displayName += ' <span class="pb free">free</span>';
+    const fichaBtn = '<button type="button" class="btn-ficha" data-open="' + esc(m.id) + '" aria-label="Ver ficha de ' + esc(m.name) + '">📄 ficha</button>';
     return '<tr class="model-row" data-id="' + esc(m.id) + '" tabindex="0" role="button" aria-label="Ver ficha de ' + esc(m.name) + '">' +
-      '<td><div class="m-name"><a class="m-link" href="#/model/' + encodeURIComponent(m.id) + '" title="Ver ficha completa">' + displayName + '</a></div><div class="m-id">' + esc(m.id) + '</div></td>' +
-      '<td>' + provBadges(m) + '</td>' +
-      '<td class="num">' + fmtCtx(m.context) + '</td>' +
-      '<td class="num">' + fmtCtx(m.output) + '</td>' +
-      '<td class="num">' + cell(m.reasoning) + '</td>' +
-      '<td class="num">' + cell(m.tool_call) + '</td>' +
-      '<td class="num">' + (m.swebench != null ? '<b>' + esc(m.swebench) + '</b>' : '<span class="no">—</span>') + '</td>' +
-      '<td class="num">' + moneyTag(m.or_price ? m.or_price.in : null) + '</td>' +
-      '<td>' + link + '</td>' +
+      '<td data-label="Modelo"><div class="m-name"><a class="m-link" href="#/model/' + encodeURIComponent(m.id) + '" title="Ver ficha completa">' + displayName + '</a></div><div class="m-id">' + esc(m.id) + '</div></td>' +
+      '<td data-label="Disponible en">' + provBadges(m) + '</td>' +
+      '<td data-label="Contexto" class="num">' + fmtCtx(m.context) + '</td>' +
+      '<td data-label="Output" class="num">' + fmtCtx(m.output) + '</td>' +
+      '<td data-label="Reasoning" class="num">' + cell(m.reasoning) + '</td>' +
+      '<td data-label="Tools" class="num">' + cell(m.tool_call) + '</td>' +
+      '<td data-label="SWE-Bench" class="num">' + (m.swebench != null ? '<b>' + esc(m.swebench) + '</b>' : '<span class="no">—</span>') + '</td>' +
+      '<td data-label="OR $/1M in" class="num">' + moneyTag(m.or_price ? m.or_price.in : null) + '</td>' +
+      '<td data-label="Ficha">' + fichaBtn + ' ' + link + '</td>' +
       '</tr>';
   }).join('');
 
@@ -618,9 +640,9 @@ function renderSummary() {
   const stats = DATA.status_badges ? DATA.status_badges.providers : null;
   const grid = $('#prov-grid');
   const mk = [
-    { key: 'go', cls: 'go', label: 'OpenCode Go', models: c.go || 0,
+    { key: 'opencode-go', cls: 'go', label: 'OpenCode Go', models: c.go || 0,
       note: 'Suscripción $10/mes · coste marginal 0. 429 = cuota, no caída.' },
-    { key: 'zen', cls: 'zen', label: 'OpenCode Zen', models: c.zen || 0,
+    { key: 'opencode-zen', cls: 'zen', label: 'OpenCode Zen', models: c.zen || 0,
       note: 'Créditos + free (pool común). Free no se prueba (cuota global).' },
     { key: 'openrouter', cls: 'or', label: 'OpenRouter', models: c.openrouter || 0,
       note: 'Backend 100% independiente, más barato. Precios reales de API.' }
@@ -713,9 +735,9 @@ function renderPrices() {
       return String(va).localeCompare(String(vb)) * d;
     });
     $('#tbody-price').innerHTML = sorted.map(r =>
-      '<tr><td><div class="m-name">' + esc(r.m.name) + '</div><div class="m-id">' + esc(r.id) + '</div></td>' +
-      '<td>' + r.gohtml + '</td><td class="num">' + r.zenhtml + '</td>' +
-      '<td class="num">' + r.orhtml + '</td><td class="num">' + fmtCtx(r.ctx) + '</td></tr>'
+      '<tr><td data-label="Modelo"><div class="m-name">' + esc(r.m.name) + '</div><div class="m-id">' + esc(r.id) + '</div></td>' +
+      '<td data-label="Go">' + r.gohtml + '</td><td data-label="Zen in (off→peak)" class="num">' + r.zenhtml + '</td>' +
+      '<td data-label="OpenRouter in/out" class="num">' + r.orhtml + '</td><td data-label="Contexto" class="num">' + fmtCtx(r.ctx) + '</td></tr>'
     ).join('');
   };
   document.querySelectorAll('#tbl-price thead th[data-k]').forEach(th => {
@@ -844,10 +866,10 @@ function renderHealth() {
     }).join('');
     const fails = e.fails ? '<span class="fails-badge">×' + e.fails + '</span>' : '';
     return '<tr>' +
-      '<td><span class="m-name">' + esc(shortId(id)) + '</span><div class="m-id">' + esc(id) + '</div></td>' +
-      '<td><span class="hstatus ' + (ST_CLS[e.status] || '') + '">' + (ST_ICON[e.status] || '❓') + ' ' + (ST_LBL[e.status] || e.status) + '</span></td>' +
-      '<td>' + fails + '</td>' +
-      '<td class="dots">' + dots + '</td></tr>';
+      '<td data-label="Modelo"><span class="m-name">' + esc(shortId(id)) + '</span><div class="m-id">' + esc(id) + '</div></td>' +
+      '<td data-label="Estado"><span class="hstatus ' + (ST_CLS[e.status] || '') + '">' + (ST_ICON[e.status] || '❓') + ' ' + (ST_LBL[e.status] || e.status) + '</span></td>' +
+      '<td data-label="Fallos">' + fails + '</td>' +
+      '<td data-label="Historial (14 días)" class="dots">' + dots + '</td></tr>';
   }).join('');
 }
 
@@ -879,9 +901,9 @@ function renderLimits() {
       h += '<tr><td data-label="Modelo"><span class="m-name">' + esc(r.name || r.model) + '</span></td>' +
         '<td data-label="Variante">' + (r.variant ? '<span class="var-chip">' + esc(r.variant) + '</span>' : '—') + '</td>' +
         '<td data-label="Tier"><span class="tier">$' + esc(r.tier_usd) + '</span></td>' +
-        '<td class="num">' + money(r.in) + '</td><td class="num">' + money(r.out) + '</td>' +
-        '<td class="num">' + (r.req_week != null ? r.req_week.toLocaleString('es') : '—') + '</td>' +
-        '<td class="num">' + (r.req_month != null ? r.req_month.toLocaleString('es') : '—') + '</td></tr>';
+        '<td data-label="In $/1M" class="num">' + money(r.in) + '</td><td data-label="Out $/1M" class="num">' + money(r.out) + '</td>' +
+        '<td data-label="Req/sem" class="num">' + (r.req_week != null ? r.req_week.toLocaleString('es') : '—') + '</td>' +
+        '<td data-label="Req/mes" class="num">' + (r.req_month != null ? r.req_month.toLocaleString('es') : '—') + '</td></tr>';
     });
     h += '</tbody></table></div>';
   }
@@ -1047,9 +1069,9 @@ function mdPricingHTML(id) {
   rows.forEach(r => {
     h += '<tr><td data-label="Variante">' + (r.variant ? '<span class="var-chip">' + esc(r.variant) + '</span>' : '—') + '</td>' +
       '<td data-label="Tier"><span class="tier">$' + esc(r.tier_usd) + '</span></td>' +
-      '<td class="num">' + money(r.in) + '</td><td class="num">' + money(r.out) + '</td>' +
-      '<td class="num">' + (r.req_week != null ? r.req_week.toLocaleString('es') : '—') + '</td>' +
-      '<td class="num">' + (r.req_month != null ? r.req_month.toLocaleString('es') : '—') + '</td></tr>';
+      '<td data-label="In $/1M" class="num">' + money(r.in) + '</td><td data-label="Out $/1M" class="num">' + money(r.out) + '</td>' +
+      '<td data-label="Req/sem" class="num">' + (r.req_week != null ? r.req_week.toLocaleString('es') : '—') + '</td>' +
+      '<td data-label="Req/mes" class="num">' + (r.req_month != null ? r.req_month.toLocaleString('es') : '—') + '</td></tr>';
   });
   h += '</tbody></table></div>';
   return h;
@@ -1193,7 +1215,7 @@ fetch('data.json', { cache: 'no-cache' }).then(r => {
   // Resumen salud (status_badges)
   const gq = (d.status_badges && d.status_badges.go_quota) || {};
   const pr = (d.status_badges && d.status_badges.providers) || {};
-  const goP = pr.go && pr.go.probed ? (pr.go.probed.down || 0) : 0;
+  const goP = pr['opencode-go'] && pr['opencode-go'].probed ? (pr['opencode-go'].probed.down || 0) : 0;
   $('#kpi-health').textContent = goP > 0 ? '⚠️ ' + goP + ' caídos' : '🟢 Saludable';
   $('#kpi-health-sema').className = 'sema ' + (goP > 0 ? 'warn' : 'ok');
   $('#kpi-health-foot').textContent = (goP > 0 ? goP + ' de ' : '') + (d.counts ? d.counts.go : '?') + ' modelos Go con problemas' + (gq.badge ? ' · ' + gq.badge : '');
