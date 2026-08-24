@@ -1,16 +1,16 @@
 {
- "generated": "2026-08-24T19:45:15.222027+00:00",
- "snapshot": "2026-08-24 19:45 UTC",
+ "generated": "2026-08-24T20:00:10.595474+00:00",
+ "snapshot": "2026-08-24 20:00 UTC",
  "providers_3rd": [
   "opencode-go",
   "opencode-zen",
   "openrouter"
  ],
- "modelsdev_fetched": "2026-08-24 19:45 UTC",
+ "modelsdev_fetched": "2026-08-24 20:00 UTC",
  "modelsdev_count": 355,
  "price_matrix": {
   "currency": "USD",
-  "fetched": "2026-08-24T19:45:07.048619+00:00",
+  "fetched": "2026-08-24T19:51:29.591673+00:00",
   "sources": {
    "zen_paid": "precios de cuenta opencode-zen (off-peak / peak)",
    "openrouter": "precios reales API OpenRouter (cache or-models-cache.json)"
@@ -2126,8 +2126,8 @@
  },
  "chain_method": "M = modelo preferido (deepseek-v4-flash)\n1. go/M (suscripción, marginal 0)\n2. zen/M-free (coste 0, pool común — solo 1 eslabón free zen, son redundantes entre sí)\n3. openrouter/M (mismo modelo, más barato que zen paid)\n4. zen/M paid (créditos, cubre OR caído)\n5. argmin(coste/turno) entre paid ≠ M con pricing verificado, cross-provider (hoy: OR/dsv4pro)\n6. extintor: zen/dsv4pro (solo si las guardias y saldos lo permiten)\nGuardias: dedupe provider+modelo, validación contra catálogo real, saldos, sin alfabético → None",
  "chain_snapshot": {
-  "generated_at": "2026-08-24T19:45:15.221728+00:00",
-  "snapshot": "2026-08-24 19:45 UTC",
+  "generated_at": "2026-08-24T20:00:10.595169+00:00",
+  "snapshot": "2026-08-24 20:00 UTC",
   "links": [
    {
     "pos": 1,
@@ -2163,27 +2163,27 @@
  },
  "status_badges": {
   "go_quota": {
-   "badge": "✅ Cuota Go OK (Continuo 27% (reinicia 4m) · Semanal 12% (reinicia 155h 59m) · Mensual 5% (reinicia 740h 20m))",
+   "badge": "✅ Cuota Go OK (Continuo 0% (reinicia 4h 19m) · Semanal 16% (reinicia 148h 14m) · Mensual 7% (reinicia 732h 35m))",
    "nivel": "ok",
    "source": "api",
    "buckets": {
     "rolling": {
-     "percent": 27,
+     "percent": 0,
      "status": "ok",
-     "resets_at": "2026-08-24T12:05:02.855Z",
-     "resets_in_human": "4m"
+     "resets_at": "2026-08-25T00:05:07.711Z",
+     "resets_in_human": "4h 19m"
     },
     "weekly": {
-     "percent": 12,
+     "percent": 16,
      "status": "ok",
-     "resets_at": "2026-08-31T00:00:00.855Z",
-     "resets_in_human": "155h 59m"
+     "resets_at": "2026-08-31T00:00:00.711Z",
+     "resets_in_human": "148h 14m"
     },
     "monthly": {
-     "percent": 5,
+     "percent": 7,
      "status": "ok",
-     "resets_at": "2026-09-24T08:20:30.855Z",
-     "resets_in_human": "740h 20m"
+     "resets_at": "2026-09-24T08:20:30.711Z",
+     "resets_in_human": "732h 35m"
     }
    }
   },
@@ -2196,8 +2196,8 @@
    "opencode-go": {
     "enabled": 1,
     "probed": {
-     "ok": 22,
-     "down": 4,
+     "ok": 21,
+     "down": 5,
      "indisponible": 1,
      "unk": 2,
      "na": 1
@@ -2207,8 +2207,8 @@
    "opencode-zen": {
     "enabled": 1,
     "probed": {
-     "down": 31,
-     "ok": 13,
+     "down": 32,
+     "ok": 12,
      "free": 20
     },
     "total": 3
