@@ -1,10 +1,10 @@
 {
- "generated": "2026-08-24T01:37:39.754092+00:00",
+ "generated": "2026-08-24T03:47:05.024877+00:00",
  "snapshot": "2026-08-24",
  "note": "200=ok · 429/402=cuota · 5xx/timeout=down · 400 unavailable=indisponible · 401/403=na · free=no probado (cuota)",
  "counts": {
-  "down": 37,
-  "ok": 35,
+  "ok": 36,
+  "down": 36,
   "indisponible": 1,
   "unk": 2,
   "na": 1,
@@ -12,675 +12,675 @@
  },
  "models": {
   "opencode-go/deepseek-v4-flash": {
-   "code": null,
-   "status": "down",
-   "detail": "ERR The read operation timed out",
-   "checked_at": "2026-08-24T01:35:48.732701+00:00",
-   "fails": 1
+   "code": 200,
+   "status": "ok",
+   "detail": "HTTP 200",
+   "checked_at": "2026-08-24T03:45:14.609834+00:00",
+   "fails": 0
   },
   "opencode-go/deepseek-v4-flash-vision-exp": {
    "code": 200,
    "status": "ok",
    "detail": "HTTP 200",
-   "checked_at": "2026-08-24T01:35:49.821574+00:00",
+   "checked_at": "2026-08-24T03:45:15.654749+00:00",
    "fails": 0
   },
   "opencode-go/deepseek-v4-pro": {
    "code": 200,
    "status": "ok",
    "detail": "HTTP 200",
-   "checked_at": "2026-08-24T01:35:51.626905+00:00",
+   "checked_at": "2026-08-24T03:45:16.950884+00:00",
    "fails": 0
   },
   "opencode-go/glm-5": {
    "code": 200,
    "status": "ok",
    "detail": "HTTP 200",
-   "checked_at": "2026-08-24T01:35:52.766676+00:00",
+   "checked_at": "2026-08-24T03:45:18.609201+00:00",
    "fails": 0
   },
   "opencode-go/glm-5.1": {
    "code": 200,
    "status": "ok",
    "detail": "HTTP 200",
-   "checked_at": "2026-08-24T01:35:53.958829+00:00",
+   "checked_at": "2026-08-24T03:45:19.573562+00:00",
    "fails": 0
   },
   "opencode-go/glm-5.2": {
    "code": 200,
    "status": "ok",
    "detail": "HTTP 200",
-   "checked_at": "2026-08-24T01:35:55.514029+00:00",
+   "checked_at": "2026-08-24T03:45:21.229630+00:00",
    "fails": 0
   },
   "opencode-go/glm-5.3": {
    "code": 200,
    "status": "ok",
    "detail": "HTTP 200",
-   "checked_at": "2026-08-24T01:35:57.776657+00:00",
+   "checked_at": "2026-08-24T03:45:22.964332+00:00",
    "fails": 0
   },
   "opencode-go/gpt-5.6-luna": {
    "code": 500,
    "status": "down",
    "detail": "HTTP 500",
-   "checked_at": "2026-08-24T01:35:58.205636+00:00",
-   "fails": 3
+   "checked_at": "2026-08-24T03:45:23.425719+00:00",
+   "fails": 4
   },
   "opencode-go/grok-4.5": {
    "code": 503,
    "status": "down",
    "detail": "HTTP 503",
-   "checked_at": "2026-08-24T01:35:58.738602+00:00",
-   "fails": 3
+   "checked_at": "2026-08-24T03:45:23.895066+00:00",
+   "fails": 4
   },
   "opencode-go/hy3": {
    "code": 200,
    "status": "ok",
    "detail": "HTTP 200",
-   "checked_at": "2026-08-24T01:36:01.068674+00:00",
+   "checked_at": "2026-08-24T03:45:26.384291+00:00",
    "fails": 0
   },
   "opencode-go/hy3-preview": {
    "code": 400,
    "status": "indisponible",
    "detail": "HTTP 400: modelo no disponible/deshabilitado",
-   "checked_at": "2026-08-24T01:36:01.997259+00:00",
+   "checked_at": "2026-08-24T03:45:27.537694+00:00",
    "fails": 0
   },
   "opencode-go/kimi-k2.5": {
    "code": 200,
    "status": "ok",
    "detail": "HTTP 200",
-   "checked_at": "2026-08-24T01:36:03.172695+00:00",
+   "checked_at": "2026-08-24T03:45:29.264922+00:00",
    "fails": 0
   },
   "opencode-go/kimi-k2.6": {
    "code": 200,
    "status": "ok",
    "detail": "HTTP 200",
-   "checked_at": "2026-08-24T01:36:04.369902+00:00",
+   "checked_at": "2026-08-24T03:45:31.357449+00:00",
    "fails": 0
   },
   "opencode-go/kimi-k2.7-code": {
    "code": 200,
    "status": "ok",
    "detail": "HTTP 200",
-   "checked_at": "2026-08-24T01:36:05.523261+00:00",
+   "checked_at": "2026-08-24T03:45:32.552135+00:00",
    "fails": 0
   },
   "opencode-go/kimi-k3": {
    "code": 200,
    "status": "ok",
    "detail": "HTTP 200",
-   "checked_at": "2026-08-24T01:36:09.037197+00:00",
+   "checked_at": "2026-08-24T03:45:36.250893+00:00",
    "fails": 0
   },
   "opencode-go/mimo-v2-omni": {
    "code": 400,
    "status": "unk",
    "detail": "HTTP 400: no responde al probe estándar",
-   "checked_at": "2026-08-24T01:36:10.562248+00:00",
+   "checked_at": "2026-08-24T03:45:37.769555+00:00",
    "fails": 0
   },
   "opencode-go/mimo-v2-pro": {
    "code": 400,
    "status": "unk",
    "detail": "HTTP 400: no responde al probe estándar",
-   "checked_at": "2026-08-24T01:36:12.234806+00:00",
+   "checked_at": "2026-08-24T03:45:39.689140+00:00",
    "fails": 0
   },
   "opencode-go/mimo-v2.5": {
    "code": 200,
    "status": "ok",
    "detail": "HTTP 200",
-   "checked_at": "2026-08-24T01:36:13.398834+00:00",
+   "checked_at": "2026-08-24T03:45:42.425687+00:00",
    "fails": 0
   },
   "opencode-go/mimo-v2.5-pro": {
    "code": 200,
    "status": "ok",
    "detail": "HTTP 200",
-   "checked_at": "2026-08-24T01:36:16.902860+00:00",
+   "checked_at": "2026-08-24T03:45:44.792900+00:00",
    "fails": 0
   },
   "opencode-go/minimax-m2.5": {
    "code": 200,
    "status": "ok",
    "detail": "HTTP 200",
-   "checked_at": "2026-08-24T01:36:18.559068+00:00",
+   "checked_at": "2026-08-24T03:45:46.876655+00:00",
    "fails": 0
   },
   "opencode-go/minimax-m2.7": {
    "code": 500,
    "status": "down",
    "detail": "HTTP 500",
-   "checked_at": "2026-08-24T01:36:18.994920+00:00",
-   "fails": 3
+   "checked_at": "2026-08-24T03:45:47.302456+00:00",
+   "fails": 4
   },
   "opencode-go/minimax-m3": {
    "code": 200,
    "status": "ok",
    "detail": "HTTP 200",
-   "checked_at": "2026-08-24T01:36:20.659304+00:00",
+   "checked_at": "2026-08-24T03:45:48.593529+00:00",
    "fails": 0
   },
   "opencode-go/muse-spark-1.2-contributor": {
    "code": 403,
    "status": "na",
    "detail": "HTTP 403: no accesible con tu plan/key",
-   "checked_at": "2026-08-24T01:36:21.120739+00:00",
+   "checked_at": "2026-08-24T03:45:49.034478+00:00",
    "fails": 0
   },
   "opencode-go/ox-alpha-free": {
-   "code": 503,
-   "status": "down",
-   "detail": "HTTP 503",
-   "checked_at": "2026-08-24T01:36:21.848522+00:00",
-   "fails": 3
+   "code": 200,
+   "status": "ok",
+   "detail": "HTTP 200",
+   "checked_at": "2026-08-24T03:45:50.481119+00:00",
+   "fails": 0
   },
   "opencode-go/qwen3.5-plus": {
    "code": null,
    "status": "down",
    "detail": "ERR The read operation timed out",
-   "checked_at": "2026-08-24T01:36:30.088860+00:00",
-   "fails": 2
+   "checked_at": "2026-08-24T03:45:58.709211+00:00",
+   "fails": 3
   },
   "opencode-go/qwen3.6-plus": {
    "code": 200,
    "status": "ok",
    "detail": "HTTP 200",
-   "checked_at": "2026-08-24T01:36:35.432565+00:00",
+   "checked_at": "2026-08-24T03:46:04.086755+00:00",
    "fails": 0
   },
   "opencode-go/qwen3.7-max": {
    "code": 200,
    "status": "ok",
    "detail": "HTTP 200",
-   "checked_at": "2026-08-24T01:36:39.709262+00:00",
+   "checked_at": "2026-08-24T03:46:08.902675+00:00",
    "fails": 0
   },
   "opencode-go/qwen3.7-plus": {
    "code": 200,
    "status": "ok",
    "detail": "HTTP 200",
-   "checked_at": "2026-08-24T01:36:45.652978+00:00",
+   "checked_at": "2026-08-24T03:46:14.145129+00:00",
    "fails": 0
   },
   "opencode-go/qwen3.8-max": {
    "code": 200,
    "status": "ok",
    "detail": "HTTP 200",
-   "checked_at": "2026-08-24T01:36:47.938212+00:00",
+   "checked_at": "2026-08-24T03:46:16.435448+00:00",
    "fails": 0
   },
   "opencode-zen/claude-fable-5": {
    "code": 500,
    "status": "down",
    "detail": "HTTP 500",
-   "checked_at": "2026-08-24T01:36:48.343551+00:00",
-   "fails": 3
+   "checked_at": "2026-08-24T03:46:16.852249+00:00",
+   "fails": 4
   },
   "opencode-zen/claude-haiku-4-5": {
    "code": 500,
    "status": "down",
    "detail": "HTTP 500",
-   "checked_at": "2026-08-24T01:36:48.779629+00:00",
-   "fails": 3
+   "checked_at": "2026-08-24T03:46:17.264526+00:00",
+   "fails": 4
   },
   "opencode-zen/claude-opus-4-5": {
    "code": 500,
    "status": "down",
    "detail": "HTTP 500",
-   "checked_at": "2026-08-24T01:36:49.237874+00:00",
-   "fails": 3
+   "checked_at": "2026-08-24T03:46:17.680090+00:00",
+   "fails": 4
   },
   "opencode-zen/claude-opus-4-6": {
    "code": 500,
    "status": "down",
    "detail": "HTTP 500",
-   "checked_at": "2026-08-24T01:36:49.653863+00:00",
-   "fails": 3
+   "checked_at": "2026-08-24T03:46:18.171364+00:00",
+   "fails": 4
   },
   "opencode-zen/claude-opus-4-7": {
    "code": 500,
    "status": "down",
    "detail": "HTTP 500",
-   "checked_at": "2026-08-24T01:36:50.101294+00:00",
-   "fails": 3
+   "checked_at": "2026-08-24T03:46:18.588701+00:00",
+   "fails": 4
   },
   "opencode-zen/claude-opus-4-8": {
    "code": 500,
    "status": "down",
    "detail": "HTTP 500",
-   "checked_at": "2026-08-24T01:36:50.555534+00:00",
-   "fails": 3
+   "checked_at": "2026-08-24T03:46:19.036328+00:00",
+   "fails": 4
   },
   "opencode-zen/claude-sonnet-4": {
    "code": 500,
    "status": "down",
    "detail": "HTTP 500",
-   "checked_at": "2026-08-24T01:36:50.991248+00:00",
-   "fails": 3
+   "checked_at": "2026-08-24T03:46:19.511084+00:00",
+   "fails": 4
   },
   "opencode-zen/claude-sonnet-4-5": {
    "code": 500,
    "status": "down",
    "detail": "HTTP 500",
-   "checked_at": "2026-08-24T01:36:51.437026+00:00",
-   "fails": 3
+   "checked_at": "2026-08-24T03:46:19.941415+00:00",
+   "fails": 4
   },
   "opencode-zen/claude-sonnet-4-6": {
    "code": 500,
    "status": "down",
    "detail": "HTTP 500",
-   "checked_at": "2026-08-24T01:36:51.879523+00:00",
-   "fails": 3
+   "checked_at": "2026-08-24T03:46:20.397943+00:00",
+   "fails": 4
   },
   "opencode-zen/claude-sonnet-5": {
    "code": 500,
    "status": "down",
    "detail": "HTTP 500",
-   "checked_at": "2026-08-24T01:36:52.330128+00:00",
-   "fails": 3
+   "checked_at": "2026-08-24T03:46:20.847272+00:00",
+   "fails": 4
   },
   "opencode-zen/deepseek-v4-flash": {
    "code": 200,
    "status": "ok",
    "detail": "HTTP 200",
-   "checked_at": "2026-08-24T01:36:53.081764+00:00",
+   "checked_at": "2026-08-24T03:46:21.827661+00:00",
    "fails": 0
   },
   "opencode-zen/deepseek-v4-pro": {
    "code": 200,
    "status": "ok",
    "detail": "HTTP 200",
-   "checked_at": "2026-08-24T01:36:54.789243+00:00",
+   "checked_at": "2026-08-24T03:46:23.263042+00:00",
    "fails": 0
   },
   "opencode-zen/gemini-3-flash": {
    "code": 500,
    "status": "down",
    "detail": "HTTP 500",
-   "checked_at": "2026-08-24T01:36:55.251705+00:00",
-   "fails": 3
+   "checked_at": "2026-08-24T03:46:23.691916+00:00",
+   "fails": 4
   },
   "opencode-zen/gemini-3.1-pro": {
    "code": 500,
    "status": "down",
    "detail": "HTTP 500",
-   "checked_at": "2026-08-24T01:36:55.686136+00:00",
-   "fails": 3
+   "checked_at": "2026-08-24T03:46:24.122967+00:00",
+   "fails": 4
   },
   "opencode-zen/gemini-3.5-flash": {
    "code": 500,
    "status": "down",
    "detail": "HTTP 500",
-   "checked_at": "2026-08-24T01:36:56.127801+00:00",
-   "fails": 3
+   "checked_at": "2026-08-24T03:46:24.546801+00:00",
+   "fails": 4
   },
   "opencode-zen/glm-5": {
    "code": 200,
    "status": "ok",
    "detail": "HTTP 200",
-   "checked_at": "2026-08-24T01:36:57.121160+00:00",
+   "checked_at": "2026-08-24T03:46:25.732575+00:00",
    "fails": 0
   },
   "opencode-zen/glm-5.1": {
    "code": 200,
    "status": "ok",
    "detail": "HTTP 200",
-   "checked_at": "2026-08-24T01:36:58.132487+00:00",
+   "checked_at": "2026-08-24T03:46:27.222454+00:00",
    "fails": 0
   },
   "opencode-zen/glm-5.2": {
    "code": 200,
    "status": "ok",
    "detail": "HTTP 200",
-   "checked_at": "2026-08-24T01:36:59.146011+00:00",
+   "checked_at": "2026-08-24T03:46:28.235858+00:00",
    "fails": 0
   },
   "opencode-zen/gpt-5": {
    "code": 500,
    "status": "down",
    "detail": "HTTP 500",
-   "checked_at": "2026-08-24T01:36:59.585661+00:00",
-   "fails": 3
+   "checked_at": "2026-08-24T03:46:28.678583+00:00",
+   "fails": 4
   },
   "opencode-zen/gpt-5-codex": {
    "code": 500,
    "status": "down",
    "detail": "HTTP 500",
-   "checked_at": "2026-08-24T01:37:00.023466+00:00",
-   "fails": 3
+   "checked_at": "2026-08-24T03:46:29.157582+00:00",
+   "fails": 4
   },
   "opencode-zen/gpt-5-nano": {
    "code": 500,
    "status": "down",
    "detail": "HTTP 500",
-   "checked_at": "2026-08-24T01:37:00.483434+00:00",
-   "fails": 3
+   "checked_at": "2026-08-24T03:46:29.594062+00:00",
+   "fails": 4
   },
   "opencode-zen/gpt-5.1": {
    "code": 500,
    "status": "down",
    "detail": "HTTP 500",
-   "checked_at": "2026-08-24T01:37:00.909271+00:00",
-   "fails": 3
+   "checked_at": "2026-08-24T03:46:30.011633+00:00",
+   "fails": 4
   },
   "opencode-zen/gpt-5.1-codex": {
    "code": 500,
    "status": "down",
    "detail": "HTTP 500",
-   "checked_at": "2026-08-24T01:37:01.334774+00:00",
-   "fails": 3
+   "checked_at": "2026-08-24T03:46:30.451017+00:00",
+   "fails": 4
   },
   "opencode-zen/gpt-5.1-codex-max": {
    "code": 500,
    "status": "down",
    "detail": "HTTP 500",
-   "checked_at": "2026-08-24T01:37:01.793523+00:00",
-   "fails": 3
+   "checked_at": "2026-08-24T03:46:30.871622+00:00",
+   "fails": 4
   },
   "opencode-zen/gpt-5.1-codex-mini": {
    "code": 500,
    "status": "down",
    "detail": "HTTP 500",
-   "checked_at": "2026-08-24T01:37:02.239911+00:00",
-   "fails": 3
+   "checked_at": "2026-08-24T03:46:31.304517+00:00",
+   "fails": 4
   },
   "opencode-zen/gpt-5.2": {
    "code": 500,
    "status": "down",
    "detail": "HTTP 500",
-   "checked_at": "2026-08-24T01:37:02.718632+00:00",
-   "fails": 3
+   "checked_at": "2026-08-24T03:46:31.753264+00:00",
+   "fails": 4
   },
   "opencode-zen/gpt-5.2-codex": {
    "code": 500,
    "status": "down",
    "detail": "HTTP 500",
-   "checked_at": "2026-08-24T01:37:03.173828+00:00",
-   "fails": 3
+   "checked_at": "2026-08-24T03:46:32.179833+00:00",
+   "fails": 4
   },
   "opencode-zen/gpt-5.3-codex": {
    "code": 500,
    "status": "down",
    "detail": "HTTP 500",
-   "checked_at": "2026-08-24T01:37:03.614656+00:00",
-   "fails": 3
+   "checked_at": "2026-08-24T03:46:32.591821+00:00",
+   "fails": 4
   },
   "opencode-zen/gpt-5.3-codex-spark": {
    "code": 500,
    "status": "down",
    "detail": "HTTP 500",
-   "checked_at": "2026-08-24T01:37:04.076652+00:00",
-   "fails": 3
+   "checked_at": "2026-08-24T03:46:33.040190+00:00",
+   "fails": 4
   },
   "opencode-zen/gpt-5.4": {
    "code": 500,
    "status": "down",
    "detail": "HTTP 500",
-   "checked_at": "2026-08-24T01:37:04.564464+00:00",
-   "fails": 3
+   "checked_at": "2026-08-24T03:46:33.471325+00:00",
+   "fails": 4
   },
   "opencode-zen/gpt-5.4-mini": {
    "code": 500,
    "status": "down",
    "detail": "HTTP 500",
-   "checked_at": "2026-08-24T01:37:05.048917+00:00",
-   "fails": 3
+   "checked_at": "2026-08-24T03:46:33.895339+00:00",
+   "fails": 4
   },
   "opencode-zen/gpt-5.4-nano": {
    "code": 500,
    "status": "down",
    "detail": "HTTP 500",
-   "checked_at": "2026-08-24T01:37:05.550166+00:00",
-   "fails": 3
+   "checked_at": "2026-08-24T03:46:34.340962+00:00",
+   "fails": 4
   },
   "opencode-zen/gpt-5.4-pro": {
    "code": 500,
    "status": "down",
    "detail": "HTTP 500",
-   "checked_at": "2026-08-24T01:37:05.996204+00:00",
-   "fails": 3
+   "checked_at": "2026-08-24T03:46:34.763498+00:00",
+   "fails": 4
   },
   "opencode-zen/gpt-5.5": {
    "code": 500,
    "status": "down",
    "detail": "HTTP 500",
-   "checked_at": "2026-08-24T01:37:06.448803+00:00",
-   "fails": 3
+   "checked_at": "2026-08-24T03:46:35.209153+00:00",
+   "fails": 4
   },
   "opencode-zen/gpt-5.5-pro": {
    "code": 500,
    "status": "down",
    "detail": "HTTP 500",
-   "checked_at": "2026-08-24T01:37:06.912117+00:00",
-   "fails": 3
+   "checked_at": "2026-08-24T03:46:35.621427+00:00",
+   "fails": 4
   },
   "opencode-zen/grok-build-0.1": {
    "code": 500,
    "status": "down",
    "detail": "HTTP 500",
-   "checked_at": "2026-08-24T01:37:07.332928+00:00",
-   "fails": 3
+   "checked_at": "2026-08-24T03:46:36.081193+00:00",
+   "fails": 4
   },
   "opencode-zen/kimi-k2.5": {
    "code": 200,
    "status": "ok",
    "detail": "HTTP 200",
-   "checked_at": "2026-08-24T01:37:08.217929+00:00",
+   "checked_at": "2026-08-24T03:46:37.043259+00:00",
    "fails": 0
   },
   "opencode-zen/kimi-k2.6": {
    "code": 200,
    "status": "ok",
    "detail": "HTTP 200",
-   "checked_at": "2026-08-24T01:37:09.075435+00:00",
+   "checked_at": "2026-08-24T03:46:37.903281+00:00",
    "fails": 0
   },
   "opencode-zen/kimi-k2.7-code": {
    "code": 200,
    "status": "ok",
    "detail": "HTTP 200",
-   "checked_at": "2026-08-24T01:37:13.363643+00:00",
+   "checked_at": "2026-08-24T03:46:38.755896+00:00",
    "fails": 0
   },
   "opencode-zen/minimax-m2.5": {
    "code": 200,
    "status": "ok",
    "detail": "HTTP 200",
-   "checked_at": "2026-08-24T01:37:14.332797+00:00",
+   "checked_at": "2026-08-24T03:46:40.837220+00:00",
    "fails": 0
   },
   "opencode-zen/minimax-m2.7": {
    "code": 200,
    "status": "ok",
    "detail": "HTTP 200",
-   "checked_at": "2026-08-24T01:37:15.365845+00:00",
+   "checked_at": "2026-08-24T03:46:41.731112+00:00",
    "fails": 0
   },
   "opencode-zen/minimax-m3": {
    "code": 200,
    "status": "ok",
    "detail": "HTTP 200",
-   "checked_at": "2026-08-24T01:37:17.259657+00:00",
+   "checked_at": "2026-08-24T03:46:43.242081+00:00",
    "fails": 0
   },
   "opencode-zen/qwen3.5-plus": {
-   "code": 200,
-   "status": "ok",
-   "detail": "HTTP 200",
-   "checked_at": "2026-08-24T01:37:24.391620+00:00",
-   "fails": 0
+   "code": null,
+   "status": "down",
+   "detail": "ERR The read operation timed out",
+   "checked_at": "2026-08-24T03:46:51.477943+00:00",
+   "fails": 1
   },
   "opencode-zen/qwen3.6-plus": {
    "code": 200,
    "status": "ok",
    "detail": "HTTP 200",
-   "checked_at": "2026-08-24T01:37:29.126673+00:00",
+   "checked_at": "2026-08-24T03:46:57.097291+00:00",
    "fails": 0
   },
   "openrouter/deepseek/deepseek-v4-flash": {
    "code": 200,
    "status": "ok",
    "detail": "HTTP 200",
-   "checked_at": "2026-08-24T01:37:30.826305+00:00",
+   "checked_at": "2026-08-24T03:47:00.321632+00:00",
    "fails": 0
   },
   "openrouter/deepseek/deepseek-v4-pro": {
    "code": 200,
    "status": "ok",
    "detail": "HTTP 200",
-   "checked_at": "2026-08-24T01:37:37.940006+00:00",
+   "checked_at": "2026-08-24T03:47:02.621234+00:00",
    "fails": 0
   },
   "openrouter/tencent/hy3": {
    "code": 200,
    "status": "ok",
    "detail": "HTTP 200",
-   "checked_at": "2026-08-24T01:37:39.752781+00:00",
+   "checked_at": "2026-08-24T03:47:05.023416+00:00",
    "fails": 0
   },
   "opencode-zen/big-pickle": {
    "code": null,
    "status": "free",
    "detail": "no probado (protección cuota global free 100 req/día)",
-   "checked_at": "2026-08-24T01:37:39.752833+00:00",
+   "checked_at": "2026-08-24T03:47:05.023492+00:00",
    "fails": 0
   },
   "opencode-zen/claude-opus-5": {
    "code": null,
    "status": "free",
    "detail": "no probado (protección cuota global free 100 req/día)",
-   "checked_at": "2026-08-24T01:37:39.752838+00:00",
+   "checked_at": "2026-08-24T03:47:05.023497+00:00",
    "fails": 0
   },
   "opencode-zen/deepseek-v4-flash-free": {
    "code": null,
    "status": "free",
    "detail": "no probado (protección cuota global free 100 req/día)",
-   "checked_at": "2026-08-24T01:37:39.752841+00:00",
+   "checked_at": "2026-08-24T03:47:05.023500+00:00",
    "fails": 0
   },
   "opencode-zen/gemini-3.5-flash-lite": {
    "code": null,
    "status": "free",
    "detail": "no probado (protección cuota global free 100 req/día)",
-   "checked_at": "2026-08-24T01:37:39.752843+00:00",
+   "checked_at": "2026-08-24T03:47:05.023503+00:00",
    "fails": 0
   },
   "opencode-zen/gemini-3.6-flash": {
    "code": null,
    "status": "free",
    "detail": "no probado (protección cuota global free 100 req/día)",
-   "checked_at": "2026-08-24T01:37:39.752846+00:00",
+   "checked_at": "2026-08-24T03:47:05.023506+00:00",
    "fails": 0
   },
   "opencode-zen/gemini-3.7-flash": {
    "code": null,
    "status": "free",
    "detail": "no probado (protección cuota global free 100 req/día)",
-   "checked_at": "2026-08-24T01:37:39.752848+00:00",
+   "checked_at": "2026-08-24T03:47:05.023508+00:00",
    "fails": 0
   },
   "opencode-zen/gpt-5.6-luna": {
    "code": null,
    "status": "free",
    "detail": "no probado (protección cuota global free 100 req/día)",
-   "checked_at": "2026-08-24T01:37:39.752850+00:00",
+   "checked_at": "2026-08-24T03:47:05.023510+00:00",
    "fails": 0
   },
   "opencode-zen/gpt-5.6-sol": {
    "code": null,
    "status": "free",
    "detail": "no probado (protección cuota global free 100 req/día)",
-   "checked_at": "2026-08-24T01:37:39.752852+00:00",
+   "checked_at": "2026-08-24T03:47:05.023513+00:00",
    "fails": 0
   },
   "opencode-zen/gpt-5.6-terra": {
    "code": null,
    "status": "free",
    "detail": "no probado (protección cuota global free 100 req/día)",
-   "checked_at": "2026-08-24T01:37:39.752855+00:00",
+   "checked_at": "2026-08-24T03:47:05.023515+00:00",
    "fails": 0
   },
   "opencode-zen/grok-4.5": {
    "code": null,
    "status": "free",
    "detail": "no probado (protección cuota global free 100 req/día)",
-   "checked_at": "2026-08-24T01:37:39.752857+00:00",
+   "checked_at": "2026-08-24T03:47:05.023518+00:00",
    "fails": 0
   },
   "opencode-zen/grok-4.6": {
    "code": null,
    "status": "free",
    "detail": "no probado (protección cuota global free 100 req/día)",
-   "checked_at": "2026-08-24T01:37:39.752861+00:00",
+   "checked_at": "2026-08-24T03:47:05.023523+00:00",
    "fails": 0
   },
   "opencode-zen/hy3-free": {
    "code": null,
    "status": "free",
    "detail": "no probado (protección cuota global free 100 req/día)",
-   "checked_at": "2026-08-24T01:37:39.752864+00:00",
+   "checked_at": "2026-08-24T03:47:05.023525+00:00",
    "fails": 0
   },
   "opencode-zen/kimi-k3": {
    "code": null,
    "status": "free",
    "detail": "no probado (protección cuota global free 100 req/día)",
-   "checked_at": "2026-08-24T01:37:39.752866+00:00",
+   "checked_at": "2026-08-24T03:47:05.023527+00:00",
    "fails": 0
   },
   "opencode-zen/laguna-s-2.1-free": {
    "code": null,
    "status": "free",
    "detail": "no probado (protección cuota global free 100 req/día)",
-   "checked_at": "2026-08-24T01:37:39.752868+00:00",
+   "checked_at": "2026-08-24T03:47:05.023530+00:00",
    "fails": 0
   },
   "opencode-zen/mimo-v2.5-free": {
    "code": null,
    "status": "free",
    "detail": "no probado (protección cuota global free 100 req/día)",
-   "checked_at": "2026-08-24T01:37:39.752874+00:00",
+   "checked_at": "2026-08-24T03:47:05.023532+00:00",
    "fails": 0
   },
   "opencode-zen/muse-spark-1.2": {
    "code": null,
    "status": "free",
    "detail": "no probado (protección cuota global free 100 req/día)",
-   "checked_at": "2026-08-24T01:37:39.752876+00:00",
+   "checked_at": "2026-08-24T03:47:05.023535+00:00",
    "fails": 0
   },
   "opencode-zen/muse-spark-1.2-contributor-free": {
    "code": null,
    "status": "free",
    "detail": "no probado (protección cuota global free 100 req/día)",
-   "checked_at": "2026-08-24T01:37:39.752878+00:00",
+   "checked_at": "2026-08-24T03:47:05.023537+00:00",
    "fails": 0
   },
   "opencode-zen/nemotron-3-ultra-free": {
    "code": null,
    "status": "free",
    "detail": "no probado (protección cuota global free 100 req/día)",
-   "checked_at": "2026-08-24T01:37:39.752880+00:00",
+   "checked_at": "2026-08-24T03:47:05.023540+00:00",
    "fails": 0
   },
   "opencode-zen/nemotron-3.5-lightning-free": {
    "code": null,
    "status": "free",
    "detail": "no probado (protección cuota global free 100 req/día)",
-   "checked_at": "2026-08-24T01:37:39.752883+00:00",
+   "checked_at": "2026-08-24T03:47:05.023543+00:00",
    "fails": 0
   },
   "opencode-zen/x-preview-f-free": {
    "code": null,
    "status": "free",
    "detail": "no probado (protección cuota global free 100 req/día)",
-   "checked_at": "2026-08-24T01:37:39.752885+00:00",
+   "checked_at": "2026-08-24T03:47:05.023545+00:00",
    "fails": 0
   }
  }

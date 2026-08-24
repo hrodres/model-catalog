@@ -274,7 +274,7 @@
    "x-preview-f-free": "free"
   },
   "2026-08-24": {
-   "opencode-go/deepseek-v4-flash": "down",
+   "opencode-go/deepseek-v4-flash": "ok",
    "opencode-go/deepseek-v4-flash-vision-exp": "ok",
    "opencode-go/deepseek-v4-pro": "ok",
    "opencode-go/glm-5": "ok",
@@ -297,7 +297,7 @@
    "opencode-go/minimax-m2.7": "down",
    "opencode-go/minimax-m3": "ok",
    "opencode-go/muse-spark-1.2-contributor": "na",
-   "opencode-go/ox-alpha-free": "down",
+   "opencode-go/ox-alpha-free": "ok",
    "opencode-go/qwen3.5-plus": "down",
    "opencode-go/qwen3.6-plus": "ok",
    "opencode-go/qwen3.7-max": "ok",
@@ -345,7 +345,7 @@
    "opencode-zen/minimax-m2.5": "ok",
    "opencode-zen/minimax-m2.7": "ok",
    "opencode-zen/minimax-m3": "ok",
-   "opencode-zen/qwen3.5-plus": "ok",
+   "opencode-zen/qwen3.5-plus": "down",
    "opencode-zen/qwen3.6-plus": "ok",
    "openrouter/deepseek/deepseek-v4-flash": "ok",
    "openrouter/deepseek/deepseek-v4-pro": "ok",
