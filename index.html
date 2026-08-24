@@ -3,15 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>Model Catalog — OpenCode Zen/Go</title>
-<meta name="description" content="Catálogo de modelos OpenCode Zen/Go con specs y benchmarks de models.dev">
+<title>Model Catalog — OpenCode Zen/Go/OpenRouter</title>
+<meta name="description" content="Catálogo de modelos OpenCode Zen/Go/OpenRouter con specs y benchmarks de models.dev">
 <meta name="theme-color" content="#0b0d13">
 <style>
   :root {
     --bg: #0b0d13; --bg-soft: #10131c; --card: #151926; --card-hover: #1a1f30;
     --border: #242a3d; --border-soft: #1d2231; --text: #e7e9f0; --muted: #9aa1b8;
     --accent: #6d9bff; --accent-soft: rgba(109,155,255,.12);
-    --green: #34d399; --red: #f87171; --amber: #fbbf24; --zen: #a78bfa;
+    --green: #34d399; --red: #f87171; --amber: #fbbf24; --zen: #a78bfa; --orange: #fb923c;
     --radius: 14px; --radius-sm: 10px;
     --shadow: 0 8px 30px rgba(0,0,0,.35);
     --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Inter", sans-serif;
@@ -217,6 +217,7 @@
   .hdot.na { background: #4a5470; }
   .hdot.unk { background: var(--amber); }
   .hdot.free { background: rgba(52,211,153,.35); }
+  .hdot.or { background: var(--orange); }
   .hstatus { font-weight: 700; font-size: .8rem; }
   .hs-ok { color: var(--green); } .hs-down { color: var(--red); } .hs-na { color: var(--muted); } .hs-unk { color: var(--amber); } .hs-free { color: var(--green); opacity: .75; }
   .fails-badge { display: inline-block; background: rgba(248,113,113,.12); color: var(--red); border: 1px solid rgba(248,113,113,.3); border-radius: 999px; padding: 1px 7px; font-size: .68rem; font-weight: 700; }
@@ -383,7 +384,7 @@
   <!-- ═══ Estado OpenCode — PRIMERO, siempre visible ═══ -->
   <section class="oc-section" id="oc" aria-label="Estado OpenCode">
     <div class="oc-head">
-      <h2>🩺 Estado OpenCode</h2>
+      <h2>🩺 Estado del catálogo (Zen/Go/OpenRouter)</h2>
       <span class="oc-pulse"><span class="dotl"></span> check diario 05:45</span>
       <span class="oc-sub">disponibilidad, límites y evolución de los modelos</span>
     </div>
@@ -393,6 +394,7 @@
       <span class="strip-pill ok">? ✅</span>
       <span class="strip-pill down">? ⚠️</span>
       <span class="strip-pill free">? 🌱</span>
+      <span class="strip-pill or">? 🟠 OR</span>
       <span class="strip-pill check">check <b>—</b></span>
     </div>
 
@@ -425,6 +427,7 @@
           <span><span class="hdot unk"></span> no responde al probe</span>
           <span><span class="hdot na"></span> no accesible con tu plan</span>
           <span><span class="hdot free"></span> free (no se prueba, cuota)</span>
+          <span><span class="hdot or"></span> OpenRouter (3er proveedor)</span>
         </div>
       </div>
     </details>
@@ -580,7 +583,7 @@
   </details>
 
   <footer>
-    Datos: <a href="https://models.dev" target="_blank" rel="noopener">models.dev</a> (MIT) + catálogos opencode · generado: <span id="gen">—</span> · models.dev: <span id="mdf">—</span><br>
+    Datos: <a href="https://models.dev" target="_blank" rel="noopener">models.dev</a> (MIT) + catálogos opencode Zen/Go + OpenRouter · generado: <span id="gen">—</span> · models.dev: <span id="mdf">—</span><br>
     Los modelos sin ficha en models.dev llevan badge ⚠️ · <a href="aliases.json" target="_blank">aliases.json</a> (tabla de aliases) · toca una fila para ver benchmarks
   </footer>
 </div>
@@ -872,10 +875,12 @@ function renderStrip() {
   let snapShort = snap;
   const m = /^(\d{4})-(\d{2})-(\d{2})/.exec(snap);
   if (m) snapShort = parseInt(m[3], 10) + '/' + parseInt(m[2], 10);
+  const orN = (ST.status.counts && ST.status.counts.or) ? ST.status.counts.or : 0;
   strip.innerHTML =
     '<span class="strip-pill ok">' + (c.ok ?? 0) + ' ✅</span>' +
     '<span class="strip-pill down">' + (c.down ?? 0) + ' ⚠️</span>' +
     '<span class="strip-pill free">' + (c.free ?? 0) + ' 🌱</span>' +
+    '<span class="strip-pill or">' + orN + ' 🟠 OR</span>' +
     '<span class="strip-pill check">check <b>' + snapShort + '</b></span>';
 }
 
@@ -1175,6 +1180,12 @@ function renderQuota() {
   if (gq.nivel === 'warn') cls = 'down';
   else if (gq.nivel === 'critical') cls = 'na';
   h += '<div class="hs-card ' + cls + '"><b>Go</b><span>' + esc(gq.badge || '—') + '</span></div>';
+  // Tarjeta OpenRouter (3er proveedor)
+  const pr = S.providers || {};
+  const orP = pr.openrouter || {};
+  const orOk = (orP.probed && orP.probed.ok > 0) || (bal && bal.or_ok);
+  const orProbed = orP.probed ? Object.entries(orP.probed).map(([k,v]) => k + ':' + v).join(' ') : '—';
+  h += '<div class="hs-card ' + (orOk ? 'ok' : 'na') + '"><b>🟠 OR</b><span>' + (orOk ? 'operativo (' + orProbed + ')' : 'sin datos') + '</span></div>';
   // Granularidad de cuota Go
   const bk = gq.buckets || {};
   const labels = { rolling: 'Continuo', weekly: 'Semanal', monthly: 'Mensual' };
