@@ -93,6 +93,7 @@
   .b-free { background: rgba(52,211,153,.13); color: var(--green); border: 1px solid rgba(52,211,153,.3); }
   .b-go { background: rgba(109,155,255,.13); color: var(--accent); border: 1px solid rgba(109,155,255,.3); }
   .b-zen { background: rgba(167,139,250,.13); color: var(--zen); border: 1px solid rgba(167,139,250,.3); }
+  .b-or { background: rgba(255,153,51,.13); color: #ff9933; border: 1px solid rgba(255,153,51,.3); }
   .b-paid { background: rgba(248,113,113,.11); color: var(--red); border: 1px solid rgba(248,113,113,.3); }
   .b-warn { background: rgba(251,191,36,.11); color: var(--amber); border: 1px solid rgba(251,191,36,.3); cursor: help; }
 
@@ -349,6 +350,17 @@
   @media (prefers-reduced-motion: reduce) {
     .md-panel, .md-backdrop { animation: none !important; }
   }
+  .chain-method { background: #0f1320; border: 1px solid #232a3a; border-radius: 10px; padding: 12px 14px; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: .78rem; line-height: 1.55; color: #c7d2e8; white-space: pre-wrap; overflow-x: auto; }
+  .chain-list { list-style: none; margin: 12px 0 0; padding: 0; counter-reset: none; }
+  .chain-list li { display: flex; align-items: baseline; gap: 10px; padding: 7px 0; border-bottom: 1px dashed #232a3a; flex-wrap: wrap; }
+  .chain-pos { background: var(--accent); color: #0b0e16; font-weight: 800; border-radius: 999px; min-width: 22px; height: 22px; display: inline-flex; align-items: center; justify-content: center; font-size: .72rem; padding: 0 6px; }
+  .chain-link { font-family: ui-monospace, Menlo, monospace; font-size: .82rem; color: #9fc6ff; background: rgba(109,155,255,.08); border: 1px solid rgba(109,155,255,.2); border-radius: 6px; padding: 2px 7px; }
+  .chain-role { color: var(--muted); font-size: .76rem; }
+  .quota-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 10px; margin: 12px 0; }
+  .quota-cell { background: #0f1320; border: 1px solid #232a3a; border-radius: 10px; padding: 10px 12px; display: flex; flex-direction: column; gap: 2px; }
+  .quota-name { font-size: .72rem; color: var(--muted); text-transform: uppercase; letter-spacing: .05em; }
+  .quota-pct { font-size: 1.2rem; font-weight: 800; color: var(--accent); }
+  .quota-reset { font-size: .72rem; color: var(--muted); }
 </style>
 </head>
 <body>
@@ -358,7 +370,7 @@
       <div class="logo">🗂️</div>
       <div>
         <h1>Model Catalog</h1>
-        <div class="sub">opencode-zen + opencode-go</div>
+        <div class="sub">opencode-zen + opencode-go + openrouter</div>
       </div>
     </div>
     <div class="topbar-spacer"></div>
@@ -430,6 +442,45 @@
       </div>
     </details>
 
+    <!-- Acordeón 2b: Matriz de precios -->
+    <details class="acc" id="acc-prices">
+      <summary aria-expanded="false">
+        <span class="acc-ico">📊</span>
+        <span class="acc-title">Matriz de precios</span>
+        <span class="acc-badge" id="acc-badge-prices">zen paid (off/peak) · OpenRouter reales</span>
+        <span class="acc-chev" aria-hidden="true">▼</span>
+      </summary>
+      <div class="acc-body">
+        <div id="prices-body"><div class="skel on"><div class="skel-row"></div><div class="skel-row"></div></div></div>
+      </div>
+    </details>
+
+    <!-- Acordeón 2c: Cadena de fallback -->
+    <details class="acc" id="acc-chain">
+      <summary aria-expanded="false">
+        <span class="acc-ico">🔗</span>
+        <span class="acc-title">Cadena de fallback</span>
+        <span class="acc-badge" id="acc-badge-chain">método + snapshot activo</span>
+        <span class="acc-chev" aria-hidden="true">▼</span>
+      </summary>
+      <div class="acc-body">
+        <div id="chain-body"><div class="skel on"><div class="skel-row"></div></div></div>
+      </div>
+    </details>
+
+    <!-- Acordeón 2d: Estado de cuotas -->
+    <details class="acc" id="acc-quota">
+      <summary aria-expanded="false">
+        <span class="acc-ico">🔔</span>
+        <span class="acc-title">Estado de cuotas</span>
+        <span class="acc-badge" id="acc-badge-quota">Go, Zen y OpenRouter</span>
+        <span class="acc-chev" aria-hidden="true">▼</span>
+      </summary>
+      <div class="acc-body">
+        <div id="quota-body"><div class="skel on"><div class="skel-row"></div></div></div>
+      </div>
+    </details>
+
     <!-- Acordeón 3: Evolución -->
     <details class="acc" id="acc-history">
       <summary aria-expanded="false">
@@ -475,6 +526,7 @@
         <option value="go">🚀 Go</option>
         <option value="zen">💰 Zen (solo pago)</option>
         <option value="zenall">💜 Zen (todos)</option>
+        <option value="or">🟠 OpenRouter</option>
       </select>
     </div>
     <div class="f-group">
@@ -563,6 +615,7 @@ function provBadges(m) {
   const b = [];
   if (m.providers.free) b.push('<span class="badge b-free">🌱 free</span>');
   if (m.providers.go) b.push('<span class="badge b-go">🚀 Go</span>');
+  if (m.providers.or) b.push('<span class="badge b-or">🟠 OR</span>');
   if (m.providers.zen && !m.providers.free) b.push('<span class="badge b-zen">💜 Zen</span>');
   if (!m.md_url) b.push('<span class="badge b-warn" title="Solo en el catálogo opencode — sin ficha en models.dev">⚠️ sin ficha</span>');
   return b.join(' ');
@@ -597,6 +650,7 @@ function render() {
     if (prov === 'go' && !m.providers.go) return false;
     if (prov === 'zen' && !(m.providers.zen && !m.providers.free)) return false;  // Zen SOLO pago (zen y no free)
     if (prov === 'zenall' && !m.providers.zen) return false;
+    if (prov === 'or' && !m.providers.or) return false;
     if (q && !(m.name.toLowerCase().includes(q) || m.id.toLowerCase().includes(q))) return false;
     if (minCtx && (!m.context || m.context < minCtx)) return false;
     if (needReason && m.reasoning !== true) return false;
@@ -789,6 +843,7 @@ async function loadOC() {
   ST.status = status; ST.hist = hist; ST.catalog = catalog;
   ST.limits = limits; ST.chAuto = chAuto; ST.chManual = chManual;
   renderHealth(); renderLimits(); renderHistory(); renderChanges();
+  renderPrices(); renderChain(); renderQuota();
   renderStrip();
   if (typeof mdOpenId !== 'undefined' && mdOpenId) mdRenderDetail(mdOpenId);  // refresca precios/salud de la ficha abierta
   if (status) {
@@ -1038,6 +1093,109 @@ document.querySelectorAll('details.acc').forEach(d => {
 
 loadOC();
 
+/* ── Matriz de precios (F4) ── */
+function renderPrices() {
+  const el = document.getElementById('prices-body');
+  if (!DATA || !DATA.price_matrix) {
+    el.innerHTML = '<div class="oc-note">Matriz de precios no disponible.</div>';
+    return;
+  }
+  const P = DATA.price_matrix;
+  let h = '<div class="oc-note">💱 Fuente: ' +
+    esc(P.sources ? (P.sources.zen_paid + ' · ' + P.sources.openrouter) : 'ver plan') +
+    ' · refresco ' + esc((P.fetched || '').replace('T', ' ').slice(0, 16)) + ' · ' + esc(P.currency || 'USD') + '</div>';
+
+  // Zen paid off/peak
+  const zk = Object.keys(P.zen_paid_offpeak || {});
+  if (zk.length) {
+    h += '<h4 style="margin:14px 0 6px;font-size:.82rem;color:var(--muted)">opencode-zen (paid, precios de cuenta)</h4>';
+    h += '<div class="table-scroll"><table class="lim-tbl"><thead><tr><th>Modelo</th><th class="num">In off</th><th class="num">Out off</th><th class="num">In peak</th><th class="num">Out peak</th></tr></thead><tbody>';
+    zk.forEach(k => {
+      const o = P.zen_paid_offpeak[k], pk = (P.zen_paid_peak || {})[k] || {};
+      h += '<tr><td data-label="Modelo"><span class="m-name">' + esc(k) + '</span></td>' +
+        '<td class="num">' + money(o.in) + '</td><td class="num">' + money(o.out) + '</td>' +
+        '<td class="num">' + money(pk.in) + '</td><td class="num">' + money(pk.out) + '</td></tr>';
+    });
+    h += '</tbody></table></div>';
+  }
+
+  // OpenRouter: solo los modelos de la cadena + equivalentes del catálogo
+  const orIds = (DATA.models || []).filter(m => m.or_id).map(m => m.or_id);
+  const seen = {};
+  const orRows = [];
+  orIds.forEach(id => { if (!seen[id] && P.openrouter[id]) { seen[id] = 1; orRows.push(id); } });
+  if (orRows.length) {
+    h += '<h4 style="margin:16px 0 6px;font-size:.82rem;color:var(--muted)">OpenRouter (precios reales API)</h4>';
+    h += '<div class="table-scroll"><table class="lim-tbl"><thead><tr><th>Modelo</th><th class="num">In $/1M</th><th class="num">Out $/1M</th><th class="num">Ctx</th></tr></thead><tbody>';
+    orRows.forEach(id => {
+      const o = P.openrouter[id];
+      h += '<tr><td data-label="Modelo"><span class="m-name">' + esc(id) + '</span></td>' +
+        '<td class="num">' + money(o.in) + '</td><td class="num">' + money(o.out) + '</td>' +
+        '<td class="num">' + (o.context ? fmtCtx(o.context) : '—') + '</td></tr>';
+    });
+    h += '</tbody></table></div>';
+  }
+  h += '<div class="oc-note">🔒 ' + esc(P.notes || 'Sin saldos ni claves.') + '</div>';
+  el.innerHTML = h;
+}
+
+/* ── Cadena de fallback (F4) ── */
+function renderChain() {
+  const el = document.getElementById('chain-body');
+  if (!DATA || !DATA.chain_snapshot) {
+    el.innerHTML = '<div class="oc-note">Cadena no disponible.</div>';
+    return;
+  }
+  const C = DATA.chain_snapshot;
+  let h = '<div class="oc-note">📌 Método canónico de creación (coste marginal ascendente):</div>';
+  h += '<pre class="chain-method">' + esc(DATA.chain_method || '') + '</pre>';
+  h += '<div class="oc-note">📸 Snapshot de la cadena activa — ' + esc((C.snapshot || '').replace('T', ' ')) + '</div>';
+  h += '<ol class="chain-list">';
+  (C.links || []).forEach(l => {
+    h += '<li><span class="chain-pos">' + l.pos + '</span>' +
+      '<code class="chain-link">' + esc(l.link) + '</code>' +
+      '<span class="chain-role">' + esc(l.role || '') + '</span></li>';
+  });
+  h += '</ol>';
+  el.innerHTML = h;
+}
+
+/* ── Estado de cuotas / badges (F4) ── */
+function renderQuota() {
+  const el = document.getElementById('quota-body');
+  if (!DATA || !DATA.status_badges) {
+    el.innerHTML = '<div class="oc-note">Estado de cuotas no disponible.</div>';
+    return;
+  }
+  const S = DATA.status_badges;
+  let h = '';
+  const gq = S.go_quota || {};
+  // Badge principal Go
+  let cls = 'ok';
+  if (gq.nivel === 'warn') cls = 'down';
+  else if (gq.nivel === 'critical') cls = 'na';
+  h += '<div class="hs-card ' + cls + '"><b>Go</b><span>' + esc(gq.badge || '—') + '</span></div>';
+  // Granularidad de cuota Go
+  const bk = gq.buckets || {};
+  const labels = { rolling: 'Continuo', weekly: 'Semanal', monthly: 'Mensual' };
+  h += '<div class="quota-grid">';
+  Object.keys(labels).forEach(k => {
+    const b = bk[k];
+    if (!b) return;
+    const pct = b.percent != null ? b.percent : '?';;
+    h += '<div class="quota-cell"><span class="quota-name">' + labels[k] + '</span>' +
+      '<span class="quota-pct">' + pct + '%</span>' +
+      '<span class="quota-reset">reinicia ' + esc(b.resets_in_human || '—') + '</span></div>';
+  });
+  h += '</div>';
+  // Balances (solo booleanos de guardia)
+  const bal = S.balances || {};
+  h += '<div class="oc-note">🔒 Guardias de saldo (solo booleanos, sin importes): ' +
+    'Zen paid ' + (bal.zen_paid_ok ? '✅' : '⚠️') + ' · OpenRouter ' + (bal.or_ok ? '✅' : '⚠️') + '</div>';
+  if (bal.aviso) h += '<div class="oc-note">' + esc(bal.aviso) + '</div>';
+  el.innerHTML = h;
+}
+
 bindSort();
 
 /* ═════════════════════════════════════════════════════════
@@ -1237,6 +1395,19 @@ function mdRenderDetail(id) {
     kv('Release', m.release ? esc(m.release) : '<span class="unk">—</span>') +
     kv('Actualizado', m.last_updated ? esc(m.last_updated) : '<span class="unk">—</span>') +
     '</div></div>';
+
+  // Precios OpenRouter (3er proveedor) — públicos
+  const orp = m.or_price;
+  if (orp) {
+    h += '<div class="md-sec"><h3>OpenRouter (precio real API)</h3>' +
+      '<div class="md-grid">' +
+      kv('Modelo OR', m.or_id ? esc(m.or_id) : '<span class="unk">—</span>') +
+      kv('In $/1M', money(orp.in)) +
+      kv('Out $/1M', money(orp.out)) +
+      kv('Contexto', orp.context ? fmtCtx(orp.context) : '<span class="unk">—</span>') +
+      '</div>' +
+      '<div class="md-note">Mismo modelo, backend 100% independiente. Fuente: precios reales API OpenRouter.</div></div>';
+  }
 
   // Precios y límites
   h += '<div class="md-sec"><h3>Precios y límites (plan Go)</h3>' + mdPricingHTML(m.id);
