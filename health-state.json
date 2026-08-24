@@ -1,0 +1,682 @@
+{
+ "generated": "2026-08-24T01:34:39.539310+00:00",
+ "snapshot": "2026-08-24",
+ "fuente": "check-model-health.py F3 (2026-08-24)",
+ "providers": {
+  "opencode-go": {
+   "enabled": 1,
+   "probed": {
+    "ok": 20,
+    "down": 5,
+    "indisponible": 1,
+    "unk": 2,
+    "na": 1
+   },
+   "total": 5
+  },
+  "opencode-zen": {
+   "enabled": 1,
+   "probed": {
+    "down": 31,
+    "ok": 13,
+    "free": 20
+   },
+   "total": 3
+  },
+  "openrouter": {
+   "enabled": 1,
+   "probed": {
+    "ok": 3
+   },
+   "total": 1
+  }
+ },
+ "counts": {
+  "ok": 36,
+  "down": 36,
+  "indisponible": 1,
+  "unk": 2,
+  "na": 1,
+  "free": 20
+ },
+ "go_quota": {
+  "badge": "⚠️ Cuota Go casi agotada (Mensual 95%)",
+  "nivel": "critica",
+  "source": "api",
+  "buckets": {
+   "rolling": {
+    "percent": 1,
+    "status": "ok",
+    "resets_at": "2026-08-24T05:18:01.523Z",
+    "resets_in_human": "3h 45m"
+   },
+   "weekly": {
+    "percent": 0,
+    "status": "ok",
+    "resets_at": "2026-08-31T00:00:00.523Z",
+    "resets_in_human": "166h 27m"
+   },
+   "monthly": {
+    "percent": 95,
+    "status": "critica",
+    "resets_at": "2026-08-24T08:20:30.523Z",
+    "resets_in_human": "6h 47m"
+   }
+  }
+ },
+ "balances": {
+  "zen_paid_ok": true,
+  "or_ok": true,
+  "aviso": "solo booleanos de guardia; valores nunca se publican"
+ },
+ "chain": [
+  {
+   "link": "opencode-go/deepseek-v4-flash",
+   "estado": "ok",
+   "detalle": "HTTP 200"
+  },
+  {
+   "link": "opencode-zen/deepseek-v4-flash-free",
+   "estado": "free",
+   "detalle": "no probado (protección cuota global free 100 req/día)"
+  },
+  {
+   "link": "openrouter/deepseek/deepseek-v4-flash",
+   "estado": "ok",
+   "detalle": "HTTP 200"
+  },
+  {
+   "link": "opencode-zen/deepseek-v4-flash",
+   "estado": "ok",
+   "detalle": "HTTP 200"
+  },
+  {
+   "link": "openrouter/deepseek/deepseek-v4-pro",
+   "estado": "ok",
+   "detalle": "HTTP 200"
+  },
+  {
+   "link": "opencode-zen/deepseek-v4-pro",
+   "estado": "ok",
+   "detalle": "HTTP 200"
+  }
+ ],
+ "models": [
+  {
+   "modelo": "deepseek-v4-flash",
+   "provider": "opencode-go",
+   "estado": "ok",
+   "detalle": "HTTP 200"
+  },
+  {
+   "modelo": "deepseek-v4-flash-vision-exp",
+   "provider": "opencode-go",
+   "estado": "ok",
+   "detalle": "HTTP 200"
+  },
+  {
+   "modelo": "deepseek-v4-pro",
+   "provider": "opencode-go",
+   "estado": "ok",
+   "detalle": "HTTP 200"
+  },
+  {
+   "modelo": "glm-5",
+   "provider": "opencode-go",
+   "estado": "ok",
+   "detalle": "HTTP 200"
+  },
+  {
+   "modelo": "glm-5.1",
+   "provider": "opencode-go",
+   "estado": "ok",
+   "detalle": "HTTP 200"
+  },
+  {
+   "modelo": "glm-5.2",
+   "provider": "opencode-go",
+   "estado": "ok",
+   "detalle": "HTTP 200"
+  },
+  {
+   "modelo": "glm-5.3",
+   "provider": "opencode-go",
+   "estado": "ok",
+   "detalle": "HTTP 200"
+  },
+  {
+   "modelo": "gpt-5.6-luna",
+   "provider": "opencode-go",
+   "estado": "down",
+   "detalle": "HTTP 500"
+  },
+  {
+   "modelo": "grok-4.5",
+   "provider": "opencode-go",
+   "estado": "down",
+   "detalle": "HTTP 503"
+  },
+  {
+   "modelo": "hy3",
+   "provider": "opencode-go",
+   "estado": "ok",
+   "detalle": "HTTP 200"
+  },
+  {
+   "modelo": "hy3-preview",
+   "provider": "opencode-go",
+   "estado": "indisponible",
+   "detalle": "HTTP 400: modelo no disponible/deshabilitado"
+  },
+  {
+   "modelo": "kimi-k2.5",
+   "provider": "opencode-go",
+   "estado": "ok",
+   "detalle": "HTTP 200"
+  },
+  {
+   "modelo": "kimi-k2.6",
+   "provider": "opencode-go",
+   "estado": "ok",
+   "detalle": "HTTP 200"
+  },
+  {
+   "modelo": "kimi-k2.7-code",
+   "provider": "opencode-go",
+   "estado": "ok",
+   "detalle": "HTTP 200"
+  },
+  {
+   "modelo": "kimi-k3",
+   "provider": "opencode-go",
+   "estado": "ok",
+   "detalle": "HTTP 200"
+  },
+  {
+   "modelo": "mimo-v2-omni",
+   "provider": "opencode-go",
+   "estado": "unk",
+   "detalle": "HTTP 400: no responde al probe estándar"
+  },
+  {
+   "modelo": "mimo-v2-pro",
+   "provider": "opencode-go",
+   "estado": "unk",
+   "detalle": "HTTP 400: no responde al probe estándar"
+  },
+  {
+   "modelo": "mimo-v2.5",
+   "provider": "opencode-go",
+   "estado": "ok",
+   "detalle": "HTTP 200"
+  },
+  {
+   "modelo": "mimo-v2.5-pro",
+   "provider": "opencode-go",
+   "estado": "ok",
+   "detalle": "HTTP 200"
+  },
+  {
+   "modelo": "minimax-m2.5",
+   "provider": "opencode-go",
+   "estado": "ok",
+   "detalle": "HTTP 200"
+  },
+  {
+   "modelo": "minimax-m2.7",
+   "provider": "opencode-go",
+   "estado": "down",
+   "detalle": "HTTP 500"
+  },
+  {
+   "modelo": "minimax-m3",
+   "provider": "opencode-go",
+   "estado": "ok",
+   "detalle": "HTTP 200"
+  },
+  {
+   "modelo": "muse-spark-1.2-contributor",
+   "provider": "opencode-go",
+   "estado": "na",
+   "detalle": "HTTP 403: no accesible con tu plan/key"
+  },
+  {
+   "modelo": "ox-alpha-free",
+   "provider": "opencode-go",
+   "estado": "down",
+   "detalle": "HTTP 503"
+  },
+  {
+   "modelo": "qwen3.5-plus",
+   "provider": "opencode-go",
+   "estado": "down",
+   "detalle": "ERR The read operation timed out"
+  },
+  {
+   "modelo": "qwen3.6-plus",
+   "provider": "opencode-go",
+   "estado": "ok",
+   "detalle": "HTTP 200"
+  },
+  {
+   "modelo": "qwen3.7-max",
+   "provider": "opencode-go",
+   "estado": "ok",
+   "detalle": "HTTP 200"
+  },
+  {
+   "modelo": "qwen3.7-plus",
+   "provider": "opencode-go",
+   "estado": "ok",
+   "detalle": "HTTP 200"
+  },
+  {
+   "modelo": "qwen3.8-max",
+   "provider": "opencode-go",
+   "estado": "ok",
+   "detalle": "HTTP 200"
+  },
+  {
+   "modelo": "big-pickle",
+   "provider": "opencode-zen",
+   "estado": "free",
+   "detalle": "no probado (protección cuota global free 100 req/día)"
+  },
+  {
+   "modelo": "claude-fable-5",
+   "provider": "opencode-zen",
+   "estado": "down",
+   "detalle": "HTTP 500"
+  },
+  {
+   "modelo": "claude-haiku-4-5",
+   "provider": "opencode-zen",
+   "estado": "down",
+   "detalle": "HTTP 500"
+  },
+  {
+   "modelo": "claude-opus-4-5",
+   "provider": "opencode-zen",
+   "estado": "down",
+   "detalle": "HTTP 500"
+  },
+  {
+   "modelo": "claude-opus-4-6",
+   "provider": "opencode-zen",
+   "estado": "down",
+   "detalle": "HTTP 500"
+  },
+  {
+   "modelo": "claude-opus-4-7",
+   "provider": "opencode-zen",
+   "estado": "down",
+   "detalle": "HTTP 500"
+  },
+  {
+   "modelo": "claude-opus-4-8",
+   "provider": "opencode-zen",
+   "estado": "down",
+   "detalle": "HTTP 500"
+  },
+  {
+   "modelo": "claude-opus-5",
+   "provider": "opencode-zen",
+   "estado": "free",
+   "detalle": "no probado (protección cuota global free 100 req/día)"
+  },
+  {
+   "modelo": "claude-sonnet-4",
+   "provider": "opencode-zen",
+   "estado": "down",
+   "detalle": "HTTP 500"
+  },
+  {
+   "modelo": "claude-sonnet-4-5",
+   "provider": "opencode-zen",
+   "estado": "down",
+   "detalle": "HTTP 500"
+  },
+  {
+   "modelo": "claude-sonnet-4-6",
+   "provider": "opencode-zen",
+   "estado": "down",
+   "detalle": "HTTP 500"
+  },
+  {
+   "modelo": "claude-sonnet-5",
+   "provider": "opencode-zen",
+   "estado": "down",
+   "detalle": "HTTP 500"
+  },
+  {
+   "modelo": "deepseek-v4-flash",
+   "provider": "opencode-zen",
+   "estado": "ok",
+   "detalle": "HTTP 200"
+  },
+  {
+   "modelo": "deepseek-v4-flash-free",
+   "provider": "opencode-zen",
+   "estado": "free",
+   "detalle": "no probado (protección cuota global free 100 req/día)"
+  },
+  {
+   "modelo": "deepseek-v4-pro",
+   "provider": "opencode-zen",
+   "estado": "ok",
+   "detalle": "HTTP 200"
+  },
+  {
+   "modelo": "gemini-3-flash",
+   "provider": "opencode-zen",
+   "estado": "down",
+   "detalle": "HTTP 500"
+  },
+  {
+   "modelo": "gemini-3.1-pro",
+   "provider": "opencode-zen",
+   "estado": "down",
+   "detalle": "HTTP 500"
+  },
+  {
+   "modelo": "gemini-3.5-flash",
+   "provider": "opencode-zen",
+   "estado": "down",
+   "detalle": "HTTP 500"
+  },
+  {
+   "modelo": "gemini-3.5-flash-lite",
+   "provider": "opencode-zen",
+   "estado": "free",
+   "detalle": "no probado (protección cuota global free 100 req/día)"
+  },
+  {
+   "modelo": "gemini-3.6-flash",
+   "provider": "opencode-zen",
+   "estado": "free",
+   "detalle": "no probado (protección cuota global free 100 req/día)"
+  },
+  {
+   "modelo": "gemini-3.7-flash",
+   "provider": "opencode-zen",
+   "estado": "free",
+   "detalle": "no probado (protección cuota global free 100 req/día)"
+  },
+  {
+   "modelo": "glm-5",
+   "provider": "opencode-zen",
+   "estado": "ok",
+   "detalle": "HTTP 200"
+  },
+  {
+   "modelo": "glm-5.1",
+   "provider": "opencode-zen",
+   "estado": "ok",
+   "detalle": "HTTP 200"
+  },
+  {
+   "modelo": "glm-5.2",
+   "provider": "opencode-zen",
+   "estado": "ok",
+   "detalle": "HTTP 200"
+  },
+  {
+   "modelo": "gpt-5",
+   "provider": "opencode-zen",
+   "estado": "down",
+   "detalle": "HTTP 500"
+  },
+  {
+   "modelo": "gpt-5-codex",
+   "provider": "opencode-zen",
+   "estado": "down",
+   "detalle": "HTTP 500"
+  },
+  {
+   "modelo": "gpt-5-nano",
+   "provider": "opencode-zen",
+   "estado": "down",
+   "detalle": "HTTP 500"
+  },
+  {
+   "modelo": "gpt-5.1",
+   "provider": "opencode-zen",
+   "estado": "down",
+   "detalle": "HTTP 500"
+  },
+  {
+   "modelo": "gpt-5.1-codex",
+   "provider": "opencode-zen",
+   "estado": "down",
+   "detalle": "HTTP 500"
+  },
+  {
+   "modelo": "gpt-5.1-codex-max",
+   "provider": "opencode-zen",
+   "estado": "down",
+   "detalle": "HTTP 500"
+  },
+  {
+   "modelo": "gpt-5.1-codex-mini",
+   "provider": "opencode-zen",
+   "estado": "down",
+   "detalle": "HTTP 500"
+  },
+  {
+   "modelo": "gpt-5.2",
+   "provider": "opencode-zen",
+   "estado": "down",
+   "detalle": "HTTP 500"
+  },
+  {
+   "modelo": "gpt-5.2-codex",
+   "provider": "opencode-zen",
+   "estado": "down",
+   "detalle": "HTTP 500"
+  },
+  {
+   "modelo": "gpt-5.3-codex",
+   "provider": "opencode-zen",
+   "estado": "down",
+   "detalle": "HTTP 500"
+  },
+  {
+   "modelo": "gpt-5.3-codex-spark",
+   "provider": "opencode-zen",
+   "estado": "down",
+   "detalle": "HTTP 500"
+  },
+  {
+   "modelo": "gpt-5.4",
+   "provider": "opencode-zen",
+   "estado": "down",
+   "detalle": "HTTP 500"
+  },
+  {
+   "modelo": "gpt-5.4-mini",
+   "provider": "opencode-zen",
+   "estado": "down",
+   "detalle": "HTTP 500"
+  },
+  {
+   "modelo": "gpt-5.4-nano",
+   "provider": "opencode-zen",
+   "estado": "down",
+   "detalle": "HTTP 500"
+  },
+  {
+   "modelo": "gpt-5.4-pro",
+   "provider": "opencode-zen",
+   "estado": "down",
+   "detalle": "HTTP 500"
+  },
+  {
+   "modelo": "gpt-5.5",
+   "provider": "opencode-zen",
+   "estado": "down",
+   "detalle": "HTTP 500"
+  },
+  {
+   "modelo": "gpt-5.5-pro",
+   "provider": "opencode-zen",
+   "estado": "down",
+   "detalle": "HTTP 500"
+  },
+  {
+   "modelo": "gpt-5.6-luna",
+   "provider": "opencode-zen",
+   "estado": "free",
+   "detalle": "no probado (protección cuota global free 100 req/día)"
+  },
+  {
+   "modelo": "gpt-5.6-sol",
+   "provider": "opencode-zen",
+   "estado": "free",
+   "detalle": "no probado (protección cuota global free 100 req/día)"
+  },
+  {
+   "modelo": "gpt-5.6-terra",
+   "provider": "opencode-zen",
+   "estado": "free",
+   "detalle": "no probado (protección cuota global free 100 req/día)"
+  },
+  {
+   "modelo": "grok-4.5",
+   "provider": "opencode-zen",
+   "estado": "free",
+   "detalle": "no probado (protección cuota global free 100 req/día)"
+  },
+  {
+   "modelo": "grok-4.6",
+   "provider": "opencode-zen",
+   "estado": "free",
+   "detalle": "no probado (protección cuota global free 100 req/día)"
+  },
+  {
+   "modelo": "grok-build-0.1",
+   "provider": "opencode-zen",
+   "estado": "down",
+   "detalle": "HTTP 500"
+  },
+  {
+   "modelo": "hy3-free",
+   "provider": "opencode-zen",
+   "estado": "free",
+   "detalle": "no probado (protección cuota global free 100 req/día)"
+  },
+  {
+   "modelo": "kimi-k2.5",
+   "provider": "opencode-zen",
+   "estado": "ok",
+   "detalle": "HTTP 200"
+  },
+  {
+   "modelo": "kimi-k2.6",
+   "provider": "opencode-zen",
+   "estado": "ok",
+   "detalle": "HTTP 200"
+  },
+  {
+   "modelo": "kimi-k2.7-code",
+   "provider": "opencode-zen",
+   "estado": "ok",
+   "detalle": "HTTP 200"
+  },
+  {
+   "modelo": "kimi-k3",
+   "provider": "opencode-zen",
+   "estado": "free",
+   "detalle": "no probado (protección cuota global free 100 req/día)"
+  },
+  {
+   "modelo": "laguna-s-2.1-free",
+   "provider": "opencode-zen",
+   "estado": "free",
+   "detalle": "no probado (protección cuota global free 100 req/día)"
+  },
+  {
+   "modelo": "mimo-v2.5-free",
+   "provider": "opencode-zen",
+   "estado": "free",
+   "detalle": "no probado (protección cuota global free 100 req/día)"
+  },
+  {
+   "modelo": "minimax-m2.5",
+   "provider": "opencode-zen",
+   "estado": "ok",
+   "detalle": "HTTP 200"
+  },
+  {
+   "modelo": "minimax-m2.7",
+   "provider": "opencode-zen",
+   "estado": "ok",
+   "detalle": "HTTP 200"
+  },
+  {
+   "modelo": "minimax-m3",
+   "provider": "opencode-zen",
+   "estado": "ok",
+   "detalle": "HTTP 200"
+  },
+  {
+   "modelo": "muse-spark-1.2",
+   "provider": "opencode-zen",
+   "estado": "free",
+   "detalle": "no probado (protección cuota global free 100 req/día)"
+  },
+  {
+   "modelo": "muse-spark-1.2-contributor-free",
+   "provider": "opencode-zen",
+   "estado": "free",
+   "detalle": "no probado (protección cuota global free 100 req/día)"
+  },
+  {
+   "modelo": "nemotron-3-ultra-free",
+   "provider": "opencode-zen",
+   "estado": "free",
+   "detalle": "no probado (protección cuota global free 100 req/día)"
+  },
+  {
+   "modelo": "nemotron-3.5-lightning-free",
+   "provider": "opencode-zen",
+   "estado": "free",
+   "detalle": "no probado (protección cuota global free 100 req/día)"
+  },
+  {
+   "modelo": "qwen3.5-plus",
+   "provider": "opencode-zen",
+   "estado": "ok",
+   "detalle": "HTTP 200"
+  },
+  {
+   "modelo": "qwen3.6-plus",
+   "provider": "opencode-zen",
+   "estado": "ok",
+   "detalle": "HTTP 200"
+  },
+  {
+   "modelo": "x-preview-f-free",
+   "provider": "opencode-zen",
+   "estado": "free",
+   "detalle": "no probado (protección cuota global free 100 req/día)"
+  },
+  {
+   "modelo": "deepseek/deepseek-v4-flash",
+   "provider": "openrouter",
+   "estado": "ok",
+   "detalle": "HTTP 200"
+  },
+  {
+   "modelo": "deepseek/deepseek-v4-pro",
+   "provider": "openrouter",
+   "estado": "ok",
+   "detalle": "HTTP 200"
+  },
+  {
+   "modelo": "tencent/hy3",
+   "provider": "openrouter",
+   "estado": "ok",
+   "detalle": "HTTP 200"
+  }
+ ]
+}
