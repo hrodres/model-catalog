@@ -1,5 +1,5 @@
 {
- "generated": "2026-08-24T03:47:05.023748+00:00",
+ "generated": "2026-08-24T04:04:47.905860+00:00",
  "snapshot": "2026-08-24",
  "fuente": "check-model-health.py F3 (2026-08-24)",
  "providers": {
@@ -17,8 +17,8 @@
   "opencode-zen": {
    "enabled": 1,
    "probed": {
-    "down": 32,
-    "ok": 12,
+    "down": 31,
+    "ok": 13,
     "free": 20
    },
    "total": 3
@@ -32,8 +32,8 @@
   }
  },
  "counts": {
-  "ok": 36,
-  "down": 36,
+  "ok": 37,
+  "down": 35,
   "indisponible": 1,
   "unk": 2,
   "na": 1,
@@ -45,22 +45,22 @@
   "source": "api",
   "buckets": {
    "rolling": {
-    "percent": 1,
+    "percent": 2,
     "status": "ok",
-    "resets_at": "2026-08-24T05:18:01.568Z",
-    "resets_in_human": "1h 32m"
+    "resets_at": "2026-08-24T05:18:01.703Z",
+    "resets_in_human": "1h 15m"
    },
    "weekly": {
     "percent": 0,
     "status": "ok",
-    "resets_at": "2026-08-31T00:00:00.568Z",
-    "resets_in_human": "164h 14m"
+    "resets_at": "2026-08-31T00:00:00.703Z",
+    "resets_in_human": "163h 57m"
    },
    "monthly": {
     "percent": 96,
     "status": "critica",
-    "resets_at": "2026-08-24T08:20:30.568Z",
-    "resets_in_human": "4h 35m"
+    "resets_at": "2026-08-24T08:20:30.703Z",
+    "resets_in_human": "4h 17m"
    }
   }
  },
@@ -645,8 +645,8 @@
   {
    "modelo": "qwen3.5-plus",
    "provider": "opencode-zen",
-   "estado": "down",
-   "detalle": "ERR The read operation timed out"
+   "estado": "ok",
+   "detalle": "HTTP 200"
   },
   {
    "modelo": "qwen3.6-plus",

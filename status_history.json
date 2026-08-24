@@ -345,7 +345,7 @@
    "opencode-zen/minimax-m2.5": "ok",
    "opencode-zen/minimax-m2.7": "ok",
    "opencode-zen/minimax-m3": "ok",
-   "opencode-zen/qwen3.5-plus": "down",
+   "opencode-zen/qwen3.5-plus": "ok",
    "opencode-zen/qwen3.6-plus": "ok",
    "openrouter/deepseek/deepseek-v4-flash": "ok",
    "openrouter/deepseek/deepseek-v4-pro": "ok",
