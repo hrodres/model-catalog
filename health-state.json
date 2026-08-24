@@ -1,13 +1,13 @@
 {
- "generated": "2026-08-24T01:34:39.539310+00:00",
+ "generated": "2026-08-24T01:37:39.753049+00:00",
  "snapshot": "2026-08-24",
  "fuente": "check-model-health.py F3 (2026-08-24)",
  "providers": {
   "opencode-go": {
    "enabled": 1,
    "probed": {
-    "ok": 20,
-    "down": 5,
+    "down": 6,
+    "ok": 19,
     "indisponible": 1,
     "unk": 2,
     "na": 1
@@ -32,8 +32,8 @@
   }
  },
  "counts": {
-  "ok": 36,
-  "down": 36,
+  "down": 37,
+  "ok": 35,
   "indisponible": 1,
   "unk": 2,
   "na": 1,
@@ -47,20 +47,20 @@
    "rolling": {
     "percent": 1,
     "status": "ok",
-    "resets_at": "2026-08-24T05:18:01.523Z",
-    "resets_in_human": "3h 45m"
+    "resets_at": "2026-08-24T05:18:01.410Z",
+    "resets_in_human": "3h 42m"
    },
    "weekly": {
     "percent": 0,
     "status": "ok",
-    "resets_at": "2026-08-31T00:00:00.523Z",
-    "resets_in_human": "166h 27m"
+    "resets_at": "2026-08-31T00:00:00.410Z",
+    "resets_in_human": "166h 24m"
    },
    "monthly": {
     "percent": 95,
     "status": "critica",
-    "resets_at": "2026-08-24T08:20:30.523Z",
-    "resets_in_human": "6h 47m"
+    "resets_at": "2026-08-24T08:20:30.410Z",
+    "resets_in_human": "6h 44m"
    }
   }
  },
@@ -72,8 +72,8 @@
  "chain": [
   {
    "link": "opencode-go/deepseek-v4-flash",
-   "estado": "ok",
-   "detalle": "HTTP 200"
+   "estado": "down",
+   "detalle": "ERR The read operation timed out"
   },
   {
    "link": "opencode-zen/deepseek-v4-flash-free",
@@ -105,8 +105,8 @@
   {
    "modelo": "deepseek-v4-flash",
    "provider": "opencode-go",
-   "estado": "ok",
-   "detalle": "HTTP 200"
+   "estado": "down",
+   "detalle": "ERR The read operation timed out"
   },
   {
    "modelo": "deepseek-v4-flash-vision-exp",
