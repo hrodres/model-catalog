@@ -1,5 +1,5 @@
 {
- "generated": "2026-08-24T04:04:47.905860+00:00",
+ "generated": "2026-08-24T09:41:48.217735+00:00",
  "snapshot": "2026-08-24",
  "fuente": "check-model-health.py F3 (2026-08-24)",
  "providers": {
@@ -32,12 +32,11 @@
   }
  },
  "counts": {
-  "ok": 37,
-  "down": 35,
-  "indisponible": 1,
+  "ok": 43,
+  "down": 48,
+  "indisponible": 2,
   "unk": 2,
-  "na": 1,
-  "free": 20
+  "na": 1
  },
  "go_quota": {
   "badge": "⚠️ Cuota Go casi agotada (Mensual 96%)",
@@ -279,8 +278,8 @@
   {
    "modelo": "big-pickle",
    "provider": "opencode-zen",
-   "estado": "free",
-   "detalle": "no probado (protección cuota global free 100 req/día)"
+   "estado": "ok",
+   "detalle": "HTTP 200"
   },
   {
    "modelo": "claude-fable-5",
@@ -321,8 +320,8 @@
   {
    "modelo": "claude-opus-5",
    "provider": "opencode-zen",
-   "estado": "free",
-   "detalle": "no probado (protección cuota global free 100 req/día)"
+   "estado": "down",
+   "detalle": "HTTP 500"
   },
   {
    "modelo": "claude-sonnet-4",
@@ -357,8 +356,8 @@
   {
    "modelo": "deepseek-v4-flash-free",
    "provider": "opencode-zen",
-   "estado": "free",
-   "detalle": "no probado (protección cuota global free 100 req/día)"
+   "estado": "indisponible",
+   "detalle": "HTTP 400: modelo no disponible/deshabilitado"
   },
   {
    "modelo": "deepseek-v4-pro",
@@ -387,20 +386,20 @@
   {
    "modelo": "gemini-3.5-flash-lite",
    "provider": "opencode-zen",
-   "estado": "free",
-   "detalle": "no probado (protección cuota global free 100 req/día)"
+   "estado": "down",
+   "detalle": "HTTP 500"
   },
   {
    "modelo": "gemini-3.6-flash",
    "provider": "opencode-zen",
-   "estado": "free",
-   "detalle": "no probado (protección cuota global free 100 req/día)"
+   "estado": "down",
+   "detalle": "HTTP 500"
   },
   {
    "modelo": "gemini-3.7-flash",
    "provider": "opencode-zen",
-   "estado": "free",
-   "detalle": "no probado (protección cuota global free 100 req/día)"
+   "estado": "down",
+   "detalle": "HTTP 500"
   },
   {
    "modelo": "glm-5",
@@ -525,32 +524,32 @@
   {
    "modelo": "gpt-5.6-luna",
    "provider": "opencode-zen",
-   "estado": "free",
-   "detalle": "no probado (protección cuota global free 100 req/día)"
+   "estado": "down",
+   "detalle": "HTTP 500"
   },
   {
    "modelo": "gpt-5.6-sol",
    "provider": "opencode-zen",
-   "estado": "free",
-   "detalle": "no probado (protección cuota global free 100 req/día)"
+   "estado": "down",
+   "detalle": "HTTP 500"
   },
   {
    "modelo": "gpt-5.6-terra",
    "provider": "opencode-zen",
-   "estado": "free",
-   "detalle": "no probado (protección cuota global free 100 req/día)"
+   "estado": "down",
+   "detalle": "HTTP 500"
   },
   {
    "modelo": "grok-4.5",
    "provider": "opencode-zen",
-   "estado": "free",
-   "detalle": "no probado (protección cuota global free 100 req/día)"
+   "estado": "down",
+   "detalle": "HTTP 503"
   },
   {
    "modelo": "grok-4.6",
    "provider": "opencode-zen",
-   "estado": "free",
-   "detalle": "no probado (protección cuota global free 100 req/día)"
+   "estado": "down",
+   "detalle": "HTTP 500"
   },
   {
    "modelo": "grok-build-0.1",
@@ -561,8 +560,8 @@
   {
    "modelo": "hy3-free",
    "provider": "opencode-zen",
-   "estado": "free",
-   "detalle": "no probado (protección cuota global free 100 req/día)"
+   "estado": "ok",
+   "detalle": "HTTP 200"
   },
   {
    "modelo": "kimi-k2.5",
@@ -585,20 +584,20 @@
   {
    "modelo": "kimi-k3",
    "provider": "opencode-zen",
-   "estado": "free",
-   "detalle": "no probado (protección cuota global free 100 req/día)"
+   "estado": "ok",
+   "detalle": "HTTP 200"
   },
   {
    "modelo": "laguna-s-2.1-free",
    "provider": "opencode-zen",
-   "estado": "free",
-   "detalle": "no probado (protección cuota global free 100 req/día)"
+   "estado": "ok",
+   "detalle": "HTTP 200"
   },
   {
    "modelo": "mimo-v2.5-free",
    "provider": "opencode-zen",
-   "estado": "free",
-   "detalle": "no probado (protección cuota global free 100 req/día)"
+   "estado": "ok",
+   "detalle": "HTTP 200"
   },
   {
    "modelo": "minimax-m2.5",
@@ -621,26 +620,26 @@
   {
    "modelo": "muse-spark-1.2",
    "provider": "opencode-zen",
-   "estado": "free",
-   "detalle": "no probado (protección cuota global free 100 req/día)"
+   "estado": "down",
+   "detalle": "HTTP 500"
   },
   {
    "modelo": "muse-spark-1.2-contributor-free",
    "provider": "opencode-zen",
-   "estado": "free",
-   "detalle": "no probado (protección cuota global free 100 req/día)"
+   "estado": "down",
+   "detalle": "HTTP 500"
   },
   {
    "modelo": "nemotron-3-ultra-free",
    "provider": "opencode-zen",
-   "estado": "free",
-   "detalle": "no probado (protección cuota global free 100 req/día)"
+   "estado": "down",
+   "detalle": "HTTP 200 pero error embebido (upstream)"
   },
   {
    "modelo": "nemotron-3.5-lightning-free",
    "provider": "opencode-zen",
-   "estado": "free",
-   "detalle": "no probado (protección cuota global free 100 req/día)"
+   "estado": "down",
+   "detalle": "ERR timeout/red"
   },
   {
    "modelo": "qwen3.5-plus",
@@ -657,8 +656,8 @@
   {
    "modelo": "x-preview-f-free",
    "provider": "opencode-zen",
-   "estado": "free",
-   "detalle": "no probado (protección cuota global free 100 req/día)"
+   "estado": "ok",
+   "detalle": "HTTP 200"
   },
   {
    "modelo": "deepseek/deepseek-v4-flash",
