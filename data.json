@@ -1,14 +1,14 @@
 {
- "generated": "2026-08-24T04:02:56.295537+00:00",
- "snapshot": "2026-08-24 04:02 UTC",
- "modelsdev_fetched": "2026-08-24 04:02 UTC",
+ "generated": "2026-08-24T11:45:12.950820+00:00",
+ "snapshot": "2026-08-24 11:45 UTC",
+ "modelsdev_fetched": "2026-08-24 11:45 UTC",
  "modelsdev_count": 355,
  "counts": {
-  "total": 77,
-  "go": 29,
+  "total": 78,
+  "go": 30,
   "zen": 64,
   "free": 9,
-  "with_modelsdev": 72
+  "with_modelsdev": 73
  },
  "models": [
   {
@@ -1715,6 +1715,38 @@
    "swebench": null,
    "benchmarks": {},
    "md_url": "https://models.dev/models/poolside/laguna-s-2.1"
+  },
+  {
+   "id": "longcat-2.0",
+   "providers": {
+    "go": true,
+    "zen": false,
+    "free": false
+   },
+   "tier": "go",
+   "name": "LongCat-2.0",
+   "desc": "Meituan LongCat-2.0, a reasoning model with tool calling and a 1M-token context window",
+   "context": 1000000,
+   "output": 131072,
+   "reasoning": true,
+   "tool_call": true,
+   "structured": false,
+   "multimodal": false,
+   "open_weights": false,
+   "release": "2026-06-30",
+   "last_updated": "2026-06-30",
+   "knowledge": "",
+   "swebench": null,
+   "benchmarks": {
+    "SWE-Bench Pro": 59.5,
+    "SWE-Bench Multilingual": 77.3,
+    "Terminal-Bench": 70.8,
+    "GPQA Diamond": 88.9,
+    "BrowseComp": 79.9,
+    "IFEval": 90,
+    "FORTE": 73.2
+   },
+   "md_url": "https://models.dev/models/meituan/longcat-2.0"
   },
   {
    "id": "mimo-v2-omni",
