@@ -3,830 +3,941 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>Model Catalog — OpenCode Zen/Go/OpenRouter</title>
-<meta name="description" content="Catálogo de modelos OpenCode Zen/Go/OpenRouter con specs y benchmarks de models.dev">
+<title>Model Catalog — OpenCode Zen · Go · OpenRouter</title>
+<meta name="description" content="Catálogo de modelos OpenCode Zen/Go/OpenRouter: busca, compara precios, estado de salud y cuota de uso.">
 <meta name="theme-color" content="#0b0d13">
 <style>
-  :root {
-    --bg: #0b0d13; --bg-soft: #10131c; --card: #151926; --card-hover: #1a1f30;
-    --border: #242a3d; --border-soft: #1d2231; --text: #e7e9f0; --muted: #9aa1b8;
-    --accent: #6d9bff; --accent-soft: rgba(109,155,255,.12);
-    --green: #34d399; --red: #f87171; --amber: #fbbf24; --zen: #a78bfa; --orange: #fb923c;
-    --radius: 14px; --radius-sm: 10px;
-    --shadow: 0 8px 30px rgba(0,0,0,.35);
-    --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Inter", sans-serif;
+  :root{
+    --bg:#0b0d13; --bg-soft:#10131c; --card:#151926; --card-hover:#1a1f30;
+    --border:#242a3d; --border-soft:#1d2231; --text:#e7e9f0; --muted:#9aa1b8;
+    --accent:#6d9bff; --accent-soft:rgba(109,155,255,.12);
+    --green:#34d399; --red:#f87171; --amber:#fbbf24;
+    --go:#6d9bff; --zen:#a78bfa; --orange:#fb923c;
+    --radius:14px; --radius-sm:10px; --shadow:0 8px 30px rgba(0,0,0,.35);
+    --font:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Inter",sans-serif;
   }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  html { -webkit-text-size-adjust: 100%; }
-  body { background: var(--bg); color: var(--text); font-family: var(--font); min-height: 100vh; }
-  .wrap { max-width: 1180px; margin: 0 auto; padding: 0 16px 32px; }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{-webkit-text-size-adjust:100%}
+  body{background:var(--bg);color:var(--text);font-family:var(--font);min-height:100vh;line-height:1.5}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 16px 90px}
+  a{color:var(--accent);text-decoration:none}
+  a:hover{text-decoration:underline}
 
-  /* ── Header sticky ── */
-  .topbar { position: sticky; top: 0; z-index: 50; background: rgba(11,13,19,.85); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-bottom: 1px solid var(--border-soft); }
-  .topbar-in { max-width: 1180px; margin: 0 auto; padding: 12px 16px; display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
-  .brand { display: flex; align-items: center; gap: 10px; min-width: 0; }
-  .logo { width: 34px; height: 34px; border-radius: 10px; background: linear-gradient(135deg, var(--accent), var(--zen)); display: flex; align-items: center; justify-content: center; font-size: 17px; flex-shrink: 0; box-shadow: 0 4px 14px rgba(109,155,255,.35); }
-  .brand h1 { font-size: 1.05rem; font-weight: 700; letter-spacing: -.01em; white-space: nowrap; }
-  .brand .sub { font-size: .72rem; color: var(--muted); margin-top: 1px; }
-  .topbar-spacer { flex: 1; }
-  .count-pill { font-size: .75rem; color: var(--muted); background: var(--card); border: 1px solid var(--border-soft); padding: 6px 12px; border-radius: 999px; white-space: nowrap; }
-  .count-pill b { color: var(--text); }
-  .btn-filter { display: none; align-items: center; gap: 7px; background: var(--accent-soft); color: var(--accent); border: 1px solid rgba(109,155,255,.3); border-radius: 999px; padding: 8px 14px; font-size: .82rem; font-weight: 600; cursor: pointer; font-family: inherit; }
-  .btn-filter .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
-  .btn-filter.on .dot { background: var(--green); box-shadow: 0 0 8px var(--green); }  /* dot verde SOLO si hay filtros activos, no si el panel está abierto */
-  .btn-filter.on { background: rgba(52,211,153,.12); border-color: rgba(52,211,153,.35); color: var(--green); }
+  /* ── Sticky topbar ── */
+  .topbar{position:sticky;top:0;z-index:60;background:rgba(11,13,19,.88);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--border-soft)}
+  .topbar-in{max-width:1180px;margin:0 auto;padding:11px 16px;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+  .brand{display:flex;align-items:center;gap:10px;min-width:0}
+  .logo{width:34px;height:34px;border-radius:10px;background:linear-gradient(135deg,var(--accent),var(--zen));display:flex;align-items:center;justify-content:center;font-size:17px;flex-shrink:0;box-shadow:0 4px 14px rgba(109,155,255,.35)}
+  .brand h1{font-size:1.02rem;font-weight:700;letter-spacing:-.01em;white-space:nowrap}
+  .brand .sub{font-size:.7rem;color:var(--muted)}
+  .topbar-spacer{flex:1}
+  .updated{font-size:.72rem;color:var(--muted);background:var(--card);border:1px solid var(--border-soft);padding:5px 11px;border-radius:999px;white-space:nowrap}
+  .updated b{color:var(--text)}
 
-  /* ── Filtros ── */
-  .filters { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 16px; margin: 16px 0 12px; display: flex; flex-wrap: wrap; gap: 14px; align-items: flex-end; box-shadow: var(--shadow); }
-  .f-group { display: flex; flex-direction: column; gap: 5px; }
-  .f-group label { font-size: .68rem; color: var(--muted); text-transform: uppercase; letter-spacing: .06em; font-weight: 600; }
-  input[type=search], select {
-    background: var(--bg-soft); border: 1px solid var(--border); color: var(--text);
-    border-radius: var(--radius-sm); padding: 9px 12px; font-size: .9rem; font-family: inherit;
-    transition: border-color .15s;
+  /* ── Top nav tabs (desktop) ── */
+  .nav{max-width:1180px;margin:0 auto;display:flex;gap:4px;padding:10px 16px 0;overflow-x:auto;-webkit-overflow-scrolling:touch}
+  .nav button{touch-action:manipulation;background:transparent;border:none;color:var(--muted);font-family:inherit;font-size:.86rem;font-weight:600;padding:9px 14px;border-radius:10px 10px 0 0;cursor:pointer;white-space:nowrap;border-bottom:2px solid transparent;transition:color .15s,border-color .15s,background .15s}
+  .nav button:hover{color:var(--text);background:var(--card)}
+  .nav button.active{color:var(--text);border-bottom-color:var(--accent);background:var(--card)}
+  .nav button:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
+
+  .panel{display:none;margin-top:14px}
+  .panel.active{display:block;animation:fade .2s ease}
+  @keyframes fade{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+
+  .section-title{font-size:1.04rem;font-weight:700;letter-spacing:-.01em;margin:6px 0 4px}
+  .section-sub{font-size:.78rem;color:var(--muted);margin-bottom:14px}
+
+  /* ── KPI cards (Resumen) ── */
+  .kpi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-bottom:18px}
+  .kpi{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:16px;box-shadow:var(--shadow);position:relative;overflow:hidden}
+  .kpi .kpi-top{display:flex;align-items:center;gap:8px;font-size:.72rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;font-weight:700;margin-bottom:8px}
+  .kpi .kpi-val{font-size:1.7rem;font-weight:800;letter-spacing:-.02em;line-height:1.1}
+  .kpi .kpi-foot{font-size:.74rem;color:var(--muted);margin-top:6px}
+  .sema{width:10px;height:10px;border-radius:50%;display:inline-block;flex-shrink:0}
+  .sema.ok{background:var(--green);box-shadow:0 0 8px var(--green)}
+  .sema.warn{background:var(--amber);box-shadow:0 0 8px var(--amber)}
+  .sema.down{background:var(--red);box-shadow:0 0 8px var(--red)}
+
+  /* ── Provider cards ── */
+  .prov-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px;margin-bottom:18px}
+  .prov{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:15px;box-shadow:var(--shadow);border-left:4px solid var(--border)}
+  .prov.go{border-left-color:var(--go)}
+  .prov.zen{border-left-color:var(--zen)}
+  .prov.or{border-left-color:var(--orange)}
+  .prov-head{display:flex;align-items:center;gap:9px;margin-bottom:10px}
+  .prov-head .pname{font-weight:700;font-size:.98rem}
+  .prov-head .ptag{font-size:.68rem;color:var(--muted);background:var(--bg-soft);border:1px solid var(--border-soft);padding:2px 8px;border-radius:999px}
+  .prov-stats{display:flex;gap:14px;flex-wrap:wrap}
+  .prov-stats div{font-size:.8rem;color:var(--muted)}
+  .prov-stats b{color:var(--text);font-size:1.05rem;font-weight:700;display:block}
+  .prov-note{font-size:.72rem;color:var(--muted);margin-top:9px;line-height:1.5}
+
+  /* ── Legend / glossary ── */
+  .legend{display:flex;gap:16px;flex-wrap:wrap;font-size:.74rem;color:var(--muted);margin:6px 0 4px}
+  .legend span{display:inline-flex;align-items:center;gap:6px}
+  details.gloss{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:4px 16px;margin-top:10px;box-shadow:var(--shadow)}
+  details.gloss summary{cursor:pointer;padding:12px 0;font-weight:650;font-size:.9rem;list-style:none;display:flex;align-items:center;gap:8px}
+  details.gloss summary::-webkit-details-marker{display:none}
+  details.gloss summary::before{content:"📖";}
+  details.gloss .g-body{padding:4px 0 14px}
+  .g-item{display:flex;gap:12px;padding:8px 0;border-top:1px solid var(--border-soft);font-size:.84rem}
+  .g-item:first-child{border-top:none}
+  .g-item b{color:var(--accent);min-width:130px;display:inline-block;font-weight:700}
+  .g-item span{color:var(--muted)}
+
+  /* ── Tables ── */
+  .table-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)}
+  .table-scroll{overflow-x:auto}
+  table{width:100%;border-collapse:collapse;font-size:.87rem;min-width:760px}
+  thead th{text-align:left;padding:11px 14px;color:var(--muted);font-size:.7rem;text-transform:uppercase;letter-spacing:.05em;border-bottom:1px solid var(--border);cursor:pointer;user-select:none;white-space:nowrap;background:var(--bg-soft)}
+  thead th:hover{color:var(--accent)}
+  thead th .ar{font-size:.66rem;margin-left:3px;opacity:.8}
+  tbody td{padding:10px 14px;border-bottom:1px solid var(--border-soft);vertical-align:middle}
+  tbody tr:last-child td{border-bottom:none}
+  tbody tr:hover{background:var(--card-hover)}
+  .num{font-variant-numeric:tabular-nums;text-align:right}
+  .m-name{font-weight:650}
+  .m-id{color:var(--muted);font-size:.72rem;font-family:ui-monospace,monospace;margin-top:2px}
+  .yes{color:var(--green);font-weight:700}
+  .no{color:#6b7b9e}
+
+  /* ── Provider badges (identity) ── */
+  .pb{display:inline-block;padding:2px 9px;border-radius:999px;font-size:.68rem;font-weight:700;margin:1px 2px 1px 0;white-space:nowrap;border:1px solid}
+  .pb.go{color:var(--go);border-color:rgba(109,155,255,.35);background:rgba(109,155,255,.12)}
+  .pb.zen{color:var(--zen);border-color:rgba(167,139,250,.35);background:rgba(167,139,250,.12)}
+  .pb.or{color:var(--orange);border-color:rgba(251,146,60,.35);background:rgba(251,146,60,.12)}
+  .pb.free{color:var(--green);border-color:rgba(52,211,153,.35);background:rgba(52,211,153,.12)}
+  .pb.warn{color:var(--amber);border-color:rgba(251,191,36,.35);background:rgba(251,191,36,.12);cursor:help}
+  .tier{display:inline-block;padding:1px 8px;border-radius:999px;font-size:.68rem;font-weight:600;border:1px solid var(--border);color:var(--muted);background:var(--bg-soft)}
+  .tier.free{color:var(--green);border-color:rgba(52,211,153,.3)}
+
+  /* ── Filters ── */
+  .filters{display:flex;flex-wrap:wrap;gap:12px;align-items:flex-end;background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:14px;margin-bottom:12px;box-shadow:var(--shadow)}
+  .f-group{display:flex;flex-direction:column;gap:5px}
+  .f-group label{font-size:.66rem;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;font-weight:600}
+  input[type=search],input[type=text],select{background:var(--bg-soft);border:1px solid var(--border);color:var(--text);border-radius:var(--radius-sm);padding:9px 12px;font-size:.9rem;font-family:inherit;transition:border-color .15s}
+  input[type=search]:focus,select:focus{outline:none;border-color:var(--accent)}
+  .checks{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+  .checks label{display:flex;align-items:center;gap:7px;font-size:.84rem;cursor:pointer}
+  .checks input{accent-color:var(--accent);width:16px;height:16px}
+
+  /* ── Health ── */
+  .hs-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin-bottom:14px}
+  .hs-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:12px 14px}
+  .hs-card b{font-size:1.3rem;font-weight:800;display:block;line-height:1.15}
+  .hs-card span{font-size:.72rem;color:var(--muted)}
+  .hs-card.ok b{color:var(--green)} .hs-card.down b{color:var(--red)} .hs-card.na b{color:var(--muted)} .hs-card.free b{color:var(--green)}
+  .hstatus{display:inline-flex;align-items:center;gap:5px;font-size:.8rem;font-weight:650;white-space:nowrap}
+  .hstatus.hs-ok{color:var(--green)} .hstatus.hs-down{color:var(--red)} .hstatus.hs-unk{color:var(--amber)} .hstatus.hs-na{color:var(--muted)} .hstatus.hs-free{color:var(--green)}
+  .hdot{width:9px;height:9px;border-radius:50%;display:inline-block;margin:0 1px}
+  .hdot.ok{background:var(--green)} .hdot.down{background:var(--red)} .hdot.unk{background:var(--amber)}
+  .hdot.na{background:transparent;border:1px solid #2a3040} .hdot.free{background:var(--green);opacity:.4}
+  .fails-badge{display:inline-block;background:rgba(248,113,113,.15);color:var(--red);border:1px solid rgba(248,113,113,.3);font-size:.68rem;font-weight:700;padding:1px 7px;border-radius:999px}
+  .dots{white-space:nowrap}
+
+  /* ── Chain flow ── */
+  .chain-flow{display:flex;flex-direction:column;gap:0;margin:14px 0}
+  .chain-step{display:flex;gap:12px;align-items:stretch}
+  .chain-pos{width:30px;height:30px;border-radius:50%;background:var(--accent-soft);border:1px solid var(--accent);color:var(--accent);font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:.82rem}
+  .chain-box{flex:1;background:var(--card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:11px 14px}
+  .chain-box .clink{font-family:ui-monospace,monospace;font-size:.82rem;color:var(--text);font-weight:600}
+  .chain-box .crole{font-size:.76rem;color:var(--muted);margin-top:3px}
+  .chain-arrow{display:flex;justify-content:center;color:var(--muted);font-size:.8rem;padding:2px 0 2px 15px}
+
+  /* ── Quota bars ── */
+  .quota-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin-bottom:14px}
+  .quota-cell{background:var(--bg-soft);border:1px solid var(--border-soft);border-radius:12px;padding:14px}
+  .quota-name{font-size:.72rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;font-weight:700}
+  .quota-pct{font-size:1.6rem;font-weight:800;letter-spacing:-.02em;margin:4px 0}
+  .quota-reset{font-size:.74rem;color:var(--muted)}
+  .bar{height:8px;border-radius:999px;background:var(--border);overflow:hidden;margin-top:8px}
+  .bar > i{display:block;height:100%;border-radius:999px}
+  .bar > i.ok{background:var(--green)}
+  .bar > i.warn{background:var(--amber)}
+  .bar > i.down{background:var(--red)}
+
+  .info-note{font-size:.74rem;color:var(--muted);margin-top:10px;line-height:1.6;background:var(--bg-soft);border:1px solid var(--border-soft);border-radius:10px;padding:10px 12px}
+  .info-note b{color:var(--text)}
+  .info-note code{font-family:ui-monospace,monospace;font-size:.74rem;color:var(--accent)}
+  .oc-note{font-size:.76rem;color:var(--muted);margin:8px 0;line-height:1.6}
+  .oc-note a{color:var(--accent)}
+
+  /* ── Timeline (novedades) ── */
+  .timeline{list-style:none;max-height:420px;overflow-y:auto;margin-top:8px}
+  .timeline li{display:flex;align-items:baseline;gap:10px;padding:7px 2px;border-bottom:1px solid var(--border-soft);font-size:.82rem}
+  .timeline li:last-child{border-bottom:none}
+  .tl-date{color:var(--muted);font-size:.72rem;white-space:nowrap;min-width:74px}
+  .tl-tag{font-size:.66rem;font-weight:700;padding:1px 8px;border-radius:999px;white-space:nowrap}
+  .tl-tag.added{color:var(--green);background:rgba(52,211,153,.12);border:1px solid rgba(52,211,153,.3)}
+  .tl-tag.removed{color:var(--red);background:rgba(248,113,113,.12);border:1px solid rgba(248,113,113,.3)}
+  .tl-tag.manual{color:var(--zen);background:rgba(167,139,250,.12);border:1px solid rgba(167,139,250,.3)}
+  .tl-tag.auto{color:var(--accent);background:rgba(109,155,255,.12);border:1px solid rgba(109,155,255,.3)}
+  .tl-text{color:var(--text)}
+  .tl-empty{color:var(--muted);font-size:.82rem;padding:14px 2px}
+
+  /* ── Skeleton ── */
+  .skel{display:none;padding:14px}
+  .skel.on{display:block}
+  .skel-row{height:46px;margin-bottom:8px;border-radius:var(--radius-sm);background:linear-gradient(90deg,var(--bg-soft) 25%,var(--card-hover) 50%,var(--bg-soft) 75%);background-size:200% 100%;animation:shimmer 1.3s infinite}
+  @keyframes shimmer{to{background-position:-200% 0}}
+
+  footer{margin-top:22px;color:var(--muted);font-size:.73rem;line-height:1.7}
+  footer a{color:var(--accent)}
+
+  /* ── Modal detalle ── */
+  .md-overlay{position:fixed;inset:0;background:rgba(5,7,12,.72);z-index:100;display:flex;align-items:center;justify-content:center;padding:18px;backdrop-filter:blur(4px)}
+  .md-overlay[hidden]{display:none}
+  .md-panel{background:var(--card);border:1px solid var(--border);border-radius:18px;width:100%;max-width:680px;max-height:86vh;overflow-y:auto;padding:0;box-shadow:var(--shadow);outline:none}
+  .md-head{position:sticky;top:0;background:rgba(21,25,38,.96);backdrop-filter:blur(10px);border-bottom:1px solid var(--border-soft);padding:14px 18px;display:flex;align-items:center;gap:12px;z-index:2}
+  .md-head h2{font-size:1.05rem;font-weight:700;letter-spacing:-.01em;flex:1;min-width:0}
+  .md-head .md-sub{font-size:.72rem;color:var(--muted);font-family:ui-monospace,monospace}
+  .md-close{background:var(--bg-soft);border:1px solid var(--border);color:var(--muted);width:32px;height:32px;border-radius:9px;cursor:pointer;font-size:.95rem;flex-shrink:0;font-family:inherit}
+  .md-close:hover{color:var(--text);border-color:var(--accent)}
+  .md-body{padding:16px 18px 20px}
+  .md-sec{margin-bottom:16px}
+  .md-sec h3{font-size:.74rem;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px}
+  .md-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:8px}
+  .md-kv{background:var(--bg-soft);border:1px solid var(--border-soft);border-radius:10px;padding:8px 11px}
+  .md-kv span{display:block;font-size:.64rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+  .md-kv b{font-size:.86rem;font-weight:650}
+  .md-note{font-size:.78rem;color:var(--muted);line-height:1.6;margin-top:8px}
+  .md-desc{font-size:.88rem;line-height:1.6}
+  .md-badges{margin-bottom:10px}
+  .md-status{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:8px}
+  .md-dots{margin:6px 0}
+  .md-foot{display:flex;gap:10px;margin-top:14px}
+  .md-link{color:var(--accent);font-size:.8rem}
+  .md-loading{color:var(--muted);font-size:.86rem;padding:20px 0;text-align:center}
+  .var-chip{display:inline-block;background:var(--bg-soft);border:1px solid var(--border);font-size:.68rem;padding:1px 8px;border-radius:999px;color:var(--muted)}
+  .verified-badge{font-size:.7rem;color:var(--muted);display:inline-block;margin:6px 0}
+  .verified-badge.stale{color:var(--amber)}
+  .lim-tbl{min-width:640px}
+  .lim-tbl thead th{font-size:.66rem}
+  .bench-grid{display:flex;flex-wrap:wrap;gap:6px}
+  .bench-chip{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:5px 11px;font-size:.76rem}
+  .bench-chip b{color:var(--accent);font-weight:700;margin-left:6px;font-variant-numeric:tabular-nums}
+
+  /* ── Bottom tab bar (mobile) ── */
+  .bottomnav{display:none}
+  @media (max-width:760px){
+    .nav{display:none}
+    .bottomnav{display:flex;position:fixed;bottom:0;left:0;right:0;z-index:60;background:rgba(11,13,19,.95);backdrop-filter:blur(14px);border-top:1px solid var(--border-soft);padding:6px 4px calc(6px + env(safe-area-inset-bottom));justify-content:space-around}
+    .bottomnav button{flex:1;background:transparent;border:none;color:var(--muted);font-family:inherit;font-size:.62rem;font-weight:600;display:flex;flex-direction:column;align-items:center;gap:3px;padding:6px 2px;cursor:pointer;touch-action:manipulation}
+    .bottomnav button .ico{font-size:1.15rem}
+    .bottomnav button.active{color:var(--accent)}
+    .kpi .kpi-val{font-size:1.45rem}
+    table{min-width:680px}
+    .f-group{width:100%}
+    input[type=search],select{width:100%;min-height:44px}
+    .checks{width:100%;gap:10px 18px}
   }
-  input[type=search]:focus, select:focus { outline: none; border-color: var(--accent); }
-  .checks { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; padding-top: 2px; }
-  .checks label { display: flex; align-items: center; gap: 7px; font-size: .85rem; cursor: pointer; color: var(--text); text-transform: none; letter-spacing: 0; font-weight: 400; min-height: 24px; }
-  .checks input { accent-color: var(--accent); width: 16px; height: 16px; }
-  .ctx-range { display: flex; align-items: center; gap: 10px; }
-  input[type=range] { width: 150px; accent-color: var(--accent); height: 20px; }
-  .ctx-val { font-size: .85rem; color: var(--accent); font-weight: 700; min-width: 52px; font-variant-numeric: tabular-nums; }
-  .presets { display: flex; gap: 5px; }
-  .preset { background: var(--bg-soft); border: 1px solid var(--border); color: var(--muted); border-radius: 8px; padding: 5px 10px; font-size: .72rem; cursor: pointer; font-family: inherit; transition: all .15s; }
-  .preset:hover { color: var(--text); border-color: var(--accent); }
-  .preset.on { color: var(--accent); border-color: var(--accent); background: var(--accent-soft); font-weight: 600; }
-
-  /* ── Tabla ── */
-  .table-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); }
-  .table-scroll { overflow-x: auto; }
-  table { width: 100%; border-collapse: collapse; font-size: .87rem; min-width: 880px; }
-  thead th {
-    text-align: left; padding: 11px 14px; color: var(--muted); font-size: .72rem;
-    text-transform: uppercase; letter-spacing: .06em; border-bottom: 1px solid var(--border);
-    cursor: pointer; user-select: none; white-space: nowrap; background: var(--bg-soft);
-  }
-  thead th:hover { color: var(--accent); }
-  thead th .arrow { font-size: .68rem; margin-left: 3px; opacity: .8; }
-  tbody td { padding: 10px 14px; border-bottom: 1px solid var(--border-soft); vertical-align: middle; }
-  tbody tr:last-child td { border-bottom: none; }
-  tbody tr.model-row { cursor: pointer; transition: background .12s; }
-  tbody tr.model-row:hover { background: var(--card-hover); }
-
-  /* Fila expandible de benchmarks */
-  tr.bench-row { display: none; }
-  tr.bench-row.open { display: table-row; background: var(--bg-soft); animation: fadeIn .18s ease; }
-  tr.bench-row td { padding: 12px 14px 14px; }
-  @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-  .bench-title { font-size: .68rem; color: var(--muted); text-transform: uppercase; letter-spacing: .06em; margin-bottom: 9px; font-weight: 600; }
-  .bench-grid { display: flex; flex-wrap: wrap; gap: 6px; }
-  .bench-chip { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 5px 11px; font-size: .76rem; transition: border-color .15s; }
-  .bench-chip:hover { border-color: var(--accent); }
-  .bench-chip b { color: var(--accent); font-weight: 700; margin-left: 6px; font-variant-numeric: tabular-nums; }
-  .bench-none { color: var(--muted); font-size: .82rem; }
-  .expand-hint { display: inline-flex; align-items: center; justify-content: center; width: 18px; height: 18px; margin-left: 7px; color: var(--muted); font-size: .62rem; border: 1px solid var(--border); border-radius: 6px; transition: transform .18s; vertical-align: middle; }
-  tr.model-row.expanded .expand-hint { transform: rotate(180deg); color: var(--accent); border-color: var(--accent); }
-
-  .m-name { font-weight: 650; letter-spacing: -.01em; }
-  .m-id { color: var(--muted); font-size: .75rem; font-family: ui-monospace, SFMono-Regular, monospace; margin-top: 2px; }
-  .badge { display: inline-block; padding: 2.5px 9px; border-radius: 999px; font-size: .7rem; font-weight: 600; margin-right: 4px; white-space: nowrap; }
-  .b-free { background: rgba(52,211,153,.13); color: var(--green); border: 1px solid rgba(52,211,153,.3); }
-  .b-go { background: rgba(109,155,255,.13); color: var(--accent); border: 1px solid rgba(109,155,255,.3); }
-  .b-zen { background: rgba(167,139,250,.13); color: var(--zen); border: 1px solid rgba(167,139,250,.3); }
-  .b-or { background: rgba(255,153,51,.13); color: #ff9933; border: 1px solid rgba(255,153,51,.3); }
-  .b-paid { background: rgba(248,113,113,.11); color: var(--red); border: 1px solid rgba(248,113,113,.3); }
-  .b-warn { background: rgba(251,191,36,.11); color: var(--amber); border: 1px solid rgba(251,191,36,.3); cursor: help; }
-
-  .yes { color: var(--green); font-weight: 700; }
-  .no { color: #6b7b9e; }  /* contraste AA sobre #151926 (4.6:1) */
-  .unk { color: var(--amber); }
-  .num { font-variant-numeric: tabular-nums; text-align: right; }
-  .ctx-num { font-weight: 650; }
-  a.md-link { color: var(--accent); text-decoration: none; font-size: .78rem; white-space: nowrap; font-weight: 500; }
-  a.md-link:hover { text-decoration: underline; }
-
-  /* Skeleton */
-  .skel { display: none; padding: 14px; }
-  .skel.on { display: block; }
-  .skel-row { height: 46px; margin-bottom: 8px; border-radius: var(--radius-sm); background: linear-gradient(90deg, var(--bg-soft) 25%, var(--card-hover) 50%, var(--bg-soft) 75%); background-size: 200% 100%; animation: shimmer 1.3s infinite; }
-  @keyframes shimmer { to { background-position: -200% 0; } }
-
-  footer { margin-top: 22px; color: var(--muted); font-size: .73rem; line-height: 1.7; }
-  footer a { color: var(--accent); }
-
-  /* ── Responsive: cards en móvil ── */
-  @media (max-width: 760px) {
-    body { padding-bottom: 24px; }
-    .wrap { padding: 0 12px 24px; }
-    .topbar-in { padding: 10px 12px; }
-    .brand h1 { font-size: .95rem; }
-    .btn-filter { display: inline-flex; }
-    .count-pill { font-size: .7rem; padding: 5px 10px; }
-    .filters { display: none; margin: 10px 0; padding: 14px; gap: 12px; }
-    .filters.open { display: flex; animation: fadeIn .18s ease; }
-    .f-group { width: 100%; }
-    input[type=search], select { width: 100%; min-height: 44px; }
-    input[type=range] { width: 100%; flex: 1; height: 28px; }
-    .checks { width: 100%; justify-content: flex-start; gap: 10px 18px; }
-    .checks label { min-height: 40px; }
-    .presets { width: 100%; }
-    .preset { flex: 1; min-height: 40px; text-align: center; }
-
-    .table-card { border: none; background: transparent; box-shadow: none; overflow: visible; }
-    .table-scroll { overflow: visible; }
-    table, tbody, tr, td { display: block; width: 100%; }
-    thead { display: none; }
-    table { min-width: 0; }
-    tr.model-row { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 7px; padding: 6px 4px; box-shadow: var(--shadow); }
-    tbody td { border: none; padding: 2px 12px; display: flex; justify-content: space-between; align-items: center; min-height: 24px; }
-    tbody td::before { content: attr(data-label); color: var(--muted); font-size: .66rem; text-transform: uppercase; letter-spacing: .05em; padding-right: 14px; font-weight: 600; }
-    tbody td.num { text-align: right; }
-    td .md-link { font-size: .76rem; }
-    td[data-label="Modelo"] { flex-direction: column; align-items: flex-start; gap: 4px; padding-top: 7px; padding-bottom: 7px; border-bottom: 1px solid var(--border-soft); margin-bottom: 4px; }
-    td[data-label="Modelo"]::before { content: none; }
-    .m-name { font-size: .93rem; }
-    tr.bench-row.open { display: block; border: 1px solid var(--border); border-radius: var(--radius); margin: -6px 0 12px; background: var(--bg-soft); box-shadow: none; }
-    tr.bench-row td { display: block; }
-    tr.bench-row td::before { content: none; }
-  }
-  @media (max-width: 380px) {
-    .brand .sub { display: none; }  /* el pill de conteo siempre visible: se oculta el subtítulo */
-  }
-  @media (prefers-reduced-motion: reduce) {
-    *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
-  }
-
-  /* ── Sección Estado OpenCode ── */
-  .oc-section { margin-top: 26px; }
-  .oc-head { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-bottom: 12px; }
-  .oc-head h2 { font-size: 1.02rem; font-weight: 700; letter-spacing: -.01em; }
-  .oc-head .oc-sub { font-size: .74rem; color: var(--muted); }
-  .oc-pulse { display: inline-flex; align-items: center; gap: 6px; font-size: .72rem; color: var(--muted); background: var(--card); border: 1px solid var(--border-soft); padding: 4px 11px; border-radius: 999px; margin-left: 2px; }
-  .oc-pulse .dotl { width: 7px; height: 7px; border-radius: 50%; background: var(--green); box-shadow: 0 0 8px var(--green); animation: pulse 2.2s infinite; }
-  @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: .35; } }
-
-  /* Pill-strip de resumen siempre visible */
-  .oc-strip { display: flex; gap: 6px; flex-wrap: wrap; align-items: center; margin-bottom: 12px; }
-  .strip-pill { display: inline-flex; align-items: center; gap: 5px; font-size: .74rem; font-weight: 700; padding: 5px 11px; border-radius: 999px; background: var(--card); border: 1px solid var(--border-soft); font-variant-numeric: tabular-nums; }
-  .strip-pill.ok { color: var(--green); border-color: rgba(52,211,153,.35); background: rgba(52,211,153,.08); }
-  .strip-pill.down { color: var(--amber); border-color: rgba(251,191,36,.35); background: rgba(251,191,36,.08); }
-  .strip-pill.free { color: var(--green); opacity: .8; border-color: rgba(52,211,153,.25); }
-  .strip-pill.check { color: var(--muted); font-weight: 500; }
-  .strip-pill.check b { color: var(--text); font-weight: 600; }
-
-  /* Acordeones */
-  .acc { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 10px; box-shadow: var(--shadow); overflow: hidden; }
-  .acc summary {
-    list-style: none; cursor: pointer; display: flex; align-items: center; gap: 10px;
-    padding: 13px 16px; font-size: .9rem; font-weight: 650; user-select: none;
-    min-height: 48px; transition: background .15s; -webkit-tap-highlight-color: transparent;
-  }
-  .acc summary::-webkit-details-marker { display: none; }
-  .acc summary::marker { content: none; }
-  .acc summary:hover { background: var(--card-hover); }
-  .acc summary:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; border-radius: var(--radius); }
-  .acc .acc-ico { flex-shrink: 0; font-size: .95rem; }
-  .acc .acc-title { flex: 1; min-width: 0; }
-  .acc .acc-badge { font-size: .68rem; color: var(--muted); font-weight: 500; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-  .acc .acc-chev { flex-shrink: 0; color: var(--muted); font-size: .72rem; transition: transform .22s ease; }
-  .acc[open] .acc-chev { transform: rotate(180deg); color: var(--accent); }
-  .acc .acc-body { padding: 0 12px 14px; animation: accIn .22s ease; }
-  .acc[open] summary { border-bottom: 1px solid var(--border-soft); }
-  @keyframes accIn { from { opacity: 0; transform: translateY(-4px); } to { opacity: 1; transform: none; } }
-  @media (prefers-reduced-motion: reduce) {
-    .acc .acc-body { animation: none; }
-    .acc .acc-chev { transition: none; }
-  }
-
-  /* Título de sección catálogo */
-  .acc.acc-cat { margin-top: 28px; }  /* separación con la sección Estado */
-
-  .oc-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 16px; box-shadow: var(--shadow); }
-  .oc-card.small { padding: 12px 14px; margin-bottom: 12px; }
-
-  .legend { display: flex; gap: 14px; flex-wrap: wrap; font-size: .74rem; color: var(--muted); margin-top: 10px; }
-  .legend span { display: inline-flex; align-items: center; gap: 5px; }
-
-  /* Tabla de salud */
-  table.health { min-width: 640px; font-size: .84rem; }
-  table.health td { padding: 8px 12px; border-bottom: 1px solid var(--border-soft); }
-  table.health td.dots { white-space: nowrap; }
-  .hdot { display: inline-block; width: 11px; height: 11px; border-radius: 3px; margin-right: 3px; vertical-align: middle; }
-  .hdot.ok { background: var(--green); }
-  .hdot.down { background: var(--red); }
-  .hdot.na { background: #4a5470; }
-  .hdot.unk { background: var(--amber); }
-  .hdot.free { background: rgba(52,211,153,.35); }
-  .hdot.or { background: var(--orange); }
-  .hstatus { font-weight: 700; font-size: .8rem; }
-  .hs-ok { color: var(--green); } .hs-down { color: var(--red); } .hs-na { color: var(--muted); } .hs-unk { color: var(--amber); } .hs-free { color: var(--green); opacity: .75; }
-  .fails-badge { display: inline-block; background: rgba(248,113,113,.12); color: var(--red); border: 1px solid rgba(248,113,113,.3); border-radius: 999px; padding: 1px 7px; font-size: .68rem; font-weight: 700; }
-
-  /* Resumen arriba de la tabla de salud */
-  .health-summary { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 14px; }
-  .hs-card { flex: 1; min-width: 110px; background: var(--bg-soft); border: 1px solid var(--border-soft); border-radius: 12px; padding: 11px 14px; text-align: center; }
-  .hs-card b { display: block; font-size: 1.35rem; font-weight: 800; letter-spacing: -.02em; }
-  .hs-card span { font-size: .68rem; color: var(--muted); text-transform: uppercase; letter-spacing: .05em; font-weight: 600; }
-  .hs-card.ok b { color: var(--green); } .hs-card.down b { color: var(--red); } .hs-card.na b { color: var(--muted); } .hs-card.free b { color: var(--green); opacity: .8; }
-
-  /* Línea de tiempo / changelog */
-  .timeline { list-style: none; max-height: 420px; overflow-y: auto; padding-right: 6px; }
-  .timeline li { display: flex; gap: 12px; padding: 9px 2px; border-bottom: 1px solid var(--border-soft); font-size: .84rem; line-height: 1.5; }
-  .timeline li:last-child { border-bottom: none; }
-  .tl-date { flex-shrink: 0; color: var(--accent); font-family: ui-monospace, monospace; font-size: .76rem; padding-top: 2px; font-variant-numeric: tabular-nums; }
-  .tl-tag { flex-shrink: 0; font-size: .68rem; font-weight: 700; padding: 2px 8px; border-radius: 6px; height: fit-content; margin-top: 2px; }
-  .tl-tag.added { background: rgba(52,211,153,.12); color: var(--green); border: 1px solid rgba(52,211,153,.3); }
-  .tl-tag.removed { background: rgba(248,113,113,.11); color: var(--red); border: 1px solid rgba(248,113,113,.3); }
-  .tl-tag.manual { background: rgba(109,155,255,.12); color: var(--accent); border: 1px solid rgba(109,155,255,.3); }
-  .tl-tag.auto { background: rgba(251,191,36,.1); color: var(--amber); border: 1px solid rgba(251,191,36,.3); }
-  .tl-text { flex: 1; }
-  .tl-empty { color: var(--muted); font-size: .84rem; padding: 14px 2px; }
-
-  /* Límites */
-  .lim-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; }
-  .lim-block { background: var(--bg-soft); border: 1px solid var(--border-soft); border-radius: 12px; padding: 13px 15px; }
-  .lim-block h4 { font-size: .74rem; color: var(--muted); text-transform: uppercase; letter-spacing: .06em; margin-bottom: 8px; font-weight: 700; }
-  .lim-block .row { display: flex; justify-content: space-between; gap: 10px; font-size: .82rem; padding: 3px 0; }
-  .lim-block .row b { font-variant-numeric: tabular-nums; }
-  .lim-block .model-grp { font-size: .76rem; color: var(--muted); margin-top: 4px; line-height: 1.5; }
-  .lim-block .model-grp code { background: var(--card); border: 1px solid var(--border-soft); border-radius: 5px; padding: 1px 5px; font-size: .7rem; color: var(--text); }
-  .verified-badge { display: inline-flex; align-items: center; gap: 5px; font-size: .68rem; color: var(--muted); background: var(--bg-soft); border: 1px solid var(--border-soft); padding: 2px 9px; border-radius: 999px; margin-top: 8px; }
-  .verified-badge.stale { color: var(--amber); border-color: rgba(251,191,36,.35); }
-  .oc-note { font-size: .72rem; color: var(--muted); margin-top: 10px; line-height: 1.6; }
-
-  .oc-err { color: var(--amber); font-size: .82rem; padding: 12px 2px; }
-
-  /* Tabla de límites por modelo */
-  table.lim-tbl { width: 100%; border-collapse: collapse; font-size: .8rem; min-width: 760px; }
-  table.lim-tbl thead th { text-align: left; padding: 9px 10px; color: var(--muted); font-size: .68rem; text-transform: uppercase; letter-spacing: .05em; border-bottom: 1px solid var(--border); background: var(--bg-soft); white-space: nowrap; }
-  table.lim-tbl tbody td { padding: 8px 10px; border-bottom: 1px solid var(--border-soft); }
-  table.lim-tbl tbody tr:last-child td { border-bottom: none; }
-  .tier-badge { display: inline-block; padding: 2px 8px; border-radius: 999px; font-size: .68rem; font-weight: 700; }
-  .tier15 { background: rgba(52,211,153,.13); color: var(--green); border: 1px solid rgba(52,211,153,.3); }
-  .tier60 { background: rgba(251,191,36,.11); color: var(--amber); border: 1px solid rgba(251,191,36,.3); }
-  .var-chip { display: inline-block; background: var(--bg-soft); border: 1px solid var(--border); border-radius: 6px; padding: 1px 7px; font-size: .68rem; color: var(--muted); white-space: nowrap; }
-
-  @media (max-width: 760px) {
-    .oc-section { margin-top: 16px; }
-    .oc-head h2 { font-size: .95rem; }
-    .oc-strip { gap: 5px; }
-    .strip-pill { font-size: .7rem; padding: 5px 9px; min-height: 30px; }
-    .acc summary { padding: 12px 14px; font-size: .86rem; min-height: 48px; }
-    .acc .acc-badge { display: none; }  /* móvil: título limpio, datos dentro */
-    .acc .acc-body { padding: 0 8px 12px; }
-    .acc.acc-cat { margin-top: 20px; }
-    .health-summary { gap: 6px; }
-    .hs-card { min-width: calc(50% - 6px); }
-
-    /* Tablas de salud en cards móviles — sin scroll horizontal */
-    table.health { min-width: 0 !important; font-size: .88rem; }
-    table.health thead { display: none; }
-    table.health tr { display: block; background: var(--bg-soft); border: 1px solid var(--border-soft); border-radius: 12px; margin-bottom: 9px; padding: 10px 12px; }
-    table.health td { display: block; border: none; padding: 3px 0; min-height: 0; }
-    table.health td.dots { white-space: normal; line-height: 2; padding-top: 6px; }
-    table.health td .m-id { font-size: .72rem; }
-    table.health td:empty { display: none; }
-
-    /* Tabla de límites en cards móviles */
-    table.lim-tbl { min-width: 0 !important; }
-    table.lim-tbl thead { display: none; }
-    table.lim-tbl tr { display: block; background: var(--bg-soft); border: 1px solid var(--border-soft); border-radius: 12px; margin-bottom: 10px; padding: 11px 13px; }
-    table.lim-tbl td { display: flex; justify-content: space-between; align-items: center; gap: 10px; border: none; padding: 4px 0; }
-    table.lim-tbl td::before { content: attr(data-label); color: var(--muted); font-size: .66rem; text-transform: uppercase; letter-spacing: .05em; font-weight: 600; }
-    table.lim-tbl td:first-child { flex-direction: column; align-items: flex-start; border-bottom: 1px solid var(--border-soft); margin-bottom: 5px; padding-bottom: 8px; }
-    table.lim-tbl td:first-child::before { content: none; }
-  }
-
-  /* ═══ F1 · Ficha de detalle (overlay + deep-link #/model/{id}) ═══ */
-  /* Enlace del nombre en la tabla → abre la ficha */
-  .m-name a.m-link { color: inherit; text-decoration: none; }
-  .m-name a.m-link:hover { color: var(--accent); text-decoration: underline; }
-  .m-name a.m-link:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 5px; }
-  /* El chevron pasa a ser <button> real (benchmarks siguen expandiéndose) */
-  button.expand-hint { background: transparent; padding: 0; font-family: inherit; line-height: 1; cursor: pointer; }
-  button.expand-hint:hover { color: var(--accent); border-color: var(--accent); }
-  button.expand-hint:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
-
-  body.md-open { overflow: hidden; }
-  .md-overlay { position: fixed; inset: 0; z-index: 200; display: flex; align-items: center; justify-content: center; padding: 24px; }
-  .md-overlay[hidden] { display: none; }
-  .md-backdrop { position: absolute; inset: 0; background: rgba(4,6,12,.74); backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); animation: mdFade .18s ease; }
-  .md-panel { position: relative; width: min(780px, 100%); max-height: min(88vh, 920px); display: flex; flex-direction: column; background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: 0 24px 70px rgba(0,0,0,.6); overflow: hidden; animation: mdIn .2s ease; }
-  .md-panel:focus { outline: none; }
-  .md-panel:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
-  @keyframes mdFade { from { opacity: 0; } to { opacity: 1; } }
-  @keyframes mdIn { from { opacity: 0; transform: translateY(10px) scale(.985); } to { opacity: 1; transform: none; } }
-  .md-head { display: flex; align-items: flex-start; gap: 12px; padding: 15px 18px; border-bottom: 1px solid var(--border-soft); background: var(--bg-soft); flex-shrink: 0; }
-  .md-head-txt { flex: 1; min-width: 0; }
-  .md-head h2 { font-size: 1.05rem; font-weight: 700; letter-spacing: -.01em; line-height: 1.3; }
-  .md-head .m-id { margin-top: 3px; word-break: break-all; }
-  .md-close { flex-shrink: 0; width: 38px; height: 38px; border-radius: 10px; background: var(--card); border: 1px solid var(--border); color: var(--muted); font-size: .95rem; cursor: pointer; font-family: inherit; display: flex; align-items: center; justify-content: center; transition: color .15s, border-color .15s; }
-  .md-close:hover { color: var(--text); border-color: var(--accent); }
-  .md-close:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
-  .md-body { padding: 16px 18px 20px; overflow-y: auto; -webkit-overflow-scrolling: touch; overscroll-behavior: contain; }
-  .md-sec { margin-bottom: 18px; }
-  .md-sec:last-child { margin-bottom: 0; }
-  .md-sec h3 { font-size: .68rem; color: var(--muted); text-transform: uppercase; letter-spacing: .06em; font-weight: 700; margin-bottom: 9px; }
-  .md-desc { font-size: .88rem; line-height: 1.6; }
-  .md-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(168px, 1fr)); gap: 8px; }
-  .md-kv { background: var(--bg-soft); border: 1px solid var(--border-soft); border-radius: 10px; padding: 9px 12px; display: flex; justify-content: space-between; align-items: center; gap: 10px; font-size: .84rem; }
-  .md-kv span { color: var(--muted); font-size: .66rem; text-transform: uppercase; letter-spacing: .05em; font-weight: 600; }
-  .md-kv b { font-weight: 650; font-variant-numeric: tabular-nums; text-align: right; }
-  .md-badges { display: flex; gap: 6px; flex-wrap: wrap; align-items: center; }
-  .md-status { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
-  .md-dots { line-height: 2; margin-top: 8px; }
-  .md-note { font-size: .73rem; color: var(--muted); line-height: 1.6; margin-top: 8px; }
-  .md-foot { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; border-top: 1px solid var(--border-soft); padding-top: 13px; margin-top: 4px; }
-  .md-loading { color: var(--muted); font-size: .86rem; padding: 6px 0; }
-
-  @media (max-width: 760px) {
-    .md-overlay { padding: 0; align-items: stretch; }
-    .md-panel { width: 100%; max-height: none; height: 100%; border: none; border-radius: 0; animation: mdSheet .22s ease; }
-    .md-head { padding: 12px 14px; padding-top: max(12px, env(safe-area-inset-top)); position: sticky; top: 0; }
-    .md-body { padding: 14px 14px calc(28px + env(safe-area-inset-bottom)); }
-    .md-close { width: 44px; height: 44px; }
-    .md-grid { grid-template-columns: 1fr 1fr; }
-  }
-  @keyframes mdSheet { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
-  @media (prefers-reduced-motion: reduce) {
-    .md-panel, .md-backdrop { animation: none !important; }
-  }
-  .chain-method { background: #0f1320; border: 1px solid #232a3a; border-radius: 10px; padding: 12px 14px; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: .78rem; line-height: 1.55; color: #c7d2e8; white-space: pre-wrap; overflow-x: auto; }
-  .chain-list { list-style: none; margin: 12px 0 0; padding: 0; counter-reset: none; }
-  .chain-list li { display: flex; align-items: baseline; gap: 10px; padding: 7px 0; border-bottom: 1px dashed #232a3a; flex-wrap: wrap; }
-  .chain-pos { background: var(--accent); color: #0b0e16; font-weight: 800; border-radius: 999px; min-width: 22px; height: 22px; display: inline-flex; align-items: center; justify-content: center; font-size: .72rem; padding: 0 6px; }
-  .chain-link { font-family: ui-monospace, Menlo, monospace; font-size: .82rem; color: #9fc6ff; background: rgba(109,155,255,.08); border: 1px solid rgba(109,155,255,.2); border-radius: 6px; padding: 2px 7px; }
-  .chain-role { color: var(--muted); font-size: .76rem; }
-  .quota-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 10px; margin: 12px 0; }
-  .quota-cell { background: #0f1320; border: 1px solid #232a3a; border-radius: 10px; padding: 10px 12px; display: flex; flex-direction: column; gap: 2px; }
-  .quota-name { font-size: .72rem; color: var(--muted); text-transform: uppercase; letter-spacing: .05em; }
-  .quota-pct { font-size: 1.2rem; font-weight: 800; color: var(--accent); }
-  .quota-reset { font-size: .72rem; color: var(--muted); }
+  @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 </style>
 </head>
 <body>
+
+<!-- ── Topbar ── -->
 <div class="topbar">
   <div class="topbar-in">
     <div class="brand">
       <div class="logo">🗂️</div>
       <div>
         <h1>Model Catalog</h1>
-        <div class="sub">opencode-zen + opencode-go + openrouter</div>
+        <div class="sub">OpenCode Zen · Go · OpenRouter</div>
       </div>
     </div>
     <div class="topbar-spacer"></div>
-    <span class="count-pill" id="count-pill" role="status" aria-live="polite">—</span>
-    <button class="btn-filter" id="btn-filter" aria-expanded="false"><span class="dot"></span> Filtros</button>
+    <div class="updated">Actualizado: <b id="updated">—</b></div>
   </div>
+  <nav class="nav" id="nav" aria-label="Secciones">
+    <button data-tab="resumen" class="active">📊 Resumen</button>
+    <button data-tab="catalogo">🔍 Buscar</button>
+    <button data-tab="salud">🩺 Disponibilidad</button>
+    <button data-tab="precios">💱 Precios</button>
+    <button data-tab="cadena">🔗 Cadena</button>
+    <button data-tab="cuotas">🔔 Cuota Go</button>
+    <button data-tab="evo">📈 Novedades</button>
+  </nav>
 </div>
 
 <div class="wrap">
-  <!-- ═══ Estado OpenCode — PRIMERO, siempre visible ═══ -->
-  <section class="oc-section" id="oc" aria-label="Estado OpenCode">
-    <div class="oc-head">
-      <h2>🩺 Estado del catálogo (Zen/Go/OpenRouter)</h2>
-      <span class="oc-pulse"><span class="dotl"></span> check diario 05:45</span>
-      <span class="oc-sub">disponibilidad, límites y evolución de los modelos</span>
+
+  <!-- ═══ RESUMEN ═══ -->
+  <section class="panel active" id="p-resumen" aria-label="Resumen">
+    <h2 class="section-title">¿Todo en orden?</h2>
+    <p class="section-sub">Un vistazo rápido. Debajo, el detalle de cada proveedor y conceptos clave.</p>
+
+    <div class="kpi-grid">
+      <div class="kpi">
+        <div class="kpi-top">📦 Modelos en el catálogo</div>
+        <div class="kpi-val" id="kpi-total">…</div>
+        <div class="kpi-foot" id="kpi-total-foot"></div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-top"><span class="sema" id="kpi-health-sema"></span> Disponibilidad hoy</div>
+        <div class="kpi-val" id="kpi-health">…</div>
+        <div class="kpi-foot" id="kpi-health-foot"></div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-top"><span class="sema" id="kpi-quota-sema"></span> Cuota Go mensual</div>
+        <div class="kpi-val" id="kpi-quota">…</div>
+        <div class="kpi-foot">reinicia en <span id="kpi-quota-reset">—</span></div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-top">💰 Precio desde</div>
+        <div class="kpi-val" id="kpi-cheap">…</div>
+        <div class="kpi-foot" id="kpi-cheap-foot"></div>
+      </div>
     </div>
 
-    <!-- Pill-strip: pulso de un vistazo, siempre visible -->
-    <div class="oc-strip" id="oc-strip" role="status" aria-live="polite">
-      <span class="strip-pill ok">? ✅</span>
-      <span class="strip-pill down">? ⚠️</span>
-      <span class="strip-pill free">? 🌱</span>
-      <span class="strip-pill or">? 🟠 OR</span>
-      <span class="strip-pill check">check <b>—</b></span>
-    </div>
+    <h2 class="section-title">Por proveedor</h2>
+    <div class="prov-grid" id="prov-grid"></div>
 
-    <!-- Acordeón 1: Salud (abierto por defecto) -->
-    <details class="acc" id="acc-health" open>
-      <summary aria-expanded="true">
-        <span class="acc-ico">🟢</span>
-        <span class="acc-title">Salud</span>
-        <span class="acc-badge" id="acc-badge-health">cargando…</span>
-        <span class="acc-chev" aria-hidden="true">▼</span>
-      </summary>
-      <div class="acc-body">
-        <div class="health-summary" id="health-summary">
-          <div class="hs-card skel-row" style="height:52px"></div>
-          <div class="hs-card skel-row" style="height:52px"></div>
-          <div class="hs-card skel-row" style="height:52px"></div>
-          <div class="hs-card skel-row" style="height:52px"></div>
-        </div>
-        <div class="table-scroll">
-          <table class="health" id="health-tbl">
-            <thead>
-              <tr><th>Modelo</th><th>Estado hoy</th><th>Racha</th><th>Últimos días</th></tr>
-            </thead>
-            <tbody id="health-tbody"><tr><td colspan="4" class="tl-empty">Cargando…</td></tr></tbody>
-          </table>
-        </div>
-        <div class="legend">
-          <span><span class="hdot ok"></span> operativo</span>
-          <span><span class="hdot down"></span> caído / error proveedor</span>
-          <span><span class="hdot unk"></span> no responde al probe</span>
-          <span><span class="hdot na"></span> no accesible con tu plan</span>
-          <span><span class="hdot free"></span> free (no se prueba, cuota)</span>
-          <span><span class="hdot or"></span> OpenRouter (3er proveedor)</span>
-        </div>
-      </div>
-    </details>
-
-    <!-- Acordeón 2: Límites y precios -->
-    <details class="acc" id="acc-limits">
-      <summary aria-expanded="false">
-        <span class="acc-ico">💰</span>
-        <span class="acc-title">Límites y precios</span>
-        <span class="acc-badge" id="acc-badge-limits">tiers, requests y $/1M tokens</span>
-        <span class="acc-chev" aria-hidden="true">▼</span>
-      </summary>
-      <div class="acc-body">
-        <div id="limits-body"><div class="skel on"><div class="skel-row"></div><div class="skel-row"></div><div class="skel-row"></div></div></div>
-      </div>
-    </details>
-
-    <!-- Acordeón 2b: Matriz de precios -->
-    <details class="acc" id="acc-prices">
-      <summary aria-expanded="false">
-        <span class="acc-ico">📊</span>
-        <span class="acc-title">Matriz de precios</span>
-        <span class="acc-badge" id="acc-badge-prices">zen paid (off/peak) · OpenRouter reales</span>
-        <span class="acc-chev" aria-hidden="true">▼</span>
-      </summary>
-      <div class="acc-body">
-        <div id="prices-body"><div class="skel on"><div class="skel-row"></div><div class="skel-row"></div></div></div>
-      </div>
-    </details>
-
-    <!-- Acordeón 2c: Cadena de fallback -->
-    <details class="acc" id="acc-chain">
-      <summary aria-expanded="false">
-        <span class="acc-ico">🔗</span>
-        <span class="acc-title">Cadena de fallback</span>
-        <span class="acc-badge" id="acc-badge-chain">método + snapshot activo</span>
-        <span class="acc-chev" aria-hidden="true">▼</span>
-      </summary>
-      <div class="acc-body">
-        <div id="chain-body"><div class="skel on"><div class="skel-row"></div></div></div>
-      </div>
-    </details>
-
-    <!-- Acordeón 2d: Estado de cuotas -->
-    <details class="acc" id="acc-quota">
-      <summary aria-expanded="false">
-        <span class="acc-ico">🔔</span>
-        <span class="acc-title">Estado de cuotas</span>
-        <span class="acc-badge" id="acc-badge-quota">Go, Zen y OpenRouter</span>
-        <span class="acc-chev" aria-hidden="true">▼</span>
-      </summary>
-      <div class="acc-body">
-        <div id="quota-body"><div class="skel on"><div class="skel-row"></div></div></div>
-      </div>
-    </details>
-
-    <!-- Acordeón 3: Evolución -->
-    <details class="acc" id="acc-history">
-      <summary aria-expanded="false">
-        <span class="acc-ico">📈</span>
-        <span class="acc-title">Evolución</span>
-        <span class="acc-badge" id="acc-badge-history">altas/bajas y serie temporal</span>
-        <span class="acc-chev" aria-hidden="true">▼</span>
-      </summary>
-      <div class="acc-body">
-        <div id="history-body"><div class="skel on"><div class="skel-row"></div><div class="skel-row"></div></div></div>
-      </div>
-    </details>
-
-    <!-- Acordeón 4: Cambios -->
-    <details class="acc" id="acc-changes">
-      <summary aria-expanded="false">
-        <span class="acc-ico">📜</span>
-        <span class="acc-title">Cambios</span>
-        <span class="acc-badge" id="acc-badge-changes">changelog manual + auto</span>
-        <span class="acc-chev" aria-hidden="true">▼</span>
-      </summary>
-      <div class="acc-body">
-        <div id="changes-body"><div class="skel on"><div class="skel-row"></div><div class="skel-row"></div><div class="skel-row"></div></div></div>
-      </div>
+    <details class="gloss" id="gloss">
+      <summary>Glosario — qué significa cada término</summary>
+      <div class="g-body" id="g-body"></div>
     </details>
   </section>
 
-  <!-- ═══ Catálogo de modelos (acordeón — plegado en móvil) ═══ -->
-  <details class="acc acc-cat" id="acc-catalog" open>
-    <summary aria-expanded="true">
-      <span class="acc-ico">🗂️</span>
-      <span class="acc-title">Catálogo de modelos</span>
-      <span class="acc-badge">specs, contexto, reasoning, tools y benchmarks — toca una fila para expandir</span>
-      <span class="acc-chev" aria-hidden="true">▼</span>
-    </summary>
-    <div class="acc-body">
-  <div class="filters" id="filters">
-    <div class="f-group">
-      <label>Provider</label>
-      <select id="f-provider">
-        <option value="all">Todos</option>
-        <option value="free">🌱 Free</option>
-        <option value="go">🚀 Go</option>
-        <option value="zen">💰 Zen (solo pago)</option>
-        <option value="zenall">💜 Zen (todos)</option>
-        <option value="or">🟠 OpenRouter</option>
-      </select>
-    </div>
-    <div class="f-group">
-      <label>Buscar</label>
-      <input type="search" id="f-search" placeholder="nombre o id…">
-    </div>
-    <div class="f-group">
-      <label>Contexto mínimo</label>
-      <div class="ctx-range">
-        <input type="range" id="f-ctx" min="0" max="1056" step="8" value="0">
-        <span class="ctx-val" id="ctx-val">0K</span>
+  <!-- ═══ CATÁLOGO / BUSCAR ═══ -->
+  <section class="panel" id="p-catalogo" aria-label="Buscar modelos">
+    <h2 class="section-title">Buscar modelos</h2>
+    <p class="section-sub">Filtra por proveedor, nombre, contexto o capacidad. Toca una fila para ver la ficha completa.</p>
+    <div class="filters">
+      <div class="f-group">
+        <label for="f-provider">Proveedor</label>
+        <select id="f-provider">
+          <option value="all">Todos</option>
+          <option value="go">🚀 Go</option>
+          <option value="zen">💜 Zen (pago)</option>
+          <option value="zenall">💜 Zen (todos)</option>
+          <option value="or">🟠 OpenRouter</option>
+          <option value="free">🌱 Gratis</option>
+        </select>
       </div>
-      <div class="presets">
-        <button class="preset" data-k="0">0</button>
-        <button class="preset" data-k="32">32K</button>
-        <button class="preset" data-k="128">128K</button>
-        <button class="preset" data-k="1000">1M</button>
+      <div class="f-group">
+        <label for="f-search">Buscar</label>
+        <input type="search" id="f-search" placeholder="nombre o id…">
+      </div>
+      <div class="checks">
+        <label><input type="checkbox" id="f-reason"> Reasoning</label>
+        <label><input type="checkbox" id="f-tool"> Tool call</label>
+        <label><input type="checkbox" id="f-bench"> Con benchmarks</label>
       </div>
     </div>
-    <div class="checks">
-      <label><input type="checkbox" id="f-reason"> Reasoning</label>
-      <label><input type="checkbox" id="f-tool"> Tool call</label>
-      <label><input type="checkbox" id="f-bench"> Con SWE-Bench</label>
+    <div class="info-note" id="count-pill" style="margin-top:0;margin-bottom:10px"></div>
+    <div class="table-card">
+      <div class="skel" id="skel"><div class="skel-row"></div><div class="skel-row"></div><div class="skel-row"></div></div>
+      <div class="table-scroll">
+        <table id="tbl-cat">
+          <thead>
+            <tr>
+              <th data-k="name">Modelo<span class="ar"></span></th>
+              <th data-k="prov">Disponible en<span class="ar"></span></th>
+              <th data-k="context" class="num">Contexto<span class="ar"></span></th>
+              <th data-k="output" class="num">Output<span class="ar"></span></th>
+              <th data-k="reasoning" class="num">Reasoning<span class="ar"></span></th>
+              <th data-k="tool" class="num">Tools<span class="ar"></span></th>
+              <th data-k="swe" class="num">SWE-Bench<span class="ar"></span></th>
+              <th data-k="orin" class="num">OR $/1M in<span class="ar"></span></th>
+              <th>Ficha</th>
+            </tr>
+          </thead>
+          <tbody id="tbody"></tbody>
+        </table>
+      </div>
     </div>
-  </div>
+  </section>
 
-  <div class="table-card">
-    <div class="skel on" id="skel">
-      <div class="skel-row"></div><div class="skel-row"></div><div class="skel-row"></div>
-      <div class="skel-row"></div><div class="skel-row"></div>
+  <!-- ═══ SALUD ═══ -->
+  <section class="panel" id="p-salud" aria-label="Disponibilidad">
+    <h2 class="section-title">Disponibilidad hoy</h2>
+    <p class="section-sub">Cada proveedor se prueba por separado. Los números son <b>comprobaciones</b> (un mismo modelo en varios proveedores cuenta más de una vez), no modelos únicos. Los puntitos son el historial de los últimos 14 días.</p>
+    <div class="hs-grid" id="health-summary"></div>
+    <div class="table-card">
+      <div class="table-scroll">
+        <table class="health" id="tbl-health">
+          <thead><tr><th>Modelo</th><th>Estado</th><th>Fallos</th><th>Historial (14 días)</th></tr></thead>
+          <tbody id="health-tbody"></tbody>
+        </table>
+      </div>
     </div>
-    <div class="table-scroll" id="table-scroll">
-      <table id="tbl">
-        <thead>
-          <tr>
-            <th data-k="name">Modelo<span class="arrow"></span></th>
-            <th data-k="tier">Provider<span class="arrow"></span></th>
-            <th data-k="context" class="num">Contexto<span class="arrow"></span></th>
-            <th data-k="output" class="num">Output<span class="arrow"></span></th>
-            <th data-k="reasoning">Reasoning<span class="arrow"></span></th>
-            <th data-k="tool_call">Tools<span class="arrow"></span></th>
-            <th data-k="swebench" class="num">SWE-Bench<span class="arrow"></span></th>
-            <th>Ficha</th>
-          </tr>
-        </thead>
-        <tbody id="tbody"></tbody>
-      </table>
+    <div class="legend" style="margin-top:12px">
+      <span><span class="hdot ok"></span> operativo</span>
+      <span><span class="hdot down"></span> caído / error</span>
+      <span><span class="hdot unk"></span> no responde</span>
+      <span><span class="hdot na"></span> no accesible</span>
+      <span><span class="hdot free"></span> free</span>
     </div>
-  </div>
-    </div>
-  </details>
+    <div class="info-note">⏱️ Último check: <b id="health-snap">—</b></div>
+  </section>
 
-  <footer>
-    Datos: <a href="https://models.dev" target="_blank" rel="noopener">models.dev</a> (MIT) + catálogos opencode Zen/Go + OpenRouter · generado: <span id="gen">—</span> · models.dev: <span id="mdf">—</span><br>
-    Los modelos sin ficha en models.dev llevan badge ⚠️ · <a href="aliases.json" target="_blank">aliases.json</a> (tabla de aliases) · toca una fila para ver benchmarks
-  </footer>
+  <!-- ═══ PRECIOS ═══ -->
+  <section class="panel" id="p-precios" aria-label="Precios">
+    <h2 class="section-title">Comparativa de precios</h2>
+    <p class="section-sub">Go es <b>suscripción</b> (coste marginal 0); Zen y OpenRouter cobran <b>por token</b>. Ordena por cualquier columna.</p>
+    <div id="prices-body"></div>
+  </section>
+
+  <!-- ═══ CADENA ═══ -->
+  <section class="panel" id="p-cadena" aria-label="Cadena de respaldo">
+    <h2 class="section-title">Cómo se elige el modelo (cadena de respaldo)</h2>
+    <p class="section-sub">Si el primero falla, se usa el siguiente. Orden por coste marginal ascendente.</p>
+    <div class="info-note" id="chain-method"></div>
+    <h3 style="font-size:.9rem;margin:14px 0 4px">Cadena activa — snapshot <span id="chain-snap"></span></h3>
+    <div class="chain-flow" id="chain-flow"></div>
+  </section>
+
+  <!-- ═══ CUOTAS ═══ -->
+  <section class="panel" id="p-cuotas" aria-label="Cuota Go">
+    <h2 class="section-title">Tu cuota de uso (Go)</h2>
+    <p class="section-sub">Go limita el uso en tres ventanas. El % es lo ya consumido; "reinicia" es cuando vuelve a 0.</p>
+    <div class="quota-grid" id="quota-grid"></div>
+    <div id="quota-body"></div>
+    <details class="gloss" style="margin-top:6px">
+      <summary>📄 Límites del plan Go (datos manuales)</summary>
+      <div class="g-body" id="limits-body"></div>
+    </details>
+  </section>
+
+  <!-- ═══ EVOLUCIÓN ═══ -->
+  <section class="panel" id="p-evo" aria-label="Novedades">
+    <h2 class="section-title">Novedades (altas, bajas y cambios)</h2>
+    <p class="section-sub">Cambios detectados entre comprobaciones diarias del catálogo.</p>
+    <div id="history-body"></div>
+    <h3 style="font-size:.9rem;margin:16px 0 4px">Cambios registrados</h3>
+    <div id="changes-body"></div>
+  </section>
+
 </div>
 
-<!-- ═══ F1 · Overlay de ficha de modelo (fuera de .wrap, antes del script) ═══ -->
+<!-- ── Bottom nav (mobile) ── -->
+<nav class="bottomnav" id="bottomnav" aria-label="Navegación móvil">
+  <button data-tab="resumen" class="active"><span class="ico">📊</span>Resumen</button>
+  <button data-tab="catalogo"><span class="ico">🔍</span>Buscar</button>
+  <button data-tab="salud"><span class="ico">🩺</span>Salud</button>
+  <button data-tab="precios"><span class="ico">💱</span>Precios</button>
+  <button data-tab="cadena"><span class="ico">🔗</span>Cadena</button>
+  <button data-tab="cuotas"><span class="ico">🔔</span>Cuota</button>
+  <button data-tab="evo"><span class="ico">📈</span>Novedades</button>
+</nav>
+
+<!-- ── Modal detalle ── -->
 <div class="md-overlay" id="md-overlay" hidden>
-  <div class="md-backdrop" id="md-backdrop"></div>
   <div class="md-panel" id="md-panel" role="dialog" aria-modal="true" aria-labelledby="md-title" tabindex="-1">
     <div class="md-head">
-      <div class="md-head-txt">
-        <h2 id="md-title">—</h2>
-        <div class="m-id" id="md-subid"></div>
-      </div>
-      <button class="md-close" id="md-close" type="button" aria-label="Cerrar ficha" title="Cerrar (Esc)">✕</button>
+      <h2 id="md-title"></h2>
+      <div class="md-sub" id="md-subid"></div>
+      <button class="md-close" id="md-close" type="button" aria-label="Cerrar ficha">✕</button>
     </div>
     <div class="md-body" id="md-body"></div>
   </div>
 </div>
 
+<footer>
+  <div id="gen"></div>
+</footer>
+
 <script>
+'use strict';
 let DATA = null;
 let sortKey = 'name', sortDir = 1;
+let catSort = { k: 'name', d: 1 };
+
+/* ───────── Helpers ───────── */
+const $ = s => document.querySelector(s);
+const esc = s => String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;')
+  .replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 
 function fmtCtx(n) {
-  if (!n) return '<span class="unk">—</span>';
-  if (n >= 1000000) return (n/1000000).toFixed(0) + 'M';
-  if (n >= 1000) return Math.round(n/1000) + 'K';
+  if (!n) return '<span class="no">—</span>';
+  if (n >= 1000000) return (n / 1000000).toFixed(0) + 'M';
+  if (n >= 1000) return Math.round(n / 1000) + 'K';
   return n;
+}
+function money(n) {
+  if (n == null) return '—';
+  return '$' + parseFloat(n).toFixed(n < 1 ? 3 : 2);
+}
+function moneyTag(n) {
+  return n == null ? '<span class="no">—</span>' : '<b>' + money(n) + '</b>';
+}
+function cell(v) {
+  if (v === true) return '<span class="yes">✓</span>';
+  if (v === false) return '<span class="no">✗</span>';
+  return '<span class="no">?</span>';
+}
+function sema(cls) { return '<span class="sema ' + cls + '"></span>'; }
+function timeAgo(iso) {
+  if (!iso) return '—';
+  const d = new Date(iso); if (isNaN(d)) return '—';
+  const ms = Date.now() - d.getTime();
+  const h = Math.floor(ms / 3600000); const m = Math.floor(ms / 60000) % 60;
+  if (h >= 24) { const days = Math.floor(h / 24); return 'hace ' + days + ' d' + (h % 24 ? ' ' + (h % 24) + 'h' : ''); }
+  if (h > 0) return 'hace ' + h + 'h' + (m ? ' ' + m + 'm' : '');
+  return 'hace ' + Math.max(1, m) + ' min';
 }
 
 function provBadges(m) {
   const b = [];
-  if (m.providers.free) b.push('<span class="badge b-free">🌱 free</span>');
-  if (m.providers.go) b.push('<span class="badge b-go">🚀 Go</span>');
-  if (m.providers.or) b.push('<span class="badge b-or">🟠 OR</span>');
-  if (m.providers.zen && !m.providers.free) b.push('<span class="badge b-zen">💜 Zen</span>');
-  if (!m.md_url) b.push('<span class="badge b-warn" title="Solo en el catálogo opencode — sin ficha en models.dev">⚠️ sin ficha</span>');
+  if (m.providers.free) b.push('<span class="pb free">🌱 free</span>');
+  if (m.providers.go) b.push('<span class="pb go">🚀 Go</span>');
+  if (m.providers.or) b.push('<span class="pb or">🟠 OR</span>');
+  if (m.providers.zen && !m.providers.free) b.push('<span class="pb zen">💜 Zen</span>');
+  if (!m.md_url) b.push('<span class="pb warn" title="Solo en el catálogo opencode — sin ficha en models.dev">⚠️ sin ficha</span>');
   return b.join(' ');
-}
-
-function cell(v) {
-  if (v === true) return '<span class="yes">✓</span>';
-  if (v === false) return '<span class="no">✗</span>';
-  return '<span class="unk">?</span>';
 }
 
 function benchHTML(m) {
   const bk = m.benchmarks || {};
   const names = Object.keys(bk);
-  if (!names.length) return '<span class="bench-none">Sin benchmarks en models.dev</span>';
+  if (!names.length) return '<span class="no">Sin benchmarks en models.dev</span>';
   return '<div class="bench-grid">' + names.map(n =>
-    '<span class="bench-chip">' + n.replace(/</g,'&lt;').replace(/>/g,'&gt;') + '<b>' + bk[n] + '</b></span>'
+    '<span class="bench-chip">' + esc(n) + '<b>' + esc(bk[n]) + '</b></span>'
   ).join('') + '</div>';
 }
 
+const GLOSSARY = [
+  { t: 'Go (suscripción)', d: 'Pagas $10/mes y usas todos los modelos Go sin coste extra por token. Ideal para uso constante.' },
+  { t: 'Zen / OpenRouter (por token)', d: 'Pagas según lo que consumes: $ por millón de tokens (MTok). Más barato si usas poco.' },
+  { t: 'offpeak / peak', d: 'Zen cobra menos fuera de hora punta (offpeak) y más en hora punta (peak). En Precios verás ambos.' },
+  { t: 'eslabón (cadena)', d: 'Cada paso de la cadena de respaldo. Si el proveedor principal falla, el sistema prueba el siguiente automáticamente.' },
+  { t: 'cuota por buckets', d: 'Go limita el uso en 3 ventanas: continuo (rolling, pocas horas), semanal y mensual. El % es lo ya gastado.' },
+  { t: 'SWE-Bench', d: 'Benchmark que mide cuánto sabe resolver tareas de ingeniería de software (0–100). Más alto = mejor.' },
+  { t: 'contexto / output', d: 'Contexto: tokens máximos que el modelo "recuerda" en una conversación. Output: tokens máximos que puede generar de una vez.' },
+  { t: 'free (gratis)', d: 'Modelos zen free. No se comprueban uno a uno porque comparten una cuota global.' },
+  { t: 'Disponibilidad / probes', d: 'Los números de Disponibilidad son comprobaciones (probes): un mismo modelo en 3 proveedores cuenta 3 veces.' }
+];
+$('#g-body').innerHTML = GLOSSARY.map(g =>
+  '<div class="g-item"><b>' + esc(g.t) + '</b><span>' + esc(g.d) + '</span></div>'
+).join('');
+
+/* ───────── Render catálogo (Buscar) ───────── */
 function render() {
-  if (!DATA) return;  // guard: data.json aún no cargó
-  const prov = document.getElementById('f-provider').value;
-  const q = document.getElementById('f-search').value.trim().toLowerCase();
-  const minCtx = parseInt(document.getElementById('f-ctx').value) * 1000;
-  const needReason = document.getElementById('f-reason').checked;
-  const needTool = document.getElementById('f-tool').checked;
-  const needBench = document.getElementById('f-bench').checked;
+  if (!DATA) return;
+  const prov = $('#f-provider').value;
+  const q = $('#f-search').value.trim().toLowerCase();
+  const needReason = $('#f-reason').checked;
+  const needTool = $('#f-tool').checked;
+  const needBench = $('#f-bench').checked;
 
   let rows = DATA.models.filter(m => {
     if (prov === 'free' && m.tier !== 'free') return false;
     if (prov === 'go' && !m.providers.go) return false;
-    if (prov === 'zen' && !(m.providers.zen && !m.providers.free)) return false;  // Zen SOLO pago (zen y no free)
+    if (prov === 'zen' && !(m.providers.zen && !m.providers.free)) return false;
     if (prov === 'zenall' && !m.providers.zen) return false;
     if (prov === 'or' && !m.providers.or) return false;
     if (q && !(m.name.toLowerCase().includes(q) || m.id.toLowerCase().includes(q))) return false;
-    if (minCtx && (!m.context || m.context < minCtx)) return false;
     if (needReason && m.reasoning !== true) return false;
     if (needTool && m.tool_call !== true) return false;
-    if (needBench && m.swebench == null) return false;
+    if (needBench && !Object.keys(m.benchmarks || {}).length) return false;
     return true;
   });
 
+  const k = catSort.k, d = catSort.d;
+  const val = m => {
+    if (k === 'name') return m.name.toLowerCase();
+    if (k === 'prov') return (m.providers.go ? 1 : 0) + (m.providers.zen ? 1 : 0) + (m.providers.or ? 1 : 0);
+    if (k === 'context') return m.context != null ? m.context : null;
+    if (k === 'output') return m.output != null ? m.output : null;
+    if (k === 'swe') return m.swebench != null ? m.swebench : null;
+    if (k === 'orin') return m.or_price ? m.or_price.in : null;
+    if (k === 'reasoning') return m.reasoning ? 1 : 0;
+    if (k === 'tool') return m.tool_call ? 1 : 0;
+    return null;
+  };
   rows.sort((a, b) => {
-    let va = a[sortKey], vb = b[sortKey];
-    if (sortKey === 'name') { va = a.name.toLowerCase(); vb = b.name.toLowerCase(); }
-    if (sortKey === 'tier') { va = a.tier; vb = b.tier; }
-    if (sortKey === 'swebench') {
-      if (a.swebench == null && b.swebench == null) return 0;
-      if (a.swebench == null) return 1;
-      if (b.swebench == null) return -1;
-      return (a.swebench - b.swebench) * sortDir;
-    }
+    const va = val(a), vb = val(b);
     if (va == null && vb == null) return 0;
     if (va == null) return 1;
     if (vb == null) return -1;
-    if (typeof va === 'number' && typeof vb === 'number') return (va - vb) * sortDir;
-    return String(va).localeCompare(String(vb)) * sortDir;
+    if (typeof va === 'number' && typeof vb === 'number') return (va - vb) * d;
+    return String(va).localeCompare(String(vb)) * d;
   });
 
-  const tbody = document.getElementById('tbody');
+  const tbody = $('#tbody');
   tbody.innerHTML = rows.map(m => {
-    const link = m.md_url ? `<a class="md-link" href="${m.md_url}" target="_blank" rel="noopener">↗ models.dev</a>` : '<span class="no">—</span>';
-    const displayName = m.providers.free && !/\(free\)/i.test(m.name) ? m.name + ' <span class="badge b-free">free</span>' : m.name;
-    const hasBench = Object.keys(m.benchmarks || {}).length > 0;
-    const chevron = hasBench
-      ? `<button class="expand-hint" type="button" data-bench-toggle="${m.id}" aria-expanded="false" aria-label="Mostrar u ocultar benchmarks de ${m.name.replace(/"/g,'&quot;')}">▼</button>`
-      : '';
-    return `<tr class="model-row" data-id="${m.id}">
-      <td data-label="Modelo"><div class="m-name"><a class="m-link" href="#/model/${encodeURIComponent(m.id)}" title="Ver ficha completa">${displayName}</a>${chevron}</div><div class="m-id">${m.id}</div></td>
-      <td data-label="Provider">${provBadges(m)}</td>
-      <td data-label="Contexto" class="num"><span class="ctx-num">${fmtCtx(m.context)}</span></td>
-      <td data-label="Output" class="num">${fmtCtx(m.output)}</td>
-      <td data-label="Reasoning">${cell(m.reasoning)}</td>
-      <td data-label="Tools">${cell(m.tool_call)}</td>
-      <td data-label="SWE-Bench" class="num">${m.swebench != null ? '<b>'+m.swebench+'</b>' : '<span class="no">—</span>'}</td>
-      <td data-label="Ficha">${link}</td>
-    </tr>
-    <tr class="bench-row" data-bench-for="${m.id}">
-      <td colspan="8">
-        <div class="bench-title">Benchmarks (models.dev)</div>
-        ${benchHTML(m)}
-      </td>
-    </tr>`;
+    const link = m.md_url
+      ? '<a class="md-link" href="' + esc(m.md_url) + '" target="_blank" rel="noopener">↗ models.dev</a>'
+      : '<span class="no">—</span>';
+    let displayName = esc(m.name);
+    if (m.providers.free && !/\(free\)/i.test(m.name)) displayName += ' <span class="pb free">free</span>';
+    return '<tr class="model-row" data-id="' + esc(m.id) + '" tabindex="0" role="button" aria-label="Ver ficha de ' + esc(m.name) + '">' +
+      '<td><div class="m-name"><a class="m-link" href="#/model/' + encodeURIComponent(m.id) + '" title="Ver ficha completa">' + displayName + '</a></div><div class="m-id">' + esc(m.id) + '</div></td>' +
+      '<td>' + provBadges(m) + '</td>' +
+      '<td class="num">' + fmtCtx(m.context) + '</td>' +
+      '<td class="num">' + fmtCtx(m.output) + '</td>' +
+      '<td class="num">' + cell(m.reasoning) + '</td>' +
+      '<td class="num">' + cell(m.tool_call) + '</td>' +
+      '<td class="num">' + (m.swebench != null ? '<b>' + esc(m.swebench) + '</b>' : '<span class="no">—</span>') + '</td>' +
+      '<td class="num">' + moneyTag(m.or_price ? m.or_price.in : null) + '</td>' +
+      '<td>' + link + '</td>' +
+      '</tr>';
   }).join('');
 
   const nFree = rows.filter(r => r.tier === 'free').length;
   const nGo = rows.filter(r => r.providers.go).length;
   const nZen = rows.filter(r => r.providers.zen).length;
-  const withMd = DATA.counts.with_modelsdev;
-  const isFiltered = prov !== 'all' || q || minCtx || needReason || needTool || needBench;
-  const pill = `📄 <b>${withMd}/${DATA.counts.total}</b> con ficha · 🌱 ${nFree} · 🚀 ${nGo} · 💜 ${nZen}`;
-  document.getElementById('count-pill').innerHTML = isFiltered
-    ? `<b>${rows.length}</b> de ${DATA.counts.total} · 🌱 ${nFree}`
-    : pill;
-  document.getElementById('btn-filter').classList.toggle('on', isFiltered);
+  const nOr = rows.filter(r => r.providers.or).length;
+  $('#count-pill').innerHTML = '📄 <b>' + rows.length + '</b> de ' + DATA.counts.total +
+    ' modelos · 🌱 ' + nFree + ' · 🚀 ' + nGo + ' · 💜 ' + nZen + ' · 🟠 ' + nOr +
+    (DATA.counts.with_modelsdev ? ' (📄 ' + DATA.counts.with_modelsdev + ' con ficha models.dev)' : '');
 }
 
-function toggleBench(id) {
-  const rows = document.querySelectorAll('tr.bench-row');
-  let anyOpen = false;
-  rows.forEach(r => {
-    if (r.dataset.benchFor === id) {
-      const wasOpen = r.classList.contains('open');
-      r.classList.toggle('open', !wasOpen);
-      anyOpen = !wasOpen;
-    } else {
-      r.classList.remove('open');
-    }
-  });
-  document.querySelectorAll('tr.model-row').forEach(r => {
-    r.classList.toggle('expanded', r.dataset.id === id && anyOpen);
-  });
-  document.querySelectorAll('button.expand-hint').forEach(b => {
-    b.setAttribute('aria-expanded', (b.dataset.benchToggle === id && anyOpen) ? 'true' : 'false');
-  });
-}
-
+/* Ordenación por cabeceras (catálogo) */
 function bindSort() {
-  document.querySelectorAll('thead th[data-k]').forEach(th => {
+  document.querySelectorAll('#tbl-cat thead th[data-k]').forEach(th => {
     th.addEventListener('click', () => {
       const k = th.dataset.k;
-      if (sortKey === k) { sortDir *= -1; } else { sortKey = k; sortDir = 1; }
-      document.querySelectorAll('thead th').forEach(t => { const a = t.querySelector('.arrow'); if (a) a.textContent = ''; });
-      th.querySelector('.arrow').textContent = sortDir === 1 ? ' ▲' : ' ▼';
+      if (catSort.k === k) { catSort.d *= -1; } else { catSort.k = k; catSort.d = 1; }
+      document.querySelectorAll('#tbl-cat thead th .ar').forEach(a => a.textContent = '');
+      th.querySelector('.ar').textContent = catSort.d === 1 ? '▲' : '▼';
       render();
     });
   });
 }
 
-document.getElementById('f-provider').addEventListener('change', render);
-document.getElementById('f-search').addEventListener('input', render);
-document.getElementById('f-reason').addEventListener('change', render);
-document.getElementById('f-tool').addEventListener('change', render);
-document.getElementById('f-bench').addEventListener('change', render);
-document.getElementById('f-ctx').addEventListener('input', e => {
-  const k = parseInt(e.target.value);
-  document.getElementById('ctx-val').textContent = k >= 1000 ? (k/1000).toFixed(1)+'M' : k+'K';
-  document.querySelectorAll('.preset').forEach(b => b.classList.toggle('on', parseInt(b.dataset.k) === k));
-  render();
-});
-document.querySelectorAll('.preset').forEach(b => {
-  b.addEventListener('click', () => {
-    const k = parseInt(b.dataset.k);
-    document.getElementById('f-ctx').value = k;
-    document.getElementById('ctx-val').textContent = k >= 1000 ? (k/1000).toFixed(1)+'M' : k+'K';
-    document.querySelectorAll('.preset').forEach(x => x.classList.toggle('on', parseInt(x.dataset.k) === k));
-    render();
+/* ───────── Resumen (KPIs + proveedores) ───────── */
+function renderSummary() {
+  if (!DATA) return;
+  const c = DATA.counts || {};
+  $('#kpi-total').textContent = c.total || '—';
+  $('#kpi-total-foot').textContent = 'Zen ' + (c.zen || 0) + ' · Go ' + (c.go || 0) + ' · OpenRouter ' + (c.openrouter || 0);
+  $('#kpi-cheap-foot').textContent = c.cheapest_label || '—';
+
+  const gq = (DATA.status_badges && DATA.status_badges.go_quota) || {};
+  const mb = (gq.buckets && gq.buckets.monthly) || {};
+  $('#kpi-quota').textContent = (mb.percent != null ? mb.percent : '?') + '%';
+  if (mb.status) {
+    $('#kpi-quota-sema').className = 'sema ' + (mb.status === 'ok' ? 'ok' : mb.status === 'warn' ? 'warn' : 'down');
+  }
+  $('#kpi-quota-reset').textContent = mb.resets_in_human || '—';
+
+  const pr = (DATA.status_badges && DATA.status_badges.providers) || {};
+  const stats = DATA.status_badges ? DATA.status_badges.providers : null;
+  const grid = $('#prov-grid');
+  const mk = [
+    { key: 'go', cls: 'go', label: 'OpenCode Go', models: c.go || 0,
+      note: 'Suscripción $10/mes · coste marginal 0. 429 = cuota, no caída.' },
+    { key: 'zen', cls: 'zen', label: 'OpenCode Zen', models: c.zen || 0,
+      note: 'Créditos + free (pool común). Free no se prueba (cuota global).' },
+    { key: 'openrouter', cls: 'or', label: 'OpenRouter', models: c.openrouter || 0,
+      note: 'Backend 100% independiente, más barato. Precios reales de API.' }
+  ];
+  grid.innerHTML = mk.map(p => {
+    const probed = (stats && stats[p.key] && stats[p.key].probed) || {};
+    const ok = probed.ok || 0; const down = probed.down || 0;
+    const free = probed.free || 0; const na = probed.na || 0; const unk = probed.unk || 0;
+    let status = 'ok', stxt = 'Operativo';
+    if (down > 0) { status = 'warn'; stxt = down + ' caído' + (down > 1 ? 's' : ''); }
+    if (down >= Math.max(1, Math.round(p.models * 0.3))) { status = 'down'; stxt = 'Varios caídos'; }
+    const extra = [];
+    if (na) extra.push('<b>' + na + '</b> no accesibles');
+    if (unk) extra.push('<b>' + unk + '</b> no responden');
+    if (free) extra.push('<b>' + free + '</b> free');
+    return '<div class="prov ' + p.cls + '">' +
+      '<div class="prov-head"><span class="sema ' + status + '"></span>' +
+      '<span class="pname">' + esc(p.label) + '</span>' +
+      '<span class="ptag">' + p.models + ' modelos</span></div>' +
+      '<div class="prov-stats">' +
+      '<div><b>' + ok + '</b> operativos</div>' +
+      '<div><b>' + down + '</b> caídos</div>' +
+      extra.map(e => '<div>' + e + '</div>').join('') +
+      '</div>' +
+      '<div class="prov-note">' + esc(p.note) + '</div></div>';
+  }).join('');
+}
+
+/* ───────── Precios (matriz) ───────── */
+function renderPrices() {
+  const el = $('#prices-body');
+  if (!DATA || !DATA.price_matrix) {
+    el.innerHTML = '<div class="oc-note">Matriz de precios no disponible.</div>';
+    return;
+  }
+  const P = DATA.price_matrix;
+  let h = '<div class="info-note" style="margin-top:0">💱 Fuente: ' +
+    esc(P.sources ? (P.sources.zen_paid + ' · ' + P.sources.openrouter) : 'ver plan') +
+    ' · refresco ' + esc((P.fetched || '').replace('T', ' ').slice(0, 16)) +
+    ' · moneda ' + esc(P.currency || 'USD') + '</div>';
+
+  // Tabla comparativa unificada: por modelo del catálogo (in $/1M)
+  h += '<div class="table-card" style="margin-top:10px"><div class="table-scroll">' +
+    '<table id="tbl-price"><thead><tr>' +
+    '<th data-k="name">Modelo<span class="ar"></span></th>' +
+    '<th>Go</th>' +
+    '<th data-k="zenin" class="num">Zen in (off→peak)<span class="ar"></span></th>' +
+    '<th data-k="orin" class="num">OpenRouter in/out<span class="ar"></span></th>' +
+    '<th data-k="ctx" class="num">Contexto<span class="ar"></span></th>' +
+    '</tr></thead><tbody id="tbody-price"></tbody></table></div></div>';
+
+  const zenP = P.zen_paid_offpeak || {};
+  const zenPeak = P.zen_paid_peak || {};
+  const orP = P.openrouter || {};
+
+  const orIds = (DATA.models || []).filter(m => m.or_id).map(m => m.or_id);
+  const seen = {};
+  orIds.forEach(id => { if (!seen[id]) { seen[id] = 1; } });
+
+  const rows = (DATA.models || []).map(m => {
+    const zp = zenP[m.id];
+    const or = m.or_price || (m.or_id && orP[m.or_id]) || null;
+    const zen = zp
+      ? money(zp.in) + ' → ' + money((zenPeak[m.id] || {}).in)
+      : '<span class="no">—</span>';
+    const go = m.providers.go ? '<span class="tier">plan $10/mes</span>' : '<span class="no">—</span>';
+    const orv = or ? money(or.in) + ' / ' + money(or.out) : '<span class="no">—</span>';
+    return { m, name: m.name.toLowerCase(), id: m.id, zenhtml: zen, gohtml: go, orhtml: orv, orin: or ? or.in : null, ctx: m.context || null };
   });
-});
-document.getElementById('tbody').addEventListener('click', e => {
-  // El chevron sigue expandiendo/plegando los benchmarks in-line
-  const btn = e.target.closest('button.expand-hint');
-  if (btn) { e.preventDefault(); toggleBench(btn.dataset.benchToggle); return; }
-  // Enlaces (ficha, models.dev) navegan por sí mismos
-  if (e.target.closest('a')) return;
-  const tr = e.target.closest('tr.model-row');
-  if (tr) mdNavigate(tr.dataset.id);
-});
 
-// Catálogo como acordeón: plegado por defecto en móvil (menos scroll)
-const accCat = document.getElementById('acc-catalog');
-if (window.matchMedia('(max-width: 760px)').matches && accCat) accCat.open = false;
+  h += '<div class="info-note">🔒 ' + esc(P.notes || 'Sin saldos ni claves. Solo precios públicos por millón de tokens (MTok).') + '</div>';
+  el.innerHTML = h;
 
-// Filtros colapsables en móvil
-const btnFilter = document.getElementById('btn-filter');
-const filters = document.getElementById('filters');
-btnFilter.addEventListener('click', () => {
-  const open = filters.classList.toggle('open');
-  btnFilter.classList.toggle('active', open);
-  btnFilter.setAttribute('aria-expanded', open);
-  if (open) {
-    if (accCat) accCat.open = true;  // el panel vive dentro del acordeón del catálogo
-    filters.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  let priceSort = { k: 'name', d: 1 };
+  const sortPrice = () => {
+    const d = priceSort.d, k = priceSort.k;
+    const val = r => {
+      if (k === 'name') return r.name;
+      if (k === 'zenin') { const p = zenP[r.id]; return p ? p.in : null; }
+      if (k === 'orin') return r.orin;
+      if (k === 'ctx') return r.ctx;
+      return null;
+    };
+    const sorted = rows.slice().sort((a, b) => {
+      const va = val(a), vb = val(b);
+      if (va == null && vb == null) return 0;
+      if (va == null) return 1;
+      if (vb == null) return -1;
+      if (typeof va === 'number' && typeof vb === 'number') return (va - vb) * d;
+      return String(va).localeCompare(String(vb)) * d;
+    });
+    $('#tbody-price').innerHTML = sorted.map(r =>
+      '<tr><td><div class="m-name">' + esc(r.m.name) + '</div><div class="m-id">' + esc(r.id) + '</div></td>' +
+      '<td>' + r.gohtml + '</td><td class="num">' + r.zenhtml + '</td>' +
+      '<td class="num">' + r.orhtml + '</td><td class="num">' + fmtCtx(r.ctx) + '</td></tr>'
+    ).join('');
+  };
+  document.querySelectorAll('#tbl-price thead th[data-k]').forEach(th => {
+    th.addEventListener('click', () => {
+      const k = th.dataset.k;
+      if (priceSort.k === k) { priceSort.d *= -1; } else { priceSort.k = k; priceSort.d = 1; }
+      document.querySelectorAll('#tbl-price thead th .ar').forEach(a => a.textContent = '');
+      th.querySelector('.ar').textContent = priceSort.d === 1 ? '▲' : '▼';
+      sortPrice();
+    });
+  });
+  sortPrice();
+}
+
+/* ───────── Cadena ───────── */
+function renderChain() {
+  if (!DATA || !DATA.chain_snapshot) {
+    $('#chain-method').textContent = 'Cadena no disponible aún.';
+    return;
   }
-});
+  const C = DATA.chain_snapshot;
+  $('#chain-method').innerHTML = '📌 Método de creación (coste marginal ascendente):<br>' +
+    '<code>' + (DATA.chain_method || '').split('\n').map(esc).join('<br>') + '</code>';
+  $('#chain-snap').textContent = (C.snapshot || '').replace('T', ' ');
+  $('#chain-flow').innerHTML = (C.links || []).map((l, i) => {
+    const box = '<div class="chain-step"><div class="chain-pos">' + esc(l.pos) + '</div>' +
+      '<div class="chain-box"><div class="clink">' + esc(l.link) + '</div>' +
+      '<div class="crole">' + esc(l.role || '') + '</div></div></div>';
+    const arrow = i < (C.links || []).length - 1 ? '<div class="chain-arrow">▼</div>' : '';
+    return box + arrow;
+  }).join('');
+}
 
-// Reset al cambiar a escritorio: cerrar panel móvil y reabrir catálogo
-window.matchMedia('(min-width: 761px)').addEventListener('change', e => {
-  if (e.matches) {
-    filters.classList.remove('open');
-    btnFilter.classList.remove('active');
-    if (accCat) accCat.open = true;
+/* ───────── Cuota ───────── */
+function renderQuota() {
+  const el = $('#quota-body');
+  if (!DATA || !DATA.status_badges) {
+    $('#quota-grid').innerHTML = '<div class="oc-note">Estado de cuotas no disponible.</div>';
+    return;
   }
-});
+  const S = DATA.status_badges;
+  const gq = S.go_quota || {};
+  const bk = gq.buckets || {};
+  const labels = { rolling: 'Continuo (rolling)', weekly: 'Semanal', monthly: 'Mensual' };
+  $('#quota-grid').innerHTML = Object.keys(labels).map(k => {
+    const b = bk[k];
+    if (!b) return '';
+    const cls = b.status === 'ok' ? 'ok' : b.status === 'warn' ? 'warn' : 'down';
+    const pct = b.percent != null ? b.percent : 0;
+    return '<div class="quota-cell">' +
+      '<div class="quota-name">' + labels[k] + '</div>' +
+      '<div class="quota-pct" style="color:var(--' + cls + ')">' + pct + '%</div>' +
+      '<div class="bar"><i class="' + cls + '" style="width:' + Math.max(4, pct) + '%"></i></div>' +
+      '<div class="quota-reset">reinicia en ' + esc(b.resets_in_human || '—') + '</div></div>';
+  }).join('');
 
-fetch('data.json', {cache: 'no-cache'}).then(r => { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); }).then(d => {
-  DATA = d;
-  document.getElementById('skel').classList.remove('on');
-  document.getElementById('gen').textContent = (d.generated || '').replace('T', ' ').slice(0, 16);
-  document.getElementById('mdf').textContent = (d.modelsdev_fetched || '—') + ' (' + (d.modelsdev_count || '?') + ' modelos)';
-  render();
-  if (typeof mdOpenId !== 'undefined' && mdOpenId) mdRenderDetail(mdOpenId);  // deep-link abierto antes de los datos
-}).catch(e => {
-  document.getElementById('skel').classList.remove('on');
-  document.getElementById('tbody').innerHTML =
-    '<tr><td colspan="8">Error cargando data.json: ' + e.message + '</td></tr>';
-});
+  const pr = S.providers || {};
+  const orP = pr.openrouter || {};
+  const bal = S.balances || {};
+  const orOk = (orP.probed && orP.probed.ok > 0) || !!bal.or_ok;
+  const orProbed = orP.probed ? Object.entries(orP.probed).map(([k, v]) => k + ':' + v).join(' ') : '—';
+  let h = '<div class="hs-grid">' +
+    '<div class="hs-card ' + (gq.nivel === 'ok' ? 'ok' : gq.nivel === 'warn' ? 'down' : 'na') + '"><b>Go</b><span>' + esc(gq.badge || '—') + '</span></div>' +
+    '<div class="hs-card ' + (orOk ? 'ok' : 'na') + '"><b>🟠 OR</b><span>' + (orOk ? 'operativo (' + orProbed + ')' : 'sin datos') + '</span></div>' +
+    '</div>';
+  h += '<div class="info-note">🔒 Guardias de saldo (solo booleanos, sin importes): ' +
+    'Zen paid ' + (bal.zen_paid_ok ? '✅' : '⚠️') + ' · OpenRouter ' + (bal.or_ok ? '✅' : '⚠️') + '</div>';
+  if (bal.aviso) h += '<div class="oc-note">' + esc(bal.aviso) + '</div>';
+  el.innerHTML = h;
+}
 
-/* ── Sección Estado OpenCode ── */
-const ST = {
-  status: null, hist: null, catalog: null, limits: null,
-  chAuto: null, chManual: null,
-};
+/* ───────── Salud ───────── */
+const ST = { status: null, hist: null, catalog: null, limits: null, chAuto: null, chManual: null };
+const ST_ICON = { ok: '✅', down: '⚠️', unk: '❓', na: 'ℹ️', free: '🌱' };
+const ST_CLS = { ok: 'hs-ok', down: 'hs-down', unk: 'hs-unk', na: 'hs-na', free: 'hs-free' };
+const ST_LBL = { ok: 'operativo', down: 'caído', unk: 'no responde', na: 'no accesible', free: 'free' };
+
+function shortId(id) {
+  if (id === 'big-pickle') return 'big-pickle';
+  return id.replace(/-(free)$/, '').replace(/-preview$/, '*');
+}
+function dotFor(st) {
+  return '<span class="hdot ' + st + '"></span>';
+}
+function daysSince(dateStr) {
+  if (!dateStr) return null;
+  const d = new Date(dateStr + 'T00:00:00Z');
+  return Math.floor((Date.now() - d.getTime()) / 86400000);
+}
+function verifiedHTML(verified) {
+  const ds = daysSince(verified);
+  const stale = ds != null && ds > 14;
+  return '<span class="verified-badge' + (stale ? ' stale' : '') + '">🕒 verificado ' +
+    (ds == null ? '—' : (ds === 0 ? 'hoy' : 'hace ' + ds + 'd')) + (stale ? ' ⚠️ posiblemente obsoleto' : '') + '</span>';
+}
+
+function renderHealth() {
+  if (!ST.status) {
+    $('#health-tbody').innerHTML = '<tr><td colspan="4" class="tl-empty">status.json no disponible aún (primer check pendiente)</td></tr>';
+    return;
+  }
+  const m = ST.status.models || {};
+  const days = ST.hist.days || {};
+  const dates = Object.keys(days).sort();
+  const lastN = dates.slice(-14);
+  const counts = ST.status.counts || {};
+  const snap = ST.status.snapshot || '—';
+
+  $('#health-summary').innerHTML =
+    '<div class="hs-card ok"><b>' + (counts.ok ?? 0) + '</b><span>operativos</span></div>' +
+    '<div class="hs-card down"><b>' + (counts.down ?? 0) + '</b><span>caídos</span></div>' +
+    '<div class="hs-card na"><b>' + (counts.na ?? 0) + '</b><span>no accesibles</span></div>' +
+    '<div class="hs-card free"><b>' + (counts.free ?? 0) + '</b><span>free</span></div>';
+  $('#health-snap').textContent = snap.replace('T', ' ').slice(0, 16);
+
+  const rows = Object.keys(m).sort((a, b) => {
+    const o = { ok: 0, na: 1, unk: 2, free: 3, down: 4 };
+    return (o[m[a].status] ?? 5) - (o[m[b].status] ?? 5) || a.localeCompare(b);
+  });
+
+  $('#health-tbody').innerHTML = rows.map(id => {
+    const e = m[id];
+    const dots = lastN.map(d => {
+      const s = (days[d] || {})[id];
+      return s ? dotFor(s) : '<span class="hdot" style="background:transparent;border:1px dashed #2a3040"></span>';
+    }).join('');
+    const fails = e.fails ? '<span class="fails-badge">×' + e.fails + '</span>' : '';
+    return '<tr>' +
+      '<td><span class="m-name">' + esc(shortId(id)) + '</span><div class="m-id">' + esc(id) + '</div></td>' +
+      '<td><span class="hstatus ' + (ST_CLS[e.status] || '') + '">' + (ST_ICON[e.status] || '❓') + ' ' + (ST_LBL[e.status] || e.status) + '</span></td>' +
+      '<td>' + fails + '</td>' +
+      '<td class="dots">' + dots + '</td></tr>';
+  }).join('');
+}
+
+function renderLimits() {
+  const el = $('#limits-body');
+  if (!ST.limits) {
+    el.innerHTML = '<div class="oc-note">limits.json no disponible — datos manuales pendientes de crear.</div>';
+    return;
+  }
+  const L = ST.limits;
+  const ver = L.verified_at;
+  let h = '';
+  const subs = L.subscription || {};
+  const glob = L.global_limits || {};
+  h += '<div class="md-kv" style="margin-bottom:8px"><span>OpenCode Go</span><b>$' + (subs.price_usd_month ?? 10) + '/mes</b></div>';
+  if (subs.note) h += '<div class="oc-note">' + esc(subs.note) + '</div>';
+  h += '<div class="oc-note">Límite global de gasto: $' + esc(glob.per_5h_usd ?? '—') + '/5h · $' +
+    esc(glob.per_week_usd ?? '—') + '/sem · $' + esc(glob.per_month_usd ?? '—') + '/mes · ' + verifiedHTML(ver) + '</div>';
+  if (L.peak_hours_note) h += '<div class="oc-note">⏰ ' + esc(L.peak_hours_note) + '</div>';
+  if (L.overflow_note) h += '<div class="oc-note">💡 ' + esc(L.overflow_note) + '</div>';
+  if (L.privacy_note) h += '<div class="oc-note">🔒 ' + esc(L.privacy_note) + '</div>';
+
+  const rows = L.pricing || [];
+  if (rows.length) {
+    h += '<div class="table-scroll" style="margin-top:10px"><table class="lim-tbl"><thead><tr>' +
+      '<th>Modelo</th><th>Variante</th><th>Tier</th><th class="num">In $/1M</th><th class="num">Out $/1M</th>' +
+      '<th class="num">Req/sem</th><th class="num">Req/mes</th></tr></thead><tbody>';
+    rows.forEach(r => {
+      h += '<tr><td data-label="Modelo"><span class="m-name">' + esc(r.name || r.model) + '</span></td>' +
+        '<td data-label="Variante">' + (r.variant ? '<span class="var-chip">' + esc(r.variant) + '</span>' : '—') + '</td>' +
+        '<td data-label="Tier"><span class="tier">$' + esc(r.tier_usd) + '</span></td>' +
+        '<td class="num">' + money(r.in) + '</td><td class="num">' + money(r.out) + '</td>' +
+        '<td class="num">' + (r.req_week != null ? r.req_week.toLocaleString('es') : '—') + '</td>' +
+        '<td class="num">' + (r.req_month != null ? r.req_month.toLocaleString('es') : '—') + '</td></tr>';
+    });
+    h += '</tbody></table></div>';
+  }
+  if (L.note) h += '<div class="oc-note">' + esc(L.note) + '</div>';
+  el.innerHTML = h;
+}
+
+function renderHistory() {
+  const el = $('#history-body');
+  const events = (ST.catalog && ST.catalog.events) || [];
+  const days = ST.hist.days || {};
+  const dates = Object.keys(days).sort().reverse();
+
+  let h = '<div class="info-note" style="margin-top:0">📈 Evolución del catálogo (' + dates.length + ' días registrados)</div>';
+  if (events.length) {
+    h += '<ul class="timeline">';
+    events.slice().reverse().slice(-25).forEach(ev => {
+      const tag = ev.type === 'added'
+        ? '<span class="tl-tag added">+ nuevo</span>'
+        : '<span class="tl-tag removed">− eliminado</span>';
+      h += '<li><span class="tl-date">' + esc(ev.date) + '</span>' + tag +
+        '<span class="tl-text"><b>' + esc(shortId(ev.id)) + '</b> <span class="m-id">' + esc(ev.id) + '</span></span></li>';
+    });
+    h += '</ul>';
+  } else {
+    h += '<div class="tl-empty">Sin cambios detectados todavía — los siguientes checks diarios registrarán modelos nuevos o eliminados.</div>';
+  }
+  el.innerHTML = h;
+}
+
+function renderChanges() {
+  const el = $('#changes-body');
+  const auto = (ST.chAuto && ST.chAuto.events) || [];
+  const manual = (ST.chManual && ST.chManual.events) || [];
+  const all = manual.map(e => Object.assign({}, e, { src: 'manual' }))
+    .concat(auto.map(e => Object.assign({}, e, { src: 'auto' })))
+    .sort((a, b) => (a.date || '').localeCompare(b.date || '') || (a.src === 'auto' ? 1 : -1));
+  if (!all.length) {
+    el.innerHTML = '<div class="tl-empty">Sin cambios registrados todavía.</div>';
+    return;
+  }
+  let h = '<ul class="timeline">';
+  all.slice().reverse().slice(-40).forEach(ev => {
+    const tag = ev.src === 'manual'
+      ? '<span class="tl-tag manual">📝 manual</span>'
+      : '<span class="tl-tag auto">🤖 auto</span>';
+    h += '<li><span class="tl-date">' + esc(ev.date || '—') + '</span>' + tag +
+      '<span class="tl-text">' + esc(ev.text) + '</span></li>';
+  });
+  h += '</ul>';
+  el.innerHTML = h;
+}
 
 async function fetchJSON(url, fallback) {
   try {
-    const r = await fetch(url, {cache: 'no-cache'});  // revalida siempre (304 si no cambió) — evita datos viejos tras deploy
+    const r = await fetch(url, { cache: 'no-cache' });
     if (!r.ok) throw new Error('HTTP ' + r.status);
     return await r.json();
   } catch (e) {
@@ -846,424 +957,42 @@ async function loadOC() {
   ST.status = status; ST.hist = hist; ST.catalog = catalog;
   ST.limits = limits; ST.chAuto = chAuto; ST.chManual = chManual;
   renderHealth(); renderLimits(); renderHistory(); renderChanges();
-  renderPrices(); renderChain(); renderQuota();
-  renderStrip();
-  if (typeof mdOpenId !== 'undefined' && mdOpenId) mdRenderDetail(mdOpenId);  // refresca precios/salud de la ficha abierta
-  if (status) {
-    document.getElementById('acc-badge-health').textContent =
-      (status.counts ? (status.counts.ok ?? 0) + ' operativos de ' + Object.keys(status.models || {}).length : '') +
-      ' · check ' + (status.snapshot || '—');
-  } else {
-    document.getElementById('acc-badge-health').textContent = 'sin datos aún';
-  }
+  renderSummary();
 }
 
-// Pill-strip de resumen siempre visible
-function renderStrip() {
-  const strip = document.getElementById('oc-strip');
-  if (!ST.status) {
-    strip.innerHTML =
-      '<span class="strip-pill ok">? ✅</span>' +
-      '<span class="strip-pill down">? ⚠️</span>' +
-      '<span class="strip-pill free">? 🌱</span>' +
-      '<span class="strip-pill check">check <b>—</b></span>';
-    return;
-  }
-  const c = ST.status.counts || {};
-  const snap = ST.status.snapshot || '—';
-  // "17/8" → día/mes del snapshot
-  let snapShort = snap;
-  const m = /^(\d{4})-(\d{2})-(\d{2})/.exec(snap);
-  if (m) snapShort = parseInt(m[3], 10) + '/' + parseInt(m[2], 10);
-  const orN = (ST.status.counts && ST.status.counts.or) ? ST.status.counts.or : 0;
-  strip.innerHTML =
-    '<span class="strip-pill ok">' + (c.ok ?? 0) + ' ✅</span>' +
-    '<span class="strip-pill down">' + (c.down ?? 0) + ' ⚠️</span>' +
-    '<span class="strip-pill free">' + (c.free ?? 0) + ' 🌱</span>' +
-    '<span class="strip-pill or">' + orN + ' 🟠 OR</span>' +
-    '<span class="strip-pill check">check <b>' + snapShort + '</b></span>';
-}
-
-const ST_ICON = { ok: '✅', down: '⚠️', unk: '❓', na: 'ℹ️', free: '🌱' };
-const ST_CLS  = { ok: 'hs-ok', down: 'hs-down', unk: 'hs-unk', na: 'hs-na', free: 'hs-free' };
-const ST_LBL  = { ok: 'operativo', down: 'caído', unk: 'no responde', na: 'no accesible', free: 'free' };
-
-function shortId(id) {
-  if (id === 'big-pickle') return 'big-pickle';
-  return id.replace(/-(free)$/, '').replace(/-preview$/, '*');
-}
-
-function dotFor(st) {
-  return '<span class="hdot ' + st + '"></span>';
-}
-
-function renderHealth() {
-  if (!ST.status) {
-    document.getElementById('health-tbody').innerHTML =
-      '<tr><td colspan="4" class="tl-empty">status.json no disponible aún (primer check pendiente)</td></tr>';
-    return;
-  }
-  const m = ST.status.models || {};
-  const days = ST.hist.days || {};
-  const dates = Object.keys(days).sort();
-  const lastN = dates.slice(-14);
-  const counts = ST.status.counts || {};
-
-  const sum = document.getElementById('health-summary');
-  sum.innerHTML =
-    '<div class="hs-card ok"><b>' + (counts.ok ?? 0) + '</b><span>operativos</span></div>' +
-    '<div class="hs-card down"><b>' + (counts.down ?? 0) + '</b><span>caídos</span></div>' +
-    '<div class="hs-card na"><b>' + (counts.na ?? 0) + '</b><span>no accesibles</span></div>' +
-    '<div class="hs-card free"><b>' + (counts.free ?? 0) + '</b><span>free</span></div>';
-
-  const rows = Object.keys(m).sort((a, b) => {
-    const o = { ok: 0, na: 1, unk: 2, free: 3, down: 4 };
-    return (o[m[a].status] ?? 5) - (o[m[b].status] ?? 5) || a.localeCompare(b);
-  });
-
-  const tbody = document.getElementById('health-tbody');
-  tbody.innerHTML = rows.map(id => {
-    const e = m[id];
-    const dots = lastN.map(d => {
-      const s = (days[d] || {})[id];
-      return s ? dotFor(s) : '<span class="hdot" style="background:transparent;border:1px dashed #2a3040"></span>';
-    }).join('');
-    const fails = e.fails ? '<span class="fails-badge">×' + e.fails + '</span>' : '';
-    return '<tr>' +
-      '<td><span class="m-name">' + shortId(id) + '</span><div class="m-id">' + id + '</div></td>' +
-      '<td><span class="hstatus ' + (ST_CLS[e.status] || '') + '">' + (ST_ICON[e.status] || '❓') + ' ' + (ST_LBL[e.status] || e.status) + '</span></td>' +
-      '<td>' + fails + '</td>' +
-      '<td class="dots">' + dots + '</td>' +
-      '</tr>';
-  }).join('');
-}
-
-function money(n) {
-  if (n == null) return '—';
-  return '$' + parseFloat(n).toFixed(2);
-}
-
-function daysSince(dateStr) {
-  if (!dateStr) return null;
-  const d = new Date(dateStr + 'T00:00:00Z');
-  return Math.floor((Date.now() - d.getTime()) / 86400000);
-}
-
-function verifiedHTML(verified) {
-  const ds = daysSince(verified);
-  const stale = ds != null && ds > 14;
-  return '<span class="verified-badge' + (stale ? ' stale' : '') + '">🕒 verificado ' +
-    (ds == null ? '—' : (ds === 0 ? 'hoy' : 'hace ' + ds + 'd')) + (stale ? ' ⚠️ posiblemente obsoleto' : '') + '</span>';
-}
-
-function renderLimits() {
-  const el = document.getElementById('limits-body');
-  if (!ST.limits) {
-    el.innerHTML = '<div class="oc-note">limits.json no disponible — datos manuales pendientes de crear.</div>';
-    return;
-  }
-  const L = ST.limits;
-  const ver = L.verified_at;
-
-  // Cabecera: suscripción + límites globales
-  let h = '<div class="lim-grid">';
-  const subs = L.subscription || {};
-  const glob = L.global_limits || {};
-  h += '<div class="lim-block"><h4>Suscripción</h4>';
-  h += '<div class="row"><span>OpenCode Go</span><b>$' + (subs.price_usd_month ?? 10) + '/mes</b></div>';
-  h += (subs.note ? '<div class="oc-note">' + subs.note + '</div>' : '');
-  h += '</div>';
-  h += '<div class="lim-block"><h4>Límite global de gasto</h4>';
-  h += '<div class="row"><span>Por 5 h</span><b>$' + (glob.per_5h_usd ?? '—') + '</b></div>';
-  h += '<div class="row"><span>Por semana</span><b>$' + (glob.per_week_usd ?? '—') + '</b></div>';
-  h += '<div class="row"><span>Por mes</span><b>$' + (glob.per_month_usd ?? '—') + '</b></div>';
-  h += (glob.note ? '<div class="oc-note">' + glob.note + '</div>' : '');
-  h += verifiedHTML(ver) + '</div>';
-  h += '</div>';
-
-  // Notas (peak, overflow, privacidad)
-  if (L.peak_hours_note) h += '<div class="oc-note">⏰ ' + L.peak_hours_note + '</div>';
-  if (L.overflow_note) h += '<div class="oc-note">💡 ' + L.overflow_note + '</div>';
-  if (L.privacy_note) h += '<div class="oc-note">🔒 ' + L.privacy_note + '</div>';
-
-  // Tabla completa por modelo (pricing array)
-  const rows = L.pricing || [];
-  if (rows.length) {
-    h += '<div class="table-scroll" style="margin-top:14px"><table class="lim-tbl"><thead><tr>' +
-      '<th>Modelo</th><th>Variante</th><th>Tier</th><th class="num">In $/1M</th><th class="num">Out $/1M</th><th class="num">Cache R</th><th class="num">Req/5h</th><th class="num">Req/sem</th><th class="num">Req/mes</th>' +
-      '</tr></thead><tbody>';
-    rows.forEach(r => {
-      const tierCls = r.tier_usd === 15 ? 'tier15' : 'tier60';
-      h += '<tr>' +
-        '<td data-label="Modelo"><span class="m-name">' + (r.name || r.model) + '</span></td>' +
-        '<td data-label="Variante">' + (r.variant ? '<span class="var-chip">' + r.variant + '</span>' : '—') + '</td>' +
-        '<td data-label="Tier"><span class="tier-badge ' + tierCls + '">$' + r.tier_usd + '</span></td>' +
-        '<td data-label="In $/1M" class="num">' + money(r.in) + '</td>' +
-        '<td data-label="Out $/1M" class="num">' + money(r.out) + '</td>' +
-        '<td data-label="Cache R" class="num">' + (r.cache_read != null ? '$' + r.cache_read : '—') + '</td>' +
-        '<td data-label="Req/5h" class="num">' + (r.req_5h != null ? r.req_5h.toLocaleString('es') : '—') + '</td>' +
-        '<td data-label="Req/sem" class="num">' + (r.req_week != null ? r.req_week.toLocaleString('es') : '—') + '</td>' +
-        '<td data-label="Req/mes" class="num">' + (r.req_month != null ? r.req_month.toLocaleString('es') : '—') + '</td>' +
-        '</tr>';
-    });
-    h += '</tbody></table></div>';
-    h += '<div class="oc-note">' + (L.usage_patterns_note || '') + '</div>' + verifiedHTML(ver);
-  }
-  h += '<div class="oc-note">' + (L.note || '') + ' · Fuente: <a href="' + (L.source || '#') + '" target="_blank" rel="noopener">docs oficiales</a></div>';
-  el.innerHTML = h;
-}
-
-function renderHistory() {
-  const el = document.getElementById('history-body');
-  const events = (ST.catalog && ST.catalog.events) || [];
-  const days = ST.hist.days || {};
-  const dates = Object.keys(days).sort().reverse();
-
-  let h = '';
-  h += '<div class="oc-card small"><h4 style="font-size:.74rem;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px">Evolución del catálogo (' + dates.length + ' días registrados)</h4>';
-  if (events.length) {
-    h += '<ul class="timeline">';
-    events.slice().reverse().slice(-25).forEach(ev => {
-      const tag = ev.type === 'added'
-        ? '<span class="tl-tag added">+ nuevo</span>'
-        : '<span class="tl-tag removed">− eliminado</span>';
-      h += '<li><span class="tl-date">' + ev.date + '</span>' + tag +
-        '<span class="tl-text"><b>' + shortId(ev.id) + '</b> <span class="m-id">' + ev.id + '</span></span></li>';
-    });
-    h += '</ul>';
-  } else {
-    h += '<div class="tl-empty">Sin cambios detectados todavía — los siguientes checks diarios registrarán modelos nuevos o eliminados.</div>';
-  }
-  h += '</div>';
-
-  h += '<div class="oc-card small"><h4 style="font-size:.74rem;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px">Serie temporal por modelo (últimos ' + Math.min(dates.length, 14) + ' días)</h4>';
-  if (dates.length) {
-    const models = {};
-    dates.forEach(d => Object.keys(days[d] || {}).forEach(id => { models[id] = 1; }));
-    const ids = Object.keys(models).sort();
-    h += '<div class="table-scroll"><table class="health" style="min-width:0"><thead><tr><th>Modelo</th><th>Historial</th></tr></thead><tbody>';
-    ids.forEach(id => {
-      const dots = dates.slice(0, 14).map(d => {
-        const s = (days[d] || {})[id];
-        return s ? dotFor(s) : '<span class="hdot" style="background:transparent;border:1px dashed #2a3040"></span>';
-      }).join('');
-      h += '<tr><td><span class="m-name">' + shortId(id) + '</span></td><td class="dots">' + dots + '</td></tr>';
-    });
-    h += '</tbody></table></div>';
-    h += '<div class="legend">' +
-      '<span><span class="hdot ok"></span> ok</span>' +
-      '<span><span class="hdot down"></span> caído</span>' +
-      '<span><span class="hdot na"></span> no accesible</span>' +
-      '<span><span class="hdot unk"></span> no responde</span>' +
-      '<span><span class="hdot free"></span> free</span></div>';
-  } else {
-    h += '<div class="tl-empty">Aún no hay historia — empieza a acumularse con el check de mañana.</div>';
-  }
-  h += '</div>';
-  el.innerHTML = h;
-}
-
-function renderChanges() {
-  const el = document.getElementById('changes-body');
-  const auto = (ST.chAuto && ST.chAuto.events) || [];
-  const manual = (ST.chManual && ST.chManual.events) || [];
-  const all = manual.map(e => Object.assign({}, e, { src: 'manual' }))
-    .concat(auto.map(e => Object.assign({}, e, { src: 'auto' })))
-    .sort((a, b) => (a.date || '').localeCompare(b.date || '') || (a.src === 'auto' ? 1 : -1));
-
-  if (!all.length) {
-    el.innerHTML = '<div class="tl-empty">Sin cambios registrados todavía.</div>';
-    return;
-  }
-  let h = '<ul class="timeline">';
-  all.slice().reverse().slice(-40).forEach(ev => {
-    const tag = ev.src === 'manual'
-      ? '<span class="tl-tag manual">📝 manual</span>'
-      : '<span class="tl-tag auto">🤖 auto</span>';
-    h += '<li><span class="tl-date">' + (ev.date || '—') + '</span>' + tag +
-      '<span class="tl-text">' + ev.text.replace(/</g, '&lt;').replace(/>/g, '&gt;') + '</span></li>';
-  });
-  h += '</ul>';
-  h += '<div class="oc-note">Los eventos automáticos de cambio de estado se generan al detectar diferencias entre checks diarios.</div>';
-  el.innerHTML = h;
-}
-
-// Acordeones: sincronizar aria-expanded (details es accesible de nativo: teclado, lector de pantalla)
-document.querySelectorAll('details.acc').forEach(d => {
-  const sum = d.querySelector('summary');
-  const sync = () => sum.setAttribute('aria-expanded', d.open ? 'true' : 'false');
-  d.addEventListener('toggle', sync);
-  sync();
-});
-
-loadOC();
-
-/* ── Matriz de precios (F4) ── */
-function renderPrices() {
-  const el = document.getElementById('prices-body');
-  if (!DATA || !DATA.price_matrix) {
-    el.innerHTML = '<div class="oc-note">Matriz de precios no disponible.</div>';
-    return;
-  }
-  const P = DATA.price_matrix;
-  let h = '<div class="oc-note">💱 Fuente: ' +
-    esc(P.sources ? (P.sources.zen_paid + ' · ' + P.sources.openrouter) : 'ver plan') +
-    ' · refresco ' + esc((P.fetched || '').replace('T', ' ').slice(0, 16)) + ' · ' + esc(P.currency || 'USD') + '</div>';
-
-  // Zen paid off/peak
-  const zk = Object.keys(P.zen_paid_offpeak || {});
-  if (zk.length) {
-    h += '<h4 style="margin:14px 0 6px;font-size:.82rem;color:var(--muted)">opencode-zen (paid, precios de cuenta)</h4>';
-    h += '<div class="table-scroll"><table class="lim-tbl"><thead><tr><th>Modelo</th><th class="num">In off</th><th class="num">Out off</th><th class="num">In peak</th><th class="num">Out peak</th></tr></thead><tbody>';
-    zk.forEach(k => {
-      const o = P.zen_paid_offpeak[k], pk = (P.zen_paid_peak || {})[k] || {};
-      h += '<tr><td data-label="Modelo"><span class="m-name">' + esc(k) + '</span></td>' +
-        '<td class="num">' + money(o.in) + '</td><td class="num">' + money(o.out) + '</td>' +
-        '<td class="num">' + money(pk.in) + '</td><td class="num">' + money(pk.out) + '</td></tr>';
-    });
-    h += '</tbody></table></div>';
-  }
-
-  // OpenRouter: solo los modelos de la cadena + equivalentes del catálogo
-  const orIds = (DATA.models || []).filter(m => m.or_id).map(m => m.or_id);
-  const seen = {};
-  const orRows = [];
-  orIds.forEach(id => { if (!seen[id] && P.openrouter[id]) { seen[id] = 1; orRows.push(id); } });
-  if (orRows.length) {
-    h += '<h4 style="margin:16px 0 6px;font-size:.82rem;color:var(--muted)">OpenRouter (precios reales API)</h4>';
-    h += '<div class="table-scroll"><table class="lim-tbl"><thead><tr><th>Modelo</th><th class="num">In $/1M</th><th class="num">Out $/1M</th><th class="num">Ctx</th></tr></thead><tbody>';
-    orRows.forEach(id => {
-      const o = P.openrouter[id];
-      h += '<tr><td data-label="Modelo"><span class="m-name">' + esc(id) + '</span></td>' +
-        '<td class="num">' + money(o.in) + '</td><td class="num">' + money(o.out) + '</td>' +
-        '<td class="num">' + (o.context ? fmtCtx(o.context) : '—') + '</td></tr>';
-    });
-    h += '</tbody></table></div>';
-  }
-  h += '<div class="oc-note">🔒 ' + esc(P.notes || 'Sin saldos ni claves.') + '</div>';
-  el.innerHTML = h;
-}
-
-/* ── Cadena de fallback (F4) ── */
-function renderChain() {
-  const el = document.getElementById('chain-body');
-  if (!DATA || !DATA.chain_snapshot) {
-    el.innerHTML = '<div class="oc-note">Cadena no disponible.</div>';
-    return;
-  }
-  const C = DATA.chain_snapshot;
-  let h = '<div class="oc-note">📌 Método canónico de creación (coste marginal ascendente):</div>';
-  h += '<pre class="chain-method">' + esc(DATA.chain_method || '') + '</pre>';
-  h += '<div class="oc-note">📸 Snapshot de la cadena activa — ' + esc((C.snapshot || '').replace('T', ' ')) + '</div>';
-  h += '<ol class="chain-list">';
-  (C.links || []).forEach(l => {
-    h += '<li><span class="chain-pos">' + l.pos + '</span>' +
-      '<code class="chain-link">' + esc(l.link) + '</code>' +
-      '<span class="chain-role">' + esc(l.role || '') + '</span></li>';
-  });
-  h += '</ol>';
-  el.innerHTML = h;
-}
-
-/* ── Estado de cuotas / badges (F4) ── */
-function renderQuota() {
-  const el = document.getElementById('quota-body');
-  if (!DATA || !DATA.status_badges) {
-    el.innerHTML = '<div class="oc-note">Estado de cuotas no disponible.</div>';
-    return;
-  }
-  const S = DATA.status_badges;
-  let h = '';
-  const gq = S.go_quota || {};
-  // Badge principal Go
-  let cls = 'ok';
-  if (gq.nivel === 'warn') cls = 'down';
-  else if (gq.nivel === 'critical') cls = 'na';
-  h += '<div class="hs-card ' + cls + '"><b>Go</b><span>' + esc(gq.badge || '—') + '</span></div>';
-  // Tarjeta OpenRouter (3er proveedor)
-  const pr = S.providers || {};
-  const orP = pr.openrouter || {};
-  const orOk = (orP.probed && orP.probed.ok > 0) || (bal && bal.or_ok);
-  const orProbed = orP.probed ? Object.entries(orP.probed).map(([k,v]) => k + ':' + v).join(' ') : '—';
-  h += '<div class="hs-card ' + (orOk ? 'ok' : 'na') + '"><b>🟠 OR</b><span>' + (orOk ? 'operativo (' + orProbed + ')' : 'sin datos') + '</span></div>';
-  // Granularidad de cuota Go
-  const bk = gq.buckets || {};
-  const labels = { rolling: 'Continuo', weekly: 'Semanal', monthly: 'Mensual' };
-  h += '<div class="quota-grid">';
-  Object.keys(labels).forEach(k => {
-    const b = bk[k];
-    if (!b) return;
-    const pct = b.percent != null ? b.percent : '?';;
-    h += '<div class="quota-cell"><span class="quota-name">' + labels[k] + '</span>' +
-      '<span class="quota-pct">' + pct + '%</span>' +
-      '<span class="quota-reset">reinicia ' + esc(b.resets_in_human || '—') + '</span></div>';
-  });
-  h += '</div>';
-  // Balances (solo booleanos de guardia)
-  const bal = S.balances || {};
-  h += '<div class="oc-note">🔒 Guardias de saldo (solo booleanos, sin importes): ' +
-    'Zen paid ' + (bal.zen_paid_ok ? '✅' : '⚠️') + ' · OpenRouter ' + (bal.or_ok ? '✅' : '⚠️') + '</div>';
-  if (bal.aviso) h += '<div class="oc-note">' + esc(bal.aviso) + '</div>';
-  el.innerHTML = h;
-}
-
-bindSort();
-
-/* ═════════════════════════════════════════════════════════
-   F1 · Ficha de detalle: overlay + router por hash (#/model/{id})
-   Sin librerías, sin History API (compatible con GitHub Pages).
-   ═════════════════════════════════════════════════════════ */
+/* ───────── Modal detalle (ficha) ───────── */
 const mdOverlay = document.getElementById('md-overlay');
-const mdPanel   = document.getElementById('md-panel');
-const mdTitle   = document.getElementById('md-title');
-const mdSubId   = document.getElementById('md-subid');
-const mdBodyEl  = document.getElementById('md-body');
-let mdOpenId = null;       // id actualmente mostrado (null = cerrado)
-let mdLastFocus = null;    // foco a devolver al cerrar
-let mdScrollY = 0;         // scroll del catálogo preservado
-let mdPushedHash = false;  // ¿el hash actual lo empujamos nosotros? (deep-link directo = false)
+const mdPanel = document.getElementById('md-panel');
+const mdTitle = document.getElementById('md-title');
+const mdSubId = document.getElementById('md-subid');
+const mdBodyEl = document.getElementById('md-body');
+let mdOpenId = null;
+let mdLastFocus = null;
+let mdScrollY = 0;
+let mdPushedHash = false;
 
-function esc(s) {
-  return String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;').replace(/"/g, '&quot;');
-}
-
-/* ── Router: hash → estado ── */
 function mdParseHash() {
   const m = /^#\/model\/(.+)$/.exec(location.hash || '');
   if (!m) return null;
   try { return decodeURIComponent(m[1]); } catch (e) { return m[1]; }
 }
-
-// Navegar a la ficha: cambia el hash (deja huella en el historial → "atrás" cierra)
 function mdNavigate(id) {
   const target = '#/model/' + encodeURIComponent(id);
   if (location.hash === target) { mdRoute(); return; }
   mdPushedHash = true;
   location.hash = target;
 }
-
-// Cerrar. Si el hash lo empujamos nosotros, "atrás" es lo correcto (mantiene
-// la semántica del botón atrás). Si el usuario entró directo por deep-link,
-// history.back() se saldría del sitio → limpiamos el hash en su lugar.
 function mdCloseRequest() {
   if (!mdParseHash()) { mdClose(); return; }
   if (mdPushedHash) { history.back(); return; }
   mdClose();
-  try {
-    history.replaceState(null, '', location.pathname + location.search);
-  } catch (e) {
-    location.hash = '';
-  }
+  try { history.replaceState(null, '', location.pathname + location.search); } catch (e) { location.hash = ''; }
 }
-
 function mdRoute() {
   const id = mdParseHash();
   if (id) mdOpen(id);
   else { mdPushedHash = false; mdClose(); }
 }
-
-/* ── Apertura / cierre con gestión de foco ── */
 function mdOpen(id) {
   const wasClosed = mdOpenId === null;
   if (wasClosed) {
@@ -1278,7 +1007,6 @@ function mdOpen(id) {
   else mdPanel.scrollTop = 0;
   mdBodyEl.scrollTop = 0;
 }
-
 function mdClose() {
   if (mdOpenId === null) return;
   const closedId = mdOpenId;
@@ -1287,10 +1015,7 @@ function mdClose() {
   document.body.classList.remove('md-open');
   const f = mdLastFocus;
   mdLastFocus = null;
-  // Restaura el scroll del catálogo (los filtros nunca se tocan)
   window.scrollTo({ top: mdScrollY, behavior: 'auto' });
-  // Devuelve el foco al disparador. Si desapareció (re-render de la tabla),
-  // cae al enlace de ese modelo; nunca dejar el foco dentro del panel oculto.
   let dest = (f && f !== document.body && document.contains(f) && typeof f.focus === 'function') ? f : null;
   if (!dest) {
     dest = document.querySelector('tr.model-row[data-id="' + (window.CSS && CSS.escape ? CSS.escape(closedId) : closedId) + '"] a.m-link');
@@ -1300,22 +1025,17 @@ function mdClose() {
     if (document.activeElement.blur) document.activeElement.blur();
   }
 }
-
-/* ── Datos auxiliares para la ficha ── */
 function mdModelById(id) {
   if (!DATA || !DATA.models) return null;
   return DATA.models.find(m => m.id === id) || null;
 }
-
 function kv(label, valueHTML) {
   return '<div class="md-kv"><span>' + label + '</span><b>' + valueHTML + '</b></div>';
 }
-
 function mdPricingRows(id) {
   const rows = (ST.limits && ST.limits.pricing) || [];
   return rows.filter(r => r.model === id);
 }
-
 function mdPricingHTML(id) {
   const rows = mdPricingRows(id);
   if (!rows.length) {
@@ -1323,25 +1043,17 @@ function mdPricingHTML(id) {
   }
   let h = '<div class="table-scroll"><table class="lim-tbl" style="min-width:560px"><thead><tr>' +
     '<th>Variante</th><th>Tier</th><th class="num">In $/1M</th><th class="num">Out $/1M</th>' +
-    '<th class="num">Cache R</th><th class="num">Req/5h</th><th class="num">Req/sem</th><th class="num">Req/mes</th>' +
-    '</tr></thead><tbody>';
+    '<th class="num">Req/sem</th><th class="num">Req/mes</th></tr></thead><tbody>';
   rows.forEach(r => {
-    const tierCls = r.tier_usd === 15 ? 'tier15' : 'tier60';
-    h += '<tr>' +
-      '<td data-label="Variante">' + (r.variant ? '<span class="var-chip">' + esc(r.variant) + '</span>' : '—') + '</td>' +
-      '<td data-label="Tier"><span class="tier-badge ' + tierCls + '">$' + esc(r.tier_usd) + '</span></td>' +
-      '<td data-label="In $/1M" class="num">' + money(r.in) + '</td>' +
-      '<td data-label="Out $/1M" class="num">' + money(r.out) + '</td>' +
-      '<td data-label="Cache R" class="num">' + (r.cache_read != null ? '$' + esc(r.cache_read) : '—') + '</td>' +
-      '<td data-label="Req/5h" class="num">' + (r.req_5h != null ? r.req_5h.toLocaleString('es') : '—') + '</td>' +
-      '<td data-label="Req/sem" class="num">' + (r.req_week != null ? r.req_week.toLocaleString('es') : '—') + '</td>' +
-      '<td data-label="Req/mes" class="num">' + (r.req_month != null ? r.req_month.toLocaleString('es') : '—') + '</td>' +
-      '</tr>';
+    h += '<tr><td data-label="Variante">' + (r.variant ? '<span class="var-chip">' + esc(r.variant) + '</span>' : '—') + '</td>' +
+      '<td data-label="Tier"><span class="tier">$' + esc(r.tier_usd) + '</span></td>' +
+      '<td class="num">' + money(r.in) + '</td><td class="num">' + money(r.out) + '</td>' +
+      '<td class="num">' + (r.req_week != null ? r.req_week.toLocaleString('es') : '—') + '</td>' +
+      '<td class="num">' + (r.req_month != null ? r.req_month.toLocaleString('es') : '—') + '</td></tr>';
   });
   h += '</tbody></table></div>';
   return h;
 }
-
 function mdHealthHTML(id) {
   const st = ST.status && ST.status.models ? ST.status.models[id] : null;
   if (!st) return '<div class="md-note">Este modelo no está en el probe diario de salud.</div>';
@@ -1362,8 +1074,6 @@ function mdHealthHTML(id) {
     ' · últimos ' + lastN.length + ' días registrados</div>';
   return h;
 }
-
-/* ── Render de la ficha ── */
 function mdRenderDetail(id) {
   if (!DATA) {
     mdTitle.textContent = 'Cargando…';
@@ -1376,24 +1086,15 @@ function mdRenderDetail(id) {
     mdTitle.textContent = 'Modelo no encontrado';
     mdSubId.textContent = id;
     mdBodyEl.innerHTML = '<div class="md-note">No hay ningún modelo con id <code>' + esc(id) +
-      '</code> en el catálogo actual. Puede que haya sido retirado — revisa la sección «Evolución».</div>';
+      '</code> en el catálogo actual. Puede que haya sido retirado — revisa «Novedades».</div>';
     return;
   }
-
   mdTitle.textContent = m.name;
   mdSubId.textContent = m.id;
-
   let h = '';
-
-  // Proveedores + tier
   h += '<div class="md-sec"><div class="md-badges">' + provBadges(m) +
-    '<span class="badge ' + (m.tier === 'free' ? 'b-free' : 'b-paid') + '">tier: ' + esc(m.tier) + '</span>' +
-    '</div></div>';
-
-  // Descripción
+    '<span class="tier' + (m.tier === 'free' ? ' free' : '') + '">tier: ' + esc(m.tier) + '</span></div></div>';
   if (m.desc) h += '<div class="md-sec"><div class="md-desc">' + esc(m.desc) + '</div></div>';
-
-  // Specs
   h += '<div class="md-sec"><h3>Especificaciones</h3><div class="md-grid">' +
     kv('Contexto', fmtCtx(m.context)) +
     kv('Salida máx.', fmtCtx(m.output)) +
@@ -1402,59 +1103,63 @@ function mdRenderDetail(id) {
     kv('Structured', cell(m.structured)) +
     kv('Multimodal', cell(m.multimodal)) +
     kv('Open weights', cell(m.open_weights)) +
-    kv('Knowledge', m.knowledge ? esc(m.knowledge) : '<span class="unk">—</span>') +
-    kv('Release', m.release ? esc(m.release) : '<span class="unk">—</span>') +
-    kv('Actualizado', m.last_updated ? esc(m.last_updated) : '<span class="unk">—</span>') +
+    kv('Knowledge', m.knowledge ? esc(m.knowledge) : '<span class="no">—</span>') +
+    kv('Release', m.release ? esc(m.release) : '<span class="no">—</span>') +
+    kv('Actualizado', m.last_updated ? esc(m.last_updated) : '<span class="no">—</span>') +
     '</div></div>';
-
-  // Precios OpenRouter (3er proveedor) — públicos
   const orp = m.or_price;
   if (orp) {
-    h += '<div class="md-sec"><h3>OpenRouter (precio real API)</h3>' +
-      '<div class="md-grid">' +
-      kv('Modelo OR', m.or_id ? esc(m.or_id) : '<span class="unk">—</span>') +
+    h += '<div class="md-sec"><h3>OpenRouter (precio real API)</h3><div class="md-grid">' +
+      kv('Modelo OR', m.or_id ? esc(m.or_id) : '<span class="no">—</span>') +
       kv('In $/1M', money(orp.in)) +
       kv('Out $/1M', money(orp.out)) +
-      kv('Contexto', orp.context ? fmtCtx(orp.context) : '<span class="unk">—</span>') +
-      '</div>' +
-      '<div class="md-note">Mismo modelo, backend 100% independiente. Fuente: precios reales API OpenRouter.</div></div>';
+      kv('Contexto', orp.context ? fmtCtx(orp.context) : '<span class="no">—</span>') +
+      '</div><div class="md-note">Mismo modelo, backend 100% independiente. Fuente: precios reales API OpenRouter.</div></div>';
   }
-
-  // Precios y límites
-  h += '<div class="md-sec"><h3>Precios y límites (plan Go)</h3>' + mdPricingHTML(m.id);
-  if (mdPricingRows(m.id).length && ST.limits) {
-    const g = ST.limits.global_limits || {};
-    h += '<div class="md-note">Límite global de gasto: $' + esc(g.per_5h_usd ?? '—') + '/5h · $' +
-      esc(g.per_week_usd ?? '—') + '/sem · $' + esc(g.per_month_usd ?? '—') + '/mes · ' +
-      verifiedHTML(ST.limits.verified_at) + '</div>';
-  }
-  h += '</div>';
-
-  // Estado de salud
+  h += '<div class="md-sec"><h3>Precios y límites (plan Go)</h3>' + mdPricingHTML(m.id) + '</div>';
   h += '<div class="md-sec"><h3>Estado de salud</h3>' + mdHealthHTML(m.id) + '</div>';
-
-  // Benchmarks
   const nb = Object.keys(m.benchmarks || {}).length;
-  h += '<div class="md-sec"><h3>Benchmarks (models.dev)' + (nb ? ' · ' + nb : '') + '</h3>' +
-    benchHTML(m) + '</div>';
-
-  // Pie: enlace a models.dev
+  h += '<div class="md-sec"><h3>Benchmarks (models.dev)' + (nb ? ' · ' + nb : '') + '</h3>' + benchHTML(m) + '</div>';
   h += '<div class="md-foot">' +
     (m.md_url
       ? '<a class="md-link" href="' + esc(m.md_url) + '" target="_blank" rel="noopener">↗ Ver en models.dev</a>'
       : '<span class="md-note">Sin ficha en models.dev (solo catálogo opencode)</span>') +
     '</div>';
-
   mdBodyEl.innerHTML = h;
 }
 
-/* ── Eventos del overlay ── */
+/* ───────── Tabs ───────── */
+function activate(tab) {
+  document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('#nav button, #bottomnav button').forEach(b => b.classList.toggle('active', b.dataset.tab === tab));
+  const panel = $('#p-' + tab);
+  if (panel) panel.classList.add('active');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+document.querySelectorAll('#nav button, #bottomnav button').forEach(b => {
+  b.addEventListener('click', () => activate(b.dataset.tab));
+});
+
+/* ───────── Eventos ───────── */
+['#f-provider', '#f-search', '#f-reason', '#f-tool', '#f-bench'].forEach(s => $(s).addEventListener('input', render));
+bindSort();
+
+$('#tbody').addEventListener('click', e => {
+  if (e.target.closest('a')) return;
+  const tr = e.target.closest('tr.model-row');
+  if (tr) mdNavigate(tr.dataset.id);
+});
+$('#tbody').addEventListener('keydown', e => {
+  if (e.key === 'Enter' || e.key === ' ') {
+    const tr = e.target.closest('tr.model-row');
+    if (tr) { e.preventDefault(); mdNavigate(tr.dataset.id); }
+  }
+});
 document.getElementById('md-close').addEventListener('click', mdCloseRequest);
-document.getElementById('md-backdrop').addEventListener('click', mdCloseRequest);
+document.getElementById('md-overlay').addEventListener('click', e => { if (e.target === mdOverlay) mdCloseRequest(); });
 document.addEventListener('keydown', e => {
   if (mdOpenId === null) return;
   if (e.key === 'Escape') { e.preventDefault(); mdCloseRequest(); return; }
-  // Focus trap sencillo: mantiene el tabulador dentro del panel
   if (e.key === 'Tab') {
     const f = mdPanel.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
     const list = Array.prototype.filter.call(f, el => el.offsetParent !== null || el === mdPanel);
@@ -1467,10 +1172,40 @@ document.addEventListener('keydown', e => {
     }
   }
 });
-
-// Back/forward del navegador y deep-link directo
 window.addEventListener('hashchange', mdRoute);
-mdRoute();  // resuelve el hash inicial (se re-renderiza al llegar los datos)
+mdRoute();
+loadOC();
+
+/* ───────── Carga de data.json ───────── */
+fetch('data.json', { cache: 'no-cache' }).then(r => {
+  if (!r.ok) throw new Error('HTTP ' + r.status);
+  return r.json();
+}).then(d => {
+  DATA = d;
+  document.getElementById('skel').classList.remove('on');
+  $('#updated').textContent = timeAgo(d.generated);
+  $('#gen').textContent = 'Generado: ' + (d.generated || '').replace('T', ' ').slice(0, 16) +
+    ' · models.dev: ' + (d.modelsdev_fetched || '—') + ' (' + (d.modelsdev_count || '?') + ' modelos)';
+  // Precio más barato (OpenRouter in)
+  const cheapest = d.models.filter(m => m.or_price).sort((a, b) => a.or_price.in - b.or_price.in)[0];
+  $('#kpi-cheap').textContent = cheapest ? money(cheapest.or_price.in) + '/1M' : '—';
+  $('#kpi-cheap-foot').textContent = cheapest ? cheapest.name + ' (OpenRouter)' : '—';
+  // Resumen salud (status_badges)
+  const gq = (d.status_badges && d.status_badges.go_quota) || {};
+  const pr = (d.status_badges && d.status_badges.providers) || {};
+  const goP = pr.go && pr.go.probed ? (pr.go.probed.down || 0) : 0;
+  $('#kpi-health').textContent = goP > 0 ? '⚠️ ' + goP + ' caídos' : '🟢 Saludable';
+  $('#kpi-health-sema').className = 'sema ' + (goP > 0 ? 'warn' : 'ok');
+  $('#kpi-health-foot').textContent = (goP > 0 ? goP + ' de ' : '') + (d.counts ? d.counts.go : '?') + ' modelos Go con problemas' + (gq.badge ? ' · ' + gq.badge : '');
+  render();
+  renderSummary();
+  renderPrices(); renderChain(); renderQuota();
+  if (mdOpenId) mdRenderDetail(mdOpenId);
+}).catch(e => {
+  document.getElementById('skel').classList.remove('on');
+  $('#tbody').innerHTML = '<tr><td colspan="9">Error cargando data.json: ' + esc(e.message) + '</td></tr>';
+  $('#updated').textContent = 'error';
+});
 </script>
 </body>
 </html>
