@@ -27,6 +27,14 @@ Catálogo de modelos del gateway OpenClaw con **tres proveedores**: **opencode-g
 | `limits.json` | Límites/precios manuales (OpenCode no expone API) |
 | `changelog-auto.json` / `changelog-manual.json` | Eventos automáticos y manuales |
 
+## Qué NO se versiona (fuera del repo)
+
+- **Backups locales (`*.bak.*`)**: ignorados por `.gitignore`. Nunca se commitean ni se despliegan.
+- **`docs/` (históricos de decisión)**: `docs/redesign-f5.md` se movió fuera del repo a `/root/.openclaw/workspace/docs/` — es un histórico estático de decisión de diseño, no se regenera ni lo consume la web, así que no pertenece a un repo público de catálogo.
+- **Scripts de build/refresh**: viven en `/root/.openclaw/workspace/scripts/` (fuera del repo). Solo sus *outputs* (`data.json`, `aliases.json`, `modelsdev.json`, `status*.json`, `health-state.json`, `catalog-history.json`, `changelog-auto.json`, `limits.json`) se versionan porque los regenera el refresh y/o los fetch la web.
+
+> Nota: los `*.json` generados por el refresh se reconstruyen solos en cada ciclo (cada 8h) y se commitean vía `git add -A`. No se eliminan del repo: si se quitaran, el próximo refresh los recrearía y volverían a aparecer. La web los consume por `fetch`, salvo `modelsdev.json`/`aliases.json`/`health-state.json` (usados internamente por el build/refresh, no por el navegador).
+
 ## Regenerar datos
 
 Los scripts viven en la raíz del workspace (fuera del repo); ejecuta los comandos desde ahí:
