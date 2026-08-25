@@ -373,7 +373,7 @@
    "opencode-zen/x-preview-f-free": "free"
   },
   "2026-08-25": {
-   "opencode-go/deepseek-v4-flash": "indisponible",
+   "opencode-go/deepseek-v4-flash": "ok",
    "opencode-go/deepseek-v4-flash-vision-exp": "ok",
    "opencode-go/deepseek-v4-pro": "ok",
    "opencode-go/glm-5": "ok",
@@ -386,7 +386,7 @@
    "opencode-go/hy3-preview": "indisponible",
    "opencode-go/kimi-k2.5": "ok",
    "opencode-go/kimi-k2.6": "ok",
-   "opencode-go/kimi-k2.7-code": "down",
+   "opencode-go/kimi-k2.7-code": "ok",
    "opencode-go/kimi-k3": "ok",
    "opencode-go/longcat-2.0": "ok",
    "opencode-go/mimo-v2-omni": "unk",
@@ -447,7 +447,7 @@
    "opencode-zen/minimax-m3": "ok",
    "opencode-zen/qwen3.5-plus": "down",
    "opencode-zen/qwen3.6-plus": "ok",
-   "openrouter/deepseek/deepseek-v4-flash": "down",
+   "openrouter/deepseek/deepseek-v4-flash": "ok",
    "openrouter/deepseek/deepseek-v4-pro": "ok",
    "openrouter/tencent/hy3": "ok",
    "opencode-zen/big-pickle": "free",
