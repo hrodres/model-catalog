@@ -1,5 +1,5 @@
 {
- "generated": "2026-08-25T12:00:03.539606+00:00",
+ "generated": "2026-08-25T19:45:11.316172+00:00",
  "aliases": [
   {
    "id": "opencode-zen/big-pickle",
@@ -216,6 +216,10 @@
   {
    "id": "opencode-zen/grok-4.5",
    "alias": "💰 Grok 4.5 (Zen)"
+  },
+  {
+   "id": "opencode-go/grok-4.6",
+   "alias": "🚀 Grok 4.6 (Go)"
   },
   {
    "id": "opencode-zen/grok-4.6",

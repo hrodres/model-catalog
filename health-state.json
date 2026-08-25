@@ -1,16 +1,16 @@
 {
- "generated": "2026-08-25T12:01:56.576524+00:00",
+ "generated": "2026-08-25T19:47:05.504630+00:00",
  "snapshot": "2026-08-25",
  "fuente": "check-model-health.py F3 (2026-08-24)",
  "providers": {
   "opencode-go": {
    "enabled": 1,
    "probed": {
-    "ok": 23,
-    "down": 3,
+    "ok": 22,
+    "down": 4,
+    "na": 2,
     "indisponible": 1,
-    "unk": 2,
-    "na": 1
+    "unk": 2
    },
    "total": 5
   },
@@ -32,35 +32,35 @@
   }
  },
  "counts": {
-  "ok": 39,
-  "down": 34,
+  "ok": 38,
+  "down": 35,
+  "na": 2,
   "indisponible": 1,
   "unk": 2,
-  "na": 1,
   "free": 20
  },
  "go_quota": {
-  "badge": "✅ Cuota Go OK (Continuo 25% (reinicia 5m) · Semanal 37% (reinicia 131h 59m) · Mensual 17% (reinicia 716h 20m))",
+  "badge": "✅ Cuota Go OK (Continuo 1% (reinicia 4h 19m) · Semanal 44% (reinicia 124h 14m) · Mensual 21% (reinicia 708h 35m))",
   "nivel": "ok",
   "source": "api",
   "buckets": {
    "rolling": {
-    "percent": 25,
+    "percent": 1,
     "status": "ok",
-    "resets_at": "2026-08-25T12:06:01.995Z",
-    "resets_in_human": "5m"
+    "resets_at": "2026-08-26T00:05:02.759Z",
+    "resets_in_human": "4h 19m"
    },
    "weekly": {
-    "percent": 37,
+    "percent": 44,
     "status": "ok",
-    "resets_at": "2026-08-31T00:00:00.995Z",
-    "resets_in_human": "131h 59m"
+    "resets_at": "2026-08-31T00:00:00.759Z",
+    "resets_in_human": "124h 14m"
    },
    "monthly": {
-    "percent": 17,
+    "percent": 21,
     "status": "ok",
-    "resets_at": "2026-09-24T08:20:30.995Z",
-    "resets_in_human": "716h 20m"
+    "resets_at": "2026-09-24T08:20:30.759Z",
+    "resets_in_human": "708h 35m"
    }
   }
  },
@@ -157,6 +157,12 @@
    "detalle": "HTTP 503"
   },
   {
+   "modelo": "grok-4.6",
+   "provider": "opencode-go",
+   "estado": "na",
+   "detalle": "HTTP 401: no accesible con tu plan/key"
+  },
+  {
    "modelo": "hy3",
    "provider": "opencode-go",
    "estado": "ok",
@@ -183,8 +189,8 @@
   {
    "modelo": "kimi-k2.7-code",
    "provider": "opencode-go",
-   "estado": "ok",
-   "detalle": "HTTP 200"
+   "estado": "down",
+   "detalle": "HTTP 503"
   },
   {
    "modelo": "kimi-k3",
