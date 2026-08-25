@@ -99,6 +99,26 @@
   {
    "date": "2026-08-23",
    "text": "gemini-3.5-flash-lite: down → unk"
+  },
+  {
+   "date": "2026-08-25",
+   "text": "opencode-go/deepseek-v4-flash: ok → indisponible"
+  },
+  {
+   "date": "2026-08-25",
+   "text": "opencode-go/kimi-k2.7-code: ok → down"
+  },
+  {
+   "date": "2026-08-25",
+   "text": "opencode-go/mimo-v2.5: ok → down"
+  },
+  {
+   "date": "2026-08-25",
+   "text": "opencode-go/qwen3.5-plus: down → ok"
+  },
+  {
+   "date": "2026-08-25",
+   "text": "openrouter/deepseek/deepseek-v4-flash: ok → down"
   }
  ]
 }

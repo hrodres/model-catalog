@@ -1,14 +1,14 @@
 {
- "generated": "2026-08-24T20:01:59.936865+00:00",
- "snapshot": "2026-08-24",
+ "generated": "2026-08-25T03:48:22.344005+00:00",
+ "snapshot": "2026-08-25",
  "fuente": "check-model-health.py F3 (2026-08-24)",
  "providers": {
   "opencode-go": {
    "enabled": 1,
    "probed": {
-    "ok": 22,
-    "down": 4,
-    "indisponible": 1,
+    "indisponible": 2,
+    "ok": 20,
+    "down": 5,
     "unk": 2,
     "na": 1
    },
@@ -26,41 +26,42 @@
   "openrouter": {
    "enabled": 1,
    "probed": {
-    "ok": 3
+    "down": 1,
+    "ok": 2
    },
-   "total": 1
+   "total": 2
   }
  },
  "counts": {
-  "ok": 37,
-  "down": 36,
-  "indisponible": 1,
+  "indisponible": 2,
+  "ok": 34,
+  "down": 38,
   "unk": 2,
   "na": 1,
   "free": 20
  },
  "go_quota": {
-  "badge": "✅ Cuota Go OK (Continuo 1% (reinicia 4h 4m) · Semanal 17% (reinicia 147h 59m) · Mensual 7% (reinicia 732h 20m))",
+  "badge": "✅ Cuota Go OK (Continuo 0% (reinicia 1h 19m) · Semanal 26% (reinicia 140h 13m) · Mensual 12% (reinicia 724h 34m))",
   "nivel": "ok",
   "source": "api",
   "buckets": {
    "rolling": {
-    "percent": 1,
+    "percent": 0,
     "status": "ok",
-    "resets_at": "2026-08-25T00:05:07.008Z",
-    "resets_in_human": "4h 4m"
+    "resets_at": "2026-08-25T05:05:16.115Z",
+    "resets_in_human": "1h 19m"
    },
    "weekly": {
-    "percent": 17,
+    "percent": 26,
     "status": "ok",
-    "resets_at": "2026-08-31T00:00:00.008Z",
-    "resets_in_human": "147h 59m"
+    "resets_at": "2026-08-31T00:00:00.115Z",
+    "resets_in_human": "140h 13m"
    },
    "monthly": {
-    "percent": 7,
+    "percent": 12,
     "status": "ok",
-    "resets_at": "2026-09-24T08:20:30.008Z",
-    "resets_in_human": "732h 20m"
+    "resets_at": "2026-09-24T08:20:30.115Z",
+    "resets_in_human": "724h 34m"
    }
   }
  },
@@ -72,8 +73,8 @@
  "chain": [
   {
    "link": "opencode-go/deepseek-v4-flash",
-   "estado": "ok",
-   "detalle": "HTTP 200"
+   "estado": "indisponible",
+   "detalle": "HTTP 400: modelo no disponible/deshabilitado"
   },
   {
    "link": "opencode-zen/deepseek-v4-flash-free",
@@ -82,8 +83,8 @@
   },
   {
    "link": "openrouter/deepseek/deepseek-v4-flash",
-   "estado": "ok",
-   "detalle": "HTTP 200"
+   "estado": "down",
+   "detalle": "ERR The read operation timed out"
   },
   {
    "link": "opencode-zen/deepseek-v4-flash",
@@ -105,8 +106,8 @@
   {
    "modelo": "deepseek-v4-flash",
    "provider": "opencode-go",
-   "estado": "ok",
-   "detalle": "HTTP 200"
+   "estado": "indisponible",
+   "detalle": "HTTP 400: modelo no disponible/deshabilitado"
   },
   {
    "modelo": "deepseek-v4-flash-vision-exp",
@@ -183,8 +184,8 @@
   {
    "modelo": "kimi-k2.7-code",
    "provider": "opencode-go",
-   "estado": "ok",
-   "detalle": "HTTP 200"
+   "estado": "down",
+   "detalle": "HTTP 503"
   },
   {
    "modelo": "kimi-k3",
@@ -213,8 +214,8 @@
   {
    "modelo": "mimo-v2.5",
    "provider": "opencode-go",
-   "estado": "ok",
-   "detalle": "HTTP 200"
+   "estado": "down",
+   "detalle": "ERR The read operation timed out"
   },
   {
    "modelo": "mimo-v2.5-pro",
@@ -255,8 +256,8 @@
   {
    "modelo": "qwen3.5-plus",
    "provider": "opencode-go",
-   "estado": "down",
-   "detalle": "ERR The read operation timed out"
+   "estado": "ok",
+   "detalle": "HTTP 200"
   },
   {
    "modelo": "qwen3.6-plus",
@@ -669,8 +670,8 @@
   {
    "modelo": "deepseek/deepseek-v4-flash",
    "provider": "openrouter",
-   "estado": "ok",
-   "detalle": "HTTP 200"
+   "estado": "down",
+   "detalle": "ERR The read operation timed out"
   },
   {
    "modelo": "deepseek/deepseek-v4-pro",
