@@ -1,12 +1,12 @@
 {
- "generated": "2026-08-25T11:45:12.759441+00:00",
- "snapshot": "2026-08-25 11:45 UTC",
+ "generated": "2026-08-25T12:00:03.539606+00:00",
+ "snapshot": "2026-08-25 12:00 UTC",
  "providers_3rd": [
   "opencode-go",
   "opencode-zen",
   "openrouter"
  ],
- "modelsdev_fetched": "2026-08-25 11:45 UTC",
+ "modelsdev_fetched": "2026-08-25 12:00 UTC",
  "modelsdev_count": 355,
  "price_matrix": {
   "currency": "USD",
@@ -2136,8 +2136,8 @@
  },
  "chain_method": "M = modelo preferido (deepseek-v4-flash)\n1. go/M (suscripción, marginal 0)\n2. zen/M-free (coste 0, pool común — solo 1 eslabón free zen, son redundantes entre sí)\n3. openrouter/M (mismo modelo, más barato que zen paid)\n4. zen/M paid (créditos, cubre OR caído)\n5. argmin(coste/turno) entre paid ≠ M con pricing verificado, cross-provider (hoy: OR/dsv4pro)\n6. extintor: zen/dsv4pro (solo si las guardias y saldos lo permiten)\nGuardias: dedupe provider+modelo, validación contra catálogo real, saldos, sin alfabético → None",
  "chain_snapshot": {
-  "generated_at": "2026-08-25T11:45:12.759083+00:00",
-  "snapshot": "2026-08-25 11:45 UTC",
+  "generated_at": "2026-08-25T12:00:03.539276+00:00",
+  "snapshot": "2026-08-25 12:00 UTC",
   "links": [
    {
     "pos": 1,
@@ -2173,27 +2173,27 @@
  },
  "status_badges": {
   "go_quota": {
-   "badge": "✅ Cuota Go OK (Continuo 0% (reinicia 1h 4m) · Semanal 27% (reinicia 139h 59m) · Mensual 12% (reinicia 724h 20m))",
+   "badge": "✅ Cuota Go OK (Continuo 22% (reinicia 20m) · Semanal 36% (reinicia 132h 14m) · Mensual 17% (reinicia 716h 35m))",
    "nivel": "ok",
    "source": "api",
    "buckets": {
     "rolling": {
-     "percent": 0,
+     "percent": 22,
      "status": "ok",
-     "resets_at": "2026-08-25T05:05:16.786Z",
-     "resets_in_human": "1h 4m"
+     "resets_at": "2026-08-25T12:06:01.161Z",
+     "resets_in_human": "20m"
     },
     "weekly": {
-     "percent": 27,
+     "percent": 36,
      "status": "ok",
-     "resets_at": "2026-08-31T00:00:00.786Z",
-     "resets_in_human": "139h 59m"
+     "resets_at": "2026-08-31T00:00:00.161Z",
+     "resets_in_human": "132h 14m"
     },
     "monthly": {
-     "percent": 12,
+     "percent": 17,
      "status": "ok",
-     "resets_at": "2026-09-24T08:20:30.786Z",
-     "resets_in_human": "724h 20m"
+     "resets_at": "2026-09-24T08:20:30.161Z",
+     "resets_in_human": "716h 35m"
     }
    }
   },
