@@ -1,5 +1,5 @@
 {
- "generated": "2026-08-25T04:02:20.173530+00:00",
+ "generated": "2026-08-25T11:47:05.905661+00:00",
  "snapshot": "2026-08-25",
  "fuente": "check-model-health.py F3 (2026-08-24)",
  "providers": {
@@ -40,27 +40,27 @@
   "free": 20
  },
  "go_quota": {
-  "badge": "✅ Cuota Go OK (Continuo 0% (reinicia 1h 4m) · Semanal 27% (reinicia 139h 59m) · Mensual 12% (reinicia 724h 20m))",
+  "badge": "✅ Cuota Go OK (Continuo 22% (reinicia 20m) · Semanal 36% (reinicia 132h 14m) · Mensual 17% (reinicia 716h 35m))",
   "nivel": "ok",
   "source": "api",
   "buckets": {
    "rolling": {
-    "percent": 0,
+    "percent": 22,
     "status": "ok",
-    "resets_at": "2026-08-25T05:05:16.786Z",
-    "resets_in_human": "1h 4m"
+    "resets_at": "2026-08-25T12:06:01.161Z",
+    "resets_in_human": "20m"
    },
    "weekly": {
-    "percent": 27,
+    "percent": 36,
     "status": "ok",
-    "resets_at": "2026-08-31T00:00:00.786Z",
-    "resets_in_human": "139h 59m"
+    "resets_at": "2026-08-31T00:00:00.161Z",
+    "resets_in_human": "132h 14m"
    },
    "monthly": {
-    "percent": 12,
+    "percent": 17,
     "status": "ok",
-    "resets_at": "2026-09-24T08:20:30.786Z",
-    "resets_in_human": "724h 20m"
+    "resets_at": "2026-09-24T08:20:30.161Z",
+    "resets_in_human": "716h 35m"
    }
   }
  },
@@ -213,8 +213,8 @@
   {
    "modelo": "mimo-v2.5",
    "provider": "opencode-go",
-   "estado": "down",
-   "detalle": "ERR The read operation timed out"
+   "estado": "ok",
+   "detalle": "HTTP 200"
   },
   {
    "modelo": "mimo-v2.5-pro",
@@ -255,8 +255,8 @@
   {
    "modelo": "qwen3.5-plus",
    "provider": "opencode-go",
-   "estado": "ok",
-   "detalle": "HTTP 200"
+   "estado": "down",
+   "detalle": "ERR The read operation timed out"
   },
   {
    "modelo": "qwen3.6-plus",
