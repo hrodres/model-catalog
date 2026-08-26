@@ -171,6 +171,22 @@
   {
    "date": "2026-08-26",
    "text": "opencode-zen/qwen3.5-plus: down → ok"
+  },
+  {
+   "date": "2026-08-26",
+   "text": "opencode-go/mimo-v2.5: ok → down"
+  },
+  {
+   "date": "2026-08-26",
+   "text": "opencode-go/qwen3.6-plus: ok → down"
+  },
+  {
+   "date": "2026-08-26",
+   "text": "opencode-zen/qwen3.5-plus: down → ok"
+  },
+  {
+   "date": "2026-08-26",
+   "text": "openrouter/tencent/hy3: ok → down"
   }
  ]
 }
