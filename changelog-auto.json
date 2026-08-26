@@ -151,6 +151,10 @@
   {
    "date": "2026-08-25",
    "text": "opencode-go/ox-alpha-free: ok → down"
+  },
+  {
+   "date": "2026-08-26",
+   "text": "opencode-zen/qwen3.5-plus: down → ok"
   }
  ]
 }

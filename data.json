@@ -1,16 +1,16 @@
 {
- "generated": "2026-08-25T20:00:03.836172+00:00",
- "snapshot": "2026-08-25 20:00 UTC",
+ "generated": "2026-08-26T03:45:12.942590+00:00",
+ "snapshot": "2026-08-26 03:45 UTC",
  "providers_3rd": [
   "opencode-go",
   "opencode-zen",
   "openrouter"
  ],
- "modelsdev_fetched": "2026-08-25 20:00 UTC",
+ "modelsdev_fetched": "2026-08-26 03:45 UTC",
  "modelsdev_count": 355,
  "price_matrix": {
   "currency": "USD",
-  "fetched": "2026-08-25T19:45:03.341070+00:00",
+  "fetched": "2026-08-26T03:45:03.390630+00:00",
   "sources": {
    "zen_paid": "precios de cuenta opencode-zen (off-peak / peak)",
    "openrouter": "precios reales API OpenRouter (cache or-models-cache.json)"
@@ -42,8 +42,8 @@
     "context": 1048576
    },
    "deepseek/deepseek-v4-flash-vision-exp": {
-    "in": 0.22,
-    "out": 0.66,
+    "in": 0.44,
+    "out": 1.32,
     "context": 1048576
    },
    "stealth/ox-alpha": {
@@ -77,7 +77,7 @@
     "context": 1048576
    },
    "qwen/qwen3.8-27b": {
-    "in": 0.4,
+    "in": 0.425,
     "out": 2.55,
     "context": 1000000
    },
@@ -162,8 +162,8 @@
     "context": 1000000
    },
    "~deepseek/deepseek-v4-flash-latest": {
-    "in": 0.035,
-    "out": 0.1,
+    "in": 0.03,
+    "out": 0.075,
     "context": 1310720
    },
    "deepseek/deepseek-v4-flash-0731": {
@@ -607,8 +607,8 @@
     "context": 1048576
    },
    "~moonshotai/kimi-latest": {
-    "in": 2.8,
-    "out": 14.0,
+    "in": 2.55,
+    "out": 12.75,
     "context": 1048576
    },
    "~google/gemini-flash-latest": {
@@ -672,13 +672,13 @@
     "context": 1050000
    },
    "deepseek/deepseek-v4-pro": {
-    "in": 0.572808,
-    "out": 1.145616,
+    "in": 0.790308,
+    "out": 1.580616,
     "context": 1048576
    },
    "deepseek/deepseek-v4-flash": {
-    "in": 0.0826,
-    "out": 0.1652,
+    "in": 0.088606,
+    "out": 0.177212,
     "context": 1048576
    },
    "tencent/hy3-preview": {
@@ -742,7 +742,7 @@
     "context": 262144
    },
    "google/gemma-4-31b-it": {
-    "in": 0.1,
+    "in": 0.09,
     "out": 0.34,
     "context": 262144
    },
@@ -957,8 +957,8 @@
     "context": 1000000
    },
    "qwen/qwen3.5-397b-a17b": {
-    "in": 0.5,
-    "out": 3.6,
+    "in": 0.39,
+    "out": 2.34,
     "context": 262144
    },
    "minimax/minimax-m2.5": {
@@ -1601,11 +1601,6 @@
     "out": 15.0,
     "context": 1000000
    },
-   "google/gemma-3n-e4b-it": {
-    "in": 0.06,
-    "out": 0.12,
-    "context": 32768
-   },
    "mistralai/mistral-medium-3": {
     "in": 0.4,
     "out": 2.0,
@@ -1624,7 +1619,7 @@
    "meta-llama/llama-guard-4-12b": {
     "in": 0.18,
     "out": 0.18,
-    "context": 1048576
+    "context": 163840
    },
    "qwen/qwen3-30b-a3b": {
     "in": 0.12,
@@ -1717,8 +1712,8 @@
     "context": 1048576
    },
    "meta-llama/llama-4-scout": {
-    "in": 0.1,
-    "out": 0.3,
+    "in": 0.11,
+    "out": 0.34,
     "context": 1310720
    },
    "deepseek/deepseek-chat-v3-0324": {
@@ -1807,8 +1802,8 @@
     "context": 32768
    },
    "qwen/qwen2.5-vl-72b-instruct": {
-    "in": 0.8,
-    "out": 1.0,
+    "in": 0.25,
+    "out": 0.75,
     "context": 128000
    },
    "qwen/qwen-plus": {
@@ -1882,8 +1877,8 @@
     "context": 128000
    },
    "meta-llama/llama-3.3-70b-instruct": {
-    "in": 0.1,
-    "out": 0.32,
+    "in": 0.71,
+    "out": 0.71,
     "context": 131072
    },
    "amazon/nova-lite-v1": {
@@ -2131,8 +2126,8 @@
  },
  "chain_method": "M = modelo preferido (deepseek-v4-flash)\n1. go/M (suscripción, marginal 0)\n2. zen/M-free (coste 0, pool común — solo 1 eslabón free zen, son redundantes entre sí)\n3. openrouter/M (mismo modelo, más barato que zen paid)\n4. zen/M paid (créditos, cubre OR caído)\n5. argmin(coste/turno) entre paid ≠ M con pricing verificado, cross-provider (hoy: OR/dsv4pro)\n6. extintor: zen/dsv4pro (solo si las guardias y saldos lo permiten)\nGuardias: dedupe provider+modelo, validación contra catálogo real, saldos, sin alfabético → None",
  "chain_snapshot": {
-  "generated_at": "2026-08-25T20:00:03.835878+00:00",
-  "snapshot": "2026-08-25 20:00 UTC",
+  "generated_at": "2026-08-26T03:45:12.942247+00:00",
+  "snapshot": "2026-08-26 03:45 UTC",
   "links": [
    {
     "pos": 1,
@@ -2168,27 +2163,27 @@
  },
  "status_badges": {
   "go_quota": {
-   "badge": "✅ Cuota Go OK (Continuo 1% (reinicia 4h 19m) · Semanal 44% (reinicia 124h 14m) · Mensual 21% (reinicia 708h 35m))",
+   "badge": "✅ Cuota Go OK (Continuo 1% (reinicia 4h 4m) · Semanal 44% (reinicia 123h 59m) · Mensual 21% (reinicia 708h 20m))",
    "nivel": "ok",
    "source": "api",
    "buckets": {
     "rolling": {
      "percent": 1,
      "status": "ok",
-     "resets_at": "2026-08-26T00:05:02.759Z",
-     "resets_in_human": "4h 19m"
+     "resets_at": "2026-08-26T00:05:02.325Z",
+     "resets_in_human": "4h 4m"
     },
     "weekly": {
      "percent": 44,
      "status": "ok",
-     "resets_at": "2026-08-31T00:00:00.759Z",
-     "resets_in_human": "124h 14m"
+     "resets_at": "2026-08-31T00:00:00.325Z",
+     "resets_in_human": "123h 59m"
     },
     "monthly": {
      "percent": 21,
      "status": "ok",
-     "resets_at": "2026-09-24T08:20:30.759Z",
-     "resets_in_human": "708h 35m"
+     "resets_at": "2026-09-24T08:20:30.325Z",
+     "resets_in_human": "708h 20m"
     }
    }
   },
@@ -2201,8 +2196,8 @@
    "opencode-go": {
     "enabled": 1,
     "probed": {
-     "ok": 22,
-     "down": 4,
+     "ok": 21,
+     "down": 5,
      "na": 2,
      "indisponible": 1,
      "unk": 2
@@ -2212,8 +2207,8 @@
    "opencode-zen": {
     "enabled": 1,
     "probed": {
-     "down": 31,
-     "ok": 13,
+     "down": 32,
+     "ok": 12,
      "free": 20
     },
     "total": 3
@@ -2642,8 +2637,8 @@
    },
    "or_id": "deepseek/deepseek-v4-flash",
    "or_price": {
-    "in": 0.0826,
-    "out": 0.1652,
+    "in": 0.088606,
+    "out": 0.177212,
     "context": 1048576
    },
    "tier": "paid",
@@ -2675,8 +2670,8 @@
    },
    "or_id": "deepseek/deepseek-v4-flash",
    "or_price": {
-    "in": 0.0826,
-    "out": 0.1652,
+    "in": 0.088606,
+    "out": 0.177212,
     "context": 1048576
    },
    "tier": "free",
@@ -2735,8 +2730,8 @@
    },
    "or_id": "deepseek/deepseek-v4-pro",
    "or_price": {
-    "in": 0.572808,
-    "out": 1.145616,
+    "in": 0.790308,
+    "out": 1.580616,
     "context": 1048576
    },
    "tier": "paid",
