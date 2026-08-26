@@ -1,16 +1,16 @@
 {
- "generated": "2026-08-26T04:00:03.767012+00:00",
- "snapshot": "2026-08-26 04:00 UTC",
+ "generated": "2026-08-26T11:45:11.013097+00:00",
+ "snapshot": "2026-08-26 11:45 UTC",
  "providers_3rd": [
   "opencode-go",
   "opencode-zen",
   "openrouter"
  ],
- "modelsdev_fetched": "2026-08-26 04:00 UTC",
+ "modelsdev_fetched": "2026-08-26 11:45 UTC",
  "modelsdev_count": 355,
  "price_matrix": {
   "currency": "USD",
-  "fetched": "2026-08-26T03:45:03.390630+00:00",
+  "fetched": "2026-08-26T11:45:03.343537+00:00",
   "sources": {
    "zen_paid": "precios de cuenta opencode-zen (off-peak / peak)",
    "openrouter": "precios reales API OpenRouter (cache or-models-cache.json)"
@@ -42,8 +42,8 @@
     "context": 1048576
    },
    "deepseek/deepseek-v4-flash-vision-exp": {
-    "in": 0.44,
-    "out": 1.32,
+    "in": 0.22,
+    "out": 0.66,
     "context": 1048576
    },
    "stealth/ox-alpha": {
@@ -167,8 +167,8 @@
     "context": 1310720
    },
    "deepseek/deepseek-v4-flash-0731": {
-    "in": 0.04,
-    "out": 0.08,
+    "in": 0.06,
+    "out": 0.12,
     "context": 1310720
    },
    "thinkingmachines/inkling-small": {
@@ -647,8 +647,8 @@
     "context": 262144
    },
    "qwen/qwen3.6-27b": {
-    "in": 0.32,
-    "out": 3.2,
+    "in": 0.6,
+    "out": 3.6,
     "context": 262144
    },
    "openai/gpt-5.5-pro": {
@@ -672,13 +672,13 @@
     "context": 1050000
    },
    "deepseek/deepseek-v4-pro": {
-    "in": 0.790308,
-    "out": 1.580616,
+    "in": 0.87,
+    "out": 1.74,
     "context": 1048576
    },
    "deepseek/deepseek-v4-flash": {
-    "in": 0.088606,
-    "out": 0.177212,
+    "in": 0.0826,
+    "out": 0.1652,
     "context": 1048576
    },
    "tencent/hy3-preview": {
@@ -2126,8 +2126,8 @@
  },
  "chain_method": "M = modelo preferido (deepseek-v4-flash)\n1. go/M (suscripción, marginal 0)\n2. zen/M-free (coste 0, pool común — solo 1 eslabón free zen, son redundantes entre sí)\n3. openrouter/M (mismo modelo, más barato que zen paid)\n4. zen/M paid (créditos, cubre OR caído)\n5. argmin(coste/turno) entre paid ≠ M con pricing verificado, cross-provider (hoy: OR/dsv4pro)\n6. extintor: zen/dsv4pro (solo si las guardias y saldos lo permiten)\nGuardias: dedupe provider+modelo, validación contra catálogo real, saldos, sin alfabético → None",
  "chain_snapshot": {
-  "generated_at": "2026-08-26T04:00:03.766648+00:00",
-  "snapshot": "2026-08-26 04:00 UTC",
+  "generated_at": "2026-08-26T11:45:11.012765+00:00",
+  "snapshot": "2026-08-26 11:45 UTC",
   "links": [
    {
     "pos": 1,
@@ -2163,27 +2163,27 @@
  },
  "status_badges": {
   "go_quota": {
-   "badge": "✅ Cuota Go OK (Continuo 0% (reinicia 2h 19m) · Semanal 46% (reinicia 116h 14m) · Mensual 22% (reinicia 700h 35m))",
+   "badge": "✅ Cuota Go OK (Continuo 0% (reinicia 2h 4m) · Semanal 46% (reinicia 115h 59m) · Mensual 22% (reinicia 700h 20m))",
    "nivel": "ok",
    "source": "api",
    "buckets": {
     "rolling": {
      "percent": 0,
      "status": "ok",
-     "resets_at": "2026-08-26T06:05:02.352Z",
-     "resets_in_human": "2h 19m"
+     "resets_at": "2026-08-26T06:05:02.198Z",
+     "resets_in_human": "2h 4m"
     },
     "weekly": {
      "percent": 46,
      "status": "ok",
-     "resets_at": "2026-08-31T00:00:00.352Z",
-     "resets_in_human": "116h 14m"
+     "resets_at": "2026-08-31T00:00:00.198Z",
+     "resets_in_human": "115h 59m"
     },
     "monthly": {
      "percent": 22,
      "status": "ok",
-     "resets_at": "2026-09-24T08:20:30.352Z",
-     "resets_in_human": "700h 35m"
+     "resets_at": "2026-09-24T08:20:30.198Z",
+     "resets_in_human": "700h 20m"
     }
    }
   },
@@ -2637,8 +2637,8 @@
    },
    "or_id": "deepseek/deepseek-v4-flash",
    "or_price": {
-    "in": 0.088606,
-    "out": 0.177212,
+    "in": 0.0826,
+    "out": 0.1652,
     "context": 1048576
    },
    "tier": "paid",
@@ -2670,8 +2670,8 @@
    },
    "or_id": "deepseek/deepseek-v4-flash",
    "or_price": {
-    "in": 0.088606,
-    "out": 0.177212,
+    "in": 0.0826,
+    "out": 0.1652,
     "context": 1048576
    },
    "tier": "free",
@@ -2730,8 +2730,8 @@
    },
    "or_id": "deepseek/deepseek-v4-pro",
    "or_price": {
-    "in": 0.790308,
-    "out": 1.580616,
+    "in": 0.87,
+    "out": 1.74,
     "context": 1048576
    },
    "tier": "paid",
