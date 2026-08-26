@@ -883,6 +883,7 @@
     "glm-5.1",
     "glm-5.2",
     "glm-5.3",
+    "glm-5.3-flash",
     "gpt-5.6-luna",
     "grok-4.5",
     "grok-4.6",
@@ -901,7 +902,6 @@
     "minimax-m2.7",
     "minimax-m3",
     "muse-spark-1.2-contributor",
-    "ox-alpha-free",
     "qwen3.5-plus",
     "qwen3.6-plus",
     "qwen3.7-max",
@@ -971,8 +971,7 @@
     "nemotron-3-ultra-free",
     "nemotron-3.5-lightning-free",
     "qwen3.5-plus",
-    "qwen3.6-plus",
-    "x-preview-f-free"
+    "qwen3.6-plus"
    ]
   }
  },
@@ -1006,6 +1005,21 @@
    "date": "2026-08-24",
    "type": "added",
    "id": "longcat-2.0"
+  },
+  {
+   "date": "2026-08-26",
+   "type": "added",
+   "id": "glm-5.3-flash"
+  },
+  {
+   "date": "2026-08-26",
+   "type": "removed",
+   "id": "ox-alpha-free"
+  },
+  {
+   "date": "2026-08-26",
+   "type": "removed",
+   "id": "x-preview-f-free"
   }
  ]
 }

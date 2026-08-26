@@ -1,13 +1,13 @@
 {
- "generated": "2026-08-26T12:02:24.410035+00:00",
+ "generated": "2026-08-26T19:47:07.851909+00:00",
  "snapshot": "2026-08-26",
  "fuente": "check-model-health.py F3 (2026-08-24)",
  "providers": {
   "opencode-go": {
    "enabled": 1,
    "probed": {
-    "ok": 20,
-    "down": 6,
+    "ok": 21,
+    "down": 5,
     "na": 2,
     "indisponible": 1,
     "unk": 2
@@ -17,9 +17,9 @@
   "opencode-zen": {
    "enabled": 1,
    "probed": {
-    "down": 32,
-    "ok": 12,
-    "free": 20
+    "down": 31,
+    "ok": 13,
+    "free": 19
    },
    "total": 3
   },
@@ -32,35 +32,35 @@
   }
  },
  "counts": {
-  "ok": 35,
-  "down": 38,
+  "ok": 37,
+  "down": 36,
   "na": 2,
   "indisponible": 1,
   "unk": 2,
-  "free": 20
+  "free": 19
  },
  "go_quota": {
-  "badge": "✅ Cuota Go OK (Continuo 0% (reinicia 5m) · Semanal 46% (reinicia 107h 59m) · Mensual 22% (reinicia 692h 20m))",
+  "badge": "✅ Cuota Go OK (Continuo 0% (reinicia 3h 21m) · Semanal 47% (reinicia 100h 14m) · Mensual 22% (reinicia 684h 35m))",
   "nivel": "ok",
   "source": "api",
   "buckets": {
    "rolling": {
     "percent": 0,
     "status": "ok",
-    "resets_at": "2026-08-26T12:05:11.914Z",
-    "resets_in_human": "5m"
+    "resets_at": "2026-08-26T23:06:25.904Z",
+    "resets_in_human": "3h 21m"
    },
    "weekly": {
-    "percent": 46,
+    "percent": 47,
     "status": "ok",
-    "resets_at": "2026-08-31T00:00:00.914Z",
-    "resets_in_human": "107h 59m"
+    "resets_at": "2026-08-31T00:00:00.904Z",
+    "resets_in_human": "100h 14m"
    },
    "monthly": {
     "percent": 22,
     "status": "ok",
-    "resets_at": "2026-09-24T08:20:30.914Z",
-    "resets_in_human": "692h 20m"
+    "resets_at": "2026-09-24T08:20:30.904Z",
+    "resets_in_human": "684h 35m"
    }
   }
  },
@@ -145,6 +145,12 @@
    "detalle": "HTTP 200"
   },
   {
+   "modelo": "glm-5.3-flash",
+   "provider": "opencode-go",
+   "estado": "ok",
+   "detalle": "HTTP 200"
+  },
+  {
    "modelo": "gpt-5.6-luna",
    "provider": "opencode-go",
    "estado": "down",
@@ -189,8 +195,8 @@
   {
    "modelo": "kimi-k2.7-code",
    "provider": "opencode-go",
-   "estado": "ok",
-   "detalle": "HTTP 200"
+   "estado": "down",
+   "detalle": "HTTP 503"
   },
   {
    "modelo": "kimi-k3",
@@ -253,12 +259,6 @@
    "detalle": "HTTP 403: no accesible con tu plan/key"
   },
   {
-   "modelo": "ox-alpha-free",
-   "provider": "opencode-go",
-   "estado": "down",
-   "detalle": "HTTP 503"
-  },
-  {
    "modelo": "qwen3.5-plus",
    "provider": "opencode-go",
    "estado": "down",
@@ -273,8 +273,8 @@
   {
    "modelo": "qwen3.7-max",
    "provider": "opencode-go",
-   "estado": "down",
-   "detalle": "ERR The read operation timed out"
+   "estado": "ok",
+   "detalle": "HTTP 200"
   },
   {
    "modelo": "qwen3.7-plus",
@@ -657,20 +657,14 @@
   {
    "modelo": "qwen3.5-plus",
    "provider": "opencode-zen",
-   "estado": "down",
-   "detalle": "ERR The read operation timed out"
+   "estado": "ok",
+   "detalle": "HTTP 200"
   },
   {
    "modelo": "qwen3.6-plus",
    "provider": "opencode-zen",
    "estado": "ok",
    "detalle": "HTTP 200"
-  },
-  {
-   "modelo": "x-preview-f-free",
-   "provider": "opencode-zen",
-   "estado": "free",
-   "detalle": "no probado (protección cuota global free 100 req/día)"
   },
   {
    "modelo": "deepseek/deepseek-v4-flash",

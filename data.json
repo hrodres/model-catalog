@@ -1,16 +1,16 @@
 {
- "generated": "2026-08-26T12:00:03.514329+00:00",
- "snapshot": "2026-08-26 12:00 UTC",
+ "generated": "2026-08-26T19:45:15.476764+00:00",
+ "snapshot": "2026-08-26 19:45 UTC",
  "providers_3rd": [
   "opencode-go",
   "opencode-zen",
   "openrouter"
  ],
- "modelsdev_fetched": "2026-08-26 12:00 UTC",
- "modelsdev_count": 355,
+ "modelsdev_fetched": "2026-08-26 19:45 UTC",
+ "modelsdev_count": 359,
  "price_matrix": {
   "currency": "USD",
-  "fetched": "2026-08-26T11:45:03.343537+00:00",
+  "fetched": "2026-08-26T19:45:03.559954+00:00",
   "sources": {
    "zen_paid": "precios de cuenta opencode-zen (off-peak / peak)",
    "openrouter": "precios reales API OpenRouter (cache or-models-cache.json)"
@@ -36,6 +36,11 @@
    }
   },
   "openrouter": {
+   "z-ai/glm-5.3-flash": {
+    "in": 0.075,
+    "out": 0.25,
+    "context": 1310720
+   },
    "meta/muse-spark-1.2-contributor": {
     "in": 0.1,
     "out": 0.2,
@@ -44,11 +49,6 @@
    "deepseek/deepseek-v4-flash-vision-exp": {
     "in": 0.22,
     "out": 0.66,
-    "context": 1048576
-   },
-   "stealth/ox-alpha": {
-    "in": 0.0,
-    "out": 0.0,
     "context": 1048576
    },
    "tencent/hy-mt2-1.8b": {
@@ -362,8 +362,8 @@
     "context": 131072
    },
    "tencent/hy3": {
-    "in": 0.132,
-    "out": 0.528,
+    "in": 0.0825,
+    "out": 0.33,
     "context": 262144
    },
    "poolside/laguna-xs-2.1": {
@@ -420,11 +420,6 @@
     "in": 1.19,
     "out": 3.74,
     "context": 1048576
-   },
-   "z-ai/glm-5.2:batch": {
-    "in": 1.4,
-    "out": 4.4,
-    "context": 1048575
    },
    "z-ai/glm-5.2:free": {
     "in": 0.0,
@@ -647,8 +642,8 @@
     "context": 262144
    },
    "qwen/qwen3.6-27b": {
-    "in": 0.6,
-    "out": 3.6,
+    "in": 0.32,
+    "out": 3.2,
     "context": 262144
    },
    "openai/gpt-5.5-pro": {
@@ -677,8 +672,8 @@
     "context": 1048576
    },
    "deepseek/deepseek-v4-flash": {
-    "in": 0.0826,
-    "out": 0.1652,
+    "in": 0.07952,
+    "out": 0.15904,
     "context": 1048576
    },
    "tencent/hy3-preview": {
@@ -1002,8 +997,8 @@
     "context": 262144
    },
    "moonshotai/kimi-k2.5": {
-    "in": 0.6,
-    "out": 3.0,
+    "in": 0.45,
+    "out": 2.25,
     "context": 262144
    },
    "upstage/solar-pro-3": {
@@ -2126,8 +2121,8 @@
  },
  "chain_method": "M = modelo preferido (deepseek-v4-flash)\n1. go/M (suscripción, marginal 0)\n2. zen/M-free (coste 0, pool común — solo 1 eslabón free zen, son redundantes entre sí)\n3. openrouter/M (mismo modelo, más barato que zen paid)\n4. zen/M paid (créditos, cubre OR caído)\n5. argmin(coste/turno) entre paid ≠ M con pricing verificado, cross-provider (hoy: OR/dsv4pro)\n6. extintor: zen/dsv4pro (solo si las guardias y saldos lo permiten)\nGuardias: dedupe provider+modelo, validación contra catálogo real, saldos, sin alfabético → None",
  "chain_snapshot": {
-  "generated_at": "2026-08-26T12:00:03.513963+00:00",
-  "snapshot": "2026-08-26 12:00 UTC",
+  "generated_at": "2026-08-26T19:45:15.476433+00:00",
+  "snapshot": "2026-08-26 19:45 UTC",
   "links": [
    {
     "pos": 1,
@@ -2163,27 +2158,27 @@
  },
  "status_badges": {
   "go_quota": {
-   "badge": "✅ Cuota Go OK (Continuo 0% (reinicia 19m) · Semanal 46% (reinicia 108h 14m) · Mensual 22% (reinicia 692h 35m))",
+   "badge": "✅ Cuota Go OK (Continuo 0% (reinicia 5m) · Semanal 46% (reinicia 107h 59m) · Mensual 22% (reinicia 692h 20m))",
    "nivel": "ok",
    "source": "api",
    "buckets": {
     "rolling": {
      "percent": 0,
      "status": "ok",
-     "resets_at": "2026-08-26T12:05:11.433Z",
-     "resets_in_human": "19m"
+     "resets_at": "2026-08-26T12:05:11.914Z",
+     "resets_in_human": "5m"
     },
     "weekly": {
      "percent": 46,
      "status": "ok",
-     "resets_at": "2026-08-31T00:00:00.433Z",
-     "resets_in_human": "108h 14m"
+     "resets_at": "2026-08-31T00:00:00.914Z",
+     "resets_in_human": "107h 59m"
     },
     "monthly": {
      "percent": 22,
      "status": "ok",
-     "resets_at": "2026-09-24T08:20:30.433Z",
-     "resets_in_human": "692h 35m"
+     "resets_at": "2026-09-24T08:20:30.914Z",
+     "resets_in_human": "692h 20m"
     }
    }
   },
@@ -2196,8 +2191,8 @@
    "opencode-go": {
     "enabled": 1,
     "probed": {
-     "ok": 21,
-     "down": 5,
+     "ok": 20,
+     "down": 6,
      "na": 2,
      "indisponible": 1,
      "unk": 2
@@ -2223,12 +2218,12 @@
   }
  },
  "counts": {
-  "total": 78,
+  "total": 77,
   "go": 31,
-  "zen": 64,
-  "free": 9,
+  "zen": 63,
+  "free": 8,
   "openrouter": 14,
-  "with_modelsdev": 73
+  "with_modelsdev": 74
  },
  "models": [
   {
@@ -2637,8 +2632,8 @@
    },
    "or_id": "deepseek/deepseek-v4-flash",
    "or_price": {
-    "in": 0.0826,
-    "out": 0.1652,
+    "in": 0.07952,
+    "out": 0.15904,
     "context": 1048576
    },
    "tier": "paid",
@@ -2670,8 +2665,8 @@
    },
    "or_id": "deepseek/deepseek-v4-flash",
    "or_price": {
-    "in": 0.0826,
-    "out": 0.1652,
+    "in": 0.07952,
+    "out": 0.15904,
     "context": 1048576
    },
    "tier": "free",
@@ -3108,6 +3103,33 @@
    "swebench": null,
    "benchmarks": {},
    "md_url": "https://models.dev/models/zhipuai/glm-5.3"
+  },
+  {
+   "id": "glm-5.3-flash",
+   "providers": {
+    "go": true,
+    "zen": false,
+    "free": false,
+    "or": false
+   },
+   "or_id": null,
+   "or_price": null,
+   "tier": "go",
+   "name": "GLM-5.3-Flash",
+   "desc": "Native multimodal GLM model for efficient coding and long-horizon agent tasks",
+   "context": 1000000,
+   "output": 131072,
+   "reasoning": true,
+   "tool_call": true,
+   "structured": true,
+   "multimodal": true,
+   "open_weights": false,
+   "release": "2026-08-26",
+   "last_updated": "2026-08-26",
+   "knowledge": "",
+   "swebench": null,
+   "benchmarks": {},
+   "md_url": "https://models.dev/models/zhipuai/glm-5.3-flash"
   },
   {
    "id": "gpt-5",
@@ -3879,8 +3901,8 @@
    },
    "or_id": "tencent/hy3",
    "or_price": {
-    "in": 0.132,
-    "out": 0.528,
+    "in": 0.0825,
+    "out": 0.33,
     "context": 262144
    },
    "tier": "go",
@@ -4405,8 +4427,8 @@
    "tier": "paid",
    "name": "MiniMax-M3",
    "desc": "MiniMax multimodal model for long-context coding, perception, and agent planning",
-   "context": 512000,
-   "output": 128000,
+   "context": 1048576,
+   "output": 512000,
    "reasoning": true,
    "tool_call": true,
    "structured": false,
@@ -4581,33 +4603,6 @@
    "md_url": "https://models.dev/models/nvidia/nemotron-3.5-lightning"
   },
   {
-   "id": "ox-alpha-free",
-   "providers": {
-    "go": true,
-    "zen": false,
-    "free": false,
-    "or": false
-   },
-   "or_id": null,
-   "or_price": null,
-   "tier": "go",
-   "name": "ox-alpha-free",
-   "desc": "Sin ficha en models.dev (solo catálogo opencode)",
-   "context": null,
-   "output": null,
-   "reasoning": null,
-   "tool_call": null,
-   "structured": null,
-   "multimodal": null,
-   "open_weights": null,
-   "release": "",
-   "last_updated": "",
-   "knowledge": "",
-   "swebench": null,
-   "benchmarks": {},
-   "md_url": null
-  },
-  {
    "id": "qwen3.5-plus",
    "providers": {
     "go": true,
@@ -4751,33 +4746,6 @@
    "swebench": null,
    "benchmarks": {},
    "md_url": "https://models.dev/models/alibaba/qwen3.8-max"
-  },
-  {
-   "id": "x-preview-f-free",
-   "providers": {
-    "go": false,
-    "zen": true,
-    "free": true,
-    "or": false
-   },
-   "or_id": null,
-   "or_price": null,
-   "tier": "free",
-   "name": "x-preview-f-free",
-   "desc": "Sin ficha en models.dev (solo catálogo opencode)",
-   "context": null,
-   "output": null,
-   "reasoning": null,
-   "tool_call": null,
-   "structured": null,
-   "multimodal": null,
-   "open_weights": null,
-   "release": "",
-   "last_updated": "",
-   "knowledge": "",
-   "swebench": null,
-   "benchmarks": {},
-   "md_url": null
   }
  ]
 }
