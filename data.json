@@ -1,12 +1,12 @@
 {
- "generated": "2026-08-26T11:45:11.013097+00:00",
- "snapshot": "2026-08-26 11:45 UTC",
+ "generated": "2026-08-26T12:00:03.514329+00:00",
+ "snapshot": "2026-08-26 12:00 UTC",
  "providers_3rd": [
   "opencode-go",
   "opencode-zen",
   "openrouter"
  ],
- "modelsdev_fetched": "2026-08-26 11:45 UTC",
+ "modelsdev_fetched": "2026-08-26 12:00 UTC",
  "modelsdev_count": 355,
  "price_matrix": {
   "currency": "USD",
@@ -2126,8 +2126,8 @@
  },
  "chain_method": "M = modelo preferido (deepseek-v4-flash)\n1. go/M (suscripción, marginal 0)\n2. zen/M-free (coste 0, pool común — solo 1 eslabón free zen, son redundantes entre sí)\n3. openrouter/M (mismo modelo, más barato que zen paid)\n4. zen/M paid (créditos, cubre OR caído)\n5. argmin(coste/turno) entre paid ≠ M con pricing verificado, cross-provider (hoy: OR/dsv4pro)\n6. extintor: zen/dsv4pro (solo si las guardias y saldos lo permiten)\nGuardias: dedupe provider+modelo, validación contra catálogo real, saldos, sin alfabético → None",
  "chain_snapshot": {
-  "generated_at": "2026-08-26T11:45:11.012765+00:00",
-  "snapshot": "2026-08-26 11:45 UTC",
+  "generated_at": "2026-08-26T12:00:03.513963+00:00",
+  "snapshot": "2026-08-26 12:00 UTC",
   "links": [
    {
     "pos": 1,
@@ -2163,27 +2163,27 @@
  },
  "status_badges": {
   "go_quota": {
-   "badge": "✅ Cuota Go OK (Continuo 0% (reinicia 2h 4m) · Semanal 46% (reinicia 115h 59m) · Mensual 22% (reinicia 700h 20m))",
+   "badge": "✅ Cuota Go OK (Continuo 0% (reinicia 19m) · Semanal 46% (reinicia 108h 14m) · Mensual 22% (reinicia 692h 35m))",
    "nivel": "ok",
    "source": "api",
    "buckets": {
     "rolling": {
      "percent": 0,
      "status": "ok",
-     "resets_at": "2026-08-26T06:05:02.198Z",
-     "resets_in_human": "2h 4m"
+     "resets_at": "2026-08-26T12:05:11.433Z",
+     "resets_in_human": "19m"
     },
     "weekly": {
      "percent": 46,
      "status": "ok",
-     "resets_at": "2026-08-31T00:00:00.198Z",
-     "resets_in_human": "115h 59m"
+     "resets_at": "2026-08-31T00:00:00.433Z",
+     "resets_in_human": "108h 14m"
     },
     "monthly": {
      "percent": 22,
      "status": "ok",
-     "resets_at": "2026-09-24T08:20:30.198Z",
-     "resets_in_human": "700h 20m"
+     "resets_at": "2026-09-24T08:20:30.433Z",
+     "resets_in_human": "692h 35m"
     }
    }
   },
@@ -2207,8 +2207,8 @@
    "opencode-zen": {
     "enabled": 1,
     "probed": {
-     "down": 31,
-     "ok": 13,
+     "down": 32,
+     "ok": 12,
      "free": 20
     },
     "total": 3

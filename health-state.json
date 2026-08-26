@@ -1,13 +1,13 @@
 {
- "generated": "2026-08-26T11:47:14.913354+00:00",
+ "generated": "2026-08-26T12:02:24.410035+00:00",
  "snapshot": "2026-08-26",
  "fuente": "check-model-health.py F3 (2026-08-24)",
  "providers": {
   "opencode-go": {
    "enabled": 1,
    "probed": {
-    "ok": 21,
-    "down": 5,
+    "ok": 20,
+    "down": 6,
     "na": 2,
     "indisponible": 1,
     "unk": 2
@@ -32,35 +32,35 @@
   }
  },
  "counts": {
-  "ok": 36,
-  "down": 37,
+  "ok": 35,
+  "down": 38,
   "na": 2,
   "indisponible": 1,
   "unk": 2,
   "free": 20
  },
  "go_quota": {
-  "badge": "✅ Cuota Go OK (Continuo 0% (reinicia 19m) · Semanal 46% (reinicia 108h 14m) · Mensual 22% (reinicia 692h 35m))",
+  "badge": "✅ Cuota Go OK (Continuo 0% (reinicia 5m) · Semanal 46% (reinicia 107h 59m) · Mensual 22% (reinicia 692h 20m))",
   "nivel": "ok",
   "source": "api",
   "buckets": {
    "rolling": {
     "percent": 0,
     "status": "ok",
-    "resets_at": "2026-08-26T12:05:11.433Z",
-    "resets_in_human": "19m"
+    "resets_at": "2026-08-26T12:05:11.914Z",
+    "resets_in_human": "5m"
    },
    "weekly": {
     "percent": 46,
     "status": "ok",
-    "resets_at": "2026-08-31T00:00:00.433Z",
-    "resets_in_human": "108h 14m"
+    "resets_at": "2026-08-31T00:00:00.914Z",
+    "resets_in_human": "107h 59m"
    },
    "monthly": {
     "percent": 22,
     "status": "ok",
-    "resets_at": "2026-09-24T08:20:30.433Z",
-    "resets_in_human": "692h 35m"
+    "resets_at": "2026-09-24T08:20:30.914Z",
+    "resets_in_human": "692h 20m"
    }
   }
  },
@@ -273,8 +273,8 @@
   {
    "modelo": "qwen3.7-max",
    "provider": "opencode-go",
-   "estado": "ok",
-   "detalle": "HTTP 200"
+   "estado": "down",
+   "detalle": "ERR The read operation timed out"
   },
   {
    "modelo": "qwen3.7-plus",
