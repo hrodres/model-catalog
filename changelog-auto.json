@@ -275,6 +275,202 @@
   {
    "date": "2026-08-27",
    "text": "openrouter/tencent/hy3: down → ok"
+  },
+  {
+   "date": "2026-08-27",
+   "text": "opencode-go/mimo-v2.5: down → ok"
+  },
+  {
+   "date": "2026-08-27",
+   "text": "opencode-go/qwen3.6-plus: down → ok"
+  },
+  {
+   "date": "2026-08-27",
+   "text": "opencode-zen/claude-fable-5: down → noprobe"
+  },
+  {
+   "date": "2026-08-27",
+   "text": "opencode-zen/claude-haiku-4-5: down → noprobe"
+  },
+  {
+   "date": "2026-08-27",
+   "text": "opencode-zen/claude-opus-4-5: down → noprobe"
+  },
+  {
+   "date": "2026-08-27",
+   "text": "opencode-zen/claude-opus-4-6: down → noprobe"
+  },
+  {
+   "date": "2026-08-27",
+   "text": "opencode-zen/claude-opus-4-7: down → noprobe"
+  },
+  {
+   "date": "2026-08-27",
+   "text": "opencode-zen/claude-opus-4-8: down → noprobe"
+  },
+  {
+   "date": "2026-08-27",
+   "text": "opencode-zen/claude-sonnet-4: down → noprobe"
+  },
+  {
+   "date": "2026-08-27",
+   "text": "opencode-zen/claude-sonnet-4-5: down → noprobe"
+  },
+  {
+   "date": "2026-08-27",
+   "text": "opencode-zen/claude-sonnet-4-6: down → noprobe"
+  },
+  {
+   "date": "2026-08-27",
+   "text": "opencode-zen/claude-sonnet-5: down → noprobe"
+  },
+  {
+   "date": "2026-08-27",
+   "text": "opencode-zen/deepseek-v4-flash: ok → noprobe"
+  },
+  {
+   "date": "2026-08-27",
+   "text": "opencode-zen/deepseek-v4-pro: ok → noprobe"
+  },
+  {
+   "date": "2026-08-27",
+   "text": "opencode-zen/gemini-3-flash: down → noprobe"
+  },
+  {
+   "date": "2026-08-27",
+   "text": "opencode-zen/gemini-3.1-pro: down → noprobe"
+  },
+  {
+   "date": "2026-08-27",
+   "text": "opencode-zen/gemini-3.5-flash: down → noprobe"
+  },
+  {
+   "date": "2026-08-27",
+   "text": "opencode-zen/glm-5: ok → noprobe"
+  },
+  {
+   "date": "2026-08-27",
+   "text": "opencode-zen/glm-5.1: ok → noprobe"
+  },
+  {
+   "date": "2026-08-27",
+   "text": "opencode-zen/glm-5.2: ok → noprobe"
+  },
+  {
+   "date": "2026-08-27",
+   "text": "opencode-zen/gpt-5: down → noprobe"
+  },
+  {
+   "date": "2026-08-27",
+   "text": "opencode-zen/gpt-5-codex: down → noprobe"
+  },
+  {
+   "date": "2026-08-27",
+   "text": "opencode-zen/gpt-5-nano: down → noprobe"
+  },
+  {
+   "date": "2026-08-27",
+   "text": "opencode-zen/gpt-5.1: down → noprobe"
+  },
+  {
+   "date": "2026-08-27",
+   "text": "opencode-zen/gpt-5.1-codex: down → noprobe"
+  },
+  {
+   "date": "2026-08-27",
+   "text": "opencode-zen/gpt-5.1-codex-max: down → noprobe"
+  },
+  {
+   "date": "2026-08-27",
+   "text": "opencode-zen/gpt-5.1-codex-mini: down → noprobe"
+  },
+  {
+   "date": "2026-08-27",
+   "text": "opencode-zen/gpt-5.2: down → noprobe"
+  },
+  {
+   "date": "2026-08-27",
+   "text": "opencode-zen/gpt-5.2-codex: down → noprobe"
+  },
+  {
+   "date": "2026-08-27",
+   "text": "opencode-zen/gpt-5.3-codex: down → noprobe"
+  },
+  {
+   "date": "2026-08-27",
+   "text": "opencode-zen/gpt-5.3-codex-spark: down → noprobe"
+  },
+  {
+   "date": "2026-08-27",
+   "text": "opencode-zen/gpt-5.4: down → noprobe"
+  },
+  {
+   "date": "2026-08-27",
+   "text": "opencode-zen/gpt-5.4-mini: down → noprobe"
+  },
+  {
+   "date": "2026-08-27",
+   "text": "opencode-zen/gpt-5.4-nano: down → noprobe"
+  },
+  {
+   "date": "2026-08-27",
+   "text": "opencode-zen/gpt-5.4-pro: down → noprobe"
+  },
+  {
+   "date": "2026-08-27",
+   "text": "opencode-zen/gpt-5.5: down → noprobe"
+  },
+  {
+   "date": "2026-08-27",
+   "text": "opencode-zen/gpt-5.5-pro: down → noprobe"
+  },
+  {
+   "date": "2026-08-27",
+   "text": "opencode-zen/grok-build-0.1: down → noprobe"
+  },
+  {
+   "date": "2026-08-27",
+   "text": "opencode-zen/kimi-k2.5: ok → noprobe"
+  },
+  {
+   "date": "2026-08-27",
+   "text": "opencode-zen/kimi-k2.6: ok → noprobe"
+  },
+  {
+   "date": "2026-08-27",
+   "text": "opencode-zen/kimi-k2.7-code: ok → noprobe"
+  },
+  {
+   "date": "2026-08-27",
+   "text": "opencode-zen/minimax-m2.5: ok → noprobe"
+  },
+  {
+   "date": "2026-08-27",
+   "text": "opencode-zen/minimax-m2.7: ok → noprobe"
+  },
+  {
+   "date": "2026-08-27",
+   "text": "opencode-zen/minimax-m3: ok → noprobe"
+  },
+  {
+   "date": "2026-08-27",
+   "text": "opencode-zen/qwen3.5-plus: ok → noprobe"
+  },
+  {
+   "date": "2026-08-27",
+   "text": "opencode-zen/qwen3.6-plus: ok → noprobe"
+  },
+  {
+   "date": "2026-08-27",
+   "text": "openrouter/deepseek/deepseek-v4-flash: ok → noprobe"
+  },
+  {
+   "date": "2026-08-27",
+   "text": "openrouter/deepseek/deepseek-v4-pro: ok → noprobe"
+  },
+  {
+   "date": "2026-08-27",
+   "text": "openrouter/tencent/hy3: down → noprobe"
   }
  ]
 }

@@ -811,9 +811,9 @@ function renderQuota() {
 
 /* ───────── Salud ───────── */
 const ST = { status: null, hist: null, catalog: null, limits: null, chAuto: null, chManual: null };
-const ST_ICON = { ok: '✅', down: '⚠️', unk: '❓', na: 'ℹ️', free: '🌱' };
-const ST_CLS = { ok: 'hs-ok', down: 'hs-down', unk: 'hs-unk', na: 'hs-na', free: 'hs-free' };
-const ST_LBL = { ok: 'operativo', down: 'caído', unk: 'no responde', na: 'no accesible', free: 'free' };
+const ST_ICON = { ok: '✅', down: '⚠️', unk: '❓', na: 'ℹ️', free: '🌱', noprobe: '⏭️' };
+const ST_CLS = { ok: 'hs-ok', down: 'hs-down', unk: 'hs-unk', na: 'hs-na', free: 'hs-free', noprobe: 'hs-na' };
+const ST_LBL = { ok: 'operativo', down: 'caído', unk: 'no responde', na: 'no accesible', free: 'free', noprobe: 'no probeado' };
 
 function shortId(id) {
   if (id === 'big-pickle') return 'big-pickle';
@@ -850,11 +850,12 @@ function renderHealth() {
     '<div class="hs-card ok"><b>' + (counts.ok ?? 0) + '</b><span>operativos</span></div>' +
     '<div class="hs-card down"><b>' + (counts.down ?? 0) + '</b><span>caídos</span></div>' +
     '<div class="hs-card na"><b>' + (counts.na ?? 0) + '</b><span>no accesibles</span></div>' +
-    '<div class="hs-card free"><b>' + (counts.free ?? 0) + '</b><span>free</span></div>';
+    '<div class="hs-card free"><b>' + (counts.free ?? 0) + '</b><span>free</span></div>'
+    + (counts.noprobe ? '<div class="hs-card na"><b>' + counts.noprobe + '</b><span>no probeado</span></div>' : '');
   $('#health-snap').textContent = snap.replace('T', ' ').slice(0, 16);
 
   const rows = Object.keys(m).sort((a, b) => {
-    const o = { ok: 0, na: 1, unk: 2, free: 3, down: 4 };
+    const o = { ok: 0, na: 1, unk: 2, free: 3, noprobe: 4, down: 5 };
     return (o[m[a].status] ?? 5) - (o[m[b].status] ?? 5) || a.localeCompare(b);
   });
 
