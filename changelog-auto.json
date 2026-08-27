@@ -207,6 +207,30 @@
   {
    "date": "2026-08-27",
    "text": "openrouter/tencent/hy3: down → ok"
+  },
+  {
+   "date": "2026-08-27",
+   "text": "opencode-go/mimo-v2.5: down → ok"
+  },
+  {
+   "date": "2026-08-27",
+   "text": "opencode-go/minimax-m2.5: ok → down"
+  },
+  {
+   "date": "2026-08-27",
+   "text": "opencode-go/qwen3.5-plus: down → ok"
+  },
+  {
+   "date": "2026-08-27",
+   "text": "opencode-go/qwen3.6-plus: down → ok"
+  },
+  {
+   "date": "2026-08-27",
+   "text": "opencode-zen/qwen3.5-plus: ok → down"
+  },
+  {
+   "date": "2026-08-27",
+   "text": "openrouter/tencent/hy3: down → ok"
   }
  ]
 }
