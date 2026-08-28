@@ -1,5 +1,5 @@
 {
- "generated": "2026-08-28T12:00:04.127178+00:00",
+ "generated": "2026-08-28T15:14:19.228160+00:00",
  "aliases": [
   {
    "id": "opencode-zen/big-pickle",
@@ -246,6 +246,10 @@
    "alias": "🚀 Hy3 preview (Go)"
   },
   {
+   "id": "opencode-go/hy4-preview",
+   "alias": "🚀 Hy4 preview (Go)"
+  },
+  {
    "id": "opencode-go/kimi-k2.5",
    "alias": "🚀 Kimi K2.5 (Go)"
   },
@@ -280,6 +284,10 @@
   {
    "id": "opencode-zen/laguna-s-2.1-free",
    "alias": "🌱 Laguna S 2.1 (Zen free)"
+  },
+  {
+   "id": "opencode-zen/ling-3.0-flash-fin-free",
+   "alias": "🌱 Ling 3.0 Flash Fin (Zen free)"
   },
   {
    "id": "opencode-go/longcat-2.0",

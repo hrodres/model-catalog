@@ -1,12 +1,12 @@
 {
- "generated": "2026-08-28T12:00:04.127178+00:00",
- "snapshot": "2026-08-28 12:00 UTC",
+ "generated": "2026-08-28T15:14:19.228160+00:00",
+ "snapshot": "2026-08-28 15:14 UTC",
  "providers_3rd": [
   "opencode-go",
   "opencode-zen",
   "openrouter"
  ],
- "modelsdev_fetched": "2026-08-28 12:00 UTC",
+ "modelsdev_fetched": "2026-08-28 15:14 UTC",
  "modelsdev_count": 362,
  "price_matrix": {
   "currency": "USD",
@@ -1974,10 +1974,10 @@
   },
   "notes": "Precios públicos. Sin saldos ni claves. Zen free comparte pool común (coste 0). Go incluido en suscripción."
  },
- "chain_method": "M = modelo preferido (hy3 primero, luego ds-v4-flash por familia)\nPrioridad: Go → Zen free → OpenRouter. Cero Zen paid en toda la cadena.\nSi el primero falla, se prueba el siguiente automáticamente.\nGo y Zen free no consumen crédito de pago; OpenRouter solo en cascada de fallo.\n⚠️ La cadena incluye Zen paid (consume crédito).",
+ "chain_method": "Modelo primario: opencode-go/deepseek-v4-flash.\nSi el primero falla, se prueba el siguiente automáticamente (cascada de respaldo).\nCadena activa: 1 Go · 1 Zen free · 2 Zen paid · 2 OpenRouter (leída de agents.defaults.model).\n⚠️ La cadena incluye Zen paid (consumen crédito de pago) en: opencode-zen/deepseek-v4-flash, opencode-zen/deepseek-v4-pro.\nGo y Zen free no consumen crédito de pago; OpenRouter solo en cascada de fallo.",
  "chain_snapshot": {
-  "generated_at": "2026-08-28T12:00:04.126888+00:00",
-  "snapshot": "2026-08-28 12:00 UTC",
+  "generated_at": "2026-08-28T15:14:19.227869+00:00",
+  "snapshot": "2026-08-28 15:14 UTC",
   "source": "agents.defaults.model en openclaw.json (leída en build)",
   "links": [
    {
@@ -2014,27 +2014,27 @@
  },
  "status_badges": {
   "go_quota": {
-   "badge": "✅ Cuota Go OK (Continuo 2% (reinicia 3h 19m) · Semanal 55% (reinicia 60h 14m) · Mensual 26% (reinicia 644h 35m))",
+   "badge": "✅ Cuota Go OK (Continuo 2% (reinicia 3h 5m) · Semanal 55% (reinicia 59h 59m) · Mensual 26% (reinicia 644h 20m))",
    "nivel": "ok",
    "source": "api",
    "buckets": {
     "rolling": {
      "percent": 2,
      "status": "ok",
-     "resets_at": "2026-08-28T15:05:09.258Z",
-     "resets_in_human": "3h 19m"
+     "resets_at": "2026-08-28T15:05:09.513Z",
+     "resets_in_human": "3h 5m"
     },
     "weekly": {
      "percent": 55,
      "status": "ok",
-     "resets_at": "2026-08-31T00:00:00.258Z",
-     "resets_in_human": "60h 14m"
+     "resets_at": "2026-08-31T00:00:00.513Z",
+     "resets_in_human": "59h 59m"
     },
     "monthly": {
      "percent": 26,
      "status": "ok",
-     "resets_at": "2026-09-24T08:20:30.258Z",
-     "resets_in_human": "644h 35m"
+     "resets_at": "2026-09-24T08:20:30.513Z",
+     "resets_in_human": "644h 20m"
     }
    }
   },
@@ -2047,8 +2047,8 @@
    "opencode-go": {
     "enabled": 1,
     "probed": {
-     "down": 4,
-     "ok": 23,
+     "ok": 24,
+     "down": 3,
      "na": 2,
      "indisponible": 1,
      "unk": 2
@@ -2073,12 +2073,12 @@
   }
  },
  "counts": {
-  "total": 78,
-  "go": 32,
-  "zen": 63,
-  "free": 8,
+  "total": 80,
+  "go": 33,
+  "zen": 64,
+  "free": 9,
   "openrouter": 14,
-  "with_modelsdev": 75
+  "with_modelsdev": 77
  },
  "models": [
   {
@@ -3846,6 +3846,33 @@
    "md_url": "https://models.dev/models/tencent/hy3-preview"
   },
   {
+   "id": "hy4-preview",
+   "providers": {
+    "go": true,
+    "zen": false,
+    "free": false,
+    "or": false
+   },
+   "or_id": null,
+   "or_price": null,
+   "tier": "go",
+   "name": "Hy4 preview",
+   "desc": "A next-generation productivity model with significantly enhanced Agent and complex task execution capabilities.",
+   "context": 1024000,
+   "output": 64000,
+   "reasoning": true,
+   "tool_call": true,
+   "structured": false,
+   "multimodal": false,
+   "open_weights": true,
+   "release": "2026-08-28",
+   "last_updated": "2026-08-28",
+   "knowledge": "",
+   "swebench": null,
+   "benchmarks": {},
+   "md_url": "https://models.dev/models/tencent/hy4-preview"
+  },
+  {
    "id": "kimi-k2.5",
    "providers": {
     "go": true,
@@ -4019,6 +4046,33 @@
    "swebench": null,
    "benchmarks": {},
    "md_url": "https://models.dev/models/poolside/laguna-s-2.1"
+  },
+  {
+   "id": "ling-3.0-flash-fin-free",
+   "providers": {
+    "go": false,
+    "zen": true,
+    "free": true,
+    "or": false
+   },
+   "or_id": null,
+   "or_price": null,
+   "tier": "free",
+   "name": "Ling 3.0 Flash Fin",
+   "desc": "Finance-enhanced model for financial research, multi-step investment workflows, and long-horizon planning and execution",
+   "context": 262144,
+   "output": 32768,
+   "reasoning": true,
+   "tool_call": true,
+   "structured": false,
+   "multimodal": false,
+   "open_weights": false,
+   "release": "2026-08-27",
+   "last_updated": "2026-08-27",
+   "knowledge": "",
+   "swebench": null,
+   "benchmarks": {},
+   "md_url": "https://models.dev/models/inclusionai/ling-3.0-flash-fin"
   },
   {
    "id": "longcat-2.0",
