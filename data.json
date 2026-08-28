@@ -1,12 +1,12 @@
 {
- "generated": "2026-08-28T00:23:41.450818+00:00",
- "snapshot": "2026-08-28 00:23 UTC",
+ "generated": "2026-08-28T00:40:26.207960+00:00",
+ "snapshot": "2026-08-28 00:40 UTC",
  "providers_3rd": [
   "opencode-go",
   "opencode-zen",
   "openrouter"
  ],
- "modelsdev_fetched": "2026-08-28 00:23 UTC",
+ "modelsdev_fetched": "2026-08-28 00:40 UTC",
  "modelsdev_count": 361,
  "price_matrix": {
   "currency": "USD",
@@ -2126,29 +2126,39 @@
  },
  "chain_method": "M = modelo preferido (hy3 primero, luego ds-v4-flash por familia)\nPrioridad: Go → Zen free → OpenRouter. Cero Zen paid en toda la cadena.\nSi el primero falla, se prueba el siguiente automáticamente.\nGo y Zen free no consumen crédito de pago; OpenRouter solo en cascada de fallo.\n✅ Cadena sin Zen paid: 0 crédito de pago de Zen en cualquier escalón.",
  "chain_snapshot": {
-  "generated_at": "2026-08-28T00:23:41.450523+00:00",
-  "snapshot": "2026-08-28 00:23 UTC",
+  "generated_at": "2026-08-28T00:40:26.207675+00:00",
+  "snapshot": "2026-08-28 00:40 UTC",
   "source": "agents.defaults.model en openclaw.json (leída en build)",
   "links": [
    {
     "pos": 1,
-    "link": "opencode-zen/hy3-free",
-    "role": "Principal — Zen free (pool común, coste 0)"
+    "link": "opencode-go/hy3",
+    "role": "Principal — Go (suscripción, sin coste adicional)"
    },
    {
     "pos": 2,
-    "link": "opencode-zen/deepseek-v4-flash-free",
+    "link": "opencode-zen/hy3-free",
     "role": "Respaldo 1 — Zen free (pool común, coste 0)"
    },
    {
     "pos": 3,
-    "link": "openrouter/tencent/hy3",
-    "role": "Respaldo 2 — OpenRouter (pago, solo si fallan los anteriores)"
+    "link": "opencode-go/deepseek-v4-flash",
+    "role": "Respaldo 2 — Go (suscripción, sin coste adicional)"
    },
    {
     "pos": 4,
+    "link": "opencode-zen/deepseek-v4-flash-free",
+    "role": "Respaldo 3 — Zen free (pool común, coste 0)"
+   },
+   {
+    "pos": 5,
+    "link": "openrouter/tencent/hy3",
+    "role": "Respaldo 4 — OpenRouter (pago, solo si fallan los anteriores)"
+   },
+   {
+    "pos": 6,
     "link": "openrouter/deepseek/deepseek-v4-flash",
-    "role": "Respaldo 3 — OpenRouter (pago, solo si fallan los anteriores)"
+    "role": "Respaldo 5 — OpenRouter (pago, solo si fallan los anteriores)"
    }
   ]
  },
