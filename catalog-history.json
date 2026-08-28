@@ -1089,6 +1089,7 @@
     "grok-4.6",
     "hy3",
     "hy3-preview",
+    "hy4-preview",
     "kimi-k2.5",
     "kimi-k2.6",
     "kimi-k2.7-code",
@@ -1163,6 +1164,7 @@
     "kimi-k2.7-code",
     "kimi-k3",
     "laguna-s-2.1-free",
+    "ling-3.0-flash-fin-free",
     "mimo-v2.5-free",
     "minimax-m2.5",
     "minimax-m2.7",
@@ -1226,6 +1228,16 @@
    "date": "2026-08-28",
    "type": "added",
    "id": "qwen3.8-flash"
+  },
+  {
+   "date": "2026-08-28",
+   "type": "added",
+   "id": "hy4-preview"
+  },
+  {
+   "date": "2026-08-28",
+   "type": "added",
+   "id": "ling-3.0-flash-fin-free"
   }
  ]
 }
