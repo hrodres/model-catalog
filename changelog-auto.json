@@ -487,6 +487,14 @@
   {
    "date": "2026-08-28",
    "text": "opencode-go/mimo-v2.5-pro: ok → down"
+  },
+  {
+   "date": "2026-08-28",
+   "text": "opencode-go/deepseek-v4-flash: ok → down"
+  },
+  {
+   "date": "2026-08-28",
+   "text": "opencode-go/qwen3.5-plus: down → ok"
   }
  ]
 }

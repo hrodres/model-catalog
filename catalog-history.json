@@ -1106,6 +1106,7 @@
     "qwen3.6-plus",
     "qwen3.7-max",
     "qwen3.7-plus",
+    "qwen3.8-flash",
     "qwen3.8-max"
    ],
    "zen": [
@@ -1220,6 +1221,11 @@
    "date": "2026-08-26",
    "type": "removed",
    "id": "x-preview-f-free"
+  },
+  {
+   "date": "2026-08-28",
+   "type": "added",
+   "id": "qwen3.8-flash"
   }
  ]
 }
