@@ -1,13 +1,13 @@
 {
- "generated": "2026-08-28T19:46:28.009070+00:00",
+ "generated": "2026-08-28T20:01:23.572946+00:00",
  "snapshot": "2026-08-28",
  "fuente": "check-model-health.py F3 (2026-08-24)",
  "providers": {
   "opencode-go": {
    "enabled": 1,
    "probed": {
-    "ok": 25,
-    "down": 3,
+    "ok": 23,
+    "down": 5,
     "na": 2,
     "indisponible": 1,
     "unk": 2
@@ -31,8 +31,8 @@
   }
  },
  "counts": {
-  "ok": 25,
-  "down": 3,
+  "ok": 23,
+  "down": 5,
   "na": 2,
   "indisponible": 1,
   "unk": 2,
@@ -40,27 +40,27 @@
   "noprobe": 47
  },
  "go_quota": {
-  "badge": "✅ Cuota Go OK (Continuo 3% (reinicia 20m) · Semanal 58% (reinicia 52h 14m) · Mensual 28% (reinicia 636h 35m))",
+  "badge": "✅ Cuota Go OK (Continuo 3% (reinicia 6m) · Semanal 58% (reinicia 51h 59m) · Mensual 28% (reinicia 636h 20m))",
   "nivel": "ok",
   "source": "api",
   "buckets": {
    "rolling": {
     "percent": 3,
     "status": "ok",
-    "resets_at": "2026-08-28T20:06:21.277Z",
-    "resets_in_human": "20m"
+    "resets_at": "2026-08-28T20:06:21.082Z",
+    "resets_in_human": "6m"
    },
    "weekly": {
     "percent": 58,
     "status": "ok",
-    "resets_at": "2026-08-31T00:00:00.277Z",
-    "resets_in_human": "52h 14m"
+    "resets_at": "2026-08-31T00:00:00.082Z",
+    "resets_in_human": "51h 59m"
    },
    "monthly": {
     "percent": 28,
     "status": "ok",
-    "resets_at": "2026-09-24T08:20:30.277Z",
-    "resets_in_human": "636h 35m"
+    "resets_at": "2026-09-24T08:20:30.082Z",
+    "resets_in_human": "636h 20m"
    }
   }
  },
@@ -267,8 +267,8 @@
   {
    "modelo": "qwen3.5-plus",
    "provider": "opencode-go",
-   "estado": "ok",
-   "detalle": "HTTP 200"
+   "estado": "down",
+   "detalle": "ERR The read operation timed out"
   },
   {
    "modelo": "qwen3.6-plus",
@@ -279,8 +279,8 @@
   {
    "modelo": "qwen3.7-max",
    "provider": "opencode-go",
-   "estado": "ok",
-   "detalle": "HTTP 200"
+   "estado": "down",
+   "detalle": "ERR The read operation timed out"
   },
   {
    "modelo": "qwen3.7-plus",

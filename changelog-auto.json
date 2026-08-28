@@ -503,6 +503,10 @@
   {
    "date": "2026-08-28",
    "text": "opencode-go/qwen3.5-plus: down → ok"
+  },
+  {
+   "date": "2026-08-28",
+   "text": "opencode-go/qwen3.7-max: ok → down"
   }
  ]
 }
