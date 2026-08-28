@@ -1,13 +1,13 @@
 {
- "generated": "2026-08-27T20:00:05.117003+00:00",
- "snapshot": "2026-08-27 20:00 UTC",
+ "generated": "2026-08-28T00:15:13.786563+00:00",
+ "snapshot": "2026-08-28 00:15 UTC",
  "providers_3rd": [
   "opencode-go",
   "opencode-zen",
   "openrouter"
  ],
- "modelsdev_fetched": "2026-08-27 20:00 UTC",
- "modelsdev_count": 359,
+ "modelsdev_fetched": "2026-08-28 00:15 UTC",
+ "modelsdev_count": 361,
  "price_matrix": {
   "currency": "USD",
   "fetched": "2026-08-27T19:45:03.387134+00:00",
@@ -2124,66 +2124,67 @@
   },
   "notes": "Precios públicos. Sin saldos ni claves. Zen free comparte pool común (coste 0). Go incluido en suscripción."
  },
- "chain_method": "M = modelo preferido (deepseek-v4-flash)\n1. go/M (suscripción, marginal 0)\n2. zen/M-free (coste 0, pool común — solo 1 eslabón free zen, son redundantes entre sí)\n3. openrouter/M (mismo modelo, más barato que zen paid)\n4. zen/M paid (créditos, cubre OR caído)\n5. argmin(coste/turno) entre paid ≠ M con pricing verificado, cross-provider (hoy: OR/dsv4pro)\n6. extintor: zen/dsv4pro (solo si las guardias y saldos lo permiten)\nGuardias: dedupe provider+modelo, validación contra catálogo real, saldos, sin alfabético → None",
+ "chain_method": "M = modelo preferido (hy3 primero, luego ds-v4-flash por familia)\nPrioridad: Go → Zen free → OpenRouter. Cero Zen paid en toda la cadena.\nSi el primero falla, se prueba el siguiente automáticamente.\nGo y Zen free no consumen crédito de pago; OpenRouter solo en cascada de fallo.\n✅ Cadena sin Zen paid: 0 crédito de pago de Zen en cualquier escalón.",
  "chain_snapshot": {
-  "generated_at": "2026-08-27T20:00:05.116686+00:00",
-  "snapshot": "2026-08-27 20:00 UTC",
+  "generated_at": "2026-08-28T00:15:13.786283+00:00",
+  "snapshot": "2026-08-28 00:15 UTC",
+  "source": "agents.defaults.model en openclaw.json (leída en build)",
   "links": [
    {
     "pos": 1,
-    "link": "opencode-go/deepseek-v4-flash",
-    "role": "Suscripción (marginal 0)"
+    "link": "opencode-go/hy3",
+    "role": "Principal — Go (suscripción, sin coste adicional)"
    },
    {
     "pos": 2,
-    "link": "openrouter/deepseek-v4-flash",
-    "role": "Mismo modelo, backend independiente 4-9x más barato"
+    "link": "opencode-zen/hy3-free",
+    "role": "Respaldo 1 — Zen free (pool común, coste 0)"
    },
    {
     "pos": 3,
-    "link": "opencode-zen/deepseek-v4-flash",
-    "role": "Créditos zen paid, cubre OR caído"
+    "link": "opencode-go/deepseek-v4-flash",
+    "role": "Respaldo 2 — Go (suscripción, sin coste adicional)"
    },
    {
     "pos": 4,
-    "link": "openrouter/deepseek-v4-pro",
-    "role": "Última bala cross-provider"
+    "link": "opencode-zen/deepseek-v4-flash-free",
+    "role": "Respaldo 3 — Zen free (pool común, coste 0)"
    },
    {
     "pos": 5,
-    "link": "opencode-zen/deepseek-v4-pro",
-    "role": "Extintor (OR caído + flash caído)"
+    "link": "openrouter/tencent/hy3",
+    "role": "Respaldo 4 — OpenRouter (pago, solo si fallan los anteriores)"
    },
    {
     "pos": 6,
-    "link": "opencode-zen/hy3-free",
-    "role": "Free adicional / cierre"
+    "link": "openrouter/deepseek/deepseek-v4-flash",
+    "role": "Respaldo 5 — OpenRouter (pago, solo si fallan los anteriores)"
    }
   ]
  },
  "status_badges": {
   "go_quota": {
-   "badge": "✅ Cuota Go OK (Continuo 0% (reinicia 3h 27m) · Semanal 48% (reinicia 76h 14m) · Mensual 23% (reinicia 660h 35m))",
+   "badge": "✅ Cuota Go OK (Continuo 1% (reinicia 4h 18m) · Semanal 49% (reinicia 72h 5m) · Mensual 23% (reinicia 656h 26m))",
    "nivel": "ok",
    "source": "api",
    "buckets": {
     "rolling": {
-     "percent": 0,
+     "percent": 1,
      "status": "ok",
-     "resets_at": "2026-08-27T23:12:37.313Z",
-     "resets_in_human": "3h 27m"
+     "resets_at": "2026-08-28T04:12:45.614Z",
+     "resets_in_human": "4h 18m"
     },
     "weekly": {
-     "percent": 48,
+     "percent": 49,
      "status": "ok",
-     "resets_at": "2026-08-31T00:00:00.313Z",
-     "resets_in_human": "76h 14m"
+     "resets_at": "2026-08-31T00:00:00.614Z",
+     "resets_in_human": "72h 5m"
     },
     "monthly": {
      "percent": 23,
      "status": "ok",
-     "resets_at": "2026-09-24T08:20:30.313Z",
-     "resets_in_human": "660h 35m"
+     "resets_at": "2026-09-24T08:20:30.614Z",
+     "resets_in_human": "656h 26m"
     }
    }
   },
@@ -2207,16 +2208,15 @@
    "opencode-zen": {
     "enabled": 1,
     "probed": {
-     "down": 32,
-     "ok": 12,
-     "free": 19
+     "free": 19,
+     "noprobe": 44
     },
-    "total": 3
+    "total": 2
    },
    "openrouter": {
     "enabled": 1,
     "probed": {
-     "ok": 3
+     "noprobe": 3
     },
     "total": 1
    }

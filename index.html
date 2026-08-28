@@ -397,14 +397,14 @@
   <!-- ═══ PRECIOS ═══ -->
   <section class="panel" id="p-precios" aria-label="Precios">
     <h2 class="section-title">Comparativa de precios</h2>
-    <p class="section-sub">Go es <b>suscripción</b> (coste marginal 0); Zen y OpenRouter cobran <b>por token</b>. Ordena por cualquier columna.</p>
+    <p class="section-sub">Go es <b>suscripción</b> (coste marginal 0); Zen free y OpenRouter cobran <b>por token</b>. Ordena por cualquier columna.</p>
     <div id="prices-body"></div>
   </section>
 
   <!-- ═══ CADENA ═══ -->
   <section class="panel" id="p-cadena" aria-label="Cadena de respaldo">
     <h2 class="section-title">Cómo se elige el modelo (cadena de respaldo)</h2>
-    <p class="section-sub">Si el primero falla, se usa el siguiente. Orden por coste marginal ascendente.</p>
+    <p class="section-sub">Si el primero falla, se usa el siguiente. Prioridad: Go → Zen free → OpenRouter (cadena leída del gateway).</p>
     <div class="info-note" id="chain-method"></div>
     <h3 style="font-size:.9rem;margin:14px 0 4px">Cadena activa — snapshot <span id="chain-snap"></span></h3>
     <div class="chain-flow" id="chain-flow"></div>
@@ -759,7 +759,7 @@ function renderChain() {
     return;
   }
   const C = DATA.chain_snapshot;
-  $('#chain-method').innerHTML = '📌 Método de creación (coste marginal ascendente):<br>' +
+  $('#chain-method').innerHTML = '📌 Método (cadena real del gateway, leída en build):<br>' +
     '<code>' + (DATA.chain_method || '').split('\n').map(esc).join('<br>') + '</code>';
   $('#chain-snap').textContent = (C.snapshot || '').replace('T', ' ');
   $('#chain-flow').innerHTML = (C.links || []).map((l, i) => {
