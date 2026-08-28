@@ -1,13 +1,13 @@
 {
- "generated": "2026-08-27T23:55:27.296514+00:00",
- "snapshot": "2026-08-27",
+ "generated": "2026-08-28T03:46:20.885354+00:00",
+ "snapshot": "2026-08-28",
  "fuente": "check-model-health.py F3 (2026-08-24)",
  "providers": {
   "opencode-go": {
    "enabled": 1,
    "probed": {
-    "ok": 22,
-    "down": 4,
+    "ok": 20,
+    "down": 6,
     "na": 2,
     "indisponible": 1,
     "unk": 2
@@ -31,8 +31,8 @@
   }
  },
  "counts": {
-  "ok": 22,
-  "down": 4,
+  "ok": 20,
+  "down": 6,
   "na": 2,
   "indisponible": 1,
   "unk": 2,
@@ -40,27 +40,27 @@
   "noprobe": 47
  },
  "go_quota": {
-  "badge": "✅ Cuota Go OK (Continuo 1% (reinicia 4h 18m) · Semanal 49% (reinicia 72h 5m) · Mensual 23% (reinicia 656h 26m))",
+  "badge": "✅ Cuota Go OK (Continuo 2% (reinicia 27m) · Semanal 49% (reinicia 68h 14m) · Mensual 23% (reinicia 652h 35m))",
   "nivel": "ok",
   "source": "api",
   "buckets": {
    "rolling": {
-    "percent": 1,
+    "percent": 2,
     "status": "ok",
-    "resets_at": "2026-08-28T04:12:45.614Z",
-    "resets_in_human": "4h 18m"
+    "resets_at": "2026-08-28T04:12:45.612Z",
+    "resets_in_human": "27m"
    },
    "weekly": {
     "percent": 49,
     "status": "ok",
-    "resets_at": "2026-08-31T00:00:00.614Z",
-    "resets_in_human": "72h 5m"
+    "resets_at": "2026-08-31T00:00:00.612Z",
+    "resets_in_human": "68h 14m"
    },
    "monthly": {
     "percent": 23,
     "status": "ok",
-    "resets_at": "2026-09-24T08:20:30.614Z",
-    "resets_in_human": "656h 26m"
+    "resets_at": "2026-09-24T08:20:30.612Z",
+    "resets_in_human": "652h 35m"
    }
   }
  },
@@ -201,8 +201,8 @@
   {
    "modelo": "kimi-k3",
    "provider": "opencode-go",
-   "estado": "ok",
-   "detalle": "HTTP 200"
+   "estado": "down",
+   "detalle": "HTTP 503"
   },
   {
    "modelo": "longcat-2.0",
@@ -225,8 +225,8 @@
   {
    "modelo": "mimo-v2.5",
    "provider": "opencode-go",
-   "estado": "ok",
-   "detalle": "HTTP 200"
+   "estado": "down",
+   "detalle": "ERR The read operation timed out"
   },
   {
    "modelo": "mimo-v2.5-pro",

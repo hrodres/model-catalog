@@ -471,6 +471,14 @@
   {
    "date": "2026-08-27",
    "text": "openrouter/tencent/hy3: down → noprobe"
+  },
+  {
+   "date": "2026-08-28",
+   "text": "opencode-go/kimi-k3: ok → down"
+  },
+  {
+   "date": "2026-08-28",
+   "text": "opencode-go/mimo-v2.5: ok → down"
   }
  ]
 }

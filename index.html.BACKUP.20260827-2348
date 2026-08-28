@@ -1,0 +1,1233 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Model Catalog — OpenCode Zen · Go · OpenRouter</title>
+<meta name="description" content="Catálogo de modelos OpenCode Zen/Go/OpenRouter: busca, compara precios, estado de salud y cuota de uso.">
+<meta name="theme-color" content="#0b0d13">
+<style>
+  :root{
+    --bg:#0b0d13; --bg-soft:#10131c; --card:#151926; --card-hover:#1a1f30;
+    --border:#242a3d; --border-soft:#1d2231; --text:#e7e9f0; --muted:#9aa1b8;
+    --accent:#6d9bff; --accent-soft:rgba(109,155,255,.12);
+    --green:#34d399; --red:#f87171; --amber:#fbbf24;
+    --go:#6d9bff; --zen:#a78bfa; --orange:#fb923c;
+    --radius:14px; --radius-sm:10px; --shadow:0 8px 30px rgba(0,0,0,.35);
+    --font:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Inter",sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{-webkit-text-size-adjust:100%}
+  body{background:var(--bg);color:var(--text);font-family:var(--font);min-height:100vh;line-height:1.5}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 16px 90px}
+  a{color:var(--accent);text-decoration:none}
+  a:hover{text-decoration:underline}
+
+  /* ── Sticky topbar ── */
+  .topbar{position:sticky;top:0;z-index:60;background:rgba(11,13,19,.88);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--border-soft)}
+  .topbar-in{max-width:1180px;margin:0 auto;padding:11px 16px;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+  .brand{display:flex;align-items:center;gap:10px;min-width:0}
+  .logo{width:34px;height:34px;border-radius:10px;background:linear-gradient(135deg,var(--accent),var(--zen));display:flex;align-items:center;justify-content:center;font-size:17px;flex-shrink:0;box-shadow:0 4px 14px rgba(109,155,255,.35)}
+  .brand h1{font-size:1.02rem;font-weight:700;letter-spacing:-.01em;white-space:nowrap}
+  .brand .sub{font-size:.7rem;color:var(--muted)}
+  .topbar-spacer{flex:1}
+  .updated{font-size:.72rem;color:var(--muted);background:var(--card);border:1px solid var(--border-soft);padding:5px 11px;border-radius:999px;white-space:nowrap}
+  .updated b{color:var(--text)}
+
+  /* ── Top nav tabs (desktop) ── */
+  .nav{max-width:1180px;margin:0 auto;display:flex;gap:4px;padding:10px 16px 0;overflow-x:auto;-webkit-overflow-scrolling:touch}
+  .nav button{touch-action:manipulation;background:transparent;border:none;color:var(--muted);font-family:inherit;font-size:.86rem;font-weight:600;padding:9px 14px;border-radius:10px 10px 0 0;cursor:pointer;white-space:nowrap;border-bottom:2px solid transparent;transition:color .15s,border-color .15s,background .15s}
+  .nav button:hover{color:var(--text);background:var(--card)}
+  .nav button.active{color:var(--text);border-bottom-color:var(--accent);background:var(--card)}
+  .nav button:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
+
+  .panel{display:none;margin-top:14px}
+  .panel.active{display:block;animation:fade .2s ease}
+  @keyframes fade{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+
+  .section-title{font-size:1.04rem;font-weight:700;letter-spacing:-.01em;margin:6px 0 4px}
+  .section-sub{font-size:.78rem;color:var(--muted);margin-bottom:14px}
+
+  /* ── KPI cards (Resumen) ── */
+  .kpi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-bottom:18px}
+  .kpi{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:16px;box-shadow:var(--shadow);position:relative;overflow:hidden}
+  .kpi .kpi-top{display:flex;align-items:center;gap:8px;font-size:.72rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;font-weight:700;margin-bottom:8px}
+  .kpi .kpi-val{font-size:1.7rem;font-weight:800;letter-spacing:-.02em;line-height:1.1}
+  .kpi .kpi-foot{font-size:.74rem;color:var(--muted);margin-top:6px}
+  .sema{width:10px;height:10px;border-radius:50%;display:inline-block;flex-shrink:0}
+  .sema.ok{background:var(--green);box-shadow:0 0 8px var(--green)}
+  .sema.warn{background:var(--amber);box-shadow:0 0 8px var(--amber)}
+  .sema.down{background:var(--red);box-shadow:0 0 8px var(--red)}
+
+  /* ── Provider cards ── */
+  .prov-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px;margin-bottom:18px}
+  .prov{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:15px;box-shadow:var(--shadow);border-left:4px solid var(--border)}
+  .prov.go{border-left-color:var(--go)}
+  .prov.zen{border-left-color:var(--zen)}
+  .prov.or{border-left-color:var(--orange)}
+  .prov-head{display:flex;align-items:center;gap:9px;margin-bottom:10px}
+  .prov-head .pname{font-weight:700;font-size:.98rem}
+  .prov-head .ptag{font-size:.68rem;color:var(--muted);background:var(--bg-soft);border:1px solid var(--border-soft);padding:2px 8px;border-radius:999px}
+  .prov-stats{display:flex;gap:14px;flex-wrap:wrap}
+  .prov-stats div{font-size:.8rem;color:var(--muted)}
+  .prov-stats b{color:var(--text);font-size:1.05rem;font-weight:700;display:block}
+  .prov-note{font-size:.72rem;color:var(--muted);margin-top:9px;line-height:1.5}
+
+  /* ── Legend / glossary ── */
+  .legend{display:flex;gap:16px;flex-wrap:wrap;font-size:.74rem;color:var(--muted);margin:6px 0 4px}
+  .legend span{display:inline-flex;align-items:center;gap:6px}
+  details.gloss{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:4px 16px;margin-top:10px;box-shadow:var(--shadow)}
+  details.gloss summary{cursor:pointer;padding:12px 0;font-weight:650;font-size:.9rem;list-style:none;display:flex;align-items:center;gap:8px}
+  details.gloss summary::-webkit-details-marker{display:none}
+  details.gloss summary::before{content:"📖";}
+  details.gloss .g-body{padding:4px 0 14px}
+  .g-item{display:flex;gap:12px;padding:8px 0;border-top:1px solid var(--border-soft);font-size:.84rem}
+  .g-item:first-child{border-top:none}
+  .g-item b{color:var(--accent);min-width:130px;display:inline-block;font-weight:700}
+  .g-item span{color:var(--muted)}
+
+  /* ── Tables ── */
+  .table-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)}
+  .table-scroll{overflow-x:auto}
+  table{width:100%;border-collapse:collapse;font-size:.87rem;min-width:0}
+  #tbl-cat{min-width:760px}
+  #tbl-price{min-width:520px}
+  table.health{min-width:520px}
+  thead th{text-align:left;padding:11px 14px;color:var(--muted);font-size:.7rem;text-transform:uppercase;letter-spacing:.05em;border-bottom:1px solid var(--border);cursor:pointer;user-select:none;white-space:nowrap;background:var(--bg-soft)}
+  thead th:hover{color:var(--accent)}
+  thead th .ar{font-size:.66rem;margin-left:3px;opacity:.8}
+  tbody td{padding:10px 14px;border-bottom:1px solid var(--border-soft);vertical-align:middle}
+  tbody tr:last-child td{border-bottom:none}
+  tbody tr:hover{background:var(--card-hover)}
+  tr.model-row{cursor:pointer}
+  .num{font-variant-numeric:tabular-nums;text-align:right}
+  .m-name{font-weight:650}
+  .m-id{color:var(--muted);font-size:.72rem;font-family:ui-monospace,monospace;margin-top:2px}
+  a.m-link{color:var(--text)}
+  a.m-link:hover{color:var(--accent);text-decoration:underline}
+  .btn-ficha{background:var(--accent-soft);color:var(--accent);border:1px solid rgba(109,155,255,.35);border-radius:8px;padding:4px 10px;font-size:.72rem;font-weight:700;cursor:pointer;font-family:inherit;transition:all .15s;white-space:nowrap}
+  .btn-ficha:hover{background:var(--accent);color:#fff}
+  .yes{color:var(--green);font-weight:700}
+  .no{color:#6b7b9e}
+
+  /* ── Provider badges (identity) ── */
+  .pb{display:inline-block;padding:2px 9px;border-radius:999px;font-size:.68rem;font-weight:700;margin:1px 2px 1px 0;white-space:nowrap;border:1px solid}
+  .pb.go{color:var(--go);border-color:rgba(109,155,255,.35);background:rgba(109,155,255,.12)}
+  .pb.zen{color:var(--zen);border-color:rgba(167,139,250,.35);background:rgba(167,139,250,.12)}
+  .pb.or{color:var(--orange);border-color:rgba(251,146,60,.35);background:rgba(251,146,60,.12)}
+  .pb.free{color:var(--green);border-color:rgba(52,211,153,.35);background:rgba(52,211,153,.12)}
+  .pb.warn{color:var(--amber);border-color:rgba(251,191,36,.35);background:rgba(251,191,36,.12);cursor:help}
+  .tier{display:inline-block;padding:1px 8px;border-radius:999px;font-size:.68rem;font-weight:600;border:1px solid var(--border);color:var(--muted);background:var(--bg-soft)}
+  .tier.free{color:var(--green);border-color:rgba(52,211,153,.3)}
+
+  /* ── Filters ── */
+  .filters{display:flex;flex-wrap:wrap;gap:12px;align-items:flex-end;background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:14px;margin-bottom:12px;box-shadow:var(--shadow)}
+  .f-group{display:flex;flex-direction:column;gap:5px}
+  .f-group label{font-size:.66rem;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;font-weight:600}
+  input[type=search],input[type=text],select{background:var(--bg-soft);border:1px solid var(--border);color:var(--text);border-radius:var(--radius-sm);padding:9px 12px;font-size:.9rem;font-family:inherit;transition:border-color .15s}
+  input[type=search]:focus,select:focus{outline:none;border-color:var(--accent)}
+  .checks{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+  .checks label{display:flex;align-items:center;gap:7px;font-size:.84rem;cursor:pointer}
+  .checks input{accent-color:var(--accent);width:16px;height:16px}
+
+  /* ── Health ── */
+  .hs-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin-bottom:14px}
+  .hs-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:12px 14px}
+  .hs-card b{font-size:1.3rem;font-weight:800;display:block;line-height:1.15}
+  .hs-card span{font-size:.72rem;color:var(--muted)}
+  .hs-card.ok b{color:var(--green)} .hs-card.down b{color:var(--red)} .hs-card.na b{color:var(--muted)} .hs-card.free b{color:var(--green)}
+  .hstatus{display:inline-flex;align-items:center;gap:5px;font-size:.8rem;font-weight:650;white-space:nowrap}
+  .hstatus.hs-ok{color:var(--green)} .hstatus.hs-down{color:var(--red)} .hstatus.hs-unk{color:var(--amber)} .hstatus.hs-na{color:var(--muted)} .hstatus.hs-free{color:var(--green)}
+  .hdot{width:9px;height:9px;border-radius:50%;display:inline-block;margin:0 1px}
+  .hdot.ok{background:var(--green)} .hdot.down{background:var(--red)} .hdot.unk{background:var(--amber)}
+  .hdot.na{background:transparent;border:1px solid #2a3040} .hdot.free{background:var(--green);opacity:.4}
+  .fails-badge{display:inline-block;background:rgba(248,113,113,.15);color:var(--red);border:1px solid rgba(248,113,113,.3);font-size:.68rem;font-weight:700;padding:1px 7px;border-radius:999px}
+  .dots{white-space:nowrap}
+
+  /* ── Chain flow ── */
+  .chain-flow{display:flex;flex-direction:column;gap:0;margin:14px 0}
+  .chain-step{display:flex;gap:12px;align-items:stretch}
+  .chain-pos{width:30px;height:30px;border-radius:50%;background:var(--accent-soft);border:1px solid var(--accent);color:var(--accent);font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:.82rem}
+  .chain-box{flex:1;background:var(--card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:11px 14px}
+  .chain-box .clink{font-family:ui-monospace,monospace;font-size:.82rem;color:var(--text);font-weight:600}
+  .chain-box .crole{font-size:.76rem;color:var(--muted);margin-top:3px}
+  .chain-arrow{display:flex;justify-content:center;color:var(--muted);font-size:.8rem;padding:2px 0 2px 15px}
+
+  /* ── Quota bars ── */
+  .quota-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin-bottom:14px}
+  .quota-cell{background:var(--bg-soft);border:1px solid var(--border-soft);border-radius:12px;padding:14px}
+  .quota-name{font-size:.72rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;font-weight:700}
+  .quota-pct{font-size:1.6rem;font-weight:800;letter-spacing:-.02em;margin:4px 0}
+  .quota-reset{font-size:.74rem;color:var(--muted)}
+  .bar{height:8px;border-radius:999px;background:var(--border);overflow:hidden;margin-top:8px}
+  .bar > i{display:block;height:100%;border-radius:999px}
+  .bar > i.ok{background:var(--green)}
+  .bar > i.warn{background:var(--amber)}
+  .bar > i.down{background:var(--red)}
+
+  .info-note{font-size:.74rem;color:var(--muted);margin-top:10px;line-height:1.6;background:var(--bg-soft);border:1px solid var(--border-soft);border-radius:10px;padding:10px 12px}
+  .info-note b{color:var(--text)}
+  .info-note code{font-family:ui-monospace,monospace;font-size:.74rem;color:var(--accent)}
+  .oc-note{font-size:.76rem;color:var(--muted);margin:8px 0;line-height:1.6}
+  .oc-note a{color:var(--accent)}
+
+  /* ── Timeline (novedades) ── */
+  .timeline{list-style:none;max-height:420px;overflow-y:auto;margin-top:8px}
+  .timeline li{display:flex;align-items:baseline;gap:10px;padding:7px 2px;border-bottom:1px solid var(--border-soft);font-size:.82rem}
+  .timeline li:last-child{border-bottom:none}
+  .tl-date{color:var(--muted);font-size:.72rem;white-space:nowrap;min-width:74px}
+  .tl-tag{font-size:.66rem;font-weight:700;padding:1px 8px;border-radius:999px;white-space:nowrap}
+  .tl-tag.added{color:var(--green);background:rgba(52,211,153,.12);border:1px solid rgba(52,211,153,.3)}
+  .tl-tag.removed{color:var(--red);background:rgba(248,113,113,.12);border:1px solid rgba(248,113,113,.3)}
+  .tl-tag.manual{color:var(--zen);background:rgba(167,139,250,.12);border:1px solid rgba(167,139,250,.3)}
+  .tl-tag.auto{color:var(--accent);background:rgba(109,155,255,.12);border:1px solid rgba(109,155,255,.3)}
+  .tl-text{color:var(--text)}
+  .tl-empty{color:var(--muted);font-size:.82rem;padding:14px 2px}
+
+  /* ── Skeleton ── */
+  .skel{display:none;padding:14px}
+  .skel.on{display:block}
+  .skel-row{height:46px;margin-bottom:8px;border-radius:var(--radius-sm);background:linear-gradient(90deg,var(--bg-soft) 25%,var(--card-hover) 50%,var(--bg-soft) 75%);background-size:200% 100%;animation:shimmer 1.3s infinite}
+  @keyframes shimmer{to{background-position:-200% 0}}
+
+  footer{margin-top:22px;color:var(--muted);font-size:.73rem;line-height:1.7}
+  footer a{color:var(--accent)}
+
+  /* ── Modal detalle ── */
+  .md-overlay{position:fixed;inset:0;background:rgba(5,7,12,.72);z-index:100;display:flex;align-items:center;justify-content:center;padding:18px;backdrop-filter:blur(4px)}
+  .md-overlay[hidden]{display:none}
+  .md-panel{background:var(--card);border:1px solid var(--border);border-radius:18px;width:100%;max-width:680px;max-height:86vh;overflow-y:auto;padding:0;box-shadow:var(--shadow);outline:none}
+  .md-head{position:sticky;top:0;background:rgba(21,25,38,.96);backdrop-filter:blur(10px);border-bottom:1px solid var(--border-soft);padding:14px 18px;display:flex;align-items:center;gap:12px;z-index:2}
+  .md-head h2{font-size:1.05rem;font-weight:700;letter-spacing:-.01em;flex:1;min-width:0}
+  .md-head .md-sub{font-size:.72rem;color:var(--muted);font-family:ui-monospace,monospace}
+  .md-close{background:var(--bg-soft);border:1px solid var(--border);color:var(--muted);width:32px;height:32px;border-radius:9px;cursor:pointer;font-size:.95rem;flex-shrink:0;font-family:inherit}
+  .md-close:hover{color:var(--text);border-color:var(--accent)}
+  .md-body{padding:16px 18px 20px}
+  .md-sec{margin-bottom:16px}
+  .md-sec h3{font-size:.74rem;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px}
+  .md-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:8px}
+  .md-kv{background:var(--bg-soft);border:1px solid var(--border-soft);border-radius:10px;padding:8px 11px}
+  .md-kv span{display:block;font-size:.64rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+  .md-kv b{font-size:.86rem;font-weight:650}
+  .md-note{font-size:.78rem;color:var(--muted);line-height:1.6;margin-top:8px}
+  .md-desc{font-size:.88rem;line-height:1.6}
+  .md-badges{margin-bottom:10px}
+  .md-status{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:8px}
+  .md-dots{margin:6px 0}
+  .md-foot{display:flex;gap:10px;margin-top:14px}
+  .md-link{color:var(--accent);font-size:.8rem}
+  .md-loading{color:var(--muted);font-size:.86rem;padding:20px 0;text-align:center}
+  .var-chip{display:inline-block;background:var(--bg-soft);border:1px solid var(--border);font-size:.68rem;padding:1px 8px;border-radius:999px;color:var(--muted)}
+  .verified-badge{font-size:.7rem;color:var(--muted);display:inline-block;margin:6px 0}
+  .verified-badge.stale{color:var(--amber)}
+  .lim-tbl{min-width:640px}
+  .lim-tbl thead th{font-size:.66rem}
+  .bench-grid{display:flex;flex-wrap:wrap;gap:6px}
+  .bench-chip{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:5px 11px;font-size:.76rem}
+  .bench-chip b{color:var(--accent);font-weight:700;margin-left:6px;font-variant-numeric:tabular-nums}
+
+  /* ── Bottom tab bar (mobile) ── */
+  .bottomnav{display:none}
+  @media (max-width:760px){
+    .nav{display:none}
+    .bottomnav{display:flex;position:fixed;bottom:0;left:0;right:0;z-index:60;background:rgba(11,13,19,.95);backdrop-filter:blur(14px);border-top:1px solid var(--border-soft);padding:6px 4px calc(6px + env(safe-area-inset-bottom));justify-content:space-around}
+    .bottomnav button{flex:1;background:transparent;border:none;color:var(--muted);font-family:inherit;font-size:.62rem;font-weight:600;display:flex;flex-direction:column;align-items:center;gap:3px;padding:6px 2px;cursor:pointer;touch-action:manipulation}
+    .bottomnav button .ico{font-size:1.15rem}
+    .bottomnav button.active{color:var(--accent)}
+    .kpi .kpi-val{font-size:1.45rem}
+    /* Tablas → tarjetas apiladas (sin scroll horizontal) */
+    .table-card{border:none;background:transparent;box-shadow:none;overflow:visible}
+    .table-scroll{overflow:visible}
+    table,thead,tbody,tr,td{display:block;width:100%}
+    thead{display:none}
+    table{min-width:0!important}
+    tbody tr{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);margin-bottom:8px;padding:6px 4px;box-shadow:var(--shadow)}
+    tbody td{border:none;padding:3px 12px;display:flex;justify-content:space-between;align-items:center;min-height:26px;gap:14px}
+    tbody td::before{content:attr(data-label);color:var(--muted);font-size:.66rem;text-transform:uppercase;letter-spacing:.05em;font-weight:600;flex-shrink:0}
+    tbody td.num{text-align:right}
+    td[data-label="Modelo"]{flex-direction:column;align-items:flex-start;border-bottom:1px solid var(--border-soft);margin-bottom:4px;padding-top:8px;padding-bottom:8px}
+    td[data-label="Modelo"]::before{content:none}
+    td[data-label="Historial (14 días)"]{flex-wrap:wrap;justify-content:space-between}
+    td[data-label="Historial (14 días)"] .dots{white-space:normal}
+    .f-group{width:100%}
+    input[type=search],select{width:100%;min-height:44px}
+    .checks{width:100%;gap:10px 18px}
+  }
+  @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+
+<!-- ── Topbar ── -->
+<div class="topbar">
+  <div class="topbar-in">
+    <div class="brand">
+      <div class="logo">🗂️</div>
+      <div>
+        <h1>Model Catalog</h1>
+        <div class="sub">OpenCode Zen · Go · OpenRouter</div>
+      </div>
+    </div>
+    <div class="topbar-spacer"></div>
+    <div class="updated">Actualizado: <b id="updated">—</b></div>
+  </div>
+  <nav class="nav" id="nav" aria-label="Secciones">
+    <button data-tab="resumen" class="active">📊 Resumen</button>
+    <button data-tab="catalogo">🔍 Buscar</button>
+    <button data-tab="salud">🩺 Disponibilidad</button>
+    <button data-tab="precios">💱 Precios</button>
+    <button data-tab="cadena">🔗 Cadena</button>
+    <button data-tab="cuotas">🔔 Cuota Go</button>
+    <button data-tab="evo">📈 Novedades</button>
+  </nav>
+</div>
+
+<div class="wrap">
+
+  <!-- ═══ RESUMEN ═══ -->
+  <section class="panel active" id="p-resumen" aria-label="Resumen">
+    <h2 class="section-title">¿Todo en orden?</h2>
+    <p class="section-sub">Un vistazo rápido. Debajo, el detalle de cada proveedor y conceptos clave.</p>
+
+    <div class="kpi-grid">
+      <div class="kpi">
+        <div class="kpi-top">📦 Modelos en el catálogo</div>
+        <div class="kpi-val" id="kpi-total">…</div>
+        <div class="kpi-foot" id="kpi-total-foot"></div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-top"><span class="sema" id="kpi-health-sema"></span> Disponibilidad hoy</div>
+        <div class="kpi-val" id="kpi-health">…</div>
+        <div class="kpi-foot" id="kpi-health-foot"></div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-top"><span class="sema" id="kpi-quota-sema"></span> Cuota Go mensual</div>
+        <div class="kpi-val" id="kpi-quota">…</div>
+        <div class="kpi-foot">reinicia en <span id="kpi-quota-reset">—</span></div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-top">💰 Precio desde</div>
+        <div class="kpi-val" id="kpi-cheap">…</div>
+        <div class="kpi-foot" id="kpi-cheap-foot"></div>
+      </div>
+    </div>
+
+    <h2 class="section-title">Por proveedor</h2>
+    <div class="prov-grid" id="prov-grid"></div>
+
+    <details class="gloss" id="gloss">
+      <summary>Glosario — qué significa cada término</summary>
+      <div class="g-body" id="g-body"></div>
+    </details>
+  </section>
+
+  <!-- ═══ CATÁLOGO / BUSCAR ═══ -->
+  <section class="panel" id="p-catalogo" aria-label="Buscar modelos">
+    <h2 class="section-title">Buscar modelos</h2>
+    <p class="section-sub">Filtra por proveedor, nombre, contexto o capacidad. Toca una fila para ver la ficha completa.</p>
+    <div class="filters">
+      <div class="f-group">
+        <label for="f-provider">Proveedor</label>
+        <select id="f-provider">
+          <option value="all">Todos</option>
+          <option value="go">🚀 Go</option>
+          <option value="zen">💜 Zen (pago)</option>
+          <option value="zenall">💜 Zen (todos)</option>
+          <option value="or">🟠 OpenRouter</option>
+          <option value="free">🌱 Gratis</option>
+        </select>
+      </div>
+      <div class="f-group">
+        <label for="f-search">Buscar</label>
+        <input type="search" id="f-search" placeholder="nombre o id…">
+      </div>
+      <div class="checks">
+        <label><input type="checkbox" id="f-reason"> Reasoning</label>
+        <label><input type="checkbox" id="f-tool"> Tool call</label>
+        <label><input type="checkbox" id="f-bench"> Con benchmarks</label>
+      </div>
+    </div>
+    <div class="info-note" id="count-pill" style="margin-top:0;margin-bottom:10px"></div>
+    <div class="table-card">
+      <div class="skel" id="skel"><div class="skel-row"></div><div class="skel-row"></div><div class="skel-row"></div></div>
+      <div class="table-scroll">
+        <table id="tbl-cat">
+          <thead>
+            <tr>
+              <th data-k="name">Modelo<span class="ar"></span></th>
+              <th data-k="prov">Disponible en<span class="ar"></span></th>
+              <th data-k="context" class="num">Contexto<span class="ar"></span></th>
+              <th data-k="output" class="num">Output<span class="ar"></span></th>
+              <th data-k="reasoning" class="num">Reasoning<span class="ar"></span></th>
+              <th data-k="tool" class="num">Tools<span class="ar"></span></th>
+              <th data-k="swe" class="num">SWE-Bench<span class="ar"></span></th>
+              <th data-k="orin" class="num">OR $/1M in<span class="ar"></span></th>
+              <th>Ficha</th>
+            </tr>
+          </thead>
+          <tbody id="tbody"></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ SALUD ═══ -->
+  <section class="panel" id="p-salud" aria-label="Disponibilidad">
+    <h2 class="section-title">Disponibilidad hoy</h2>
+    <p class="section-sub">Cada proveedor se prueba por separado. Los números son <b>comprobaciones</b> (un mismo modelo en varios proveedores cuenta más de una vez), no modelos únicos. Los puntitos son el historial de los últimos 14 días.</p>
+    <div class="hs-grid" id="health-summary"></div>
+    <div class="table-card">
+      <div class="table-scroll">
+        <table class="health" id="tbl-health">
+          <thead><tr><th>Modelo</th><th>Estado</th><th>Fallos</th><th>Historial (14 días)</th></tr></thead>
+          <tbody id="health-tbody"></tbody>
+        </table>
+      </div>
+    </div>
+    <div class="legend" style="margin-top:12px">
+      <span><span class="hdot ok"></span> operativo</span>
+      <span><span class="hdot down"></span> caído / error</span>
+      <span><span class="hdot unk"></span> no responde</span>
+      <span><span class="hdot na"></span> no accesible</span>
+      <span><span class="hdot free"></span> free</span>
+    </div>
+    <div class="info-note">⏱️ Último check: <b id="health-snap">—</b></div>
+  </section>
+
+  <!-- ═══ PRECIOS ═══ -->
+  <section class="panel" id="p-precios" aria-label="Precios">
+    <h2 class="section-title">Comparativa de precios</h2>
+    <p class="section-sub">Go es <b>suscripción</b> (coste marginal 0); Zen y OpenRouter cobran <b>por token</b>. Ordena por cualquier columna.</p>
+    <div id="prices-body"></div>
+  </section>
+
+  <!-- ═══ CADENA ═══ -->
+  <section class="panel" id="p-cadena" aria-label="Cadena de respaldo">
+    <h2 class="section-title">Cómo se elige el modelo (cadena de respaldo)</h2>
+    <p class="section-sub">Si el primero falla, se usa el siguiente. Orden por coste marginal ascendente.</p>
+    <div class="info-note" id="chain-method"></div>
+    <h3 style="font-size:.9rem;margin:14px 0 4px">Cadena activa — snapshot <span id="chain-snap"></span></h3>
+    <div class="chain-flow" id="chain-flow"></div>
+  </section>
+
+  <!-- ═══ CUOTAS ═══ -->
+  <section class="panel" id="p-cuotas" aria-label="Cuota Go">
+    <h2 class="section-title">Tu cuota de uso (Go)</h2>
+    <p class="section-sub">Go limita el uso en tres ventanas. El % es lo ya consumido; "reinicia" es cuando vuelve a 0.</p>
+    <div class="quota-grid" id="quota-grid"></div>
+    <div id="quota-body"></div>
+    <details class="gloss" style="margin-top:6px">
+      <summary>📄 Límites del plan Go (datos manuales)</summary>
+      <div class="g-body" id="limits-body"></div>
+    </details>
+  </section>
+
+  <!-- ═══ EVOLUCIÓN ═══ -->
+  <section class="panel" id="p-evo" aria-label="Novedades">
+    <h2 class="section-title">Novedades (altas, bajas y cambios)</h2>
+    <p class="section-sub">Cambios detectados entre comprobaciones diarias del catálogo.</p>
+    <div id="history-body"></div>
+    <h3 style="font-size:.9rem;margin:16px 0 4px">Cambios registrados</h3>
+    <div id="changes-body"></div>
+  </section>
+
+</div>
+
+<!-- ── Bottom nav (mobile) ── -->
+<nav class="bottomnav" id="bottomnav" aria-label="Navegación móvil">
+  <button data-tab="resumen" class="active"><span class="ico">📊</span>Resumen</button>
+  <button data-tab="catalogo"><span class="ico">🔍</span>Buscar</button>
+  <button data-tab="salud"><span class="ico">🩺</span>Salud</button>
+  <button data-tab="precios"><span class="ico">💱</span>Precios</button>
+  <button data-tab="cadena"><span class="ico">🔗</span>Cadena</button>
+  <button data-tab="cuotas"><span class="ico">🔔</span>Cuota</button>
+  <button data-tab="evo"><span class="ico">📈</span>Novedades</button>
+</nav>
+
+<!-- ── Modal detalle ── -->
+<div class="md-overlay" id="md-overlay" hidden>
+  <div class="md-panel" id="md-panel" role="dialog" aria-modal="true" aria-labelledby="md-title" tabindex="-1">
+    <div class="md-head">
+      <h2 id="md-title"></h2>
+      <div class="md-sub" id="md-subid"></div>
+      <button class="md-close" id="md-close" type="button" aria-label="Cerrar ficha">✕</button>
+    </div>
+    <div class="md-body" id="md-body"></div>
+  </div>
+</div>
+
+<footer>
+  <div id="gen"></div>
+</footer>
+
+<script>
+'use strict';
+let DATA = null;
+let sortKey = 'name', sortDir = 1;
+let catSort = { k: 'name', d: 1 };
+
+/* ───────── Helpers ───────── */
+const $ = s => document.querySelector(s);
+const esc = s => String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;')
+  .replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+
+function fmtCtx(n) {
+  if (!n) return '<span class="no">—</span>';
+  if (n >= 1000000) return (n / 1000000).toFixed(0) + 'M';
+  if (n >= 1000) return Math.round(n / 1000) + 'K';
+  return n;
+}
+function money(n) {
+  if (n == null) return '—';
+  return '$' + parseFloat(n).toFixed(n < 1 ? 3 : 2);
+}
+function moneyTag(n) {
+  return n == null ? '<span class="no">—</span>' : '<b>' + money(n) + '</b>';
+}
+function cell(v) {
+  if (v === true) return '<span class="yes">✓</span>';
+  if (v === false) return '<span class="no">✗</span>';
+  return '<span class="no">?</span>';
+}
+function sema(cls) { return '<span class="sema ' + cls + '"></span>'; }
+function timeAgo(iso) {
+  if (!iso) return '—';
+  const d = new Date(iso); if (isNaN(d)) return '—';
+  const ms = Date.now() - d.getTime();
+  const h = Math.floor(ms / 3600000); const m = Math.floor(ms / 60000) % 60;
+  if (h >= 24) { const days = Math.floor(h / 24); return 'hace ' + days + ' d' + (h % 24 ? ' ' + (h % 24) + 'h' : ''); }
+  if (h > 0) return 'hace ' + h + 'h' + (m ? ' ' + m + 'm' : '');
+  return 'hace ' + Math.max(1, m) + ' min';
+}
+
+function provBadges(m) {
+  const b = [];
+  if (m.providers.free) b.push('<span class="pb free">🌱 free</span>');
+  if (m.providers.go) b.push('<span class="pb go">🚀 Go</span>');
+  if (m.providers.or) b.push('<span class="pb or">🟠 OR</span>');
+  if (m.providers.zen && !m.providers.free) b.push('<span class="pb zen">💜 Zen</span>');
+  if (!m.md_url) b.push('<span class="pb warn" title="Solo en el catálogo opencode — sin ficha en models.dev">⚠️ sin ficha</span>');
+  return b.join(' ');
+}
+
+function benchHTML(m) {
+  const bk = m.benchmarks || {};
+  const names = Object.keys(bk);
+  if (!names.length) return '<span class="no">Sin benchmarks en models.dev</span>';
+  return '<div class="bench-grid">' + names.map(n =>
+    '<span class="bench-chip">' + esc(n) + '<b>' + esc(bk[n]) + '</b></span>'
+  ).join('') + '</div>';
+}
+
+const GLOSSARY = [
+  { t: 'Go (suscripción)', d: 'Pagas $10/mes y usas todos los modelos Go sin coste extra por token. Ideal para uso constante.' },
+  { t: 'Zen / OpenRouter (por token)', d: 'Pagas según lo que consumes: $ por millón de tokens (MTok). Más barato si usas poco.' },
+  { t: 'offpeak / peak', d: 'Zen cobra menos fuera de hora punta (offpeak) y más en hora punta (peak). En Precios verás ambos.' },
+  { t: 'eslabón (cadena)', d: 'Cada paso de la cadena de respaldo. Si el proveedor principal falla, el sistema prueba el siguiente automáticamente.' },
+  { t: 'cuota por buckets', d: 'Go limita el uso en 3 ventanas: continuo (rolling, pocas horas), semanal y mensual. El % es lo ya gastado.' },
+  { t: 'SWE-Bench', d: 'Benchmark que mide cuánto sabe resolver tareas de ingeniería de software (0–100). Más alto = mejor.' },
+  { t: 'contexto / output', d: 'Contexto: tokens máximos que el modelo "recuerda" en una conversación. Output: tokens máximos que puede generar de una vez.' },
+  { t: 'free (gratis)', d: 'Modelos zen free. No se comprueban uno a uno porque comparten una cuota global.' },
+  { t: 'Disponibilidad / probes', d: 'Los números de Disponibilidad son comprobaciones (probes): un mismo modelo en 3 proveedores cuenta 3 veces.' }
+];
+$('#g-body').innerHTML = GLOSSARY.map(g =>
+  '<div class="g-item"><b>' + esc(g.t) + '</b><span>' + esc(g.d) + '</span></div>'
+).join('');
+
+/* ───────── Render catálogo (Buscar) ───────── */
+function render() {
+  if (!DATA) return;
+  const prov = $('#f-provider').value;
+  const q = $('#f-search').value.trim().toLowerCase();
+  const needReason = $('#f-reason').checked;
+  const needTool = $('#f-tool').checked;
+  const needBench = $('#f-bench').checked;
+
+  let rows = DATA.models.filter(m => {
+    if (prov === 'free' && m.tier !== 'free') return false;
+    if (prov === 'go' && !m.providers.go) return false;
+    if (prov === 'zen' && !(m.providers.zen && !m.providers.free)) return false;
+    if (prov === 'zenall' && !m.providers.zen) return false;
+    if (prov === 'or' && !m.providers.or) return false;
+    if (q && !(m.name.toLowerCase().includes(q) || m.id.toLowerCase().includes(q))) return false;
+    if (needReason && m.reasoning !== true) return false;
+    if (needTool && m.tool_call !== true) return false;
+    if (needBench && !Object.keys(m.benchmarks || {}).length) return false;
+    return true;
+  });
+
+  const k = catSort.k, d = catSort.d;
+  const val = m => {
+    if (k === 'name') return m.name.toLowerCase();
+    if (k === 'prov') return (m.providers.go ? 1 : 0) + (m.providers.zen ? 1 : 0) + (m.providers.or ? 1 : 0);
+    if (k === 'context') return m.context != null ? m.context : null;
+    if (k === 'output') return m.output != null ? m.output : null;
+    if (k === 'swe') return m.swebench != null ? m.swebench : null;
+    if (k === 'orin') return m.or_price ? m.or_price.in : null;
+    if (k === 'reasoning') return m.reasoning ? 1 : 0;
+    if (k === 'tool') return m.tool_call ? 1 : 0;
+    return null;
+  };
+  rows.sort((a, b) => {
+    const va = val(a), vb = val(b);
+    if (va == null && vb == null) return 0;
+    if (va == null) return 1;
+    if (vb == null) return -1;
+    if (typeof va === 'number' && typeof vb === 'number') return (va - vb) * d;
+    return String(va).localeCompare(String(vb)) * d;
+  });
+
+  const tbody = $('#tbody');
+  tbody.innerHTML = rows.map(m => {
+    const link = m.md_url
+      ? '<a class="md-link" href="' + esc(m.md_url) + '" target="_blank" rel="noopener">↗ models.dev</a>'
+      : '<span class="no">—</span>';
+    let displayName = esc(m.name);
+    if (m.providers.free && !/\(free\)/i.test(m.name)) displayName += ' <span class="pb free">free</span>';
+    const fichaBtn = '<button type="button" class="btn-ficha" data-open="' + esc(m.id) + '" aria-label="Ver ficha de ' + esc(m.name) + '">📄 ficha</button>';
+    return '<tr class="model-row" data-id="' + esc(m.id) + '" tabindex="0" role="button" aria-label="Ver ficha de ' + esc(m.name) + '">' +
+      '<td data-label="Modelo"><div class="m-name"><a class="m-link" href="#/model/' + encodeURIComponent(m.id) + '" title="Ver ficha completa">' + displayName + '</a></div><div class="m-id">' + esc(m.id) + '</div></td>' +
+      '<td data-label="Disponible en">' + provBadges(m) + '</td>' +
+      '<td data-label="Contexto" class="num">' + fmtCtx(m.context) + '</td>' +
+      '<td data-label="Output" class="num">' + fmtCtx(m.output) + '</td>' +
+      '<td data-label="Reasoning" class="num">' + cell(m.reasoning) + '</td>' +
+      '<td data-label="Tools" class="num">' + cell(m.tool_call) + '</td>' +
+      '<td data-label="SWE-Bench" class="num">' + (m.swebench != null ? '<b>' + esc(m.swebench) + '</b>' : '<span class="no">—</span>') + '</td>' +
+      '<td data-label="OR $/1M in" class="num">' + moneyTag(m.or_price ? m.or_price.in : null) + '</td>' +
+      '<td data-label="Ficha">' + fichaBtn + ' ' + link + '</td>' +
+      '</tr>';
+  }).join('');
+
+  const nFree = rows.filter(r => r.tier === 'free').length;
+  const nGo = rows.filter(r => r.providers.go).length;
+  const nZen = rows.filter(r => r.providers.zen).length;
+  const nOr = rows.filter(r => r.providers.or).length;
+  $('#count-pill').innerHTML = '📄 <b>' + rows.length + '</b> de ' + DATA.counts.total +
+    ' modelos · 🌱 ' + nFree + ' · 🚀 ' + nGo + ' · 💜 ' + nZen + ' · 🟠 ' + nOr +
+    (DATA.counts.with_modelsdev ? ' (📄 ' + DATA.counts.with_modelsdev + ' con ficha models.dev)' : '');
+}
+
+/* Ordenación por cabeceras (catálogo) */
+function bindSort() {
+  document.querySelectorAll('#tbl-cat thead th[data-k]').forEach(th => {
+    th.addEventListener('click', () => {
+      const k = th.dataset.k;
+      if (catSort.k === k) { catSort.d *= -1; } else { catSort.k = k; catSort.d = 1; }
+      document.querySelectorAll('#tbl-cat thead th .ar').forEach(a => a.textContent = '');
+      th.querySelector('.ar').textContent = catSort.d === 1 ? '▲' : '▼';
+      render();
+    });
+  });
+}
+
+/* ───────── Resumen (KPIs + proveedores) ───────── */
+function renderSummary() {
+  if (!DATA) return;
+  const c = DATA.counts || {};
+  $('#kpi-total').textContent = c.total || '—';
+  $('#kpi-total-foot').textContent = 'Zen ' + (c.zen || 0) + ' · Go ' + (c.go || 0) + ' · OpenRouter ' + (c.openrouter || 0);
+  $('#kpi-cheap-foot').textContent = c.cheapest_label || '—';
+
+  const gq = (DATA.status_badges && DATA.status_badges.go_quota) || {};
+  const mb = (gq.buckets && gq.buckets.monthly) || {};
+  $('#kpi-quota').textContent = (mb.percent != null ? mb.percent : '?') + '%';
+  if (mb.status) {
+    $('#kpi-quota-sema').className = 'sema ' + (mb.status === 'ok' ? 'ok' : mb.status === 'warn' ? 'warn' : 'down');
+  }
+  $('#kpi-quota-reset').textContent = mb.resets_in_human || '—';
+
+  const pr = (DATA.status_badges && DATA.status_badges.providers) || {};
+  const stats = DATA.status_badges ? DATA.status_badges.providers : null;
+  const grid = $('#prov-grid');
+  const mk = [
+    { key: 'opencode-go', cls: 'go', label: 'OpenCode Go', models: c.go || 0,
+      note: 'Suscripción $10/mes · coste marginal 0. 429 = cuota, no caída.' },
+    { key: 'opencode-zen', cls: 'zen', label: 'OpenCode Zen', models: c.zen || 0,
+      note: 'Créditos + free (pool común). Free no se prueba (cuota global).' },
+    { key: 'openrouter', cls: 'or', label: 'OpenRouter', models: c.openrouter || 0,
+      note: 'Backend 100% independiente, más barato. Precios reales de API.' }
+  ];
+  grid.innerHTML = mk.map(p => {
+    const probed = (stats && stats[p.key] && stats[p.key].probed) || {};
+    const ok = probed.ok || 0; const down = probed.down || 0;
+    const free = probed.free || 0; const na = probed.na || 0; const unk = probed.unk || 0;
+    let status = 'ok', stxt = 'Operativo';
+    if (down > 0) { status = 'warn'; stxt = down + ' caído' + (down > 1 ? 's' : ''); }
+    if (down >= Math.max(1, Math.round(p.models * 0.3))) { status = 'down'; stxt = 'Varios caídos'; }
+    const extra = [];
+    if (na) extra.push('<b>' + na + '</b> no accesibles');
+    if (unk) extra.push('<b>' + unk + '</b> no responden');
+    if (free) extra.push('<b>' + free + '</b> free');
+    return '<div class="prov ' + p.cls + '">' +
+      '<div class="prov-head"><span class="sema ' + status + '"></span>' +
+      '<span class="pname">' + esc(p.label) + '</span>' +
+      '<span class="ptag">' + p.models + ' modelos</span></div>' +
+      '<div class="prov-stats">' +
+      '<div><b>' + ok + '</b> operativos</div>' +
+      '<div><b>' + down + '</b> caídos</div>' +
+      extra.map(e => '<div>' + e + '</div>').join('') +
+      '</div>' +
+      '<div class="prov-note">' + esc(p.note) + '</div></div>';
+  }).join('');
+}
+
+/* ───────── Precios (matriz) ───────── */
+function renderPrices() {
+  const el = $('#prices-body');
+  if (!DATA || !DATA.price_matrix) {
+    el.innerHTML = '<div class="oc-note">Matriz de precios no disponible.</div>';
+    return;
+  }
+  const P = DATA.price_matrix;
+  let h = '<div class="info-note" style="margin-top:0">💱 Fuente: ' +
+    esc(P.sources ? (P.sources.zen_paid + ' · ' + P.sources.openrouter) : 'ver plan') +
+    ' · refresco ' + esc((P.fetched || '').replace('T', ' ').slice(0, 16)) +
+    ' · moneda ' + esc(P.currency || 'USD') + '</div>';
+
+  // Tabla comparativa unificada: por modelo del catálogo (in $/1M)
+  h += '<div class="table-card" style="margin-top:10px"><div class="table-scroll">' +
+    '<table id="tbl-price"><thead><tr>' +
+    '<th data-k="name">Modelo<span class="ar"></span></th>' +
+    '<th>Go</th>' +
+    '<th data-k="zenin" class="num">Zen in (off→peak)<span class="ar"></span></th>' +
+    '<th data-k="orin" class="num">OpenRouter in/out<span class="ar"></span></th>' +
+    '<th data-k="ctx" class="num">Contexto<span class="ar"></span></th>' +
+    '</tr></thead><tbody id="tbody-price"></tbody></table></div></div>';
+
+  const zenP = P.zen_paid_offpeak || {};
+  const zenPeak = P.zen_paid_peak || {};
+  const orP = P.openrouter || {};
+
+  const orIds = (DATA.models || []).filter(m => m.or_id).map(m => m.or_id);
+  const seen = {};
+  orIds.forEach(id => { if (!seen[id]) { seen[id] = 1; } });
+
+  const rows = (DATA.models || []).map(m => {
+    const zp = zenP[m.id];
+    const or = m.or_price || (m.or_id && orP[m.or_id]) || null;
+    const zen = zp
+      ? money(zp.in) + ' → ' + money((zenPeak[m.id] || {}).in)
+      : '<span class="no">—</span>';
+    const go = m.providers.go ? '<span class="tier">plan $10/mes</span>' : '<span class="no">—</span>';
+    const orv = or ? money(or.in) + ' / ' + money(or.out) : '<span class="no">—</span>';
+    return { m, name: m.name.toLowerCase(), id: m.id, zenhtml: zen, gohtml: go, orhtml: orv, orin: or ? or.in : null, ctx: m.context || null };
+  });
+
+  h += '<div class="info-note">🔒 ' + esc(P.notes || 'Sin saldos ni claves. Solo precios públicos por millón de tokens (MTok).') + '</div>';
+  el.innerHTML = h;
+
+  let priceSort = { k: 'name', d: 1 };
+  const sortPrice = () => {
+    const d = priceSort.d, k = priceSort.k;
+    const val = r => {
+      if (k === 'name') return r.name;
+      if (k === 'zenin') { const p = zenP[r.id]; return p ? p.in : null; }
+      if (k === 'orin') return r.orin;
+      if (k === 'ctx') return r.ctx;
+      return null;
+    };
+    const sorted = rows.slice().sort((a, b) => {
+      const va = val(a), vb = val(b);
+      if (va == null && vb == null) return 0;
+      if (va == null) return 1;
+      if (vb == null) return -1;
+      if (typeof va === 'number' && typeof vb === 'number') return (va - vb) * d;
+      return String(va).localeCompare(String(vb)) * d;
+    });
+    $('#tbody-price').innerHTML = sorted.map(r =>
+      '<tr><td data-label="Modelo"><div class="m-name">' + esc(r.m.name) + '</div><div class="m-id">' + esc(r.id) + '</div></td>' +
+      '<td data-label="Go">' + r.gohtml + '</td><td data-label="Zen in (off→peak)" class="num">' + r.zenhtml + '</td>' +
+      '<td data-label="OpenRouter in/out" class="num">' + r.orhtml + '</td><td data-label="Contexto" class="num">' + fmtCtx(r.ctx) + '</td></tr>'
+    ).join('');
+  };
+  document.querySelectorAll('#tbl-price thead th[data-k]').forEach(th => {
+    th.addEventListener('click', () => {
+      const k = th.dataset.k;
+      if (priceSort.k === k) { priceSort.d *= -1; } else { priceSort.k = k; priceSort.d = 1; }
+      document.querySelectorAll('#tbl-price thead th .ar').forEach(a => a.textContent = '');
+      th.querySelector('.ar').textContent = priceSort.d === 1 ? '▲' : '▼';
+      sortPrice();
+    });
+  });
+  sortPrice();
+}
+
+/* ───────── Cadena ───────── */
+function renderChain() {
+  if (!DATA || !DATA.chain_snapshot) {
+    $('#chain-method').textContent = 'Cadena no disponible aún.';
+    return;
+  }
+  const C = DATA.chain_snapshot;
+  $('#chain-method').innerHTML = '📌 Método de creación (coste marginal ascendente):<br>' +
+    '<code>' + (DATA.chain_method || '').split('\n').map(esc).join('<br>') + '</code>';
+  $('#chain-snap').textContent = (C.snapshot || '').replace('T', ' ');
+  $('#chain-flow').innerHTML = (C.links || []).map((l, i) => {
+    const box = '<div class="chain-step"><div class="chain-pos">' + esc(l.pos) + '</div>' +
+      '<div class="chain-box"><div class="clink">' + esc(l.link) + '</div>' +
+      '<div class="crole">' + esc(l.role || '') + '</div></div></div>';
+    const arrow = i < (C.links || []).length - 1 ? '<div class="chain-arrow">▼</div>' : '';
+    return box + arrow;
+  }).join('');
+}
+
+/* ───────── Cuota ───────── */
+function renderQuota() {
+  const el = $('#quota-body');
+  if (!DATA || !DATA.status_badges) {
+    $('#quota-grid').innerHTML = '<div class="oc-note">Estado de cuotas no disponible.</div>';
+    return;
+  }
+  const S = DATA.status_badges;
+  const gq = S.go_quota || {};
+  const bk = gq.buckets || {};
+  const labels = { rolling: 'Continuo (rolling)', weekly: 'Semanal', monthly: 'Mensual' };
+  $('#quota-grid').innerHTML = Object.keys(labels).map(k => {
+    const b = bk[k];
+    if (!b) return '';
+    const cls = b.status === 'ok' ? 'ok' : b.status === 'warn' ? 'warn' : 'down';
+    const pct = b.percent != null ? b.percent : 0;
+    return '<div class="quota-cell">' +
+      '<div class="quota-name">' + labels[k] + '</div>' +
+      '<div class="quota-pct" style="color:var(--' + cls + ')">' + pct + '%</div>' +
+      '<div class="bar"><i class="' + cls + '" style="width:' + Math.max(4, pct) + '%"></i></div>' +
+      '<div class="quota-reset">reinicia en ' + esc(b.resets_in_human || '—') + '</div></div>';
+  }).join('');
+
+  const pr = S.providers || {};
+  const orP = pr.openrouter || {};
+  const bal = S.balances || {};
+  const orOk = (orP.probed && orP.probed.ok > 0) || !!bal.or_ok;
+  const orProbed = orP.probed ? Object.entries(orP.probed).map(([k, v]) => k + ':' + v).join(' ') : '—';
+  let h = '<div class="hs-grid">' +
+    '<div class="hs-card ' + (gq.nivel === 'ok' ? 'ok' : gq.nivel === 'warn' ? 'down' : 'na') + '"><b>Go</b><span>' + esc(gq.badge || '—') + '</span></div>' +
+    '<div class="hs-card ' + (orOk ? 'ok' : 'na') + '"><b>🟠 OR</b><span>' + (orOk ? 'operativo (' + orProbed + ')' : 'sin datos') + '</span></div>' +
+    '</div>';
+  h += '<div class="info-note">🔒 Guardias de saldo (solo booleanos, sin importes): ' +
+    'Zen paid ' + (bal.zen_paid_ok ? '✅' : '⚠️') + ' · OpenRouter ' + (bal.or_ok ? '✅' : '⚠️') + '</div>';
+  if (bal.aviso) h += '<div class="oc-note">' + esc(bal.aviso) + '</div>';
+  el.innerHTML = h;
+}
+
+/* ───────── Salud ───────── */
+const ST = { status: null, hist: null, catalog: null, limits: null, chAuto: null, chManual: null };
+const ST_ICON = { ok: '✅', down: '⚠️', unk: '❓', na: 'ℹ️', free: '🌱' };
+const ST_CLS = { ok: 'hs-ok', down: 'hs-down', unk: 'hs-unk', na: 'hs-na', free: 'hs-free' };
+const ST_LBL = { ok: 'operativo', down: 'caído', unk: 'no responde', na: 'no accesible', free: 'free' };
+
+function shortId(id) {
+  if (id === 'big-pickle') return 'big-pickle';
+  return id.replace(/-(free)$/, '').replace(/-preview$/, '*');
+}
+function dotFor(st) {
+  return '<span class="hdot ' + st + '"></span>';
+}
+function daysSince(dateStr) {
+  if (!dateStr) return null;
+  const d = new Date(dateStr + 'T00:00:00Z');
+  return Math.floor((Date.now() - d.getTime()) / 86400000);
+}
+function verifiedHTML(verified) {
+  const ds = daysSince(verified);
+  const stale = ds != null && ds > 14;
+  return '<span class="verified-badge' + (stale ? ' stale' : '') + '">🕒 verificado ' +
+    (ds == null ? '—' : (ds === 0 ? 'hoy' : 'hace ' + ds + 'd')) + (stale ? ' ⚠️ posiblemente obsoleto' : '') + '</span>';
+}
+
+function renderHealth() {
+  if (!ST.status) {
+    $('#health-tbody').innerHTML = '<tr><td colspan="4" class="tl-empty">status.json no disponible aún (primer check pendiente)</td></tr>';
+    return;
+  }
+  const m = ST.status.models || {};
+  const days = ST.hist.days || {};
+  const dates = Object.keys(days).sort();
+  const lastN = dates.slice(-14);
+  const counts = ST.status.counts || {};
+  const snap = ST.status.snapshot || '—';
+
+  $('#health-summary').innerHTML =
+    '<div class="hs-card ok"><b>' + (counts.ok ?? 0) + '</b><span>operativos</span></div>' +
+    '<div class="hs-card down"><b>' + (counts.down ?? 0) + '</b><span>caídos</span></div>' +
+    '<div class="hs-card na"><b>' + (counts.na ?? 0) + '</b><span>no accesibles</span></div>' +
+    '<div class="hs-card free"><b>' + (counts.free ?? 0) + '</b><span>free</span></div>';
+  $('#health-snap').textContent = snap.replace('T', ' ').slice(0, 16);
+
+  const rows = Object.keys(m).sort((a, b) => {
+    const o = { ok: 0, na: 1, unk: 2, free: 3, down: 4 };
+    return (o[m[a].status] ?? 5) - (o[m[b].status] ?? 5) || a.localeCompare(b);
+  });
+
+  $('#health-tbody').innerHTML = rows.map(id => {
+    const e = m[id];
+    const dots = lastN.map(d => {
+      const s = (days[d] || {})[id];
+      return s ? dotFor(s) : '<span class="hdot" style="background:transparent;border:1px dashed #2a3040"></span>';
+    }).join('');
+    const fails = e.fails ? '<span class="fails-badge">×' + e.fails + '</span>' : '';
+    return '<tr>' +
+      '<td data-label="Modelo"><span class="m-name">' + esc(shortId(id)) + '</span><div class="m-id">' + esc(id) + '</div></td>' +
+      '<td data-label="Estado"><span class="hstatus ' + (ST_CLS[e.status] || '') + '">' + (ST_ICON[e.status] || '❓') + ' ' + (ST_LBL[e.status] || e.status) + '</span></td>' +
+      '<td data-label="Fallos">' + fails + '</td>' +
+      '<td data-label="Historial (14 días)" class="dots">' + dots + '</td></tr>';
+  }).join('');
+}
+
+function renderLimits() {
+  const el = $('#limits-body');
+  if (!ST.limits) {
+    el.innerHTML = '<div class="oc-note">limits.json no disponible — datos manuales pendientes de crear.</div>';
+    return;
+  }
+  const L = ST.limits;
+  const ver = L.verified_at;
+  let h = '';
+  const subs = L.subscription || {};
+  const glob = L.global_limits || {};
+  h += '<div class="md-kv" style="margin-bottom:8px"><span>OpenCode Go</span><b>$' + (subs.price_usd_month ?? 10) + '/mes</b></div>';
+  if (subs.note) h += '<div class="oc-note">' + esc(subs.note) + '</div>';
+  h += '<div class="oc-note">Límite global de gasto: $' + esc(glob.per_5h_usd ?? '—') + '/5h · $' +
+    esc(glob.per_week_usd ?? '—') + '/sem · $' + esc(glob.per_month_usd ?? '—') + '/mes · ' + verifiedHTML(ver) + '</div>';
+  if (L.peak_hours_note) h += '<div class="oc-note">⏰ ' + esc(L.peak_hours_note) + '</div>';
+  if (L.overflow_note) h += '<div class="oc-note">💡 ' + esc(L.overflow_note) + '</div>';
+  if (L.privacy_note) h += '<div class="oc-note">🔒 ' + esc(L.privacy_note) + '</div>';
+
+  const rows = L.pricing || [];
+  if (rows.length) {
+    h += '<div class="table-scroll" style="margin-top:10px"><table class="lim-tbl"><thead><tr>' +
+      '<th>Modelo</th><th>Variante</th><th>Tier</th><th class="num">In $/1M</th><th class="num">Out $/1M</th>' +
+      '<th class="num">Req/sem</th><th class="num">Req/mes</th></tr></thead><tbody>';
+    rows.forEach(r => {
+      h += '<tr><td data-label="Modelo"><span class="m-name">' + esc(r.name || r.model) + '</span></td>' +
+        '<td data-label="Variante">' + (r.variant ? '<span class="var-chip">' + esc(r.variant) + '</span>' : '—') + '</td>' +
+        '<td data-label="Tier"><span class="tier">$' + esc(r.tier_usd) + '</span></td>' +
+        '<td data-label="In $/1M" class="num">' + money(r.in) + '</td><td data-label="Out $/1M" class="num">' + money(r.out) + '</td>' +
+        '<td data-label="Req/sem" class="num">' + (r.req_week != null ? r.req_week.toLocaleString('es') : '—') + '</td>' +
+        '<td data-label="Req/mes" class="num">' + (r.req_month != null ? r.req_month.toLocaleString('es') : '—') + '</td></tr>';
+    });
+    h += '</tbody></table></div>';
+  }
+  if (L.note) h += '<div class="oc-note">' + esc(L.note) + '</div>';
+  el.innerHTML = h;
+}
+
+function renderHistory() {
+  const el = $('#history-body');
+  const events = (ST.catalog && ST.catalog.events) || [];
+  const days = ST.hist.days || {};
+  const dates = Object.keys(days).sort().reverse();
+
+  let h = '<div class="info-note" style="margin-top:0">📈 Evolución del catálogo (' + dates.length + ' días registrados)</div>';
+  if (events.length) {
+    h += '<ul class="timeline">';
+    events.slice().reverse().slice(-25).forEach(ev => {
+      const tag = ev.type === 'added'
+        ? '<span class="tl-tag added">+ nuevo</span>'
+        : '<span class="tl-tag removed">− eliminado</span>';
+      h += '<li><span class="tl-date">' + esc(ev.date) + '</span>' + tag +
+        '<span class="tl-text"><b>' + esc(shortId(ev.id)) + '</b> <span class="m-id">' + esc(ev.id) + '</span></span></li>';
+    });
+    h += '</ul>';
+  } else {
+    h += '<div class="tl-empty">Sin cambios detectados todavía — los siguientes checks diarios registrarán modelos nuevos o eliminados.</div>';
+  }
+  el.innerHTML = h;
+}
+
+function renderChanges() {
+  const el = $('#changes-body');
+  const auto = (ST.chAuto && ST.chAuto.events) || [];
+  const manual = (ST.chManual && ST.chManual.events) || [];
+  const all = manual.map(e => Object.assign({}, e, { src: 'manual' }))
+    .concat(auto.map(e => Object.assign({}, e, { src: 'auto' })))
+    .sort((a, b) => (a.date || '').localeCompare(b.date || '') || (a.src === 'auto' ? 1 : -1));
+  if (!all.length) {
+    el.innerHTML = '<div class="tl-empty">Sin cambios registrados todavía.</div>';
+    return;
+  }
+  let h = '<ul class="timeline">';
+  all.slice().reverse().slice(-40).forEach(ev => {
+    const tag = ev.src === 'manual'
+      ? '<span class="tl-tag manual">📝 manual</span>'
+      : '<span class="tl-tag auto">🤖 auto</span>';
+    h += '<li><span class="tl-date">' + esc(ev.date || '—') + '</span>' + tag +
+      '<span class="tl-text">' + esc(ev.text) + '</span></li>';
+  });
+  h += '</ul>';
+  el.innerHTML = h;
+}
+
+async function fetchJSON(url, fallback) {
+  try {
+    const r = await fetch(url, { cache: 'no-cache' });
+    if (!r.ok) throw new Error('HTTP ' + r.status);
+    return await r.json();
+  } catch (e) {
+    return fallback;
+  }
+}
+
+async function loadOC() {
+  const [status, hist, catalog, limits, chAuto, chManual] = await Promise.all([
+    fetchJSON('status.json', null),
+    fetchJSON('status_history.json', { days: {} }),
+    fetchJSON('catalog-history.json', { days: {}, events: [] }),
+    fetchJSON('limits.json', null),
+    fetchJSON('changelog-auto.json', { events: [] }),
+    fetchJSON('changelog-manual.json', { events: [] }),
+  ]);
+  ST.status = status; ST.hist = hist; ST.catalog = catalog;
+  ST.limits = limits; ST.chAuto = chAuto; ST.chManual = chManual;
+  renderHealth(); renderLimits(); renderHistory(); renderChanges();
+  renderSummary();
+}
+
+/* ───────── Modal detalle (ficha) ───────── */
+const mdOverlay = document.getElementById('md-overlay');
+const mdPanel = document.getElementById('md-panel');
+const mdTitle = document.getElementById('md-title');
+const mdSubId = document.getElementById('md-subid');
+const mdBodyEl = document.getElementById('md-body');
+let mdOpenId = null;
+let mdLastFocus = null;
+let mdScrollY = 0;
+let mdPushedHash = false;
+
+function mdParseHash() {
+  const m = /^#\/model\/(.+)$/.exec(location.hash || '');
+  if (!m) return null;
+  try { return decodeURIComponent(m[1]); } catch (e) { return m[1]; }
+}
+function mdNavigate(id) {
+  const target = '#/model/' + encodeURIComponent(id);
+  if (location.hash === target) { mdRoute(); return; }
+  mdPushedHash = true;
+  location.hash = target;
+}
+function mdCloseRequest() {
+  if (!mdParseHash()) { mdClose(); return; }
+  if (mdPushedHash) { history.back(); return; }
+  mdClose();
+  try { history.replaceState(null, '', location.pathname + location.search); } catch (e) { location.hash = ''; }
+}
+function mdRoute() {
+  const id = mdParseHash();
+  if (id) mdOpen(id);
+  else { mdPushedHash = false; mdClose(); }
+}
+function mdOpen(id) {
+  const wasClosed = mdOpenId === null;
+  if (wasClosed) {
+    mdLastFocus = document.activeElement;
+    mdScrollY = window.scrollY || window.pageYOffset || 0;
+  }
+  mdOpenId = id;
+  mdRenderDetail(id);
+  mdOverlay.hidden = false;
+  document.body.classList.add('md-open');
+  if (wasClosed) mdPanel.focus({ preventScroll: true });
+  else mdPanel.scrollTop = 0;
+  mdBodyEl.scrollTop = 0;
+}
+function mdClose() {
+  if (mdOpenId === null) return;
+  const closedId = mdOpenId;
+  mdOpenId = null;
+  mdOverlay.hidden = true;
+  document.body.classList.remove('md-open');
+  const f = mdLastFocus;
+  mdLastFocus = null;
+  window.scrollTo({ top: mdScrollY, behavior: 'auto' });
+  let dest = (f && f !== document.body && document.contains(f) && typeof f.focus === 'function') ? f : null;
+  if (!dest) {
+    dest = document.querySelector('tr.model-row[data-id="' + (window.CSS && CSS.escape ? CSS.escape(closedId) : closedId) + '"] a.m-link');
+  }
+  if (dest) dest.focus({ preventScroll: true });
+  else if (mdPanel.contains(document.activeElement)) {
+    if (document.activeElement.blur) document.activeElement.blur();
+  }
+}
+function mdModelById(id) {
+  if (!DATA || !DATA.models) return null;
+  return DATA.models.find(m => m.id === id) || null;
+}
+function kv(label, valueHTML) {
+  return '<div class="md-kv"><span>' + label + '</span><b>' + valueHTML + '</b></div>';
+}
+function mdPricingRows(id) {
+  const rows = (ST.limits && ST.limits.pricing) || [];
+  return rows.filter(r => r.model === id);
+}
+function mdPricingHTML(id) {
+  const rows = mdPricingRows(id);
+  if (!rows.length) {
+    return '<div class="md-note">Sin datos de precios/límites para este modelo en <code>limits.json</code> (solo se documentan los modelos del plan Go).</div>';
+  }
+  let h = '<div class="table-scroll"><table class="lim-tbl" style="min-width:560px"><thead><tr>' +
+    '<th>Variante</th><th>Tier</th><th class="num">In $/1M</th><th class="num">Out $/1M</th>' +
+    '<th class="num">Req/sem</th><th class="num">Req/mes</th></tr></thead><tbody>';
+  rows.forEach(r => {
+    h += '<tr><td data-label="Variante">' + (r.variant ? '<span class="var-chip">' + esc(r.variant) + '</span>' : '—') + '</td>' +
+      '<td data-label="Tier"><span class="tier">$' + esc(r.tier_usd) + '</span></td>' +
+      '<td data-label="In $/1M" class="num">' + money(r.in) + '</td><td data-label="Out $/1M" class="num">' + money(r.out) + '</td>' +
+      '<td data-label="Req/sem" class="num">' + (r.req_week != null ? r.req_week.toLocaleString('es') : '—') + '</td>' +
+      '<td data-label="Req/mes" class="num">' + (r.req_month != null ? r.req_month.toLocaleString('es') : '—') + '</td></tr>';
+  });
+  h += '</tbody></table></div>';
+  return h;
+}
+function mdHealthHTML(id) {
+  const st = ST.status && ST.status.models ? ST.status.models[id] : null;
+  if (!st) return '<div class="md-note">Este modelo no está en el probe diario de salud.</div>';
+  const days = (ST.hist && ST.hist.days) || {};
+  const lastN = Object.keys(days).sort().slice(-14);
+  const dots = lastN.map(d => {
+    const s = (days[d] || {})[id];
+    return s ? dotFor(s) : '<span class="hdot" style="background:transparent;border:1px dashed #2a3040"></span>';
+  }).join('');
+  let h = '<div class="md-status">' +
+    '<span class="hstatus ' + (ST_CLS[st.status] || '') + '">' + (ST_ICON[st.status] || '❓') + ' ' +
+    esc(ST_LBL[st.status] || st.status) + '</span>' +
+    (st.code != null ? '<span class="var-chip">HTTP ' + esc(st.code) + '</span>' : '') +
+    (st.fails ? '<span class="fails-badge">×' + esc(st.fails) + ' fallos</span>' : '') +
+    '</div>';
+  if (dots) h += '<div class="md-dots">' + dots + '</div>';
+  h += '<div class="md-note">Último check: ' + esc((st.checked_at || '').replace('T', ' ').slice(0, 16)) +
+    ' · últimos ' + lastN.length + ' días registrados</div>';
+  return h;
+}
+function mdRenderDetail(id) {
+  if (!DATA) {
+    mdTitle.textContent = 'Cargando…';
+    mdSubId.textContent = id;
+    mdBodyEl.innerHTML = '<div class="md-loading">Cargando datos del catálogo…</div>';
+    return;
+  }
+  const m = mdModelById(id);
+  if (!m) {
+    mdTitle.textContent = 'Modelo no encontrado';
+    mdSubId.textContent = id;
+    mdBodyEl.innerHTML = '<div class="md-note">No hay ningún modelo con id <code>' + esc(id) +
+      '</code> en el catálogo actual. Puede que haya sido retirado — revisa «Novedades».</div>';
+    return;
+  }
+  mdTitle.textContent = m.name;
+  mdSubId.textContent = m.id;
+  let h = '';
+  h += '<div class="md-sec"><div class="md-badges">' + provBadges(m) +
+    '<span class="tier' + (m.tier === 'free' ? ' free' : '') + '">tier: ' + esc(m.tier) + '</span></div></div>';
+  if (m.desc) h += '<div class="md-sec"><div class="md-desc">' + esc(m.desc) + '</div></div>';
+  h += '<div class="md-sec"><h3>Especificaciones</h3><div class="md-grid">' +
+    kv('Contexto', fmtCtx(m.context)) +
+    kv('Salida máx.', fmtCtx(m.output)) +
+    kv('Reasoning', cell(m.reasoning)) +
+    kv('Tool call', cell(m.tool_call)) +
+    kv('Structured', cell(m.structured)) +
+    kv('Multimodal', cell(m.multimodal)) +
+    kv('Open weights', cell(m.open_weights)) +
+    kv('Knowledge', m.knowledge ? esc(m.knowledge) : '<span class="no">—</span>') +
+    kv('Release', m.release ? esc(m.release) : '<span class="no">—</span>') +
+    kv('Actualizado', m.last_updated ? esc(m.last_updated) : '<span class="no">—</span>') +
+    '</div></div>';
+  const orp = m.or_price;
+  if (orp) {
+    h += '<div class="md-sec"><h3>OpenRouter (precio real API)</h3><div class="md-grid">' +
+      kv('Modelo OR', m.or_id ? esc(m.or_id) : '<span class="no">—</span>') +
+      kv('In $/1M', money(orp.in)) +
+      kv('Out $/1M', money(orp.out)) +
+      kv('Contexto', orp.context ? fmtCtx(orp.context) : '<span class="no">—</span>') +
+      '</div><div class="md-note">Mismo modelo, backend 100% independiente. Fuente: precios reales API OpenRouter.</div></div>';
+  }
+  h += '<div class="md-sec"><h3>Precios y límites (plan Go)</h3>' + mdPricingHTML(m.id) + '</div>';
+  h += '<div class="md-sec"><h3>Estado de salud</h3>' + mdHealthHTML(m.id) + '</div>';
+  const nb = Object.keys(m.benchmarks || {}).length;
+  h += '<div class="md-sec"><h3>Benchmarks (models.dev)' + (nb ? ' · ' + nb : '') + '</h3>' + benchHTML(m) + '</div>';
+  h += '<div class="md-foot">' +
+    (m.md_url
+      ? '<a class="md-link" href="' + esc(m.md_url) + '" target="_blank" rel="noopener">↗ Ver en models.dev</a>'
+      : '<span class="md-note">Sin ficha en models.dev (solo catálogo opencode)</span>') +
+    '</div>';
+  mdBodyEl.innerHTML = h;
+}
+
+/* ───────── Tabs ───────── */
+function activate(tab) {
+  document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('#nav button, #bottomnav button').forEach(b => b.classList.toggle('active', b.dataset.tab === tab));
+  const panel = $('#p-' + tab);
+  if (panel) panel.classList.add('active');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+document.querySelectorAll('#nav button, #bottomnav button').forEach(b => {
+  b.addEventListener('click', () => activate(b.dataset.tab));
+});
+
+/* ───────── Eventos ───────── */
+['#f-provider', '#f-search', '#f-reason', '#f-tool', '#f-bench'].forEach(s => $(s).addEventListener('input', render));
+bindSort();
+
+$('#tbody').addEventListener('click', e => {
+  if (e.target.closest('a')) return;
+  const tr = e.target.closest('tr.model-row');
+  if (tr) mdNavigate(tr.dataset.id);
+});
+$('#tbody').addEventListener('keydown', e => {
+  if (e.key === 'Enter' || e.key === ' ') {
+    const tr = e.target.closest('tr.model-row');
+    if (tr) { e.preventDefault(); mdNavigate(tr.dataset.id); }
+  }
+});
+document.getElementById('md-close').addEventListener('click', mdCloseRequest);
+document.getElementById('md-overlay').addEventListener('click', e => { if (e.target === mdOverlay) mdCloseRequest(); });
+document.addEventListener('keydown', e => {
+  if (mdOpenId === null) return;
+  if (e.key === 'Escape') { e.preventDefault(); mdCloseRequest(); return; }
+  if (e.key === 'Tab') {
+    const f = mdPanel.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
+    const list = Array.prototype.filter.call(f, el => el.offsetParent !== null || el === mdPanel);
+    if (!list.length) return;
+    const first = list[0], last = list[list.length - 1];
+    if (e.shiftKey && (document.activeElement === first || document.activeElement === mdPanel)) {
+      e.preventDefault(); last.focus();
+    } else if (!e.shiftKey && document.activeElement === last) {
+      e.preventDefault(); first.focus();
+    }
+  }
+});
+window.addEventListener('hashchange', mdRoute);
+mdRoute();
+loadOC();
+
+/* ───────── Carga de data.json ───────── */
+fetch('data.json', { cache: 'no-cache' }).then(r => {
+  if (!r.ok) throw new Error('HTTP ' + r.status);
+  return r.json();
+}).then(d => {
+  DATA = d;
+  document.getElementById('skel').classList.remove('on');
+  $('#updated').textContent = timeAgo(d.generated);
+  $('#gen').textContent = 'Generado: ' + (d.generated || '').replace('T', ' ').slice(0, 16) +
+    ' · models.dev: ' + (d.modelsdev_fetched || '—') + ' (' + (d.modelsdev_count || '?') + ' modelos)';
+  // Precio más barato (OpenRouter in)
+  const cheapest = d.models.filter(m => m.or_price).sort((a, b) => a.or_price.in - b.or_price.in)[0];
+  $('#kpi-cheap').textContent = cheapest ? money(cheapest.or_price.in) + '/1M' : '—';
+  $('#kpi-cheap-foot').textContent = cheapest ? cheapest.name + ' (OpenRouter)' : '—';
+  // Resumen salud (status_badges)
+  const gq = (d.status_badges && d.status_badges.go_quota) || {};
+  const pr = (d.status_badges && d.status_badges.providers) || {};
+  const goP = pr['opencode-go'] && pr['opencode-go'].probed ? (pr['opencode-go'].probed.down || 0) : 0;
+  $('#kpi-health').textContent = goP > 0 ? '⚠️ ' + goP + ' caídos' : '🟢 Saludable';
+  $('#kpi-health-sema').className = 'sema ' + (goP > 0 ? 'warn' : 'ok');
+  $('#kpi-health-foot').textContent = (goP > 0 ? goP + ' de ' : '') + (d.counts ? d.counts.go : '?') + ' modelos Go con problemas' + (gq.badge ? ' · ' + gq.badge : '');
+  render();
+  renderSummary();
+  renderPrices(); renderChain(); renderQuota();
+  if (mdOpenId) mdRenderDetail(mdOpenId);
+}).catch(e => {
+  document.getElementById('skel').classList.remove('on');
+  $('#tbody').innerHTML = '<tr><td colspan="9">Error cargando data.json: ' + esc(e.message) + '</td></tr>';
+  $('#updated').textContent = 'error';
+});
+</script>
+</body>
+</html>

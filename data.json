@@ -1,16 +1,16 @@
 {
- "generated": "2026-08-28T00:40:26.207960+00:00",
- "snapshot": "2026-08-28 00:40 UTC",
+ "generated": "2026-08-28T03:45:15.214462+00:00",
+ "snapshot": "2026-08-28 03:45 UTC",
  "providers_3rd": [
   "opencode-go",
   "opencode-zen",
   "openrouter"
  ],
- "modelsdev_fetched": "2026-08-28 00:40 UTC",
+ "modelsdev_fetched": "2026-08-28 03:45 UTC",
  "modelsdev_count": 361,
  "price_matrix": {
   "currency": "USD",
-  "fetched": "2026-08-27T19:45:03.387134+00:00",
+  "fetched": "2026-08-28T03:45:05.384331+00:00",
   "sources": {
    "zen_paid": "precios de cuenta opencode-zen (off-peak / peak)",
    "openrouter": "precios reales API OpenRouter (cache or-models-cache.json)"
@@ -57,8 +57,8 @@
     "context": 1048576
    },
    "deepseek/deepseek-v4-flash-vision-exp": {
-    "in": 0.22,
-    "out": 0.66,
+    "in": 0.44,
+    "out": 1.32,
     "context": 1048576
    },
    "tencent/hy-mt2-1.8b": {
@@ -122,8 +122,8 @@
     "context": 262144
    },
    "deepseek/deepseek-v4-pro-0813": {
-    "in": 1.122,
-    "out": 3.366,
+    "in": 1.32,
+    "out": 3.96,
     "context": 1048576
    },
    "x-ai/grok-4.6": {
@@ -137,8 +137,8 @@
     "context": 65536
    },
    "nvidia/nemotron-3.5-lightning": {
-    "in": 0.08,
-    "out": 0.2,
+    "in": 0.1,
+    "out": 0.25,
     "context": 262144
    },
    "nvidia/nemotron-3.5-lightning:free": {
@@ -177,8 +177,8 @@
     "context": 1310720
    },
    "deepseek/deepseek-v4-flash-0731": {
-    "in": 0.05,
-    "out": 0.1,
+    "in": 0.06,
+    "out": 0.12,
     "context": 1310720
    },
    "thinkingmachines/inkling-small": {
@@ -289,16 +289,11 @@
    "kwaipilot/kat-coder-pro-v2.5": {
     "in": 0.74,
     "out": 2.96,
-    "context": 256000
+    "context": 262144
    },
    "openai/gpt-5.6-luna-pro": {
     "in": 0.2,
     "out": 1.2,
-    "context": 1050000
-   },
-   "openai/gpt-5.6-luna-pro:batch": {
-    "in": 0.1,
-    "out": 0.6,
     "context": 1050000
    },
    "openai/gpt-5.6-luna": {
@@ -306,19 +301,9 @@
     "out": 1.2,
     "context": 1050000
    },
-   "openai/gpt-5.6-luna:batch": {
-    "in": 0.1,
-    "out": 0.6,
-    "context": 1050000
-   },
    "openai/gpt-5.6-terra-pro": {
     "in": 2.0,
     "out": 12.0,
-    "context": 1050000
-   },
-   "openai/gpt-5.6-terra-pro:batch": {
-    "in": 1.0,
-    "out": 6.0,
     "context": 1050000
    },
    "openai/gpt-5.6-terra": {
@@ -326,29 +311,14 @@
     "out": 12.0,
     "context": 1050000
    },
-   "openai/gpt-5.6-terra:batch": {
-    "in": 1.0,
-    "out": 6.0,
-    "context": 1050000
-   },
    "openai/gpt-5.6-sol-pro": {
     "in": 2.0,
     "out": 10.0,
     "context": 1050000
    },
-   "openai/gpt-5.6-sol-pro:batch": {
-    "in": 1.0,
-    "out": 5.0,
-    "context": 1050000
-   },
    "openai/gpt-5.6-sol": {
     "in": 2.0,
     "out": 10.0,
-    "context": 1050000
-   },
-   "openai/gpt-5.6-sol:batch": {
-    "in": 1.0,
-    "out": 5.0,
     "context": 1050000
    },
    "x-ai/grok-4.5": {
@@ -372,8 +342,8 @@
     "context": 131072
    },
    "tencent/hy3": {
-    "in": 0.0825,
-    "out": 0.33,
+    "in": 0.132,
+    "out": 0.528,
     "context": 262144
    },
    "poolside/laguna-xs-2.1": {
@@ -446,11 +416,6 @@
     "out": 3.4,
     "context": 262144
    },
-   "moonshotai/kimi-k2.7-code:batch": {
-    "in": 0.95,
-    "out": 4.0,
-    "context": 262144
-   },
    "~anthropic/claude-fable-latest": {
     "in": 10.0,
     "out": 50.0,
@@ -477,9 +442,9 @@
     "context": 128000
    },
    "nvidia/nemotron-3-ultra-550b-a55b": {
-    "in": 0.6,
-    "out": 3.6,
-    "context": 512288
+    "in": 0.5,
+    "out": 2.2,
+    "context": 262144
    },
    "nvidia/nemotron-3-ultra-550b-a55b:batch": {
     "in": 0.6,
@@ -652,8 +617,8 @@
     "context": 262144
    },
    "qwen/qwen3.6-27b": {
-    "in": 0.6,
-    "out": 3.6,
+    "in": 0.32,
+    "out": 3.2,
     "context": 262144
    },
    "openai/gpt-5.5-pro": {
@@ -661,19 +626,9 @@
     "out": 180.0,
     "context": 1050000
    },
-   "openai/gpt-5.5-pro:batch": {
-    "in": 15.0,
-    "out": 90.0,
-    "context": 1050000
-   },
    "openai/gpt-5.5": {
     "in": 5.0,
     "out": 30.0,
-    "context": 1050000
-   },
-   "openai/gpt-5.5:batch": {
-    "in": 2.5,
-    "out": 15.0,
     "context": 1050000
    },
    "deepseek/deepseek-v4-pro": {
@@ -682,8 +637,8 @@
     "context": 1048576
    },
    "deepseek/deepseek-v4-flash": {
-    "in": 0.07798,
-    "out": 0.15596,
+    "in": 0.088606,
+    "out": 0.177212,
     "context": 1048576
    },
    "tencent/hy3-preview": {
@@ -816,19 +771,9 @@
     "out": 1.25,
     "context": 400000
    },
-   "openai/gpt-5.4-nano:batch": {
-    "in": 0.1,
-    "out": 0.625,
-    "context": 400000
-   },
    "openai/gpt-5.4-mini": {
     "in": 0.75,
     "out": 4.5,
-    "context": 400000
-   },
-   "openai/gpt-5.4-mini:batch": {
-    "in": 0.375,
-    "out": 2.25,
     "context": 400000
    },
    "mistralai/mistral-small-2603": {
@@ -866,19 +811,9 @@
     "out": 180.0,
     "context": 1050000
    },
-   "openai/gpt-5.4-pro:batch": {
-    "in": 15.0,
-    "out": 90.0,
-    "context": 1050000
-   },
    "openai/gpt-5.4": {
     "in": 2.5,
     "out": 15.0,
-    "context": 1050000
-   },
-   "openai/gpt-5.4:batch": {
-    "in": 1.25,
-    "out": 7.5,
     "context": 1050000
    },
    "inception/mercury-2": {
@@ -1091,19 +1026,9 @@
     "out": 168.0,
     "context": 400000
    },
-   "openai/gpt-5.2-pro:batch": {
-    "in": 10.5,
-    "out": 84.0,
-    "context": 400000
-   },
    "openai/gpt-5.2": {
     "in": 1.75,
     "out": 14.0,
-    "context": 400000
-   },
-   "openai/gpt-5.2:batch": {
-    "in": 0.875,
-    "out": 7.0,
     "context": 400000
    },
    "mistralai/devstral-2512": {
@@ -1184,11 +1109,6 @@
    "openai/gpt-5.1": {
     "in": 1.25,
     "out": 10.0,
-    "context": 400000
-   },
-   "openai/gpt-5.1:batch": {
-    "in": 0.625,
-    "out": 5.0,
     "context": 400000
    },
    "openai/gpt-5.1-codex": {
@@ -1291,11 +1211,6 @@
     "out": 120.0,
     "context": 400000
    },
-   "openai/gpt-5-pro:batch": {
-    "in": 7.5,
-    "out": 60.0,
-    "context": 400000
-   },
    "z-ai/glm-4.6": {
     "in": 0.43,
     "out": 1.75,
@@ -1345,11 +1260,6 @@
     "in": 0.65,
     "out": 3.25,
     "context": 1000000
-   },
-   "openai/gpt-5-codex:batch": {
-    "in": 0.625,
-    "out": 5.0,
-    "context": 400000
    },
    "deepseek/deepseek-v3.1-terminus": {
     "in": 0.27,
@@ -1416,29 +1326,14 @@
     "out": 10.0,
     "context": 400000
    },
-   "openai/gpt-5:batch": {
-    "in": 0.625,
-    "out": 5.0,
-    "context": 400000
-   },
    "openai/gpt-5-mini": {
     "in": 0.25,
     "out": 2.0,
     "context": 400000
    },
-   "openai/gpt-5-mini:batch": {
-    "in": 0.125,
-    "out": 1.0,
-    "context": 400000
-   },
    "openai/gpt-5-nano": {
     "in": 0.05,
     "out": 0.4,
-    "context": 400000
-   },
-   "openai/gpt-5-nano:batch": {
-    "in": 0.025,
-    "out": 0.2,
     "context": 400000
    },
    "openai/gpt-oss-120b": {
@@ -1581,11 +1476,6 @@
     "out": 80.0,
     "context": 200000
    },
-   "openai/o3-pro:batch": {
-    "in": 10.0,
-    "out": 40.0,
-    "context": 200000
-   },
    "google/gemini-2.5-pro-preview": {
     "in": 1.25,
     "out": 10.0,
@@ -1656,19 +1546,9 @@
     "out": 4.4,
     "context": 200000
    },
-   "openai/o4-mini-high:batch": {
-    "in": 0.55,
-    "out": 2.2,
-    "context": 200000
-   },
    "openai/o3": {
     "in": 2.0,
     "out": 8.0,
-    "context": 200000
-   },
-   "openai/o3:batch": {
-    "in": 1.0,
-    "out": 4.0,
     "context": 200000
    },
    "openai/o4-mini": {
@@ -1676,19 +1556,9 @@
     "out": 4.4,
     "context": 200000
    },
-   "openai/o4-mini:batch": {
-    "in": 0.55,
-    "out": 2.2,
-    "context": 200000
-   },
    "openai/gpt-4.1": {
     "in": 2.0,
     "out": 8.0,
-    "context": 1047576
-   },
-   "openai/gpt-4.1:batch": {
-    "in": 1.0,
-    "out": 4.0,
     "context": 1047576
    },
    "openai/gpt-4.1-mini": {
@@ -1696,19 +1566,9 @@
     "out": 1.6,
     "context": 1047576
    },
-   "openai/gpt-4.1-mini:batch": {
-    "in": 0.2,
-    "out": 0.8,
-    "context": 1047576
-   },
    "openai/gpt-4.1-nano": {
     "in": 0.1,
     "out": 0.4,
-    "context": 1047576
-   },
-   "openai/gpt-4.1-nano:batch": {
-    "in": 0.05,
-    "out": 0.2,
     "context": 1047576
    },
    "meta-llama/llama-4-maverick": {
@@ -1729,11 +1589,6 @@
    "openai/o1-pro": {
     "in": 150.0,
     "out": 600.0,
-    "context": 200000
-   },
-   "openai/o1-pro:batch": {
-    "in": 75.0,
-    "out": 300.0,
     "context": 200000
    },
    "mistralai/mistral-small-3.1-24b-instruct": {
@@ -1796,11 +1651,6 @@
     "out": 4.4,
     "context": 200000
    },
-   "openai/o3-mini-high:batch": {
-    "in": 0.55,
-    "out": 2.2,
-    "context": 200000
-   },
    "aion-labs/aion-rp-llama-3.1-8b": {
     "in": 0.8,
     "out": 1.6,
@@ -1819,11 +1669,6 @@
    "openai/o3-mini": {
     "in": 1.1,
     "out": 4.4,
-    "context": 200000
-   },
-   "openai/o3-mini:batch": {
-    "in": 0.55,
-    "out": 2.2,
     "context": 200000
    },
    "mistralai/mistral-small-24b-instruct-2501": {
@@ -1869,11 +1714,6 @@
    "openai/o1": {
     "in": 15.0,
     "out": 60.0,
-    "context": 200000
-   },
-   "openai/o1:batch": {
-    "in": 7.5,
-    "out": 30.0,
     "context": 200000
    },
    "cohere/command-r7b-12-2024": {
@@ -1930,11 +1770,6 @@
     "in": 0.1,
     "out": 0.2,
     "context": 32768
-   },
-   "thedrummer/rocinante-12b": {
-    "in": 0.25,
-    "out": 0.5,
-    "context": 65536
    },
    "meta-llama/llama-3.2-1b-instruct": {
     "in": 0.027,
@@ -2011,11 +1846,6 @@
     "out": 0.6,
     "context": 128000
    },
-   "openai/gpt-4o-mini:batch": {
-    "in": 0.075,
-    "out": 0.3,
-    "context": 128000
-   },
    "google/gemma-2-27b-it": {
     "in": 0.65,
     "out": 0.65,
@@ -2031,11 +1861,6 @@
     "out": 15.0,
     "context": 128000
    },
-   "openai/gpt-4o:batch": {
-    "in": 1.25,
-    "out": 5.0,
-    "context": 128000
-   },
    "mistralai/mixtral-8x22b-instruct": {
     "in": 2.0,
     "out": 6.0,
@@ -2049,11 +1874,6 @@
    "openai/gpt-4-turbo": {
     "in": 10.0,
     "out": 30.0,
-    "context": 128000
-   },
-   "openai/gpt-4-turbo:batch": {
-    "in": 5.0,
-    "out": 15.0,
     "context": 128000
    },
    "anthropic/claude-3-haiku": {
@@ -2111,11 +1931,6 @@
     "out": 1.5,
     "context": 16385
    },
-   "openai/gpt-3.5-turbo:batch": {
-    "in": 0.25,
-    "out": 0.75,
-    "context": 16385
-   },
    "openai/gpt-4": {
     "in": 30.0,
     "out": 60.0,
@@ -2124,41 +1939,41 @@
   },
   "notes": "Precios públicos. Sin saldos ni claves. Zen free comparte pool común (coste 0). Go incluido en suscripción."
  },
- "chain_method": "M = modelo preferido (hy3 primero, luego ds-v4-flash por familia)\nPrioridad: Go → Zen free → OpenRouter. Cero Zen paid en toda la cadena.\nSi el primero falla, se prueba el siguiente automáticamente.\nGo y Zen free no consumen crédito de pago; OpenRouter solo en cascada de fallo.\n✅ Cadena sin Zen paid: 0 crédito de pago de Zen en cualquier escalón.",
+ "chain_method": "M = modelo preferido (hy3 primero, luego ds-v4-flash por familia)\nPrioridad: Go → Zen free → OpenRouter. Cero Zen paid en toda la cadena.\nSi el primero falla, se prueba el siguiente automáticamente.\nGo y Zen free no consumen crédito de pago; OpenRouter solo en cascada de fallo.\n⚠️ La cadena incluye Zen paid (consume crédito).",
  "chain_snapshot": {
-  "generated_at": "2026-08-28T00:40:26.207675+00:00",
-  "snapshot": "2026-08-28 00:40 UTC",
+  "generated_at": "2026-08-28T03:45:15.214178+00:00",
+  "snapshot": "2026-08-28 03:45 UTC",
   "source": "agents.defaults.model en openclaw.json (leída en build)",
   "links": [
    {
     "pos": 1,
-    "link": "opencode-go/hy3",
+    "link": "opencode-go/deepseek-v4-flash",
     "role": "Principal — Go (suscripción, sin coste adicional)"
    },
    {
     "pos": 2,
-    "link": "opencode-zen/hy3-free",
+    "link": "opencode-zen/deepseek-v4-flash-free",
     "role": "Respaldo 1 — Zen free (pool común, coste 0)"
    },
    {
     "pos": 3,
-    "link": "opencode-go/deepseek-v4-flash",
-    "role": "Respaldo 2 — Go (suscripción, sin coste adicional)"
+    "link": "openrouter/deepseek/deepseek-v4-flash",
+    "role": "Respaldo 2 — OpenRouter (pago, solo si fallan los anteriores)"
    },
    {
     "pos": 4,
-    "link": "opencode-zen/deepseek-v4-flash-free",
-    "role": "Respaldo 3 — Zen free (pool común, coste 0)"
+    "link": "opencode-zen/deepseek-v4-flash",
+    "role": "Respaldo 3 — Zen paid (créditos)"
    },
    {
     "pos": 5,
-    "link": "openrouter/tencent/hy3",
+    "link": "openrouter/deepseek/deepseek-v4-pro",
     "role": "Respaldo 4 — OpenRouter (pago, solo si fallan los anteriores)"
    },
    {
     "pos": 6,
-    "link": "openrouter/deepseek/deepseek-v4-flash",
-    "role": "Respaldo 5 — OpenRouter (pago, solo si fallan los anteriores)"
+    "link": "opencode-zen/deepseek-v4-pro",
+    "role": "Respaldo 5 — Zen paid (créditos)"
    }
   ]
  },
@@ -2637,8 +2452,8 @@
    },
    "or_id": "deepseek/deepseek-v4-flash",
    "or_price": {
-    "in": 0.07798,
-    "out": 0.15596,
+    "in": 0.088606,
+    "out": 0.177212,
     "context": 1048576
    },
    "tier": "paid",
@@ -2670,8 +2485,8 @@
    },
    "or_id": "deepseek/deepseek-v4-flash",
    "or_price": {
-    "in": 0.07798,
-    "out": 0.15596,
+    "in": 0.088606,
+    "out": 0.177212,
     "context": 1048576
    },
    "tier": "free",
@@ -3906,8 +3721,8 @@
    },
    "or_id": "tencent/hy3",
    "or_price": {
-    "in": 0.0825,
-    "out": 0.33,
+    "in": 0.132,
+    "out": 0.528,
     "context": 262144
    },
    "tier": "go",
@@ -4544,9 +4359,9 @@
    },
    "or_id": "nvidia/nemotron-3-ultra-550b-a55b",
    "or_price": {
-    "in": 0.6,
-    "out": 3.6,
-    "context": 512288
+    "in": 0.5,
+    "out": 2.2,
+    "context": 262144
    },
    "tier": "free",
    "name": "Nemotron 3 Ultra 550B A55B",
@@ -4586,8 +4401,8 @@
    },
    "or_id": "nvidia/nemotron-3.5-lightning",
    "or_price": {
-    "in": 0.08,
-    "out": 0.2,
+    "in": 0.1,
+    "out": 0.25,
     "context": 262144
    },
    "tier": "free",
