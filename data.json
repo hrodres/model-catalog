@@ -1,16 +1,16 @@
 {
- "generated": "2026-08-28T15:14:19.228160+00:00",
- "snapshot": "2026-08-28 15:14 UTC",
+ "generated": "2026-08-28T17:26:36.895984+00:00",
+ "snapshot": "2026-08-28 17:26 UTC",
  "providers_3rd": [
   "opencode-go",
   "opencode-zen",
   "openrouter"
  ],
- "modelsdev_fetched": "2026-08-28 15:14 UTC",
- "modelsdev_count": 362,
+ "modelsdev_fetched": "2026-08-28 17:26 UTC",
+ "modelsdev_count": 363,
  "price_matrix": {
   "currency": "USD",
-  "fetched": "2026-08-28T11:45:03.929236+00:00",
+  "fetched": "2026-08-28T17:26:29.499770+00:00",
   "sources": {
    "zen_paid": "precios de cuenta opencode-zen (off-peak / peak)",
    "openrouter": "precios reales API OpenRouter (cache or-models-cache.json)"
@@ -77,9 +77,9 @@
     "context": 8192
    },
    "~z-ai/glm-latest": {
-    "in": 1.4,
+    "in": 1.25,
     "out": 4.4,
-    "context": 1048576
+    "context": 1310720
    },
    "tencent/hy-mt2-7b": {
     "in": 0.074,
@@ -89,7 +89,7 @@
    "z-ai/glm-5.3": {
     "in": 1.4,
     "out": 4.4,
-    "context": 1048576
+    "context": 1310720
    },
    "qwen/qwen3.8-27b": {
     "in": 0.425,
@@ -120,6 +120,11 @@
     "in": 2.0,
     "out": 6.0,
     "context": 1048576
+   },
+   "qwen/qwen3.8-2.4t-a95b:batch": {
+    "in": 2.0,
+    "out": 6.0,
+    "context": 1010000
    },
    "bytedance-seed/seed-2.0-code": {
     "in": 0.5,
@@ -182,8 +187,8 @@
     "context": 1310720
    },
    "deepseek/deepseek-v4-flash-0731": {
-    "in": 0.07,
-    "out": 0.14,
+    "in": 0.06,
+    "out": 0.12,
     "context": 1310720
    },
    "thinkingmachines/inkling-small": {
@@ -347,8 +352,8 @@
     "context": 131072
    },
    "tencent/hy3": {
-    "in": 0.132,
-    "out": 0.528,
+    "in": 0.0825,
+    "out": 0.33,
     "context": 262144
    },
    "poolside/laguna-xs-2.1": {
@@ -642,13 +647,13 @@
     "context": 1050000
    },
    "deepseek/deepseek-v4-pro": {
-    "in": 0.87,
-    "out": 1.74,
+    "in": 0.761946,
+    "out": 1.523892,
     "context": 1048576
    },
    "deepseek/deepseek-v4-flash": {
-    "in": 0.088606,
-    "out": 0.177212,
+    "in": 0.0868,
+    "out": 0.1736,
     "context": 1048576
    },
    "tencent/hy3-preview": {
@@ -1164,7 +1169,7 @@
    "mistralai/voxtral-small-24b-2507": {
     "in": 0.1,
     "out": 0.3,
-    "context": 32000
+    "context": 32768
    },
    "openai/gpt-oss-safeguard-20b": {
     "in": 0.075,
@@ -1974,41 +1979,41 @@
   },
   "notes": "Precios públicos. Sin saldos ni claves. Zen free comparte pool común (coste 0). Go incluido en suscripción."
  },
- "chain_method": "Modelo primario: opencode-go/deepseek-v4-flash.\nSi el primero falla, se prueba el siguiente automáticamente (cascada de respaldo).\nCadena activa: 1 Go · 1 Zen free · 2 Zen paid · 2 OpenRouter (leída de agents.defaults.model).\n⚠️ La cadena incluye Zen paid (consumen crédito de pago) en: opencode-zen/deepseek-v4-flash, opencode-zen/deepseek-v4-pro.\nGo y Zen free no consumen crédito de pago; OpenRouter solo en cascada de fallo.",
+ "chain_method": "Modelo primario: opencode-go/hy3.\nSi el primero falla, se prueba el siguiente automáticamente (cascada de respaldo).\nCadena activa: 2 Go · 2 Zen free · 0 Zen paid · 2 OpenRouter (leída de agents.defaults.model).\n✅ Cadena sin Zen paid: 0 crédito de pago de Zen en cualquier escalón.\nGo y Zen free no consumen crédito de pago; OpenRouter solo en cascada de fallo.",
  "chain_snapshot": {
-  "generated_at": "2026-08-28T15:14:19.227869+00:00",
-  "snapshot": "2026-08-28 15:14 UTC",
+  "generated_at": "2026-08-28T17:26:36.895703+00:00",
+  "snapshot": "2026-08-28 17:26 UTC",
   "source": "agents.defaults.model en openclaw.json (leída en build)",
   "links": [
    {
     "pos": 1,
-    "link": "opencode-go/deepseek-v4-flash",
+    "link": "opencode-go/hy3",
     "role": "Principal — Go (suscripción, sin coste adicional)"
    },
    {
     "pos": 2,
-    "link": "opencode-zen/deepseek-v4-flash-free",
+    "link": "opencode-zen/hy3-free",
     "role": "Respaldo 1 — Zen free (pool común, coste 0)"
    },
    {
     "pos": 3,
-    "link": "openrouter/deepseek/deepseek-v4-flash",
-    "role": "Respaldo 2 — OpenRouter (pago, solo si fallan los anteriores)"
+    "link": "opencode-go/deepseek-v4-flash",
+    "role": "Respaldo 2 — Go (suscripción, sin coste adicional)"
    },
    {
     "pos": 4,
-    "link": "opencode-zen/deepseek-v4-flash",
-    "role": "Respaldo 3 — Zen paid (créditos)"
+    "link": "opencode-zen/deepseek-v4-flash-free",
+    "role": "Respaldo 3 — Zen free (pool común, coste 0)"
    },
    {
     "pos": 5,
-    "link": "openrouter/deepseek/deepseek-v4-pro",
+    "link": "openrouter/tencent/hy3",
     "role": "Respaldo 4 — OpenRouter (pago, solo si fallan los anteriores)"
    },
    {
     "pos": 6,
-    "link": "opencode-zen/deepseek-v4-pro",
-    "role": "Respaldo 5 — Zen paid (créditos)"
+    "link": "openrouter/deepseek/deepseek-v4-flash",
+    "role": "Respaldo 5 — OpenRouter (pago, solo si fallan los anteriores)"
    }
   ]
  },
@@ -2487,8 +2492,8 @@
    },
    "or_id": "deepseek/deepseek-v4-flash",
    "or_price": {
-    "in": 0.088606,
-    "out": 0.177212,
+    "in": 0.0868,
+    "out": 0.1736,
     "context": 1048576
    },
    "tier": "paid",
@@ -2520,8 +2525,8 @@
    },
    "or_id": "deepseek/deepseek-v4-flash",
    "or_price": {
-    "in": 0.088606,
-    "out": 0.177212,
+    "in": 0.0868,
+    "out": 0.1736,
     "context": 1048576
    },
    "tier": "free",
@@ -2580,8 +2585,8 @@
    },
    "or_id": "deepseek/deepseek-v4-pro",
    "or_price": {
-    "in": 0.87,
-    "out": 1.74,
+    "in": 0.761946,
+    "out": 1.523892,
     "context": 1048576
    },
    "tier": "paid",
@@ -3756,8 +3761,8 @@
    },
    "or_id": "tencent/hy3",
    "or_price": {
-    "in": 0.132,
-    "out": 0.528,
+    "in": 0.0825,
+    "out": 0.33,
     "context": 262144
    },
    "tier": "go",
