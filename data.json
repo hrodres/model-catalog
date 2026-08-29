@@ -1,12 +1,12 @@
 {
- "generated": "2026-08-29T19:45:15.100917+00:00",
- "snapshot": "2026-08-29 19:45 UTC",
+ "generated": "2026-08-29T20:00:05.561040+00:00",
+ "snapshot": "2026-08-29 20:00 UTC",
  "providers_3rd": [
   "opencode-go",
   "opencode-zen",
   "openrouter"
  ],
- "modelsdev_fetched": "2026-08-29 19:45 UTC",
+ "modelsdev_fetched": "2026-08-29 20:00 UTC",
  "modelsdev_count": 363,
  "price_matrix": {
   "currency": "USD",
@@ -2021,8 +2021,8 @@
  },
  "chain_method": "Modelo primario: opencode-go/hy3.\nSi el primero falla, se prueba el siguiente automáticamente (cascada de respaldo).\nCadena activa: 2 Go · 2 Zen free · 0 Zen paid · 2 OpenRouter (leída de agents.defaults.model).\n✅ Cadena sin Zen paid: 0 crédito de pago de Zen en cualquier escalón.\nGo y Zen free no consumen crédito de pago; OpenRouter solo en cascada de fallo.",
  "chain_snapshot": {
-  "generated_at": "2026-08-29T19:45:15.100634+00:00",
-  "snapshot": "2026-08-29 19:45 UTC",
+  "generated_at": "2026-08-29T20:00:05.560731+00:00",
+  "snapshot": "2026-08-29 20:00 UTC",
   "source": "agents.defaults.model en openclaw.json (leída en build)",
   "links": [
    {
@@ -2059,27 +2059,27 @@
  },
  "status_badges": {
   "go_quota": {
-   "badge": "✅ Cuota Go OK (Continuo 0% (reinicia 4m) · Semanal 58% (reinicia 35h 59m) · Mensual 28% (reinicia 620h 20m))",
+   "badge": "✅ Cuota Go OK (Continuo 0% (reinicia 4h 19m) · Semanal 58% (reinicia 28h 14m) · Mensual 28% (reinicia 612h 35m))",
    "nivel": "ok",
    "source": "api",
    "buckets": {
     "rolling": {
      "percent": 0,
      "status": "ok",
-     "resets_at": "2026-08-29T12:05:04.554Z",
-     "resets_in_human": "4m"
+     "resets_at": "2026-08-30T00:05:04.526Z",
+     "resets_in_human": "4h 19m"
     },
     "weekly": {
      "percent": 58,
      "status": "ok",
-     "resets_at": "2026-08-31T00:00:00.554Z",
-     "resets_in_human": "35h 59m"
+     "resets_at": "2026-08-31T00:00:00.526Z",
+     "resets_in_human": "28h 14m"
     },
     "monthly": {
      "percent": 28,
      "status": "ok",
-     "resets_at": "2026-09-24T08:20:30.554Z",
-     "resets_in_human": "620h 20m"
+     "resets_at": "2026-09-24T08:20:30.526Z",
+     "resets_in_human": "612h 35m"
     }
    }
   },
@@ -2092,8 +2092,8 @@
    "opencode-go": {
     "enabled": 1,
     "probed": {
-     "ok": 23,
-     "down": 5,
+     "ok": 25,
+     "down": 3,
      "na": 2,
      "indisponible": 1,
      "unk": 2
