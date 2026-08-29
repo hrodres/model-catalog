@@ -1,5 +1,5 @@
 {
- "generated": "2026-08-29T03:46:16.247762+00:00",
+ "generated": "2026-08-29T04:01:22.289362+00:00",
  "snapshot": "2026-08-29",
  "note": "200=ok · 429/402=cuota · 5xx/timeout=down · 400 unavailable=indisponible · 401/403=na · free=no probado (cuota)",
  "counts": {
@@ -16,700 +16,700 @@
    "code": 200,
    "status": "ok",
    "detail": "HTTP 200",
-   "checked_at": "2026-08-29T03:45:17.450547+00:00",
+   "checked_at": "2026-08-29T04:00:06.815365+00:00",
    "fails": 0
   },
   "opencode-go/deepseek-v4-flash-vision-exp": {
    "code": 200,
    "status": "ok",
    "detail": "HTTP 200",
-   "checked_at": "2026-08-29T03:45:18.505952+00:00",
+   "checked_at": "2026-08-29T04:00:08.057681+00:00",
    "fails": 0
   },
   "opencode-go/deepseek-v4-pro": {
    "code": 200,
    "status": "ok",
    "detail": "HTTP 200",
-   "checked_at": "2026-08-29T03:45:20.004048+00:00",
+   "checked_at": "2026-08-29T04:00:09.822757+00:00",
    "fails": 0
   },
   "opencode-go/glm-5": {
    "code": 200,
    "status": "ok",
    "detail": "HTTP 200",
-   "checked_at": "2026-08-29T03:45:20.897701+00:00",
+   "checked_at": "2026-08-29T04:00:10.624847+00:00",
    "fails": 0
   },
   "opencode-go/glm-5.1": {
    "code": 200,
    "status": "ok",
    "detail": "HTTP 200",
-   "checked_at": "2026-08-29T03:45:21.729902+00:00",
+   "checked_at": "2026-08-29T04:00:11.409848+00:00",
    "fails": 0
   },
   "opencode-go/glm-5.2": {
    "code": 200,
    "status": "ok",
    "detail": "HTTP 200",
-   "checked_at": "2026-08-29T03:45:22.562385+00:00",
+   "checked_at": "2026-08-29T04:00:12.191779+00:00",
    "fails": 0
   },
   "opencode-go/glm-5.3": {
    "code": 200,
    "status": "ok",
    "detail": "HTTP 200",
-   "checked_at": "2026-08-29T03:45:23.950618+00:00",
+   "checked_at": "2026-08-29T04:00:14.544978+00:00",
    "fails": 0
   },
   "opencode-go/glm-5.3-flash": {
    "code": 200,
    "status": "ok",
    "detail": "HTTP 200",
-   "checked_at": "2026-08-29T03:45:25.459054+00:00",
+   "checked_at": "2026-08-29T04:00:15.829738+00:00",
    "fails": 0
   },
   "opencode-go/gpt-5.6-luna": {
    "code": 500,
    "status": "down",
    "detail": "HTTP 500",
-   "checked_at": "2026-08-29T03:45:25.861421+00:00",
-   "fails": 35
+   "checked_at": "2026-08-29T04:00:16.248351+00:00",
+   "fails": 36
   },
   "opencode-go/grok-4.5": {
    "code": 503,
    "status": "down",
    "detail": "HTTP 503",
-   "checked_at": "2026-08-29T03:45:26.405092+00:00",
-   "fails": 35
+   "checked_at": "2026-08-29T04:00:16.769445+00:00",
+   "fails": 36
   },
   "opencode-go/grok-4.6": {
    "code": 401,
    "status": "na",
    "detail": "HTTP 401: no accesible con tu plan/key",
-   "checked_at": "2026-08-29T03:45:26.837684+00:00",
+   "checked_at": "2026-08-29T04:00:17.158964+00:00",
    "fails": 0
   },
   "opencode-go/hy3": {
    "code": 200,
    "status": "ok",
    "detail": "HTTP 200",
-   "checked_at": "2026-08-29T03:45:28.510306+00:00",
+   "checked_at": "2026-08-29T04:00:19.002776+00:00",
    "fails": 0
   },
   "opencode-go/hy3-preview": {
    "code": 400,
    "status": "indisponible",
    "detail": "HTTP 400: modelo no disponible/deshabilitado",
-   "checked_at": "2026-08-29T03:45:29.478692+00:00",
+   "checked_at": "2026-08-29T04:00:19.999705+00:00",
    "fails": 0
   },
   "opencode-go/hy4-preview": {
    "code": 200,
    "status": "ok",
    "detail": "HTTP 200",
-   "checked_at": "2026-08-29T03:45:31.066023+00:00",
+   "checked_at": "2026-08-29T04:00:21.627473+00:00",
    "fails": 0
   },
   "opencode-go/kimi-k2.5": {
    "code": 200,
    "status": "ok",
    "detail": "HTTP 200",
-   "checked_at": "2026-08-29T03:45:32.280659+00:00",
+   "checked_at": "2026-08-29T04:00:22.798368+00:00",
    "fails": 0
   },
   "opencode-go/kimi-k2.6": {
    "code": 200,
    "status": "ok",
    "detail": "HTTP 200",
-   "checked_at": "2026-08-29T03:45:33.438863+00:00",
+   "checked_at": "2026-08-29T04:00:24.829136+00:00",
    "fails": 0
   },
   "opencode-go/kimi-k2.7-code": {
    "code": 200,
    "status": "ok",
    "detail": "HTTP 200",
-   "checked_at": "2026-08-29T03:45:35.315383+00:00",
+   "checked_at": "2026-08-29T04:00:26.018479+00:00",
    "fails": 0
   },
   "opencode-go/kimi-k3": {
    "code": 200,
    "status": "ok",
    "detail": "HTTP 200",
-   "checked_at": "2026-08-29T03:45:37.264936+00:00",
+   "checked_at": "2026-08-29T04:00:28.325424+00:00",
    "fails": 0
   },
   "opencode-go/longcat-2.0": {
    "code": 200,
    "status": "ok",
    "detail": "HTTP 200",
-   "checked_at": "2026-08-29T03:45:39.008290+00:00",
+   "checked_at": "2026-08-29T04:00:35.583379+00:00",
    "fails": 0
   },
   "opencode-go/mimo-v2-omni": {
    "code": 400,
    "status": "unk",
    "detail": "HTTP 400: no responde al probe estándar",
-   "checked_at": "2026-08-29T03:45:40.583088+00:00",
+   "checked_at": "2026-08-29T04:00:37.065032+00:00",
    "fails": 0
   },
   "opencode-go/mimo-v2-pro": {
    "code": 400,
    "status": "unk",
    "detail": "HTTP 400: no responde al probe estándar",
-   "checked_at": "2026-08-29T03:45:42.468836+00:00",
+   "checked_at": "2026-08-29T04:00:38.897843+00:00",
    "fails": 0
   },
   "opencode-go/mimo-v2.5": {
    "code": 200,
    "status": "ok",
    "detail": "HTTP 200",
-   "checked_at": "2026-08-29T03:45:44.401809+00:00",
+   "checked_at": "2026-08-29T04:00:47.062590+00:00",
    "fails": 0
   },
   "opencode-go/mimo-v2.5-pro": {
    "code": 200,
    "status": "ok",
    "detail": "HTTP 200",
-   "checked_at": "2026-08-29T03:45:46.113397+00:00",
+   "checked_at": "2026-08-29T04:00:50.689469+00:00",
    "fails": 0
   },
   "opencode-go/minimax-m2.5": {
    "code": 200,
    "status": "ok",
    "detail": "HTTP 200",
-   "checked_at": "2026-08-29T03:45:47.394350+00:00",
+   "checked_at": "2026-08-29T04:00:51.972596+00:00",
    "fails": 0
   },
   "opencode-go/minimax-m2.7": {
    "code": 500,
    "status": "down",
    "detail": "HTTP 500",
-   "checked_at": "2026-08-29T03:45:47.847846+00:00",
-   "fails": 35
+   "checked_at": "2026-08-29T04:00:52.401900+00:00",
+   "fails": 36
   },
   "opencode-go/minimax-m3": {
    "code": 200,
    "status": "ok",
    "detail": "HTTP 200",
-   "checked_at": "2026-08-29T03:45:49.089263+00:00",
+   "checked_at": "2026-08-29T04:00:53.864100+00:00",
    "fails": 0
   },
   "opencode-go/muse-spark-1.2-contributor": {
    "code": 403,
    "status": "na",
    "detail": "HTTP 403: no accesible con tu plan/key",
-   "checked_at": "2026-08-29T03:45:49.509685+00:00",
+   "checked_at": "2026-08-29T04:00:54.281532+00:00",
    "fails": 0
   },
   "opencode-go/qwen3.5-plus": {
    "code": null,
    "status": "down",
    "detail": "ERR The read operation timed out",
-   "checked_at": "2026-08-29T03:45:57.747035+00:00",
-   "fails": 1
+   "checked_at": "2026-08-29T04:01:02.525547+00:00",
+   "fails": 2
   },
   "opencode-go/qwen3.6-plus": {
    "code": 200,
    "status": "ok",
    "detail": "HTTP 200",
-   "checked_at": "2026-08-29T03:46:02.084101+00:00",
+   "checked_at": "2026-08-29T04:01:07.353939+00:00",
    "fails": 0
   },
   "opencode-go/qwen3.7-max": {
    "code": 200,
    "status": "ok",
    "detail": "HTTP 200",
-   "checked_at": "2026-08-29T03:46:07.264319+00:00",
+   "checked_at": "2026-08-29T04:01:13.400866+00:00",
    "fails": 0
   },
   "opencode-go/qwen3.7-plus": {
    "code": 200,
    "status": "ok",
    "detail": "HTTP 200",
-   "checked_at": "2026-08-29T03:46:12.638707+00:00",
+   "checked_at": "2026-08-29T04:01:18.687540+00:00",
    "fails": 0
   },
   "opencode-go/qwen3.8-flash": {
    "code": 200,
    "status": "ok",
    "detail": "HTTP 200",
-   "checked_at": "2026-08-29T03:46:14.066336+00:00",
+   "checked_at": "2026-08-29T04:01:20.087464+00:00",
    "fails": 0
   },
   "opencode-go/qwen3.8-max": {
    "code": 200,
    "status": "ok",
    "detail": "HTTP 200",
-   "checked_at": "2026-08-29T03:46:16.246247+00:00",
+   "checked_at": "2026-08-29T04:01:22.287831+00:00",
    "fails": 0
   },
   "opencode-zen/big-pickle": {
    "code": null,
    "status": "free",
    "detail": "no probado (protección cuota global free 100 req/día)",
-   "checked_at": "2026-08-29T03:46:16.246310+00:00",
+   "checked_at": "2026-08-29T04:01:22.287904+00:00",
    "fails": 0
   },
   "opencode-zen/claude-opus-5": {
    "code": null,
    "status": "free",
    "detail": "no probado (protección cuota global free 100 req/día)",
-   "checked_at": "2026-08-29T03:46:16.246315+00:00",
+   "checked_at": "2026-08-29T04:01:22.287910+00:00",
    "fails": 0
   },
   "opencode-zen/deepseek-v4-flash-free": {
    "code": null,
    "status": "free",
    "detail": "no probado (protección cuota global free 100 req/día)",
-   "checked_at": "2026-08-29T03:46:16.246318+00:00",
+   "checked_at": "2026-08-29T04:01:22.287913+00:00",
    "fails": 0
   },
   "opencode-zen/gemini-3.5-flash-lite": {
    "code": null,
    "status": "free",
    "detail": "no probado (protección cuota global free 100 req/día)",
-   "checked_at": "2026-08-29T03:46:16.246321+00:00",
+   "checked_at": "2026-08-29T04:01:22.287916+00:00",
    "fails": 0
   },
   "opencode-zen/gemini-3.6-flash": {
    "code": null,
    "status": "free",
    "detail": "no probado (protección cuota global free 100 req/día)",
-   "checked_at": "2026-08-29T03:46:16.246323+00:00",
+   "checked_at": "2026-08-29T04:01:22.287918+00:00",
    "fails": 0
   },
   "opencode-zen/gemini-3.7-flash": {
    "code": null,
    "status": "free",
    "detail": "no probado (protección cuota global free 100 req/día)",
-   "checked_at": "2026-08-29T03:46:16.246325+00:00",
+   "checked_at": "2026-08-29T04:01:22.287921+00:00",
    "fails": 0
   },
   "opencode-zen/gpt-5.6-luna": {
    "code": null,
    "status": "free",
    "detail": "no probado (protección cuota global free 100 req/día)",
-   "checked_at": "2026-08-29T03:46:16.246327+00:00",
+   "checked_at": "2026-08-29T04:01:22.287923+00:00",
    "fails": 0
   },
   "opencode-zen/gpt-5.6-sol": {
    "code": null,
    "status": "free",
    "detail": "no probado (protección cuota global free 100 req/día)",
-   "checked_at": "2026-08-29T03:46:16.246329+00:00",
+   "checked_at": "2026-08-29T04:01:22.287925+00:00",
    "fails": 0
   },
   "opencode-zen/gpt-5.6-terra": {
    "code": null,
    "status": "free",
    "detail": "no probado (protección cuota global free 100 req/día)",
-   "checked_at": "2026-08-29T03:46:16.246331+00:00",
+   "checked_at": "2026-08-29T04:01:22.287932+00:00",
    "fails": 0
   },
   "opencode-zen/grok-4.5": {
    "code": null,
    "status": "free",
    "detail": "no probado (protección cuota global free 100 req/día)",
-   "checked_at": "2026-08-29T03:46:16.246334+00:00",
+   "checked_at": "2026-08-29T04:01:22.287934+00:00",
    "fails": 0
   },
   "opencode-zen/grok-4.6": {
    "code": null,
    "status": "free",
    "detail": "no probado (protección cuota global free 100 req/día)",
-   "checked_at": "2026-08-29T03:46:16.246347+00:00",
+   "checked_at": "2026-08-29T04:01:22.287938+00:00",
    "fails": 0
   },
   "opencode-zen/hy3-free": {
    "code": null,
    "status": "free",
    "detail": "no probado (protección cuota global free 100 req/día)",
-   "checked_at": "2026-08-29T03:46:16.246349+00:00",
+   "checked_at": "2026-08-29T04:01:22.287940+00:00",
    "fails": 0
   },
   "opencode-zen/kimi-k3": {
    "code": null,
    "status": "free",
    "detail": "no probado (protección cuota global free 100 req/día)",
-   "checked_at": "2026-08-29T03:46:16.246352+00:00",
+   "checked_at": "2026-08-29T04:01:22.287943+00:00",
    "fails": 0
   },
   "opencode-zen/laguna-s-2.1-free": {
    "code": null,
    "status": "free",
    "detail": "no probado (protección cuota global free 100 req/día)",
-   "checked_at": "2026-08-29T03:46:16.246354+00:00",
+   "checked_at": "2026-08-29T04:01:22.287945+00:00",
    "fails": 0
   },
   "opencode-zen/ling-3.0-flash-fin-free": {
    "code": null,
    "status": "free",
    "detail": "no probado (protección cuota global free 100 req/día)",
-   "checked_at": "2026-08-29T03:46:16.246356+00:00",
+   "checked_at": "2026-08-29T04:01:22.287947+00:00",
    "fails": 0
   },
   "opencode-zen/mimo-v2.5-free": {
    "code": null,
    "status": "free",
    "detail": "no probado (protección cuota global free 100 req/día)",
-   "checked_at": "2026-08-29T03:46:16.246358+00:00",
+   "checked_at": "2026-08-29T04:01:22.287949+00:00",
    "fails": 0
   },
   "opencode-zen/muse-spark-1.2": {
    "code": null,
    "status": "free",
    "detail": "no probado (protección cuota global free 100 req/día)",
-   "checked_at": "2026-08-29T03:46:16.246361+00:00",
+   "checked_at": "2026-08-29T04:01:22.287951+00:00",
    "fails": 0
   },
   "opencode-zen/muse-spark-1.2-contributor-free": {
    "code": null,
    "status": "free",
    "detail": "no probado (protección cuota global free 100 req/día)",
-   "checked_at": "2026-08-29T03:46:16.246364+00:00",
+   "checked_at": "2026-08-29T04:01:22.287953+00:00",
    "fails": 0
   },
   "opencode-zen/nemotron-3-ultra-free": {
    "code": null,
    "status": "free",
    "detail": "no probado (protección cuota global free 100 req/día)",
-   "checked_at": "2026-08-29T03:46:16.246368+00:00",
+   "checked_at": "2026-08-29T04:01:22.287955+00:00",
    "fails": 0
   },
   "opencode-zen/nemotron-3.5-lightning-free": {
    "code": null,
    "status": "free",
    "detail": "no probado (protección cuota global free 100 req/día)",
-   "checked_at": "2026-08-29T03:46:16.246370+00:00",
+   "checked_at": "2026-08-29T04:01:22.287957+00:00",
    "fails": 0
   },
   "opencode-zen/claude-fable-5": {
    "code": null,
    "status": "noprobe",
    "detail": "no probeado (ahorro de crédito: usa Go para salud en vivo)",
-   "checked_at": "2026-08-29T03:46:16.246374+00:00",
+   "checked_at": "2026-08-29T04:01:22.287961+00:00",
    "fails": 0
   },
   "opencode-zen/claude-haiku-4-5": {
    "code": null,
    "status": "noprobe",
    "detail": "no probeado (ahorro de crédito: usa Go para salud en vivo)",
-   "checked_at": "2026-08-29T03:46:16.246376+00:00",
+   "checked_at": "2026-08-29T04:01:22.287964+00:00",
    "fails": 0
   },
   "opencode-zen/claude-opus-4-5": {
    "code": null,
    "status": "noprobe",
    "detail": "no probeado (ahorro de crédito: usa Go para salud en vivo)",
-   "checked_at": "2026-08-29T03:46:16.246378+00:00",
+   "checked_at": "2026-08-29T04:01:22.287966+00:00",
    "fails": 0
   },
   "opencode-zen/claude-opus-4-6": {
    "code": null,
    "status": "noprobe",
    "detail": "no probeado (ahorro de crédito: usa Go para salud en vivo)",
-   "checked_at": "2026-08-29T03:46:16.246380+00:00",
+   "checked_at": "2026-08-29T04:01:22.287968+00:00",
    "fails": 0
   },
   "opencode-zen/claude-opus-4-7": {
    "code": null,
    "status": "noprobe",
    "detail": "no probeado (ahorro de crédito: usa Go para salud en vivo)",
-   "checked_at": "2026-08-29T03:46:16.246383+00:00",
+   "checked_at": "2026-08-29T04:01:22.287970+00:00",
    "fails": 0
   },
   "opencode-zen/claude-opus-4-8": {
    "code": null,
    "status": "noprobe",
    "detail": "no probeado (ahorro de crédito: usa Go para salud en vivo)",
-   "checked_at": "2026-08-29T03:46:16.246385+00:00",
+   "checked_at": "2026-08-29T04:01:22.287973+00:00",
    "fails": 0
   },
   "opencode-zen/claude-sonnet-4": {
    "code": null,
    "status": "noprobe",
    "detail": "no probeado (ahorro de crédito: usa Go para salud en vivo)",
-   "checked_at": "2026-08-29T03:46:16.246387+00:00",
+   "checked_at": "2026-08-29T04:01:22.287975+00:00",
    "fails": 0
   },
   "opencode-zen/claude-sonnet-4-5": {
    "code": null,
    "status": "noprobe",
    "detail": "no probeado (ahorro de crédito: usa Go para salud en vivo)",
-   "checked_at": "2026-08-29T03:46:16.246389+00:00",
+   "checked_at": "2026-08-29T04:01:22.287977+00:00",
    "fails": 0
   },
   "opencode-zen/claude-sonnet-4-6": {
    "code": null,
    "status": "noprobe",
    "detail": "no probeado (ahorro de crédito: usa Go para salud en vivo)",
-   "checked_at": "2026-08-29T03:46:16.246391+00:00",
+   "checked_at": "2026-08-29T04:01:22.287979+00:00",
    "fails": 0
   },
   "opencode-zen/claude-sonnet-5": {
    "code": null,
    "status": "noprobe",
    "detail": "no probeado (ahorro de crédito: usa Go para salud en vivo)",
-   "checked_at": "2026-08-29T03:46:16.246393+00:00",
+   "checked_at": "2026-08-29T04:01:22.287981+00:00",
    "fails": 0
   },
   "opencode-zen/deepseek-v4-flash": {
    "code": null,
    "status": "noprobe",
    "detail": "no probeado (ahorro de crédito: usa Go para salud en vivo)",
-   "checked_at": "2026-08-29T03:46:16.246395+00:00",
+   "checked_at": "2026-08-29T04:01:22.287983+00:00",
    "fails": 0
   },
   "opencode-zen/deepseek-v4-pro": {
    "code": null,
    "status": "noprobe",
    "detail": "no probeado (ahorro de crédito: usa Go para salud en vivo)",
-   "checked_at": "2026-08-29T03:46:16.246398+00:00",
+   "checked_at": "2026-08-29T04:01:22.287985+00:00",
    "fails": 0
   },
   "opencode-zen/gemini-3-flash": {
    "code": null,
    "status": "noprobe",
    "detail": "no probeado (ahorro de crédito: usa Go para salud en vivo)",
-   "checked_at": "2026-08-29T03:46:16.246400+00:00",
+   "checked_at": "2026-08-29T04:01:22.287987+00:00",
    "fails": 0
   },
   "opencode-zen/gemini-3.1-pro": {
    "code": null,
    "status": "noprobe",
    "detail": "no probeado (ahorro de crédito: usa Go para salud en vivo)",
-   "checked_at": "2026-08-29T03:46:16.246413+00:00",
+   "checked_at": "2026-08-29T04:01:22.287989+00:00",
    "fails": 0
   },
   "opencode-zen/gemini-3.5-flash": {
    "code": null,
    "status": "noprobe",
    "detail": "no probeado (ahorro de crédito: usa Go para salud en vivo)",
-   "checked_at": "2026-08-29T03:46:16.246417+00:00",
+   "checked_at": "2026-08-29T04:01:22.287991+00:00",
    "fails": 0
   },
   "opencode-zen/glm-5": {
    "code": null,
    "status": "noprobe",
    "detail": "no probeado (ahorro de crédito: usa Go para salud en vivo)",
-   "checked_at": "2026-08-29T03:46:16.246420+00:00",
+   "checked_at": "2026-08-29T04:01:22.287993+00:00",
    "fails": 0
   },
   "opencode-zen/glm-5.1": {
    "code": null,
    "status": "noprobe",
    "detail": "no probeado (ahorro de crédito: usa Go para salud en vivo)",
-   "checked_at": "2026-08-29T03:46:16.246424+00:00",
+   "checked_at": "2026-08-29T04:01:22.287995+00:00",
    "fails": 0
   },
   "opencode-zen/glm-5.2": {
    "code": null,
    "status": "noprobe",
    "detail": "no probeado (ahorro de crédito: usa Go para salud en vivo)",
-   "checked_at": "2026-08-29T03:46:16.246426+00:00",
+   "checked_at": "2026-08-29T04:01:22.287998+00:00",
    "fails": 0
   },
   "opencode-zen/gpt-5": {
    "code": null,
    "status": "noprobe",
    "detail": "no probeado (ahorro de crédito: usa Go para salud en vivo)",
-   "checked_at": "2026-08-29T03:46:16.246429+00:00",
+   "checked_at": "2026-08-29T04:01:22.288000+00:00",
    "fails": 0
   },
   "opencode-zen/gpt-5-codex": {
    "code": null,
    "status": "noprobe",
    "detail": "no probeado (ahorro de crédito: usa Go para salud en vivo)",
-   "checked_at": "2026-08-29T03:46:16.246431+00:00",
+   "checked_at": "2026-08-29T04:01:22.288004+00:00",
    "fails": 0
   },
   "opencode-zen/gpt-5-nano": {
    "code": null,
    "status": "noprobe",
    "detail": "no probeado (ahorro de crédito: usa Go para salud en vivo)",
-   "checked_at": "2026-08-29T03:46:16.246450+00:00",
+   "checked_at": "2026-08-29T04:01:22.288007+00:00",
    "fails": 0
   },
   "opencode-zen/gpt-5.1": {
    "code": null,
    "status": "noprobe",
    "detail": "no probeado (ahorro de crédito: usa Go para salud en vivo)",
-   "checked_at": "2026-08-29T03:46:16.246452+00:00",
+   "checked_at": "2026-08-29T04:01:22.288009+00:00",
    "fails": 0
   },
   "opencode-zen/gpt-5.1-codex": {
    "code": null,
    "status": "noprobe",
    "detail": "no probeado (ahorro de crédito: usa Go para salud en vivo)",
-   "checked_at": "2026-08-29T03:46:16.246454+00:00",
+   "checked_at": "2026-08-29T04:01:22.288011+00:00",
    "fails": 0
   },
   "opencode-zen/gpt-5.1-codex-max": {
    "code": null,
    "status": "noprobe",
    "detail": "no probeado (ahorro de crédito: usa Go para salud en vivo)",
-   "checked_at": "2026-08-29T03:46:16.246457+00:00",
+   "checked_at": "2026-08-29T04:01:22.288014+00:00",
    "fails": 0
   },
   "opencode-zen/gpt-5.1-codex-mini": {
    "code": null,
    "status": "noprobe",
    "detail": "no probeado (ahorro de crédito: usa Go para salud en vivo)",
-   "checked_at": "2026-08-29T03:46:16.246459+00:00",
+   "checked_at": "2026-08-29T04:01:22.288016+00:00",
    "fails": 0
   },
   "opencode-zen/gpt-5.2": {
    "code": null,
    "status": "noprobe",
    "detail": "no probeado (ahorro de crédito: usa Go para salud en vivo)",
-   "checked_at": "2026-08-29T03:46:16.246461+00:00",
+   "checked_at": "2026-08-29T04:01:22.288018+00:00",
    "fails": 0
   },
   "opencode-zen/gpt-5.2-codex": {
    "code": null,
    "status": "noprobe",
    "detail": "no probeado (ahorro de crédito: usa Go para salud en vivo)",
-   "checked_at": "2026-08-29T03:46:16.246463+00:00",
+   "checked_at": "2026-08-29T04:01:22.288021+00:00",
    "fails": 0
   },
   "opencode-zen/gpt-5.3-codex": {
    "code": null,
    "status": "noprobe",
    "detail": "no probeado (ahorro de crédito: usa Go para salud en vivo)",
-   "checked_at": "2026-08-29T03:46:16.246465+00:00",
+   "checked_at": "2026-08-29T04:01:22.288023+00:00",
    "fails": 0
   },
   "opencode-zen/gpt-5.3-codex-spark": {
    "code": null,
    "status": "noprobe",
    "detail": "no probeado (ahorro de crédito: usa Go para salud en vivo)",
-   "checked_at": "2026-08-29T03:46:16.246467+00:00",
+   "checked_at": "2026-08-29T04:01:22.288025+00:00",
    "fails": 0
   },
   "opencode-zen/gpt-5.4": {
    "code": null,
    "status": "noprobe",
    "detail": "no probeado (ahorro de crédito: usa Go para salud en vivo)",
-   "checked_at": "2026-08-29T03:46:16.246470+00:00",
+   "checked_at": "2026-08-29T04:01:22.288027+00:00",
    "fails": 0
   },
   "opencode-zen/gpt-5.4-mini": {
    "code": null,
    "status": "noprobe",
    "detail": "no probeado (ahorro de crédito: usa Go para salud en vivo)",
-   "checked_at": "2026-08-29T03:46:16.246472+00:00",
+   "checked_at": "2026-08-29T04:01:22.288029+00:00",
    "fails": 0
   },
   "opencode-zen/gpt-5.4-nano": {
    "code": null,
    "status": "noprobe",
    "detail": "no probeado (ahorro de crédito: usa Go para salud en vivo)",
-   "checked_at": "2026-08-29T03:46:16.246474+00:00",
+   "checked_at": "2026-08-29T04:01:22.288031+00:00",
    "fails": 0
   },
   "opencode-zen/gpt-5.4-pro": {
    "code": null,
    "status": "noprobe",
    "detail": "no probeado (ahorro de crédito: usa Go para salud en vivo)",
-   "checked_at": "2026-08-29T03:46:16.246476+00:00",
+   "checked_at": "2026-08-29T04:01:22.288033+00:00",
    "fails": 0
   },
   "opencode-zen/gpt-5.5": {
    "code": null,
    "status": "noprobe",
    "detail": "no probeado (ahorro de crédito: usa Go para salud en vivo)",
-   "checked_at": "2026-08-29T03:46:16.246479+00:00",
+   "checked_at": "2026-08-29T04:01:22.288037+00:00",
    "fails": 0
   },
   "opencode-zen/gpt-5.5-pro": {
    "code": null,
    "status": "noprobe",
    "detail": "no probeado (ahorro de crédito: usa Go para salud en vivo)",
-   "checked_at": "2026-08-29T03:46:16.246482+00:00",
+   "checked_at": "2026-08-29T04:01:22.288039+00:00",
    "fails": 0
   },
   "opencode-zen/grok-build-0.1": {
    "code": null,
    "status": "noprobe",
    "detail": "no probeado (ahorro de crédito: usa Go para salud en vivo)",
-   "checked_at": "2026-08-29T03:46:16.246484+00:00",
+   "checked_at": "2026-08-29T04:01:22.288041+00:00",
    "fails": 0
   },
   "opencode-zen/kimi-k2.5": {
    "code": null,
    "status": "noprobe",
    "detail": "no probeado (ahorro de crédito: usa Go para salud en vivo)",
-   "checked_at": "2026-08-29T03:46:16.246486+00:00",
+   "checked_at": "2026-08-29T04:01:22.288043+00:00",
    "fails": 0
   },
   "opencode-zen/kimi-k2.6": {
    "code": null,
    "status": "noprobe",
    "detail": "no probeado (ahorro de crédito: usa Go para salud en vivo)",
-   "checked_at": "2026-08-29T03:46:16.246488+00:00",
+   "checked_at": "2026-08-29T04:01:22.288046+00:00",
    "fails": 0
   },
   "opencode-zen/kimi-k2.7-code": {
    "code": null,
    "status": "noprobe",
    "detail": "no probeado (ahorro de crédito: usa Go para salud en vivo)",
-   "checked_at": "2026-08-29T03:46:16.246491+00:00",
+   "checked_at": "2026-08-29T04:01:22.288048+00:00",
    "fails": 0
   },
   "opencode-zen/minimax-m2.5": {
    "code": null,
    "status": "noprobe",
    "detail": "no probeado (ahorro de crédito: usa Go para salud en vivo)",
-   "checked_at": "2026-08-29T03:46:16.246493+00:00",
+   "checked_at": "2026-08-29T04:01:22.288050+00:00",
    "fails": 0
   },
   "opencode-zen/minimax-m2.7": {
    "code": null,
    "status": "noprobe",
    "detail": "no probeado (ahorro de crédito: usa Go para salud en vivo)",
-   "checked_at": "2026-08-29T03:46:16.246495+00:00",
+   "checked_at": "2026-08-29T04:01:22.288056+00:00",
    "fails": 0
   },
   "opencode-zen/minimax-m3": {
    "code": null,
    "status": "noprobe",
    "detail": "no probeado (ahorro de crédito: usa Go para salud en vivo)",
-   "checked_at": "2026-08-29T03:46:16.246497+00:00",
+   "checked_at": "2026-08-29T04:01:22.288058+00:00",
    "fails": 0
   },
   "opencode-zen/qwen3.5-plus": {
    "code": null,
    "status": "noprobe",
    "detail": "no probeado (ahorro de crédito: usa Go para salud en vivo)",
-   "checked_at": "2026-08-29T03:46:16.246499+00:00",
+   "checked_at": "2026-08-29T04:01:22.288060+00:00",
    "fails": 0
   },
   "opencode-zen/qwen3.6-plus": {
    "code": null,
    "status": "noprobe",
    "detail": "no probeado (ahorro de crédito: usa Go para salud en vivo)",
-   "checked_at": "2026-08-29T03:46:16.246501+00:00",
+   "checked_at": "2026-08-29T04:01:22.288062+00:00",
    "fails": 0
   },
   "openrouter/deepseek/deepseek-v4-flash": {
    "code": null,
    "status": "noprobe",
    "detail": "no probeado (ahorro de crédito: usa Go para salud en vivo)",
-   "checked_at": "2026-08-29T03:46:16.246503+00:00",
+   "checked_at": "2026-08-29T04:01:22.288064+00:00",
    "fails": 0
   },
   "openrouter/deepseek/deepseek-v4-pro": {
    "code": null,
    "status": "noprobe",
    "detail": "no probeado (ahorro de crédito: usa Go para salud en vivo)",
-   "checked_at": "2026-08-29T03:46:16.246505+00:00",
+   "checked_at": "2026-08-29T04:01:22.288066+00:00",
    "fails": 0
   },
   "openrouter/tencent/hy3": {
    "code": null,
    "status": "noprobe",
    "detail": "no probeado (ahorro de crédito: usa Go para salud en vivo)",
-   "checked_at": "2026-08-29T03:46:16.246508+00:00",
+   "checked_at": "2026-08-29T04:01:22.288069+00:00",
    "fails": 0
   }
  }
