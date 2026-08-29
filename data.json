@@ -1,16 +1,16 @@
 {
- "generated": "2026-08-28T20:05:35.565725+00:00",
- "snapshot": "2026-08-28 20:05 UTC",
+ "generated": "2026-08-29T03:45:15.891972+00:00",
+ "snapshot": "2026-08-29 03:45 UTC",
  "providers_3rd": [
   "opencode-go",
   "opencode-zen",
   "openrouter"
  ],
- "modelsdev_fetched": "2026-08-28 20:05 UTC",
+ "modelsdev_fetched": "2026-08-29 03:45 UTC",
  "modelsdev_count": 363,
  "price_matrix": {
   "currency": "USD",
-  "fetched": "2026-08-28T19:45:09.708410+00:00",
+  "fetched": "2026-08-29T03:45:05.447121+00:00",
   "sources": {
    "zen_paid": "precios de cuenta opencode-zen (off-peak / peak)",
    "openrouter": "precios reales API OpenRouter (cache or-models-cache.json)"
@@ -82,8 +82,8 @@
     "context": 8192
    },
    "~z-ai/glm-latest": {
-    "in": 1.25,
-    "out": 4.4,
+    "in": 1.2,
+    "out": 4.0,
     "context": 1310720
    },
    "tencent/hy-mt2-7b": {
@@ -127,8 +127,8 @@
     "context": 1048576
    },
    "qwen/qwen3.8-2.4t-a95b:batch": {
-    "in": 2.0,
-    "out": 6.0,
+    "in": 2.5,
+    "out": 6.25,
     "context": 1010000
    },
    "bytedance-seed/seed-2.0-code": {
@@ -202,8 +202,8 @@
     "context": 1310720
    },
    "deepseek/deepseek-v4-flash-0731": {
-    "in": 0.05,
-    "out": 0.1,
+    "in": 0.045,
+    "out": 0.09,
     "context": 1310720
    },
    "deepseek/deepseek-v4-flash-0731:batch": {
@@ -215,6 +215,11 @@
     "in": 0.45,
     "out": 1.2,
     "context": 1048576
+   },
+   "thinkingmachines/inkling-small:batch": {
+    "in": 0.5,
+    "out": 1.2,
+    "context": 524288
    },
    "thinkingmachines/inkling-small:free": {
     "in": 0.0,
@@ -302,8 +307,8 @@
     "context": 2000000
    },
    "moonshotai/kimi-k3": {
-    "in": 2.55,
-    "out": 12.75,
+    "in": 3.0,
+    "out": 15.0,
     "context": 1048576
    },
    "moonshotai/kimi-k3:batch": {
@@ -377,8 +382,8 @@
     "context": 131072
    },
    "tencent/hy3": {
-    "in": 0.0825,
-    "out": 0.33,
+    "in": 0.132,
+    "out": 0.528,
     "context": 262144
    },
    "poolside/laguna-xs-2.1": {
@@ -672,13 +677,13 @@
     "context": 1050000
    },
    "deepseek/deepseek-v4-pro": {
-    "in": 0.741588,
-    "out": 1.483176,
+    "in": 0.701046,
+    "out": 1.402092,
     "context": 1048576
    },
    "deepseek/deepseek-v4-flash": {
-    "in": 0.0868,
-    "out": 0.1736,
+    "in": 0.08568,
+    "out": 0.17136,
     "context": 1048576
    },
    "tencent/hy3-preview": {
@@ -1147,8 +1152,8 @@
     "context": 262144
    },
    "deepseek/deepseek-v3.2": {
-    "in": 0.269,
-    "out": 0.4,
+    "in": 0.26,
+    "out": 0.38,
     "context": 163840
    },
    "anthropic/claude-opus-4.5": {
@@ -1160,11 +1165,6 @@
     "in": 2.5,
     "out": 12.5,
     "context": 200000
-   },
-   "allenai/olmo-3-32b-think": {
-    "in": 0.15,
-    "out": 0.5,
-    "context": 65536
    },
    "google/gemini-3-pro-image-preview": {
     "in": 2.0,
@@ -1590,11 +1590,6 @@
     "in": 1.25,
     "out": 10.0,
     "context": 1048576
-   },
-   "arcee-ai/virtuoso-large": {
-    "in": 0.75,
-    "out": 1.2,
-    "context": 131072
    },
    "meta-llama/llama-guard-4-12b": {
     "in": 0.18,
@@ -2026,8 +2021,8 @@
  },
  "chain_method": "Modelo primario: opencode-go/hy3.\nSi el primero falla, se prueba el siguiente automáticamente (cascada de respaldo).\nCadena activa: 2 Go · 2 Zen free · 0 Zen paid · 2 OpenRouter (leída de agents.defaults.model).\n✅ Cadena sin Zen paid: 0 crédito de pago de Zen en cualquier escalón.\nGo y Zen free no consumen crédito de pago; OpenRouter solo en cascada de fallo.",
  "chain_snapshot": {
-  "generated_at": "2026-08-28T20:05:35.565450+00:00",
-  "snapshot": "2026-08-28 20:05 UTC",
+  "generated_at": "2026-08-29T03:45:15.891701+00:00",
+  "snapshot": "2026-08-29 03:45 UTC",
   "source": "agents.defaults.model en openclaw.json (leída en build)",
   "links": [
    {
@@ -2064,27 +2059,27 @@
  },
  "status_badges": {
   "go_quota": {
-   "badge": "✅ Cuota Go OK (Continuo 3% (reinicia 6m) · Semanal 58% (reinicia 51h 59m) · Mensual 28% (reinicia 636h 20m))",
+   "badge": "✅ Cuota Go OK (Continuo 3% (reinicia 0m) · Semanal 58% (reinicia 51h 54m) · Mensual 28% (reinicia 636h 14m))",
    "nivel": "ok",
    "source": "api",
    "buckets": {
     "rolling": {
      "percent": 3,
      "status": "ok",
-     "resets_at": "2026-08-28T20:06:21.082Z",
-     "resets_in_human": "6m"
+     "resets_at": "2026-08-28T20:06:21.983Z",
+     "resets_in_human": "0m"
     },
     "weekly": {
      "percent": 58,
      "status": "ok",
-     "resets_at": "2026-08-31T00:00:00.082Z",
-     "resets_in_human": "51h 59m"
+     "resets_at": "2026-08-31T00:00:00.983Z",
+     "resets_in_human": "51h 54m"
     },
     "monthly": {
      "percent": 28,
      "status": "ok",
-     "resets_at": "2026-09-24T08:20:30.082Z",
-     "resets_in_human": "636h 20m"
+     "resets_at": "2026-09-24T08:20:30.983Z",
+     "resets_in_human": "636h 14m"
     }
    }
   },
@@ -2097,8 +2092,8 @@
    "opencode-go": {
     "enabled": 1,
     "probed": {
-     "ok": 23,
-     "down": 5,
+     "ok": 25,
+     "down": 3,
      "na": 2,
      "indisponible": 1,
      "unk": 2
@@ -2537,8 +2532,8 @@
    },
    "or_id": "deepseek/deepseek-v4-flash",
    "or_price": {
-    "in": 0.0868,
-    "out": 0.1736,
+    "in": 0.08568,
+    "out": 0.17136,
     "context": 1048576
    },
    "tier": "paid",
@@ -2570,8 +2565,8 @@
    },
    "or_id": "deepseek/deepseek-v4-flash",
    "or_price": {
-    "in": 0.0868,
-    "out": 0.1736,
+    "in": 0.08568,
+    "out": 0.17136,
     "context": 1048576
    },
    "tier": "free",
@@ -2630,8 +2625,8 @@
    },
    "or_id": "deepseek/deepseek-v4-pro",
    "or_price": {
-    "in": 0.741588,
-    "out": 1.483176,
+    "in": 0.701046,
+    "out": 1.402092,
     "context": 1048576
    },
    "tier": "paid",
@@ -3806,8 +3801,8 @@
    },
    "or_id": "tencent/hy3",
    "or_price": {
-    "in": 0.0825,
-    "out": 0.33,
+    "in": 0.132,
+    "out": 0.528,
     "context": 262144
    },
    "tier": "go",
@@ -4031,8 +4026,8 @@
    },
    "or_id": "moonshotai/kimi-k3",
    "or_price": {
-    "in": 2.55,
-    "out": 12.75,
+    "in": 3.0,
+    "out": 15.0,
     "context": 1048576
    },
    "tier": "paid",
