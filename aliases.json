@@ -1,5 +1,5 @@
 {
- "generated": "2026-08-30T04:00:05.629901+00:00",
+ "generated": "2026-08-30T11:45:14.993061+00:00",
  "aliases": [
   {
    "id": "opencode-zen/big-pickle",
@@ -236,10 +236,6 @@
   {
    "id": "opencode-go/hy3",
    "alias": "🚀 Hy3 (Go)"
-  },
-  {
-   "id": "opencode-zen/hy3-free",
-   "alias": "🌱 Hy3 preview (Zen free)"
   },
   {
    "id": "opencode-go/hy3-preview",

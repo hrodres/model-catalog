@@ -1,16 +1,16 @@
 {
- "generated": "2026-08-30T04:00:05.629901+00:00",
- "snapshot": "2026-08-30 04:00 UTC",
+ "generated": "2026-08-30T11:45:14.993061+00:00",
+ "snapshot": "2026-08-30 11:45 UTC",
  "providers_3rd": [
   "opencode-go",
   "opencode-zen",
   "openrouter"
  ],
- "modelsdev_fetched": "2026-08-30 04:00 UTC",
+ "modelsdev_fetched": "2026-08-30 11:45 UTC",
  "modelsdev_count": 363,
  "price_matrix": {
   "currency": "USD",
-  "fetched": "2026-08-30T03:45:05.097369+00:00",
+  "fetched": "2026-08-30T11:45:06.011093+00:00",
   "sources": {
    "zen_paid": "precios de cuenta opencode-zen (off-peak / peak)",
    "openrouter": "precios reales API OpenRouter (cache or-models-cache.json)"
@@ -677,13 +677,13 @@
     "context": 1050000
    },
    "deepseek/deepseek-v4-pro": {
-    "in": 0.498336,
-    "out": 0.996672,
+    "in": 0.427344,
+    "out": 0.854688,
     "context": 1048576
    },
    "deepseek/deepseek-v4-flash": {
-    "in": 0.08064,
-    "out": 0.16128,
+    "in": 0.0798,
+    "out": 0.1596,
     "context": 1048576
    },
    "tencent/hy3-preview": {
@@ -772,8 +772,8 @@
     "context": 202752
    },
    "arcee-ai/trinity-large-thinking": {
-    "in": 0.22,
-    "out": 0.85,
+    "in": 0.25,
+    "out": 0.8,
     "context": 262144
    },
    "x-ai/grok-4.20-multi-agent": {
@@ -2021,8 +2021,8 @@
  },
  "chain_method": "Modelo primario: opencode-go/hy3.\nSi el primero falla, se prueba el siguiente automáticamente (cascada de respaldo).\nCadena activa: 2 Go · 2 Zen free · 0 Zen paid · 2 OpenRouter (leída de agents.defaults.model).\n✅ Cadena sin Zen paid: 0 crédito de pago de Zen en cualquier escalón.\nGo y Zen free no consumen crédito de pago; OpenRouter solo en cascada de fallo.",
  "chain_snapshot": {
-  "generated_at": "2026-08-30T04:00:05.629615+00:00",
-  "snapshot": "2026-08-30 04:00 UTC",
+  "generated_at": "2026-08-30T11:45:14.992759+00:00",
+  "snapshot": "2026-08-30 11:45 UTC",
   "source": "agents.defaults.model en openclaw.json (leída en build)",
   "links": [
    {
@@ -2059,27 +2059,27 @@
  },
  "status_badges": {
   "go_quota": {
-   "badge": "✅ Cuota Go OK (Continuo 0% (reinicia 2h 19m) · Semanal 59% (reinicia 20h 14m) · Mensual 28% (reinicia 604h 35m))",
+   "badge": "✅ Cuota Go OK (Continuo 0% (reinicia 2h 5m) · Semanal 59% (reinicia 19h 59m) · Mensual 28% (reinicia 604h 20m))",
    "nivel": "ok",
    "source": "api",
    "buckets": {
     "rolling": {
      "percent": 0,
      "status": "ok",
-     "resets_at": "2026-08-30T06:05:07.616Z",
-     "resets_in_human": "2h 19m"
+     "resets_at": "2026-08-30T06:05:07.074Z",
+     "resets_in_human": "2h 5m"
     },
     "weekly": {
      "percent": 59,
      "status": "ok",
-     "resets_at": "2026-08-31T00:00:00.616Z",
-     "resets_in_human": "20h 14m"
+     "resets_at": "2026-08-31T00:00:00.074Z",
+     "resets_in_human": "19h 59m"
     },
     "monthly": {
      "percent": 28,
      "status": "ok",
-     "resets_at": "2026-09-24T08:20:30.616Z",
-     "resets_in_human": "604h 35m"
+     "resets_at": "2026-09-24T08:20:30.074Z",
+     "resets_in_human": "604h 20m"
     }
    }
   },
@@ -2092,8 +2092,8 @@
    "opencode-go": {
     "enabled": 1,
     "probed": {
-     "ok": 24,
-     "down": 4,
+     "ok": 25,
+     "down": 3,
      "na": 2,
      "indisponible": 1,
      "unk": 2
@@ -2118,12 +2118,12 @@
   }
  },
  "counts": {
-  "total": 80,
+  "total": 79,
   "go": 33,
-  "zen": 64,
-  "free": 9,
-  "openrouter": 14,
-  "with_modelsdev": 77
+  "zen": 63,
+  "free": 8,
+  "openrouter": 13,
+  "with_modelsdev": 76
  },
  "models": [
   {
@@ -2532,8 +2532,8 @@
    },
    "or_id": "deepseek/deepseek-v4-flash",
    "or_price": {
-    "in": 0.08064,
-    "out": 0.16128,
+    "in": 0.0798,
+    "out": 0.1596,
     "context": 1048576
    },
    "tier": "paid",
@@ -2565,8 +2565,8 @@
    },
    "or_id": "deepseek/deepseek-v4-flash",
    "or_price": {
-    "in": 0.08064,
-    "out": 0.16128,
+    "in": 0.0798,
+    "out": 0.1596,
     "context": 1048576
    },
    "tier": "free",
@@ -2625,8 +2625,8 @@
    },
    "or_id": "deepseek/deepseek-v4-pro",
    "or_price": {
-    "in": 0.498336,
-    "out": 0.996672,
+    "in": 0.427344,
+    "out": 0.854688,
     "context": 1048576
    },
    "tier": "paid",
@@ -3823,39 +3823,6 @@
     "SWE-Bench Verified": 78
    },
    "md_url": "https://models.dev/models/tencent/hy3"
-  },
-  {
-   "id": "hy3-free",
-   "providers": {
-    "go": false,
-    "zen": true,
-    "free": true,
-    "or": true
-   },
-   "or_id": "tencent/hy3-preview",
-   "or_price": {
-    "in": 0.18,
-    "out": 0.6,
-    "context": 262144
-   },
-   "tier": "free",
-   "name": "Hy3 preview",
-   "desc": "Tencent Hy reasoning model for coding, instruction following, and agent tasks",
-   "context": 256000,
-   "output": 64000,
-   "reasoning": true,
-   "tool_call": true,
-   "structured": false,
-   "multimodal": false,
-   "open_weights": true,
-   "release": "2026-04-20",
-   "last_updated": "2026-04-20",
-   "knowledge": "",
-   "swebench": 74.4,
-   "benchmarks": {
-    "SWE-Bench Verified": 74.4
-   },
-   "md_url": "https://models.dev/models/tencent/hy3-preview"
   },
   {
    "id": "hy3-preview",
