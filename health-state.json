@@ -1,13 +1,13 @@
 {
- "generated": "2026-08-30T11:46:16.689102+00:00",
+ "generated": "2026-08-30T12:01:22.502770+00:00",
  "snapshot": "2026-08-30",
  "fuente": "check-model-health.py F3 (2026-08-24)",
  "providers": {
   "opencode-go": {
    "enabled": 1,
    "probed": {
-    "ok": 25,
-    "down": 3,
+    "ok": 23,
+    "down": 5,
     "na": 2,
     "indisponible": 1,
     "unk": 2
@@ -31,8 +31,8 @@
   }
  },
  "counts": {
-  "ok": 25,
-  "down": 3,
+  "ok": 23,
+  "down": 5,
   "na": 2,
   "indisponible": 1,
   "unk": 2,
@@ -40,27 +40,27 @@
   "noprobe": 47
  },
  "go_quota": {
-  "badge": "✅ Cuota Go OK (Continuo 0% (reinicia 19m) · Semanal 59% (reinicia 12h 14m) · Mensual 28% (reinicia 596h 35m))",
+  "badge": "✅ Cuota Go OK (Continuo 0% (reinicia 4m) · Semanal 59% (reinicia 11h 59m) · Mensual 28% (reinicia 596h 20m))",
   "nivel": "ok",
   "source": "api",
   "buckets": {
    "rolling": {
     "percent": 0,
     "status": "ok",
-    "resets_at": "2026-08-30T12:05:04.395Z",
-    "resets_in_human": "19m"
+    "resets_at": "2026-08-30T12:05:04.836Z",
+    "resets_in_human": "4m"
    },
    "weekly": {
     "percent": 59,
     "status": "ok",
-    "resets_at": "2026-08-31T00:00:00.395Z",
-    "resets_in_human": "12h 14m"
+    "resets_at": "2026-08-31T00:00:00.836Z",
+    "resets_in_human": "11h 59m"
    },
    "monthly": {
     "percent": 28,
     "status": "ok",
-    "resets_at": "2026-09-24T08:20:30.395Z",
-    "resets_in_human": "596h 35m"
+    "resets_at": "2026-09-24T08:20:30.836Z",
+    "resets_in_human": "596h 20m"
    }
   }
  },
@@ -195,8 +195,8 @@
   {
    "modelo": "kimi-k2.6",
    "provider": "opencode-go",
-   "estado": "ok",
-   "detalle": "HTTP 200"
+   "estado": "down",
+   "detalle": "ERR The read operation timed out"
   },
   {
    "modelo": "kimi-k2.7-code",
@@ -237,8 +237,8 @@
   {
    "modelo": "mimo-v2.5-pro",
    "provider": "opencode-go",
-   "estado": "ok",
-   "detalle": "HTTP 200"
+   "estado": "down",
+   "detalle": "ERR The read operation timed out"
   },
   {
    "modelo": "minimax-m2.5",
