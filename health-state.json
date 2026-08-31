@@ -1,13 +1,13 @@
 {
- "generated": "2026-08-31T12:01:20.587073+00:00",
+ "generated": "2026-08-31T19:46:17.104138+00:00",
  "snapshot": "2026-08-31",
  "fuente": "check-model-health.py F3 (2026-08-24)",
  "providers": {
   "opencode-go": {
    "enabled": 1,
    "probed": {
-    "ok": 22,
-    "down": 5,
+    "ok": 23,
+    "down": 4,
     "na": 2,
     "indisponible": 1,
     "unk": 3
@@ -31,8 +31,8 @@
   }
  },
  "counts": {
-  "ok": 22,
-  "down": 5,
+  "ok": 23,
+  "down": 4,
   "na": 2,
   "indisponible": 1,
   "unk": 3,
@@ -40,27 +40,27 @@
   "noprobe": 47
  },
  "go_quota": {
-  "badge": "✅ Cuota Go OK (Continuo 0% (reinicia 4m) · Semanal 0% (reinicia 155h 59m) · Mensual 29% (reinicia 572h 20m))",
+  "badge": "✅ Cuota Go OK (Continuo 0% (reinicia 4h 19m) · Semanal 0% (reinicia 148h 14m) · Mensual 29% (reinicia 564h 35m))",
   "nivel": "ok",
   "source": "api",
   "buckets": {
    "rolling": {
     "percent": 0,
     "status": "ok",
-    "resets_at": "2026-08-31T12:05:04.724Z",
-    "resets_in_human": "4m"
+    "resets_at": "2026-09-01T00:05:06.025Z",
+    "resets_in_human": "4h 19m"
    },
    "weekly": {
     "percent": 0,
     "status": "ok",
-    "resets_at": "2026-09-07T00:00:00.724Z",
-    "resets_in_human": "155h 59m"
+    "resets_at": "2026-09-07T00:00:00.025Z",
+    "resets_in_human": "148h 14m"
    },
    "monthly": {
     "percent": 29,
     "status": "ok",
-    "resets_at": "2026-09-24T08:20:30.724Z",
-    "resets_in_human": "572h 20m"
+    "resets_at": "2026-09-24T08:20:30.025Z",
+    "resets_in_human": "564h 35m"
    }
   }
  },
@@ -207,8 +207,8 @@
   {
    "modelo": "kimi-k3",
    "provider": "opencode-go",
-   "estado": "down",
-   "detalle": "ERR The read operation timed out"
+   "estado": "ok",
+   "detalle": "HTTP 200"
   },
   {
    "modelo": "longcat-2.0",
