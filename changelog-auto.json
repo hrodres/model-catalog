@@ -575,6 +575,18 @@
   {
    "date": "2026-08-31",
    "text": "opencode-go/qwen3.5-plus: down → ok"
+  },
+  {
+   "date": "2026-08-31",
+   "text": "opencode-go/glm-5.3-flash: ok → down"
+  },
+  {
+   "date": "2026-08-31",
+   "text": "opencode-go/kimi-k2.5: ok → unk"
+  },
+  {
+   "date": "2026-08-31",
+   "text": "opencode-go/mimo-v2.5: ok → down"
   }
  ]
 }
