@@ -599,6 +599,18 @@
   {
    "date": "2026-08-31",
    "text": "opencode-go/kimi-k2.5: ok → unk"
+  },
+  {
+   "date": "2026-08-31",
+   "text": "opencode-go/deepseek-v4-flash: ok → down"
+  },
+  {
+   "date": "2026-08-31",
+   "text": "opencode-go/glm-5.3-flash: ok → down"
+  },
+  {
+   "date": "2026-08-31",
+   "text": "opencode-go/kimi-k2.5: ok → unk"
   }
  ]
 }

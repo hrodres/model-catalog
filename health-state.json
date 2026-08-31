@@ -1,13 +1,13 @@
 {
- "generated": "2026-08-31T19:46:17.104138+00:00",
+ "generated": "2026-08-31T20:01:30.571976+00:00",
  "snapshot": "2026-08-31",
  "fuente": "check-model-health.py F3 (2026-08-24)",
  "providers": {
   "opencode-go": {
    "enabled": 1,
    "probed": {
-    "ok": 23,
-    "down": 4,
+    "down": 6,
+    "ok": 21,
     "na": 2,
     "indisponible": 1,
     "unk": 3
@@ -31,8 +31,8 @@
   }
  },
  "counts": {
-  "ok": 23,
-  "down": 4,
+  "down": 6,
+  "ok": 21,
   "na": 2,
   "indisponible": 1,
   "unk": 3,
@@ -40,27 +40,27 @@
   "noprobe": 47
  },
  "go_quota": {
-  "badge": "✅ Cuota Go OK (Continuo 0% (reinicia 4h 19m) · Semanal 0% (reinicia 148h 14m) · Mensual 29% (reinicia 564h 35m))",
+  "badge": "✅ Cuota Go OK (Continuo 0% (reinicia 4h 4m) · Semanal 0% (reinicia 147h 59m) · Mensual 29% (reinicia 564h 20m))",
   "nivel": "ok",
   "source": "api",
   "buckets": {
    "rolling": {
     "percent": 0,
     "status": "ok",
-    "resets_at": "2026-09-01T00:05:06.025Z",
-    "resets_in_human": "4h 19m"
+    "resets_at": "2026-09-01T00:05:06.696Z",
+    "resets_in_human": "4h 4m"
    },
    "weekly": {
     "percent": 0,
     "status": "ok",
-    "resets_at": "2026-09-07T00:00:00.025Z",
-    "resets_in_human": "148h 14m"
+    "resets_at": "2026-09-07T00:00:00.696Z",
+    "resets_in_human": "147h 59m"
    },
    "monthly": {
     "percent": 29,
     "status": "ok",
-    "resets_at": "2026-09-24T08:20:30.025Z",
-    "resets_in_human": "564h 35m"
+    "resets_at": "2026-09-24T08:20:30.696Z",
+    "resets_in_human": "564h 20m"
    }
   }
  },
@@ -82,8 +82,8 @@
   },
   {
    "link": "opencode-go/deepseek-v4-flash",
-   "estado": "ok",
-   "detalle": "HTTP 200"
+   "estado": "down",
+   "detalle": "ERR The read operation timed out"
   },
   {
    "link": "opencode-zen/deepseek-v4-flash-free",
@@ -105,8 +105,8 @@
   {
    "modelo": "deepseek-v4-flash",
    "provider": "opencode-go",
-   "estado": "ok",
-   "detalle": "HTTP 200"
+   "estado": "down",
+   "detalle": "ERR The read operation timed out"
   },
   {
    "modelo": "deepseek-v4-flash-vision-exp",
@@ -147,8 +147,8 @@
   {
    "modelo": "glm-5.3-flash",
    "provider": "opencode-go",
-   "estado": "ok",
-   "detalle": "HTTP 200"
+   "estado": "down",
+   "detalle": "ERR The read operation timed out"
   },
   {
    "modelo": "gpt-5.6-luna",
