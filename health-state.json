@@ -1,13 +1,13 @@
 {
- "generated": "2026-08-31T11:46:38.894366+00:00",
+ "generated": "2026-08-31T12:01:20.587073+00:00",
  "snapshot": "2026-08-31",
  "fuente": "check-model-health.py F3 (2026-08-24)",
  "providers": {
   "opencode-go": {
    "enabled": 1,
    "probed": {
-    "ok": 21,
-    "down": 6,
+    "ok": 22,
+    "down": 5,
     "na": 2,
     "indisponible": 1,
     "unk": 3
@@ -31,8 +31,8 @@
   }
  },
  "counts": {
-  "ok": 21,
-  "down": 6,
+  "ok": 22,
+  "down": 5,
   "na": 2,
   "indisponible": 1,
   "unk": 3,
@@ -40,27 +40,27 @@
   "noprobe": 47
  },
  "go_quota": {
-  "badge": "✅ Cuota Go OK (Continuo 0% (reinicia 19m) · Semanal 0% (reinicia 156h 14m) · Mensual 29% (reinicia 572h 35m))",
+  "badge": "✅ Cuota Go OK (Continuo 0% (reinicia 4m) · Semanal 0% (reinicia 155h 59m) · Mensual 29% (reinicia 572h 20m))",
   "nivel": "ok",
   "source": "api",
   "buckets": {
    "rolling": {
     "percent": 0,
     "status": "ok",
-    "resets_at": "2026-08-31T12:05:04.107Z",
-    "resets_in_human": "19m"
+    "resets_at": "2026-08-31T12:05:04.724Z",
+    "resets_in_human": "4m"
    },
    "weekly": {
     "percent": 0,
     "status": "ok",
-    "resets_at": "2026-09-07T00:00:00.107Z",
-    "resets_in_human": "156h 14m"
+    "resets_at": "2026-09-07T00:00:00.724Z",
+    "resets_in_human": "155h 59m"
    },
    "monthly": {
     "percent": 29,
     "status": "ok",
-    "resets_at": "2026-09-24T08:20:30.107Z",
-    "resets_in_human": "572h 35m"
+    "resets_at": "2026-09-24T08:20:30.724Z",
+    "resets_in_human": "572h 20m"
    }
   }
  },
@@ -147,8 +147,8 @@
   {
    "modelo": "glm-5.3-flash",
    "provider": "opencode-go",
-   "estado": "down",
-   "detalle": "ERR The read operation timed out"
+   "estado": "ok",
+   "detalle": "HTTP 200"
   },
   {
    "modelo": "gpt-5.6-luna",
@@ -207,8 +207,8 @@
   {
    "modelo": "kimi-k3",
    "provider": "opencode-go",
-   "estado": "ok",
-   "detalle": "HTTP 200"
+   "estado": "down",
+   "detalle": "ERR The read operation timed out"
   },
   {
    "modelo": "longcat-2.0",
@@ -231,8 +231,8 @@
   {
    "modelo": "mimo-v2.5",
    "provider": "opencode-go",
-   "estado": "down",
-   "detalle": "ERR The read operation timed out"
+   "estado": "ok",
+   "detalle": "HTTP 200"
   },
   {
    "modelo": "mimo-v2.5-pro",

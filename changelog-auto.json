@@ -587,6 +587,14 @@
   {
    "date": "2026-08-31",
    "text": "opencode-go/mimo-v2.5: ok → down"
+  },
+  {
+   "date": "2026-08-31",
+   "text": "opencode-go/kimi-k2.5: ok → unk"
+  },
+  {
+   "date": "2026-08-31",
+   "text": "opencode-go/kimi-k3: ok → down"
   }
  ]
 }
