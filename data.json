@@ -1,16 +1,16 @@
 {
- "generated": "2026-09-01T04:00:05.239025+00:00",
- "snapshot": "2026-09-01 04:00 UTC",
+ "generated": "2026-09-01T12:00:05.192590+00:00",
+ "snapshot": "2026-09-01 12:00 UTC",
  "providers_3rd": [
   "opencode-go",
   "opencode-zen",
   "openrouter"
  ],
- "modelsdev_fetched": "2026-09-01 04:00 UTC",
+ "modelsdev_fetched": "2026-09-01 12:00 UTC",
  "modelsdev_count": 363,
  "price_matrix": {
   "currency": "USD",
-  "fetched": "2026-09-01T03:45:05.291971+00:00",
+  "fetched": "2026-09-01T11:45:05.021639+00:00",
   "sources": {
    "zen_paid": "precios de cuenta opencode-zen (off-peak / peak)",
    "openrouter": "precios reales API OpenRouter (cache or-models-cache.json)"
@@ -72,8 +72,8 @@
     "context": 1048576
    },
    "deepseek/deepseek-v4-flash-vision-exp": {
-    "in": 0.44,
-    "out": 1.32,
+    "in": 0.22,
+    "out": 0.66,
     "context": 1048576
    },
    "tencent/hy-mt2-1.8b": {
@@ -142,8 +142,8 @@
     "context": 262144
    },
    "deepseek/deepseek-v4-pro-0813": {
-    "in": 1.1154,
-    "out": 3.3462,
+    "in": 0.66,
+    "out": 1.98,
     "context": 1048576
    },
    "deepseek/deepseek-v4-pro-0813:batch": {
@@ -881,11 +881,6 @@
     "out": 0.6,
     "context": 262144
    },
-   "mistralai/mistral-small-2603:batch": {
-    "in": 0.15,
-    "out": 0.6,
-    "context": 262144
-   },
    "z-ai/glm-5-turbo": {
     "in": 1.2,
     "out": 4.0,
@@ -1201,22 +1196,12 @@
     "out": 0.15,
     "context": 262144
    },
-   "mistralai/ministral-8b-2512:batch": {
-    "in": 0.15,
-    "out": 0.15,
-    "context": 262144
-   },
    "mistralai/ministral-3b-2512": {
     "in": 0.1,
     "out": 0.1,
     "context": 131072
    },
    "mistralai/mistral-large-2512": {
-    "in": 0.5,
-    "out": 1.5,
-    "context": 262144
-   },
-   "mistralai/mistral-large-2512:batch": {
     "in": 0.5,
     "out": 1.5,
     "context": 262144
@@ -1461,11 +1446,6 @@
     "out": 2.0,
     "context": 131072
    },
-   "mistralai/mistral-medium-3.1:batch": {
-    "in": 0.4,
-    "out": 2.0,
-    "context": 131072
-   },
    "z-ai/glm-4.5v": {
     "in": 0.6,
     "out": 1.8,
@@ -1536,11 +1516,6 @@
     "out": 0.9,
     "context": 256000
    },
-   "mistralai/codestral-2508:batch": {
-    "in": 0.3,
-    "out": 0.9,
-    "context": 256000
-   },
    "qwen/qwen3-coder-30b-a3b-instruct": {
     "in": 0.07,
     "out": 0.28,
@@ -1587,8 +1562,8 @@
     "context": 1048576
    },
    "qwen/qwen3-235b-a22b-2507": {
-    "in": 0.09,
-    "out": 0.55,
+    "in": 0.0875,
+    "out": 0.35,
     "context": 262144
    },
    "moonshotai/kimi-k2": {
@@ -1777,8 +1752,8 @@
     "context": 1048576
    },
    "meta-llama/llama-4-scout": {
-    "in": 0.11,
-    "out": 0.34,
+    "in": 0.1,
+    "out": 0.3,
     "context": 1310720
    },
    "deepseek/deepseek-chat-v3-0324": {
@@ -2142,8 +2117,8 @@
     "context": 6144
    },
    "gryphe/mythomax-l2-13b": {
-    "in": 0.35,
-    "out": 0.6,
+    "in": 0.06,
+    "out": 0.06,
     "context": 8192
    },
    "openai/gpt-3.5-turbo": {
@@ -2166,8 +2141,8 @@
  },
  "chain_method": "Modelo primario: opencode-go/hy3.\nSi el primero falla, se prueba el siguiente automáticamente (cascada de respaldo).\nCadena activa: 2 Go · 2 Zen free · 0 Zen paid · 2 OpenRouter (leída de agents.defaults.model).\n✅ Cadena sin Zen paid: 0 crédito de pago de Zen en cualquier escalón.\nGo y Zen free no consumen crédito de pago; OpenRouter solo en cascada de fallo.",
  "chain_snapshot": {
-  "generated_at": "2026-09-01T04:00:05.238739+00:00",
-  "snapshot": "2026-09-01 04:00 UTC",
+  "generated_at": "2026-09-01T12:00:05.192295+00:00",
+  "snapshot": "2026-09-01 12:00 UTC",
   "source": "agents.defaults.model en openclaw.json (leída en build)",
   "links": [
    {
@@ -2204,27 +2179,27 @@
  },
  "status_badges": {
   "go_quota": {
-   "badge": "✅ Cuota Go OK (Continuo 0% (reinicia 2h 19m) · Semanal 1% (reinicia 140h 14m) · Mensual 29% (reinicia 556h 35m))",
+   "badge": "✅ Cuota Go OK (Continuo 0% (reinicia 2h 5m) · Semanal 1% (reinicia 139h 59m) · Mensual 29% (reinicia 556h 20m))",
    "nivel": "ok",
    "source": "api",
    "buckets": {
     "rolling": {
      "percent": 0,
      "status": "ok",
-     "resets_at": "2026-09-01T06:05:07.612Z",
-     "resets_in_human": "2h 19m"
+     "resets_at": "2026-09-01T06:05:07.634Z",
+     "resets_in_human": "2h 5m"
     },
     "weekly": {
      "percent": 1,
      "status": "ok",
-     "resets_at": "2026-09-07T00:00:00.612Z",
-     "resets_in_human": "140h 14m"
+     "resets_at": "2026-09-07T00:00:00.634Z",
+     "resets_in_human": "139h 59m"
     },
     "monthly": {
      "percent": 29,
      "status": "ok",
-     "resets_at": "2026-09-24T08:20:30.612Z",
-     "resets_in_human": "556h 35m"
+     "resets_at": "2026-09-24T08:20:30.634Z",
+     "resets_in_human": "556h 20m"
     }
    }
   },
@@ -2237,8 +2212,8 @@
    "opencode-go": {
     "enabled": 1,
     "probed": {
-     "down": 4,
      "ok": 23,
+     "down": 4,
      "na": 2,
      "indisponible": 1,
      "unk": 3

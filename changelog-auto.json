@@ -627,6 +627,18 @@
   {
    "date": "2026-09-01",
    "text": "opencode-go/glm-5.3-flash: down → ok"
+  },
+  {
+   "date": "2026-09-01",
+   "text": "opencode-go/deepseek-v4-flash: down → ok"
+  },
+  {
+   "date": "2026-09-01",
+   "text": "opencode-go/glm-5.3-flash: down → ok"
+  },
+  {
+   "date": "2026-09-01",
+   "text": "opencode-go/kimi-k2.6: ok → down"
   }
  ]
 }
