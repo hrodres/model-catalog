@@ -1203,7 +1203,7 @@
    "opencode-go/mimo-v2.5-pro": "ok",
    "opencode-go/minimax-m2.5": "ok",
    "opencode-go/minimax-m2.7": "down",
-   "opencode-go/minimax-m3": "down",
+   "opencode-go/minimax-m3": "ok",
    "opencode-go/muse-spark-1.2-contributor": "na",
    "opencode-go/qwen3.5-plus": "down",
    "opencode-go/qwen3.6-plus": "ok",
