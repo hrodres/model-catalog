@@ -1,13 +1,13 @@
 {
- "generated": "2026-09-02T04:01:17.614745+00:00",
+ "generated": "2026-09-02T11:46:20.649022+00:00",
  "snapshot": "2026-09-02",
  "fuente": "check-model-health.py F3 (2026-08-24)",
  "providers": {
   "opencode-go": {
    "enabled": 1,
    "probed": {
-    "ok": 23,
-    "down": 4,
+    "ok": 22,
+    "down": 5,
     "na": 2,
     "indisponible": 1,
     "unk": 3
@@ -17,7 +17,7 @@
   "opencode-zen": {
    "enabled": 1,
    "probed": {
-    "free": 19,
+    "free": 20,
     "noprobe": 44
    },
    "total": 2
@@ -31,36 +31,36 @@
   }
  },
  "counts": {
-  "ok": 23,
-  "down": 4,
+  "ok": 22,
+  "down": 5,
   "na": 2,
   "indisponible": 1,
   "unk": 3,
-  "free": 19,
+  "free": 20,
   "noprobe": 47
  },
  "go_quota": {
-  "badge": "✅ Cuota Go OK (Continuo 0% (reinicia 2h 4m) · Semanal 2% (reinicia 115h 59m) · Mensual 30% (reinicia 532h 20m))",
+  "badge": "✅ Cuota Go OK (Continuo 0% (reinicia 19m) · Semanal 2% (reinicia 108h 14m) · Mensual 30% (reinicia 524h 35m))",
   "nivel": "ok",
   "source": "api",
   "buckets": {
    "rolling": {
     "percent": 0,
     "status": "ok",
-    "resets_at": "2026-09-02T06:05:04.334Z",
-    "resets_in_human": "2h 4m"
+    "resets_at": "2026-09-02T12:05:05.904Z",
+    "resets_in_human": "19m"
    },
    "weekly": {
     "percent": 2,
     "status": "ok",
-    "resets_at": "2026-09-07T00:00:00.334Z",
-    "resets_in_human": "115h 59m"
+    "resets_at": "2026-09-07T00:00:00.904Z",
+    "resets_in_human": "108h 14m"
    },
    "monthly": {
     "percent": 30,
     "status": "ok",
-    "resets_at": "2026-09-24T08:20:30.334Z",
-    "resets_in_human": "532h 20m"
+    "resets_at": "2026-09-24T08:20:30.904Z",
+    "resets_in_human": "524h 35m"
    }
   }
  },
@@ -207,8 +207,8 @@
   {
    "modelo": "kimi-k3",
    "provider": "opencode-go",
-   "estado": "ok",
-   "detalle": "HTTP 200"
+   "estado": "down",
+   "detalle": "ERR The read operation timed out"
   },
   {
    "modelo": "longcat-2.0",
@@ -311,6 +311,12 @@
    "provider": "opencode-zen",
    "estado": "noprobe",
    "detalle": "no probeado (ahorro de crédito: usa Go para salud en vivo)"
+  },
+  {
+   "modelo": "claude-fable-5-1",
+   "provider": "opencode-zen",
+   "estado": "free",
+   "detalle": "no probado (protección cuota global free 100 req/día)"
   },
   {
    "modelo": "claude-haiku-4-5",

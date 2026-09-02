@@ -1625,6 +1625,7 @@
    "zen": [
     "big-pickle",
     "claude-fable-5",
+    "claude-fable-5-1",
     "claude-haiku-4-5",
     "claude-opus-4-5",
     "claude-opus-4-6",
@@ -1754,6 +1755,11 @@
    "date": "2026-08-30",
    "type": "removed",
    "id": "hy3-free"
+  },
+  {
+   "date": "2026-09-02",
+   "type": "added",
+   "id": "claude-fable-5-1"
   }
  ]
 }

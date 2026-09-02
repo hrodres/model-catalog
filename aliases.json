@@ -1,5 +1,5 @@
 {
- "generated": "2026-09-02T04:00:05.933922+00:00",
+ "generated": "2026-09-02T11:45:15.449777+00:00",
  "aliases": [
   {
    "id": "opencode-zen/big-pickle",
@@ -8,6 +8,10 @@
   {
    "id": "opencode-zen/claude-fable-5",
    "alias": "💰 Claude Fable 5 (Zen)"
+  },
+  {
+   "id": "opencode-zen/claude-fable-5-1",
+   "alias": "💰 Claude Fable 5.1 (Zen)"
   },
   {
    "id": "opencode-zen/claude-haiku-4-5",

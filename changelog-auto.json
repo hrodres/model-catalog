@@ -675,6 +675,14 @@
   {
    "date": "2026-09-02",
    "text": "opencode-go/qwen3.5-plus: ok → down"
+  },
+  {
+   "date": "2026-09-02",
+   "text": "opencode-go/kimi-k3: ok → down"
+  },
+  {
+   "date": "2026-09-02",
+   "text": "opencode-go/qwen3.5-plus: ok → down"
   }
  ]
 }

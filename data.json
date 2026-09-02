@@ -1,16 +1,16 @@
 {
- "generated": "2026-09-02T04:00:05.933922+00:00",
- "snapshot": "2026-09-02 04:00 UTC",
+ "generated": "2026-09-02T11:45:15.449777+00:00",
+ "snapshot": "2026-09-02 11:45 UTC",
  "providers_3rd": [
   "opencode-go",
   "opencode-zen",
   "openrouter"
  ],
- "modelsdev_fetched": "2026-09-02 04:00 UTC",
+ "modelsdev_fetched": "2026-09-02 11:45 UTC",
  "modelsdev_count": 364,
  "price_matrix": {
   "currency": "USD",
-  "fetched": "2026-09-02T03:45:06.038157+00:00",
+  "fetched": "2026-09-02T11:45:05.006660+00:00",
   "sources": {
    "zen_paid": "precios de cuenta opencode-zen (off-peak / peak)",
    "openrouter": "precios reales API OpenRouter (cache or-models-cache.json)"
@@ -39,6 +39,11 @@
    "anthropic/claude-fable-5.1": {
     "in": 10.0,
     "out": 50.0,
+    "context": 1000000
+   },
+   "anthropic/claude-fable-5.1:batch": {
+    "in": 5.0,
+    "out": 25.0,
     "context": 1000000
    },
    "inception/mercury-2.5-preview": {
@@ -87,8 +92,8 @@
     "context": 1048576
    },
    "deepseek/deepseek-v4-flash-vision-exp": {
-    "in": 0.44,
-    "out": 1.32,
+    "in": 0.22,
+    "out": 0.66,
     "context": 1048576
    },
    "tencent/hy-mt2-1.8b": {
@@ -102,8 +107,8 @@
     "context": 8192
    },
    "~z-ai/glm-latest": {
-    "in": 1.17,
-    "out": 3.96,
+    "in": 1.15,
+    "out": 3.5,
     "context": 1310720
    },
    "tencent/hy-mt2-7b": {
@@ -2141,8 +2146,8 @@
  },
  "chain_method": "Modelo primario: opencode-go/hy3.\nSi el primero falla, se prueba el siguiente automáticamente (cascada de respaldo).\nCadena activa: 2 Go · 2 Zen free · 0 Zen paid · 2 OpenRouter (leída de agents.defaults.model).\n✅ Cadena sin Zen paid: 0 crédito de pago de Zen en cualquier escalón.\nGo y Zen free no consumen crédito de pago; OpenRouter solo en cascada de fallo.",
  "chain_snapshot": {
-  "generated_at": "2026-09-02T04:00:05.933650+00:00",
-  "snapshot": "2026-09-02 04:00 UTC",
+  "generated_at": "2026-09-02T11:45:15.449467+00:00",
+  "snapshot": "2026-09-02 11:45 UTC",
   "source": "agents.defaults.model en openclaw.json (leída en build)",
   "links": [
    {
@@ -2179,27 +2184,27 @@
  },
  "status_badges": {
   "go_quota": {
-   "badge": "✅ Cuota Go OK (Continuo 0% (reinicia 2h 19m) · Semanal 1% (reinicia 116h 14m) · Mensual 29% (reinicia 532h 35m))",
+   "badge": "✅ Cuota Go OK (Continuo 0% (reinicia 2h 4m) · Semanal 2% (reinicia 115h 59m) · Mensual 30% (reinicia 532h 20m))",
    "nivel": "ok",
    "source": "api",
    "buckets": {
     "rolling": {
      "percent": 0,
      "status": "ok",
-     "resets_at": "2026-09-02T06:05:04.593Z",
-     "resets_in_human": "2h 19m"
+     "resets_at": "2026-09-02T06:05:04.334Z",
+     "resets_in_human": "2h 4m"
     },
     "weekly": {
-     "percent": 1,
+     "percent": 2,
      "status": "ok",
-     "resets_at": "2026-09-07T00:00:00.593Z",
-     "resets_in_human": "116h 14m"
+     "resets_at": "2026-09-07T00:00:00.334Z",
+     "resets_in_human": "115h 59m"
     },
     "monthly": {
-     "percent": 29,
+     "percent": 30,
      "status": "ok",
-     "resets_at": "2026-09-24T08:20:30.593Z",
-     "resets_in_human": "532h 35m"
+     "resets_at": "2026-09-24T08:20:30.334Z",
+     "resets_in_human": "532h 20m"
     }
    }
   },
@@ -2212,8 +2217,8 @@
    "opencode-go": {
     "enabled": 1,
     "probed": {
-     "ok": 22,
-     "down": 5,
+     "ok": 23,
+     "down": 4,
      "na": 2,
      "indisponible": 1,
      "unk": 3
@@ -2238,12 +2243,12 @@
   }
  },
  "counts": {
-  "total": 79,
+  "total": 80,
   "go": 33,
-  "zen": 63,
+  "zen": 64,
   "free": 8,
   "openrouter": 13,
-  "with_modelsdev": 76
+  "with_modelsdev": 77
  },
  "models": [
   {
@@ -2308,6 +2313,33 @@
     "AutomationBench": 17.4
    },
    "md_url": "https://models.dev/models/anthropic/claude-fable-5"
+  },
+  {
+   "id": "claude-fable-5-1",
+   "providers": {
+    "go": false,
+    "zen": true,
+    "free": false,
+    "or": false
+   },
+   "or_id": null,
+   "or_price": null,
+   "tier": "paid",
+   "name": "Claude Fable 5.1",
+   "desc": "Claude model for demanding reasoning and long-horizon agentic work",
+   "context": 1000000,
+   "output": 128000,
+   "reasoning": true,
+   "tool_call": true,
+   "structured": false,
+   "multimodal": true,
+   "open_weights": false,
+   "release": "2026-09-01",
+   "last_updated": "2026-09-01",
+   "knowledge": "2026-06",
+   "swebench": null,
+   "benchmarks": {},
+   "md_url": "https://models.dev/models/anthropic/claude-fable-5-1"
   },
   {
    "id": "claude-haiku-4-5",
