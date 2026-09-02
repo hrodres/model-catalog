@@ -663,6 +663,14 @@
   {
    "date": "2026-09-01",
    "text": "opencode-go/qwen3.5-plus: down → ok"
+  },
+  {
+   "date": "2026-09-02",
+   "text": "opencode-go/minimax-m3: ok → down"
+  },
+  {
+   "date": "2026-09-02",
+   "text": "opencode-go/qwen3.5-plus: ok → down"
   }
  ]
 }
