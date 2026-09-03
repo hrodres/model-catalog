@@ -1,16 +1,16 @@
 {
- "generated": "2026-09-03T04:00:05.347768+00:00",
- "snapshot": "2026-09-03 04:00 UTC",
+ "generated": "2026-09-03T12:00:06.379324+00:00",
+ "snapshot": "2026-09-03 12:00 UTC",
  "providers_3rd": [
   "opencode-go",
   "opencode-zen",
   "openrouter"
  ],
- "modelsdev_fetched": "2026-09-03 04:00 UTC",
+ "modelsdev_fetched": "2026-09-03 12:00 UTC",
  "modelsdev_count": 365,
  "price_matrix": {
   "currency": "USD",
-  "fetched": "2026-09-03T03:45:05.313137+00:00",
+  "fetched": "2026-09-03T11:45:05.391619+00:00",
   "sources": {
    "zen_paid": "precios de cuenta opencode-zen (off-peak / peak)",
    "openrouter": "precios reales API OpenRouter (cache or-models-cache.json)"
@@ -112,8 +112,8 @@
     "context": 1048576
    },
    "deepseek/deepseek-v4-flash-vision-exp": {
-    "in": 0.44,
-    "out": 1.32,
+    "in": 0.22,
+    "out": 0.66,
     "context": 1048576
    },
    "tencent/hy-mt2-1.8b": {
@@ -127,8 +127,8 @@
     "context": 8192
    },
    "~z-ai/glm-latest": {
-    "in": 1.092,
-    "out": 3.432,
+    "in": 1.12,
+    "out": 3.52,
     "context": 1310720
    },
    "tencent/hy-mt2-7b": {
@@ -1697,8 +1697,8 @@
     "context": 131072
    },
    "qwen/qwen3-14b": {
-    "in": 0.2275,
-    "out": 0.91,
+    "in": 0.12,
+    "out": 0.24,
     "context": 131072
    },
    "qwen/qwen3-32b": {
@@ -1902,8 +1902,8 @@
     "context": 16384
    },
    "deepseek/deepseek-chat": {
-    "in": 0.2574,
-    "out": 1.0287,
+    "in": 0.32,
+    "out": 0.89,
     "context": 163840
    },
    "sao10k/l3.3-euryale-70b": {
@@ -2161,8 +2161,8 @@
  },
  "chain_method": "Modelo primario: opencode-go/hy3.\nSi el primero falla, se prueba el siguiente automáticamente (cascada de respaldo).\nCadena activa: 2 Go · 2 Zen free · 0 Zen paid · 2 OpenRouter (leída de agents.defaults.model).\n✅ Cadena sin Zen paid: 0 crédito de pago de Zen en cualquier escalón.\nGo y Zen free no consumen crédito de pago; OpenRouter solo en cascada de fallo.",
  "chain_snapshot": {
-  "generated_at": "2026-09-03T04:00:05.347380+00:00",
-  "snapshot": "2026-09-03 04:00 UTC",
+  "generated_at": "2026-09-03T12:00:06.378855+00:00",
+  "snapshot": "2026-09-03 12:00 UTC",
   "source": "agents.defaults.model en openclaw.json (leída en build)",
   "links": [
    {
@@ -2199,27 +2199,27 @@
  },
  "status_badges": {
   "go_quota": {
-   "badge": "✅ Cuota Go OK (Continuo 5% (reinicia 21m) · Semanal 6% (reinicia 92h 14m) · Mensual 32% (reinicia 508h 35m))",
+   "badge": "✅ Cuota Go OK (Continuo 5% (reinicia 6m) · Semanal 6% (reinicia 91h 59m) · Mensual 32% (reinicia 508h 20m))",
    "nivel": "ok",
    "source": "api",
    "buckets": {
     "rolling": {
      "percent": 5,
      "status": "ok",
-     "resets_at": "2026-09-03T04:07:03.352Z",
-     "resets_in_human": "21m"
+     "resets_at": "2026-09-03T04:07:03.760Z",
+     "resets_in_human": "6m"
     },
     "weekly": {
      "percent": 6,
      "status": "ok",
-     "resets_at": "2026-09-07T00:00:00.352Z",
-     "resets_in_human": "92h 14m"
+     "resets_at": "2026-09-07T00:00:00.760Z",
+     "resets_in_human": "91h 59m"
     },
     "monthly": {
      "percent": 32,
      "status": "ok",
-     "resets_at": "2026-09-24T08:20:30.352Z",
-     "resets_in_human": "508h 35m"
+     "resets_at": "2026-09-24T08:20:30.760Z",
+     "resets_in_human": "508h 20m"
     }
    }
   },
@@ -2232,8 +2232,8 @@
    "opencode-go": {
     "enabled": 1,
     "probed": {
-     "down": 7,
      "ok": 20,
+     "down": 7,
      "na": 3,
      "indisponible": 1,
      "unk": 3
