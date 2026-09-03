@@ -1283,7 +1283,7 @@
    "openrouter/tencent/hy3": "noprobe"
   },
   "2026-09-03": {
-   "opencode-go/deepseek-v4-flash": "down",
+   "opencode-go/deepseek-v4-flash": "ok",
    "opencode-go/deepseek-v4-flash-vision-exp": "ok",
    "opencode-go/deepseek-v4-pro": "ok",
    "opencode-go/glm-5": "ok",
@@ -1304,7 +1304,7 @@
    "opencode-go/longcat-2.0": "ok",
    "opencode-go/mimo-v2-omni": "unk",
    "opencode-go/mimo-v2-pro": "unk",
-   "opencode-go/mimo-v2.5": "ok",
+   "opencode-go/mimo-v2.5": "down",
    "opencode-go/mimo-v2.5-pro": "ok",
    "opencode-go/minimax-m2.5": "ok",
    "opencode-go/minimax-m2.7": "down",
