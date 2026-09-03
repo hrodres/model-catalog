@@ -1,13 +1,13 @@
 {
- "generated": "2026-09-02T20:01:16.794865+00:00",
- "snapshot": "2026-09-02",
+ "generated": "2026-09-03T03:46:41.190217+00:00",
+ "snapshot": "2026-09-03",
  "fuente": "check-model-health.py F3 (2026-08-24)",
  "providers": {
   "opencode-go": {
    "enabled": 1,
    "probed": {
-    "ok": 22,
-    "down": 5,
+    "down": 7,
+    "ok": 20,
     "na": 3,
     "indisponible": 1,
     "unk": 3
@@ -31,8 +31,8 @@
   }
  },
  "counts": {
-  "ok": 22,
-  "down": 5,
+  "down": 7,
+  "ok": 20,
   "na": 3,
   "indisponible": 1,
   "unk": 3,
@@ -40,27 +40,27 @@
   "noprobe": 47
  },
  "go_quota": {
-  "badge": "✅ Cuota Go OK (Continuo 0% (reinicia 2h 15m) · Semanal 4% (reinicia 99h 59m) · Mensual 30% (reinicia 516h 20m))",
+  "badge": "✅ Cuota Go OK (Continuo 5% (reinicia 21m) · Semanal 6% (reinicia 92h 14m) · Mensual 32% (reinicia 508h 35m))",
   "nivel": "ok",
   "source": "api",
   "buckets": {
    "rolling": {
-    "percent": 0,
+    "percent": 5,
     "status": "ok",
-    "resets_at": "2026-09-02T22:15:34.422Z",
-    "resets_in_human": "2h 15m"
+    "resets_at": "2026-09-03T04:07:03.352Z",
+    "resets_in_human": "21m"
    },
    "weekly": {
-    "percent": 4,
+    "percent": 6,
     "status": "ok",
-    "resets_at": "2026-09-07T00:00:00.422Z",
-    "resets_in_human": "99h 59m"
+    "resets_at": "2026-09-07T00:00:00.352Z",
+    "resets_in_human": "92h 14m"
    },
    "monthly": {
-    "percent": 30,
+    "percent": 32,
     "status": "ok",
-    "resets_at": "2026-09-24T08:20:30.422Z",
-    "resets_in_human": "516h 20m"
+    "resets_at": "2026-09-24T08:20:30.352Z",
+    "resets_in_human": "508h 35m"
    }
   }
  },
@@ -82,8 +82,8 @@
   },
   {
    "link": "opencode-go/deepseek-v4-flash",
-   "estado": "ok",
-   "detalle": "HTTP 200"
+   "estado": "down",
+   "detalle": "ERR The read operation timed out"
   },
   {
    "link": "opencode-zen/deepseek-v4-flash-free",
@@ -105,8 +105,8 @@
   {
    "modelo": "deepseek-v4-flash",
    "provider": "opencode-go",
-   "estado": "ok",
-   "detalle": "HTTP 200"
+   "estado": "down",
+   "detalle": "ERR The read operation timed out"
   },
   {
    "modelo": "deepseek-v4-flash-vision-exp",
@@ -207,8 +207,8 @@
   {
    "modelo": "kimi-k3",
    "provider": "opencode-go",
-   "estado": "ok",
-   "detalle": "HTTP 200"
+   "estado": "down",
+   "detalle": "ERR The read operation timed out"
   },
   {
    "modelo": "longcat-2.0",
@@ -231,14 +231,14 @@
   {
    "modelo": "mimo-v2.5",
    "provider": "opencode-go",
-   "estado": "down",
-   "detalle": "ERR The read operation timed out"
+   "estado": "ok",
+   "detalle": "HTTP 200"
   },
   {
    "modelo": "mimo-v2.5-pro",
    "provider": "opencode-go",
-   "estado": "down",
-   "detalle": "ERR The read operation timed out"
+   "estado": "ok",
+   "detalle": "HTTP 200"
   },
   {
    "modelo": "minimax-m2.5",
@@ -255,8 +255,8 @@
   {
    "modelo": "minimax-m3",
    "provider": "opencode-go",
-   "estado": "ok",
-   "detalle": "HTTP 200"
+   "estado": "down",
+   "detalle": "ERR The read operation timed out"
   },
   {
    "modelo": "muse-spark-1.2-contributor",
@@ -273,8 +273,8 @@
   {
    "modelo": "qwen3.5-plus",
    "provider": "opencode-go",
-   "estado": "ok",
-   "detalle": "HTTP 200"
+   "estado": "down",
+   "detalle": "ERR The read operation timed out"
   },
   {
    "modelo": "qwen3.6-plus",
