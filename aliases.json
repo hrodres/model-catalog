@@ -1,5 +1,5 @@
 {
- "generated": "2026-09-03T12:00:06.379324+00:00",
+ "generated": "2026-09-03T19:45:18.510176+00:00",
  "aliases": [
   {
    "id": "opencode-zen/big-pickle",
@@ -39,7 +39,7 @@
   },
   {
    "id": "opencode-zen/claude-sonnet-4",
-   "alias": "💰 Claude Sonnet 4.5 (Zen)"
+   "alias": "💰 Claude Sonnet 4.6 (Zen)"
   },
   {
    "id": "opencode-zen/claude-sonnet-4-5",
@@ -83,7 +83,7 @@
   },
   {
    "id": "opencode-zen/gemini-3.1-pro",
-   "alias": "💰 Gemini 3.1 Pro Preview (Zen)"
+   "alias": "💰 Gemini 3.1 Pro Preview Custom Tools (Zen)"
   },
   {
    "id": "opencode-zen/gemini-3.5-flash",
