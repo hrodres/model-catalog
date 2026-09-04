@@ -779,6 +779,14 @@
   {
    "date": "2026-09-04",
    "text": "opencode-go/mimo-v2.5-pro: down → ok"
+  },
+  {
+   "date": "2026-09-04",
+   "text": "opencode-go/longcat-2.0: ok → down"
+  },
+  {
+   "date": "2026-09-04",
+   "text": "opencode-go/mimo-v2.5-pro: down → ok"
   }
  ]
 }
