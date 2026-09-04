@@ -1,5 +1,5 @@
 {
- "generated": "2026-09-04T04:00:05.351227+00:00",
+ "generated": "2026-09-04T11:45:15.778976+00:00",
  "aliases": [
   {
    "id": "opencode-zen/big-pickle",
@@ -368,6 +368,10 @@
   {
    "id": "opencode-zen/nemotron-3.5-lightning-free",
    "alias": "🌱 Nemotron 3.5 Lightning 30B A3B (Zen free)"
+  },
+  {
+   "id": "opencode-go/omen-alpha",
+   "alias": "🚀 omen-alpha (Go)"
   },
   {
    "id": "opencode-go/qwen3.5-plus",

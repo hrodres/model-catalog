@@ -1828,6 +1828,7 @@
     "minimax-m3",
     "muse-spark-1.2-contributor",
     "muse-spark-1.3-contributor",
+    "omen-alpha",
     "qwen3.5-plus",
     "qwen3.6-plus",
     "qwen3.7-max",
@@ -1990,6 +1991,11 @@
    "date": "2026-09-02",
    "type": "added",
    "id": "muse-spark-1.3-contributor-free"
+  },
+  {
+   "date": "2026-09-04",
+   "type": "added",
+   "id": "omen-alpha"
   }
  ]
 }

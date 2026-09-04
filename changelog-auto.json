@@ -787,6 +787,18 @@
   {
    "date": "2026-09-04",
    "text": "opencode-go/mimo-v2.5-pro: down → ok"
+  },
+  {
+   "date": "2026-09-04",
+   "text": "opencode-go/mimo-v2.5: ok → down"
+  },
+  {
+   "date": "2026-09-04",
+   "text": "opencode-go/mimo-v2.5-pro: down → ok"
+  },
+  {
+   "date": "2026-09-04",
+   "text": "opencode-go/qwen3.5-plus: down → ok"
   }
  ]
 }

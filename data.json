@@ -1,16 +1,16 @@
 {
- "generated": "2026-09-04T04:00:05.351227+00:00",
- "snapshot": "2026-09-04 04:00 UTC",
+ "generated": "2026-09-04T11:45:15.778976+00:00",
+ "snapshot": "2026-09-04 11:45 UTC",
  "providers_3rd": [
   "opencode-go",
   "opencode-zen",
   "openrouter"
  ],
- "modelsdev_fetched": "2026-09-04 04:00 UTC",
+ "modelsdev_fetched": "2026-09-04 11:45 UTC",
  "modelsdev_count": 368,
  "price_matrix": {
   "currency": "USD",
-  "fetched": "2026-09-04T03:45:05.058895+00:00",
+  "fetched": "2026-09-04T11:45:05.366434+00:00",
   "sources": {
    "zen_paid": "precios de cuenta opencode-zen (off-peak / peak)",
    "openrouter": "precios reales API OpenRouter (cache or-models-cache.json)"
@@ -117,8 +117,8 @@
     "context": 1048576
    },
    "deepseek/deepseek-v4-flash-vision-exp": {
-    "in": 0.44,
-    "out": 1.32,
+    "in": 0.22,
+    "out": 0.66,
     "context": 1048576
    },
    "tencent/hy-mt2-1.8b": {
@@ -2176,8 +2176,8 @@
  },
  "chain_method": "Modelo primario: opencode-go/hy3.\nSi el primero falla, se prueba el siguiente automáticamente (cascada de respaldo).\nCadena activa: 2 Go · 2 Zen free · 0 Zen paid · 2 OpenRouter (leída de agents.defaults.model).\n✅ Cadena sin Zen paid: 0 crédito de pago de Zen en cualquier escalón.\nGo y Zen free no consumen crédito de pago; OpenRouter solo en cascada de fallo.",
  "chain_snapshot": {
-  "generated_at": "2026-09-04T04:00:05.350861+00:00",
-  "snapshot": "2026-09-04 04:00 UTC",
+  "generated_at": "2026-09-04T11:45:15.778610+00:00",
+  "snapshot": "2026-09-04 11:45 UTC",
   "source": "agents.defaults.model en openclaw.json (leída en build)",
   "links": [
    {
@@ -2214,27 +2214,27 @@
  },
  "status_badges": {
   "go_quota": {
-   "badge": "✅ Cuota Go OK (Continuo 0% (reinicia 2h 19m) · Semanal 6% (reinicia 68h 14m) · Mensual 32% (reinicia 484h 35m))",
+   "badge": "✅ Cuota Go OK (Continuo 0% (reinicia 2h 4m) · Semanal 6% (reinicia 67h 59m) · Mensual 32% (reinicia 484h 20m))",
    "nivel": "ok",
    "source": "api",
    "buckets": {
     "rolling": {
      "percent": 0,
      "status": "ok",
-     "resets_at": "2026-09-04T06:05:05.656Z",
-     "resets_in_human": "2h 19m"
+     "resets_at": "2026-09-04T06:05:05.747Z",
+     "resets_in_human": "2h 4m"
     },
     "weekly": {
      "percent": 6,
      "status": "ok",
-     "resets_at": "2026-09-07T00:00:00.656Z",
-     "resets_in_human": "68h 14m"
+     "resets_at": "2026-09-07T00:00:00.747Z",
+     "resets_in_human": "67h 59m"
     },
     "monthly": {
      "percent": 32,
      "status": "ok",
-     "resets_at": "2026-09-24T08:20:30.656Z",
-     "resets_in_human": "484h 35m"
+     "resets_at": "2026-09-24T08:20:30.747Z",
+     "resets_in_human": "484h 20m"
     }
    }
   },
@@ -2273,8 +2273,8 @@
   }
  },
  "counts": {
-  "total": 83,
-  "go": 34,
+  "total": 84,
+  "go": 35,
   "zen": 66,
   "free": 9,
   "openrouter": 13,
@@ -4779,6 +4779,33 @@
    "swebench": null,
    "benchmarks": {},
    "md_url": "https://models.dev/models/nvidia/nemotron-3.5-lightning"
+  },
+  {
+   "id": "omen-alpha",
+   "providers": {
+    "go": true,
+    "zen": false,
+    "free": false,
+    "or": false
+   },
+   "or_id": null,
+   "or_price": null,
+   "tier": "go",
+   "name": "omen-alpha",
+   "desc": "Sin ficha en models.dev (solo catálogo opencode)",
+   "context": null,
+   "output": null,
+   "reasoning": null,
+   "tool_call": null,
+   "structured": null,
+   "multimodal": null,
+   "open_weights": null,
+   "release": "",
+   "last_updated": "",
+   "knowledge": "",
+   "swebench": null,
+   "benchmarks": {},
+   "md_url": null
   },
   {
    "id": "qwen3.5-plus",
