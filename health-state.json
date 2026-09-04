@@ -1,6 +1,6 @@
 {
- "generated": "2026-09-03T20:01:23.874332+00:00",
- "snapshot": "2026-09-03",
+ "generated": "2026-09-04T03:46:28.662308+00:00",
+ "snapshot": "2026-09-04",
  "fuente": "check-model-health.py F3 (2026-08-24)",
  "providers": {
   "opencode-go": {
@@ -40,27 +40,27 @@
   "noprobe": 47
  },
  "go_quota": {
-  "badge": "✅ Cuota Go OK (Continuo 0% (reinicia 4h 4m) · Semanal 6% (reinicia 75h 59m) · Mensual 32% (reinicia 492h 20m))",
+  "badge": "✅ Cuota Go OK (Continuo 0% (reinicia 2h 19m) · Semanal 6% (reinicia 68h 14m) · Mensual 32% (reinicia 484h 35m))",
   "nivel": "ok",
   "source": "api",
   "buckets": {
    "rolling": {
     "percent": 0,
     "status": "ok",
-    "resets_at": "2026-09-04T00:05:04.765Z",
-    "resets_in_human": "4h 4m"
+    "resets_at": "2026-09-04T06:05:05.656Z",
+    "resets_in_human": "2h 19m"
    },
    "weekly": {
     "percent": 6,
     "status": "ok",
-    "resets_at": "2026-09-07T00:00:00.765Z",
-    "resets_in_human": "75h 59m"
+    "resets_at": "2026-09-07T00:00:00.656Z",
+    "resets_in_human": "68h 14m"
    },
    "monthly": {
     "percent": 32,
     "status": "ok",
-    "resets_at": "2026-09-24T08:20:30.765Z",
-    "resets_in_human": "492h 20m"
+    "resets_at": "2026-09-24T08:20:30.656Z",
+    "resets_in_human": "484h 35m"
    }
   }
  },
@@ -213,8 +213,8 @@
   {
    "modelo": "longcat-2.0",
    "provider": "opencode-go",
-   "estado": "ok",
-   "detalle": "HTTP 200"
+   "estado": "down",
+   "detalle": "ERR The read operation timed out"
   },
   {
    "modelo": "mimo-v2-omni",
@@ -237,8 +237,8 @@
   {
    "modelo": "mimo-v2.5-pro",
    "provider": "opencode-go",
-   "estado": "down",
-   "detalle": "ERR The read operation timed out"
+   "estado": "ok",
+   "detalle": "HTTP 200"
   },
   {
    "modelo": "minimax-m2.5",
