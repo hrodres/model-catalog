@@ -847,6 +847,14 @@
   {
    "date": "2026-09-05",
    "text": "opencode-go/mimo-v2.5: ok → down"
+  },
+  {
+   "date": "2026-09-05",
+   "text": "opencode-go/glm-5.1: ok → down"
+  },
+  {
+   "date": "2026-09-05",
+   "text": "opencode-go/kimi-k3: ok → down"
   }
  ]
 }
