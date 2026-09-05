@@ -1,5 +1,5 @@
 {
- "generated": "2026-09-05T04:00:04.677731+00:00",
+ "generated": "2026-09-05T11:45:16.072746+00:00",
  "aliases": [
   {
    "id": "opencode-zen/big-pickle",
@@ -300,10 +300,6 @@
   {
    "id": "opencode-zen/kimi-k3",
    "alias": "💰 Kimi K3 (Zen)"
-  },
-  {
-   "id": "opencode-zen/laguna-s-2.1-free",
-   "alias": "🌱 Laguna S 2.1 (Zen free)"
   },
   {
    "id": "opencode-zen/ling-3.0-flash-fin-free",

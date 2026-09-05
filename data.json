@@ -1,16 +1,16 @@
 {
- "generated": "2026-09-05T04:00:04.677731+00:00",
- "snapshot": "2026-09-05 04:00 UTC",
+ "generated": "2026-09-05T11:45:16.072746+00:00",
+ "snapshot": "2026-09-05 11:45 UTC",
  "providers_3rd": [
   "opencode-go",
   "opencode-zen",
   "openrouter"
  ],
- "modelsdev_fetched": "2026-09-05 04:00 UTC",
+ "modelsdev_fetched": "2026-09-05 11:45 UTC",
  "modelsdev_count": 370,
  "price_matrix": {
   "currency": "USD",
-  "fetched": "2026-09-05T03:45:05.266829+00:00",
+  "fetched": "2026-09-05T11:45:05.716497+00:00",
   "sources": {
    "zen_paid": "precios de cuenta opencode-zen (off-peak / peak)",
    "openrouter": "precios reales API OpenRouter (cache or-models-cache.json)"
@@ -60,6 +60,11 @@
     "in": 0.0,
     "out": 0.0,
     "context": 262144
+   },
+   "qwen/qwen3.8-max-0902": {
+    "in": 2.0,
+    "out": 6.0,
+    "context": 1000000
    },
    "meta/muse-spark-1.3-contributor": {
     "in": 0.1,
@@ -265,11 +270,6 @@
     "in": 1.25,
     "out": 4.25,
     "context": 1048576
-   },
-   "qwen/qwen3.8-max": {
-    "in": 2.0,
-    "out": 6.0,
-    "context": 1000000
    },
    "~deepseek/deepseek-v4-flash-latest": {
     "in": 0.04998,
@@ -707,8 +707,8 @@
     "context": 1048576
    },
    "~moonshotai/kimi-latest": {
-    "in": 2.5,
-    "out": 14.0,
+    "in": 2.55,
+    "out": 12.75,
     "context": 1048576
    },
    "~google/gemini-flash-latest": {
@@ -772,13 +772,13 @@
     "context": 1050000
    },
    "deepseek/deepseek-v4-pro": {
-    "in": 0.96135,
-    "out": 1.9227,
+    "in": 0.890358,
+    "out": 1.780716,
     "context": 1048576
    },
    "deepseek/deepseek-v4-flash": {
-    "in": 0.08694,
-    "out": 0.17388,
+    "in": 0.08526,
+    "out": 0.17052,
     "context": 1048576
    },
    "tencent/hy3-preview": {
@@ -2196,8 +2196,8 @@
  },
  "chain_method": "Modelo primario: opencode-go/hy3.\nSi el primero falla, se prueba el siguiente automáticamente (cascada de respaldo).\nCadena activa: 2 Go · 2 Zen free · 0 Zen paid · 2 OpenRouter (leída de agents.defaults.model).\n✅ Cadena sin Zen paid: 0 crédito de pago de Zen en cualquier escalón.\nGo y Zen free no consumen crédito de pago; OpenRouter solo en cascada de fallo.",
  "chain_snapshot": {
-  "generated_at": "2026-09-05T04:00:04.677310+00:00",
-  "snapshot": "2026-09-05 04:00 UTC",
+  "generated_at": "2026-09-05T11:45:16.072369+00:00",
+  "snapshot": "2026-09-05 11:45 UTC",
   "source": "agents.defaults.model en openclaw.json (leída en build)",
   "links": [
    {
@@ -2234,27 +2234,27 @@
  },
  "status_badges": {
   "go_quota": {
-   "badge": "✅ Cuota Go OK (Continuo 0% (reinicia 2h 19m) · Semanal 7% (reinicia 44h 14m) · Mensual 32% (reinicia 460h 35m))",
+   "badge": "✅ Cuota Go OK (Continuo 0% (reinicia 2h 4m) · Semanal 7% (reinicia 43h 59m) · Mensual 32% (reinicia 460h 20m))",
    "nivel": "ok",
    "source": "api",
    "buckets": {
     "rolling": {
      "percent": 0,
      "status": "ok",
-     "resets_at": "2026-09-05T06:05:05.886Z",
-     "resets_in_human": "2h 19m"
+     "resets_at": "2026-09-05T06:05:05.108Z",
+     "resets_in_human": "2h 4m"
     },
     "weekly": {
      "percent": 7,
      "status": "ok",
-     "resets_at": "2026-09-07T00:00:00.886Z",
-     "resets_in_human": "44h 14m"
+     "resets_at": "2026-09-07T00:00:00.108Z",
+     "resets_in_human": "43h 59m"
     },
     "monthly": {
      "percent": 32,
      "status": "ok",
-     "resets_at": "2026-09-24T08:20:30.886Z",
-     "resets_in_human": "460h 35m"
+     "resets_at": "2026-09-24T08:20:30.108Z",
+     "resets_in_human": "460h 20m"
     }
    }
   },
@@ -2267,8 +2267,8 @@
    "opencode-go": {
     "enabled": 1,
     "probed": {
-     "ok": 22,
-     "down": 6,
+     "ok": 24,
+     "down": 4,
      "na": 3,
      "indisponible": 1,
      "unk": 3
@@ -2293,12 +2293,12 @@
   }
  },
  "counts": {
-  "total": 86,
+  "total": 85,
   "go": 35,
-  "zen": 71,
-  "free": 9,
-  "openrouter": 13,
-  "with_modelsdev": 80
+  "zen": 70,
+  "free": 8,
+  "openrouter": 12,
+  "with_modelsdev": 79
  },
  "models": [
   {
@@ -2743,8 +2743,8 @@
    },
    "or_id": "deepseek/deepseek-v4-flash",
    "or_price": {
-    "in": 0.08694,
-    "out": 0.17388,
+    "in": 0.08526,
+    "out": 0.17052,
     "context": 1048576
    },
    "tier": "paid",
@@ -2776,8 +2776,8 @@
    },
    "or_id": "deepseek/deepseek-v4-flash",
    "or_price": {
-    "in": 0.08694,
-    "out": 0.17388,
+    "in": 0.08526,
+    "out": 0.17052,
     "context": 1048576
    },
    "tier": "free",
@@ -2836,8 +2836,8 @@
    },
    "or_id": "deepseek/deepseek-v4-pro",
    "or_price": {
-    "in": 0.96135,
-    "out": 1.9227,
+    "in": 0.890358,
+    "out": 1.780716,
     "context": 1048576
    },
    "tier": "paid",
@@ -4277,37 +4277,6 @@
     "ZeroBench": 41
    },
    "md_url": "https://models.dev/models/moonshotai/kimi-k3"
-  },
-  {
-   "id": "laguna-s-2.1-free",
-   "providers": {
-    "go": false,
-    "zen": true,
-    "free": true,
-    "or": true
-   },
-   "or_id": "poolside/laguna-s-2.1",
-   "or_price": {
-    "in": 0.09,
-    "out": 0.18,
-    "context": 1048576
-   },
-   "tier": "free",
-   "name": "Laguna S 2.1",
-   "desc": "Agentic coding model from Poolside in the XS size class for local deployment",
-   "context": 1048576,
-   "output": 32768,
-   "reasoning": true,
-   "tool_call": true,
-   "structured": false,
-   "multimodal": false,
-   "open_weights": true,
-   "release": "2026-07-21",
-   "last_updated": "2026-07-21",
-   "knowledge": "",
-   "swebench": null,
-   "benchmarks": {},
-   "md_url": "https://models.dev/models/poolside/laguna-s-2.1"
   },
   {
    "id": "ling-3.0-flash-fin-free",
