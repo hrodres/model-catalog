@@ -863,6 +863,10 @@
   {
    "date": "2026-09-05",
    "text": "opencode-go/qwen3.6-plus: ok → down"
+  },
+  {
+   "date": "2026-09-05",
+   "text": "opencode-go/qwen3.5-plus: ok → down"
   }
  ]
 }
