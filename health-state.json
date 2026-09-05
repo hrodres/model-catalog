@@ -1,5 +1,5 @@
 {
- "generated": "2026-09-05T12:01:31.892871+00:00",
+ "generated": "2026-09-05T19:46:26.233728+00:00",
  "snapshot": "2026-09-05",
  "fuente": "check-model-health.py F3 (2026-08-24)",
  "providers": {
@@ -40,27 +40,27 @@
   "noprobe": 47
  },
  "go_quota": {
-  "badge": "✅ Cuota Go OK (Continuo 0% (reinicia 4m) · Semanal 7% (reinicia 35h 59m) · Mensual 32% (reinicia 452h 20m))",
+  "badge": "✅ Cuota Go OK (Continuo 0% (reinicia 4h 19m) · Semanal 7% (reinicia 28h 14m) · Mensual 32% (reinicia 444h 35m))",
   "nivel": "ok",
   "source": "api",
   "buckets": {
    "rolling": {
     "percent": 0,
     "status": "ok",
-    "resets_at": "2026-09-05T12:05:04.050Z",
-    "resets_in_human": "4m"
+    "resets_at": "2026-09-06T00:05:04.488Z",
+    "resets_in_human": "4h 19m"
    },
    "weekly": {
     "percent": 7,
     "status": "ok",
-    "resets_at": "2026-09-07T00:00:00.050Z",
-    "resets_in_human": "35h 59m"
+    "resets_at": "2026-09-07T00:00:00.488Z",
+    "resets_in_human": "28h 14m"
    },
    "monthly": {
     "percent": 32,
     "status": "ok",
-    "resets_at": "2026-09-24T08:20:30.050Z",
-    "resets_in_human": "452h 20m"
+    "resets_at": "2026-09-24T08:20:30.488Z",
+    "resets_in_human": "444h 35m"
    }
   }
  },
@@ -129,8 +129,8 @@
   {
    "modelo": "glm-5.1",
    "provider": "opencode-go",
-   "estado": "down",
-   "detalle": "ERR The read operation timed out"
+   "estado": "ok",
+   "detalle": "HTTP 200"
   },
   {
    "modelo": "glm-5.2",
@@ -207,8 +207,8 @@
   {
    "modelo": "kimi-k3",
    "provider": "opencode-go",
-   "estado": "down",
-   "detalle": "ERR The read operation timed out"
+   "estado": "ok",
+   "detalle": "HTTP 200"
   },
   {
    "modelo": "longcat-2.0",
@@ -279,14 +279,14 @@
   {
    "modelo": "qwen3.5-plus",
    "provider": "opencode-go",
-   "estado": "ok",
-   "detalle": "HTTP 200"
+   "estado": "down",
+   "detalle": "ERR The read operation timed out"
   },
   {
    "modelo": "qwen3.6-plus",
    "provider": "opencode-go",
-   "estado": "ok",
-   "detalle": "HTTP 200"
+   "estado": "down",
+   "detalle": "ERR The read operation timed out"
   },
   {
    "modelo": "qwen3.7-max",
