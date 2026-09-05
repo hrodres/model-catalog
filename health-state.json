@@ -1,13 +1,13 @@
 {
- "generated": "2026-09-04T20:01:12.175657+00:00",
- "snapshot": "2026-09-04",
+ "generated": "2026-09-05T03:46:31.163382+00:00",
+ "snapshot": "2026-09-05",
  "fuente": "check-model-health.py F3 (2026-08-24)",
  "providers": {
   "opencode-go": {
    "enabled": 1,
    "probed": {
-    "ok": 25,
-    "down": 3,
+    "ok": 22,
+    "down": 6,
     "na": 3,
     "indisponible": 1,
     "unk": 3
@@ -17,7 +17,7 @@
   "opencode-zen": {
    "enabled": 1,
    "probed": {
-    "free": 22,
+    "free": 27,
     "noprobe": 44
    },
    "total": 2
@@ -31,36 +31,36 @@
   }
  },
  "counts": {
-  "ok": 25,
-  "down": 3,
+  "ok": 22,
+  "down": 6,
   "na": 3,
   "indisponible": 1,
   "unk": 3,
-  "free": 22,
+  "free": 27,
   "noprobe": 47
  },
  "go_quota": {
-  "badge": "✅ Cuota Go OK (Continuo 0% (reinicia 4h 4m) · Semanal 7% (reinicia 51h 59m) · Mensual 32% (reinicia 468h 20m))",
+  "badge": "✅ Cuota Go OK (Continuo 0% (reinicia 2h 19m) · Semanal 7% (reinicia 44h 14m) · Mensual 32% (reinicia 460h 35m))",
   "nivel": "ok",
   "source": "api",
   "buckets": {
    "rolling": {
     "percent": 0,
     "status": "ok",
-    "resets_at": "2026-09-05T00:05:04.812Z",
-    "resets_in_human": "4h 4m"
+    "resets_at": "2026-09-05T06:05:05.886Z",
+    "resets_in_human": "2h 19m"
    },
    "weekly": {
     "percent": 7,
     "status": "ok",
-    "resets_at": "2026-09-07T00:00:00.812Z",
-    "resets_in_human": "51h 59m"
+    "resets_at": "2026-09-07T00:00:00.886Z",
+    "resets_in_human": "44h 14m"
    },
    "monthly": {
     "percent": 32,
     "status": "ok",
-    "resets_at": "2026-09-24T08:20:30.812Z",
-    "resets_in_human": "468h 20m"
+    "resets_at": "2026-09-24T08:20:30.886Z",
+    "resets_in_human": "460h 35m"
    }
   }
  },
@@ -213,8 +213,8 @@
   {
    "modelo": "longcat-2.0",
    "provider": "opencode-go",
-   "estado": "ok",
-   "detalle": "HTTP 200"
+   "estado": "down",
+   "detalle": "ERR The read operation timed out"
   },
   {
    "modelo": "mimo-v2-omni",
@@ -273,14 +273,14 @@
   {
    "modelo": "omen-alpha",
    "provider": "opencode-go",
-   "estado": "ok",
-   "detalle": "HTTP 200"
+   "estado": "down",
+   "detalle": "ERR The read operation timed out"
   },
   {
    "modelo": "qwen3.5-plus",
    "provider": "opencode-go",
-   "estado": "ok",
-   "detalle": "HTTP 200"
+   "estado": "down",
+   "detalle": "ERR The read operation timed out"
   },
   {
    "modelo": "qwen3.6-plus",
@@ -403,6 +403,12 @@
    "detalle": "no probado (protección cuota global free 100 req/día)"
   },
   {
+   "modelo": "deepseek-v4-flash-vision-exp",
+   "provider": "opencode-zen",
+   "estado": "free",
+   "detalle": "no probado (protección cuota global free 100 req/día)"
+  },
+  {
    "modelo": "deepseek-v4-pro",
    "provider": "opencode-zen",
    "estado": "noprobe",
@@ -467,6 +473,18 @@
    "provider": "opencode-zen",
    "estado": "noprobe",
    "detalle": "no probeado (ahorro de crédito: usa Go para salud en vivo)"
+  },
+  {
+   "modelo": "glm-5.3",
+   "provider": "opencode-zen",
+   "estado": "free",
+   "detalle": "no probado (protección cuota global free 100 req/día)"
+  },
+  {
+   "modelo": "glm-5.3-flash",
+   "provider": "opencode-zen",
+   "estado": "free",
+   "detalle": "no probado (protección cuota global free 100 req/día)"
   },
   {
    "modelo": "gpt-5",
@@ -589,6 +607,12 @@
    "detalle": "no probado (protección cuota global free 100 req/día)"
   },
   {
+   "modelo": "gpt-6-astra",
+   "provider": "opencode-zen",
+   "estado": "free",
+   "detalle": "no probado (protección cuota global free 100 req/día)"
+  },
+  {
    "modelo": "grok-4.5",
    "provider": "opencode-zen",
    "estado": "free",
@@ -674,6 +698,12 @@
   },
   {
    "modelo": "muse-spark-1.2-contributor-free",
+   "provider": "opencode-zen",
+   "estado": "free",
+   "detalle": "no probado (protección cuota global free 100 req/día)"
+  },
+  {
+   "modelo": "muse-spark-1.3",
    "provider": "opencode-zen",
    "estado": "free",
    "detalle": "no probado (protección cuota global free 100 req/día)"

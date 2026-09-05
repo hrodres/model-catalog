@@ -1,16 +1,16 @@
 {
- "generated": "2026-09-04T20:00:05.305212+00:00",
- "snapshot": "2026-09-04 20:00 UTC",
+ "generated": "2026-09-05T03:45:14.487327+00:00",
+ "snapshot": "2026-09-05 03:45 UTC",
  "providers_3rd": [
   "opencode-go",
   "opencode-zen",
   "openrouter"
  ],
- "modelsdev_fetched": "2026-09-04 20:00 UTC",
- "modelsdev_count": 368,
+ "modelsdev_fetched": "2026-09-05 03:45 UTC",
+ "modelsdev_count": 370,
  "price_matrix": {
   "currency": "USD",
-  "fetched": "2026-09-04T19:45:05.433109+00:00",
+  "fetched": "2026-09-05T03:45:05.266829+00:00",
   "sources": {
    "zen_paid": "precios de cuenta opencode-zen (off-peak / peak)",
    "openrouter": "precios reales API OpenRouter (cache or-models-cache.json)"
@@ -36,6 +36,26 @@
    }
   },
   "openrouter": {
+   "openai/gpt-6-astra": {
+    "in": 10.0,
+    "out": 50.0,
+    "context": 1050000
+   },
+   "openai/gpt-6-astra:batch": {
+    "in": 5.0,
+    "out": 25.0,
+    "context": 1050000
+   },
+   "openai/gpt-6-astra-pro": {
+    "in": 10.0,
+    "out": 50.0,
+    "context": 1050000
+   },
+   "openai/gpt-6-astra-pro:batch": {
+    "in": 5.0,
+    "out": 25.0,
+    "context": 1050000
+   },
    "inclusionai/ling-3.0-flash-sante:free": {
     "in": 0.0,
     "out": 0.0,
@@ -192,8 +212,8 @@
     "context": 262144
    },
    "deepseek/deepseek-v4-pro-0813": {
-    "in": 0.57948,
-    "out": 1.73844,
+    "in": 1.12068,
+    "out": 3.36204,
     "context": 1048576
    },
    "deepseek/deepseek-v4-pro-0813:batch": {
@@ -457,8 +477,8 @@
     "context": 131072
    },
    "tencent/hy3": {
-    "in": 0.0825,
-    "out": 0.33,
+    "in": 0.132,
+    "out": 0.528,
     "context": 262144
    },
    "poolside/laguna-xs-2.1": {
@@ -752,13 +772,13 @@
     "context": 1050000
    },
    "deepseek/deepseek-v4-pro": {
-    "in": 1.001892,
-    "out": 2.003784,
+    "in": 0.96135,
+    "out": 1.9227,
     "context": 1048576
    },
    "deepseek/deepseek-v4-flash": {
-    "in": 0.08778,
-    "out": 0.17556,
+    "in": 0.08694,
+    "out": 0.17388,
     "context": 1048576
    },
    "tencent/hy3-preview": {
@@ -1597,8 +1617,8 @@
     "context": 1048576
    },
    "qwen/qwen3-235b-a22b-2507": {
-    "in": 0.0875,
-    "out": 0.35,
+    "in": 0.09,
+    "out": 0.55,
     "context": 262144
    },
    "moonshotai/kimi-k2": {
@@ -2176,8 +2196,8 @@
  },
  "chain_method": "Modelo primario: opencode-go/hy3.\nSi el primero falla, se prueba el siguiente automáticamente (cascada de respaldo).\nCadena activa: 2 Go · 2 Zen free · 0 Zen paid · 2 OpenRouter (leída de agents.defaults.model).\n✅ Cadena sin Zen paid: 0 crédito de pago de Zen en cualquier escalón.\nGo y Zen free no consumen crédito de pago; OpenRouter solo en cascada de fallo.",
  "chain_snapshot": {
-  "generated_at": "2026-09-04T20:00:05.304866+00:00",
-  "snapshot": "2026-09-04 20:00 UTC",
+  "generated_at": "2026-09-05T03:45:14.486971+00:00",
+  "snapshot": "2026-09-05 03:45 UTC",
   "source": "agents.defaults.model en openclaw.json (leída en build)",
   "links": [
    {
@@ -2214,27 +2234,27 @@
  },
  "status_badges": {
   "go_quota": {
-   "badge": "✅ Cuota Go OK (Continuo 0% (reinicia 4h 19m) · Semanal 7% (reinicia 52h 14m) · Mensual 32% (reinicia 468h 35m))",
+   "badge": "✅ Cuota Go OK (Continuo 0% (reinicia 4h 4m) · Semanal 7% (reinicia 51h 59m) · Mensual 32% (reinicia 468h 20m))",
    "nivel": "ok",
    "source": "api",
    "buckets": {
     "rolling": {
      "percent": 0,
      "status": "ok",
-     "resets_at": "2026-09-05T00:05:04.551Z",
-     "resets_in_human": "4h 19m"
+     "resets_at": "2026-09-05T00:05:04.812Z",
+     "resets_in_human": "4h 4m"
     },
     "weekly": {
      "percent": 7,
      "status": "ok",
-     "resets_at": "2026-09-07T00:00:00.551Z",
-     "resets_in_human": "52h 14m"
+     "resets_at": "2026-09-07T00:00:00.812Z",
+     "resets_in_human": "51h 59m"
     },
     "monthly": {
      "percent": 32,
      "status": "ok",
-     "resets_at": "2026-09-24T08:20:30.551Z",
-     "resets_in_human": "468h 35m"
+     "resets_at": "2026-09-24T08:20:30.812Z",
+     "resets_in_human": "468h 20m"
     }
    }
   },
@@ -2247,8 +2267,8 @@
    "opencode-go": {
     "enabled": 1,
     "probed": {
-     "ok": 24,
-     "down": 4,
+     "ok": 25,
+     "down": 3,
      "na": 3,
      "indisponible": 1,
      "unk": 3
@@ -2273,12 +2293,12 @@
   }
  },
  "counts": {
-  "total": 84,
+  "total": 86,
   "go": 35,
-  "zen": 66,
+  "zen": 71,
   "free": 9,
   "openrouter": 13,
-  "with_modelsdev": 78
+  "with_modelsdev": 80
  },
  "models": [
   {
@@ -2723,8 +2743,8 @@
    },
    "or_id": "deepseek/deepseek-v4-flash",
    "or_price": {
-    "in": 0.08778,
-    "out": 0.17556,
+    "in": 0.08694,
+    "out": 0.17388,
     "context": 1048576
    },
    "tier": "paid",
@@ -2756,8 +2776,8 @@
    },
    "or_id": "deepseek/deepseek-v4-flash",
    "or_price": {
-    "in": 0.08778,
-    "out": 0.17556,
+    "in": 0.08694,
+    "out": 0.17388,
     "context": 1048576
    },
    "tier": "free",
@@ -2783,13 +2803,13 @@
    "id": "deepseek-v4-flash-vision-exp",
    "providers": {
     "go": true,
-    "zen": false,
+    "zen": true,
     "free": false,
     "or": false
    },
    "or_id": null,
    "or_price": null,
-   "tier": "go",
+   "tier": "paid",
    "name": "DeepSeek V4 Flash Vision Exp",
    "desc": "Experimental multimodal DeepSeek V4 Flash model for image understanding, coding, and agentic work",
    "context": 1000000,
@@ -2816,8 +2836,8 @@
    },
    "or_id": "deepseek/deepseek-v4-pro",
    "or_price": {
-    "in": 1.001892,
-    "out": 2.003784,
+    "in": 0.96135,
+    "out": 1.9227,
     "context": 1048576
    },
    "tier": "paid",
@@ -3184,13 +3204,13 @@
    "id": "glm-5.3",
    "providers": {
     "go": true,
-    "zen": false,
+    "zen": true,
     "free": false,
     "or": false
    },
    "or_id": null,
    "or_price": null,
-   "tier": "go",
+   "tier": "paid",
    "name": "GLM-5.3",
    "desc": "Flagship GLM model for long-horizon coding, agents, and complex project delivery",
    "context": 1000000,
@@ -3211,13 +3231,13 @@
    "id": "glm-5.3-flash",
    "providers": {
     "go": true,
-    "zen": false,
+    "zen": true,
     "free": false,
     "or": false
    },
    "or_id": null,
    "or_price": null,
-   "tier": "go",
+   "tier": "paid",
    "name": "GLM-5.3-Flash",
    "desc": "Native multimodal GLM model for efficient coding and long-horizon agent tasks",
    "context": 1000000,
@@ -3908,6 +3928,33 @@
    "md_url": "https://models.dev/models/openai/gpt-5.6-terra"
   },
   {
+   "id": "gpt-6-astra",
+   "providers": {
+    "go": false,
+    "zen": true,
+    "free": false,
+    "or": false
+   },
+   "or_id": null,
+   "or_price": null,
+   "tier": "paid",
+   "name": "GPT-6 Astra",
+   "desc": "GPT-6 Astra is OpenAI's most capable model for complex reasoning, coding, computer use, research, and document creation.",
+   "context": 1050000,
+   "output": 128000,
+   "reasoning": true,
+   "tool_call": true,
+   "structured": true,
+   "multimodal": true,
+   "open_weights": false,
+   "release": "2026-09-04",
+   "last_updated": "2026-09-04",
+   "knowledge": "",
+   "swebench": null,
+   "benchmarks": {},
+   "md_url": "https://models.dev/models/openai/gpt-6-astra"
+  },
+  {
    "id": "grok-4.5",
    "providers": {
     "go": true,
@@ -4004,8 +4051,8 @@
    },
    "or_id": "tencent/hy3",
    "or_price": {
-    "in": 0.0825,
-    "out": 0.33,
+    "in": 0.132,
+    "out": 0.528,
     "context": 262144
    },
    "tier": "go",
@@ -4652,6 +4699,33 @@
    "swebench": null,
    "benchmarks": {},
    "md_url": null
+  },
+  {
+   "id": "muse-spark-1.3",
+   "providers": {
+    "go": false,
+    "zen": true,
+    "free": false,
+    "or": false
+   },
+   "or_id": null,
+   "or_price": null,
+   "tier": "paid",
+   "name": "Muse Spark 1.3",
+   "desc": "Muse Spark 1.3 is a multimodal reasoning model from Meta for long-running agentic, multi-agent, and coding workflows. It improves long-horizon agent collaboration, instruction following, and coding efficiency relative to Muse Spark 1.2.",
+   "context": 1048576,
+   "output": 131072,
+   "reasoning": true,
+   "tool_call": true,
+   "structured": true,
+   "multimodal": true,
+   "open_weights": false,
+   "release": "2026-09-02",
+   "last_updated": "2026-09-02",
+   "knowledge": "",
+   "swebench": null,
+   "benchmarks": {},
+   "md_url": "https://models.dev/models/meta/muse-spark-1.3"
   },
   {
    "id": "muse-spark-1.3-contributor",

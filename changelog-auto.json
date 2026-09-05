@@ -819,6 +819,18 @@
   {
    "date": "2026-09-04",
    "text": "opencode-go/qwen3.5-plus: down → ok"
+  },
+  {
+   "date": "2026-09-05",
+   "text": "opencode-go/longcat-2.0: ok → down"
+  },
+  {
+   "date": "2026-09-05",
+   "text": "opencode-go/omen-alpha: ok → down"
+  },
+  {
+   "date": "2026-09-05",
+   "text": "opencode-go/qwen3.5-plus: ok → down"
   }
  ]
 }
