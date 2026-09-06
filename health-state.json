@@ -1,5 +1,5 @@
 {
- "generated": "2026-09-06T03:46:23.892514+00:00",
+ "generated": "2026-09-06T04:01:26.234836+00:00",
  "snapshot": "2026-09-06",
  "fuente": "check-model-health.py F3 (2026-08-24)",
  "providers": {
@@ -40,27 +40,27 @@
   "noprobe": 47
  },
  "go_quota": {
-  "badge": "✅ Cuota Go OK (Continuo 0% (reinicia 2h 19m) · Semanal 8% (reinicia 20h 14m) · Mensual 33% (reinicia 436h 35m))",
+  "badge": "✅ Cuota Go OK (Continuo 0% (reinicia 2h 5m) · Semanal 8% (reinicia 19h 59m) · Mensual 33% (reinicia 436h 20m))",
   "nivel": "ok",
   "source": "api",
   "buckets": {
    "rolling": {
     "percent": 0,
     "status": "ok",
-    "resets_at": "2026-09-06T06:05:07.047Z",
-    "resets_in_human": "2h 19m"
+    "resets_at": "2026-09-06T06:05:07.205Z",
+    "resets_in_human": "2h 5m"
    },
    "weekly": {
     "percent": 8,
     "status": "ok",
-    "resets_at": "2026-09-07T00:00:00.047Z",
-    "resets_in_human": "20h 14m"
+    "resets_at": "2026-09-07T00:00:00.205Z",
+    "resets_in_human": "19h 59m"
    },
    "monthly": {
     "percent": 33,
     "status": "ok",
-    "resets_at": "2026-09-24T08:20:30.047Z",
-    "resets_in_human": "436h 35m"
+    "resets_at": "2026-09-24T08:20:30.205Z",
+    "resets_in_human": "436h 20m"
    }
   }
  },
@@ -141,8 +141,8 @@
   {
    "modelo": "glm-5.3",
    "provider": "opencode-go",
-   "estado": "ok",
-   "detalle": "HTTP 200"
+   "estado": "down",
+   "detalle": "ERR The read operation timed out"
   },
   {
    "modelo": "glm-5.3-flash",
@@ -279,8 +279,8 @@
   {
    "modelo": "qwen3.5-plus",
    "provider": "opencode-go",
-   "estado": "down",
-   "detalle": "ERR The read operation timed out"
+   "estado": "ok",
+   "detalle": "HTTP 200"
   },
   {
    "modelo": "qwen3.6-plus",
