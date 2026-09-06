@@ -1,13 +1,13 @@
 {
- "generated": "2026-09-06T19:46:21.434318+00:00",
+ "generated": "2026-09-06T20:01:26.679569+00:00",
  "snapshot": "2026-09-06",
  "fuente": "check-model-health.py F3 (2026-08-24)",
  "providers": {
   "opencode-go": {
    "enabled": 1,
    "probed": {
-    "ok": 24,
-    "down": 4,
+    "ok": 22,
+    "down": 6,
     "na": 3,
     "indisponible": 1,
     "unk": 3
@@ -31,8 +31,8 @@
   }
  },
  "counts": {
-  "ok": 24,
-  "down": 4,
+  "ok": 22,
+  "down": 6,
   "na": 3,
   "indisponible": 1,
   "unk": 3,
@@ -40,27 +40,27 @@
   "noprobe": 47
  },
  "go_quota": {
-  "badge": "✅ Cuota Go OK (Continuo 0% (reinicia 4h 19m) · Semanal 8% (reinicia 4h 14m) · Mensual 33% (reinicia 420h 35m))",
+  "badge": "✅ Cuota Go OK (Continuo 0% (reinicia 4h 4m) · Semanal 8% (reinicia 3h 59m) · Mensual 33% (reinicia 420h 20m))",
   "nivel": "ok",
   "source": "api",
   "buckets": {
    "rolling": {
     "percent": 0,
     "status": "ok",
-    "resets_at": "2026-09-07T00:05:04.240Z",
-    "resets_in_human": "4h 19m"
+    "resets_at": "2026-09-07T00:05:04.394Z",
+    "resets_in_human": "4h 4m"
    },
    "weekly": {
     "percent": 8,
     "status": "ok",
-    "resets_at": "2026-09-07T00:00:00.240Z",
-    "resets_in_human": "4h 14m"
+    "resets_at": "2026-09-07T00:00:00.394Z",
+    "resets_in_human": "3h 59m"
    },
    "monthly": {
     "percent": 33,
     "status": "ok",
-    "resets_at": "2026-09-24T08:20:30.240Z",
-    "resets_in_human": "420h 35m"
+    "resets_at": "2026-09-24T08:20:30.394Z",
+    "resets_in_human": "420h 20m"
    }
   }
  },
@@ -237,8 +237,8 @@
   {
    "modelo": "mimo-v2.5-pro",
    "provider": "opencode-go",
-   "estado": "ok",
-   "detalle": "HTTP 200"
+   "estado": "down",
+   "detalle": "ERR The read operation timed out"
   },
   {
    "modelo": "minimax-m2.5",
@@ -279,8 +279,8 @@
   {
    "modelo": "qwen3.5-plus",
    "provider": "opencode-go",
-   "estado": "ok",
-   "detalle": "HTTP 200"
+   "estado": "down",
+   "detalle": "ERR The read operation timed out"
   },
   {
    "modelo": "qwen3.6-plus",
