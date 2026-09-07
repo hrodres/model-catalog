@@ -1035,6 +1035,114 @@
   {
    "date": "2026-09-07",
    "text": "opencode-go/qwen3.8-max: ok → unk"
+  },
+  {
+   "date": "2026-09-07",
+   "text": "opencode-go/deepseek-v4-flash: ok → unk"
+  },
+  {
+   "date": "2026-09-07",
+   "text": "opencode-go/deepseek-v4-flash-vision-exp: ok → unk"
+  },
+  {
+   "date": "2026-09-07",
+   "text": "opencode-go/deepseek-v4-pro: ok → unk"
+  },
+  {
+   "date": "2026-09-07",
+   "text": "opencode-go/glm-5: ok → unk"
+  },
+  {
+   "date": "2026-09-07",
+   "text": "opencode-go/glm-5.1: ok → unk"
+  },
+  {
+   "date": "2026-09-07",
+   "text": "opencode-go/glm-5.2: ok → unk"
+  },
+  {
+   "date": "2026-09-07",
+   "text": "opencode-go/glm-5.3: down → unk"
+  },
+  {
+   "date": "2026-09-07",
+   "text": "opencode-go/glm-5.3-flash: ok → unk"
+  },
+  {
+   "date": "2026-09-07",
+   "text": "opencode-go/grok-4.5: down → unk"
+  },
+  {
+   "date": "2026-09-07",
+   "text": "opencode-go/hy3: ok → unk"
+  },
+  {
+   "date": "2026-09-07",
+   "text": "opencode-go/hy3-preview: indisponible → unk"
+  },
+  {
+   "date": "2026-09-07",
+   "text": "opencode-go/hy4-preview: ok → unk"
+  },
+  {
+   "date": "2026-09-07",
+   "text": "opencode-go/kimi-k2.6: ok → unk"
+  },
+  {
+   "date": "2026-09-07",
+   "text": "opencode-go/kimi-k2.7-code: ok → unk"
+  },
+  {
+   "date": "2026-09-07",
+   "text": "opencode-go/kimi-k3: ok → unk"
+  },
+  {
+   "date": "2026-09-07",
+   "text": "opencode-go/longcat-2.0: ok → unk"
+  },
+  {
+   "date": "2026-09-07",
+   "text": "opencode-go/mimo-v2.5: ok → unk"
+  },
+  {
+   "date": "2026-09-07",
+   "text": "opencode-go/mimo-v2.5-pro: down → unk"
+  },
+  {
+   "date": "2026-09-07",
+   "text": "opencode-go/minimax-m2.5: ok → unk"
+  },
+  {
+   "date": "2026-09-07",
+   "text": "opencode-go/minimax-m3: ok → unk"
+  },
+  {
+   "date": "2026-09-07",
+   "text": "opencode-go/omen-alpha: ok → unk"
+  },
+  {
+   "date": "2026-09-07",
+   "text": "opencode-go/qwen3.5-plus: down → unk"
+  },
+  {
+   "date": "2026-09-07",
+   "text": "opencode-go/qwen3.6-plus: ok → unk"
+  },
+  {
+   "date": "2026-09-07",
+   "text": "opencode-go/qwen3.7-max: ok → unk"
+  },
+  {
+   "date": "2026-09-07",
+   "text": "opencode-go/qwen3.7-plus: ok → unk"
+  },
+  {
+   "date": "2026-09-07",
+   "text": "opencode-go/qwen3.8-flash: ok → unk"
+  },
+  {
+   "date": "2026-09-07",
+   "text": "opencode-go/qwen3.8-max: ok → unk"
   }
  ]
 }
