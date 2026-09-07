@@ -915,6 +915,18 @@
   {
    "date": "2026-09-07",
    "text": "opencode-go/omen-alpha: ok → down"
+  },
+  {
+   "date": "2026-09-07",
+   "text": "opencode-go/deepseek-v4-flash: ok → down"
+  },
+  {
+   "date": "2026-09-07",
+   "text": "opencode-go/longcat-2.0: ok → down"
+  },
+  {
+   "date": "2026-09-07",
+   "text": "opencode-go/mimo-v2.5-pro: down → ok"
   }
  ]
 }
