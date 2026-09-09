@@ -1,16 +1,16 @@
 {
- "generated": "2026-09-09T04:00:09.412182+00:00",
- "snapshot": "2026-09-09 04:00 UTC",
+ "generated": "2026-09-09T12:00:10.566168+00:00",
+ "snapshot": "2026-09-09 12:00 UTC",
  "providers_3rd": [
   "opencode-go",
   "opencode-zen",
   "openrouter"
  ],
- "modelsdev_fetched": "2026-09-09 04:00 UTC",
+ "modelsdev_fetched": "2026-09-09 12:00 UTC",
  "modelsdev_count": 378,
  "price_matrix": {
   "currency": "USD",
-  "fetched": "2026-09-09T03:45:09.102451+00:00",
+  "fetched": "2026-09-09T11:45:10.006851+00:00",
   "sources": {
    "zen_paid": "precios de cuenta opencode-zen (off-peak / peak)",
    "openrouter": "precios reales API OpenRouter (cache or-models-cache.json)"
@@ -237,8 +237,8 @@
     "context": 262144
    },
    "deepseek/deepseek-v4-pro-0813": {
-    "in": 0.57948,
-    "out": 1.73844,
+    "in": 1.0494,
+    "out": 3.1482,
     "context": 1048576
    },
    "deepseek/deepseek-v4-pro-0813:batch": {
@@ -1617,8 +1617,8 @@
     "context": 1048576
    },
    "qwen/qwen3-235b-a22b-2507": {
-    "in": 0.09,
-    "out": 0.55,
+    "in": 0.22,
+    "out": 0.88,
     "context": 262144
    },
    "moonshotai/kimi-k2": {
@@ -2196,8 +2196,8 @@
  },
  "chain_method": "Modelo primario: opencode-go/hy3.\nSi el primero falla, se prueba el siguiente automáticamente (cascada de respaldo).\nCadena activa: 2 Go · 2 Zen free · 0 Zen paid · 2 OpenRouter (leída de agents.defaults.model).\n✅ Cadena sin Zen paid: 0 crédito de pago de Zen en cualquier escalón.\nGo y Zen free no consumen crédito de pago; OpenRouter solo en cascada de fallo.",
  "chain_snapshot": {
-  "generated_at": "2026-09-09T04:00:09.411623+00:00",
-  "snapshot": "2026-09-09 04:00 UTC",
+  "generated_at": "2026-09-09T12:00:10.565794+00:00",
+  "snapshot": "2026-09-09 12:00 UTC",
   "source": "agents.defaults.model en openclaw.json (leída en build)",
   "links": [
    {
@@ -2234,27 +2234,27 @@
  },
  "status_badges": {
   "go_quota": {
-   "badge": "✅ Cuota Go OK (Continuo 0% (reinicia 4h 59m) · Semanal 0% (reinicia 116h 14m) · Mensual 33% (reinicia 364h 35m))",
+   "badge": "✅ Cuota Go OK (Continuo 0% (reinicia 4h 59m) · Semanal 0% (reinicia 115h 59m) · Mensual 33% (reinicia 364h 20m))",
    "nivel": "ok",
    "source": "api",
    "buckets": {
     "rolling": {
      "percent": 0,
      "status": "ok",
-     "resets_at": "2026-09-09T08:45:19.483Z",
+     "resets_at": "2026-09-09T09:00:09.818Z",
      "resets_in_human": "4h 59m"
     },
     "weekly": {
      "percent": 0,
      "status": "ok",
-     "resets_at": "2026-09-14T00:00:00.483Z",
-     "resets_in_human": "116h 14m"
+     "resets_at": "2026-09-14T00:00:00.818Z",
+     "resets_in_human": "115h 59m"
     },
     "monthly": {
      "percent": 33,
      "status": "ok",
-     "resets_at": "2026-09-24T08:20:30.483Z",
-     "resets_in_human": "364h 35m"
+     "resets_at": "2026-09-24T08:20:30.818Z",
+     "resets_in_human": "364h 20m"
     }
    }
   },
