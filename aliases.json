@@ -1,5 +1,5 @@
 {
- "generated": "2026-09-10T12:00:09.076331+00:00",
+ "generated": "2026-09-10T19:45:17.899549+00:00",
  "aliases": [
   {
    "id": "opencode-zen/big-pickle",
@@ -84,6 +84,10 @@
   {
    "id": "opencode-zen/deepseek-v4-pro",
    "alias": "💰 DeepSeek V4 Pro (Zen)"
+  },
+  {
+   "id": "opencode-go/deepseek-v4.1-flash",
+   "alias": "🚀 DeepSeek V4.1 Flash (Go)"
   },
   {
    "id": "opencode-zen/gemini-3-flash",
