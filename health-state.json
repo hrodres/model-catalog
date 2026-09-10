@@ -1,12 +1,12 @@
 {
- "generated": "2026-09-09T20:00:42.393463+00:00",
- "snapshot": "2026-09-09",
+ "generated": "2026-09-10T03:45:54.948490+00:00",
+ "snapshot": "2026-09-10",
  "fuente": "check-model-health.py F3 (2026-08-24)",
  "providers": {
   "opencode-go": {
    "enabled": 1,
    "probed": {
-    "unk": 30,
+    "unk": 31,
     "down": 2,
     "na": 3
    },
@@ -29,34 +29,34 @@
   }
  },
  "counts": {
-  "unk": 30,
+  "unk": 31,
   "down": 2,
   "na": 3,
   "free": 26,
   "noprobe": 47
  },
  "go_quota": {
-  "badge": "✅ Cuota Go OK (Continuo 0% (reinicia 4h 59m) · Semanal 0% (reinicia 99h 59m) · Mensual 33% (reinicia 348h 20m))",
+  "badge": "✅ Cuota Go OK (Continuo 0% (reinicia 4h 59m) · Semanal 0% (reinicia 92h 14m) · Mensual 33% (reinicia 340h 35m))",
   "nivel": "ok",
   "source": "api",
   "buckets": {
    "rolling": {
     "percent": 0,
     "status": "ok",
-    "resets_at": "2026-09-10T01:00:09.362Z",
+    "resets_at": "2026-09-10T08:45:20.852Z",
     "resets_in_human": "4h 59m"
    },
    "weekly": {
     "percent": 0,
     "status": "ok",
-    "resets_at": "2026-09-14T00:00:00.362Z",
-    "resets_in_human": "99h 59m"
+    "resets_at": "2026-09-14T00:00:00.852Z",
+    "resets_in_human": "92h 14m"
    },
    "monthly": {
     "percent": 33,
     "status": "ok",
-    "resets_at": "2026-09-24T08:20:30.362Z",
-    "resets_in_human": "348h 20m"
+    "resets_at": "2026-09-24T08:20:30.852Z",
+    "resets_in_human": "340h 35m"
    }
   }
  },
@@ -98,6 +98,12 @@
   }
  ],
  "models": [
+  {
+   "modelo": "deepseek-flash",
+   "provider": "opencode-go",
+   "estado": "unk",
+   "detalle": "HTTP 400: no responde al probe estándar"
+  },
   {
    "modelo": "deepseek-v4-flash",
    "provider": "opencode-go",
