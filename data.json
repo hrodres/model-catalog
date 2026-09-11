@@ -1,12 +1,12 @@
 {
- "generated": "2026-09-11T19:45:18.744625+00:00",
- "snapshot": "2026-09-11 19:45 UTC",
+ "generated": "2026-09-11T20:00:08.823661+00:00",
+ "snapshot": "2026-09-11 20:00 UTC",
  "providers_3rd": [
   "opencode-go",
   "opencode-zen",
   "openrouter"
  ],
- "modelsdev_fetched": "2026-09-11 19:45 UTC",
+ "modelsdev_fetched": "2026-09-11 20:00 UTC",
  "modelsdev_count": 389,
  "price_matrix": {
   "currency": "USD",
@@ -2256,8 +2256,8 @@
  },
  "chain_method": "Modelo primario: opencode-go/hy3.\nSi el primero falla, se prueba el siguiente automáticamente (cascada de respaldo).\nCadena activa: 2 Go · 2 Zen free · 0 Zen paid · 2 OpenRouter (leída de agents.defaults.model).\n✅ Cadena sin Zen paid: 0 crédito de pago de Zen en cualquier escalón.\nGo y Zen free no consumen crédito de pago; OpenRouter solo en cascada de fallo.",
  "chain_snapshot": {
-  "generated_at": "2026-09-11T19:45:18.744190+00:00",
-  "snapshot": "2026-09-11 19:45 UTC",
+  "generated_at": "2026-09-11T20:00:08.823244+00:00",
+  "snapshot": "2026-09-11 20:00 UTC",
   "source": "agents.defaults.model en openclaw.json (leída en build)",
   "links": [
    {
@@ -2294,27 +2294,27 @@
  },
  "status_badges": {
   "go_quota": {
-   "badge": "✅ Cuota Go OK (Continuo 0% (reinicia 4h 59m) · Semanal 0% (reinicia 59h 59m) · Mensual 33% (reinicia 308h 20m))",
+   "badge": "✅ Cuota Go OK (Continuo 0% (reinicia 4h 59m) · Semanal 0% (reinicia 52h 14m) · Mensual 33% (reinicia 300h 35m))",
    "nivel": "ok",
    "source": "api",
    "buckets": {
     "rolling": {
      "percent": 0,
      "status": "ok",
-     "resets_at": "2026-09-11T17:00:10.238Z",
+     "resets_at": "2026-09-12T00:45:19.234Z",
      "resets_in_human": "4h 59m"
     },
     "weekly": {
      "percent": 0,
      "status": "ok",
-     "resets_at": "2026-09-14T00:00:00.238Z",
-     "resets_in_human": "59h 59m"
+     "resets_at": "2026-09-14T00:00:00.234Z",
+     "resets_in_human": "52h 14m"
     },
     "monthly": {
      "percent": 33,
      "status": "ok",
-     "resets_at": "2026-09-24T08:20:30.238Z",
-     "resets_in_human": "308h 20m"
+     "resets_at": "2026-09-24T08:20:30.234Z",
+     "resets_in_human": "300h 35m"
     }
    }
   },
