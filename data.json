@@ -1,16 +1,16 @@
 {
- "generated": "2026-09-12T04:00:08.673385+00:00",
- "snapshot": "2026-09-12 04:00 UTC",
+ "generated": "2026-09-12T11:45:21.222030+00:00",
+ "snapshot": "2026-09-12 11:45 UTC",
  "providers_3rd": [
   "opencode-go",
   "opencode-zen",
   "openrouter"
  ],
- "modelsdev_fetched": "2026-09-12 04:00 UTC",
+ "modelsdev_fetched": "2026-09-12 11:45 UTC",
  "modelsdev_count": 395,
  "price_matrix": {
   "currency": "USD",
-  "fetched": "2026-09-12T03:45:08.940042+00:00",
+  "fetched": "2026-09-12T11:45:09.321009+00:00",
   "sources": {
    "zen_paid": "precios de cuenta opencode-zen (off-peak / peak)",
    "openrouter": "precios reales API OpenRouter (cache or-models-cache.json)"
@@ -197,8 +197,8 @@
     "context": 1000000
    },
    "z-ai/glm-5.3-flash": {
-    "in": 0.15,
-    "out": 0.5,
+    "in": 0.075,
+    "out": 0.25,
     "context": 1310720
    },
    "z-ai/glm-5.3-flash:batch": {
@@ -347,13 +347,13 @@
     "context": 1048576
    },
    "~deepseek/deepseek-v4-flash-latest": {
-    "in": 0.05,
-    "out": 0.16,
+    "in": 0.03,
+    "out": 0.07,
     "context": 1310720
    },
    "deepseek/deepseek-v4-flash-0731": {
-    "in": 0.065,
-    "out": 0.18,
+    "in": 0.04,
+    "out": 0.08,
     "context": 1310720
    },
    "deepseek/deepseek-v4-flash-0731:batch": {
@@ -767,8 +767,8 @@
     "context": 1048576
    },
    "~moonshotai/kimi-latest": {
-    "in": 2.302729,
-    "out": 11.550195,
+    "in": 2.125,
+    "out": 11.9,
     "context": 1048576
    },
    "~google/gemini-flash-latest": {
@@ -827,13 +827,13 @@
     "context": 1050000
    },
    "deepseek/deepseek-v4-pro": {
-    "in": 0.839724,
-    "out": 1.679448,
+    "in": 0.788916,
+    "out": 1.577832,
     "context": 1048576
    },
    "deepseek/deepseek-v4-flash": {
-    "in": 0.06706,
-    "out": 0.13412,
+    "in": 0.06678,
+    "out": 0.13356,
     "context": 1048576
    },
    "tencent/hy3-preview": {
@@ -1127,8 +1127,8 @@
     "context": 262144
    },
    "minimax/minimax-m2.5": {
-    "in": 0.3,
-    "out": 1.2,
+    "in": 0.27,
+    "out": 1.08,
     "context": 204800
    },
    "z-ai/glm-5": {
@@ -2266,8 +2266,8 @@
  },
  "chain_method": "Modelo primario: opencode-go/hy3.\nSi el primero falla, se prueba el siguiente automáticamente (cascada de respaldo).\nCadena activa: 2 Go · 2 Zen free · 0 Zen paid · 2 OpenRouter (leída de agents.defaults.model).\n✅ Cadena sin Zen paid: 0 crédito de pago de Zen en cualquier escalón.\nGo y Zen free no consumen crédito de pago; OpenRouter solo en cascada de fallo.",
  "chain_snapshot": {
-  "generated_at": "2026-09-12T04:00:08.672978+00:00",
-  "snapshot": "2026-09-12 04:00 UTC",
+  "generated_at": "2026-09-12T11:45:21.221642+00:00",
+  "snapshot": "2026-09-12 11:45 UTC",
   "source": "agents.defaults.model en openclaw.json (leída en build)",
   "links": [
    {
@@ -2304,27 +2304,27 @@
  },
  "status_badges": {
   "go_quota": {
-   "badge": "✅ Cuota Go OK (Continuo 0% (reinicia 4h 59m) · Semanal 0% (reinicia 44h 14m) · Mensual 33% (reinicia 292h 35m))",
+   "badge": "✅ Cuota Go OK (Continuo 0% (reinicia 4h 59m) · Semanal 0% (reinicia 43h 59m) · Mensual 33% (reinicia 292h 20m))",
    "nivel": "ok",
    "source": "api",
    "buckets": {
     "rolling": {
      "percent": 0,
      "status": "ok",
-     "resets_at": "2026-09-12T08:45:19.563Z",
+     "resets_at": "2026-09-12T09:00:09.122Z",
      "resets_in_human": "4h 59m"
     },
     "weekly": {
      "percent": 0,
      "status": "ok",
-     "resets_at": "2026-09-14T00:00:00.563Z",
-     "resets_in_human": "44h 14m"
+     "resets_at": "2026-09-14T00:00:00.122Z",
+     "resets_in_human": "43h 59m"
     },
     "monthly": {
      "percent": 33,
      "status": "ok",
-     "resets_at": "2026-09-24T08:20:30.563Z",
-     "resets_in_human": "292h 35m"
+     "resets_at": "2026-09-24T08:20:30.122Z",
+     "resets_in_human": "292h 20m"
     }
    }
   },
@@ -2838,8 +2838,8 @@
    },
    "or_id": "deepseek/deepseek-v4-flash",
    "or_price": {
-    "in": 0.06706,
-    "out": 0.13412,
+    "in": 0.06678,
+    "out": 0.13356,
     "context": 1048576
    },
    "tier": "paid",
@@ -2871,8 +2871,8 @@
    },
    "or_id": "deepseek/deepseek-v4-flash",
    "or_price": {
-    "in": 0.06706,
-    "out": 0.13412,
+    "in": 0.06678,
+    "out": 0.13356,
     "context": 1048576
    },
    "tier": "free",
@@ -2931,8 +2931,8 @@
    },
    "or_id": "deepseek/deepseek-v4-pro",
    "or_price": {
-    "in": 0.839724,
-    "out": 1.679448,
+    "in": 0.788916,
+    "out": 1.577832,
     "context": 1048576
    },
    "tier": "paid",
