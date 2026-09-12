@@ -1,6 +1,6 @@
 {
- "generated": "2026-09-11T20:00:47.850913+00:00",
- "snapshot": "2026-09-11",
+ "generated": "2026-09-12T03:45:55.257800+00:00",
+ "snapshot": "2026-09-12",
  "fuente": "check-model-health.py F3 (2026-08-24)",
  "providers": {
   "opencode-go": {
@@ -36,27 +36,27 @@
   "noprobe": 47
  },
  "go_quota": {
-  "badge": "✅ Cuota Go OK (Continuo 0% (reinicia 4h 59m) · Semanal 0% (reinicia 51h 59m) · Mensual 33% (reinicia 300h 20m))",
+  "badge": "✅ Cuota Go OK (Continuo 0% (reinicia 4h 59m) · Semanal 0% (reinicia 44h 14m) · Mensual 33% (reinicia 292h 35m))",
   "nivel": "ok",
   "source": "api",
   "buckets": {
    "rolling": {
     "percent": 0,
     "status": "ok",
-    "resets_at": "2026-09-12T01:00:09.263Z",
+    "resets_at": "2026-09-12T08:45:19.563Z",
     "resets_in_human": "4h 59m"
    },
    "weekly": {
     "percent": 0,
     "status": "ok",
-    "resets_at": "2026-09-14T00:00:00.263Z",
-    "resets_in_human": "51h 59m"
+    "resets_at": "2026-09-14T00:00:00.563Z",
+    "resets_in_human": "44h 14m"
    },
    "monthly": {
     "percent": 33,
     "status": "ok",
-    "resets_at": "2026-09-24T08:20:30.263Z",
-    "resets_in_human": "300h 20m"
+    "resets_at": "2026-09-24T08:20:30.563Z",
+    "resets_in_human": "292h 35m"
    }
   }
  },
