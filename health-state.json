@@ -1,5 +1,5 @@
 {
- "generated": "2026-09-12T03:45:55.257800+00:00",
+ "generated": "2026-09-12T04:00:45.418924+00:00",
  "snapshot": "2026-09-12",
  "fuente": "check-model-health.py F3 (2026-08-24)",
  "providers": {
@@ -36,27 +36,27 @@
   "noprobe": 47
  },
  "go_quota": {
-  "badge": "✅ Cuota Go OK (Continuo 0% (reinicia 4h 59m) · Semanal 0% (reinicia 44h 14m) · Mensual 33% (reinicia 292h 35m))",
+  "badge": "✅ Cuota Go OK (Continuo 0% (reinicia 4h 59m) · Semanal 0% (reinicia 43h 59m) · Mensual 33% (reinicia 292h 20m))",
   "nivel": "ok",
   "source": "api",
   "buckets": {
    "rolling": {
     "percent": 0,
     "status": "ok",
-    "resets_at": "2026-09-12T08:45:19.563Z",
+    "resets_at": "2026-09-12T09:00:09.122Z",
     "resets_in_human": "4h 59m"
    },
    "weekly": {
     "percent": 0,
     "status": "ok",
-    "resets_at": "2026-09-14T00:00:00.563Z",
-    "resets_in_human": "44h 14m"
+    "resets_at": "2026-09-14T00:00:00.122Z",
+    "resets_in_human": "43h 59m"
    },
    "monthly": {
     "percent": 33,
     "status": "ok",
-    "resets_at": "2026-09-24T08:20:30.563Z",
-    "resets_in_human": "292h 35m"
+    "resets_at": "2026-09-24T08:20:30.122Z",
+    "resets_in_human": "292h 20m"
    }
   }
  },
