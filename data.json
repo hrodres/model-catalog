@@ -1,16 +1,16 @@
 {
- "generated": "2026-09-14T04:00:10.239995+00:00",
- "snapshot": "2026-09-14 04:00 UTC",
+ "generated": "2026-09-14T12:00:08.773386+00:00",
+ "snapshot": "2026-09-14 12:00 UTC",
  "providers_3rd": [
   "opencode-go",
   "opencode-zen",
   "openrouter"
  ],
- "modelsdev_fetched": "2026-09-14 04:00 UTC",
+ "modelsdev_fetched": "2026-09-14 12:00 UTC",
  "modelsdev_count": 395,
  "price_matrix": {
   "currency": "USD",
-  "fetched": "2026-09-14T03:45:08.701527+00:00",
+  "fetched": "2026-09-14T11:45:08.441355+00:00",
   "sources": {
    "zen_paid": "precios de cuenta opencode-zen (off-peak / peak)",
    "openrouter": "precios reales API OpenRouter (cache or-models-cache.json)"
@@ -87,8 +87,8 @@
     "context": 262144
    },
    "deepseek/deepseek-v4.1-flash": {
-    "in": 0.3,
-    "out": 1.2,
+    "in": 0.15,
+    "out": 0.6,
     "context": 1048576
    },
    "inception/mercury-2.5": {
@@ -347,8 +347,8 @@
     "context": 1048576
    },
    "~deepseek/deepseek-v4-flash-latest": {
-    "in": 0.0352,
-    "out": 0.1056,
+    "in": 0.04,
+    "out": 0.1,
     "context": 1310720
    },
    "deepseek/deepseek-v4-flash-0731": {
@@ -767,8 +767,8 @@
     "context": 1048576
    },
    "~moonshotai/kimi-latest": {
-    "in": 2.275,
-    "out": 12.74,
+    "in": 2.1,
+    "out": 10.95,
     "context": 1048576
    },
    "~google/gemini-flash-latest": {
@@ -2266,8 +2266,8 @@
  },
  "chain_method": "Modelo primario: opencode-go/hy3.\nSi el primero falla, se prueba el siguiente automáticamente (cascada de respaldo).\nCadena activa: 2 Go · 2 Zen free · 0 Zen paid · 2 OpenRouter (leída de agents.defaults.model).\n✅ Cadena sin Zen paid: 0 crédito de pago de Zen en cualquier escalón.\nGo y Zen free no consumen crédito de pago; OpenRouter solo en cascada de fallo.",
  "chain_snapshot": {
-  "generated_at": "2026-09-14T04:00:10.239618+00:00",
-  "snapshot": "2026-09-14 04:00 UTC",
+  "generated_at": "2026-09-14T12:00:08.772970+00:00",
+  "snapshot": "2026-09-14 12:00 UTC",
   "source": "agents.defaults.model en openclaw.json (leída en build)",
   "links": [
    {
@@ -2304,27 +2304,27 @@
  },
  "status_badges": {
   "go_quota": {
-   "badge": "✅ Cuota Go OK (Continuo 0% (reinicia 4h 59m) · Semanal 0% (reinicia 164h 14m) · Mensual 33% (reinicia 244h 35m))",
+   "badge": "✅ Cuota Go OK (Continuo 0% (reinicia 4h 59m) · Semanal 0% (reinicia 163h 59m) · Mensual 33% (reinicia 244h 20m))",
    "nivel": "ok",
    "source": "api",
    "buckets": {
     "rolling": {
      "percent": 0,
      "status": "ok",
-     "resets_at": "2026-09-14T08:45:19.984Z",
+     "resets_at": "2026-09-14T09:00:10.676Z",
      "resets_in_human": "4h 59m"
     },
     "weekly": {
      "percent": 0,
      "status": "ok",
-     "resets_at": "2026-09-21T00:00:00.984Z",
-     "resets_in_human": "164h 14m"
+     "resets_at": "2026-09-21T00:00:00.676Z",
+     "resets_in_human": "163h 59m"
     },
     "monthly": {
      "percent": 33,
      "status": "ok",
-     "resets_at": "2026-09-24T08:20:30.984Z",
-     "resets_in_human": "244h 35m"
+     "resets_at": "2026-09-24T08:20:30.676Z",
+     "resets_in_human": "244h 20m"
     }
    }
   },
