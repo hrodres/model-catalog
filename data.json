@@ -1,16 +1,16 @@
 {
- "generated": "2026-09-13T20:00:08.977477+00:00",
- "snapshot": "2026-09-13 20:00 UTC",
+ "generated": "2026-09-14T03:45:19.514096+00:00",
+ "snapshot": "2026-09-14 03:45 UTC",
  "providers_3rd": [
   "opencode-go",
   "opencode-zen",
   "openrouter"
  ],
- "modelsdev_fetched": "2026-09-13 20:00 UTC",
+ "modelsdev_fetched": "2026-09-14 03:45 UTC",
  "modelsdev_count": 395,
  "price_matrix": {
   "currency": "USD",
-  "fetched": "2026-09-13T19:45:10.907052+00:00",
+  "fetched": "2026-09-14T03:45:08.701527+00:00",
   "sources": {
    "zen_paid": "precios de cuenta opencode-zen (off-peak / peak)",
    "openrouter": "precios reales API OpenRouter (cache or-models-cache.json)"
@@ -87,8 +87,8 @@
     "context": 262144
    },
    "deepseek/deepseek-v4.1-flash": {
-    "in": 0.15,
-    "out": 0.6,
+    "in": 0.3,
+    "out": 1.2,
     "context": 1048576
    },
    "inception/mercury-2.5": {
@@ -197,8 +197,8 @@
     "context": 1000000
    },
    "z-ai/glm-5.3-flash": {
-    "in": 0.075,
-    "out": 0.25,
+    "in": 0.15,
+    "out": 0.5,
     "context": 1310720
    },
    "z-ai/glm-5.3-flash:batch": {
@@ -232,8 +232,8 @@
     "context": 8192
    },
    "~z-ai/glm-latest": {
-    "in": 0.936,
-    "out": 3.168,
+    "in": 0.92,
+    "out": 3.1372,
     "context": 1310720
    },
    "tencent/hy-mt2-7b": {
@@ -242,8 +242,8 @@
     "context": 8192
    },
    "z-ai/glm-5.3": {
-    "in": 1.092,
-    "out": 3.432,
+    "in": 1.4,
+    "out": 4.4,
     "context": 1310720
    },
    "z-ai/glm-5.3:batch": {
@@ -292,8 +292,8 @@
     "context": 262144
    },
    "deepseek/deepseek-v4-pro-0813": {
-    "in": 0.57948,
-    "out": 1.73844,
+    "in": 0.9834,
+    "out": 2.9502,
     "context": 1048576
    },
    "deepseek/deepseek-v4-pro-0813:batch": {
@@ -352,8 +352,8 @@
     "context": 1310720
    },
    "deepseek/deepseek-v4-flash-0731": {
-    "in": 0.04,
-    "out": 0.08,
+    "in": 0.06,
+    "out": 0.12,
     "context": 1310720
    },
    "deepseek/deepseek-v4-flash-0731:batch": {
@@ -552,8 +552,8 @@
     "context": 131072
    },
    "tencent/hy3": {
-    "in": 0.0825,
-    "out": 0.33,
+    "in": 0.132,
+    "out": 0.528,
     "context": 262144
    },
    "poolside/laguna-xs-2.1": {
@@ -602,8 +602,8 @@
     "context": 256000
    },
    "z-ai/glm-5.2": {
-    "in": 0.6,
-    "out": 2.0,
+    "in": 0.6832,
+    "out": 2.1472,
     "context": 1048576
    },
    "z-ai/glm-5.2:batch": {
@@ -647,8 +647,8 @@
     "context": 128000
    },
    "nvidia/nemotron-3-ultra-550b-a55b": {
-    "in": 0.625,
-    "out": 3.125,
+    "in": 0.6,
+    "out": 2.4,
     "context": 262144
    },
    "nvidia/nemotron-3-ultra-550b-a55b:free": {
@@ -767,8 +767,8 @@
     "context": 1048576
    },
    "~moonshotai/kimi-latest": {
-    "in": 2.1,
-    "out": 10.95,
+    "in": 2.275,
+    "out": 12.74,
     "context": 1048576
    },
    "~google/gemini-flash-latest": {
@@ -832,8 +832,8 @@
     "context": 1048576
    },
    "deepseek/deepseek-v4-flash": {
-    "in": 0.04732,
-    "out": 0.09464,
+    "in": 0.088606,
+    "out": 0.177212,
     "context": 1048576
    },
    "tencent/hy3-preview": {
@@ -1802,8 +1802,8 @@
     "context": 131072
    },
    "qwen/qwen3-14b": {
-    "in": 0.2275,
-    "out": 0.91,
+    "in": 0.12,
+    "out": 0.24,
     "context": 131072
    },
    "qwen/qwen3-32b": {
@@ -2266,8 +2266,8 @@
  },
  "chain_method": "Modelo primario: opencode-go/hy3.\nSi el primero falla, se prueba el siguiente automáticamente (cascada de respaldo).\nCadena activa: 2 Go · 2 Zen free · 0 Zen paid · 2 OpenRouter (leída de agents.defaults.model).\n✅ Cadena sin Zen paid: 0 crédito de pago de Zen en cualquier escalón.\nGo y Zen free no consumen crédito de pago; OpenRouter solo en cascada de fallo.",
  "chain_snapshot": {
-  "generated_at": "2026-09-13T20:00:08.977016+00:00",
-  "snapshot": "2026-09-13 20:00 UTC",
+  "generated_at": "2026-09-14T03:45:19.513660+00:00",
+  "snapshot": "2026-09-14 03:45 UTC",
   "source": "agents.defaults.model en openclaw.json (leída en build)",
   "links": [
    {
@@ -2304,27 +2304,27 @@
  },
  "status_badges": {
   "go_quota": {
-   "badge": "✅ Cuota Go OK (Continuo 0% (reinicia 4h 59m) · Semanal 0% (reinicia 4h 14m) · Mensual 33% (reinicia 252h 34m))",
+   "badge": "✅ Cuota Go OK (Continuo 0% (reinicia 4h 59m) · Semanal 0% (reinicia 3h 59m) · Mensual 33% (reinicia 252h 20m))",
    "nivel": "ok",
    "source": "api",
    "buckets": {
     "rolling": {
      "percent": 0,
      "status": "ok",
-     "resets_at": "2026-09-14T00:45:37.009Z",
+     "resets_at": "2026-09-14T01:00:09.482Z",
      "resets_in_human": "4h 59m"
     },
     "weekly": {
      "percent": 0,
      "status": "ok",
-     "resets_at": "2026-09-14T00:00:00.009Z",
-     "resets_in_human": "4h 14m"
+     "resets_at": "2026-09-14T00:00:00.482Z",
+     "resets_in_human": "3h 59m"
     },
     "monthly": {
      "percent": 33,
      "status": "ok",
-     "resets_at": "2026-09-24T08:20:30.009Z",
-     "resets_in_human": "252h 34m"
+     "resets_at": "2026-09-24T08:20:30.482Z",
+     "resets_in_human": "252h 20m"
     }
    }
   },
@@ -2838,8 +2838,8 @@
    },
    "or_id": "deepseek/deepseek-v4-flash",
    "or_price": {
-    "in": 0.04732,
-    "out": 0.09464,
+    "in": 0.088606,
+    "out": 0.177212,
     "context": 1048576
    },
    "tier": "paid",
@@ -2871,8 +2871,8 @@
    },
    "or_id": "deepseek/deepseek-v4-flash",
    "or_price": {
-    "in": 0.04732,
-    "out": 0.09464,
+    "in": 0.088606,
+    "out": 0.177212,
     "context": 1048576
    },
    "tier": "free",
@@ -4192,8 +4192,8 @@
    },
    "or_id": "tencent/hy3",
    "or_price": {
-    "in": 0.0825,
-    "out": 0.33,
+    "in": 0.132,
+    "out": 0.528,
     "context": 262144
    },
    "tier": "go",
@@ -4901,8 +4901,8 @@
    },
    "or_id": "nvidia/nemotron-3-ultra-550b-a55b",
    "or_price": {
-    "in": 0.625,
-    "out": 3.125,
+    "in": 0.6,
+    "out": 2.4,
     "context": 262144
    },
    "tier": "free",
