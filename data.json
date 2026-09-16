@@ -1,13 +1,13 @@
 {
- "generated": "2026-09-14T12:00:08.773386+00:00",
- "snapshot": "2026-09-14 12:00 UTC",
+ "generated": "2026-09-16T03:50:01.054308+00:00",
+ "snapshot": "2026-09-16 03:50 UTC",
  "providers_3rd": [
   "opencode-go",
   "opencode-zen",
   "openrouter"
  ],
- "modelsdev_fetched": "2026-09-14 12:00 UTC",
- "modelsdev_count": 395,
+ "modelsdev_fetched": "2026-09-16 03:50 UTC",
+ "modelsdev_count": 400,
  "price_matrix": {
   "currency": "USD",
   "fetched": "2026-09-14T11:45:08.441355+00:00",
@@ -2266,8 +2266,8 @@
  },
  "chain_method": "Modelo primario: opencode-go/hy3.\nSi el primero falla, se prueba el siguiente automáticamente (cascada de respaldo).\nCadena activa: 2 Go · 2 Zen free · 0 Zen paid · 2 OpenRouter (leída de agents.defaults.model).\n✅ Cadena sin Zen paid: 0 crédito de pago de Zen en cualquier escalón.\nGo y Zen free no consumen crédito de pago; OpenRouter solo en cascada de fallo.",
  "chain_snapshot": {
-  "generated_at": "2026-09-14T12:00:08.772970+00:00",
-  "snapshot": "2026-09-14 12:00 UTC",
+  "generated_at": "2026-09-16T03:50:01.052838+00:00",
+  "snapshot": "2026-09-16 03:50 UTC",
   "source": "agents.defaults.model en openclaw.json (leída en build)",
   "links": [
    {
@@ -2304,27 +2304,27 @@
  },
  "status_badges": {
   "go_quota": {
-   "badge": "✅ Cuota Go OK (Continuo 0% (reinicia 4h 59m) · Semanal 0% (reinicia 163h 59m) · Mensual 33% (reinicia 244h 20m))",
+   "badge": "✅ Cuota Go OK (Continuo 0% (reinicia 4h 59m) · Semanal 0% (reinicia 155h 59m) · Mensual 33% (reinicia 236h 20m))",
    "nivel": "ok",
    "source": "api",
    "buckets": {
     "rolling": {
      "percent": 0,
      "status": "ok",
-     "resets_at": "2026-09-14T09:00:10.676Z",
+     "resets_at": "2026-09-14T17:00:09.192Z",
      "resets_in_human": "4h 59m"
     },
     "weekly": {
      "percent": 0,
      "status": "ok",
-     "resets_at": "2026-09-21T00:00:00.676Z",
-     "resets_in_human": "163h 59m"
+     "resets_at": "2026-09-21T00:00:00.192Z",
+     "resets_in_human": "155h 59m"
     },
     "monthly": {
      "percent": 33,
      "status": "ok",
-     "resets_at": "2026-09-24T08:20:30.676Z",
-     "resets_in_human": "244h 20m"
+     "resets_at": "2026-09-24T08:20:30.192Z",
+     "resets_in_human": "236h 20m"
     }
    }
   },
