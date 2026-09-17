@@ -1,13 +1,13 @@
 {
- "generated": "2026-09-16T03:50:01.054308+00:00",
- "snapshot": "2026-09-16 03:50 UTC",
+ "generated": "2026-09-17T03:50:01.066142+00:00",
+ "snapshot": "2026-09-17 03:50 UTC",
  "providers_3rd": [
   "opencode-go",
   "opencode-zen",
   "openrouter"
  ],
- "modelsdev_fetched": "2026-09-16 03:50 UTC",
- "modelsdev_count": 400,
+ "modelsdev_fetched": "2026-09-17 03:50 UTC",
+ "modelsdev_count": 403,
  "price_matrix": {
   "currency": "USD",
   "fetched": "2026-09-14T11:45:08.441355+00:00",
@@ -2266,8 +2266,8 @@
  },
  "chain_method": "Modelo primario: opencode-go/hy3.\nSi el primero falla, se prueba el siguiente automáticamente (cascada de respaldo).\nCadena activa: 2 Go · 2 Zen free · 0 Zen paid · 2 OpenRouter (leída de agents.defaults.model).\n✅ Cadena sin Zen paid: 0 crédito de pago de Zen en cualquier escalón.\nGo y Zen free no consumen crédito de pago; OpenRouter solo en cascada de fallo.",
  "chain_snapshot": {
-  "generated_at": "2026-09-16T03:50:01.052838+00:00",
-  "snapshot": "2026-09-16 03:50 UTC",
+  "generated_at": "2026-09-17T03:50:01.065748+00:00",
+  "snapshot": "2026-09-17 03:50 UTC",
   "source": "agents.defaults.model en openclaw.json (leída en build)",
   "links": [
    {
@@ -2304,27 +2304,27 @@
  },
  "status_badges": {
   "go_quota": {
-   "badge": "✅ Cuota Go OK (Continuo 0% (reinicia 4h 59m) · Semanal 0% (reinicia 155h 59m) · Mensual 33% (reinicia 236h 20m))",
-   "nivel": "ok",
-   "source": "api",
+   "badge": "⚠️ Cuota Go agotada (Semanal 100%)",
+   "nivel": "cuota",
+   "source": "fallback-hardcodeado",
    "buckets": {
     "rolling": {
      "percent": 0,
      "status": "ok",
-     "resets_at": "2026-09-14T17:00:09.192Z",
-     "resets_in_human": "4h 59m"
+     "resets_in_human": "~5h",
+     "resets_at": null
     },
     "weekly": {
-     "percent": 0,
-     "status": "ok",
-     "resets_at": "2026-09-21T00:00:00.192Z",
-     "resets_in_human": "155h 59m"
+     "percent": 100,
+     "status": "agotada",
+     "resets_in_human": "2h 8m",
+     "resets_at": null
     },
     "monthly": {
-     "percent": 33,
-     "status": "ok",
-     "resets_at": "2026-09-24T08:20:30.192Z",
-     "resets_in_human": "236h 20m"
+     "percent": 95,
+     "status": "critica",
+     "resets_in_human": "10h 28m",
+     "resets_at": null
     }
    }
   },
@@ -2337,11 +2337,9 @@
    "opencode-go": {
     "enabled": 1,
     "probed": {
-     "unk": 32,
-     "down": 2,
-     "na": 3
+     "na": 37
     },
-    "total": 3
+    "total": 1
    },
    "opencode-zen": {
     "enabled": 1,
@@ -2361,9 +2359,9 @@
   }
  },
  "counts": {
-  "total": 87,
-  "go": 37,
-  "zen": 70,
+  "total": 88,
+  "go": 38,
+  "zen": 71,
   "free": 8,
   "openrouter": 12,
   "with_modelsdev": 80
@@ -5162,6 +5160,33 @@
    "swebench": null,
    "benchmarks": {},
    "md_url": "https://models.dev/models/alibaba/qwen3.8-max"
+  },
+  {
+   "id": "union-alpha",
+   "providers": {
+    "go": true,
+    "zen": true,
+    "free": false,
+    "or": false
+   },
+   "or_id": null,
+   "or_price": null,
+   "tier": "paid",
+   "name": "union-alpha",
+   "desc": "Sin ficha en models.dev (solo catálogo opencode)",
+   "context": null,
+   "output": null,
+   "reasoning": null,
+   "tool_call": null,
+   "structured": null,
+   "multimodal": null,
+   "open_weights": null,
+   "release": "",
+   "last_updated": "",
+   "knowledge": "",
+   "swebench": null,
+   "benchmarks": {},
+   "md_url": null
   }
  ]
 }

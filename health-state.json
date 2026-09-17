@@ -1,19 +1,19 @@
 {
- "generated": "2026-09-16T03:50:19.131211+00:00",
- "snapshot": "2026-09-16",
+ "generated": "2026-09-17T03:50:19.374188+00:00",
+ "snapshot": "2026-09-17",
  "fuente": "check-model-health.py F3 (2026-08-24)",
  "providers": {
   "opencode-go": {
    "enabled": 1,
    "probed": {
-    "na": 37
+    "na": 38
    },
    "total": 1
   },
   "opencode-zen": {
    "enabled": 1,
    "probed": {
-    "free": 26,
+    "free": 27,
     "noprobe": 44
    },
    "total": 2
@@ -27,8 +27,8 @@
   }
  },
  "counts": {
-  "na": 37,
-  "free": 26,
+  "na": 38,
+  "free": 27,
   "noprobe": 47
  },
  "go_quota": {
@@ -313,6 +313,12 @@
   },
   {
    "modelo": "qwen3.8-max",
+   "provider": "opencode-go",
+   "estado": "na",
+   "detalle": "HTTP 401: no accesible con tu plan/key"
+  },
+  {
+   "modelo": "union-alpha",
    "provider": "opencode-go",
    "estado": "na",
    "detalle": "HTTP 401: no accesible con tu plan/key"
@@ -736,6 +742,12 @@
    "provider": "opencode-zen",
    "estado": "noprobe",
    "detalle": "no probeado (ahorro de crédito: usa Go para salud en vivo)"
+  },
+  {
+   "modelo": "union-alpha",
+   "provider": "opencode-zen",
+   "estado": "free",
+   "detalle": "no probado (protección cuota global free 100 req/día)"
   },
   {
    "modelo": "deepseek/deepseek-v4-flash",
