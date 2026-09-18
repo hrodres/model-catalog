@@ -1,6 +1,6 @@
 {
- "generated": "2026-09-17T03:50:19.374188+00:00",
- "snapshot": "2026-09-17",
+ "generated": "2026-09-18T03:50:19.545876+00:00",
+ "snapshot": "2026-09-18",
  "fuente": "check-model-health.py F3 (2026-08-24)",
  "providers": {
   "opencode-go": {
@@ -67,11 +67,6 @@
    "link": "opencode-go/hy3",
    "estado": "na",
    "detalle": "HTTP 401: no accesible con tu plan/key"
-  },
-  {
-   "link": "opencode-zen/hy3-free",
-   "estado": "no-en-config",
-   "detalle": "modelo no está en providers habilitados"
   },
   {
    "link": "opencode-go/deepseek-v4-flash",
