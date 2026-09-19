@@ -1,5 +1,5 @@
 {
- "generated": "2026-09-18T06:20:57.364497+00:00",
+ "generated": "2026-09-19T03:50:01.052807+00:00",
  "aliases": [
   {
    "id": "opencode-zen/big-pickle",
@@ -278,6 +278,14 @@
    "alias": "🚀 Hy4 preview (Go)"
   },
   {
+   "id": "opencode-zen/jev-1.13",
+   "alias": "💰 jev-1.13 (Zen)"
+  },
+  {
+   "id": "opencode-zen/jev-1.13-free",
+   "alias": "🌱 jev-1.13-free (Zen free)"
+  },
+  {
    "id": "opencode-go/kimi-k2.5",
    "alias": "🚀 Kimi K2.5 (Go)"
   },
@@ -426,16 +434,12 @@
    "alias": "🚀 Qwen3.8 Flash (Go)"
   },
   {
+   "id": "opencode-zen/qwen3.8-flash",
+   "alias": "💰 Qwen3.8 Flash (Zen)"
+  },
+  {
    "id": "opencode-go/qwen3.8-max",
    "alias": "🚀 Qwen3.8 Max (Go)"
-  },
-  {
-   "id": "opencode-go/union-alpha",
-   "alias": "🚀 union-alpha (Go)"
-  },
-  {
-   "id": "opencode-zen/union-alpha",
-   "alias": "💰 union-alpha (Zen)"
   }
  ]
 }

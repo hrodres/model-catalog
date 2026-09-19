@@ -1,12 +1,12 @@
 {
- "generated": "2026-09-18T06:20:57.364497+00:00",
- "snapshot": "2026-09-18 06:20 UTC",
+ "generated": "2026-09-19T03:50:01.052807+00:00",
+ "snapshot": "2026-09-19 03:50 UTC",
  "providers_3rd": [
   "opencode-go",
   "opencode-zen",
   "openrouter"
  ],
- "modelsdev_fetched": "2026-09-18 06:20 UTC",
+ "modelsdev_fetched": "2026-09-19 03:50 UTC",
  "modelsdev_count": 408,
  "price_matrix": {
   "currency": "USD",
@@ -2266,8 +2266,8 @@
  },
  "chain_method": "Modelo primario: opencode-go/hy3.\nSi el primero falla, se prueba el siguiente automáticamente (cascada de respaldo).\nCadena activa: 2 Go · 1 Zen free · 0 Zen paid · 2 OpenRouter (leída de agents.defaults.model).\n✅ Cadena sin Zen paid: 0 crédito de pago de Zen en cualquier escalón.\nGo y Zen free no consumen crédito de pago; OpenRouter solo en cascada de fallo.",
  "chain_snapshot": {
-  "generated_at": "2026-09-18T06:20:57.364016+00:00",
-  "snapshot": "2026-09-18 06:20 UTC",
+  "generated_at": "2026-09-19T03:50:01.052480+00:00",
+  "snapshot": "2026-09-19 03:50 UTC",
   "source": "agents.defaults.model en openclaw.json (leída en build)",
   "links": [
    {
@@ -2354,10 +2354,10 @@
   }
  },
  "counts": {
-  "total": 88,
-  "go": 38,
-  "zen": 71,
-  "free": 8,
+  "total": 89,
+  "go": 37,
+  "zen": 73,
+  "free": 9,
   "openrouter": 12,
   "with_modelsdev": 80
  },
@@ -2906,9 +2906,9 @@
    "tool_call": true,
    "structured": true,
    "multimodal": true,
-   "open_weights": false,
+   "open_weights": true,
    "release": "2026-08-21",
-   "last_updated": "2026-08-21",
+   "last_updated": "2026-09-01",
    "knowledge": "",
    "swebench": null,
    "benchmarks": {},
@@ -4269,6 +4269,60 @@
    "md_url": "https://models.dev/models/tencent/hy4-preview"
   },
   {
+   "id": "jev-1.13",
+   "providers": {
+    "go": false,
+    "zen": true,
+    "free": false,
+    "or": false
+   },
+   "or_id": null,
+   "or_price": null,
+   "tier": "paid",
+   "name": "jev-1.13",
+   "desc": "Sin ficha en models.dev (solo catálogo opencode)",
+   "context": null,
+   "output": null,
+   "reasoning": null,
+   "tool_call": null,
+   "structured": null,
+   "multimodal": null,
+   "open_weights": null,
+   "release": "",
+   "last_updated": "",
+   "knowledge": "",
+   "swebench": null,
+   "benchmarks": {},
+   "md_url": null
+  },
+  {
+   "id": "jev-1.13-free",
+   "providers": {
+    "go": false,
+    "zen": true,
+    "free": true,
+    "or": false
+   },
+   "or_id": null,
+   "or_price": null,
+   "tier": "free",
+   "name": "jev-1.13-free",
+   "desc": "Sin ficha en models.dev (solo catálogo opencode)",
+   "context": null,
+   "output": null,
+   "reasoning": null,
+   "tool_call": null,
+   "structured": null,
+   "multimodal": null,
+   "open_weights": null,
+   "release": "",
+   "last_updated": "",
+   "knowledge": "",
+   "swebench": null,
+   "benchmarks": {},
+   "md_url": null
+  },
+  {
    "id": "kimi-k2.5",
    "providers": {
     "go": true,
@@ -5106,13 +5160,13 @@
    "id": "qwen3.8-flash",
    "providers": {
     "go": true,
-    "zen": false,
+    "zen": true,
     "free": false,
     "or": false
    },
    "or_id": null,
    "or_price": null,
-   "tier": "go",
+   "tier": "paid",
    "name": "Qwen3.8 Flash",
    "desc": "Qwen vision-language model for visual reasoning, documents, and agent tasks",
    "context": 1000000,
@@ -5155,33 +5209,6 @@
    "swebench": null,
    "benchmarks": {},
    "md_url": "https://models.dev/models/alibaba/qwen3.8-max"
-  },
-  {
-   "id": "union-alpha",
-   "providers": {
-    "go": true,
-    "zen": true,
-    "free": false,
-    "or": false
-   },
-   "or_id": null,
-   "or_price": null,
-   "tier": "paid",
-   "name": "union-alpha",
-   "desc": "Sin ficha en models.dev (solo catálogo opencode)",
-   "context": null,
-   "output": null,
-   "reasoning": null,
-   "tool_call": null,
-   "structured": null,
-   "multimodal": null,
-   "open_weights": null,
-   "release": "",
-   "last_updated": "",
-   "knowledge": "",
-   "swebench": null,
-   "benchmarks": {},
-   "md_url": null
   }
  ]
 }
