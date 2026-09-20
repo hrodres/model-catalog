@@ -1,13 +1,13 @@
 {
- "generated": "2026-09-19T03:50:01.052807+00:00",
- "snapshot": "2026-09-19 03:50 UTC",
+ "generated": "2026-09-20T03:50:01.061976+00:00",
+ "snapshot": "2026-09-20 03:50 UTC",
  "providers_3rd": [
   "opencode-go",
   "opencode-zen",
   "openrouter"
  ],
- "modelsdev_fetched": "2026-09-19 03:50 UTC",
- "modelsdev_count": 408,
+ "modelsdev_fetched": "2026-09-20 03:50 UTC",
+ "modelsdev_count": 414,
  "price_matrix": {
   "currency": "USD",
   "fetched": "2026-09-14T11:45:08.441355+00:00",
@@ -2266,8 +2266,8 @@
  },
  "chain_method": "Modelo primario: opencode-go/hy3.\nSi el primero falla, se prueba el siguiente automáticamente (cascada de respaldo).\nCadena activa: 2 Go · 1 Zen free · 0 Zen paid · 2 OpenRouter (leída de agents.defaults.model).\n✅ Cadena sin Zen paid: 0 crédito de pago de Zen en cualquier escalón.\nGo y Zen free no consumen crédito de pago; OpenRouter solo en cascada de fallo.",
  "chain_snapshot": {
-  "generated_at": "2026-09-19T03:50:01.052480+00:00",
-  "snapshot": "2026-09-19 03:50 UTC",
+  "generated_at": "2026-09-20T03:50:01.061664+00:00",
+  "snapshot": "2026-09-20 03:50 UTC",
   "source": "agents.defaults.model en openclaw.json (leída en build)",
   "links": [
    {
@@ -2332,14 +2332,14 @@
    "opencode-go": {
     "enabled": 1,
     "probed": {
-     "na": 38
+     "na": 37
     },
     "total": 1
    },
    "opencode-zen": {
     "enabled": 1,
     "probed": {
-     "free": 27,
+     "free": 29,
      "noprobe": 44
     },
     "total": 2
@@ -2356,7 +2356,7 @@
  "counts": {
   "total": 89,
   "go": 37,
-  "zen": 73,
+  "zen": 74,
   "free": 9,
   "openrouter": 12,
   "with_modelsdev": 80
@@ -2955,13 +2955,13 @@
    "id": "deepseek-v4.1-flash",
    "providers": {
     "go": true,
-    "zen": false,
+    "zen": true,
     "free": false,
     "or": false
    },
    "or_id": null,
    "or_price": null,
-   "tier": "go",
+   "tier": "paid",
    "name": "DeepSeek V4.1 Flash",
    "desc": "DeepSeek V4.1 Flash model for reasoning and agentic coding",
    "context": 1000000,

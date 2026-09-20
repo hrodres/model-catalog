@@ -1,6 +1,6 @@
 {
- "generated": "2026-09-19T03:50:18.522800+00:00",
- "snapshot": "2026-09-19",
+ "generated": "2026-09-20T03:50:19.222745+00:00",
+ "snapshot": "2026-09-20",
  "fuente": "check-model-health.py F3 (2026-08-24)",
  "providers": {
   "opencode-go": {
@@ -13,7 +13,7 @@
   "opencode-zen": {
    "enabled": 1,
    "probed": {
-    "free": 29,
+    "free": 30,
     "noprobe": 44
    },
    "total": 2
@@ -28,7 +28,7 @@
  },
  "counts": {
   "na": 37,
-  "free": 29,
+  "free": 30,
   "noprobe": 47
  },
  "go_quota": {
@@ -413,6 +413,12 @@
    "provider": "opencode-zen",
    "estado": "noprobe",
    "detalle": "no probeado (ahorro de crédito: usa Go para salud en vivo)"
+  },
+  {
+   "modelo": "deepseek-v4.1-flash",
+   "provider": "opencode-zen",
+   "estado": "free",
+   "detalle": "no probado (protección cuota global free 100 req/día)"
   },
   {
    "modelo": "gemini-3-flash",
