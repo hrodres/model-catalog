@@ -1,13 +1,13 @@
 {
- "generated": "2026-09-20T03:50:01.061976+00:00",
- "snapshot": "2026-09-20 03:50 UTC",
+ "generated": "2026-09-21T03:50:01.069758+00:00",
+ "snapshot": "2026-09-21 03:50 UTC",
  "providers_3rd": [
   "opencode-go",
   "opencode-zen",
   "openrouter"
  ],
- "modelsdev_fetched": "2026-09-20 03:50 UTC",
- "modelsdev_count": 414,
+ "modelsdev_fetched": "2026-09-21 03:50 UTC",
+ "modelsdev_count": 413,
  "price_matrix": {
   "currency": "USD",
   "fetched": "2026-09-14T11:45:08.441355+00:00",
@@ -2266,8 +2266,8 @@
  },
  "chain_method": "Modelo primario: opencode-go/hy3.\nSi el primero falla, se prueba el siguiente automáticamente (cascada de respaldo).\nCadena activa: 2 Go · 1 Zen free · 0 Zen paid · 2 OpenRouter (leída de agents.defaults.model).\n✅ Cadena sin Zen paid: 0 crédito de pago de Zen en cualquier escalón.\nGo y Zen free no consumen crédito de pago; OpenRouter solo en cascada de fallo.",
  "chain_snapshot": {
-  "generated_at": "2026-09-20T03:50:01.061664+00:00",
-  "snapshot": "2026-09-20 03:50 UTC",
+  "generated_at": "2026-09-21T03:50:01.069440+00:00",
+  "snapshot": "2026-09-21 03:50 UTC",
   "source": "agents.defaults.model en openclaw.json (leída en build)",
   "links": [
    {
@@ -2339,7 +2339,7 @@
    "opencode-zen": {
     "enabled": 1,
     "probed": {
-     "free": 29,
+     "free": 30,
      "noprobe": 44
     },
     "total": 2
