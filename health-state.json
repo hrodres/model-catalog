@@ -1,19 +1,19 @@
 {
- "generated": "2026-09-21T03:50:18.258981+00:00",
- "snapshot": "2026-09-21",
+ "generated": "2026-09-22T06:14:12.950755+00:00",
+ "snapshot": "2026-09-22",
  "fuente": "check-model-health.py F3 (2026-08-24)",
  "providers": {
   "opencode-go": {
    "enabled": 1,
    "probed": {
-    "na": 37
+    "na": 40
    },
    "total": 1
   },
   "opencode-zen": {
    "enabled": 1,
    "probed": {
-    "free": 30,
+    "free": 32,
     "noprobe": 44
    },
    "total": 2
@@ -27,8 +27,8 @@
   }
  },
  "counts": {
-  "na": 37,
-  "free": 30,
+  "na": 40,
+  "free": 32,
   "noprobe": 47
  },
  "go_quota": {
@@ -169,6 +169,12 @@
    "detalle": "HTTP 401: no accesible con tu plan/key"
   },
   {
+   "modelo": "grok-4.7",
+   "provider": "opencode-go",
+   "estado": "na",
+   "detalle": "HTTP 401: no accesible con tu plan/key"
+  },
+  {
    "modelo": "hy3",
    "provider": "opencode-go",
    "estado": "na",
@@ -236,6 +242,18 @@
   },
   {
    "modelo": "mimo-v2.5-pro",
+   "provider": "opencode-go",
+   "estado": "na",
+   "detalle": "HTTP 401: no accesible con tu plan/key"
+  },
+  {
+   "modelo": "mimo-v2.6-flash",
+   "provider": "opencode-go",
+   "estado": "na",
+   "detalle": "HTTP 401: no accesible con tu plan/key"
+  },
+  {
+   "modelo": "mimo-v2.6-pro",
    "provider": "opencode-go",
    "estado": "na",
    "detalle": "HTTP 401: no accesible con tu plan/key"
@@ -631,6 +649,12 @@
    "detalle": "no probado (protección cuota global free 100 req/día)"
   },
   {
+   "modelo": "grok-4.7",
+   "provider": "opencode-zen",
+   "estado": "free",
+   "detalle": "no probado (protección cuota global free 100 req/día)"
+  },
+  {
    "modelo": "grok-build-0.1",
    "provider": "opencode-zen",
    "estado": "noprobe",
@@ -680,6 +704,12 @@
   },
   {
    "modelo": "mimo-v2.5-free",
+   "provider": "opencode-zen",
+   "estado": "free",
+   "detalle": "no probado (protección cuota global free 100 req/día)"
+  },
+  {
+   "modelo": "mimo-v2.6-flash-free",
    "provider": "opencode-zen",
    "estado": "free",
    "detalle": "no probado (protección cuota global free 100 req/día)"

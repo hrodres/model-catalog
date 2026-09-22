@@ -1,5 +1,5 @@
 {
- "generated": "2026-09-21T03:50:01.069758+00:00",
+ "generated": "2026-09-22T06:13:56.411346+00:00",
  "aliases": [
   {
    "id": "opencode-zen/big-pickle",
@@ -266,6 +266,14 @@
    "alias": "💰 Grok 4.6 (Zen)"
   },
   {
+   "id": "opencode-go/grok-4.7",
+   "alias": "🚀 Grok 4.7 (Go)"
+  },
+  {
+   "id": "opencode-zen/grok-4.7",
+   "alias": "💰 Grok 4.7 (Zen)"
+  },
+  {
    "id": "opencode-zen/grok-build-0.1",
    "alias": "💰 Grok Build 0.1 (Zen)"
   },
@@ -348,6 +356,18 @@
   {
    "id": "opencode-go/mimo-v2.5-pro",
    "alias": "🚀 MiMo-V2.5-Pro (Go)"
+  },
+  {
+   "id": "opencode-go/mimo-v2.6-flash",
+   "alias": "🚀 MiMo-V2.6-Flash (Go)"
+  },
+  {
+   "id": "opencode-zen/mimo-v2.6-flash-free",
+   "alias": "🌱 MiMo-V2.6-Flash (Zen free)"
+  },
+  {
+   "id": "opencode-go/mimo-v2.6-pro",
+   "alias": "🚀 MiMo-V2.6-Pro (Go)"
   },
   {
    "id": "opencode-go/minimax-m2.5",

@@ -1,13 +1,13 @@
 {
- "generated": "2026-09-21T03:50:01.069758+00:00",
- "snapshot": "2026-09-21 03:50 UTC",
+ "generated": "2026-09-22T06:13:56.411346+00:00",
+ "snapshot": "2026-09-22 06:13 UTC",
  "providers_3rd": [
   "opencode-go",
   "opencode-zen",
   "openrouter"
  ],
- "modelsdev_fetched": "2026-09-21 03:50 UTC",
- "modelsdev_count": 413,
+ "modelsdev_fetched": "2026-09-22 06:13 UTC",
+ "modelsdev_count": 422,
  "price_matrix": {
   "currency": "USD",
   "fetched": "2026-09-14T11:45:08.441355+00:00",
@@ -2266,8 +2266,8 @@
  },
  "chain_method": "Modelo primario: opencode-go/hy3.\nSi el primero falla, se prueba el siguiente automáticamente (cascada de respaldo).\nCadena activa: 2 Go · 1 Zen free · 0 Zen paid · 2 OpenRouter (leída de agents.defaults.model).\n✅ Cadena sin Zen paid: 0 crédito de pago de Zen en cualquier escalón.\nGo y Zen free no consumen crédito de pago; OpenRouter solo en cascada de fallo.",
  "chain_snapshot": {
-  "generated_at": "2026-09-21T03:50:01.069440+00:00",
-  "snapshot": "2026-09-21 03:50 UTC",
+  "generated_at": "2026-09-22T06:13:56.409828+00:00",
+  "snapshot": "2026-09-22 06:13 UTC",
   "source": "agents.defaults.model en openclaw.json (leída en build)",
   "links": [
    {
@@ -2354,12 +2354,12 @@
   }
  },
  "counts": {
-  "total": 89,
-  "go": 37,
-  "zen": 74,
-  "free": 9,
+  "total": 93,
+  "go": 40,
+  "zen": 76,
+  "free": 10,
   "openrouter": 12,
-  "with_modelsdev": 80
+  "with_modelsdev": 84
  },
  "models": [
   {
@@ -4149,6 +4149,33 @@
    "md_url": "https://models.dev/models/xai/grok-4.6"
   },
   {
+   "id": "grok-4.7",
+   "providers": {
+    "go": true,
+    "zen": true,
+    "free": false,
+    "or": false
+   },
+   "or_id": null,
+   "or_price": null,
+   "tier": "paid",
+   "name": "Grok 4.7",
+   "desc": "xAI's frontier model for long-running agents, coding, knowledge work, and visual projects",
+   "context": 500000,
+   "output": 500000,
+   "reasoning": true,
+   "tool_call": true,
+   "structured": true,
+   "multimodal": true,
+   "open_weights": false,
+   "release": "2026-09-21",
+   "last_updated": "2026-09-21",
+   "knowledge": "2026-05",
+   "swebench": null,
+   "benchmarks": {},
+   "md_url": "https://models.dev/models/xai/grok-4.7"
+  },
+  {
    "id": "grok-build-0.1",
    "providers": {
     "go": false,
@@ -4678,6 +4705,87 @@
     "GPQA Diamond": 86.6
    },
    "md_url": "https://models.dev/models/xiaomi/mimo-v2.5-pro"
+  },
+  {
+   "id": "mimo-v2.6-flash",
+   "providers": {
+    "go": true,
+    "zen": false,
+    "free": false,
+    "or": false
+   },
+   "or_id": null,
+   "or_price": null,
+   "tier": "go",
+   "name": "MiMo-V2.6-Flash",
+   "desc": "MiMo Flash model for multimodal coding agents and long-context automation",
+   "context": 1048576,
+   "output": 131072,
+   "reasoning": true,
+   "tool_call": true,
+   "structured": false,
+   "multimodal": true,
+   "open_weights": false,
+   "release": "2026-09-22",
+   "last_updated": "2026-09-22",
+   "knowledge": "2026-09-22",
+   "swebench": null,
+   "benchmarks": {},
+   "md_url": "https://models.dev/models/xiaomi/mimo-v2.6-flash"
+  },
+  {
+   "id": "mimo-v2.6-flash-free",
+   "providers": {
+    "go": false,
+    "zen": true,
+    "free": true,
+    "or": false
+   },
+   "or_id": null,
+   "or_price": null,
+   "tier": "free",
+   "name": "MiMo-V2.6-Flash",
+   "desc": "MiMo Flash model for multimodal coding agents and long-context automation",
+   "context": 1048576,
+   "output": 131072,
+   "reasoning": true,
+   "tool_call": true,
+   "structured": false,
+   "multimodal": true,
+   "open_weights": false,
+   "release": "2026-09-22",
+   "last_updated": "2026-09-22",
+   "knowledge": "2026-09-22",
+   "swebench": null,
+   "benchmarks": {},
+   "md_url": "https://models.dev/models/xiaomi/mimo-v2.6-flash"
+  },
+  {
+   "id": "mimo-v2.6-pro",
+   "providers": {
+    "go": true,
+    "zen": false,
+    "free": false,
+    "or": false
+   },
+   "or_id": null,
+   "or_price": null,
+   "tier": "go",
+   "name": "MiMo-V2.6-Pro",
+   "desc": "Stronger MiMo Pro tier for multimodal reasoning and coding-agent execution",
+   "context": 1048576,
+   "output": 131072,
+   "reasoning": true,
+   "tool_call": true,
+   "structured": false,
+   "multimodal": true,
+   "open_weights": false,
+   "release": "2026-09-22",
+   "last_updated": "2026-09-22",
+   "knowledge": "2026-09-22",
+   "swebench": null,
+   "benchmarks": {},
+   "md_url": "https://models.dev/models/xiaomi/mimo-v2.6-pro"
   },
   {
    "id": "minimax-m2.5",
