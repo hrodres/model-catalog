@@ -1,13 +1,13 @@
 {
- "generated": "2026-09-22T06:13:56.411346+00:00",
- "snapshot": "2026-09-22 06:13 UTC",
+ "generated": "2026-09-23T03:50:01.006105+00:00",
+ "snapshot": "2026-09-23 03:50 UTC",
  "providers_3rd": [
   "opencode-go",
   "opencode-zen",
   "openrouter"
  ],
- "modelsdev_fetched": "2026-09-22 06:13 UTC",
- "modelsdev_count": 422,
+ "modelsdev_fetched": "2026-09-23 03:50 UTC",
+ "modelsdev_count": 425,
  "price_matrix": {
   "currency": "USD",
   "fetched": "2026-09-14T11:45:08.441355+00:00",
@@ -2266,8 +2266,8 @@
  },
  "chain_method": "Modelo primario: opencode-go/hy3.\nSi el primero falla, se prueba el siguiente automáticamente (cascada de respaldo).\nCadena activa: 2 Go · 1 Zen free · 0 Zen paid · 2 OpenRouter (leída de agents.defaults.model).\n✅ Cadena sin Zen paid: 0 crédito de pago de Zen en cualquier escalón.\nGo y Zen free no consumen crédito de pago; OpenRouter solo en cascada de fallo.",
  "chain_snapshot": {
-  "generated_at": "2026-09-22T06:13:56.409828+00:00",
-  "snapshot": "2026-09-22 06:13 UTC",
+  "generated_at": "2026-09-23T03:50:01.004808+00:00",
+  "snapshot": "2026-09-23 03:50 UTC",
   "source": "agents.defaults.model en openclaw.json (leída en build)",
   "links": [
    {
@@ -2332,14 +2332,14 @@
    "opencode-go": {
     "enabled": 1,
     "probed": {
-     "na": 37
+     "na": 40
     },
     "total": 1
    },
    "opencode-zen": {
     "enabled": 1,
     "probed": {
-     "free": 30,
+     "free": 32,
      "noprobe": 44
     },
     "total": 2
@@ -2354,12 +2354,12 @@
   }
  },
  "counts": {
-  "total": 93,
+  "total": 96,
   "go": 40,
-  "zen": 76,
+  "zen": 79,
   "free": 10,
   "openrouter": 12,
-  "with_modelsdev": 84
+  "with_modelsdev": 87
  },
  "models": [
   {
@@ -2657,6 +2657,33 @@
     "HealthBench Professional": 59.8
    },
    "md_url": "https://models.dev/models/anthropic/claude-opus-5"
+  },
+  {
+   "id": "claude-opus-5-5",
+   "providers": {
+    "go": false,
+    "zen": true,
+    "free": false,
+    "or": false
+   },
+   "or_id": null,
+   "or_price": null,
+   "tier": "paid",
+   "name": "Claude Opus 5.5",
+   "desc": "Claude model for long-running agentic coding and knowledge work",
+   "context": 1000000,
+   "output": 128000,
+   "reasoning": true,
+   "tool_call": true,
+   "structured": false,
+   "multimodal": true,
+   "open_weights": false,
+   "release": "2026-09-22",
+   "last_updated": "2026-09-22",
+   "knowledge": "2026-06",
+   "swebench": null,
+   "benchmarks": {},
+   "md_url": "https://models.dev/models/anthropic/claude-opus-5-5"
   },
   {
    "id": "claude-sonnet-4",
@@ -4087,6 +4114,60 @@
     "Artificial Analysis Coding Agent Index": 67
    },
    "md_url": "https://models.dev/models/openai/gpt-6-astra"
+  },
+  {
+   "id": "gpt-6-luna",
+   "providers": {
+    "go": false,
+    "zen": true,
+    "free": false,
+    "or": false
+   },
+   "or_id": null,
+   "or_price": null,
+   "tier": "paid",
+   "name": "GPT-6 Luna",
+   "desc": "OpenAI's most efficient model for focused, high-volume tasks",
+   "context": 1050000,
+   "output": 128000,
+   "reasoning": true,
+   "tool_call": true,
+   "structured": true,
+   "multimodal": true,
+   "open_weights": false,
+   "release": "2026-09-22",
+   "last_updated": "2026-09-22",
+   "knowledge": "2026-05-18",
+   "swebench": null,
+   "benchmarks": {},
+   "md_url": "https://models.dev/models/openai/gpt-6-luna"
+  },
+  {
+   "id": "gpt-6-sol",
+   "providers": {
+    "go": false,
+    "zen": true,
+    "free": false,
+    "or": false
+   },
+   "or_id": null,
+   "or_price": null,
+   "tier": "paid",
+   "name": "GPT-6 Sol",
+   "desc": "OpenAI model for complex coding and agentic workflows",
+   "context": 1050000,
+   "output": 128000,
+   "reasoning": true,
+   "tool_call": true,
+   "structured": true,
+   "multimodal": true,
+   "open_weights": false,
+   "release": "2026-09-22",
+   "last_updated": "2026-09-22",
+   "knowledge": "2026-04-20",
+   "swebench": null,
+   "benchmarks": {},
+   "md_url": "https://models.dev/models/openai/gpt-6-sol"
   },
   {
    "id": "grok-4.5",
