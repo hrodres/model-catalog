@@ -2,6 +2,16 @@
   "note": "Changelog manual — eventos de OpenCode (precios, cuotas, disponibilidad) anotados a mano. Los cambios de estado automáticos van en changelog-auto.json.",
   "events": [
     {
+      "date": "2026-09-23",
+      "text": "limits.json actualizado a la tabla oficial vigente (verified_at 2026-08-18 → 2026-09-23). Corregidos precios de DeepSeek V4 Flash: in $0.22→$0.15, out $0.66→$0.60, cache_read $0.007→$0.003 (estaban un 45% inflados); req/mes 37.800→65.000. Corregido qwen3.7-max: tier $60→$30 (req/mes 1.690→840). Añadidos deepseek-v4.1-flash (in $0.15/out $0.60, tier $60 pero PROMO x4 que caduca el 27/09/2026 → base $15/mes) y hy4-preview (in $0.834/out $2.501, tier $30, solo 6.770 req/mes). Corregida la nota de límites: son POR MODELO (5h=20%, semana=50%, mes=100% del tier de cada modelo), no globales; se conservan las claves per_5h_usd/per_week_usd/per_month_usd porque index.html las lee.",
+      "source": "https://opencode.ai/docs/go/#usage-limits"
+    },
+    {
+      "date": "2026-09-23",
+      "text": "Nota: gpt-5.6-luna SÍ está ya disponible en Go (40 modelos en el catálogo; cuota $15/mes). La nota previa del 19/09 que decía que no existía quedó obsoleta.",
+      "source": "https://opencode.ai/zen/go/v1/models"
+    },
+    {
       "date": "2026-08-18",
       "text": "OpenCode Go sube cuota de DeepSeek V4 Flash: $15→$30/mes de uso y 3.800→7.600 req/5h (duplica el recorte del 16/8). Detectado en docs oficiales al responder consulta de tiers.",
       "source": "https://opencode.ai/docs/es/go"

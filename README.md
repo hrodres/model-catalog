@@ -9,7 +9,7 @@ Catálogo de modelos del gateway OpenClaw con **tres proveedores**: **opencode-g
 - **Inventario unificado** de los modelos disponibles en cada proveedor del gateway, con specs (contexto, output, reasoning, tool-call) y benchmarks (SWE-Bench).
 - **Precios comparativos** por MTok: plan Go, Zen (off-peak/peak) y OpenRouter (API real).
 - **Salud por modelo**: probes de disponibilidad + historial 14 días.
-- **Cadena de fallback** del gateway (6 eslabones) y **cuota Go** (buckets continuo/semanal/mensual).
+- **Cadena de fallback** del gateway (hoy 5 eslabones: 1 primary + 4 fallbacks; el sync puede generar hasta 6) y **cuota Go** (buckets continuo/semanal/mensual).
 - Todo se genera automáticamente en cada refresh; la web se despliega sola.
 
 ## Estructura del repo

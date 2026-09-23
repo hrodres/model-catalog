@@ -1,7 +1,7 @@
 {
   "note": "Datos manuales — OpenCode no expone límites por API (403). Se actualizan a mano cuando cambien. Campo verified_at = última verificación contra docs oficiales (https://opencode.ai/docs/es/go).",
   "source": "https://opencode.ai/docs/es/go",
-  "verified_at": "2026-08-18",
+  "verified_at": "2026-09-23",
   "subscription": {
     "name": "OpenCode Go",
     "price_usd_month": 10,
@@ -13,10 +13,10 @@
     "per_5h_usd": 12,
     "per_week_usd": 30,
     "per_month_usd": 60,
-    "note": "Límites de uso en dólares, globales (no por modelo).",
-    "verified_at": "2026-08-17"
+    "note": "OJO (corregido 2026-09-23): los límites de Go son POR MODELO, no globales. Cada modelo tiene su propio límite mensual en USD (campo tier_usd de cada entrada), repartido 5h=20%, semana=50%, mes=100% (ej.: $60/mes -> $12/5h, $30/semana, $60/mes). Los valores de arriba son el ejemplo del tramo de $60, que es el que aplica a la mayoría de modelos; NO son un tope global de cuenta.",
+    "verified_at": "2026-09-23"
   },
-  "peak_hours_note": "DeepSeek V4 Flash/Pro: horas Peak = 01:00-04:00 y 06:00-10:00 UTC; resto Off-Peak.",
+  "peak_hours_note": "DeepSeek V4.1 Flash / V4 Pro / V4 Flash / V4 Flash Vision Exp: horas Peak = 01:00-04:00 y 06:00-10:00 UTC, de lunes a viernes; el resto (incluido todo el fin de semana) es Off-Peak a mitad de precio.",
   "overflow_note": "Con saldo en Zen puedes activar 'Use balance' en la consola: al agotar el límite de Go, sigue usando tu saldo Zen en vez de bloquear.",
   "privacy_note": "Retención de datos: GLM/Kimi/MiMo/Qwen/MiniMax/DeepSeek/Hy3 = 0 días (no entrenamiento). Grok 4.5 y GPT 5.6 Luna = 30 días de logs de abuso. DeepSeek V4 Flash ZDR vigente hasta 31/8/2026.",
   "pricing": [
@@ -25,26 +25,67 @@
       "name": "DeepSeek V4 Flash",
       "variant": "off-peak",
       "tier_usd": 30,
-      "in": 0.22,
-      "out": 0.66,
-      "cache_read": 0.007,
+      "in": 0.15,
+      "out": 0.6,
+      "cache_read": 0.003,
       "cache_write": null,
-      "req_5h": 7600,
-      "req_week": 18900,
-      "req_month": 37800
+      "req_5h": 13000,
+      "req_week": 32500,
+      "req_month": 65000
     },
     {
       "model": "deepseek-v4-flash",
       "name": "DeepSeek V4 Flash",
       "variant": "peak",
       "tier_usd": 30,
-      "in": 0.44,
-      "out": 1.32,
-      "cache_read": 0.014,
+      "in": 0.3,
+      "out": 1.2,
+      "cache_read": 0.006,
       "cache_write": null,
       "req_5h": null,
       "req_week": null,
       "req_month": null
+    },
+    {
+      "model": "deepseek-v4.1-flash",
+      "name": "DeepSeek V4.1 Flash",
+      "variant": "off-peak",
+      "tier_usd": 60,
+      "promo": "4x hasta 2026-09-27; despues el limite base baja a $15/mes (req/mes 130000 -> 32500)",
+      "in": 0.15,
+      "out": 0.6,
+      "cache_read": 0.003,
+      "cache_write": null,
+      "req_5h": 26000,
+      "req_week": 65000,
+      "req_month": 130000
+    },
+    {
+      "model": "deepseek-v4.1-flash",
+      "name": "DeepSeek V4.1 Flash",
+      "variant": "peak",
+      "tier_usd": 60,
+      "promo": "4x hasta 2026-09-27; despues el limite base baja a $15/mes",
+      "in": 0.3,
+      "out": 1.2,
+      "cache_read": 0.006,
+      "cache_write": null,
+      "req_5h": null,
+      "req_week": null,
+      "req_month": null
+    },
+    {
+      "model": "hy4-preview",
+      "name": "Hy4 preview",
+      "variant": null,
+      "tier_usd": 30,
+      "in": 0.834,
+      "out": 2.501,
+      "cache_read": 0.042,
+      "cache_write": null,
+      "req_5h": 1350,
+      "req_week": 3380,
+      "req_month": 6770
     },
     {
       "model": "deepseek-v4-pro",
@@ -258,14 +299,14 @@
       "model": "qwen3.7-max",
       "name": "Qwen3.7 Max",
       "variant": null,
-      "tier_usd": 60,
+      "tier_usd": 30,
       "in": 2.5,
       "out": 7.5,
       "cache_read": 0.5,
       "cache_write": 3.125,
-      "req_5h": 340,
-      "req_week": 840,
-      "req_month": 1690
+      "req_5h": 170,
+      "req_week": 420,
+      "req_month": 840
     },
     {
       "model": "qwen3.7-plus",
