@@ -1,5 +1,5 @@
 {
- "generated": "2026-09-23T03:50:01.006105+00:00",
+ "generated": "2026-09-24T03:50:01.068918+00:00",
  "aliases": [
   {
    "id": "opencode-zen/big-pickle",
@@ -43,7 +43,7 @@
   },
   {
    "id": "opencode-zen/claude-sonnet-4",
-   "alias": "💰 Claude Sonnet 4.6 (Zen)"
+   "alias": "💰 Claude Sonnet 4.5 (latest) (Zen)"
   },
   {
    "id": "opencode-zen/claude-sonnet-4-5",
@@ -103,7 +103,7 @@
   },
   {
    "id": "opencode-zen/gemini-3.1-pro",
-   "alias": "💰 Gemini 3.1 Pro Preview Custom Tools (Zen)"
+   "alias": "💰 Gemini 3.1 Pro Preview (Zen)"
   },
   {
    "id": "opencode-zen/gemini-3.5-flash",
@@ -252,6 +252,10 @@
   {
    "id": "opencode-zen/gpt-6-astra",
    "alias": "💰 GPT-6 Astra (Zen)"
+  },
+  {
+   "id": "opencode-go/gpt-6-luna",
+   "alias": "🚀 GPT-6 Luna (Go)"
   },
   {
    "id": "opencode-zen/gpt-6-luna",
@@ -476,6 +480,14 @@
   {
    "id": "opencode-go/qwen3.8-max",
    "alias": "🚀 Qwen3.8 Max (Go)"
+  },
+  {
+   "id": "opencode-go/space-bunny-free",
+   "alias": "🚀 space-bunny-free (Go)"
+  },
+  {
+   "id": "opencode-zen/space-bunny-free",
+   "alias": "🌱 space-bunny-free (Zen free)"
   }
  ]
 }

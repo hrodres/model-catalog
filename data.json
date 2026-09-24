@@ -1,13 +1,13 @@
 {
- "generated": "2026-09-23T03:50:01.006105+00:00",
- "snapshot": "2026-09-23 03:50 UTC",
+ "generated": "2026-09-24T03:50:01.068918+00:00",
+ "snapshot": "2026-09-24 03:50 UTC",
  "providers_3rd": [
   "opencode-go",
   "opencode-zen",
   "openrouter"
  ],
- "modelsdev_fetched": "2026-09-23 03:50 UTC",
- "modelsdev_count": 425,
+ "modelsdev_fetched": "2026-09-24 03:50 UTC",
+ "modelsdev_count": 427,
  "price_matrix": {
   "currency": "USD",
   "fetched": "2026-09-14T11:45:08.441355+00:00",
@@ -2264,20 +2264,20 @@
   },
   "notes": "Precios públicos. Sin saldos ni claves. Zen free comparte pool común (coste 0). Go incluido en suscripción."
  },
- "chain_method": "Modelo primario: opencode-go/hy3.\nSi el primero falla, se prueba el siguiente automáticamente (cascada de respaldo).\nCadena activa: 2 Go · 1 Zen free · 0 Zen paid · 2 OpenRouter (leída de agents.defaults.model).\n✅ Cadena sin Zen paid: 0 crédito de pago de Zen en cualquier escalón.\nGo y Zen free no consumen crédito de pago; OpenRouter solo en cascada de fallo.",
+ "chain_method": "Modelo primario: opencode-go/deepseek-v4-flash.\nSi el primero falla, se prueba el siguiente automáticamente (cascada de respaldo).\nCadena activa: 2 Go · 1 Zen free · 0 Zen paid · 2 OpenRouter (leída de agents.defaults.model).\n✅ Cadena sin Zen paid: 0 crédito de pago de Zen en cualquier escalón.\nGo y Zen free no consumen crédito de pago; OpenRouter solo en cascada de fallo.",
  "chain_snapshot": {
-  "generated_at": "2026-09-23T03:50:01.004808+00:00",
-  "snapshot": "2026-09-23 03:50 UTC",
+  "generated_at": "2026-09-24T03:50:01.068586+00:00",
+  "snapshot": "2026-09-24 03:50 UTC",
   "source": "agents.defaults.model en openclaw.json (leída en build)",
   "links": [
    {
     "pos": 1,
-    "link": "opencode-go/hy3",
+    "link": "opencode-go/deepseek-v4-flash",
     "role": "Principal — Go (suscripción, sin coste adicional)"
    },
    {
     "pos": 2,
-    "link": "opencode-go/deepseek-v4-flash",
+    "link": "opencode-go/hy3",
     "role": "Respaldo 1 — Go (suscripción, sin coste adicional)"
    },
    {
@@ -2339,7 +2339,7 @@
    "opencode-zen": {
     "enabled": 1,
     "probed": {
-     "free": 32,
+     "free": 35,
      "noprobe": 44
     },
     "total": 2
@@ -2354,10 +2354,10 @@
   }
  },
  "counts": {
-  "total": 96,
-  "go": 40,
-  "zen": 79,
-  "free": 10,
+  "total": 97,
+  "go": 42,
+  "zen": 80,
+  "free": 11,
   "openrouter": 12,
   "with_modelsdev": 87
  },
@@ -2696,30 +2696,23 @@
    "or_id": null,
    "or_price": null,
    "tier": "paid",
-   "name": "Claude Sonnet 4.6",
-   "desc": "Claude workhorse for coding agents, careful analysis, and production cost control",
-   "context": 1000000,
+   "name": "Claude Sonnet 4.5 (latest)",
+   "desc": "Balanced Claude model for coding, analysis, agent workflows, and cost control",
+   "context": 200000,
    "output": 64000,
    "reasoning": true,
    "tool_call": true,
    "structured": false,
    "multimodal": true,
    "open_weights": false,
-   "release": "2026-02-17",
-   "last_updated": "2026-03-13",
-   "knowledge": "2025-08-31",
+   "release": "2025-09-29",
+   "last_updated": "2025-09-29",
+   "knowledge": "2025-07-31",
    "swebench": null,
    "benchmarks": {
-    "SWE-Atlas Codebase QnA": 70.3,
-    "SWE-Atlas Refactoring": 32.21,
-    "SWE-Atlas Test Writing": 31.76,
-    "Artificial Analysis Coding Agent Index": 49.4,
-    "SWE-Bench Pro": 14.9,
-    "Terminal-Bench": 67,
-    "Humanity's Last Exam": 46.8,
-    "OSWorld-Verified": 78.5
+    "SWE-Bench Pro": 43.6
    },
-   "md_url": "https://models.dev/models/anthropic/claude-sonnet-4-6"
+   "md_url": "https://models.dev/models/anthropic/claude-sonnet-4-5"
   },
   {
    "id": "claude-sonnet-4-5",
@@ -3048,8 +3041,8 @@
    "or_id": null,
    "or_price": null,
    "tier": "paid",
-   "name": "Gemini 3.1 Pro Preview Custom Tools",
-   "desc": "Advanced Gemini model for complex reasoning, coding, and multimodal analysis",
+   "name": "Gemini 3.1 Pro Preview",
+   "desc": "Reasoning-first Gemini preview for agentic coding and complex problem solving",
    "context": 1048576,
    "output": 65536,
    "reasoning": true,
@@ -3061,8 +3054,23 @@
    "last_updated": "2026-02-19",
    "knowledge": "2025-01",
    "swebench": null,
-   "benchmarks": {},
-   "md_url": "https://models.dev/models/google/gemini-3.1-pro-preview-customtools"
+   "benchmarks": {
+    "SWE-Bench Pro": 15.1,
+    "Terminal-Bench": 68.3,
+    "SWE-Atlas Codebase QnA": 45.6,
+    "SWE-Atlas Refactoring": 33.81,
+    "SWE-Atlas Test Writing": 29.84,
+    "Artificial Analysis Coding Agent Index": 43,
+    "GPQA Diamond": 94.3,
+    "Humanity's Last Exam": 44.4,
+    "ARC-AGI-2": 77.1,
+    "MMMU Pro": 80.5,
+    "MCP Atlas": 78.2,
+    "OSWorld-Verified": 76.2,
+    "CharXiv Reasoning": 83.3,
+    "GDPval-AA": 1314
+   },
+   "md_url": "https://models.dev/models/google/gemini-3.1-pro-preview"
   },
   {
    "id": "gemini-3.5-flash",
@@ -4118,7 +4126,7 @@
   {
    "id": "gpt-6-luna",
    "providers": {
-    "go": false,
+    "go": true,
     "zen": true,
     "free": false,
     "or": false
@@ -4806,10 +4814,10 @@
    "tool_call": true,
    "structured": false,
    "multimodal": true,
-   "open_weights": false,
+   "open_weights": true,
    "release": "2026-09-22",
    "last_updated": "2026-09-22",
-   "knowledge": "2026-09-22",
+   "knowledge": "",
    "swebench": null,
    "benchmarks": {},
    "md_url": "https://models.dev/models/xiaomi/mimo-v2.6-flash"
@@ -4833,10 +4841,10 @@
    "tool_call": true,
    "structured": false,
    "multimodal": true,
-   "open_weights": false,
+   "open_weights": true,
    "release": "2026-09-22",
    "last_updated": "2026-09-22",
-   "knowledge": "2026-09-22",
+   "knowledge": "",
    "swebench": null,
    "benchmarks": {},
    "md_url": "https://models.dev/models/xiaomi/mimo-v2.6-flash"
@@ -4860,10 +4868,10 @@
    "tool_call": true,
    "structured": false,
    "multimodal": true,
-   "open_weights": false,
+   "open_weights": true,
    "release": "2026-09-22",
    "last_updated": "2026-09-22",
-   "knowledge": "2026-09-22",
+   "knowledge": "",
    "swebench": null,
    "benchmarks": {},
    "md_url": "https://models.dev/models/xiaomi/mimo-v2.6-pro"
@@ -5398,6 +5406,33 @@
    "swebench": null,
    "benchmarks": {},
    "md_url": "https://models.dev/models/alibaba/qwen3.8-max"
+  },
+  {
+   "id": "space-bunny-free",
+   "providers": {
+    "go": true,
+    "zen": true,
+    "free": true,
+    "or": false
+   },
+   "or_id": null,
+   "or_price": null,
+   "tier": "free",
+   "name": "space-bunny-free",
+   "desc": "Sin ficha en models.dev (solo catálogo opencode)",
+   "context": null,
+   "output": null,
+   "reasoning": null,
+   "tool_call": null,
+   "structured": null,
+   "multimodal": null,
+   "open_weights": null,
+   "release": "",
+   "last_updated": "",
+   "knowledge": "",
+   "swebench": null,
+   "benchmarks": {},
+   "md_url": null
   }
  ]
 }

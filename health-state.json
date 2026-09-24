@@ -1,19 +1,19 @@
 {
- "generated": "2026-09-23T03:50:19.110262+00:00",
- "snapshot": "2026-09-23",
+ "generated": "2026-09-24T03:50:20.442352+00:00",
+ "snapshot": "2026-09-24",
  "fuente": "check-model-health.py F3 (2026-08-24)",
  "providers": {
   "opencode-go": {
    "enabled": 1,
    "probed": {
-    "na": 40
+    "na": 42
    },
    "total": 1
   },
   "opencode-zen": {
    "enabled": 1,
    "probed": {
-    "free": 35,
+    "free": 36,
     "noprobe": 44
    },
    "total": 2
@@ -27,8 +27,8 @@
   }
  },
  "counts": {
-  "na": 40,
-  "free": 35,
+  "na": 42,
+  "free": 36,
   "noprobe": 47
  },
  "go_quota": {
@@ -64,12 +64,12 @@
  },
  "chain": [
   {
-   "link": "opencode-go/hy3",
+   "link": "opencode-go/deepseek-v4-flash",
    "estado": "na",
    "detalle": "HTTP 401: no accesible con tu plan/key"
   },
   {
-   "link": "opencode-go/deepseek-v4-flash",
+   "link": "opencode-go/hy3",
    "estado": "na",
    "detalle": "HTTP 401: no accesible con tu plan/key"
   },
@@ -152,6 +152,12 @@
   },
   {
    "modelo": "gpt-5.6-luna",
+   "provider": "opencode-go",
+   "estado": "na",
+   "detalle": "HTTP 401: no accesible con tu plan/key"
+  },
+  {
+   "modelo": "gpt-6-luna",
    "provider": "opencode-go",
    "estado": "na",
    "detalle": "HTTP 401: no accesible con tu plan/key"
@@ -326,6 +332,12 @@
   },
   {
    "modelo": "qwen3.8-max",
+   "provider": "opencode-go",
+   "estado": "na",
+   "detalle": "HTTP 401: no accesible con tu plan/key"
+  },
+  {
+   "modelo": "space-bunny-free",
    "provider": "opencode-go",
    "estado": "na",
    "detalle": "HTTP 401: no accesible con tu plan/key"
@@ -800,6 +812,12 @@
   },
   {
    "modelo": "qwen3.8-flash",
+   "provider": "opencode-zen",
+   "estado": "free",
+   "detalle": "no probado (protección cuota global free 100 req/día)"
+  },
+  {
+   "modelo": "space-bunny-free",
    "provider": "opencode-zen",
    "estado": "free",
    "detalle": "no probado (protección cuota global free 100 req/día)"
