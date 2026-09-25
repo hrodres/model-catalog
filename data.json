@@ -1,12 +1,12 @@
 {
- "generated": "2026-09-24T03:50:01.068918+00:00",
- "snapshot": "2026-09-24 03:50 UTC",
+ "generated": "2026-09-25T03:50:00.996049+00:00",
+ "snapshot": "2026-09-25 03:50 UTC",
  "providers_3rd": [
   "opencode-go",
   "opencode-zen",
   "openrouter"
  ],
- "modelsdev_fetched": "2026-09-24 03:50 UTC",
+ "modelsdev_fetched": "2026-09-25 03:50 UTC",
  "modelsdev_count": 427,
  "price_matrix": {
   "currency": "USD",
@@ -2266,8 +2266,8 @@
  },
  "chain_method": "Modelo primario: opencode-go/deepseek-v4-flash.\nSi el primero falla, se prueba el siguiente automáticamente (cascada de respaldo).\nCadena activa: 2 Go · 1 Zen free · 0 Zen paid · 2 OpenRouter (leída de agents.defaults.model).\n✅ Cadena sin Zen paid: 0 crédito de pago de Zen en cualquier escalón.\nGo y Zen free no consumen crédito de pago; OpenRouter solo en cascada de fallo.",
  "chain_snapshot": {
-  "generated_at": "2026-09-24T03:50:01.068586+00:00",
-  "snapshot": "2026-09-24 03:50 UTC",
+  "generated_at": "2026-09-25T03:50:00.995726+00:00",
+  "snapshot": "2026-09-25 03:50 UTC",
   "source": "agents.defaults.model en openclaw.json (leída en build)",
   "links": [
    {
@@ -2332,14 +2332,14 @@
    "opencode-go": {
     "enabled": 1,
     "probed": {
-     "na": 40
+     "na": 42
     },
     "total": 1
    },
    "opencode-zen": {
     "enabled": 1,
     "probed": {
-     "free": 35,
+     "free": 36,
      "noprobe": 44
     },
     "total": 2
@@ -2449,7 +2449,15 @@
    "last_updated": "2026-09-01",
    "knowledge": "2026-06",
    "swebench": null,
-   "benchmarks": {},
+   "benchmarks": {
+    "Terminal-Bench-Science": 52.6,
+    "Terminal-Bench": 55.8,
+    "GDPval-AA": 1853,
+    "OSWorld": 41.7,
+    "Humanity's Last Exam": 65,
+    "AutomationBench": 31.4,
+    "CursorBench": 73.4
+   },
    "md_url": "https://models.dev/models/anthropic/claude-fable-5-1"
   },
   {
@@ -2682,7 +2690,17 @@
    "last_updated": "2026-09-22",
    "knowledge": "2026-06",
    "swebench": null,
-   "benchmarks": {},
+   "benchmarks": {
+    "Terminal-Bench": 66.4,
+    "FrontierCode": 54.4,
+    "CursorBench": 57.8,
+    "GDPval-AA": 1846,
+    "AutomationBench": 40,
+    "Humanity's Last Exam": 67.7,
+    "Terminal-Bench-Science": 58.7,
+    "OSWorld": 81.8,
+    "Chartography": 89
+   },
    "md_url": "https://models.dev/models/anthropic/claude-opus-5-5"
   },
   {
@@ -2870,7 +2888,27 @@
    "knowledge": "2025-05",
    "swebench": 79,
    "benchmarks": {
-    "SWE-Bench Verified": 79
+    "SWE-Bench Verified": 79,
+    "MMLU-Pro": 86.2,
+    "SimpleQA-Verified": 34.1,
+    "Chinese SimpleQA": 78.9,
+    "GPQA Diamond": 88.1,
+    "Humanity's Last Exam": 45.1,
+    "LiveCodeBench": 91.6,
+    "Codeforces": 3052,
+    "HMMT": 94.8,
+    "IMOAnswerBench": 88.4,
+    "MathArena Apex": 33,
+    "MathArena Apex Shortlist": 85.7,
+    "MRCR": 78.7,
+    "CorpusQA": 60.5,
+    "Terminal-Bench": 56.9,
+    "SWE-Bench Pro": 52.6,
+    "SWE-Bench Multilingual": 73.3,
+    "BrowseComp": 73.2,
+    "MCP Atlas": 69,
+    "GDPval-AA": 1395,
+    "Toolathlon": 47.8
    },
    "md_url": "https://models.dev/models/deepseek/deepseek-v4-flash"
   },
@@ -2903,7 +2941,27 @@
    "knowledge": "2025-05",
    "swebench": 79,
    "benchmarks": {
-    "SWE-Bench Verified": 79
+    "SWE-Bench Verified": 79,
+    "MMLU-Pro": 86.2,
+    "SimpleQA-Verified": 34.1,
+    "Chinese SimpleQA": 78.9,
+    "GPQA Diamond": 88.1,
+    "Humanity's Last Exam": 45.1,
+    "LiveCodeBench": 91.6,
+    "Codeforces": 3052,
+    "HMMT": 94.8,
+    "IMOAnswerBench": 88.4,
+    "MathArena Apex": 33,
+    "MathArena Apex Shortlist": 85.7,
+    "MRCR": 78.7,
+    "CorpusQA": 60.5,
+    "Terminal-Bench": 56.9,
+    "SWE-Bench Pro": 52.6,
+    "SWE-Bench Multilingual": 73.3,
+    "BrowseComp": 73.2,
+    "MCP Atlas": 69,
+    "GDPval-AA": 1395,
+    "Toolathlon": 47.8
    },
    "md_url": "https://models.dev/models/deepseek/deepseek-v4-flash"
   },
@@ -2931,7 +2989,19 @@
    "last_updated": "2026-09-01",
    "knowledge": "",
    "swebench": null,
-   "benchmarks": {},
+   "benchmarks": {
+    "Terminal-Bench": 83.9,
+    "NL2Repo": 57.7,
+    "CyberGym": 75.3,
+    "DeepSWE": 59.3,
+    "Toolathlon-Verified": 75.9,
+    "DSBench-Hard": 63.6,
+    "AutomationBench": 25.7,
+    "ApexBench": 36.5,
+    "Agents' Last Exam": 27.3,
+    "Chartography": 64.3,
+    "ZeroBench": 35
+   },
    "md_url": "https://models.dev/models/deepseek/deepseek-v4-flash-vision-exp"
   },
   {
@@ -2966,8 +3036,26 @@
     "SWE-Bench Verified": 80.6,
     "Artificial Analysis Coding Agent Index": 50.1,
     "SWE-Atlas Codebase QnA": 67.8,
-    "SWE-Bench Pro": 18,
-    "Terminal-Bench": 64.7
+    "SWE-Bench Pro": 55.4,
+    "Terminal-Bench": 67.9,
+    "MMLU-Pro": 87.5,
+    "SimpleQA-Verified": 57.9,
+    "Chinese SimpleQA": 84.4,
+    "GPQA Diamond": 90.1,
+    "Humanity's Last Exam": 48.2,
+    "LiveCodeBench": 93.5,
+    "Codeforces": 3206,
+    "HMMT": 95.2,
+    "IMOAnswerBench": 89.8,
+    "MathArena Apex": 38.3,
+    "MathArena Apex Shortlist": 90.2,
+    "MRCR": 83.5,
+    "CorpusQA": 62,
+    "SWE-Bench Multilingual": 76.2,
+    "BrowseComp": 83.4,
+    "MCP Atlas": 73.6,
+    "GDPval-AA": 1554,
+    "Toolathlon": 51.8
    },
    "md_url": "https://models.dev/models/deepseek/deepseek-v4-pro"
   },
@@ -2995,7 +3083,24 @@
    "last_updated": "2026-09-10",
    "knowledge": "2025-05",
    "swebench": null,
-   "benchmarks": {},
+   "benchmarks": {
+    "GPQA Diamond": 90.9,
+    "MathArena Apex": 65.6,
+    "Humanity's Last Exam": 63.9,
+    "Codeforces": 3471,
+    "Terminal-Bench": 85.8,
+    "DeepSWE": 67.6,
+    "ProgramBench": 20.3,
+    "NL2Repo": 64,
+    "CyberGym": 88.1,
+    "ExploitGym": 15.3,
+    "AutomationBench": 54.8,
+    "Agents' Last Exam": 31.8,
+    "SEC-Bench Pro": 62.8,
+    "Chartography": 78.9,
+    "BabyVision": 89.6,
+    "ZeroBench": 49
+   },
    "md_url": "https://models.dev/models/deepseek/deepseek-v4.1-flash"
   },
   {
@@ -3239,7 +3344,20 @@
    "last_updated": "2026-09-02",
    "knowledge": "",
    "swebench": null,
-   "benchmarks": {},
+   "benchmarks": {
+    "DeepSWE": 73.7,
+    "GDPval-AA": 1545,
+    "Finance Agent": 61.4,
+    "Harvey Legal Agent Benchmark": 10,
+    "Terminal-Bench": 19.1,
+    "GDP.PDF": 35,
+    "CharXiv Reasoning": 86.2,
+    "LVBench": 87.1,
+    "HLE-Verified": 54.9,
+    "OSWorld": 59,
+    "BioMysteryBench": 56.5,
+    "LAB-Bench": 86.2
+   },
    "md_url": "https://models.dev/models/google/gemini-3.8-flash"
   },
   {
@@ -3374,7 +3492,23 @@
    "last_updated": "2026-08-14",
    "knowledge": "",
    "swebench": null,
-   "benchmarks": {},
+   "benchmarks": {
+    "Terminal-Bench": 28.3,
+    "DeepSWE": 66.9,
+    "NL2Repo": 58,
+    "ProgramBench": 19,
+    "FrontierSWE": 78.1,
+    "SWE-Marathon": 42.5,
+    "PostTrainBench": 39.8,
+    "CyberGym": 84.5,
+    "ExploitGym": 130,
+    "ExploitBench": 54.4,
+    "Toolathlon-Verified": 73,
+    "AutomationBench": 48.2,
+    "Agents' Last Exam": 28.5,
+    "Humanity's Last Exam": 62.5,
+    "GDPval-AA": 1769
+   },
    "md_url": "https://models.dev/models/zhipuai/glm-5.3"
   },
   {
@@ -3401,7 +3535,14 @@
    "last_updated": "2026-08-26",
    "knowledge": "",
    "swebench": null,
-   "benchmarks": {},
+   "benchmarks": {
+    "Terminal-Bench": 84.3,
+    "DeepSWE": 63.4,
+    "Agents' Last Exam": 26.3,
+    "AutomationBench": 48.8,
+    "Humanity's Last Exam": 55.3,
+    "GDPval-AA": 1773
+   },
    "md_url": "https://models.dev/models/zhipuai/glm-5.3-flash"
   },
   {
@@ -4147,7 +4288,9 @@
    "last_updated": "2026-09-22",
    "knowledge": "2026-05-18",
    "swebench": null,
-   "benchmarks": {},
+   "benchmarks": {
+    "DeepSWE": 66.6
+   },
    "md_url": "https://models.dev/models/openai/gpt-6-luna"
   },
   {
@@ -4174,7 +4317,12 @@
    "last_updated": "2026-09-22",
    "knowledge": "2026-04-20",
    "swebench": null,
-   "benchmarks": {},
+   "benchmarks": {
+    "DeepSWE": 68.8,
+    "AutomationBench": 33.2,
+    "Agents' Last Exam": 56.4,
+    "OSWorld": 60.5
+   },
    "md_url": "https://models.dev/models/openai/gpt-6-sol"
   },
   {
@@ -4234,7 +4382,16 @@
    "last_updated": "2026-08-12",
    "knowledge": "2026-02-01",
    "swebench": null,
-   "benchmarks": {},
+   "benchmarks": {
+    "CursorBench": 40.4,
+    "DeepSWE": 65.2,
+    "EEBench": 53,
+    "AA-Briefcase": 1546,
+    "Terminal-Bench": 20.3,
+    "Harvey Legal Agent Benchmark": 15.8,
+    "HealthBench": 48.5,
+    "GDPval": 1605
+   },
    "md_url": "https://models.dev/models/xai/grok-4.6"
   },
   {
@@ -4261,7 +4418,16 @@
    "last_updated": "2026-09-21",
    "knowledge": "2026-05",
    "swebench": null,
-   "benchmarks": {},
+   "benchmarks": {
+    "CursorBench": 46.3,
+    "DeepSWE": 71,
+    "EEBench": 64,
+    "AA-Briefcase": 1657,
+    "Terminal-Bench": 37.6,
+    "Harvey Legal Agent Benchmark": 19.6,
+    "HealthBench": 56.7,
+    "GDPval": 1695
+   },
    "md_url": "https://models.dev/models/xai/grok-4.7"
   },
   {
@@ -4320,7 +4486,35 @@
    "knowledge": "",
    "swebench": 78,
    "benchmarks": {
-    "SWE-Bench Verified": 78
+    "SWE-Bench Verified": 78,
+    "SWE-Bench Multilingual": 75.8,
+    "SWE-Bench Pro": 57.9,
+    "Terminal-Bench": 71.7,
+    "NL2Repo": 45.6,
+    "DeepSWE": 28,
+    "BrowseComp": 84.2,
+    "WideSearch": 76.4,
+    "DeepSearchQA": 91,
+    "MCP Atlas": 79.1,
+    "Toolathlon": 48.5,
+    "APEX-Agents": 25.6,
+    "ClawEval": 68.5,
+    "WildClawBench": 53.6,
+    "SkillsBench": 55.3,
+    "Humanity's Last Exam": 37,
+    "GPQA Diamond": 90.4,
+    "FrontierScience": 74.8,
+    "USAMO": 72,
+    "MathArena Apex": 38.7,
+    "ArxivMath": 52.2,
+    "HorizonMath": 7.1,
+    "PHYBench": 77.4,
+    "CMT Benchmark": 37.8,
+    "IMOAnswerBench": 90,
+    "SuperChem": 54.9,
+    "CL-bench": 23.8,
+    "CL-bench-life": 17,
+    "AA-LCR": 73.4
    },
    "md_url": "https://models.dev/models/tencent/hy3"
   },
@@ -4606,7 +4800,15 @@
    "last_updated": "2026-08-27",
    "knowledge": "",
    "swebench": null,
-   "benchmarks": {},
+   "benchmarks": {
+    "FinFIRST": 52.85,
+    "FinSearchComp Verified": 77.04,
+    "FinCRAFT": 51.74,
+    "Finance Agent": 59.81,
+    "APEX-Agents": 29.17,
+    "SpreadsheetBench": 21.81,
+    "tau3-bench": 41
+   },
    "md_url": "https://models.dev/models/inclusionai/ling-3.0-flash-fin"
   },
   {
@@ -4726,7 +4928,19 @@
    "last_updated": "2026-04-22",
    "knowledge": "2024-12",
    "swebench": null,
-   "benchmarks": {},
+   "benchmarks": {
+    "MiMo Coding Bench": 71.8,
+    "Claw-Eval": 23.8,
+    "Terminal-Bench": 65.8,
+    "SWE-Bench Pro": 56.1,
+    "CharXiv Reasoning": 81,
+    "MMMU-Pro": 77.9,
+    "HR-Bench": 88.5,
+    "OmniDocBench": 87.2,
+    "Video-MME": 87.7,
+    "DailyOmni": 83.5,
+    "VideoHolmes": 64
+   },
    "md_url": "https://models.dev/models/xiaomi/mimo-v2.5"
   },
   {
@@ -4757,7 +4971,19 @@
    "last_updated": "2026-04-22",
    "knowledge": "2024-12",
    "swebench": null,
-   "benchmarks": {},
+   "benchmarks": {
+    "MiMo Coding Bench": 71.8,
+    "Claw-Eval": 23.8,
+    "Terminal-Bench": 65.8,
+    "SWE-Bench Pro": 56.1,
+    "CharXiv Reasoning": 81,
+    "MMMU-Pro": 77.9,
+    "HR-Bench": 88.5,
+    "OmniDocBench": 87.2,
+    "Video-MME": 87.7,
+    "DailyOmni": 83.5,
+    "VideoHolmes": 64
+   },
    "md_url": "https://models.dev/models/xiaomi/mimo-v2.5"
   },
   {
@@ -4791,7 +5017,21 @@
    "benchmarks": {
     "SWE-Bench Verified": 78.9,
     "SWE-Bench Pro": 57.2,
-    "GPQA Diamond": 86.6
+    "GPQA Diamond": 86.6,
+    "DeepSWE": 19,
+    "ProgramBench": 12.5,
+    "MiMo Code Bench": 40.4,
+    "AutomationBench": 16,
+    "Toolathlon-Verified": 49.1,
+    "GDPval-AA": 1107,
+    "Agents' Last Exam": 13.2,
+    "Terminal-Bench": 65.2,
+    "JobBench": 25,
+    "CyberGym": 40,
+    "MiMo Cyber Bench": 0,
+    "ExploitGym": 0.2,
+    "ExploitBench": 16.6,
+    "SEC-Bench Pro": 17.7
    },
    "md_url": "https://models.dev/models/xiaomi/mimo-v2.5-pro"
   },
@@ -4819,7 +5059,23 @@
    "last_updated": "2026-09-22",
    "knowledge": "",
    "swebench": null,
-   "benchmarks": {},
+   "benchmarks": {
+    "DeepSWE": 67.9,
+    "ProgramBench": 26,
+    "MiMo Code Bench": 61.2,
+    "AutomationBench": 52.3,
+    "Toolathlon-Verified": 73.6,
+    "Agents' Last Exam": 27.6,
+    "Terminal-Bench": 87.6,
+    "OSWorld-Verified": 80.8,
+    "JobBench": 61.2,
+    "CyberGym": 95.1,
+    "MiMo Cyber Bench": 77.2,
+    "ExploitGym": 6,
+    "ExploitBench": 25.3,
+    "SEC-Bench Pro": 47.5,
+    "MiMo VisualCoding": 71.5
+   },
    "md_url": "https://models.dev/models/xiaomi/mimo-v2.6-flash"
   },
   {
@@ -4846,7 +5102,23 @@
    "last_updated": "2026-09-22",
    "knowledge": "",
    "swebench": null,
-   "benchmarks": {},
+   "benchmarks": {
+    "DeepSWE": 67.9,
+    "ProgramBench": 26,
+    "MiMo Code Bench": 61.2,
+    "AutomationBench": 52.3,
+    "Toolathlon-Verified": 73.6,
+    "Agents' Last Exam": 27.6,
+    "Terminal-Bench": 87.6,
+    "OSWorld-Verified": 80.8,
+    "JobBench": 61.2,
+    "CyberGym": 95.1,
+    "MiMo Cyber Bench": 77.2,
+    "ExploitGym": 6,
+    "ExploitBench": 25.3,
+    "SEC-Bench Pro": 47.5,
+    "MiMo VisualCoding": 71.5
+   },
    "md_url": "https://models.dev/models/xiaomi/mimo-v2.6-flash"
   },
   {
@@ -4873,7 +5145,24 @@
    "last_updated": "2026-09-22",
    "knowledge": "",
    "swebench": null,
-   "benchmarks": {},
+   "benchmarks": {
+    "DeepSWE": 71.9,
+    "ProgramBench": 26.5,
+    "MiMo Code Bench": 63.2,
+    "AutomationBench": 53.1,
+    "Toolathlon-Verified": 76.9,
+    "GDPval-AA": 1673,
+    "Agents' Last Exam": 31.6,
+    "Terminal-Bench": 89.9,
+    "OSWorld-Verified": 82,
+    "JobBench": 62,
+    "CyberGym": 94,
+    "MiMo Cyber Bench": 80.2,
+    "ExploitGym": 17.8,
+    "ExploitBench": 47.9,
+    "SEC-Bench Pro": 66.3,
+    "MiMo VisualCoding": 72.3
+   },
    "md_url": "https://models.dev/models/xiaomi/mimo-v2.6-pro"
   },
   {
@@ -4997,7 +5286,19 @@
    "last_updated": "2026-08-05",
    "knowledge": "",
    "swebench": null,
-   "benchmarks": {},
+   "benchmarks": {
+    "GDPval-AA": 1615,
+    "JobBench": 61.6,
+    "OSWorld": 17.9,
+    "DeepSearchQA": 85.9,
+    "Agentic IF Index": 46.2,
+    "AutomationBench": 38.2,
+    "MRCR": 55.5,
+    "DeepSWE": 59.3,
+    "SWE-Atlas Codebase QnA": 46.2,
+    "Terminal-Bench": 82.9,
+    "MCP Atlas": 90.3
+   },
    "md_url": "https://models.dev/models/meta/muse-spark-1.2"
   },
   {
@@ -5078,7 +5379,18 @@
    "last_updated": "2026-09-02",
    "knowledge": "",
    "swebench": null,
-   "benchmarks": {},
+   "benchmarks": {
+    "GDPval-AA": 1754,
+    "JobBench": 64.9,
+    "OSWorld": 32,
+    "DeepSearchQA": 90.3,
+    "Agentic IF Index": 57.8,
+    "AutomationBench": 49.6,
+    "MRCR": 98.1,
+    "DeepSWE": 75.4,
+    "SWE-Atlas Codebase QnA": 59.4,
+    "Terminal-Bench": 88.8
+   },
    "md_url": "https://models.dev/models/meta/muse-spark-1.3"
   },
   {
@@ -5204,8 +5516,23 @@
    "release": "2026-08-11",
    "last_updated": "2026-08-11",
    "knowledge": "",
-   "swebench": null,
-   "benchmarks": {},
+   "swebench": 51.56,
+   "benchmarks": {
+    "MMLU-Pro": 81.94,
+    "AA-Omniscience": 17.5,
+    "SciCode": 32.6,
+    "PinchBench": 85.37,
+    "BrowseComp": 36.97,
+    "AA-LCR": 52,
+    "GPQA Diamond": 75.44,
+    "Humanity's Last Exam": 11.72,
+    "SWE-Bench Verified": 51.56,
+    "SWE-Bench Multilingual": 39.33,
+    "Terminal-Bench": 24.58,
+    "tau3-bench": 9.28,
+    "GDPval-AA": 832,
+    "IFBench": 71.88
+   },
    "md_url": "https://models.dev/models/nvidia/nemotron-3.5-lightning"
   },
   {
@@ -5404,7 +5731,37 @@
    "last_updated": "2026-08-03",
    "knowledge": "",
    "swebench": null,
-   "benchmarks": {},
+   "benchmarks": {
+    "Terminal-Bench": 86.6,
+    "SWE-Bench Pro": 67.7,
+    "DeepSWE": 56.6,
+    "NL2Repo": 55.9,
+    "FrontierSWE": 73.5,
+    "MLS-Bench-Lite": 41,
+    "PaperBench": 93,
+    "AndroidBench": 75.1,
+    "QwenSWEBench": 80.7,
+    "QwenQoderBench": 58.4,
+    "QwenReactBench": 1724,
+    "QwenSVGBench": 1713,
+    "CoWorkBench": 74.8,
+    "WorkSpaceBench": 67.7,
+    "JobBench": 53.4,
+    "SkillsBench": 70.2,
+    "Agents' Last Exam": 52.4,
+    "AutomationBench": 27.3,
+    "Toolathlon-Verified": 72.5,
+    "WideSearch": 81.9,
+    "Humanity's Last Exam": 43.6,
+    "GPQA Diamond": 92.6,
+    "IFBench": 82.8,
+    "$OneMillion-Bench": 52.5,
+    "HealthBench": 60.2,
+    "PLawBench": 73.2,
+    "PRBench": 58.3,
+    "MRCR": 92.9,
+    "LongBench": 66.3
+   },
    "md_url": "https://models.dev/models/alibaba/qwen3.8-max"
   },
   {
