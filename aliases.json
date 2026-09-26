@@ -1,5 +1,5 @@
 {
- "generated": "2026-09-25T03:50:00.996049+00:00",
+ "generated": "2026-09-26T03:50:00.992400+00:00",
  "aliases": [
   {
    "id": "opencode-zen/big-pickle",
@@ -480,6 +480,10 @@
   {
    "id": "opencode-go/qwen3.8-max",
    "alias": "🚀 Qwen3.8 Max (Go)"
+  },
+  {
+   "id": "opencode-zen/qwen3.8-max",
+   "alias": "💰 Qwen3.8 Max (Zen)"
   },
   {
    "id": "opencode-go/space-bunny-free",

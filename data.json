@@ -1,12 +1,12 @@
 {
- "generated": "2026-09-25T03:50:00.996049+00:00",
- "snapshot": "2026-09-25 03:50 UTC",
+ "generated": "2026-09-26T03:50:00.992400+00:00",
+ "snapshot": "2026-09-26 03:50 UTC",
  "providers_3rd": [
   "opencode-go",
   "opencode-zen",
   "openrouter"
  ],
- "modelsdev_fetched": "2026-09-25 03:50 UTC",
+ "modelsdev_fetched": "2026-09-26 03:50 UTC",
  "modelsdev_count": 427,
  "price_matrix": {
   "currency": "USD",
@@ -2266,8 +2266,8 @@
  },
  "chain_method": "Modelo primario: opencode-go/deepseek-v4-flash.\nSi el primero falla, se prueba el siguiente automáticamente (cascada de respaldo).\nCadena activa: 2 Go · 1 Zen free · 0 Zen paid · 2 OpenRouter (leída de agents.defaults.model).\n✅ Cadena sin Zen paid: 0 crédito de pago de Zen en cualquier escalón.\nGo y Zen free no consumen crédito de pago; OpenRouter solo en cascada de fallo.",
  "chain_snapshot": {
-  "generated_at": "2026-09-25T03:50:00.995726+00:00",
-  "snapshot": "2026-09-25 03:50 UTC",
+  "generated_at": "2026-09-26T03:50:00.992054+00:00",
+  "snapshot": "2026-09-26 03:50 UTC",
   "source": "agents.defaults.model en openclaw.json (leída en build)",
   "links": [
    {
@@ -2356,7 +2356,7 @@
  "counts": {
   "total": 97,
   "go": 42,
-  "zen": 80,
+  "zen": 81,
   "free": 11,
   "openrouter": 12,
   "with_modelsdev": 87
@@ -5711,13 +5711,13 @@
    "id": "qwen3.8-max",
    "providers": {
     "go": true,
-    "zen": false,
+    "zen": true,
     "free": false,
     "or": false
    },
    "or_id": null,
    "or_price": null,
-   "tier": "go",
+   "tier": "paid",
    "name": "Qwen3.8 Max",
    "desc": "2.4-trillion-parameter MoE flagship for coding, professional work, multimodal understanding, and long-horizon agentic workflows",
    "context": 1000000,
