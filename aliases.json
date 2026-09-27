@@ -1,5 +1,5 @@
 {
- "generated": "2026-09-26T03:50:00.992400+00:00",
+ "generated": "2026-09-27T03:50:01.056507+00:00",
  "aliases": [
   {
    "id": "opencode-zen/big-pickle",
@@ -352,6 +352,14 @@
   {
    "id": "opencode-go/longcat-2.0",
    "alias": "🚀 LongCat-2.0 (Go)"
+  },
+  {
+   "id": "opencode-go/longcat-2.5-preview-free",
+   "alias": "🚀 LongCat-2.5-Preview (Go)"
+  },
+  {
+   "id": "opencode-zen/longcat-2.5-preview-free",
+   "alias": "🌱 LongCat-2.5-Preview (Zen free)"
   },
   {
    "id": "opencode-go/mimo-v2-omni",

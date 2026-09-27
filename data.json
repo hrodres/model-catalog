@@ -1,13 +1,13 @@
 {
- "generated": "2026-09-26T03:50:00.992400+00:00",
- "snapshot": "2026-09-26 03:50 UTC",
+ "generated": "2026-09-27T03:50:01.056507+00:00",
+ "snapshot": "2026-09-27 03:50 UTC",
  "providers_3rd": [
   "opencode-go",
   "opencode-zen",
   "openrouter"
  ],
- "modelsdev_fetched": "2026-09-26 03:50 UTC",
- "modelsdev_count": 427,
+ "modelsdev_fetched": "2026-09-27 03:50 UTC",
+ "modelsdev_count": 428,
  "price_matrix": {
   "currency": "USD",
   "fetched": "2026-09-14T11:45:08.441355+00:00",
@@ -2266,8 +2266,8 @@
  },
  "chain_method": "Modelo primario: opencode-go/deepseek-v4-flash.\nSi el primero falla, se prueba el siguiente automáticamente (cascada de respaldo).\nCadena activa: 2 Go · 1 Zen free · 0 Zen paid · 2 OpenRouter (leída de agents.defaults.model).\n✅ Cadena sin Zen paid: 0 crédito de pago de Zen en cualquier escalón.\nGo y Zen free no consumen crédito de pago; OpenRouter solo en cascada de fallo.",
  "chain_snapshot": {
-  "generated_at": "2026-09-26T03:50:00.992054+00:00",
-  "snapshot": "2026-09-26 03:50 UTC",
+  "generated_at": "2026-09-27T03:50:01.056157+00:00",
+  "snapshot": "2026-09-27 03:50 UTC",
   "source": "agents.defaults.model en openclaw.json (leída en build)",
   "links": [
    {
@@ -2339,7 +2339,7 @@
    "opencode-zen": {
     "enabled": 1,
     "probed": {
-     "free": 36,
+     "free": 37,
      "noprobe": 44
     },
     "total": 2
@@ -2354,12 +2354,12 @@
   }
  },
  "counts": {
-  "total": 97,
-  "go": 42,
-  "zen": 81,
-  "free": 11,
+  "total": 98,
+  "go": 43,
+  "zen": 82,
+  "free": 12,
   "openrouter": 12,
-  "with_modelsdev": 87
+  "with_modelsdev": 88
  },
  "models": [
   {
@@ -4845,6 +4845,33 @@
     "FORTE": 73.2
    },
    "md_url": "https://models.dev/models/meituan/longcat-2.0"
+  },
+  {
+   "id": "longcat-2.5-preview-free",
+   "providers": {
+    "go": true,
+    "zen": true,
+    "free": true,
+    "or": false
+   },
+   "or_id": null,
+   "or_price": null,
+   "tier": "free",
+   "name": "LongCat-2.5-Preview",
+   "desc": "Meituan's multimodal reasoning model for coding and agent tasks, with image understanding and a 1M-token context window",
+   "context": 1000000,
+   "output": 131072,
+   "reasoning": true,
+   "tool_call": true,
+   "structured": false,
+   "multimodal": true,
+   "open_weights": false,
+   "release": "2026-09-25",
+   "last_updated": "2026-09-25",
+   "knowledge": "",
+   "swebench": null,
+   "benchmarks": {},
+   "md_url": "https://models.dev/models/meituan/longcat-2.5-preview"
   },
   {
    "id": "mimo-v2-omni",
