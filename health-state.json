@@ -1,6 +1,6 @@
 {
- "generated": "2026-09-27T03:50:20.619800+00:00",
- "snapshot": "2026-09-27",
+ "generated": "2026-09-28T03:50:18.606615+00:00",
+ "snapshot": "2026-09-28",
  "fuente": "check-model-health.py F3 (2026-08-24)",
  "providers": {
   "opencode-go": {
