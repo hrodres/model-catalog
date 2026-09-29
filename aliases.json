@@ -1,5 +1,5 @@
 {
- "generated": "2026-09-28T03:50:00.970395+00:00",
+ "generated": "2026-09-29T03:50:01.094647+00:00",
  "aliases": [
   {
    "id": "opencode-zen/big-pickle",
@@ -56,6 +56,10 @@
   {
    "id": "opencode-zen/claude-sonnet-5",
    "alias": "💰 Claude Sonnet 5 (Zen)"
+  },
+  {
+   "id": "opencode-zen/claude-sonnet-5-5",
+   "alias": "💰 Claude Sonnet 5.5 (Zen)"
   },
   {
    "id": "opencode-go/deepseek-flash",

@@ -1,13 +1,13 @@
 {
- "generated": "2026-09-28T03:50:00.970395+00:00",
- "snapshot": "2026-09-28 03:50 UTC",
+ "generated": "2026-09-29T03:50:01.094647+00:00",
+ "snapshot": "2026-09-29 03:50 UTC",
  "providers_3rd": [
   "opencode-go",
   "opencode-zen",
   "openrouter"
  ],
- "modelsdev_fetched": "2026-09-28 03:50 UTC",
- "modelsdev_count": 431,
+ "modelsdev_fetched": "2026-09-29 03:50 UTC",
+ "modelsdev_count": 432,
  "price_matrix": {
   "currency": "USD",
   "fetched": "2026-09-14T11:45:08.441355+00:00",
@@ -2266,8 +2266,8 @@
  },
  "chain_method": "Modelo primario: opencode-go/deepseek-v4-flash.\nSi el primero falla, se prueba el siguiente automáticamente (cascada de respaldo).\nCadena activa: 2 Go · 1 Zen free · 0 Zen paid · 2 OpenRouter (leída de agents.defaults.model).\n✅ Cadena sin Zen paid: 0 crédito de pago de Zen en cualquier escalón.\nGo y Zen free no consumen crédito de pago; OpenRouter solo en cascada de fallo.",
  "chain_snapshot": {
-  "generated_at": "2026-09-28T03:50:00.970044+00:00",
-  "snapshot": "2026-09-28 03:50 UTC",
+  "generated_at": "2026-09-29T03:50:01.094333+00:00",
+  "snapshot": "2026-09-29 03:50 UTC",
   "source": "agents.defaults.model en openclaw.json (leída en build)",
   "links": [
    {
@@ -2354,12 +2354,12 @@
   }
  },
  "counts": {
-  "total": 98,
+  "total": 99,
   "go": 43,
-  "zen": 82,
+  "zen": 83,
   "free": 12,
   "openrouter": 12,
-  "with_modelsdev": 88
+  "with_modelsdev": 89
  },
  "models": [
   {
@@ -2831,6 +2831,40 @@
     "FrontierCode": 38.8
    },
    "md_url": "https://models.dev/models/anthropic/claude-sonnet-5"
+  },
+  {
+   "id": "claude-sonnet-5-5",
+   "providers": {
+    "go": false,
+    "zen": true,
+    "free": false,
+    "or": false
+   },
+   "or_id": null,
+   "or_price": null,
+   "tier": "paid",
+   "name": "Claude Sonnet 5.5",
+   "desc": "Fast Claude model for everyday coding, agents, and knowledge work",
+   "context": 1000000,
+   "output": 128000,
+   "reasoning": true,
+   "tool_call": true,
+   "structured": false,
+   "multimodal": true,
+   "open_weights": false,
+   "release": "2026-09-28",
+   "last_updated": "2026-09-28",
+   "knowledge": "2026-06",
+   "swebench": null,
+   "benchmarks": {
+    "Terminal-Bench": 70.6,
+    "FrontierCode": 46.2,
+    "CursorBench": 55.5,
+    "GDPval-AA": 1844,
+    "Humanity's Last Exam": 64.5,
+    "OSWorld": 80.1
+   },
+   "md_url": "https://models.dev/models/anthropic/claude-sonnet-5-5"
   },
   {
    "id": "deepseek-flash",
