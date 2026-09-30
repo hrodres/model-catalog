@@ -1,5 +1,5 @@
 {
- "generated": "2026-09-29T03:50:01.094647+00:00",
+ "generated": "2026-09-30T03:50:01.096255+00:00",
  "aliases": [
   {
    "id": "opencode-zen/big-pickle",
@@ -268,6 +268,10 @@
   {
    "id": "opencode-zen/gpt-6-sol",
    "alias": "💰 GPT-6 Sol (Zen)"
+  },
+  {
+   "id": "opencode-zen/gpt-6.1-sol",
+   "alias": "💰 GPT-6.1 Sol (Zen)"
   },
   {
    "id": "opencode-go/grok-4.5",
