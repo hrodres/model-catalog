@@ -1,13 +1,13 @@
 {
- "generated": "2026-10-01T03:50:01.062124+00:00",
- "snapshot": "2026-10-01 03:50 UTC",
+ "generated": "2026-10-02T03:50:01.117786+00:00",
+ "snapshot": "2026-10-02 03:50 UTC",
  "providers_3rd": [
   "opencode-go",
   "opencode-zen",
   "openrouter"
  ],
- "modelsdev_fetched": "2026-10-01 03:50 UTC",
- "modelsdev_count": 434,
+ "modelsdev_fetched": "2026-10-02 03:50 UTC",
+ "modelsdev_count": 440,
  "price_matrix": {
   "currency": "USD",
   "fetched": "2026-09-14T11:45:08.441355+00:00",
@@ -2266,8 +2266,8 @@
  },
  "chain_method": "Modelo primario: opencode-go/deepseek-v4-flash.\nSi el primero falla, se prueba el siguiente automáticamente (cascada de respaldo).\nCadena activa: 2 Go · 1 Zen free · 0 Zen paid · 2 OpenRouter (leída de agents.defaults.model).\n✅ Cadena sin Zen paid: 0 crédito de pago de Zen en cualquier escalón.\nGo y Zen free no consumen crédito de pago; OpenRouter solo en cascada de fallo.",
  "chain_snapshot": {
-  "generated_at": "2026-10-01T03:50:01.061786+00:00",
-  "snapshot": "2026-10-01 03:50 UTC",
+  "generated_at": "2026-10-02T03:50:01.116305+00:00",
+  "snapshot": "2026-10-02 03:50 UTC",
   "source": "agents.defaults.model en openclaw.json (leída en build)",
   "links": [
    {
@@ -2354,10 +2354,10 @@
   }
  },
  "counts": {
-  "total": 100,
+  "total": 101,
   "go": 43,
-  "zen": 84,
-  "free": 12,
+  "zen": 85,
+  "free": 13,
   "openrouter": 12,
   "with_modelsdev": 90
  },
@@ -3136,6 +3136,33 @@
     "ZeroBench": 49
    },
    "md_url": "https://models.dev/models/deepseek/deepseek-v4.1-flash"
+  },
+  {
+   "id": "fledge-alpha-free",
+   "providers": {
+    "go": false,
+    "zen": true,
+    "free": true,
+    "or": false
+   },
+   "or_id": null,
+   "or_price": null,
+   "tier": "free",
+   "name": "fledge-alpha-free",
+   "desc": "Sin ficha en models.dev (solo catálogo opencode)",
+   "context": null,
+   "output": null,
+   "reasoning": null,
+   "tool_call": null,
+   "structured": null,
+   "multimodal": null,
+   "open_weights": null,
+   "release": "",
+   "last_updated": "",
+   "knowledge": "",
+   "swebench": null,
+   "benchmarks": {},
+   "md_url": null
   },
   {
    "id": "gemini-3-flash",

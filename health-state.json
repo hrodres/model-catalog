@@ -1,6 +1,6 @@
 {
- "generated": "2026-10-01T03:50:20.747610+00:00",
- "snapshot": "2026-10-01",
+ "generated": "2026-10-02T03:50:22.056005+00:00",
+ "snapshot": "2026-10-02",
  "fuente": "check-model-health.py F3 (2026-08-24)",
  "providers": {
   "opencode-go": {
@@ -13,7 +13,7 @@
   "opencode-zen": {
    "enabled": 1,
    "probed": {
-    "free": 40,
+    "free": 41,
     "noprobe": 44
    },
    "total": 2
@@ -28,7 +28,7 @@
  },
  "counts": {
   "na": 43,
-  "free": 40,
+  "free": 41,
   "noprobe": 47
  },
  "go_quota": {
@@ -464,6 +464,12 @@
   },
   {
    "modelo": "deepseek-v4.1-flash",
+   "provider": "opencode-zen",
+   "estado": "free",
+   "detalle": "no probado (protección cuota global free 100 req/día)"
+  },
+  {
+   "modelo": "fledge-alpha-free",
    "provider": "opencode-zen",
    "estado": "free",
    "detalle": "no probado (protección cuota global free 100 req/día)"
