@@ -1,13 +1,13 @@
 {
- "generated": "2026-10-02T03:50:01.117786+00:00",
- "snapshot": "2026-10-02 03:50 UTC",
+ "generated": "2026-10-03T03:50:01.082891+00:00",
+ "snapshot": "2026-10-03 03:50 UTC",
  "providers_3rd": [
   "opencode-go",
   "opencode-zen",
   "openrouter"
  ],
- "modelsdev_fetched": "2026-10-02 03:50 UTC",
- "modelsdev_count": 440,
+ "modelsdev_fetched": "2026-10-03 03:50 UTC",
+ "modelsdev_count": 441,
  "price_matrix": {
   "currency": "USD",
   "fetched": "2026-09-14T11:45:08.441355+00:00",
@@ -2266,8 +2266,8 @@
  },
  "chain_method": "Modelo primario: opencode-go/deepseek-v4-flash.\nSi el primero falla, se prueba el siguiente automáticamente (cascada de respaldo).\nCadena activa: 2 Go · 1 Zen free · 0 Zen paid · 2 OpenRouter (leída de agents.defaults.model).\n✅ Cadena sin Zen paid: 0 crédito de pago de Zen en cualquier escalón.\nGo y Zen free no consumen crédito de pago; OpenRouter solo en cascada de fallo.",
  "chain_snapshot": {
-  "generated_at": "2026-10-02T03:50:01.116305+00:00",
-  "snapshot": "2026-10-02 03:50 UTC",
+  "generated_at": "2026-10-03T03:50:01.081615+00:00",
+  "snapshot": "2026-10-03 03:50 UTC",
   "source": "agents.defaults.model en openclaw.json (leída en build)",
   "links": [
    {
@@ -2339,7 +2339,7 @@
    "opencode-zen": {
     "enabled": 1,
     "probed": {
-     "free": 40,
+     "free": 41,
      "noprobe": 44
     },
     "total": 2
@@ -2354,12 +2354,12 @@
   }
  },
  "counts": {
-  "total": 101,
+  "total": 102,
   "go": 43,
-  "zen": 85,
-  "free": 13,
+  "zen": 86,
+  "free": 14,
   "openrouter": 12,
-  "with_modelsdev": 90
+  "with_modelsdev": 91
  },
  "models": [
   {
@@ -4898,6 +4898,33 @@
     "tau3-bench": 41
    },
    "md_url": "https://models.dev/models/inclusionai/ling-3.0-flash-fin"
+  },
+  {
+   "id": "ling-3.1-flash-free",
+   "providers": {
+    "go": false,
+    "zen": true,
+    "free": true,
+    "or": false
+   },
+   "or_id": null,
+   "or_price": null,
+   "tier": "free",
+   "name": "Ling 3.1 Flash",
+   "desc": "Efficient model for low-latency assistance, extraction, and routine automation",
+   "context": 262144,
+   "output": 32768,
+   "reasoning": true,
+   "tool_call": true,
+   "structured": false,
+   "multimodal": false,
+   "open_weights": false,
+   "release": "2026-09-29",
+   "last_updated": "2026-09-29",
+   "knowledge": "",
+   "swebench": null,
+   "benchmarks": {},
+   "md_url": "https://models.dev/models/inclusionai/ling-3.1-flash"
   },
   {
    "id": "longcat-2.0",
