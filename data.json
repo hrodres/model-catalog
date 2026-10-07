@@ -1,13 +1,13 @@
 {
- "generated": "2026-10-06T03:50:01.264448+00:00",
- "snapshot": "2026-10-06 03:50 UTC",
+ "generated": "2026-10-07T03:50:01.129154+00:00",
+ "snapshot": "2026-10-07 03:50 UTC",
  "providers_3rd": [
   "opencode-go",
   "opencode-zen",
   "openrouter"
  ],
- "modelsdev_fetched": "2026-10-06 03:50 UTC",
- "modelsdev_count": 444,
+ "modelsdev_fetched": "2026-10-07 03:50 UTC",
+ "modelsdev_count": 445,
  "price_matrix": {
   "currency": "USD",
   "fetched": "2026-09-14T11:45:08.441355+00:00",
@@ -2266,8 +2266,8 @@
  },
  "chain_method": "Modelo primario: opencode-go/deepseek-v4-flash.\nSi el primero falla, se prueba el siguiente automáticamente (cascada de respaldo).\nCadena activa: 2 Go · 1 Zen free · 0 Zen paid · 2 OpenRouter (leída de agents.defaults.model).\n✅ Cadena sin Zen paid: 0 crédito de pago de Zen en cualquier escalón.\nGo y Zen free no consumen crédito de pago; OpenRouter solo en cascada de fallo.",
  "chain_snapshot": {
-  "generated_at": "2026-10-06T03:50:01.262613+00:00",
-  "snapshot": "2026-10-06 03:50 UTC",
+  "generated_at": "2026-10-07T03:50:01.128181+00:00",
+  "snapshot": "2026-10-07 03:50 UTC",
   "source": "agents.defaults.model en openclaw.json (leída en build)",
   "links": [
    {
@@ -2354,12 +2354,12 @@
   }
  },
  "counts": {
-  "total": 102,
+  "total": 105,
   "go": 43,
-  "zen": 86,
-  "free": 14,
+  "zen": 88,
+  "free": 15,
   "openrouter": 12,
-  "with_modelsdev": 91
+  "with_modelsdev": 92
  },
  "models": [
   {
@@ -3136,6 +3136,33 @@
     "ZeroBench": 49
    },
    "md_url": "https://models.dev/models/deepseek/deepseek-v4.1-flash"
+  },
+  {
+   "id": "exo-free",
+   "providers": {
+    "go": false,
+    "zen": true,
+    "free": true,
+    "or": false
+   },
+   "or_id": null,
+   "or_price": null,
+   "tier": "free",
+   "name": "exo-free",
+   "desc": "Sin ficha en models.dev (solo catálogo opencode)",
+   "context": null,
+   "output": null,
+   "reasoning": null,
+   "tool_call": null,
+   "structured": null,
+   "multimodal": null,
+   "open_weights": null,
+   "release": "",
+   "last_updated": "",
+   "knowledge": "",
+   "swebench": null,
+   "benchmarks": {},
+   "md_url": null
   },
   {
    "id": "fledge-alpha-free",
@@ -5405,6 +5432,33 @@
    "md_url": "https://models.dev/models/minimax/MiniMax-M3"
   },
   {
+   "id": "mistral-large-4",
+   "providers": {
+    "go": false,
+    "zen": true,
+    "free": false,
+    "or": false
+   },
+   "or_id": null,
+   "or_price": null,
+   "tier": "paid",
+   "name": "Mistral Large 4",
+   "desc": "Mistral's 1T-parameter multimodal MoE for reasoning, coding, and agentic work",
+   "context": 1048576,
+   "output": 262144,
+   "reasoning": true,
+   "tool_call": true,
+   "structured": true,
+   "multimodal": true,
+   "open_weights": false,
+   "release": "2026-10-06",
+   "last_updated": "2026-10-06",
+   "knowledge": "",
+   "swebench": null,
+   "benchmarks": {},
+   "md_url": "https://models.dev/models/mistral/mistral-large-4"
+  },
+  {
    "id": "muse-spark-1.2",
    "providers": {
     "go": false,
@@ -5907,9 +5961,36 @@
    "md_url": "https://models.dev/models/alibaba/qwen3.8-max"
   },
   {
-   "id": "space-bunny-free",
+   "id": "space-bunny",
    "providers": {
     "go": true,
+    "zen": false,
+    "free": false,
+    "or": false
+   },
+   "or_id": null,
+   "or_price": null,
+   "tier": "go",
+   "name": "space-bunny",
+   "desc": "Sin ficha en models.dev (solo catálogo opencode)",
+   "context": null,
+   "output": null,
+   "reasoning": null,
+   "tool_call": null,
+   "structured": null,
+   "multimodal": null,
+   "open_weights": null,
+   "release": "",
+   "last_updated": "",
+   "knowledge": "",
+   "swebench": null,
+   "benchmarks": {},
+   "md_url": null
+  },
+  {
+   "id": "space-bunny-free",
+   "providers": {
+    "go": false,
     "zen": true,
     "free": true,
     "or": false

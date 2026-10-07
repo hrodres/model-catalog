@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-06T03:50:01.264448+00:00",
+ "generated": "2026-10-07T03:50:01.129154+00:00",
  "aliases": [
   {
    "id": "opencode-zen/big-pickle",
@@ -100,6 +100,10 @@
   {
    "id": "opencode-zen/deepseek-v4.1-flash",
    "alias": "💰 DeepSeek V4.1 Flash (Zen)"
+  },
+  {
+   "id": "opencode-zen/exo-free",
+   "alias": "🌱 exo-free (Zen free)"
   },
   {
    "id": "opencode-zen/fledge-alpha-free",
@@ -434,6 +438,10 @@
    "alias": "💰 MiniMax-M3 (Zen)"
   },
   {
+   "id": "opencode-zen/mistral-large-4",
+   "alias": "💰 Mistral Large 4 (Zen)"
+  },
+  {
    "id": "opencode-zen/muse-spark-1.2",
    "alias": "💰 Muse Spark 1.2 (Zen)"
   },
@@ -510,8 +518,8 @@
    "alias": "💰 Qwen3.8 Max (Zen)"
   },
   {
-   "id": "opencode-go/space-bunny-free",
-   "alias": "🚀 space-bunny-free (Go)"
+   "id": "opencode-go/space-bunny",
+   "alias": "🚀 space-bunny (Go)"
   },
   {
    "id": "opencode-zen/space-bunny-free",

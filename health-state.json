@@ -1,6 +1,6 @@
 {
- "generated": "2026-10-06T03:50:21.447906+00:00",
- "snapshot": "2026-10-06",
+ "generated": "2026-10-07T03:50:20.544757+00:00",
+ "snapshot": "2026-10-07",
  "fuente": "check-model-health.py F3 (2026-08-24)",
  "providers": {
   "opencode-go": {
@@ -13,7 +13,7 @@
   "opencode-zen": {
    "enabled": 1,
    "probed": {
-    "free": 42,
+    "free": 44,
     "noprobe": 44
    },
    "total": 2
@@ -28,7 +28,7 @@
  },
  "counts": {
   "na": 43,
-  "free": 42,
+  "free": 44,
   "noprobe": 47
  },
  "go_quota": {
@@ -343,7 +343,7 @@
    "detalle": "HTTP 401: no accesible con tu plan/key"
   },
   {
-   "modelo": "space-bunny-free",
+   "modelo": "space-bunny",
    "provider": "opencode-go",
    "estado": "na",
    "detalle": "HTTP 401: no accesible con tu plan/key"
@@ -464,6 +464,12 @@
   },
   {
    "modelo": "deepseek-v4.1-flash",
+   "provider": "opencode-zen",
+   "estado": "free",
+   "detalle": "no probado (protección cuota global free 100 req/día)"
+  },
+  {
+   "modelo": "exo-free",
    "provider": "opencode-zen",
    "estado": "free",
    "detalle": "no probado (protección cuota global free 100 req/día)"
@@ -797,6 +803,12 @@
    "provider": "opencode-zen",
    "estado": "noprobe",
    "detalle": "no probeado (ahorro de crédito: usa Go para salud en vivo)"
+  },
+  {
+   "modelo": "mistral-large-4",
+   "provider": "opencode-zen",
+   "estado": "free",
+   "detalle": "no probado (protección cuota global free 100 req/día)"
   },
   {
    "modelo": "muse-spark-1.2",
