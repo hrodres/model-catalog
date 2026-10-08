@@ -1,13 +1,13 @@
 {
- "generated": "2026-10-07T03:50:01.129154+00:00",
- "snapshot": "2026-10-07 03:50 UTC",
+ "generated": "2026-10-08T03:50:01.327753+00:00",
+ "snapshot": "2026-10-08 03:50 UTC",
  "providers_3rd": [
   "opencode-go",
   "opencode-zen",
   "openrouter"
  ],
- "modelsdev_fetched": "2026-10-07 03:50 UTC",
- "modelsdev_count": 445,
+ "modelsdev_fetched": "2026-10-08 03:50 UTC",
+ "modelsdev_count": 447,
  "price_matrix": {
   "currency": "USD",
   "fetched": "2026-09-14T11:45:08.441355+00:00",
@@ -2266,8 +2266,8 @@
  },
  "chain_method": "Modelo primario: opencode-go/deepseek-v4-flash.\nSi el primero falla, se prueba el siguiente automáticamente (cascada de respaldo).\nCadena activa: 2 Go · 1 Zen free · 0 Zen paid · 2 OpenRouter (leída de agents.defaults.model).\n✅ Cadena sin Zen paid: 0 crédito de pago de Zen en cualquier escalón.\nGo y Zen free no consumen crédito de pago; OpenRouter solo en cascada de fallo.",
  "chain_snapshot": {
-  "generated_at": "2026-10-07T03:50:01.128181+00:00",
-  "snapshot": "2026-10-07 03:50 UTC",
+  "generated_at": "2026-10-08T03:50:01.326748+00:00",
+  "snapshot": "2026-10-08 03:50 UTC",
   "source": "agents.defaults.model en openclaw.json (leída en build)",
   "links": [
    {
@@ -2339,7 +2339,7 @@
    "opencode-zen": {
     "enabled": 1,
     "probed": {
-     "free": 42,
+     "free": 44,
      "noprobe": 44
     },
     "total": 2
@@ -2354,12 +2354,12 @@
   }
  },
  "counts": {
-  "total": 105,
+  "total": 104,
   "go": 43,
-  "zen": 88,
-  "free": 15,
-  "openrouter": 12,
-  "with_modelsdev": 92
+  "zen": 87,
+  "free": 13,
+  "openrouter": 10,
+  "with_modelsdev": 91
  },
  "models": [
   {
@@ -2488,6 +2488,41 @@
     "SWE-Bench Pro": 39.45
    },
    "md_url": "https://models.dev/models/anthropic/claude-haiku-4-5"
+  },
+  {
+   "id": "claude-haiku-5-5",
+   "providers": {
+    "go": false,
+    "zen": true,
+    "free": false,
+    "or": false
+   },
+   "or_id": null,
+   "or_price": null,
+   "tier": "paid",
+   "name": "Claude Haiku 5.5",
+   "desc": "Fast Claude model for responsive assistance, classification, and lightweight agents",
+   "context": 1000000,
+   "output": 128000,
+   "reasoning": true,
+   "tool_call": true,
+   "structured": true,
+   "multimodal": true,
+   "open_weights": false,
+   "release": "2026-10-07",
+   "last_updated": "2026-10-07",
+   "knowledge": "2026-06",
+   "swebench": null,
+   "benchmarks": {
+    "GDPval-AA": 1620,
+    "AA-Briefcase": 1578,
+    "OSWorld": 72.4,
+    "Humanity's Last Exam": 57.4,
+    "Terminal-Bench": 39.2,
+    "FrontierCode": 46.4,
+    "Chartography": 46.4
+   },
+   "md_url": "https://models.dev/models/anthropic/claude-haiku-5-5"
   },
   {
    "id": "claude-opus-4-5",
@@ -2908,59 +2943,6 @@
     "context": 1048576
    },
    "tier": "paid",
-   "name": "DeepSeek V4 Flash",
-   "desc": "Fast DeepSeek V4 lane for economical reasoning, coding, and long-context work",
-   "context": 1000000,
-   "output": 384000,
-   "reasoning": true,
-   "tool_call": true,
-   "structured": true,
-   "multimodal": false,
-   "open_weights": true,
-   "release": "2026-04-24",
-   "last_updated": "2026-04-24",
-   "knowledge": "2025-05",
-   "swebench": 79,
-   "benchmarks": {
-    "SWE-Bench Verified": 79,
-    "MMLU-Pro": 86.2,
-    "SimpleQA-Verified": 34.1,
-    "Chinese SimpleQA": 78.9,
-    "GPQA Diamond": 88.1,
-    "Humanity's Last Exam": 45.1,
-    "LiveCodeBench": 91.6,
-    "Codeforces": 3052,
-    "HMMT": 94.8,
-    "IMOAnswerBench": 88.4,
-    "MathArena Apex": 33,
-    "MathArena Apex Shortlist": 85.7,
-    "MRCR": 78.7,
-    "CorpusQA": 60.5,
-    "Terminal-Bench": 56.9,
-    "SWE-Bench Pro": 52.6,
-    "SWE-Bench Multilingual": 73.3,
-    "BrowseComp": 73.2,
-    "MCP Atlas": 69,
-    "GDPval-AA": 1395,
-    "Toolathlon": 47.8
-   },
-   "md_url": "https://models.dev/models/deepseek/deepseek-v4-flash"
-  },
-  {
-   "id": "deepseek-v4-flash-free",
-   "providers": {
-    "go": false,
-    "zen": true,
-    "free": true,
-    "or": true
-   },
-   "or_id": "deepseek/deepseek-v4-flash",
-   "or_price": {
-    "in": 0.088606,
-    "out": 0.177212,
-    "context": 1048576
-   },
-   "tier": "free",
    "name": "DeepSeek V4 Flash",
    "desc": "Fast DeepSeek V4 lane for economical reasoning, coding, and long-context work",
    "context": 1000000,
@@ -5084,49 +5066,6 @@
     "context": 1050000
    },
    "tier": "go",
-   "name": "MiMo-V2.5",
-   "desc": "Open MiMo model for multimodal coding agents and long-context automation",
-   "context": 1048576,
-   "output": 131072,
-   "reasoning": true,
-   "tool_call": true,
-   "structured": false,
-   "multimodal": true,
-   "open_weights": true,
-   "release": "2026-04-22",
-   "last_updated": "2026-04-22",
-   "knowledge": "2024-12",
-   "swebench": null,
-   "benchmarks": {
-    "MiMo Coding Bench": 71.8,
-    "Claw-Eval": 23.8,
-    "Terminal-Bench": 65.8,
-    "SWE-Bench Pro": 56.1,
-    "CharXiv Reasoning": 81,
-    "MMMU-Pro": 77.9,
-    "HR-Bench": 88.5,
-    "OmniDocBench": 87.2,
-    "Video-MME": 87.7,
-    "DailyOmni": 83.5,
-    "VideoHolmes": 64
-   },
-   "md_url": "https://models.dev/models/xiaomi/mimo-v2.5"
-  },
-  {
-   "id": "mimo-v2.5-free",
-   "providers": {
-    "go": false,
-    "zen": true,
-    "free": true,
-    "or": true
-   },
-   "or_id": "xiaomi/mimo-v2.5",
-   "or_price": {
-    "in": 0.14,
-    "out": 0.28,
-    "context": 1050000
-   },
-   "tier": "free",
    "name": "MiMo-V2.5",
    "desc": "Open MiMo model for multimodal coding agents and long-context automation",
    "context": 1048576,

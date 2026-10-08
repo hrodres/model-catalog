@@ -1,6 +1,6 @@
 {
- "generated": "2026-10-07T03:50:20.544757+00:00",
- "snapshot": "2026-10-07",
+ "generated": "2026-10-08T03:50:21.929385+00:00",
+ "snapshot": "2026-10-08",
  "fuente": "check-model-health.py F3 (2026-08-24)",
  "providers": {
   "opencode-go": {
@@ -13,7 +13,7 @@
   "opencode-zen": {
    "enabled": 1,
    "probed": {
-    "free": 44,
+    "free": 43,
     "noprobe": 44
    },
    "total": 2
@@ -28,7 +28,7 @@
  },
  "counts": {
   "na": 43,
-  "free": 44,
+  "free": 43,
   "noprobe": 47
  },
  "go_quota": {
@@ -75,8 +75,8 @@
   },
   {
    "link": "opencode-zen/deepseek-v4-flash-free",
-   "estado": "free",
-   "detalle": "no probado (protección cuota global free 100 req/día)"
+   "estado": "no-en-config",
+   "detalle": "modelo no está en providers habilitados"
   },
   {
    "link": "openrouter/tencent/hy3",
@@ -373,6 +373,12 @@
    "detalle": "no probeado (ahorro de crédito: usa Go para salud en vivo)"
   },
   {
+   "modelo": "claude-haiku-5-5",
+   "provider": "opencode-zen",
+   "estado": "free",
+   "detalle": "no probado (protección cuota global free 100 req/día)"
+  },
+  {
    "modelo": "claude-opus-4-5",
    "provider": "opencode-zen",
    "estado": "noprobe",
@@ -443,12 +449,6 @@
    "provider": "opencode-zen",
    "estado": "noprobe",
    "detalle": "no probeado (ahorro de crédito: usa Go para salud en vivo)"
-  },
-  {
-   "modelo": "deepseek-v4-flash-free",
-   "provider": "opencode-zen",
-   "estado": "free",
-   "detalle": "no probado (protección cuota global free 100 req/día)"
   },
   {
    "modelo": "deepseek-v4-flash-vision-exp",
@@ -770,12 +770,6 @@
   },
   {
    "modelo": "longcat-2.5-preview-free",
-   "provider": "opencode-zen",
-   "estado": "free",
-   "detalle": "no probado (protección cuota global free 100 req/día)"
-  },
-  {
-   "modelo": "mimo-v2.5-free",
    "provider": "opencode-zen",
    "estado": "free",
    "detalle": "no probado (protección cuota global free 100 req/día)"

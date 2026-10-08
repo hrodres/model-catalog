@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-07T03:50:01.129154+00:00",
+ "generated": "2026-10-08T03:50:01.327753+00:00",
  "aliases": [
   {
    "id": "opencode-zen/big-pickle",
@@ -16,6 +16,10 @@
   {
    "id": "opencode-zen/claude-haiku-4-5",
    "alias": "💰 Claude Haiku 4.5 (latest) (Zen)"
+  },
+  {
+   "id": "opencode-zen/claude-haiku-5-5",
+   "alias": "💰 Claude Haiku 5.5 (Zen)"
   },
   {
    "id": "opencode-zen/claude-opus-4-5",
@@ -72,10 +76,6 @@
   {
    "id": "opencode-zen/deepseek-v4-flash",
    "alias": "💰 DeepSeek V4 Flash (Zen)"
-  },
-  {
-   "id": "opencode-zen/deepseek-v4-flash-free",
-   "alias": "🌱 DeepSeek V4 Flash (Zen free)"
   },
   {
    "id": "opencode-go/deepseek-v4-flash-vision-exp",
@@ -392,10 +392,6 @@
   {
    "id": "opencode-go/mimo-v2.5",
    "alias": "🚀 MiMo-V2.5 (Go)"
-  },
-  {
-   "id": "opencode-zen/mimo-v2.5-free",
-   "alias": "🌱 MiMo-V2.5 (Zen free)"
   },
   {
    "id": "opencode-go/mimo-v2.5-pro",
