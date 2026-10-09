@@ -1,12 +1,12 @@
 {
- "generated": "2026-10-08T03:50:21.929385+00:00",
- "snapshot": "2026-10-08",
+ "generated": "2026-10-09T03:50:21.101320+00:00",
+ "snapshot": "2026-10-09",
  "fuente": "check-model-health.py F3 (2026-08-24)",
  "providers": {
   "opencode-go": {
    "enabled": 1,
    "probed": {
-    "na": 43
+    "na": 45
    },
    "total": 1
   },
@@ -27,7 +27,7 @@
   }
  },
  "counts": {
-  "na": 43,
+  "na": 45,
   "free": 43,
   "noprobe": 47
  },
@@ -90,6 +90,12 @@
   }
  ],
  "models": [
+  {
+   "modelo": "claude-haiku-5-5",
+   "provider": "opencode-go",
+   "estado": "na",
+   "detalle": "HTTP 401: no accesible con tu plan/key"
+  },
   {
    "modelo": "deepseek-flash",
    "provider": "opencode-go",
@@ -349,6 +355,12 @@
    "detalle": "HTTP 401: no accesible con tu plan/key"
   },
   {
+   "modelo": "step-5-preview-free",
+   "provider": "opencode-go",
+   "estado": "na",
+   "detalle": "HTTP 401: no accesible con tu plan/key"
+  },
+  {
    "modelo": "big-pickle",
    "provider": "opencode-zen",
    "estado": "free",
@@ -470,12 +482,6 @@
   },
   {
    "modelo": "exo-free",
-   "provider": "opencode-zen",
-   "estado": "free",
-   "detalle": "no probado (protección cuota global free 100 req/día)"
-  },
-  {
-   "modelo": "fledge-alpha-free",
    "provider": "opencode-zen",
    "estado": "free",
    "detalle": "no probado (protección cuota global free 100 req/día)"
@@ -866,6 +872,12 @@
   },
   {
    "modelo": "space-bunny-free",
+   "provider": "opencode-zen",
+   "estado": "free",
+   "detalle": "no probado (protección cuota global free 100 req/día)"
+  },
+  {
+   "modelo": "step-5-preview-free",
    "provider": "opencode-zen",
    "estado": "free",
    "detalle": "no probado (protección cuota global free 100 req/día)"

@@ -1,13 +1,13 @@
 {
- "generated": "2026-10-08T03:50:01.327753+00:00",
- "snapshot": "2026-10-08 03:50 UTC",
+ "generated": "2026-10-09T03:50:00.984371+00:00",
+ "snapshot": "2026-10-09 03:50 UTC",
  "providers_3rd": [
   "opencode-go",
   "opencode-zen",
   "openrouter"
  ],
- "modelsdev_fetched": "2026-10-08 03:50 UTC",
- "modelsdev_count": 447,
+ "modelsdev_fetched": "2026-10-09 03:50 UTC",
+ "modelsdev_count": 448,
  "price_matrix": {
   "currency": "USD",
   "fetched": "2026-09-14T11:45:08.441355+00:00",
@@ -2266,8 +2266,8 @@
  },
  "chain_method": "Modelo primario: opencode-go/deepseek-v4-flash.\nSi el primero falla, se prueba el siguiente automáticamente (cascada de respaldo).\nCadena activa: 2 Go · 1 Zen free · 0 Zen paid · 2 OpenRouter (leída de agents.defaults.model).\n✅ Cadena sin Zen paid: 0 crédito de pago de Zen en cualquier escalón.\nGo y Zen free no consumen crédito de pago; OpenRouter solo en cascada de fallo.",
  "chain_snapshot": {
-  "generated_at": "2026-10-08T03:50:01.326748+00:00",
-  "snapshot": "2026-10-08 03:50 UTC",
+  "generated_at": "2026-10-09T03:50:00.982879+00:00",
+  "snapshot": "2026-10-09 03:50 UTC",
   "source": "agents.defaults.model en openclaw.json (leída en build)",
   "links": [
    {
@@ -2339,7 +2339,7 @@
    "opencode-zen": {
     "enabled": 1,
     "probed": {
-     "free": 44,
+     "free": 43,
      "noprobe": 44
     },
     "total": 2
@@ -2355,11 +2355,11 @@
  },
  "counts": {
   "total": 104,
-  "go": 43,
+  "go": 45,
   "zen": 87,
   "free": 13,
   "openrouter": 10,
-  "with_modelsdev": 91
+  "with_modelsdev": 92
  },
  "models": [
   {
@@ -2492,7 +2492,7 @@
   {
    "id": "claude-haiku-5-5",
    "providers": {
-    "go": false,
+    "go": true,
     "zen": true,
     "free": false,
     "or": false
@@ -3131,33 +3131,6 @@
    "or_price": null,
    "tier": "free",
    "name": "exo-free",
-   "desc": "Sin ficha en models.dev (solo catálogo opencode)",
-   "context": null,
-   "output": null,
-   "reasoning": null,
-   "tool_call": null,
-   "structured": null,
-   "multimodal": null,
-   "open_weights": null,
-   "release": "",
-   "last_updated": "",
-   "knowledge": "",
-   "swebench": null,
-   "benchmarks": {},
-   "md_url": null
-  },
-  {
-   "id": "fledge-alpha-free",
-   "providers": {
-    "go": false,
-    "zen": true,
-    "free": true,
-    "or": false
-   },
-   "or_id": null,
-   "or_price": null,
-   "tier": "free",
-   "name": "fledge-alpha-free",
    "desc": "Sin ficha en models.dev (solo catálogo opencode)",
    "context": null,
    "output": null,
@@ -5952,6 +5925,33 @@
    "swebench": null,
    "benchmarks": {},
    "md_url": null
+  },
+  {
+   "id": "step-5-preview-free",
+   "providers": {
+    "go": true,
+    "zen": true,
+    "free": true,
+    "or": false
+   },
+   "or_id": null,
+   "or_price": null,
+   "tier": "free",
+   "name": "Step 5 Preview",
+   "desc": "StepFun's next-generation flagship base model for coding and professional knowledge work, with native text, image, and video input and a 1M-token context window",
+   "context": 1000000,
+   "output": 1000000,
+   "reasoning": true,
+   "tool_call": true,
+   "structured": true,
+   "multimodal": true,
+   "open_weights": false,
+   "release": "2026-09-16",
+   "last_updated": "2026-09-20",
+   "knowledge": "",
+   "swebench": null,
+   "benchmarks": {},
+   "md_url": "https://models.dev/models/stepfun/step-5-preview"
   }
  ]
 }

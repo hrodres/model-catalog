@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-08T03:50:01.327753+00:00",
+ "generated": "2026-10-09T03:50:00.984371+00:00",
  "aliases": [
   {
    "id": "opencode-zen/big-pickle",
@@ -16,6 +16,10 @@
   {
    "id": "opencode-zen/claude-haiku-4-5",
    "alias": "💰 Claude Haiku 4.5 (latest) (Zen)"
+  },
+  {
+   "id": "opencode-go/claude-haiku-5-5",
+   "alias": "🚀 Claude Haiku 5.5 (Go)"
   },
   {
    "id": "opencode-zen/claude-haiku-5-5",
@@ -104,10 +108,6 @@
   {
    "id": "opencode-zen/exo-free",
    "alias": "🌱 exo-free (Zen free)"
-  },
-  {
-   "id": "opencode-zen/fledge-alpha-free",
-   "alias": "🌱 fledge-alpha-free (Zen free)"
   },
   {
    "id": "opencode-zen/gemini-3-flash",
@@ -520,6 +520,14 @@
   {
    "id": "opencode-zen/space-bunny-free",
    "alias": "🌱 space-bunny-free (Zen free)"
+  },
+  {
+   "id": "opencode-go/step-5-preview-free",
+   "alias": "🚀 Step 5 Preview (Go)"
+  },
+  {
+   "id": "opencode-zen/step-5-preview-free",
+   "alias": "🌱 Step 5 Preview (Zen free)"
   }
  ]
 }
