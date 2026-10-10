@@ -1,13 +1,13 @@
 {
- "generated": "2026-10-09T03:50:00.984371+00:00",
- "snapshot": "2026-10-09 03:50 UTC",
+ "generated": "2026-10-10T03:50:01.107317+00:00",
+ "snapshot": "2026-10-10 03:50 UTC",
  "providers_3rd": [
   "opencode-go",
   "opencode-zen",
   "openrouter"
  ],
- "modelsdev_fetched": "2026-10-09 03:50 UTC",
- "modelsdev_count": 448,
+ "modelsdev_fetched": "2026-10-10 03:50 UTC",
+ "modelsdev_count": 475,
  "price_matrix": {
   "currency": "USD",
   "fetched": "2026-09-14T11:45:08.441355+00:00",
@@ -2266,8 +2266,8 @@
  },
  "chain_method": "Modelo primario: opencode-go/deepseek-v4-flash.\nSi el primero falla, se prueba el siguiente automáticamente (cascada de respaldo).\nCadena activa: 2 Go · 1 Zen free · 0 Zen paid · 2 OpenRouter (leída de agents.defaults.model).\n✅ Cadena sin Zen paid: 0 crédito de pago de Zen en cualquier escalón.\nGo y Zen free no consumen crédito de pago; OpenRouter solo en cascada de fallo.",
  "chain_snapshot": {
-  "generated_at": "2026-10-09T03:50:00.982879+00:00",
-  "snapshot": "2026-10-09 03:50 UTC",
+  "generated_at": "2026-10-10T03:50:01.106538+00:00",
+  "snapshot": "2026-10-10 03:50 UTC",
   "source": "agents.defaults.model en openclaw.json (leída en build)",
   "links": [
    {
@@ -2332,7 +2332,7 @@
    "opencode-go": {
     "enabled": 1,
     "probed": {
-     "na": 43
+     "na": 45
     },
     "total": 1
    },
@@ -4865,9 +4865,9 @@
    "tool_call": true,
    "structured": false,
    "multimodal": false,
-   "open_weights": false,
+   "open_weights": true,
    "release": "2026-08-27",
-   "last_updated": "2026-08-27",
+   "last_updated": "2026-09-03",
    "knowledge": "",
    "swebench": null,
    "benchmarks": {
