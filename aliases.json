@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-11T03:50:01.217079+00:00",
+ "generated": "2026-10-12T03:50:01.152688+00:00",
  "aliases": [
   {
    "id": "opencode-zen/big-pickle",
@@ -50,8 +50,8 @@
    "alias": "💰 Claude Opus 5.5 (Zen)"
   },
   {
-   "id": "opencode-zen/claude-sonnet-4",
-   "alias": "💰 Claude Sonnet 4.5 (latest) (Zen)"
+   "id": "opencode-zen/claude-opus-5-5-backup",
+   "alias": "💰 claude-opus-5-5-backup (Zen)"
   },
   {
    "id": "opencode-zen/claude-sonnet-4-5",
@@ -86,10 +86,6 @@
    "alias": "🚀 DeepSeek V4 Flash Vision Exp (Go)"
   },
   {
-   "id": "opencode-zen/deepseek-v4-flash-vision-exp",
-   "alias": "💰 DeepSeek V4 Flash Vision Exp (Zen)"
-  },
-  {
    "id": "opencode-go/deepseek-v4-pro",
    "alias": "🚀 DeepSeek V4 Pro (Go)"
   },
@@ -104,10 +100,6 @@
   {
    "id": "opencode-zen/deepseek-v4.1-flash",
    "alias": "💰 DeepSeek V4.1 Flash (Zen)"
-  },
-  {
-   "id": "opencode-zen/exo-free",
-   "alias": "🌱 exo-free (Zen free)"
   },
   {
    "id": "opencode-zen/gemini-3-flash",
@@ -136,10 +128,6 @@
   {
    "id": "opencode-zen/gemini-3.8-flash",
    "alias": "💰 Gemini 3.8 Flash (Zen)"
-  },
-  {
-   "id": "opencode-go/glm-5",
-   "alias": "🚀 GLM-5 (Go)"
   },
   {
    "id": "opencode-zen/glm-5",
@@ -282,10 +270,6 @@
    "alias": "💰 GPT-6.1 Sol (Zen)"
   },
   {
-   "id": "opencode-go/grok-4.5",
-   "alias": "🚀 Grok 4.5 (Go)"
-  },
-  {
    "id": "opencode-zen/grok-4.5",
    "alias": "💰 Grok 4.5 (Zen)"
   },
@@ -314,10 +298,6 @@
    "alias": "🚀 Hy3 (Go)"
   },
   {
-   "id": "opencode-go/hy3-preview",
-   "alias": "🚀 Hy3 preview (Go)"
-  },
-  {
    "id": "opencode-go/hy4-preview",
    "alias": "🚀 Hy4 preview (Go)"
   },
@@ -328,10 +308,6 @@
   {
    "id": "opencode-zen/jev-1.13-free",
    "alias": "🌱 jev-1.13-free (Zen free)"
-  },
-  {
-   "id": "opencode-go/kimi-k2.5",
-   "alias": "🚀 Kimi K2.5 (Go)"
   },
   {
    "id": "opencode-zen/kimi-k2.5",
@@ -362,10 +338,6 @@
    "alias": "💰 Kimi K3 (Zen)"
   },
   {
-   "id": "opencode-zen/ling-3.0-flash-fin-free",
-   "alias": "🌱 Ling 3.0 Flash Fin (Zen free)"
-  },
-  {
    "id": "opencode-zen/ling-3.1-flash-free",
    "alias": "🌱 Ling 3.1 Flash (Zen free)"
   },
@@ -380,14 +352,6 @@
   {
    "id": "opencode-zen/longcat-2.5-preview-free",
    "alias": "🌱 LongCat-2.5-Preview (Zen free)"
-  },
-  {
-   "id": "opencode-go/mimo-v2-omni",
-   "alias": "🚀 MiMo-V2-Omni (Go)"
-  },
-  {
-   "id": "opencode-go/mimo-v2-pro",
-   "alias": "🚀 MiMo-V2-Pro (Go)"
   },
   {
    "id": "opencode-go/mimo-v2.5",
@@ -462,20 +426,12 @@
    "alias": "🌱 muse-spark-1.3-contributor-free (Zen free)"
   },
   {
-   "id": "opencode-zen/nemotron-3-ultra-free",
-   "alias": "🌱 Nemotron 3 Ultra 550B A55B (Zen free)"
-  },
-  {
    "id": "opencode-zen/nemotron-3.5-lightning-free",
    "alias": "🌱 Nemotron 3.5 Lightning 30B A3B (Zen free)"
   },
   {
    "id": "opencode-go/omen-alpha",
    "alias": "🚀 omen-alpha (Go)"
-  },
-  {
-   "id": "opencode-go/qwen3.5-plus",
-   "alias": "🚀 Qwen3.5 Plus (Go)"
   },
   {
    "id": "opencode-zen/qwen3.5-plus",

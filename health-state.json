@@ -1,20 +1,20 @@
 {
- "generated": "2026-10-11T03:50:22.293350+00:00",
- "snapshot": "2026-10-11",
+ "generated": "2026-10-12T03:50:15.879116+00:00",
+ "snapshot": "2026-10-12",
  "fuente": "check-model-health.py F3 (2026-08-24)",
  "providers": {
   "opencode-go": {
    "enabled": 1,
    "probed": {
-    "na": 45
+    "na": 38
    },
    "total": 1
   },
   "opencode-zen": {
    "enabled": 1,
    "probed": {
-    "free": 43,
-    "noprobe": 44
+    "free": 40,
+    "noprobe": 43
    },
    "total": 2
   },
@@ -27,9 +27,9 @@
   }
  },
  "counts": {
-  "na": 45,
-  "free": 43,
-  "noprobe": 47
+  "na": 38,
+  "free": 40,
+  "noprobe": 46
  },
  "go_quota": {
   "badge": "⚠️ Cuota Go agotada (Semanal 100%)",
@@ -127,12 +127,6 @@
    "detalle": "HTTP 401: no accesible con tu plan/key"
   },
   {
-   "modelo": "glm-5",
-   "provider": "opencode-go",
-   "estado": "na",
-   "detalle": "HTTP 401: no accesible con tu plan/key"
-  },
-  {
    "modelo": "glm-5.1",
    "provider": "opencode-go",
    "estado": "na",
@@ -169,12 +163,6 @@
    "detalle": "HTTP 401: no accesible con tu plan/key"
   },
   {
-   "modelo": "grok-4.5",
-   "provider": "opencode-go",
-   "estado": "na",
-   "detalle": "HTTP 401: no accesible con tu plan/key"
-  },
-  {
    "modelo": "grok-4.6",
    "provider": "opencode-go",
    "estado": "na",
@@ -193,19 +181,7 @@
    "detalle": "HTTP 401: no accesible con tu plan/key"
   },
   {
-   "modelo": "hy3-preview",
-   "provider": "opencode-go",
-   "estado": "na",
-   "detalle": "HTTP 401: no accesible con tu plan/key"
-  },
-  {
    "modelo": "hy4-preview",
-   "provider": "opencode-go",
-   "estado": "na",
-   "detalle": "HTTP 401: no accesible con tu plan/key"
-  },
-  {
-   "modelo": "kimi-k2.5",
    "provider": "opencode-go",
    "estado": "na",
    "detalle": "HTTP 401: no accesible con tu plan/key"
@@ -236,18 +212,6 @@
   },
   {
    "modelo": "longcat-2.5-preview-free",
-   "provider": "opencode-go",
-   "estado": "na",
-   "detalle": "HTTP 401: no accesible con tu plan/key"
-  },
-  {
-   "modelo": "mimo-v2-omni",
-   "provider": "opencode-go",
-   "estado": "na",
-   "detalle": "HTTP 401: no accesible con tu plan/key"
-  },
-  {
-   "modelo": "mimo-v2-pro",
    "provider": "opencode-go",
    "estado": "na",
    "detalle": "HTTP 401: no accesible con tu plan/key"
@@ -308,12 +272,6 @@
   },
   {
    "modelo": "omen-alpha",
-   "provider": "opencode-go",
-   "estado": "na",
-   "detalle": "HTTP 401: no accesible con tu plan/key"
-  },
-  {
-   "modelo": "qwen3.5-plus",
    "provider": "opencode-go",
    "estado": "na",
    "detalle": "HTTP 401: no accesible con tu plan/key"
@@ -427,10 +385,10 @@
    "detalle": "no probado (protección cuota global free 100 req/día)"
   },
   {
-   "modelo": "claude-sonnet-4",
+   "modelo": "claude-opus-5-5-backup",
    "provider": "opencode-zen",
-   "estado": "noprobe",
-   "detalle": "no probeado (ahorro de crédito: usa Go para salud en vivo)"
+   "estado": "free",
+   "detalle": "no probado (protección cuota global free 100 req/día)"
   },
   {
    "modelo": "claude-sonnet-4-5",
@@ -463,12 +421,6 @@
    "detalle": "no probeado (ahorro de crédito: usa Go para salud en vivo)"
   },
   {
-   "modelo": "deepseek-v4-flash-vision-exp",
-   "provider": "opencode-zen",
-   "estado": "free",
-   "detalle": "no probado (protección cuota global free 100 req/día)"
-  },
-  {
    "modelo": "deepseek-v4-pro",
    "provider": "opencode-zen",
    "estado": "noprobe",
@@ -476,12 +428,6 @@
   },
   {
    "modelo": "deepseek-v4.1-flash",
-   "provider": "opencode-zen",
-   "estado": "free",
-   "detalle": "no probado (protección cuota global free 100 req/día)"
-  },
-  {
-   "modelo": "exo-free",
    "provider": "opencode-zen",
    "estado": "free",
    "detalle": "no probado (protección cuota global free 100 req/día)"
@@ -763,12 +709,6 @@
    "detalle": "no probado (protección cuota global free 100 req/día)"
   },
   {
-   "modelo": "ling-3.0-flash-fin-free",
-   "provider": "opencode-zen",
-   "estado": "free",
-   "detalle": "no probado (protección cuota global free 100 req/día)"
-  },
-  {
    "modelo": "ling-3.1-flash-free",
    "provider": "opencode-zen",
    "estado": "free",
@@ -830,12 +770,6 @@
   },
   {
    "modelo": "muse-spark-1.3-contributor-free",
-   "provider": "opencode-zen",
-   "estado": "free",
-   "detalle": "no probado (protección cuota global free 100 req/día)"
-  },
-  {
-   "modelo": "nemotron-3-ultra-free",
    "provider": "opencode-zen",
    "estado": "free",
    "detalle": "no probado (protección cuota global free 100 req/día)"

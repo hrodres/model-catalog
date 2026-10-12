@@ -1,12 +1,12 @@
 {
- "generated": "2026-10-11T03:50:01.217079+00:00",
- "snapshot": "2026-10-11 03:50 UTC",
+ "generated": "2026-10-12T03:50:01.152688+00:00",
+ "snapshot": "2026-10-12 03:50 UTC",
  "providers_3rd": [
   "opencode-go",
   "opencode-zen",
   "openrouter"
  ],
- "modelsdev_fetched": "2026-10-11 03:50 UTC",
+ "modelsdev_fetched": "2026-10-12 03:50 UTC",
  "modelsdev_count": 475,
  "price_matrix": {
   "currency": "USD",
@@ -2266,8 +2266,8 @@
  },
  "chain_method": "Modelo primario: opencode-go/deepseek-v4-flash.\nSi el primero falla, se prueba el siguiente automáticamente (cascada de respaldo).\nCadena activa: 2 Go · 1 Zen free · 0 Zen paid · 2 OpenRouter (leída de agents.defaults.model).\n✅ Cadena sin Zen paid: 0 crédito de pago de Zen en cualquier escalón.\nGo y Zen free no consumen crédito de pago; OpenRouter solo en cascada de fallo.",
  "chain_snapshot": {
-  "generated_at": "2026-10-11T03:50:01.215937+00:00",
-  "snapshot": "2026-10-11 03:50 UTC",
+  "generated_at": "2026-10-12T03:50:01.151172+00:00",
+  "snapshot": "2026-10-12 03:50 UTC",
   "source": "agents.defaults.model en openclaw.json (leída en build)",
   "links": [
    {
@@ -2354,12 +2354,12 @@
   }
  },
  "counts": {
-  "total": 104,
-  "go": 45,
-  "zen": 87,
-  "free": 13,
-  "openrouter": 10,
-  "with_modelsdev": 92
+  "total": 98,
+  "go": 38,
+  "zen": 83,
+  "free": 10,
+  "openrouter": 8,
+  "with_modelsdev": 86
  },
  "models": [
   {
@@ -2739,7 +2739,7 @@
    "md_url": "https://models.dev/models/anthropic/claude-opus-5-5"
   },
   {
-   "id": "claude-sonnet-4",
+   "id": "claude-opus-5-5-backup",
    "providers": {
     "go": false,
     "zen": true,
@@ -2749,23 +2749,21 @@
    "or_id": null,
    "or_price": null,
    "tier": "paid",
-   "name": "Claude Sonnet 4.5 (latest)",
-   "desc": "Balanced Claude model for coding, analysis, agent workflows, and cost control",
-   "context": 200000,
-   "output": 64000,
-   "reasoning": true,
-   "tool_call": true,
-   "structured": false,
-   "multimodal": true,
-   "open_weights": false,
-   "release": "2025-09-29",
-   "last_updated": "2025-09-29",
-   "knowledge": "2025-07-31",
+   "name": "claude-opus-5-5-backup",
+   "desc": "Sin ficha en models.dev (solo catálogo opencode)",
+   "context": null,
+   "output": null,
+   "reasoning": null,
+   "tool_call": null,
+   "structured": null,
+   "multimodal": null,
+   "open_weights": null,
+   "release": "",
+   "last_updated": "",
+   "knowledge": "",
    "swebench": null,
-   "benchmarks": {
-    "SWE-Bench Pro": 43.6
-   },
-   "md_url": "https://models.dev/models/anthropic/claude-sonnet-4-5"
+   "benchmarks": {},
+   "md_url": null
   },
   {
    "id": "claude-sonnet-4-5",
@@ -2985,13 +2983,13 @@
    "id": "deepseek-v4-flash-vision-exp",
    "providers": {
     "go": true,
-    "zen": true,
+    "zen": false,
     "free": false,
     "or": false
    },
    "or_id": null,
    "or_price": null,
-   "tier": "paid",
+   "tier": "go",
    "name": "DeepSeek V4 Flash Vision Exp",
    "desc": "Experimental multimodal DeepSeek V4 Flash model for image understanding, coding, and agentic work",
    "context": 1000000,
@@ -3118,33 +3116,6 @@
     "ZeroBench": 49
    },
    "md_url": "https://models.dev/models/deepseek/deepseek-v4.1-flash"
-  },
-  {
-   "id": "exo-free",
-   "providers": {
-    "go": false,
-    "zen": true,
-    "free": true,
-    "or": false
-   },
-   "or_id": null,
-   "or_price": null,
-   "tier": "free",
-   "name": "exo-free",
-   "desc": "Sin ficha en models.dev (solo catálogo opencode)",
-   "context": null,
-   "output": null,
-   "reasoning": null,
-   "tool_call": null,
-   "structured": null,
-   "multimodal": null,
-   "open_weights": null,
-   "release": "",
-   "last_updated": "",
-   "knowledge": "",
-   "swebench": null,
-   "benchmarks": {},
-   "md_url": null
   },
   {
    "id": "gemini-3-flash",
@@ -3406,7 +3377,7 @@
   {
    "id": "glm-5",
    "providers": {
-    "go": true,
+    "go": false,
     "zen": true,
     "free": false,
     "or": false
@@ -4398,7 +4369,7 @@
   {
    "id": "grok-4.5",
    "providers": {
-    "go": true,
+    "go": false,
     "zen": true,
     "free": false,
     "or": false
@@ -4589,39 +4560,6 @@
    "md_url": "https://models.dev/models/tencent/hy3"
   },
   {
-   "id": "hy3-preview",
-   "providers": {
-    "go": true,
-    "zen": false,
-    "free": false,
-    "or": true
-   },
-   "or_id": "tencent/hy3-preview",
-   "or_price": {
-    "in": 0.18,
-    "out": 0.6,
-    "context": 262144
-   },
-   "tier": "go",
-   "name": "Hy3 preview",
-   "desc": "Tencent Hy reasoning model for coding, instruction following, and agent tasks",
-   "context": 256000,
-   "output": 64000,
-   "reasoning": true,
-   "tool_call": true,
-   "structured": false,
-   "multimodal": false,
-   "open_weights": true,
-   "release": "2026-04-20",
-   "last_updated": "2026-04-20",
-   "knowledge": "",
-   "swebench": 74.4,
-   "benchmarks": {
-    "SWE-Bench Verified": 74.4
-   },
-   "md_url": "https://models.dev/models/tencent/hy3-preview"
-  },
-  {
    "id": "hy4-preview",
    "providers": {
     "go": true,
@@ -4705,7 +4643,7 @@
   {
    "id": "kimi-k2.5",
    "providers": {
-    "go": true,
+    "go": false,
     "zen": true,
     "free": false,
     "or": false
@@ -4847,41 +4785,6 @@
    "md_url": "https://models.dev/models/moonshotai/kimi-k3"
   },
   {
-   "id": "ling-3.0-flash-fin-free",
-   "providers": {
-    "go": false,
-    "zen": true,
-    "free": true,
-    "or": false
-   },
-   "or_id": null,
-   "or_price": null,
-   "tier": "free",
-   "name": "Ling 3.0 Flash Fin",
-   "desc": "Finance-enhanced model for financial research, multi-step investment workflows, and long-horizon planning and execution",
-   "context": 262144,
-   "output": 32768,
-   "reasoning": true,
-   "tool_call": true,
-   "structured": false,
-   "multimodal": false,
-   "open_weights": true,
-   "release": "2026-08-27",
-   "last_updated": "2026-09-03",
-   "knowledge": "",
-   "swebench": null,
-   "benchmarks": {
-    "FinFIRST": 52.85,
-    "FinSearchComp Verified": 77.04,
-    "FinCRAFT": 51.74,
-    "Finance Agent": 59.81,
-    "APEX-Agents": 29.17,
-    "SpreadsheetBench": 21.81,
-    "tau3-bench": 41
-   },
-   "md_url": "https://models.dev/models/inclusionai/ling-3.0-flash-fin"
-  },
-  {
    "id": "ling-3.1-flash-free",
    "providers": {
     "go": false,
@@ -4969,60 +4872,6 @@
    "swebench": null,
    "benchmarks": {},
    "md_url": "https://models.dev/models/meituan/longcat-2.5-preview"
-  },
-  {
-   "id": "mimo-v2-omni",
-   "providers": {
-    "go": true,
-    "zen": false,
-    "free": false,
-    "or": false
-   },
-   "or_id": null,
-   "or_price": null,
-   "tier": "go",
-   "name": "MiMo-V2-Omni",
-   "desc": "MiMo omni model for text, image, video, audio, and agents",
-   "context": 262144,
-   "output": 131072,
-   "reasoning": true,
-   "tool_call": true,
-   "structured": false,
-   "multimodal": true,
-   "open_weights": false,
-   "release": "2026-03-18",
-   "last_updated": "2026-03-18",
-   "knowledge": "2024-12",
-   "swebench": null,
-   "benchmarks": {},
-   "md_url": "https://models.dev/models/xiaomi/mimo-v2-omni"
-  },
-  {
-   "id": "mimo-v2-pro",
-   "providers": {
-    "go": true,
-    "zen": false,
-    "free": false,
-    "or": false
-   },
-   "or_id": null,
-   "or_price": null,
-   "tier": "go",
-   "name": "MiMo-V2-Pro",
-   "desc": "Earlier MiMo Pro model for multimodal agents, reasoning, and code tasks",
-   "context": 1048576,
-   "output": 131072,
-   "reasoning": true,
-   "tool_call": true,
-   "structured": false,
-   "multimodal": false,
-   "open_weights": false,
-   "release": "2026-03-18",
-   "last_updated": "2026-03-18",
-   "knowledge": "2024-12",
-   "swebench": null,
-   "benchmarks": {},
-   "md_url": "https://models.dev/models/xiaomi/mimo-v2-pro"
   },
   {
    "id": "mimo-v2.5",
@@ -5556,48 +5405,6 @@
    "md_url": null
   },
   {
-   "id": "nemotron-3-ultra-free",
-   "providers": {
-    "go": false,
-    "zen": true,
-    "free": true,
-    "or": true
-   },
-   "or_id": "nvidia/nemotron-3-ultra-550b-a55b",
-   "or_price": {
-    "in": 0.6,
-    "out": 2.4,
-    "context": 262144
-   },
-   "tier": "free",
-   "name": "Nemotron 3 Ultra 550B A55B",
-   "desc": "Largest Nemotron 3 model for maximum open-weight reasoning and agent accuracy",
-   "context": 1000000,
-   "output": 128000,
-   "reasoning": true,
-   "tool_call": true,
-   "structured": false,
-   "multimodal": false,
-   "open_weights": true,
-   "release": "2026-06-04",
-   "last_updated": "2026-06-04",
-   "knowledge": "",
-   "swebench": 70.7,
-   "benchmarks": {
-    "SWE-Bench Verified": 70.7,
-    "SWE-Bench Multilingual": 67.7,
-    "Terminal-Bench": 56.4,
-    "GPQA": 87,
-    "Humanity's Last Exam": 37.4,
-    "LiveCodeBench": 89,
-    "MMLU-Pro": 86.8,
-    "BrowseComp": 44.4,
-    "IFBench": 81.7,
-    "GDPval": 46.7
-   },
-   "md_url": "https://models.dev/models/nvidia/nemotron-3-ultra-550b-a55b"
-  },
-  {
    "id": "nemotron-3.5-lightning-free",
    "providers": {
     "go": false,
@@ -5673,7 +5480,7 @@
   {
    "id": "qwen3.5-plus",
    "providers": {
-    "go": true,
+    "go": false,
     "zen": true,
     "free": false,
     "or": false
