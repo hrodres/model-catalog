@@ -1,12 +1,12 @@
 {
- "generated": "2026-10-12T03:50:15.879116+00:00",
- "snapshot": "2026-10-12",
+ "generated": "2026-10-13T03:50:38.652929+00:00",
+ "snapshot": "2026-10-13",
  "fuente": "check-model-health.py F3 (2026-08-24)",
  "providers": {
   "opencode-go": {
    "enabled": 1,
    "probed": {
-    "na": 38
+    "unk": 38
    },
    "total": 1
   },
@@ -27,7 +27,7 @@
   }
  },
  "counts": {
-  "na": 38,
+  "unk": 38,
   "free": 40,
   "noprobe": 46
  },
@@ -65,13 +65,13 @@
  "chain": [
   {
    "link": "opencode-go/deepseek-v4-flash",
-   "estado": "na",
-   "detalle": "HTTP 401: no accesible con tu plan/key"
+   "estado": "unk",
+   "detalle": "HTTP 400: no responde al probe estándar"
   },
   {
    "link": "opencode-go/hy3",
-   "estado": "na",
-   "detalle": "HTTP 401: no accesible con tu plan/key"
+   "estado": "unk",
+   "detalle": "HTTP 400: no responde al probe estándar"
   },
   {
    "link": "opencode-zen/deepseek-v4-flash-free",
@@ -93,230 +93,230 @@
   {
    "modelo": "claude-haiku-5-5",
    "provider": "opencode-go",
-   "estado": "na",
-   "detalle": "HTTP 401: no accesible con tu plan/key"
+   "estado": "unk",
+   "detalle": "HTTP 400: no responde al probe estándar"
   },
   {
    "modelo": "deepseek-flash",
    "provider": "opencode-go",
-   "estado": "na",
-   "detalle": "HTTP 401: no accesible con tu plan/key"
+   "estado": "unk",
+   "detalle": "HTTP 400: no responde al probe estándar"
   },
   {
    "modelo": "deepseek-v4-flash",
    "provider": "opencode-go",
-   "estado": "na",
-   "detalle": "HTTP 401: no accesible con tu plan/key"
+   "estado": "unk",
+   "detalle": "HTTP 400: no responde al probe estándar"
   },
   {
    "modelo": "deepseek-v4-flash-vision-exp",
    "provider": "opencode-go",
-   "estado": "na",
-   "detalle": "HTTP 401: no accesible con tu plan/key"
+   "estado": "unk",
+   "detalle": "HTTP 400: no responde al probe estándar"
   },
   {
    "modelo": "deepseek-v4-pro",
    "provider": "opencode-go",
-   "estado": "na",
-   "detalle": "HTTP 401: no accesible con tu plan/key"
+   "estado": "unk",
+   "detalle": "HTTP 400: no responde al probe estándar"
   },
   {
    "modelo": "deepseek-v4.1-flash",
    "provider": "opencode-go",
-   "estado": "na",
-   "detalle": "HTTP 401: no accesible con tu plan/key"
+   "estado": "unk",
+   "detalle": "HTTP 400: no responde al probe estándar"
   },
   {
    "modelo": "glm-5.1",
    "provider": "opencode-go",
-   "estado": "na",
-   "detalle": "HTTP 401: no accesible con tu plan/key"
+   "estado": "unk",
+   "detalle": "HTTP 400: no responde al probe estándar"
   },
   {
    "modelo": "glm-5.2",
    "provider": "opencode-go",
-   "estado": "na",
-   "detalle": "HTTP 401: no accesible con tu plan/key"
+   "estado": "unk",
+   "detalle": "HTTP 400: no responde al probe estándar"
   },
   {
    "modelo": "glm-5.3",
    "provider": "opencode-go",
-   "estado": "na",
-   "detalle": "HTTP 401: no accesible con tu plan/key"
+   "estado": "unk",
+   "detalle": "HTTP 400: no responde al probe estándar"
   },
   {
    "modelo": "glm-5.3-flash",
    "provider": "opencode-go",
-   "estado": "na",
-   "detalle": "HTTP 401: no accesible con tu plan/key"
+   "estado": "unk",
+   "detalle": "HTTP 400: no responde al probe estándar"
   },
   {
    "modelo": "gpt-5.6-luna",
    "provider": "opencode-go",
-   "estado": "na",
-   "detalle": "HTTP 401: no accesible con tu plan/key"
+   "estado": "unk",
+   "detalle": "HTTP 400: no responde al probe estándar"
   },
   {
    "modelo": "gpt-6-luna",
    "provider": "opencode-go",
-   "estado": "na",
-   "detalle": "HTTP 401: no accesible con tu plan/key"
+   "estado": "unk",
+   "detalle": "HTTP 400: no responde al probe estándar"
   },
   {
    "modelo": "grok-4.6",
    "provider": "opencode-go",
-   "estado": "na",
-   "detalle": "HTTP 401: no accesible con tu plan/key"
+   "estado": "unk",
+   "detalle": "HTTP 400: no responde al probe estándar"
   },
   {
    "modelo": "grok-4.7",
    "provider": "opencode-go",
-   "estado": "na",
-   "detalle": "HTTP 401: no accesible con tu plan/key"
+   "estado": "unk",
+   "detalle": "HTTP 400: no responde al probe estándar"
   },
   {
    "modelo": "hy3",
    "provider": "opencode-go",
-   "estado": "na",
-   "detalle": "HTTP 401: no accesible con tu plan/key"
+   "estado": "unk",
+   "detalle": "HTTP 400: no responde al probe estándar"
   },
   {
    "modelo": "hy4-preview",
    "provider": "opencode-go",
-   "estado": "na",
-   "detalle": "HTTP 401: no accesible con tu plan/key"
+   "estado": "unk",
+   "detalle": "HTTP 400: no responde al probe estándar"
   },
   {
    "modelo": "kimi-k2.6",
    "provider": "opencode-go",
-   "estado": "na",
-   "detalle": "HTTP 401: no accesible con tu plan/key"
+   "estado": "unk",
+   "detalle": "HTTP 400: no responde al probe estándar"
   },
   {
    "modelo": "kimi-k2.7-code",
    "provider": "opencode-go",
-   "estado": "na",
-   "detalle": "HTTP 401: no accesible con tu plan/key"
+   "estado": "unk",
+   "detalle": "HTTP 400: no responde al probe estándar"
   },
   {
    "modelo": "kimi-k3",
    "provider": "opencode-go",
-   "estado": "na",
-   "detalle": "HTTP 401: no accesible con tu plan/key"
+   "estado": "unk",
+   "detalle": "HTTP 400: no responde al probe estándar"
   },
   {
    "modelo": "longcat-2.0",
    "provider": "opencode-go",
-   "estado": "na",
-   "detalle": "HTTP 401: no accesible con tu plan/key"
+   "estado": "unk",
+   "detalle": "HTTP 400: no responde al probe estándar"
   },
   {
    "modelo": "longcat-2.5-preview-free",
    "provider": "opencode-go",
-   "estado": "na",
-   "detalle": "HTTP 401: no accesible con tu plan/key"
+   "estado": "unk",
+   "detalle": "HTTP 400: no responde al probe estándar"
   },
   {
    "modelo": "mimo-v2.5",
    "provider": "opencode-go",
-   "estado": "na",
-   "detalle": "HTTP 401: no accesible con tu plan/key"
+   "estado": "unk",
+   "detalle": "HTTP 400: no responde al probe estándar"
   },
   {
    "modelo": "mimo-v2.5-pro",
    "provider": "opencode-go",
-   "estado": "na",
-   "detalle": "HTTP 401: no accesible con tu plan/key"
+   "estado": "unk",
+   "detalle": "HTTP 400: no responde al probe estándar"
   },
   {
    "modelo": "mimo-v2.6-flash",
    "provider": "opencode-go",
-   "estado": "na",
-   "detalle": "HTTP 401: no accesible con tu plan/key"
+   "estado": "unk",
+   "detalle": "HTTP 400: no responde al probe estándar"
   },
   {
    "modelo": "mimo-v2.6-pro",
    "provider": "opencode-go",
-   "estado": "na",
-   "detalle": "HTTP 401: no accesible con tu plan/key"
+   "estado": "unk",
+   "detalle": "HTTP 400: no responde al probe estándar"
   },
   {
    "modelo": "minimax-m2.5",
    "provider": "opencode-go",
-   "estado": "na",
-   "detalle": "HTTP 401: no accesible con tu plan/key"
+   "estado": "unk",
+   "detalle": "HTTP 400: no responde al probe estándar"
   },
   {
    "modelo": "minimax-m2.7",
    "provider": "opencode-go",
-   "estado": "na",
-   "detalle": "HTTP 401: no accesible con tu plan/key"
+   "estado": "unk",
+   "detalle": "HTTP 400: no responde al probe estándar"
   },
   {
    "modelo": "minimax-m3",
    "provider": "opencode-go",
-   "estado": "na",
-   "detalle": "HTTP 401: no accesible con tu plan/key"
+   "estado": "unk",
+   "detalle": "HTTP 400: no responde al probe estándar"
   },
   {
    "modelo": "muse-spark-1.2-contributor",
    "provider": "opencode-go",
-   "estado": "na",
-   "detalle": "HTTP 401: no accesible con tu plan/key"
+   "estado": "unk",
+   "detalle": "HTTP 400: no responde al probe estándar"
   },
   {
    "modelo": "muse-spark-1.3-contributor",
    "provider": "opencode-go",
-   "estado": "na",
-   "detalle": "HTTP 401: no accesible con tu plan/key"
+   "estado": "unk",
+   "detalle": "HTTP 400: no responde al probe estándar"
   },
   {
    "modelo": "omen-alpha",
    "provider": "opencode-go",
-   "estado": "na",
-   "detalle": "HTTP 401: no accesible con tu plan/key"
+   "estado": "unk",
+   "detalle": "HTTP 400: no responde al probe estándar"
   },
   {
    "modelo": "qwen3.6-plus",
    "provider": "opencode-go",
-   "estado": "na",
-   "detalle": "HTTP 401: no accesible con tu plan/key"
+   "estado": "unk",
+   "detalle": "HTTP 400: no responde al probe estándar"
   },
   {
    "modelo": "qwen3.7-max",
    "provider": "opencode-go",
-   "estado": "na",
-   "detalle": "HTTP 401: no accesible con tu plan/key"
+   "estado": "unk",
+   "detalle": "HTTP 400: no responde al probe estándar"
   },
   {
    "modelo": "qwen3.7-plus",
    "provider": "opencode-go",
-   "estado": "na",
-   "detalle": "HTTP 401: no accesible con tu plan/key"
+   "estado": "unk",
+   "detalle": "HTTP 400: no responde al probe estándar"
   },
   {
    "modelo": "qwen3.8-flash",
    "provider": "opencode-go",
-   "estado": "na",
-   "detalle": "HTTP 401: no accesible con tu plan/key"
+   "estado": "unk",
+   "detalle": "HTTP 400: no responde al probe estándar"
   },
   {
    "modelo": "qwen3.8-max",
    "provider": "opencode-go",
-   "estado": "na",
-   "detalle": "HTTP 401: no accesible con tu plan/key"
+   "estado": "unk",
+   "detalle": "HTTP 400: no responde al probe estándar"
   },
   {
    "modelo": "space-bunny",
    "provider": "opencode-go",
-   "estado": "na",
-   "detalle": "HTTP 401: no accesible con tu plan/key"
+   "estado": "unk",
+   "detalle": "HTTP 400: no responde al probe estándar"
   },
   {
    "modelo": "step-5-preview-free",
    "provider": "opencode-go",
-   "estado": "na",
-   "detalle": "HTTP 401: no accesible con tu plan/key"
+   "estado": "unk",
+   "detalle": "HTTP 400: no responde al probe estándar"
   },
   {
    "modelo": "big-pickle",
