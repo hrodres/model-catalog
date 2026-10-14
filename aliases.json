@@ -1,9 +1,17 @@
 {
- "generated": "2026-10-13T03:50:01.301554+00:00",
+ "generated": "2026-10-14T03:50:01.151743+00:00",
  "aliases": [
   {
    "id": "opencode-zen/big-pickle",
    "alias": "🌱 big-pickle (Zen free)"
+  },
+  {
+   "id": "opencode-go/cat-jam-free",
+   "alias": "🚀 cat-jam-free (Go)"
+  },
+  {
+   "id": "opencode-zen/cat-jam-free",
+   "alias": "🌱 cat-jam-free (Zen free)"
   },
   {
    "id": "opencode-zen/claude-fable-5",
@@ -128,6 +136,10 @@
   {
    "id": "opencode-zen/gemini-3.8-flash",
    "alias": "💰 Gemini 3.8 Flash (Zen)"
+  },
+  {
+   "id": "opencode-zen/gemini-4-argon",
+   "alias": "💰 Gemini 4 Argon (Zen)"
   },
   {
    "id": "opencode-zen/glm-5",
@@ -484,6 +496,10 @@
   {
    "id": "opencode-zen/step-5-preview-free",
    "alias": "🌱 Step 5 Preview (Zen free)"
+  },
+  {
+   "id": "opencode-zen/test",
+   "alias": "💰 Gemini Flash Latest (Zen)"
   }
  ]
 }

@@ -1,13 +1,13 @@
 {
- "generated": "2026-10-13T03:50:01.301554+00:00",
- "snapshot": "2026-10-13 03:50 UTC",
+ "generated": "2026-10-14T03:50:01.151743+00:00",
+ "snapshot": "2026-10-14 03:50 UTC",
  "providers_3rd": [
   "opencode-go",
   "opencode-zen",
   "openrouter"
  ],
- "modelsdev_fetched": "2026-10-13 03:50 UTC",
- "modelsdev_count": 546,
+ "modelsdev_fetched": "2026-10-14 03:50 UTC",
+ "modelsdev_count": 547,
  "price_matrix": {
   "currency": "USD",
   "fetched": "2026-09-14T11:45:08.441355+00:00",
@@ -2266,8 +2266,8 @@
  },
  "chain_method": "Modelo primario: opencode-go/deepseek-v4-flash.\nSi el primero falla, se prueba el siguiente automáticamente (cascada de respaldo).\nCadena activa: 2 Go · 1 Zen free · 0 Zen paid · 2 OpenRouter (leída de agents.defaults.model).\n✅ Cadena sin Zen paid: 0 crédito de pago de Zen en cualquier escalón.\nGo y Zen free no consumen crédito de pago; OpenRouter solo en cascada de fallo.",
  "chain_snapshot": {
-  "generated_at": "2026-10-13T03:50:01.301018+00:00",
-  "snapshot": "2026-10-13 03:50 UTC",
+  "generated_at": "2026-10-14T03:50:01.151191+00:00",
+  "snapshot": "2026-10-14 03:50 UTC",
   "source": "agents.defaults.model en openclaw.json (leída en build)",
   "links": [
    {
@@ -2332,7 +2332,7 @@
    "opencode-go": {
     "enabled": 1,
     "probed": {
-     "na": 38
+     "unk": 38
     },
     "total": 1
    },
@@ -2354,12 +2354,12 @@
   }
  },
  "counts": {
-  "total": 98,
-  "go": 38,
-  "zen": 83,
-  "free": 10,
+  "total": 101,
+  "go": 39,
+  "zen": 86,
+  "free": 11,
   "openrouter": 8,
-  "with_modelsdev": 86
+  "with_modelsdev": 88
  },
  "models": [
   {
@@ -2374,6 +2374,33 @@
    "or_price": null,
    "tier": "free",
    "name": "big-pickle",
+   "desc": "Sin ficha en models.dev (solo catálogo opencode)",
+   "context": null,
+   "output": null,
+   "reasoning": null,
+   "tool_call": null,
+   "structured": null,
+   "multimodal": null,
+   "open_weights": null,
+   "release": "",
+   "last_updated": "",
+   "knowledge": "",
+   "swebench": null,
+   "benchmarks": {},
+   "md_url": null
+  },
+  {
+   "id": "cat-jam-free",
+   "providers": {
+    "go": true,
+    "zen": true,
+    "free": true,
+    "or": false
+   },
+   "or_id": null,
+   "or_price": null,
+   "tier": "free",
+   "name": "cat-jam-free",
    "desc": "Sin ficha en models.dev (solo catálogo opencode)",
    "context": null,
    "output": null,
@@ -3373,6 +3400,33 @@
     "LAB-Bench": 86.2
    },
    "md_url": "https://models.dev/models/google/gemini-3.8-flash"
+  },
+  {
+   "id": "gemini-4-argon",
+   "providers": {
+    "go": false,
+    "zen": true,
+    "free": false,
+    "or": false
+   },
+   "or_id": null,
+   "or_price": null,
+   "tier": "paid",
+   "name": "Gemini 4 Argon",
+   "desc": "Google's flagship reasoning model for complex software engineering, deep math and science, and long-horizon autonomous agents",
+   "context": 1048576,
+   "output": 65536,
+   "reasoning": true,
+   "tool_call": true,
+   "structured": true,
+   "multimodal": true,
+   "open_weights": false,
+   "release": "2026-10-13",
+   "last_updated": "2026-10-13",
+   "knowledge": "2026-03",
+   "swebench": null,
+   "benchmarks": {},
+   "md_url": "https://models.dev/models/google/gemini-4-argon"
   },
   {
    "id": "glm-5",
@@ -5759,6 +5813,33 @@
    "swebench": null,
    "benchmarks": {},
    "md_url": "https://models.dev/models/stepfun/step-5-preview"
+  },
+  {
+   "id": "test",
+   "providers": {
+    "go": false,
+    "zen": true,
+    "free": false,
+    "or": false
+   },
+   "or_id": null,
+   "or_price": null,
+   "tier": "paid",
+   "name": "Gemini Flash Latest",
+   "desc": "High-efficiency Gemini model for agentic workflows, coding, and multimodal reasoning",
+   "context": 1048576,
+   "output": 65536,
+   "reasoning": true,
+   "tool_call": true,
+   "structured": true,
+   "multimodal": true,
+   "open_weights": false,
+   "release": "2026-08-13",
+   "last_updated": "2026-08-13",
+   "knowledge": "2026-03",
+   "swebench": null,
+   "benchmarks": {},
+   "md_url": "https://models.dev/models/google/gemini-flash-latest"
   }
  ]
 }

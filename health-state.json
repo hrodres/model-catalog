@@ -1,19 +1,19 @@
 {
- "generated": "2026-10-13T03:50:38.652929+00:00",
- "snapshot": "2026-10-13",
+ "generated": "2026-10-14T03:50:33.039854+00:00",
+ "snapshot": "2026-10-14",
  "fuente": "check-model-health.py F3 (2026-08-24)",
  "providers": {
   "opencode-go": {
    "enabled": 1,
    "probed": {
-    "unk": 38
+    "unk": 39
    },
    "total": 1
   },
   "opencode-zen": {
    "enabled": 1,
    "probed": {
-    "free": 40,
+    "free": 43,
     "noprobe": 43
    },
    "total": 2
@@ -27,8 +27,8 @@
   }
  },
  "counts": {
-  "unk": 38,
-  "free": 40,
+  "unk": 39,
+  "free": 43,
   "noprobe": 46
  },
  "go_quota": {
@@ -90,6 +90,12 @@
   }
  ],
  "models": [
+  {
+   "modelo": "cat-jam-free",
+   "provider": "opencode-go",
+   "estado": "unk",
+   "detalle": "HTTP 400: no responde al probe estándar"
+  },
   {
    "modelo": "claude-haiku-5-5",
    "provider": "opencode-go",
@@ -325,6 +331,12 @@
    "detalle": "no probado (protección cuota global free 100 req/día)"
   },
   {
+   "modelo": "cat-jam-free",
+   "provider": "opencode-zen",
+   "estado": "free",
+   "detalle": "no probado (protección cuota global free 100 req/día)"
+  },
+  {
    "modelo": "claude-fable-5",
    "provider": "opencode-zen",
    "estado": "noprobe",
@@ -470,6 +482,12 @@
   },
   {
    "modelo": "gemini-3.8-flash",
+   "provider": "opencode-zen",
+   "estado": "free",
+   "detalle": "no probado (protección cuota global free 100 req/día)"
+  },
+  {
+   "modelo": "gemini-4-argon",
    "provider": "opencode-zen",
    "estado": "free",
    "detalle": "no probado (protección cuota global free 100 req/día)"
@@ -812,6 +830,12 @@
   },
   {
    "modelo": "step-5-preview-free",
+   "provider": "opencode-zen",
+   "estado": "free",
+   "detalle": "no probado (protección cuota global free 100 req/día)"
+  },
+  {
+   "modelo": "test",
    "provider": "opencode-zen",
    "estado": "free",
    "detalle": "no probado (protección cuota global free 100 req/día)"
