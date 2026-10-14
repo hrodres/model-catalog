@@ -6303,7 +6303,8 @@
    "opencode-zen/qwen3.6-plus": "noprobe",
    "openrouter/deepseek/deepseek-v4-flash": "noprobe",
    "openrouter/deepseek/deepseek-v4-pro": "noprobe",
-   "openrouter/tencent/hy3": "noprobe"
+   "openrouter/tencent/hy3": "noprobe",
+   "openrouter/deepseek/deepseek-v4.1-flash": "noprobe"
   }
  }
 }

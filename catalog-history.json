@@ -6634,6 +6634,7 @@
     "deepseek-v4-flash-vision-exp",
     "deepseek-v4-pro",
     "deepseek-v4.1-flash",
+    "gemini-4-argon-contributor",
     "glm-5.1",
     "glm-5.2",
     "glm-5.3",
@@ -6735,7 +6736,6 @@
     "kimi-k2.6",
     "kimi-k2.7-code",
     "kimi-k3",
-    "ling-3.1-flash-free",
     "longcat-2.5-preview-free",
     "mimo-v2.6-flash-free",
     "minimax-m2.5",
@@ -7052,6 +7052,16 @@
    "date": "2026-10-14",
    "type": "added",
    "id": "test"
+  },
+  {
+   "date": "2026-10-14",
+   "type": "added",
+   "id": "gemini-4-argon-contributor"
+  },
+  {
+   "date": "2026-10-14",
+   "type": "removed",
+   "id": "ling-3.1-flash-free"
   }
  ]
 }

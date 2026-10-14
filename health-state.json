@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-14T03:50:33.039854+00:00",
+ "generated": "2026-10-14T19:31:31.167581+00:00",
  "snapshot": "2026-10-14",
  "fuente": "check-model-health.py F3 (2026-08-24)",
  "providers": {
@@ -21,7 +21,7 @@
   "openrouter": {
    "enabled": 1,
    "probed": {
-    "noprobe": 3
+    "noprobe": 4
    },
    "total": 1
   }
@@ -29,7 +29,7 @@
  "counts": {
   "unk": 39,
   "free": 43,
-  "noprobe": 46
+  "noprobe": 47
  },
  "go_quota": {
   "badge": "⚠️ Cuota Go agotada (Semanal 100%)",
@@ -64,6 +64,11 @@
  },
  "chain": [
   {
+   "link": "opencode-go/deepseek-v4.1-flash",
+   "estado": "unk",
+   "detalle": "HTTP 400: no responde al probe estándar"
+  },
+  {
    "link": "opencode-go/deepseek-v4-flash",
    "estado": "unk",
    "detalle": "HTTP 400: no responde al probe estándar"
@@ -74,17 +79,7 @@
    "detalle": "HTTP 400: no responde al probe estándar"
   },
   {
-   "link": "opencode-zen/deepseek-v4-flash-free",
-   "estado": "no-en-config",
-   "detalle": "modelo no está en providers habilitados"
-  },
-  {
-   "link": "openrouter/tencent/hy3",
-   "estado": "noprobe",
-   "detalle": "no probeado (ahorro de crédito: usa Go para salud en vivo)"
-  },
-  {
-   "link": "openrouter/deepseek/deepseek-v4-flash",
+   "link": "openrouter/deepseek/deepseek-v4.1-flash",
    "estado": "noprobe",
    "detalle": "no probeado (ahorro de crédito: usa Go para salud en vivo)"
   }
@@ -848,6 +843,12 @@
   },
   {
    "modelo": "deepseek/deepseek-v4-pro",
+   "provider": "openrouter",
+   "estado": "noprobe",
+   "detalle": "no probeado (ahorro de crédito: usa Go para salud en vivo)"
+  },
+  {
+   "modelo": "deepseek/deepseek-v4.1-flash",
    "provider": "openrouter",
    "estado": "noprobe",
    "detalle": "no probeado (ahorro de crédito: usa Go para salud en vivo)"

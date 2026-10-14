@@ -9,7 +9,7 @@ Catálogo de modelos del gateway OpenClaw con **tres proveedores**: **opencode-g
 - **Inventario unificado** de los modelos disponibles en cada proveedor del gateway, con specs (contexto, output, reasoning, tool-call) y benchmarks (SWE-Bench).
 - **Precios comparativos** por MTok: plan Go, Zen (off-peak/peak) y OpenRouter (API real).
 - **Salud por modelo**: probes de disponibilidad + historial 14 días.
-- **Cadena de fallback** del gateway (hoy 5 eslabones: 1 primary + 4 fallbacks; el sync puede generar hasta 6) y **cuota Go** (buckets continuo/semanal/mensual).
+- **Cadena de fallback** del gateway (hoy 4 eslabones: 1 primary + 3 fallbacks; el sync puede generar hasta 6) y **cuota Go** (buckets continuo/semanal/mensual).
 - Todo se genera automáticamente en cada refresh; la web se despliega sola.
 
 ## Estructura del repo
@@ -24,7 +24,7 @@ Catálogo de modelos del gateway OpenClaw con **tres proveedores**: **opencode-g
 | `status_history.json` | Serie temporal diaria (retención 120 días) |
 | `catalog-history.json` | Snapshots del catálogo + altas/bajas |
 | `health-state.json` | Resumen por proveedor + cuota Go + guardias de saldo (booleanos) |
-| `limits.json` | Límites/precios manuales (OpenCode no expone API) |
+| `limits.json` | Límites/precios manuales (OpenCode no expone API) — verificado 2026-10-14 contra `https://opencode.ai/docs/go/` |
 | `changelog-auto.json` / `changelog-manual.json` | Eventos automáticos y manuales |
 
 ## Qué NO se versiona (fuera del repo)
@@ -33,7 +33,7 @@ Catálogo de modelos del gateway OpenClaw con **tres proveedores**: **opencode-g
 - **`docs/` (históricos de decisión)**: `docs/redesign-f5.md` se movió fuera del repo a `/root/.openclaw/workspace/docs/` — es un histórico estático de decisión de diseño, no se regenera ni lo consume la web, así que no pertenece a un repo público de catálogo.
 - **Scripts de build/refresh**: viven en `/root/.openclaw/workspace/scripts/` (fuera del repo). Solo sus *outputs* (`data.json`, `aliases.json`, `modelsdev.json`, `status*.json`, `health-state.json`, `catalog-history.json`, `changelog-auto.json`, `limits.json`) se versionan porque los regenera el refresh y/o los fetch la web.
 
-> Nota: los `*.json` generados por el refresh se reconstruyen solos en cada ciclo (cada 8h) y se commitean vía `git add -A`. No se eliminan del repo: si se quitaran, el próximo refresh los recrearía y volverían a aparecer. La web los consume por `fetch`, salvo `modelsdev.json`/`aliases.json`/`health-state.json` (usados internamente por el build/refresh, no por el navegador).
+> Nota: los `*.json` generados por el refresh se reconstruyen solos en cada ciclo (una vez al día, 05:45 Europe/Madrid) y se commitean vía `git add -A`. No se eliminan del repo: si se quitaran, el próximo refresh los recrearía y volverían a aparecer. La web los consume por `fetch`, salvo `modelsdev.json`/`aliases.json`/`health-state.json` (usados internamente por el build/refresh, no por el navegador).
 
 ## Regenerar datos
 
