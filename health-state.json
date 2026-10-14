@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-14T19:31:31.167581+00:00",
+ "generated": "2026-10-14T19:48:18.804948+00:00",
  "snapshot": "2026-10-14",
  "fuente": "check-model-health.py F3 (2026-08-24)",
  "providers": {
@@ -32,28 +32,27 @@
   "noprobe": 47
  },
  "go_quota": {
-  "badge": "⚠️ Cuota Go agotada (Semanal 100%)",
-  "nivel": "cuota",
-  "source": "fallback-hardcodeado",
-  "note": "API /zen/go/v1/usage no accesible — valores hardcodeados del último estado verificado (2026-08-23); actualizar GO_USAGE_FALLBACK",
+  "badge": "⚠️ Cuota Go casi agotada (Mensual 96%)",
+  "nivel": "critica",
+  "source": "api",
   "buckets": {
    "rolling": {
-    "percent": 0,
+    "percent": 2,
     "status": "ok",
-    "resets_in_human": "~5h",
-    "resets_at": null
+    "resets_at": "2026-10-15T00:07:42.000Z",
+    "resets_in_human": "4h 19m"
    },
    "weekly": {
-    "percent": 100,
-    "status": "agotada",
-    "resets_in_human": "2h 8m",
-    "resets_at": null
+    "percent": 10,
+    "status": "ok",
+    "resets_at": "2026-10-19T00:00:00.000Z",
+    "resets_in_human": "100h 12m"
    },
    "monthly": {
-    "percent": 95,
+    "percent": 96,
     "status": "critica",
-    "resets_in_human": "10h 28m",
-    "resets_at": null
+    "resets_at": "2026-10-24T08:20:24.000Z",
+    "resets_in_human": "228h 32m"
    }
   }
  },

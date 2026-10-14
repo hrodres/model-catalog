@@ -6629,9 +6629,6 @@
    "go": [
     "cat-jam-free",
     "claude-haiku-5-5",
-    "deepseek-flash",
-    "deepseek-v4-flash",
-    "deepseek-v4-flash-vision-exp",
     "deepseek-v4-pro",
     "deepseek-v4.1-flash",
     "gemini-4-argon-contributor",
@@ -7062,6 +7059,16 @@
    "date": "2026-10-14",
    "type": "removed",
    "id": "ling-3.1-flash-free"
+  },
+  {
+   "date": "2026-10-14",
+   "type": "removed",
+   "id": "deepseek-flash"
+  },
+  {
+   "date": "2026-10-14",
+   "type": "removed",
+   "id": "deepseek-v4-flash-vision-exp"
   }
  ]
 }
