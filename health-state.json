@@ -1,14 +1,17 @@
 {
- "generated": "2026-10-14T19:48:18.804948+00:00",
+ "generated": "2026-10-14T20:24:58.357688+00:00",
  "snapshot": "2026-10-14",
  "fuente": "check-model-health.py F3 (2026-08-24)",
  "providers": {
   "opencode-go": {
    "enabled": 1,
    "probed": {
-    "unk": 39
+    "ok": 29,
+    "unk": 8,
+    "down": 1,
+    "cuota": 1
    },
-   "total": 1
+   "total": 4
   },
   "opencode-zen": {
    "enabled": 1,
@@ -27,7 +30,10 @@
   }
  },
  "counts": {
-  "unk": 39,
+  "ok": 29,
+  "unk": 8,
+  "down": 1,
+  "cuota": 1,
   "free": 43,
   "noprobe": 47
  },
@@ -37,22 +43,22 @@
   "source": "api",
   "buckets": {
    "rolling": {
-    "percent": 2,
+    "percent": 4,
     "status": "ok",
     "resets_at": "2026-10-15T00:07:42.000Z",
-    "resets_in_human": "4h 19m"
+    "resets_in_human": "3h 44m"
    },
    "weekly": {
-    "percent": 10,
+    "percent": 11,
     "status": "ok",
     "resets_at": "2026-10-19T00:00:00.000Z",
-    "resets_in_human": "100h 12m"
+    "resets_in_human": "99h 36m"
    },
    "monthly": {
     "percent": 96,
     "status": "critica",
     "resets_at": "2026-10-24T08:20:24.000Z",
-    "resets_in_human": "228h 32m"
+    "resets_in_human": "227h 56m"
    }
   }
  },
@@ -64,18 +70,18 @@
  "chain": [
   {
    "link": "opencode-go/deepseek-v4.1-flash",
-   "estado": "unk",
-   "detalle": "HTTP 400: no responde al probe estándar"
+   "estado": "ok",
+   "detalle": "HTTP 200"
   },
   {
    "link": "opencode-go/deepseek-v4-flash",
-   "estado": "unk",
-   "detalle": "HTTP 400: no responde al probe estándar"
+   "estado": "ok",
+   "detalle": "HTTP 200"
   },
   {
    "link": "opencode-go/hy3",
-   "estado": "unk",
-   "detalle": "HTTP 400: no responde al probe estándar"
+   "estado": "ok",
+   "detalle": "HTTP 200"
   },
   {
    "link": "openrouter/deepseek/deepseek-v4.1-flash",
@@ -87,8 +93,8 @@
   {
    "modelo": "cat-jam-free",
    "provider": "opencode-go",
-   "estado": "unk",
-   "detalle": "HTTP 400: no responde al probe estándar"
+   "estado": "ok",
+   "detalle": "HTTP 200"
   },
   {
    "modelo": "claude-haiku-5-5",
@@ -99,56 +105,56 @@
   {
    "modelo": "deepseek-flash",
    "provider": "opencode-go",
-   "estado": "unk",
-   "detalle": "HTTP 400: no responde al probe estándar"
+   "estado": "ok",
+   "detalle": "HTTP 200"
   },
   {
    "modelo": "deepseek-v4-flash",
    "provider": "opencode-go",
-   "estado": "unk",
-   "detalle": "HTTP 400: no responde al probe estándar"
+   "estado": "ok",
+   "detalle": "HTTP 200"
   },
   {
    "modelo": "deepseek-v4-flash-vision-exp",
    "provider": "opencode-go",
-   "estado": "unk",
-   "detalle": "HTTP 400: no responde al probe estándar"
+   "estado": "ok",
+   "detalle": "HTTP 200"
   },
   {
    "modelo": "deepseek-v4-pro",
    "provider": "opencode-go",
-   "estado": "unk",
-   "detalle": "HTTP 400: no responde al probe estándar"
+   "estado": "ok",
+   "detalle": "HTTP 200"
   },
   {
    "modelo": "deepseek-v4.1-flash",
    "provider": "opencode-go",
-   "estado": "unk",
-   "detalle": "HTTP 400: no responde al probe estándar"
+   "estado": "ok",
+   "detalle": "HTTP 200"
   },
   {
    "modelo": "glm-5.1",
    "provider": "opencode-go",
-   "estado": "unk",
-   "detalle": "HTTP 400: no responde al probe estándar"
+   "estado": "ok",
+   "detalle": "HTTP 200"
   },
   {
    "modelo": "glm-5.2",
    "provider": "opencode-go",
-   "estado": "unk",
-   "detalle": "HTTP 400: no responde al probe estándar"
+   "estado": "ok",
+   "detalle": "HTTP 200"
   },
   {
    "modelo": "glm-5.3",
    "provider": "opencode-go",
-   "estado": "unk",
-   "detalle": "HTTP 400: no responde al probe estándar"
+   "estado": "ok",
+   "detalle": "HTTP 200"
   },
   {
    "modelo": "glm-5.3-flash",
    "provider": "opencode-go",
-   "estado": "unk",
-   "detalle": "HTTP 400: no responde al probe estándar"
+   "estado": "ok",
+   "detalle": "HTTP 200"
   },
   {
    "modelo": "gpt-5.6-luna",
@@ -177,74 +183,74 @@
   {
    "modelo": "hy3",
    "provider": "opencode-go",
-   "estado": "unk",
-   "detalle": "HTTP 400: no responde al probe estándar"
+   "estado": "ok",
+   "detalle": "HTTP 200"
   },
   {
    "modelo": "hy4-preview",
    "provider": "opencode-go",
-   "estado": "unk",
-   "detalle": "HTTP 400: no responde al probe estándar"
+   "estado": "ok",
+   "detalle": "HTTP 200"
   },
   {
    "modelo": "kimi-k2.6",
    "provider": "opencode-go",
-   "estado": "unk",
-   "detalle": "HTTP 400: no responde al probe estándar"
+   "estado": "ok",
+   "detalle": "HTTP 200"
   },
   {
    "modelo": "kimi-k2.7-code",
    "provider": "opencode-go",
-   "estado": "unk",
-   "detalle": "HTTP 400: no responde al probe estándar"
+   "estado": "ok",
+   "detalle": "HTTP 200"
   },
   {
    "modelo": "kimi-k3",
    "provider": "opencode-go",
-   "estado": "unk",
-   "detalle": "HTTP 400: no responde al probe estándar"
+   "estado": "ok",
+   "detalle": "HTTP 200"
   },
   {
    "modelo": "longcat-2.0",
    "provider": "opencode-go",
-   "estado": "unk",
-   "detalle": "HTTP 400: no responde al probe estándar"
+   "estado": "ok",
+   "detalle": "HTTP 200"
   },
   {
    "modelo": "longcat-2.5-preview-free",
    "provider": "opencode-go",
-   "estado": "unk",
-   "detalle": "HTTP 400: no responde al probe estándar"
+   "estado": "ok",
+   "detalle": "HTTP 200"
   },
   {
    "modelo": "mimo-v2.5",
    "provider": "opencode-go",
-   "estado": "unk",
-   "detalle": "HTTP 400: no responde al probe estándar"
+   "estado": "ok",
+   "detalle": "HTTP 200"
   },
   {
    "modelo": "mimo-v2.5-pro",
    "provider": "opencode-go",
-   "estado": "unk",
-   "detalle": "HTTP 400: no responde al probe estándar"
+   "estado": "ok",
+   "detalle": "HTTP 200"
   },
   {
    "modelo": "mimo-v2.6-flash",
    "provider": "opencode-go",
-   "estado": "unk",
-   "detalle": "HTTP 400: no responde al probe estándar"
+   "estado": "ok",
+   "detalle": "HTTP 200"
   },
   {
    "modelo": "mimo-v2.6-pro",
    "provider": "opencode-go",
-   "estado": "unk",
-   "detalle": "HTTP 400: no responde al probe estándar"
+   "estado": "down",
+   "detalle": "ERR The read operation timed out"
   },
   {
    "modelo": "minimax-m2.5",
    "provider": "opencode-go",
-   "estado": "unk",
-   "detalle": "HTTP 400: no responde al probe estándar"
+   "estado": "ok",
+   "detalle": "HTTP 200"
   },
   {
    "modelo": "minimax-m2.7",
@@ -255,8 +261,8 @@
   {
    "modelo": "minimax-m3",
    "provider": "opencode-go",
-   "estado": "unk",
-   "detalle": "HTTP 400: no responde al probe estándar"
+   "estado": "ok",
+   "detalle": "HTTP 200"
   },
   {
    "modelo": "muse-spark-1.2-contributor",
@@ -273,50 +279,50 @@
   {
    "modelo": "omen-alpha",
    "provider": "opencode-go",
-   "estado": "unk",
-   "detalle": "HTTP 400: no responde al probe estándar"
+   "estado": "ok",
+   "detalle": "HTTP 200"
   },
   {
    "modelo": "qwen3.6-plus",
    "provider": "opencode-go",
-   "estado": "unk",
-   "detalle": "HTTP 400: no responde al probe estándar"
+   "estado": "ok",
+   "detalle": "HTTP 200"
   },
   {
    "modelo": "qwen3.7-max",
    "provider": "opencode-go",
-   "estado": "unk",
-   "detalle": "HTTP 400: no responde al probe estándar"
+   "estado": "ok",
+   "detalle": "HTTP 200"
   },
   {
    "modelo": "qwen3.7-plus",
    "provider": "opencode-go",
-   "estado": "unk",
-   "detalle": "HTTP 400: no responde al probe estándar"
+   "estado": "ok",
+   "detalle": "HTTP 200"
   },
   {
    "modelo": "qwen3.8-flash",
    "provider": "opencode-go",
-   "estado": "unk",
-   "detalle": "HTTP 400: no responde al probe estándar"
+   "estado": "ok",
+   "detalle": "HTTP 200"
   },
   {
    "modelo": "qwen3.8-max",
    "provider": "opencode-go",
-   "estado": "unk",
-   "detalle": "HTTP 400: no responde al probe estándar"
+   "estado": "ok",
+   "detalle": "HTTP 200"
   },
   {
    "modelo": "space-bunny",
    "provider": "opencode-go",
-   "estado": "unk",
-   "detalle": "HTTP 400: no responde al probe estándar"
+   "estado": "ok",
+   "detalle": "HTTP 200"
   },
   {
    "modelo": "step-5-preview-free",
    "provider": "opencode-go",
-   "estado": "unk",
-   "detalle": "HTTP 400: no responde al probe estándar"
+   "estado": "cuota",
+   "detalle": "429 cuota agotada / rate-limit"
   },
   {
    "modelo": "big-pickle",

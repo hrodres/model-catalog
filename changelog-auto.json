@@ -1,126 +1,6 @@
 {
  "events": [
   {
-   "date": "2026-08-27",
-   "text": "opencode-zen/minimax-m3: ok → noprobe"
-  },
-  {
-   "date": "2026-08-27",
-   "text": "opencode-zen/qwen3.5-plus: ok → noprobe"
-  },
-  {
-   "date": "2026-08-27",
-   "text": "opencode-zen/qwen3.6-plus: ok → noprobe"
-  },
-  {
-   "date": "2026-08-27",
-   "text": "openrouter/deepseek/deepseek-v4-flash: ok → noprobe"
-  },
-  {
-   "date": "2026-08-27",
-   "text": "openrouter/deepseek/deepseek-v4-pro: ok → noprobe"
-  },
-  {
-   "date": "2026-08-27",
-   "text": "openrouter/tencent/hy3: down → noprobe"
-  },
-  {
-   "date": "2026-08-28",
-   "text": "opencode-go/kimi-k3: ok → down"
-  },
-  {
-   "date": "2026-08-28",
-   "text": "opencode-go/mimo-v2.5: ok → down"
-  },
-  {
-   "date": "2026-08-28",
-   "text": "opencode-go/deepseek-v4-flash: ok → down"
-  },
-  {
-   "date": "2026-08-28",
-   "text": "opencode-go/mimo-v2.5-pro: ok → down"
-  },
-  {
-   "date": "2026-08-28",
-   "text": "opencode-go/deepseek-v4-flash: ok → down"
-  },
-  {
-   "date": "2026-08-28",
-   "text": "opencode-go/qwen3.5-plus: down → ok"
-  },
-  {
-   "date": "2026-08-28",
-   "text": "opencode-go/qwen3.5-plus: down → ok"
-  },
-  {
-   "date": "2026-08-28",
-   "text": "opencode-go/qwen3.5-plus: down → ok"
-  },
-  {
-   "date": "2026-08-28",
-   "text": "opencode-go/qwen3.7-max: ok → down"
-  },
-  {
-   "date": "2026-08-28",
-   "text": "opencode-go/qwen3.5-plus: down → ok"
-  },
-  {
-   "date": "2026-08-29",
-   "text": "opencode-go/qwen3.5-plus: ok → down"
-  },
-  {
-   "date": "2026-08-29",
-   "text": "opencode-go/qwen3.5-plus: ok → down"
-  },
-  {
-   "date": "2026-08-29",
-   "text": "opencode-go/qwen3.5-plus: ok → down"
-  },
-  {
-   "date": "2026-08-29",
-   "text": "opencode-go/mimo-v2.5-pro: ok → down"
-  },
-  {
-   "date": "2026-08-29",
-   "text": "opencode-go/qwen3.5-plus: ok → down"
-  },
-  {
-   "date": "2026-08-30",
-   "text": "opencode-go/qwen3.5-plus: ok → down"
-  },
-  {
-   "date": "2026-08-30",
-   "text": "opencode-go/kimi-k2.6: ok → down"
-  },
-  {
-   "date": "2026-08-30",
-   "text": "opencode-go/mimo-v2.5-pro: ok → down"
-  },
-  {
-   "date": "2026-08-30",
-   "text": "opencode-go/qwen3.5-plus: ok → down"
-  },
-  {
-   "date": "2026-08-30",
-   "text": "opencode-go/qwen3.5-plus: ok → down"
-  },
-  {
-   "date": "2026-08-31",
-   "text": "opencode-go/kimi-k3: ok → down"
-  },
-  {
-   "date": "2026-08-31",
-   "text": "opencode-go/mimo-v2.5: ok → down"
-  },
-  {
-   "date": "2026-08-31",
-   "text": "opencode-go/qwen3.8-flash: ok → down"
-  },
-  {
-   "date": "2026-08-31",
-   "text": "opencode-go/kimi-k2.6: ok → down"
-  },
-  {
    "date": "2026-08-31",
    "text": "opencode-go/mimo-v2.5: ok → down"
   },
@@ -1199,6 +1079,126 @@
   {
    "date": "2026-10-13",
    "text": "opencode-go/step-5-preview-free: na → unk"
+  },
+  {
+   "date": "2026-10-14",
+   "text": "opencode-go/deepseek-flash: unk → ok"
+  },
+  {
+   "date": "2026-10-14",
+   "text": "opencode-go/deepseek-v4-flash: unk → ok"
+  },
+  {
+   "date": "2026-10-14",
+   "text": "opencode-go/deepseek-v4-flash-vision-exp: unk → ok"
+  },
+  {
+   "date": "2026-10-14",
+   "text": "opencode-go/deepseek-v4-pro: unk → ok"
+  },
+  {
+   "date": "2026-10-14",
+   "text": "opencode-go/deepseek-v4.1-flash: unk → ok"
+  },
+  {
+   "date": "2026-10-14",
+   "text": "opencode-go/glm-5.1: unk → ok"
+  },
+  {
+   "date": "2026-10-14",
+   "text": "opencode-go/glm-5.2: unk → ok"
+  },
+  {
+   "date": "2026-10-14",
+   "text": "opencode-go/glm-5.3: unk → ok"
+  },
+  {
+   "date": "2026-10-14",
+   "text": "opencode-go/glm-5.3-flash: unk → ok"
+  },
+  {
+   "date": "2026-10-14",
+   "text": "opencode-go/hy3: unk → ok"
+  },
+  {
+   "date": "2026-10-14",
+   "text": "opencode-go/hy4-preview: unk → ok"
+  },
+  {
+   "date": "2026-10-14",
+   "text": "opencode-go/kimi-k2.6: unk → ok"
+  },
+  {
+   "date": "2026-10-14",
+   "text": "opencode-go/kimi-k2.7-code: unk → ok"
+  },
+  {
+   "date": "2026-10-14",
+   "text": "opencode-go/kimi-k3: unk → ok"
+  },
+  {
+   "date": "2026-10-14",
+   "text": "opencode-go/longcat-2.0: unk → ok"
+  },
+  {
+   "date": "2026-10-14",
+   "text": "opencode-go/longcat-2.5-preview-free: unk → ok"
+  },
+  {
+   "date": "2026-10-14",
+   "text": "opencode-go/mimo-v2.5: unk → ok"
+  },
+  {
+   "date": "2026-10-14",
+   "text": "opencode-go/mimo-v2.5-pro: unk → ok"
+  },
+  {
+   "date": "2026-10-14",
+   "text": "opencode-go/mimo-v2.6-flash: unk → ok"
+  },
+  {
+   "date": "2026-10-14",
+   "text": "opencode-go/mimo-v2.6-pro: unk → down"
+  },
+  {
+   "date": "2026-10-14",
+   "text": "opencode-go/minimax-m2.5: unk → ok"
+  },
+  {
+   "date": "2026-10-14",
+   "text": "opencode-go/minimax-m3: unk → ok"
+  },
+  {
+   "date": "2026-10-14",
+   "text": "opencode-go/omen-alpha: unk → ok"
+  },
+  {
+   "date": "2026-10-14",
+   "text": "opencode-go/qwen3.6-plus: unk → ok"
+  },
+  {
+   "date": "2026-10-14",
+   "text": "opencode-go/qwen3.7-max: unk → ok"
+  },
+  {
+   "date": "2026-10-14",
+   "text": "opencode-go/qwen3.7-plus: unk → ok"
+  },
+  {
+   "date": "2026-10-14",
+   "text": "opencode-go/qwen3.8-flash: unk → ok"
+  },
+  {
+   "date": "2026-10-14",
+   "text": "opencode-go/qwen3.8-max: unk → ok"
+  },
+  {
+   "date": "2026-10-14",
+   "text": "opencode-go/space-bunny: unk → ok"
+  },
+  {
+   "date": "2026-10-14",
+   "text": "opencode-go/step-5-preview-free: unk → cuota"
   }
  ]
 }
