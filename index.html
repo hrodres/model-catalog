@@ -170,6 +170,8 @@
   .info-note code{font-family:ui-monospace,monospace;font-size:.74rem;color:var(--accent)}
   .oc-note{font-size:.76rem;color:var(--muted);margin:8px 0;line-height:1.6}
   .oc-note a{color:var(--accent)}
+  .oc-note.warn-note{color:var(--amber);background:rgba(251,191,36,.08);border:1px solid rgba(251,191,36,.28);border-radius:10px;padding:9px 11px}
+  .kpi-warn{color:var(--amber);font-weight:700}
 
   /* ── Timeline (novedades) ── */
   .timeline{list-style:none;max-height:420px;overflow-y:auto;margin-top:8px}
@@ -303,7 +305,7 @@
       <div class="kpi">
         <div class="kpi-top"><span class="sema" id="kpi-quota-sema"></span> Cuota Go mensual</div>
         <div class="kpi-val" id="kpi-quota">…</div>
-        <div class="kpi-foot">reinicia en <span id="kpi-quota-reset">—</span></div>
+        <div class="kpi-foot">reinicia en <span id="kpi-quota-reset">—</span><span id="kpi-quota-warn"></span></div>
       </div>
       <div class="kpi">
         <div class="kpi-top">💰 Precio desde</div>
@@ -635,6 +637,8 @@ function renderSummary() {
     $('#kpi-quota-sema').className = 'sema ' + (mb.status === 'ok' ? 'ok' : mb.status === 'warn' ? 'warn' : 'down');
   }
   $('#kpi-quota-reset').textContent = mb.resets_in_human || '—';
+  // Marca de procedencia en el KPI: el número grande no debe parecer fresco si no lo es.
+  $('#kpi-quota-warn').innerHTML = quotaFreshnessShort(gq);
 
   const pr = (DATA.status_badges && DATA.status_badges.providers) || {};
   const stats = DATA.status_badges ? DATA.status_badges.providers : null;
@@ -803,10 +807,54 @@ function renderQuota() {
     '<div class="hs-card ' + (gq.nivel === 'ok' ? 'ok' : gq.nivel === 'warn' ? 'down' : 'na') + '"><b>Go</b><span>' + esc(gq.badge || '—') + '</span></div>' +
     '<div class="hs-card ' + (orOk ? 'ok' : 'na') + '"><b>🟠 OR</b><span>' + (orOk ? 'operativo (' + orProbed + ')' : 'sin datos') + '</span></div>' +
     '</div>';
+  // Procedencia y edad del dato de cuota: un fallback o una foto vieja NO debe
+  // pintarse igual que una lectura fresca de la API.
+  h += quotaFreshnessHTML(gq);
   h += '<div class="info-note">🔒 Guardias de saldo (solo booleanos, sin importes): ' +
     'Zen paid ' + (bal.zen_paid_ok ? '✅' : '⚠️') + ' · OpenRouter ' + (bal.or_ok ? '✅' : '⚠️') + '</div>';
   if (bal.aviso) h += '<div class="oc-note">' + esc(bal.aviso) + '</div>';
   el.innerHTML = h;
+}
+
+function quotaFreshnessHTML(gq) {
+  const src = gq.source;
+  const isApi = src === 'api';
+  const isFallback = src === 'fallback-hardcodeado';
+  const age = gq.generated ? hoursSince(gq.generated) : null;
+  const stale = age != null && age >= 24;
+  let cls = 'info-note', txt;
+  if (isApi) {
+    txt = '📡 Cuota Go: lectura directa de la API' +
+      (age == null ? '' : ' · ' + (age < 1 ? 'hace menos de 1h' : 'hace ' + Math.floor(age) + 'h'));
+  } else if (isFallback) {
+    cls = 'oc-note warn-note';
+    txt = '⚠️ Cuota Go: valor de RESPALDO, no medido en vivo — la API no respondió. ' +
+      'Puede no reflejar tu uso real.';
+  } else {
+    cls = 'oc-note warn-note';
+    txt = '⚠️ Cuota Go: origen desconocido (' + esc(src || '—') + ') — trátalo con cautela.';
+  }
+  if (stale && isApi) {
+    cls = 'oc-note warn-note';
+    txt += ' ⚠️ Dato de hace ' + Math.floor(age) + 'h: la web se refresca una vez al día ' +
+      '(05:50 Madrid); para el valor exacto, la consola de OpenCode.';
+  }
+  return '<div class="' + cls + '">' + txt + '</div>';
+}
+
+function hoursSince(iso) {
+  if (!iso) return null;
+  const t = Date.parse(iso);
+  if (isNaN(t)) return null;
+  return (Date.now() - t) / 3600000;
+}
+
+function quotaFreshnessShort(gq) {
+  if (!gq || !gq.source) return ' <span class="kpi-warn">⚠️ sin origen</span>';
+  if (gq.source === 'fallback-hardcodeado') return ' <span class="kpi-warn">⚠️ respaldo</span>';
+  const age = gq.generated ? hoursSince(gq.generated) : null;
+  if (age != null && age >= 24) return ' <span class="kpi-warn">⚠️ hace ' + Math.floor(age) + 'h</span>';
+  return '';
 }
 
 /* ───────── Salud ───────── */
