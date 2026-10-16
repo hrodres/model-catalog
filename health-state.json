@@ -1,21 +1,20 @@
 {
- "generated": "2026-10-15T03:51:13.528945+00:00",
- "snapshot": "2026-10-15",
+ "generated": "2026-10-16T03:51:08.066353+00:00",
+ "snapshot": "2026-10-16",
  "fuente": "check-model-health.py F3 (2026-08-24)",
  "providers": {
   "opencode-go": {
    "enabled": 1,
    "probed": {
-    "ok": 27,
-    "unk": 9,
-    "down": 1
+    "ok": 28,
+    "unk": 9
    },
-   "total": 3
+   "total": 2
   },
   "opencode-zen": {
    "enabled": 1,
    "probed": {
-    "free": 42,
+    "free": 43,
     "noprobe": 43
    },
    "total": 2
@@ -29,34 +28,33 @@
   }
  },
  "counts": {
-  "ok": 27,
+  "ok": 28,
   "unk": 9,
-  "down": 1,
-  "free": 42,
+  "free": 43,
   "noprobe": 46
  },
  "go_quota": {
-  "badge": "⚠️ Cuota Go casi agotada (Mensual 96%)",
+  "badge": "⚠️ Cuota Go casi agotada (Mensual 97%)",
   "nivel": "critica",
   "source": "api",
   "buckets": {
    "rolling": {
     "percent": 0,
     "status": "ok",
-    "resets_at": "2026-10-15T08:00:33.000Z",
+    "resets_at": "2026-10-16T08:00:32.000Z",
     "resets_in_human": "4h 10m"
    },
    "weekly": {
     "percent": 11,
     "status": "ok",
     "resets_at": "2026-10-19T00:00:00.000Z",
-    "resets_in_human": "92h 9m"
+    "resets_in_human": "68h 9m"
    },
    "monthly": {
-    "percent": 96,
+    "percent": 97,
     "status": "critica",
     "resets_at": "2026-10-24T08:20:24.000Z",
-    "resets_in_human": "220h 30m"
+    "resets_in_human": "196h 30m"
    }
   }
  },
@@ -103,8 +101,8 @@
   {
    "modelo": "deepseek-v4-pro",
    "provider": "opencode-go",
-   "estado": "down",
-   "detalle": "ERR The read operation timed out"
+   "estado": "ok",
+   "detalle": "HTTP 200"
   },
   {
    "modelo": "deepseek-v4.1-flash",
@@ -305,7 +303,7 @@
    "detalle": "HTTP 200"
   },
   {
-   "modelo": "step-5-preview-free",
+   "modelo": "step-5-preview",
    "provider": "opencode-go",
    "estado": "ok",
    "detalle": "HTTP 200"
@@ -426,6 +424,12 @@
   },
   {
    "modelo": "deepseek-v4.1-flash",
+   "provider": "opencode-zen",
+   "estado": "free",
+   "detalle": "no probado (protección cuota global free 100 req/día)"
+  },
+  {
+   "modelo": "deepseek-v4.1-flash-free",
    "provider": "opencode-zen",
    "estado": "free",
    "detalle": "no probado (protección cuota global free 100 req/día)"
@@ -779,6 +783,12 @@
    "detalle": "no probado (protección cuota global free 100 req/día)"
   },
   {
+   "modelo": "nemotron-3.5-super-vl-free",
+   "provider": "opencode-zen",
+   "estado": "free",
+   "detalle": "no probado (protección cuota global free 100 req/día)"
+  },
+  {
    "modelo": "qwen3.5-plus",
    "provider": "opencode-zen",
    "estado": "noprobe",
@@ -804,12 +814,6 @@
   },
   {
    "modelo": "space-bunny-free",
-   "provider": "opencode-zen",
-   "estado": "free",
-   "detalle": "no probado (protección cuota global free 100 req/día)"
-  },
-  {
-   "modelo": "step-5-preview-free",
    "provider": "opencode-zen",
    "estado": "free",
    "detalle": "no probado (protección cuota global free 100 req/día)"
