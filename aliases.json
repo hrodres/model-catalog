@@ -1,17 +1,17 @@
 {
- "generated": "2026-10-16T03:50:01.243556+00:00",
+ "generated": "2026-10-17T03:50:01.219159+00:00",
  "aliases": [
+  {
+   "id": "opencode-go/beam-free",
+   "alias": "🚀 Beam 1.0 501B A23B (Go)"
+  },
+  {
+   "id": "opencode-zen/beam-free",
+   "alias": "🌱 Beam 1.0 501B A23B (Zen free)"
+  },
   {
    "id": "opencode-zen/big-pickle",
    "alias": "🌱 big-pickle (Zen free)"
-  },
-  {
-   "id": "opencode-go/cat-jam-free",
-   "alias": "🚀 cat-jam-free (Go)"
-  },
-  {
-   "id": "opencode-zen/cat-jam-free",
-   "alias": "🌱 cat-jam-free (Zen free)"
   },
   {
    "id": "opencode-zen/claude-fable-5",
@@ -172,6 +172,10 @@
   {
    "id": "opencode-zen/glm-5.3-flash",
    "alias": "💰 GLM-5.3-Flash (Zen)"
+  },
+  {
+   "id": "opencode-zen/glm-5.3-flash-free",
+   "alias": "🌱 GLM-5.3-Flash (Zen free)"
   },
   {
    "id": "opencode-zen/gpt-5",
@@ -414,20 +418,12 @@
    "alias": "🚀 muse-spark-1.2-contributor (Go)"
   },
   {
-   "id": "opencode-zen/muse-spark-1.2-contributor-free",
-   "alias": "🌱 muse-spark-1.2-contributor-free (Zen free)"
-  },
-  {
    "id": "opencode-zen/muse-spark-1.3",
    "alias": "💰 Muse Spark 1.3 (Zen)"
   },
   {
    "id": "opencode-go/muse-spark-1.3-contributor",
    "alias": "🚀 muse-spark-1.3-contributor (Go)"
-  },
-  {
-   "id": "opencode-zen/muse-spark-1.3-contributor-free",
-   "alias": "🌱 muse-spark-1.3-contributor-free (Zen free)"
   },
   {
    "id": "opencode-zen/nemotron-3.5-lightning-free",

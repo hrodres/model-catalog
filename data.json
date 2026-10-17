@@ -1,13 +1,13 @@
 {
- "generated": "2026-10-16T03:50:01.243556+00:00",
- "snapshot": "2026-10-16 03:50 UTC",
+ "generated": "2026-10-17T03:50:01.219159+00:00",
+ "snapshot": "2026-10-17 03:50 UTC",
  "providers_3rd": [
   "opencode-go",
   "opencode-zen",
   "openrouter"
  ],
- "modelsdev_fetched": "2026-10-16 03:50 UTC",
- "modelsdev_count": 550,
+ "modelsdev_fetched": "2026-10-17 03:50 UTC",
+ "modelsdev_count": 552,
  "price_matrix": {
   "currency": "USD",
   "fetched": "2026-10-14T19:30:46.503996+00:00",
@@ -2351,8 +2351,8 @@
  },
  "chain_method": "Modelo primario: opencode-go/deepseek-v4.1-flash.\nSi el primero falla, se prueba el siguiente automáticamente (cascada de respaldo).\nCadena activa: 3 Go · 0 Zen free · 0 Zen paid · 1 OpenRouter (leída de agents.defaults.model).\n✅ Cadena sin Zen paid: 0 crédito de pago de Zen en cualquier escalón.\nGo y Zen free no consumen crédito de pago; OpenRouter solo en cascada de fallo.",
  "chain_snapshot": {
-  "generated_at": "2026-10-16T03:50:01.242987+00:00",
-  "snapshot": "2026-10-16 03:50 UTC",
+  "generated_at": "2026-10-17T03:50:01.217851+00:00",
+  "snapshot": "2026-10-17 03:50 UTC",
   "source": "agents.defaults.model en openclaw.json (leída en build)",
   "links": [
    {
@@ -2379,31 +2379,31 @@
  },
  "status_badges": {
   "go_quota": {
-   "badge": "⚠️ Cuota Go casi agotada (Mensual 96%)",
+   "badge": "⚠️ Cuota Go casi agotada (Mensual 97%)",
    "nivel": "critica",
    "source": "api",
    "buckets": {
     "rolling": {
      "percent": 0,
      "status": "ok",
-     "resets_at": "2026-10-15T08:00:33.000Z",
+     "resets_at": "2026-10-16T08:00:32.000Z",
      "resets_in_human": "4h 10m"
     },
     "weekly": {
      "percent": 11,
      "status": "ok",
      "resets_at": "2026-10-19T00:00:00.000Z",
-     "resets_in_human": "92h 9m"
+     "resets_in_human": "68h 9m"
     },
     "monthly": {
-     "percent": 96,
+     "percent": 97,
      "status": "critica",
      "resets_at": "2026-10-24T08:20:24.000Z",
-     "resets_in_human": "220h 30m"
+     "resets_in_human": "196h 30m"
     }
    },
-   "generated": "2026-10-15T03:51:13.528945+00:00",
-   "snapshot": "2026-10-15"
+   "generated": "2026-10-16T03:51:08.066353+00:00",
+   "snapshot": "2026-10-16"
   },
   "balances": {
    "zen_paid_ok": true,
@@ -2414,16 +2414,15 @@
    "opencode-go": {
     "enabled": 1,
     "probed": {
-     "ok": 27,
-     "unk": 9,
-     "down": 1
+     "ok": 28,
+     "unk": 9
     },
-    "total": 3
+    "total": 2
    },
    "opencode-zen": {
     "enabled": 1,
     "probed": {
-     "free": 42,
+     "free": 43,
      "noprobe": 43
     },
     "total": 2
@@ -2438,14 +2437,63 @@
   }
  },
  "counts": {
-  "total": 101,
+  "total": 100,
   "go": 37,
-  "zen": 86,
-  "free": 11,
+  "zen": 85,
+  "free": 10,
   "openrouter": 8,
-  "with_modelsdev": 88
+  "with_modelsdev": 90
  },
  "models": [
+  {
+   "id": "beam-free",
+   "providers": {
+    "go": true,
+    "zen": true,
+    "free": true,
+    "or": false
+   },
+   "or_id": null,
+   "or_price": null,
+   "tier": "free",
+   "name": "Beam 1.0 501B A23B",
+   "desc": "Sparse mixture-of-experts reasoning model with 23B active parameters for coding and agentic workflows",
+   "context": 1048576,
+   "output": 131072,
+   "reasoning": true,
+   "tool_call": true,
+   "structured": true,
+   "multimodal": false,
+   "open_weights": true,
+   "release": "2026-10-05",
+   "last_updated": "2026-10-16",
+   "knowledge": "2026-06-30",
+   "swebench": 81.6,
+   "benchmarks": {
+    "DeepSWE": 43.3,
+    "SWE-Bench Pro": 66.1,
+    "Terminal-Bench": 80.1,
+    "SWE-Atlas Codebase QnA": 31.8,
+    "SWE-Bench Multilingual": 78.3,
+    "SWE-Bench Verified": 81.6,
+    "AIME 2026": 97.7,
+    "Humanity's Last Exam": 51.1,
+    "SciCode": 49.2,
+    "CritPt": 16.3,
+    "GPQA Diamond": 90.6,
+    "LiveCodeBench": 88.3,
+    "AutomationBench": 39.3,
+    "MCP Atlas": 80.8,
+    "τ3 Banking": 36.1,
+    "BrowseComp": 76.8,
+    "DeepSearchQA": 80.5,
+    "AA-LCR": 78.2,
+    "LongBench": 67.5,
+    "IFBench": 79.6,
+    "AA-Omniscience": 10.8
+   },
+   "md_url": "https://models.dev/models/reflection/beam-1.0-501b-a23b"
+  },
   {
    "id": "big-pickle",
    "providers": {
@@ -2458,33 +2506,6 @@
    "or_price": null,
    "tier": "free",
    "name": "big-pickle",
-   "desc": "Sin ficha en models.dev (solo catálogo opencode)",
-   "context": null,
-   "output": null,
-   "reasoning": null,
-   "tool_call": null,
-   "structured": null,
-   "multimodal": null,
-   "open_weights": null,
-   "release": "",
-   "last_updated": "",
-   "knowledge": "",
-   "swebench": null,
-   "benchmarks": {},
-   "md_url": null
-  },
-  {
-   "id": "cat-jam-free",
-   "providers": {
-    "go": true,
-    "zen": true,
-    "free": true,
-    "or": false
-   },
-   "or_id": null,
-   "or_price": null,
-   "tier": "free",
-   "name": "cat-jam-free",
    "desc": "Sin ficha en models.dev (solo catálogo opencode)",
    "context": null,
    "output": null,
@@ -3679,6 +3700,40 @@
    "or_id": null,
    "or_price": null,
    "tier": "paid",
+   "name": "GLM-5.3-Flash",
+   "desc": "Native multimodal GLM model for efficient coding and long-horizon agent tasks",
+   "context": 1000000,
+   "output": 131072,
+   "reasoning": true,
+   "tool_call": true,
+   "structured": true,
+   "multimodal": true,
+   "open_weights": true,
+   "release": "2026-08-26",
+   "last_updated": "2026-08-26",
+   "knowledge": "",
+   "swebench": null,
+   "benchmarks": {
+    "Terminal-Bench": 84.3,
+    "DeepSWE": 63.4,
+    "Agents' Last Exam": 26.3,
+    "AutomationBench": 48.8,
+    "Humanity's Last Exam": 55.3,
+    "GDPval-AA": 1773
+   },
+   "md_url": "https://models.dev/models/zhipuai/glm-5.3-flash"
+  },
+  {
+   "id": "glm-5.3-flash-free",
+   "providers": {
+    "go": false,
+    "zen": true,
+    "free": true,
+    "or": false
+   },
+   "or_id": null,
+   "or_price": null,
+   "tier": "free",
    "name": "GLM-5.3-Flash",
    "desc": "Native multimodal GLM model for efficient coding and long-horizon agent tasks",
    "context": 1000000,
@@ -5402,33 +5457,6 @@
    "md_url": null
   },
   {
-   "id": "muse-spark-1.2-contributor-free",
-   "providers": {
-    "go": false,
-    "zen": true,
-    "free": true,
-    "or": false
-   },
-   "or_id": null,
-   "or_price": null,
-   "tier": "free",
-   "name": "muse-spark-1.2-contributor-free",
-   "desc": "Sin ficha en models.dev (solo catálogo opencode)",
-   "context": null,
-   "output": null,
-   "reasoning": null,
-   "tool_call": null,
-   "structured": null,
-   "multimodal": null,
-   "open_weights": null,
-   "release": "",
-   "last_updated": "",
-   "knowledge": "",
-   "swebench": null,
-   "benchmarks": {},
-   "md_url": null
-  },
-  {
    "id": "muse-spark-1.3",
    "providers": {
     "go": false,
@@ -5478,33 +5506,6 @@
    "or_price": null,
    "tier": "go",
    "name": "muse-spark-1.3-contributor",
-   "desc": "Sin ficha en models.dev (solo catálogo opencode)",
-   "context": null,
-   "output": null,
-   "reasoning": null,
-   "tool_call": null,
-   "structured": null,
-   "multimodal": null,
-   "open_weights": null,
-   "release": "",
-   "last_updated": "",
-   "knowledge": "",
-   "swebench": null,
-   "benchmarks": {},
-   "md_url": null
-  },
-  {
-   "id": "muse-spark-1.3-contributor-free",
-   "providers": {
-    "go": false,
-    "zen": true,
-    "free": true,
-    "or": false
-   },
-   "or_id": null,
-   "or_price": null,
-   "tier": "free",
-   "name": "muse-spark-1.3-contributor-free",
    "desc": "Sin ficha en models.dev (solo catálogo opencode)",
    "context": null,
    "output": null,
