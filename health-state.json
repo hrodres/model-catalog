@@ -1,16 +1,14 @@
 {
- "generated": "2026-10-17T03:51:13.344524+00:00",
- "snapshot": "2026-10-17",
+ "generated": "2026-10-18T03:50:18.400593+00:00",
+ "snapshot": "2026-10-18",
  "fuente": "check-model-health.py F3 (2026-08-24)",
  "providers": {
   "opencode-go": {
    "enabled": 1,
    "probed": {
-    "ok": 27,
-    "unk": 9,
-    "down": 1
+    "na": 37
    },
-   "total": 3
+   "total": 1
   },
   "opencode-zen": {
    "enabled": 1,
@@ -29,34 +27,33 @@
   }
  },
  "counts": {
-  "ok": 27,
-  "unk": 9,
-  "down": 1,
+  "na": 37,
   "free": 42,
   "noprobe": 46
  },
  "go_quota": {
-  "badge": "⚠️ Cuota Go casi agotada (Mensual 97%)",
-  "nivel": "critica",
-  "source": "api",
+  "badge": "⚠️ Cuota Go agotada (Semanal 100%)",
+  "nivel": "cuota",
+  "source": "fallback-hardcodeado",
+  "note": "API /zen/go/v1/usage no accesible — valores hardcodeados del último estado verificado (2026-08-23); actualizar GO_USAGE_FALLBACK",
   "buckets": {
    "rolling": {
     "percent": 0,
     "status": "ok",
-    "resets_at": "2026-10-17T08:00:28.000Z",
-    "resets_in_human": "4h 10m"
+    "resets_in_human": "~5h",
+    "resets_at": null
    },
    "weekly": {
-    "percent": 12,
-    "status": "ok",
-    "resets_at": "2026-10-19T00:00:00.000Z",
-    "resets_in_human": "44h 9m"
+    "percent": 100,
+    "status": "agotada",
+    "resets_in_human": "2h 8m",
+    "resets_at": null
    },
    "monthly": {
-    "percent": 97,
+    "percent": 95,
     "status": "critica",
-    "resets_at": "2026-10-24T08:20:24.000Z",
-    "resets_in_human": "172h 30m"
+    "resets_in_human": "10h 28m",
+    "resets_at": null
    }
   }
  },
@@ -68,8 +65,8 @@
  "chain": [
   {
    "link": "opencode-go/deepseek-v4.1-flash",
-   "estado": "ok",
-   "detalle": "HTTP 200"
+   "estado": "na",
+   "detalle": "HTTP 401: no accesible con tu plan/key"
   },
   {
    "link": "opencode-go/deepseek-v4-flash",
@@ -78,8 +75,8 @@
   },
   {
    "link": "opencode-go/hy3",
-   "estado": "ok",
-   "detalle": "HTTP 200"
+   "estado": "na",
+   "detalle": "HTTP 401: no accesible con tu plan/key"
   },
   {
    "link": "openrouter/deepseek/deepseek-v4.1-flash",
@@ -91,224 +88,224 @@
   {
    "modelo": "beam-free",
    "provider": "opencode-go",
-   "estado": "ok",
-   "detalle": "HTTP 200"
+   "estado": "na",
+   "detalle": "HTTP 401: no accesible con tu plan/key"
   },
   {
    "modelo": "claude-haiku-5-5",
    "provider": "opencode-go",
-   "estado": "unk",
-   "detalle": "HTTP 400: no responde al probe estándar"
+   "estado": "na",
+   "detalle": "HTTP 401: no accesible con tu plan/key"
   },
   {
    "modelo": "deepseek-v4-pro",
    "provider": "opencode-go",
-   "estado": "ok",
-   "detalle": "HTTP 200"
+   "estado": "na",
+   "detalle": "HTTP 401: no accesible con tu plan/key"
   },
   {
    "modelo": "deepseek-v4.1-flash",
    "provider": "opencode-go",
-   "estado": "ok",
-   "detalle": "HTTP 200"
+   "estado": "na",
+   "detalle": "HTTP 401: no accesible con tu plan/key"
   },
   {
    "modelo": "gemini-4-argon-contributor",
    "provider": "opencode-go",
-   "estado": "unk",
-   "detalle": "HTTP 400: no responde al probe estándar"
+   "estado": "na",
+   "detalle": "HTTP 401: no accesible con tu plan/key"
   },
   {
    "modelo": "glm-5.1",
    "provider": "opencode-go",
-   "estado": "ok",
-   "detalle": "HTTP 200"
+   "estado": "na",
+   "detalle": "HTTP 401: no accesible con tu plan/key"
   },
   {
    "modelo": "glm-5.2",
    "provider": "opencode-go",
-   "estado": "ok",
-   "detalle": "HTTP 200"
+   "estado": "na",
+   "detalle": "HTTP 401: no accesible con tu plan/key"
   },
   {
    "modelo": "glm-5.3",
    "provider": "opencode-go",
-   "estado": "ok",
-   "detalle": "HTTP 200"
+   "estado": "na",
+   "detalle": "HTTP 401: no accesible con tu plan/key"
   },
   {
    "modelo": "glm-5.3-flash",
    "provider": "opencode-go",
-   "estado": "ok",
-   "detalle": "HTTP 200"
+   "estado": "na",
+   "detalle": "HTTP 401: no accesible con tu plan/key"
   },
   {
    "modelo": "gpt-5.6-luna",
    "provider": "opencode-go",
-   "estado": "unk",
-   "detalle": "HTTP 400: no responde al probe estándar"
+   "estado": "na",
+   "detalle": "HTTP 401: no accesible con tu plan/key"
   },
   {
    "modelo": "gpt-6-luna",
    "provider": "opencode-go",
-   "estado": "unk",
-   "detalle": "HTTP 400: no responde al probe estándar"
+   "estado": "na",
+   "detalle": "HTTP 401: no accesible con tu plan/key"
   },
   {
    "modelo": "grok-4.6",
    "provider": "opencode-go",
-   "estado": "unk",
-   "detalle": "HTTP 400: no responde al probe estándar"
+   "estado": "na",
+   "detalle": "HTTP 401: no accesible con tu plan/key"
   },
   {
    "modelo": "grok-4.7",
    "provider": "opencode-go",
-   "estado": "unk",
-   "detalle": "HTTP 400: no responde al probe estándar"
+   "estado": "na",
+   "detalle": "HTTP 401: no accesible con tu plan/key"
   },
   {
    "modelo": "hy3",
    "provider": "opencode-go",
-   "estado": "ok",
-   "detalle": "HTTP 200"
+   "estado": "na",
+   "detalle": "HTTP 401: no accesible con tu plan/key"
   },
   {
    "modelo": "hy4-preview",
    "provider": "opencode-go",
-   "estado": "ok",
-   "detalle": "HTTP 200"
+   "estado": "na",
+   "detalle": "HTTP 401: no accesible con tu plan/key"
   },
   {
    "modelo": "kimi-k2.6",
    "provider": "opencode-go",
-   "estado": "ok",
-   "detalle": "HTTP 200"
+   "estado": "na",
+   "detalle": "HTTP 401: no accesible con tu plan/key"
   },
   {
    "modelo": "kimi-k2.7-code",
    "provider": "opencode-go",
-   "estado": "ok",
-   "detalle": "HTTP 200"
+   "estado": "na",
+   "detalle": "HTTP 401: no accesible con tu plan/key"
   },
   {
    "modelo": "kimi-k3",
    "provider": "opencode-go",
-   "estado": "ok",
-   "detalle": "HTTP 200"
+   "estado": "na",
+   "detalle": "HTTP 401: no accesible con tu plan/key"
   },
   {
    "modelo": "longcat-2.0",
    "provider": "opencode-go",
-   "estado": "ok",
-   "detalle": "HTTP 200"
+   "estado": "na",
+   "detalle": "HTTP 401: no accesible con tu plan/key"
   },
   {
    "modelo": "longcat-2.5-preview-free",
    "provider": "opencode-go",
-   "estado": "ok",
-   "detalle": "HTTP 200"
+   "estado": "na",
+   "detalle": "HTTP 401: no accesible con tu plan/key"
   },
   {
    "modelo": "mimo-v2.5",
    "provider": "opencode-go",
-   "estado": "ok",
-   "detalle": "HTTP 200"
+   "estado": "na",
+   "detalle": "HTTP 401: no accesible con tu plan/key"
   },
   {
    "modelo": "mimo-v2.5-pro",
    "provider": "opencode-go",
-   "estado": "ok",
-   "detalle": "HTTP 200"
+   "estado": "na",
+   "detalle": "HTTP 401: no accesible con tu plan/key"
   },
   {
    "modelo": "mimo-v2.6-flash",
    "provider": "opencode-go",
-   "estado": "ok",
-   "detalle": "HTTP 200"
+   "estado": "na",
+   "detalle": "HTTP 401: no accesible con tu plan/key"
   },
   {
    "modelo": "mimo-v2.6-pro",
    "provider": "opencode-go",
-   "estado": "down",
-   "detalle": "ERR The read operation timed out"
+   "estado": "na",
+   "detalle": "HTTP 401: no accesible con tu plan/key"
   },
   {
    "modelo": "minimax-m2.5",
    "provider": "opencode-go",
-   "estado": "ok",
-   "detalle": "HTTP 200"
+   "estado": "na",
+   "detalle": "HTTP 401: no accesible con tu plan/key"
   },
   {
    "modelo": "minimax-m2.7",
    "provider": "opencode-go",
-   "estado": "unk",
-   "detalle": "HTTP 400: no responde al probe estándar"
+   "estado": "na",
+   "detalle": "HTTP 401: no accesible con tu plan/key"
   },
   {
    "modelo": "minimax-m3",
    "provider": "opencode-go",
-   "estado": "ok",
-   "detalle": "HTTP 200"
+   "estado": "na",
+   "detalle": "HTTP 401: no accesible con tu plan/key"
   },
   {
    "modelo": "muse-spark-1.2-contributor",
    "provider": "opencode-go",
-   "estado": "unk",
-   "detalle": "HTTP 400: no responde al probe estándar"
+   "estado": "na",
+   "detalle": "HTTP 401: no accesible con tu plan/key"
   },
   {
    "modelo": "muse-spark-1.3-contributor",
    "provider": "opencode-go",
-   "estado": "unk",
-   "detalle": "HTTP 400: no responde al probe estándar"
+   "estado": "na",
+   "detalle": "HTTP 401: no accesible con tu plan/key"
   },
   {
    "modelo": "omen-alpha",
    "provider": "opencode-go",
-   "estado": "ok",
-   "detalle": "HTTP 200"
+   "estado": "na",
+   "detalle": "HTTP 401: no accesible con tu plan/key"
   },
   {
    "modelo": "qwen3.6-plus",
    "provider": "opencode-go",
-   "estado": "ok",
-   "detalle": "HTTP 200"
+   "estado": "na",
+   "detalle": "HTTP 401: no accesible con tu plan/key"
   },
   {
    "modelo": "qwen3.7-max",
    "provider": "opencode-go",
-   "estado": "ok",
-   "detalle": "HTTP 200"
+   "estado": "na",
+   "detalle": "HTTP 401: no accesible con tu plan/key"
   },
   {
    "modelo": "qwen3.7-plus",
    "provider": "opencode-go",
-   "estado": "ok",
-   "detalle": "HTTP 200"
+   "estado": "na",
+   "detalle": "HTTP 401: no accesible con tu plan/key"
   },
   {
    "modelo": "qwen3.8-flash",
    "provider": "opencode-go",
-   "estado": "ok",
-   "detalle": "HTTP 200"
+   "estado": "na",
+   "detalle": "HTTP 401: no accesible con tu plan/key"
   },
   {
    "modelo": "qwen3.8-max",
    "provider": "opencode-go",
-   "estado": "ok",
-   "detalle": "HTTP 200"
+   "estado": "na",
+   "detalle": "HTTP 401: no accesible con tu plan/key"
   },
   {
    "modelo": "space-bunny",
    "provider": "opencode-go",
-   "estado": "ok",
-   "detalle": "HTTP 200"
+   "estado": "na",
+   "detalle": "HTTP 401: no accesible con tu plan/key"
   },
   {
    "modelo": "step-5-preview",
    "provider": "opencode-go",
-   "estado": "ok",
-   "detalle": "HTTP 200"
+   "estado": "na",
+   "detalle": "HTTP 401: no accesible con tu plan/key"
   },
   {
    "modelo": "beam-free",

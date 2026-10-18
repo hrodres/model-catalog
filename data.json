@@ -1,13 +1,13 @@
 {
- "generated": "2026-10-17T03:50:01.219159+00:00",
- "snapshot": "2026-10-17 03:50 UTC",
+ "generated": "2026-10-18T03:50:01.099546+00:00",
+ "snapshot": "2026-10-18 03:50 UTC",
  "providers_3rd": [
   "opencode-go",
   "opencode-zen",
   "openrouter"
  ],
- "modelsdev_fetched": "2026-10-17 03:50 UTC",
- "modelsdev_count": 552,
+ "modelsdev_fetched": "2026-10-18 03:50 UTC",
+ "modelsdev_count": 553,
  "price_matrix": {
   "currency": "USD",
   "fetched": "2026-10-14T19:30:46.503996+00:00",
@@ -2351,8 +2351,8 @@
  },
  "chain_method": "Modelo primario: opencode-go/deepseek-v4.1-flash.\nSi el primero falla, se prueba el siguiente automáticamente (cascada de respaldo).\nCadena activa: 3 Go · 0 Zen free · 0 Zen paid · 1 OpenRouter (leída de agents.defaults.model).\n✅ Cadena sin Zen paid: 0 crédito de pago de Zen en cualquier escalón.\nGo y Zen free no consumen crédito de pago; OpenRouter solo en cascada de fallo.",
  "chain_snapshot": {
-  "generated_at": "2026-10-17T03:50:01.217851+00:00",
-  "snapshot": "2026-10-17 03:50 UTC",
+  "generated_at": "2026-10-18T03:50:01.098257+00:00",
+  "snapshot": "2026-10-18 03:50 UTC",
   "source": "agents.defaults.model en openclaw.json (leída en build)",
   "links": [
    {
@@ -2386,24 +2386,24 @@
     "rolling": {
      "percent": 0,
      "status": "ok",
-     "resets_at": "2026-10-16T08:00:32.000Z",
+     "resets_at": "2026-10-17T08:00:28.000Z",
      "resets_in_human": "4h 10m"
     },
     "weekly": {
-     "percent": 11,
+     "percent": 12,
      "status": "ok",
      "resets_at": "2026-10-19T00:00:00.000Z",
-     "resets_in_human": "68h 9m"
+     "resets_in_human": "44h 9m"
     },
     "monthly": {
      "percent": 97,
      "status": "critica",
      "resets_at": "2026-10-24T08:20:24.000Z",
-     "resets_in_human": "196h 30m"
+     "resets_in_human": "172h 30m"
     }
    },
-   "generated": "2026-10-16T03:51:08.066353+00:00",
-   "snapshot": "2026-10-16"
+   "generated": "2026-10-17T03:51:13.344524+00:00",
+   "snapshot": "2026-10-17"
   },
   "balances": {
    "zen_paid_ok": true,
@@ -2414,15 +2414,16 @@
    "opencode-go": {
     "enabled": 1,
     "probed": {
-     "ok": 28,
-     "unk": 9
+     "ok": 27,
+     "unk": 9,
+     "down": 1
     },
-    "total": 2
+    "total": 3
    },
    "opencode-zen": {
     "enabled": 1,
     "probed": {
-     "free": 43,
+     "free": 42,
      "noprobe": 43
     },
     "total": 2
