@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-18T03:50:01.099546+00:00",
+ "generated": "2026-10-19T03:50:01.070675+00:00",
  "aliases": [
   {
    "id": "opencode-go/beam-free",
@@ -107,7 +107,7 @@
   },
   {
    "id": "opencode-zen/gemini-3.1-pro",
-   "alias": "💰 Gemini 3.1 Pro Preview (Zen)"
+   "alias": "💰 Gemini 3.1 Pro Preview Custom Tools (Zen)"
   },
   {
    "id": "opencode-zen/gemini-3.5-flash",
@@ -487,7 +487,7 @@
   },
   {
    "id": "opencode-zen/test",
-   "alias": "💰 Gemini Flash Latest (Zen)"
+   "alias": "💰 GPT-5.2 Chat (Zen)"
   }
  ]
 }
