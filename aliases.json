@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-19T03:50:01.070675+00:00",
+ "generated": "2026-10-20T03:50:01.112361+00:00",
  "aliases": [
   {
    "id": "opencode-go/beam-free",
@@ -107,7 +107,7 @@
   },
   {
    "id": "opencode-zen/gemini-3.1-pro",
-   "alias": "💰 Gemini 3.1 Pro Preview Custom Tools (Zen)"
+   "alias": "💰 Gemini 3.1 Pro Preview (Zen)"
   },
   {
    "id": "opencode-zen/gemini-3.5-flash",
@@ -406,6 +406,14 @@
    "alias": "💰 MiniMax-M3 (Zen)"
   },
   {
+   "id": "opencode-go/minimax-m3.1-flash-free",
+   "alias": "🚀 MiniMax-M3.1-Flash (Go)"
+  },
+  {
+   "id": "opencode-zen/minimax-m3.1-flash-free",
+   "alias": "🌱 MiniMax-M3.1-Flash (Zen free)"
+  },
+  {
    "id": "opencode-zen/mistral-large-4",
    "alias": "💰 Mistral Large 4 (Zen)"
   },
@@ -474,20 +482,12 @@
    "alias": "💰 Qwen3.8 Max (Zen)"
   },
   {
-   "id": "opencode-go/space-bunny",
-   "alias": "🚀 space-bunny (Go)"
-  },
-  {
-   "id": "opencode-zen/space-bunny-free",
-   "alias": "🌱 space-bunny-free (Zen free)"
-  },
-  {
    "id": "opencode-go/step-5-preview",
    "alias": "🚀 Step 5 Preview (Go)"
   },
   {
    "id": "opencode-zen/test",
-   "alias": "💰 GPT-5.2 Chat (Zen)"
+   "alias": "💰 Mistral Medium (latest) (Zen)"
   }
  ]
 }

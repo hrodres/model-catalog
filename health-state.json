@@ -1,6 +1,6 @@
 {
- "generated": "2026-10-19T03:51:13.192690+00:00",
- "snapshot": "2026-10-19",
+ "generated": "2026-10-20T03:51:10.847096+00:00",
+ "snapshot": "2026-10-20",
  "fuente": "check-model-health.py F3 (2026-08-24)",
  "providers": {
   "opencode-go": {
@@ -36,27 +36,27 @@
   "noprobe": 46
  },
  "go_quota": {
-  "badge": "⚠️ Cuota Go casi agotada (Mensual 97%)",
+  "badge": "⚠️ Cuota Go casi agotada (Mensual 98%)",
   "nivel": "critica",
   "source": "api",
   "buckets": {
    "rolling": {
     "percent": 0,
     "status": "ok",
-    "resets_at": "2026-10-19T08:50:01.509Z",
+    "resets_at": "2026-10-20T08:50:01.532Z",
     "resets_in_human": "4h 59m"
    },
    "weekly": {
-    "percent": 0,
+    "percent": 1,
     "status": "ok",
     "resets_at": "2026-10-26T00:00:00.000Z",
-    "resets_in_human": "164h 9m"
+    "resets_in_human": "140h 9m"
    },
    "monthly": {
-    "percent": 97,
+    "percent": 98,
     "status": "critica",
     "resets_at": "2026-10-24T08:20:24.000Z",
-    "resets_in_human": "124h 30m"
+    "resets_in_human": "100h 30m"
    }
   }
  },
@@ -98,8 +98,8 @@
   {
    "modelo": "deepseek-v4-pro",
    "provider": "opencode-go",
-   "estado": "down",
-   "detalle": "ERR The read operation timed out"
+   "estado": "ok",
+   "detalle": "HTTP 200"
   },
   {
    "modelo": "deepseek-v4.1-flash",
@@ -246,6 +246,12 @@
    "detalle": "HTTP 200"
   },
   {
+   "modelo": "minimax-m3.1-flash-free",
+   "provider": "opencode-go",
+   "estado": "down",
+   "detalle": "ERR The read operation timed out"
+  },
+  {
    "modelo": "muse-spark-1.2-contributor",
    "provider": "opencode-go",
    "estado": "unk",
@@ -289,12 +295,6 @@
   },
   {
    "modelo": "qwen3.8-max",
-   "provider": "opencode-go",
-   "estado": "ok",
-   "detalle": "HTTP 200"
-  },
-  {
-   "modelo": "space-bunny",
    "provider": "opencode-go",
    "estado": "ok",
    "detalle": "HTTP 200"
@@ -750,6 +750,12 @@
    "detalle": "no probeado (ahorro de crédito: usa Go para salud en vivo)"
   },
   {
+   "modelo": "minimax-m3.1-flash-free",
+   "provider": "opencode-zen",
+   "estado": "free",
+   "detalle": "no probado (protección cuota global free 100 req/día)"
+  },
+  {
    "modelo": "mistral-large-4",
    "provider": "opencode-zen",
    "estado": "free",
@@ -799,12 +805,6 @@
   },
   {
    "modelo": "qwen3.8-max",
-   "provider": "opencode-zen",
-   "estado": "free",
-   "detalle": "no probado (protección cuota global free 100 req/día)"
-  },
-  {
-   "modelo": "space-bunny-free",
    "provider": "opencode-zen",
    "estado": "free",
    "detalle": "no probado (protección cuota global free 100 req/día)"
