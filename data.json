@@ -1,13 +1,13 @@
 {
- "generated": "2026-10-20T03:50:01.112361+00:00",
- "snapshot": "2026-10-20 03:50 UTC",
+ "generated": "2026-10-21T03:50:01.201332+00:00",
+ "snapshot": "2026-10-21 03:50 UTC",
  "providers_3rd": [
   "opencode-go",
   "opencode-zen",
   "openrouter"
  ],
- "modelsdev_fetched": "2026-10-20 03:50 UTC",
- "modelsdev_count": 555,
+ "modelsdev_fetched": "2026-10-21 03:50 UTC",
+ "modelsdev_count": 557,
  "price_matrix": {
   "currency": "USD",
   "fetched": "2026-10-14T19:30:46.503996+00:00",
@@ -2351,8 +2351,8 @@
  },
  "chain_method": "Modelo primario: opencode-go/deepseek-v4.1-flash.\nSi el primero falla, se prueba el siguiente automáticamente (cascada de respaldo).\nCadena activa: 2 Go · 0 Zen free · 0 Zen paid · 1 OpenRouter (leída de agents.defaults.model).\n✅ Cadena sin Zen paid: 0 crédito de pago de Zen en cualquier escalón.\nGo y Zen free no consumen crédito de pago; OpenRouter solo en cascada de fallo.",
  "chain_snapshot": {
-  "generated_at": "2026-10-20T03:50:01.111584+00:00",
-  "snapshot": "2026-10-20 03:50 UTC",
+  "generated_at": "2026-10-21T03:50:01.200022+00:00",
+  "snapshot": "2026-10-21 03:50 UTC",
   "source": "agents.defaults.model en openclaw.json (leída en build)",
   "links": [
    {
@@ -2374,31 +2374,31 @@
  },
  "status_badges": {
   "go_quota": {
-   "badge": "⚠️ Cuota Go casi agotada (Mensual 97%)",
+   "badge": "⚠️ Cuota Go casi agotada (Mensual 98%)",
    "nivel": "critica",
    "source": "api",
    "buckets": {
     "rolling": {
      "percent": 0,
      "status": "ok",
-     "resets_at": "2026-10-19T08:50:01.509Z",
+     "resets_at": "2026-10-20T08:50:01.532Z",
      "resets_in_human": "4h 59m"
     },
     "weekly": {
-     "percent": 0,
+     "percent": 1,
      "status": "ok",
      "resets_at": "2026-10-26T00:00:00.000Z",
-     "resets_in_human": "164h 9m"
+     "resets_in_human": "140h 9m"
     },
     "monthly": {
-     "percent": 97,
+     "percent": 98,
      "status": "critica",
      "resets_at": "2026-10-24T08:20:24.000Z",
-     "resets_in_human": "124h 30m"
+     "resets_in_human": "100h 30m"
     }
    },
-   "generated": "2026-10-19T03:51:13.192690+00:00",
-   "snapshot": "2026-10-19"
+   "generated": "2026-10-20T03:51:10.847096+00:00",
+   "snapshot": "2026-10-20"
   },
   "balances": {
    "zen_paid_ok": true,
@@ -2433,12 +2433,12 @@
   }
  },
  "counts": {
-  "total": 99,
+  "total": 100,
   "go": 37,
-  "zen": 85,
+  "zen": 86,
   "free": 10,
   "openrouter": 8,
-  "with_modelsdev": 91
+  "with_modelsdev": 92
  },
  "models": [
   {
@@ -2458,7 +2458,7 @@
    "output": 131072,
    "reasoning": true,
    "tool_call": true,
-   "structured": true,
+   "structured": false,
    "multimodal": false,
    "open_weights": true,
    "release": "2026-10-05",
@@ -4997,7 +4997,7 @@
    "tool_call": true,
    "structured": false,
    "multimodal": false,
-   "open_weights": false,
+   "open_weights": true,
    "release": "2026-06-30",
    "last_updated": "2026-06-30",
    "knowledge": "",
@@ -5545,6 +5545,46 @@
    "md_url": null
   },
   {
+   "id": "muse-wonder-1.0",
+   "providers": {
+    "go": false,
+    "zen": true,
+    "free": false,
+    "or": false
+   },
+   "or_id": null,
+   "or_price": null,
+   "tier": "paid",
+   "name": "Muse Wonder",
+   "desc": "Muse Wonder is a frontier multimodal reasoning model from Meta for personal and professional agents, long-horizon coding, and computer use. It combines Active Memory, which carries relevant context across conversations, with Active Focus, which keeps it working through blockers toward a goal.",
+   "context": 1048576,
+   "output": 131072,
+   "reasoning": true,
+   "tool_call": true,
+   "structured": false,
+   "multimodal": true,
+   "open_weights": false,
+   "release": "2026-10-12",
+   "last_updated": "2026-10-12",
+   "knowledge": "",
+   "swebench": null,
+   "benchmarks": {
+    "Harvey Legal Agent Benchmark": 10,
+    "Finance Agent": 56.6,
+    "HealthBench Professional": 60.5,
+    "AutomationBench": 39.1,
+    "GDP.pdf": 30.8,
+    "JobBench": 70.5,
+    "OSWorld": 34.3,
+    "Terminal-Bench": 52,
+    "DeepSWE": 78.8,
+    "SWE-Marathon": 53.1,
+    "ProgramBench": 50,
+    "Artificial Analysis Intelligence Index": 52
+   },
+   "md_url": "https://models.dev/models/meta/muse-wonder-1.0"
+  },
+  {
    "id": "nemotron-3.5-lightning-free",
    "providers": {
     "go": false,
@@ -5565,12 +5605,12 @@
    "output": 262144,
    "reasoning": true,
    "tool_call": true,
-   "structured": true,
+   "structured": false,
    "multimodal": false,
    "open_weights": true,
    "release": "2026-08-11",
    "last_updated": "2026-08-11",
-   "knowledge": "",
+   "knowledge": "2025-09",
    "swebench": 51.56,
    "benchmarks": {
     "MMLU-Pro": 81.94,
@@ -5863,7 +5903,7 @@
    "output": 1000000,
    "reasoning": true,
    "tool_call": true,
-   "structured": true,
+   "structured": false,
    "multimodal": true,
    "open_weights": true,
    "release": "2026-09-16",
@@ -5884,23 +5924,21 @@
    "or_id": null,
    "or_price": null,
    "tier": "paid",
-   "name": "Mistral Medium (latest)",
-   "desc": "Balanced Mistral model for enterprise assistants, multilingual work, and tools",
-   "context": 262144,
-   "output": 262144,
-   "reasoning": true,
+   "name": "Pixtral Large (latest)",
+   "desc": "Mistral's larger vision model for document-heavy image understanding and chat",
+   "context": 128000,
+   "output": 128000,
+   "reasoning": false,
    "tool_call": true,
    "structured": false,
    "multimodal": true,
    "open_weights": true,
-   "release": "2026-04-29",
-   "last_updated": "2026-04-29",
-   "knowledge": "",
-   "swebench": 77.6,
-   "benchmarks": {
-    "SWE-Bench Verified": 77.6
-   },
-   "md_url": "https://models.dev/models/mistral/mistral-medium-latest"
+   "release": "2024-11-01",
+   "last_updated": "2024-11-04",
+   "knowledge": "2024-11",
+   "swebench": null,
+   "benchmarks": {},
+   "md_url": "https://models.dev/models/mistral/pixtral-large-latest"
   }
  ]
 }
