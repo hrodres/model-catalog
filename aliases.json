@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-21T03:50:01.201332+00:00",
+ "generated": "2026-10-22T03:50:01.076689+00:00",
  "aliases": [
   {
    "id": "opencode-go/beam-free",
@@ -100,6 +100,10 @@
   {
    "id": "opencode-zen/deepseek-v4.1-flash-free",
    "alias": "🌱 DeepSeek V4.1 Flash (Zen free)"
+  },
+  {
+   "id": "opencode-zen/flint-40b-free",
+   "alias": "🌱 flint-40b-free (Zen free)"
   },
   {
    "id": "opencode-zen/gemini-3-flash",
@@ -354,14 +358,6 @@
    "alias": "🚀 LongCat-2.0 (Go)"
   },
   {
-   "id": "opencode-go/longcat-2.5-preview-free",
-   "alias": "🚀 LongCat-2.5-Preview (Go)"
-  },
-  {
-   "id": "opencode-zen/longcat-2.5-preview-free",
-   "alias": "🌱 LongCat-2.5-Preview (Zen free)"
-  },
-  {
    "id": "opencode-go/mimo-v2.5",
    "alias": "🚀 MiMo-V2.5 (Go)"
   },
@@ -491,7 +487,7 @@
   },
   {
    "id": "opencode-zen/test",
-   "alias": "💰 Pixtral Large (latest) (Zen)"
+   "alias": "💰 GPT-5 Chat (latest) (Zen)"
   }
  ]
 }

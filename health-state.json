@@ -1,12 +1,12 @@
 {
- "generated": "2026-10-21T03:50:59.947850+00:00",
- "snapshot": "2026-10-21",
+ "generated": "2026-10-22T03:51:01.114429+00:00",
+ "snapshot": "2026-10-22",
  "fuente": "check-model-health.py F3 (2026-08-24)",
  "providers": {
   "opencode-go": {
    "enabled": 1,
    "probed": {
-    "ok": 27,
+    "ok": 26,
     "unk": 10
    },
    "total": 2
@@ -28,7 +28,7 @@
   }
  },
  "counts": {
-  "ok": 27,
+  "ok": 26,
   "unk": 10,
   "free": 43,
   "noprobe": 46
@@ -41,20 +41,20 @@
    "rolling": {
     "percent": 0,
     "status": "ok",
-    "resets_at": "2026-10-21T08:50:01.634Z",
+    "resets_at": "2026-10-22T08:50:01.544Z",
     "resets_in_human": "4h 59m"
    },
    "weekly": {
     "percent": 1,
     "status": "ok",
     "resets_at": "2026-10-26T00:00:00.000Z",
-    "resets_in_human": "116h 9m"
+    "resets_in_human": "92h 9m"
    },
    "monthly": {
     "percent": 98,
     "status": "critica",
     "resets_at": "2026-10-24T08:20:24.000Z",
-    "resets_in_human": "76h 30m"
+    "resets_in_human": "52h 30m"
    }
   }
  },
@@ -191,12 +191,6 @@
   },
   {
    "modelo": "longcat-2.0",
-   "provider": "opencode-go",
-   "estado": "ok",
-   "detalle": "HTTP 200"
-  },
-  {
-   "modelo": "longcat-2.5-preview-free",
    "provider": "opencode-go",
    "estado": "ok",
    "detalle": "HTTP 200"
@@ -425,6 +419,12 @@
   },
   {
    "modelo": "deepseek-v4.1-flash-free",
+   "provider": "opencode-zen",
+   "estado": "free",
+   "detalle": "no probado (protección cuota global free 100 req/día)"
+  },
+  {
+   "modelo": "flint-40b-free",
    "provider": "opencode-zen",
    "estado": "free",
    "detalle": "no probado (protección cuota global free 100 req/día)"
@@ -713,12 +713,6 @@
   },
   {
    "modelo": "kimi-k3",
-   "provider": "opencode-zen",
-   "estado": "free",
-   "detalle": "no probado (protección cuota global free 100 req/día)"
-  },
-  {
-   "modelo": "longcat-2.5-preview-free",
    "provider": "opencode-zen",
    "estado": "free",
    "detalle": "no probado (protección cuota global free 100 req/día)"
