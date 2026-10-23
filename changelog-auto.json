@@ -2,18 +2,6 @@
  "events": [
   {
    "date": "2026-09-04",
-   "text": "opencode-go/longcat-2.0: ok → down"
-  },
-  {
-   "date": "2026-09-04",
-   "text": "opencode-go/mimo-v2.5-pro: down → ok"
-  },
-  {
-   "date": "2026-09-04",
-   "text": "opencode-go/mimo-v2.5: ok → down"
-  },
-  {
-   "date": "2026-09-04",
    "text": "opencode-go/mimo-v2.5-pro: down → ok"
   },
   {
@@ -1199,6 +1187,18 @@
   {
    "date": "2026-10-21",
    "text": "opencode-go/minimax-m3.1-flash-free: down → ok"
+  },
+  {
+   "date": "2026-10-23",
+   "text": "opencode-go/longcat-2.0: ok → cuota"
+  },
+  {
+   "date": "2026-10-23",
+   "text": "opencode-go/mimo-v2.5: ok → down"
+  },
+  {
+   "date": "2026-10-23",
+   "text": "opencode-go/mimo-v2.6-pro: ok → down"
   }
  ]
 }

@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-22T03:50:01.076689+00:00",
+ "generated": "2026-10-23T03:50:01.143159+00:00",
  "aliases": [
   {
    "id": "opencode-go/beam-free",
@@ -402,12 +402,8 @@
    "alias": "💰 MiniMax-M3 (Zen)"
   },
   {
-   "id": "opencode-go/minimax-m3.1-flash-free",
+   "id": "opencode-go/minimax-m3.1-flash",
    "alias": "🚀 MiniMax-M3.1-Flash (Go)"
-  },
-  {
-   "id": "opencode-zen/minimax-m3.1-flash-free",
-   "alias": "🌱 MiniMax-M3.1-Flash (Zen free)"
   },
   {
    "id": "opencode-zen/mistral-large-4",
@@ -487,7 +483,7 @@
   },
   {
    "id": "opencode-zen/test",
-   "alias": "💰 GPT-5 Chat (latest) (Zen)"
+   "alias": "💰 Codestral (latest) (Zen)"
   }
  ]
 }
