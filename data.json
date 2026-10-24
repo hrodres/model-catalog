@@ -1,13 +1,13 @@
 {
- "generated": "2026-10-23T03:50:01.143159+00:00",
- "snapshot": "2026-10-23 03:50 UTC",
+ "generated": "2026-10-24T03:50:01.199645+00:00",
+ "snapshot": "2026-10-24 03:50 UTC",
  "providers_3rd": [
   "opencode-go",
   "opencode-zen",
   "openrouter"
  ],
- "modelsdev_fetched": "2026-10-23 03:50 UTC",
- "modelsdev_count": 602,
+ "modelsdev_fetched": "2026-10-24 03:50 UTC",
+ "modelsdev_count": 604,
  "price_matrix": {
   "currency": "USD",
   "fetched": "2026-10-14T19:30:46.503996+00:00",
@@ -2351,8 +2351,8 @@
  },
  "chain_method": "Modelo primario: opencode-go/deepseek-v4.1-flash.\nSi el primero falla, se prueba el siguiente automáticamente (cascada de respaldo).\nCadena activa: 2 Go · 0 Zen free · 0 Zen paid · 1 OpenRouter (leída de agents.defaults.model).\n✅ Cadena sin Zen paid: 0 crédito de pago de Zen en cualquier escalón.\nGo y Zen free no consumen crédito de pago; OpenRouter solo en cascada de fallo.",
  "chain_snapshot": {
-  "generated_at": "2026-10-23T03:50:01.141840+00:00",
-  "snapshot": "2026-10-23 03:50 UTC",
+  "generated_at": "2026-10-24T03:50:01.199214+00:00",
+  "snapshot": "2026-10-24 03:50 UTC",
   "source": "agents.defaults.model en openclaw.json (leída en build)",
   "links": [
    {
@@ -2362,7 +2362,7 @@
    },
    {
     "pos": 2,
-    "link": "opencode-go/deepseek-v4-flash",
+    "link": "opencode-go/mimo-v2.6-flash",
     "role": "Respaldo 1 — Go (suscripción, sin coste adicional)"
    },
    {
@@ -2374,31 +2374,31 @@
  },
  "status_badges": {
   "go_quota": {
-   "badge": "⚠️ Cuota Go casi agotada (Mensual 98%)",
+   "badge": "⚠️ Cuota Go casi agotada (Mensual 99%)",
    "nivel": "critica",
    "source": "api",
    "buckets": {
     "rolling": {
-     "percent": 0,
+     "percent": 2,
      "status": "ok",
-     "resets_at": "2026-10-22T08:50:01.544Z",
-     "resets_in_human": "4h 59m"
+     "resets_at": "2026-10-23T16:22:46.000Z",
+     "resets_in_human": "2h 27m"
     },
     "weekly": {
-     "percent": 1,
+     "percent": 3,
      "status": "ok",
      "resets_at": "2026-10-26T00:00:00.000Z",
-     "resets_in_human": "92h 9m"
+     "resets_in_human": "58h 5m"
     },
     "monthly": {
-     "percent": 98,
+     "percent": 99,
      "status": "critica",
      "resets_at": "2026-10-24T08:20:24.000Z",
-     "resets_in_human": "52h 30m"
+     "resets_in_human": "18h 25m"
     }
    },
-   "generated": "2026-10-22T03:51:01.114429+00:00",
-   "snapshot": "2026-10-22"
+   "generated": "2026-10-23T13:55:56.248157+00:00",
+   "snapshot": "2026-10-23"
   },
   "balances": {
    "zen_paid_ok": true,
@@ -2417,7 +2417,7 @@
    "opencode-zen": {
     "enabled": 1,
     "probed": {
-     "free": 43,
+     "free": 42,
      "noprobe": 43
     },
     "total": 2
@@ -2432,12 +2432,12 @@
   }
  },
  "counts": {
-  "total": 100,
-  "go": 36,
+  "total": 101,
+  "go": 37,
   "zen": 85,
   "free": 9,
   "openrouter": 8,
-  "with_modelsdev": 91
+  "with_modelsdev": 92
  },
  "models": [
   {
@@ -5005,6 +5005,33 @@
    "md_url": "https://models.dev/models/moonshotai/kimi-k3"
   },
   {
+   "id": "kimi-k3.1-pro",
+   "providers": {
+    "go": true,
+    "zen": false,
+    "free": false,
+    "or": false
+   },
+   "or_id": null,
+   "or_price": null,
+   "tier": "go",
+   "name": "Kimi K3.1 Pro",
+   "desc": "Multimodal Kimi model with 1M context and always-on reasoning for coding, 3D creation, financial research, and agentic work",
+   "context": 1048576,
+   "output": 131072,
+   "reasoning": true,
+   "tool_call": true,
+   "structured": false,
+   "multimodal": true,
+   "open_weights": false,
+   "release": "2026-10-23",
+   "last_updated": "2026-10-23",
+   "knowledge": "",
+   "swebench": null,
+   "benchmarks": {},
+   "md_url": "https://models.dev/models/moonshotai/kimi-k3.1-pro"
+  },
+  {
    "id": "longcat-2.0",
    "providers": {
     "go": true,
@@ -5923,23 +5950,23 @@
    "or_id": null,
    "or_price": null,
    "tier": "paid",
-   "name": "Codestral (latest)",
-   "desc": "Mistral code model for completions, refactors, and developer IDE workflows",
-   "context": 256000,
-   "output": 4096,
-   "reasoning": false,
+   "name": "Mistral Medium (latest)",
+   "desc": "Balanced Mistral model for enterprise assistants, multilingual work, and tools",
+   "context": 262144,
+   "output": 262144,
+   "reasoning": true,
    "tool_call": true,
    "structured": false,
-   "multimodal": false,
+   "multimodal": true,
    "open_weights": true,
-   "release": "2024-05-29",
-   "last_updated": "2025-01-04",
-   "knowledge": "2024-10",
-   "swebench": null,
+   "release": "2026-04-29",
+   "last_updated": "2026-04-29",
+   "knowledge": "",
+   "swebench": 77.6,
    "benchmarks": {
-    "Aider Polyglot": 11.1
+    "SWE-Bench Verified": 77.6
    },
-   "md_url": "https://models.dev/models/mistral/codestral-latest"
+   "md_url": "https://models.dev/models/mistral/mistral-medium-latest"
   }
  ]
 }

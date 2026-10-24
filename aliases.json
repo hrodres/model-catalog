@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-23T03:50:01.143159+00:00",
+ "generated": "2026-10-24T03:50:01.199645+00:00",
  "aliases": [
   {
    "id": "opencode-go/beam-free",
@@ -354,6 +354,10 @@
    "alias": "💰 Kimi K3 (Zen)"
   },
   {
+   "id": "opencode-go/kimi-k3.1-pro",
+   "alias": "🚀 Kimi K3.1 Pro (Go)"
+  },
+  {
    "id": "opencode-go/longcat-2.0",
    "alias": "🚀 LongCat-2.0 (Go)"
   },
@@ -483,7 +487,7 @@
   },
   {
    "id": "opencode-zen/test",
-   "alias": "💰 Codestral (latest) (Zen)"
+   "alias": "💰 Mistral Medium (latest) (Zen)"
   }
  ]
 }

@@ -1,17 +1,16 @@
 {
- "generated": "2026-10-23T03:51:19.774737+00:00",
- "snapshot": "2026-10-23",
+ "generated": "2026-10-24T03:50:19.979458+00:00",
+ "snapshot": "2026-10-24",
  "fuente": "check-model-health.py F3 (2026-08-24)",
  "providers": {
   "opencode-go": {
    "enabled": 1,
    "probed": {
-    "ok": 23,
-    "unk": 10,
-    "cuota": 1,
-    "down": 2
+    "ok": 1,
+    "cuota": 33,
+    "unk": 3
    },
-   "total": 4
+   "total": 3
   },
   "opencode-zen": {
    "enabled": 1,
@@ -30,35 +29,34 @@
   }
  },
  "counts": {
-  "ok": 23,
-  "unk": 10,
-  "cuota": 1,
-  "down": 2,
+  "ok": 1,
+  "cuota": 33,
+  "unk": 3,
   "free": 42,
   "noprobe": 46
  },
  "go_quota": {
-  "badge": "⚠️ Cuota Go casi agotada (Mensual 99%)",
-  "nivel": "critica",
+  "badge": "⚠️ Cuota Go agotada (Mensual 100%)",
+  "nivel": "cuota",
   "source": "api",
   "buckets": {
    "rolling": {
     "percent": 0,
     "status": "ok",
-    "resets_at": "2026-10-23T08:50:01.622Z",
+    "resets_at": "2026-10-24T08:50:01.680Z",
     "resets_in_human": "4h 59m"
    },
    "weekly": {
-    "percent": 2,
+    "percent": 4,
     "status": "ok",
     "resets_at": "2026-10-26T00:00:00.000Z",
-    "resets_in_human": "68h 9m"
+    "resets_in_human": "44h 9m"
    },
    "monthly": {
-    "percent": 99,
-    "status": "critica",
+    "percent": 100,
+    "status": "agotada",
     "resets_at": "2026-10-24T08:20:24.000Z",
-    "resets_in_human": "28h 30m"
+    "resets_in_human": "4h 30m"
    }
   }
  },
@@ -70,13 +68,13 @@
  "chain": [
   {
    "link": "opencode-go/deepseek-v4.1-flash",
-   "estado": "ok",
-   "detalle": "HTTP 200"
+   "estado": "cuota",
+   "detalle": "429 cuota agotada / rate-limit"
   },
   {
-   "link": "opencode-go/deepseek-v4-flash",
-   "estado": "no-en-config",
-   "detalle": "modelo no está en providers habilitados"
+   "link": "opencode-go/mimo-v2.6-flash",
+   "estado": "cuota",
+   "detalle": "429 cuota agotada / rate-limit"
   },
   {
    "link": "openrouter/deepseek/deepseek-v4.1-flash",
@@ -94,20 +92,20 @@
   {
    "modelo": "claude-haiku-5-5",
    "provider": "opencode-go",
-   "estado": "unk",
-   "detalle": "HTTP 400: no responde al probe estándar"
+   "estado": "cuota",
+   "detalle": "429 cuota agotada / rate-limit"
   },
   {
    "modelo": "deepseek-v4-pro",
    "provider": "opencode-go",
-   "estado": "ok",
-   "detalle": "HTTP 200"
+   "estado": "cuota",
+   "detalle": "429 cuota agotada / rate-limit"
   },
   {
    "modelo": "deepseek-v4.1-flash",
    "provider": "opencode-go",
-   "estado": "ok",
-   "detalle": "HTTP 200"
+   "estado": "cuota",
+   "detalle": "429 cuota agotada / rate-limit"
   },
   {
    "modelo": "gemini-4-argon-contributor",
@@ -118,134 +116,140 @@
   {
    "modelo": "glm-5.1",
    "provider": "opencode-go",
-   "estado": "ok",
-   "detalle": "HTTP 200"
+   "estado": "cuota",
+   "detalle": "429 cuota agotada / rate-limit"
   },
   {
    "modelo": "glm-5.2",
    "provider": "opencode-go",
-   "estado": "ok",
-   "detalle": "HTTP 200"
+   "estado": "cuota",
+   "detalle": "429 cuota agotada / rate-limit"
   },
   {
    "modelo": "glm-5.3",
    "provider": "opencode-go",
-   "estado": "ok",
-   "detalle": "HTTP 200"
+   "estado": "cuota",
+   "detalle": "429 cuota agotada / rate-limit"
   },
   {
    "modelo": "glm-5.3-flash",
    "provider": "opencode-go",
-   "estado": "ok",
-   "detalle": "HTTP 200"
+   "estado": "cuota",
+   "detalle": "429 cuota agotada / rate-limit"
   },
   {
    "modelo": "gpt-5.6-luna",
    "provider": "opencode-go",
-   "estado": "unk",
-   "detalle": "HTTP 400: no responde al probe estándar"
+   "estado": "cuota",
+   "detalle": "429 cuota agotada / rate-limit"
   },
   {
    "modelo": "gpt-6-luna",
    "provider": "opencode-go",
-   "estado": "unk",
-   "detalle": "HTTP 400: no responde al probe estándar"
+   "estado": "cuota",
+   "detalle": "429 cuota agotada / rate-limit"
   },
   {
    "modelo": "grok-4.6",
    "provider": "opencode-go",
-   "estado": "unk",
-   "detalle": "HTTP 400: no responde al probe estándar"
+   "estado": "cuota",
+   "detalle": "429 cuota agotada / rate-limit"
   },
   {
    "modelo": "grok-4.7",
    "provider": "opencode-go",
-   "estado": "unk",
-   "detalle": "HTTP 400: no responde al probe estándar"
+   "estado": "cuota",
+   "detalle": "429 cuota agotada / rate-limit"
   },
   {
    "modelo": "hy3",
    "provider": "opencode-go",
-   "estado": "ok",
-   "detalle": "HTTP 200"
+   "estado": "cuota",
+   "detalle": "429 cuota agotada / rate-limit"
   },
   {
    "modelo": "hy4-preview",
    "provider": "opencode-go",
-   "estado": "ok",
-   "detalle": "HTTP 200"
+   "estado": "cuota",
+   "detalle": "429 cuota agotada / rate-limit"
   },
   {
    "modelo": "kimi-k2.6",
    "provider": "opencode-go",
-   "estado": "ok",
-   "detalle": "HTTP 200"
+   "estado": "cuota",
+   "detalle": "429 cuota agotada / rate-limit"
   },
   {
    "modelo": "kimi-k2.7-code",
    "provider": "opencode-go",
-   "estado": "ok",
-   "detalle": "HTTP 200"
+   "estado": "cuota",
+   "detalle": "429 cuota agotada / rate-limit"
   },
   {
    "modelo": "kimi-k3",
    "provider": "opencode-go",
-   "estado": "ok",
-   "detalle": "HTTP 200"
+   "estado": "cuota",
+   "detalle": "429 cuota agotada / rate-limit"
+  },
+  {
+   "modelo": "kimi-k3.1-pro",
+   "provider": "opencode-go",
+   "estado": "cuota",
+   "detalle": "429 cuota agotada / rate-limit"
   },
   {
    "modelo": "longcat-2.0",
    "provider": "opencode-go",
    "estado": "cuota",
-   "detalle": "402 sin créditos (saldo OpenRouter)"
+   "detalle": "429 cuota agotada / rate-limit"
   },
   {
    "modelo": "mimo-v2.5",
    "provider": "opencode-go",
-   "estado": "down",
-   "detalle": "ERR The read operation timed out"
+   "estado": "cuota",
+   "detalle": "429 cuota agotada / rate-limit"
   },
   {
    "modelo": "mimo-v2.5-pro",
    "provider": "opencode-go",
-   "estado": "unk",
-   "detalle": "HTTP 400: no responde al probe estándar"
+   "estado": "cuota",
+   "detalle": "429 cuota agotada / rate-limit"
   },
   {
    "modelo": "mimo-v2.6-flash",
    "provider": "opencode-go",
-   "estado": "ok",
-   "detalle": "HTTP 200"
+   "estado": "cuota",
+   "detalle": "429 cuota agotada / rate-limit"
   },
   {
    "modelo": "mimo-v2.6-pro",
    "provider": "opencode-go",
-   "estado": "down",
-   "detalle": "ERR The read operation timed out"
+   "estado": "cuota",
+   "detalle": "429 cuota agotada / rate-limit"
   },
   {
    "modelo": "minimax-m2.5",
    "provider": "opencode-go",
-   "estado": "ok",
-   "detalle": "HTTP 200"
+   "estado": "cuota",
+   "detalle": "429 cuota agotada / rate-limit"
   },
   {
    "modelo": "minimax-m2.7",
    "provider": "opencode-go",
-   "estado": "unk",
-   "detalle": "HTTP 400: no responde al probe estándar"
+   "estado": "cuota",
+   "detalle": "429 cuota agotada / rate-limit"
   },
   {
    "modelo": "minimax-m3",
    "provider": "opencode-go",
-   "estado": "ok",
-   "detalle": "HTTP 200"
+   "estado": "cuota",
+   "detalle": "429 cuota agotada / rate-limit"
   },
   {
    "modelo": "minimax-m3.1-flash",
    "provider": "opencode-go",
-   "estado": "ok",
-   "detalle": "HTTP 200"
+   "estado": "cuota",
+   "detalle": "429 cuota agotada / rate-limit"
   },
   {
    "modelo": "muse-spark-1.2-contributor",
@@ -262,44 +266,44 @@
   {
    "modelo": "omen-alpha",
    "provider": "opencode-go",
-   "estado": "ok",
-   "detalle": "HTTP 200"
+   "estado": "cuota",
+   "detalle": "429 cuota agotada / rate-limit"
   },
   {
    "modelo": "qwen3.6-plus",
    "provider": "opencode-go",
-   "estado": "ok",
-   "detalle": "HTTP 200"
+   "estado": "cuota",
+   "detalle": "429 cuota agotada / rate-limit"
   },
   {
    "modelo": "qwen3.7-max",
    "provider": "opencode-go",
-   "estado": "ok",
-   "detalle": "HTTP 200"
+   "estado": "cuota",
+   "detalle": "429 cuota agotada / rate-limit"
   },
   {
    "modelo": "qwen3.7-plus",
    "provider": "opencode-go",
-   "estado": "ok",
-   "detalle": "HTTP 200"
+   "estado": "cuota",
+   "detalle": "429 cuota agotada / rate-limit"
   },
   {
    "modelo": "qwen3.8-flash",
    "provider": "opencode-go",
-   "estado": "ok",
-   "detalle": "HTTP 200"
+   "estado": "cuota",
+   "detalle": "429 cuota agotada / rate-limit"
   },
   {
    "modelo": "qwen3.8-max",
    "provider": "opencode-go",
-   "estado": "ok",
-   "detalle": "HTTP 200"
+   "estado": "cuota",
+   "detalle": "429 cuota agotada / rate-limit"
   },
   {
    "modelo": "step-5-preview",
    "provider": "opencode-go",
-   "estado": "ok",
-   "detalle": "HTTP 200"
+   "estado": "cuota",
+   "detalle": "429 cuota agotada / rate-limit"
   },
   {
    "modelo": "beam-free",
