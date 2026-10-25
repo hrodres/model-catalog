@@ -1,13 +1,13 @@
 {
- "generated": "2026-10-24T03:50:01.199645+00:00",
- "snapshot": "2026-10-24 03:50 UTC",
+ "generated": "2026-10-25T04:50:01.210778+00:00",
+ "snapshot": "2026-10-25 04:50 UTC",
  "providers_3rd": [
   "opencode-go",
   "opencode-zen",
   "openrouter"
  ],
- "modelsdev_fetched": "2026-10-24 03:50 UTC",
- "modelsdev_count": 604,
+ "modelsdev_fetched": "2026-10-25 04:50 UTC",
+ "modelsdev_count": 606,
  "price_matrix": {
   "currency": "USD",
   "fetched": "2026-10-14T19:30:46.503996+00:00",
@@ -2351,8 +2351,8 @@
  },
  "chain_method": "Modelo primario: opencode-go/deepseek-v4.1-flash.\nSi el primero falla, se prueba el siguiente automáticamente (cascada de respaldo).\nCadena activa: 2 Go · 0 Zen free · 0 Zen paid · 1 OpenRouter (leída de agents.defaults.model).\n✅ Cadena sin Zen paid: 0 crédito de pago de Zen en cualquier escalón.\nGo y Zen free no consumen crédito de pago; OpenRouter solo en cascada de fallo.",
  "chain_snapshot": {
-  "generated_at": "2026-10-24T03:50:01.199214+00:00",
-  "snapshot": "2026-10-24 03:50 UTC",
+  "generated_at": "2026-10-25T04:50:01.209490+00:00",
+  "snapshot": "2026-10-25 04:50 UTC",
   "source": "agents.defaults.model en openclaw.json (leída en build)",
   "links": [
    {
@@ -2374,31 +2374,31 @@
  },
  "status_badges": {
   "go_quota": {
-   "badge": "⚠️ Cuota Go casi agotada (Mensual 99%)",
-   "nivel": "critica",
+   "badge": "⚠️ Cuota Go agotada (Mensual 100%)",
+   "nivel": "cuota",
    "source": "api",
    "buckets": {
     "rolling": {
-     "percent": 2,
+     "percent": 0,
      "status": "ok",
-     "resets_at": "2026-10-23T16:22:46.000Z",
-     "resets_in_human": "2h 27m"
+     "resets_at": "2026-10-24T08:50:01.680Z",
+     "resets_in_human": "4h 59m"
     },
     "weekly": {
-     "percent": 3,
+     "percent": 4,
      "status": "ok",
      "resets_at": "2026-10-26T00:00:00.000Z",
-     "resets_in_human": "58h 5m"
+     "resets_in_human": "44h 9m"
     },
     "monthly": {
-     "percent": 99,
-     "status": "critica",
+     "percent": 100,
+     "status": "agotada",
      "resets_at": "2026-10-24T08:20:24.000Z",
-     "resets_in_human": "18h 25m"
+     "resets_in_human": "4h 30m"
     }
    },
-   "generated": "2026-10-23T13:55:56.248157+00:00",
-   "snapshot": "2026-10-23"
+   "generated": "2026-10-24T03:50:19.979458+00:00",
+   "snapshot": "2026-10-24"
   },
   "balances": {
    "zen_paid_ok": true,
@@ -2409,10 +2409,11 @@
    "opencode-go": {
     "enabled": 1,
     "probed": {
-     "ok": 26,
-     "unk": 10
+     "ok": 1,
+     "cuota": 33,
+     "unk": 3
     },
-    "total": 2
+    "total": 3
    },
    "opencode-zen": {
     "enabled": 1,
@@ -2433,7 +2434,7 @@
  },
  "counts": {
   "total": 101,
-  "go": 37,
+  "go": 38,
   "zen": 85,
   "free": 9,
   "openrouter": 8,
@@ -3509,7 +3510,7 @@
   {
    "id": "gemini-4-argon",
    "providers": {
-    "go": false,
+    "go": true,
     "zen": true,
     "free": false,
     "or": false
@@ -3532,33 +3533,6 @@
    "swebench": null,
    "benchmarks": {},
    "md_url": "https://models.dev/models/google/gemini-4-argon"
-  },
-  {
-   "id": "gemini-4-argon-contributor",
-   "providers": {
-    "go": true,
-    "zen": false,
-    "free": false,
-    "or": false
-   },
-   "or_id": null,
-   "or_price": null,
-   "tier": "go",
-   "name": "gemini-4-argon-contributor",
-   "desc": "Sin ficha en models.dev (solo catálogo opencode)",
-   "context": null,
-   "output": null,
-   "reasoning": null,
-   "tool_call": null,
-   "structured": null,
-   "multimodal": null,
-   "open_weights": null,
-   "release": "",
-   "last_updated": "",
-   "knowledge": "",
-   "swebench": null,
-   "benchmarks": {},
-   "md_url": null
   },
   {
    "id": "glm-5",
@@ -4807,6 +4781,33 @@
    "md_url": "https://models.dev/models/tencent/hy4-preview"
   },
   {
+   "id": "iceman-contributor-free",
+   "providers": {
+    "go": true,
+    "zen": false,
+    "free": false,
+    "or": false
+   },
+   "or_id": null,
+   "or_price": null,
+   "tier": "go",
+   "name": "iceman-contributor-free",
+   "desc": "Sin ficha en models.dev (solo catálogo opencode)",
+   "context": null,
+   "output": null,
+   "reasoning": null,
+   "tool_call": null,
+   "structured": null,
+   "multimodal": null,
+   "open_weights": null,
+   "release": "",
+   "last_updated": "",
+   "knowledge": "",
+   "swebench": null,
+   "benchmarks": {},
+   "md_url": null
+  },
+  {
    "id": "jev-1.13",
    "providers": {
     "go": false,
@@ -5950,23 +5951,21 @@
    "or_id": null,
    "or_price": null,
    "tier": "paid",
-   "name": "Mistral Medium (latest)",
-   "desc": "Balanced Mistral model for enterprise assistants, multilingual work, and tools",
+   "name": "Mistral Large (latest)",
+   "desc": "Flagship Mistral model for advanced reasoning, coding, and multilingual work",
    "context": 262144,
    "output": 262144,
-   "reasoning": true,
+   "reasoning": false,
    "tool_call": true,
    "structured": false,
    "multimodal": true,
    "open_weights": true,
-   "release": "2026-04-29",
-   "last_updated": "2026-04-29",
-   "knowledge": "",
-   "swebench": 77.6,
-   "benchmarks": {
-    "SWE-Bench Verified": 77.6
-   },
-   "md_url": "https://models.dev/models/mistral/mistral-medium-latest"
+   "release": "2024-11-01",
+   "last_updated": "2025-12-02",
+   "knowledge": "2024-11",
+   "swebench": null,
+   "benchmarks": {},
+   "md_url": "https://models.dev/models/mistral/mistral-large-latest"
   }
  ]
 }

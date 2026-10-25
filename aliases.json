@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-24T03:50:01.199645+00:00",
+ "generated": "2026-10-25T04:50:01.210778+00:00",
  "aliases": [
   {
    "id": "opencode-go/beam-free",
@@ -134,12 +134,12 @@
    "alias": "💰 Gemini 3.8 Flash (Zen)"
   },
   {
-   "id": "opencode-zen/gemini-4-argon",
-   "alias": "💰 Gemini 4 Argon (Zen)"
+   "id": "opencode-go/gemini-4-argon",
+   "alias": "🚀 Gemini 4 Argon (Go)"
   },
   {
-   "id": "opencode-go/gemini-4-argon-contributor",
-   "alias": "🚀 gemini-4-argon-contributor (Go)"
+   "id": "opencode-zen/gemini-4-argon",
+   "alias": "💰 Gemini 4 Argon (Zen)"
   },
   {
    "id": "opencode-zen/glm-5",
@@ -318,6 +318,10 @@
    "alias": "🚀 Hy4 preview (Go)"
   },
   {
+   "id": "opencode-go/iceman-contributor-free",
+   "alias": "🚀 iceman-contributor-free (Go)"
+  },
+  {
    "id": "opencode-zen/jev-1.13",
    "alias": "💰 jev-1.13 (Zen)"
   },
@@ -487,7 +491,7 @@
   },
   {
    "id": "opencode-zen/test",
-   "alias": "💰 Mistral Medium (latest) (Zen)"
+   "alias": "💰 Mistral Large (latest) (Zen)"
   }
  ]
 }

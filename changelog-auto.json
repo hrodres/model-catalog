@@ -2,138 +2,6 @@
  "events": [
   {
    "date": "2026-09-07",
-   "text": "opencode-go/longcat-2.0: ok → down"
-  },
-  {
-   "date": "2026-09-07",
-   "text": "opencode-go/mimo-v2.5-pro: down → ok"
-  },
-  {
-   "date": "2026-09-07",
-   "text": "opencode-go/deepseek-v4-flash: ok → unk"
-  },
-  {
-   "date": "2026-09-07",
-   "text": "opencode-go/deepseek-v4-flash-vision-exp: ok → unk"
-  },
-  {
-   "date": "2026-09-07",
-   "text": "opencode-go/deepseek-v4-pro: ok → unk"
-  },
-  {
-   "date": "2026-09-07",
-   "text": "opencode-go/glm-5: ok → unk"
-  },
-  {
-   "date": "2026-09-07",
-   "text": "opencode-go/glm-5.1: ok → unk"
-  },
-  {
-   "date": "2026-09-07",
-   "text": "opencode-go/glm-5.2: ok → unk"
-  },
-  {
-   "date": "2026-09-07",
-   "text": "opencode-go/glm-5.3: down → unk"
-  },
-  {
-   "date": "2026-09-07",
-   "text": "opencode-go/glm-5.3-flash: ok → unk"
-  },
-  {
-   "date": "2026-09-07",
-   "text": "opencode-go/grok-4.5: down → unk"
-  },
-  {
-   "date": "2026-09-07",
-   "text": "opencode-go/hy3: ok → unk"
-  },
-  {
-   "date": "2026-09-07",
-   "text": "opencode-go/hy3-preview: indisponible → unk"
-  },
-  {
-   "date": "2026-09-07",
-   "text": "opencode-go/hy4-preview: ok → unk"
-  },
-  {
-   "date": "2026-09-07",
-   "text": "opencode-go/kimi-k2.6: ok → unk"
-  },
-  {
-   "date": "2026-09-07",
-   "text": "opencode-go/kimi-k2.7-code: ok → unk"
-  },
-  {
-   "date": "2026-09-07",
-   "text": "opencode-go/kimi-k3: ok → unk"
-  },
-  {
-   "date": "2026-09-07",
-   "text": "opencode-go/longcat-2.0: ok → unk"
-  },
-  {
-   "date": "2026-09-07",
-   "text": "opencode-go/mimo-v2.5: ok → unk"
-  },
-  {
-   "date": "2026-09-07",
-   "text": "opencode-go/mimo-v2.5-pro: down → unk"
-  },
-  {
-   "date": "2026-09-07",
-   "text": "opencode-go/minimax-m2.5: ok → unk"
-  },
-  {
-   "date": "2026-09-07",
-   "text": "opencode-go/minimax-m3: ok → unk"
-  },
-  {
-   "date": "2026-09-07",
-   "text": "opencode-go/omen-alpha: ok → unk"
-  },
-  {
-   "date": "2026-09-07",
-   "text": "opencode-go/qwen3.5-plus: down → unk"
-  },
-  {
-   "date": "2026-09-07",
-   "text": "opencode-go/qwen3.6-plus: ok → unk"
-  },
-  {
-   "date": "2026-09-07",
-   "text": "opencode-go/qwen3.7-max: ok → unk"
-  },
-  {
-   "date": "2026-09-07",
-   "text": "opencode-go/qwen3.7-plus: ok → unk"
-  },
-  {
-   "date": "2026-09-07",
-   "text": "opencode-go/qwen3.8-flash: ok → unk"
-  },
-  {
-   "date": "2026-09-07",
-   "text": "opencode-go/qwen3.8-max: ok → unk"
-  },
-  {
-   "date": "2026-09-07",
-   "text": "opencode-go/deepseek-v4-flash: ok → unk"
-  },
-  {
-   "date": "2026-09-07",
-   "text": "opencode-go/deepseek-v4-flash-vision-exp: ok → unk"
-  },
-  {
-   "date": "2026-09-07",
-   "text": "opencode-go/deepseek-v4-pro: ok → unk"
-  },
-  {
-   "date": "2026-09-07",
-   "text": "opencode-go/glm-5: ok → unk"
-  },
-  {
-   "date": "2026-09-07",
    "text": "opencode-go/glm-5.1: ok → unk"
   },
   {
@@ -1199,6 +1067,138 @@
   {
    "date": "2026-10-24",
    "text": "opencode-go/step-5-preview: ok → cuota"
+  },
+  {
+   "date": "2026-10-25",
+   "text": "opencode-go/claude-haiku-5-5: cuota → unk"
+  },
+  {
+   "date": "2026-10-25",
+   "text": "opencode-go/deepseek-v4-pro: cuota → ok"
+  },
+  {
+   "date": "2026-10-25",
+   "text": "opencode-go/deepseek-v4.1-flash: cuota → ok"
+  },
+  {
+   "date": "2026-10-25",
+   "text": "opencode-go/glm-5.1: cuota → ok"
+  },
+  {
+   "date": "2026-10-25",
+   "text": "opencode-go/glm-5.2: cuota → ok"
+  },
+  {
+   "date": "2026-10-25",
+   "text": "opencode-go/glm-5.3: cuota → ok"
+  },
+  {
+   "date": "2026-10-25",
+   "text": "opencode-go/glm-5.3-flash: cuota → ok"
+  },
+  {
+   "date": "2026-10-25",
+   "text": "opencode-go/gpt-5.6-luna: cuota → unk"
+  },
+  {
+   "date": "2026-10-25",
+   "text": "opencode-go/gpt-6-luna: cuota → unk"
+  },
+  {
+   "date": "2026-10-25",
+   "text": "opencode-go/grok-4.6: cuota → unk"
+  },
+  {
+   "date": "2026-10-25",
+   "text": "opencode-go/grok-4.7: cuota → unk"
+  },
+  {
+   "date": "2026-10-25",
+   "text": "opencode-go/hy3: cuota → ok"
+  },
+  {
+   "date": "2026-10-25",
+   "text": "opencode-go/hy4-preview: cuota → ok"
+  },
+  {
+   "date": "2026-10-25",
+   "text": "opencode-go/kimi-k2.6: cuota → ok"
+  },
+  {
+   "date": "2026-10-25",
+   "text": "opencode-go/kimi-k2.7-code: cuota → ok"
+  },
+  {
+   "date": "2026-10-25",
+   "text": "opencode-go/kimi-k3: cuota → ok"
+  },
+  {
+   "date": "2026-10-25",
+   "text": "opencode-go/kimi-k3.1-pro: cuota → ok"
+  },
+  {
+   "date": "2026-10-25",
+   "text": "opencode-go/longcat-2.0: cuota → ok"
+  },
+  {
+   "date": "2026-10-25",
+   "text": "opencode-go/mimo-v2.5: cuota → ok"
+  },
+  {
+   "date": "2026-10-25",
+   "text": "opencode-go/mimo-v2.5-pro: cuota → unk"
+  },
+  {
+   "date": "2026-10-25",
+   "text": "opencode-go/mimo-v2.6-flash: cuota → ok"
+  },
+  {
+   "date": "2026-10-25",
+   "text": "opencode-go/mimo-v2.6-pro: cuota → ok"
+  },
+  {
+   "date": "2026-10-25",
+   "text": "opencode-go/minimax-m2.5: cuota → ok"
+  },
+  {
+   "date": "2026-10-25",
+   "text": "opencode-go/minimax-m2.7: cuota → unk"
+  },
+  {
+   "date": "2026-10-25",
+   "text": "opencode-go/minimax-m3: cuota → ok"
+  },
+  {
+   "date": "2026-10-25",
+   "text": "opencode-go/minimax-m3.1-flash: cuota → ok"
+  },
+  {
+   "date": "2026-10-25",
+   "text": "opencode-go/omen-alpha: cuota → ok"
+  },
+  {
+   "date": "2026-10-25",
+   "text": "opencode-go/qwen3.6-plus: cuota → ok"
+  },
+  {
+   "date": "2026-10-25",
+   "text": "opencode-go/qwen3.7-max: cuota → ok"
+  },
+  {
+   "date": "2026-10-25",
+   "text": "opencode-go/qwen3.7-plus: cuota → ok"
+  },
+  {
+   "date": "2026-10-25",
+   "text": "opencode-go/qwen3.8-flash: cuota → ok"
+  },
+  {
+   "date": "2026-10-25",
+   "text": "opencode-go/qwen3.8-max: cuota → ok"
+  },
+  {
+   "date": "2026-10-25",
+   "text": "opencode-go/step-5-preview: cuota → ok"
   }
  ]
 }
