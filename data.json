@@ -1,12 +1,12 @@
 {
- "generated": "2026-10-25T04:50:01.210778+00:00",
- "snapshot": "2026-10-25 04:50 UTC",
+ "generated": "2026-10-26T04:50:01.100541+00:00",
+ "snapshot": "2026-10-26 04:50 UTC",
  "providers_3rd": [
   "opencode-go",
   "opencode-zen",
   "openrouter"
  ],
- "modelsdev_fetched": "2026-10-25 04:50 UTC",
+ "modelsdev_fetched": "2026-10-26 04:50 UTC",
  "modelsdev_count": 606,
  "price_matrix": {
   "currency": "USD",
@@ -2351,8 +2351,8 @@
  },
  "chain_method": "Modelo primario: opencode-go/deepseek-v4.1-flash.\nSi el primero falla, se prueba el siguiente automáticamente (cascada de respaldo).\nCadena activa: 2 Go · 0 Zen free · 0 Zen paid · 1 OpenRouter (leída de agents.defaults.model).\n✅ Cadena sin Zen paid: 0 crédito de pago de Zen en cualquier escalón.\nGo y Zen free no consumen crédito de pago; OpenRouter solo en cascada de fallo.",
  "chain_snapshot": {
-  "generated_at": "2026-10-25T04:50:01.209490+00:00",
-  "snapshot": "2026-10-25 04:50 UTC",
+  "generated_at": "2026-10-26T04:50:01.099910+00:00",
+  "snapshot": "2026-10-26 04:50 UTC",
   "source": "agents.defaults.model en openclaw.json (leída en build)",
   "links": [
    {
@@ -2374,31 +2374,31 @@
  },
  "status_badges": {
   "go_quota": {
-   "badge": "⚠️ Cuota Go agotada (Mensual 100%)",
-   "nivel": "cuota",
+   "badge": "✅ Cuota Go OK (Continuo 0% (reinicia 4h 59m) · Semanal 2% (reinicia 19h 9m) · Mensual 1% (reinicia 723h 30m))",
+   "nivel": "ok",
    "source": "api",
    "buckets": {
     "rolling": {
      "percent": 0,
      "status": "ok",
-     "resets_at": "2026-10-24T08:50:01.680Z",
+     "resets_at": "2026-10-25T09:50:01.684Z",
      "resets_in_human": "4h 59m"
     },
     "weekly": {
-     "percent": 4,
+     "percent": 2,
      "status": "ok",
      "resets_at": "2026-10-26T00:00:00.000Z",
-     "resets_in_human": "44h 9m"
+     "resets_in_human": "19h 9m"
     },
     "monthly": {
-     "percent": 100,
-     "status": "agotada",
-     "resets_at": "2026-10-24T08:20:24.000Z",
-     "resets_in_human": "4h 30m"
+     "percent": 1,
+     "status": "ok",
+     "resets_at": "2026-11-24T08:20:24.000Z",
+     "resets_in_human": "723h 30m"
     }
    },
-   "generated": "2026-10-24T03:50:19.979458+00:00",
-   "snapshot": "2026-10-24"
+   "generated": "2026-10-25T04:50:57.404472+00:00",
+   "snapshot": "2026-10-25"
   },
   "balances": {
    "zen_paid_ok": true,
@@ -2409,11 +2409,10 @@
    "opencode-go": {
     "enabled": 1,
     "probed": {
-     "ok": 1,
-     "cuota": 33,
-     "unk": 3
+     "ok": 27,
+     "unk": 11
     },
-    "total": 3
+    "total": 2
    },
    "opencode-zen": {
     "enabled": 1,
@@ -3293,8 +3292,8 @@
    "or_id": null,
    "or_price": null,
    "tier": "paid",
-   "name": "Gemini 3.1 Pro Preview",
-   "desc": "Reasoning-first Gemini preview for agentic coding and complex problem solving",
+   "name": "Gemini 3.1 Pro Preview Custom Tools",
+   "desc": "Advanced Gemini model for complex reasoning, coding, and multimodal analysis",
    "context": 1048576,
    "output": 65536,
    "reasoning": true,
@@ -3306,23 +3305,8 @@
    "last_updated": "2026-02-19",
    "knowledge": "2025-01",
    "swebench": null,
-   "benchmarks": {
-    "SWE-Bench Pro": 15.1,
-    "Terminal-Bench": 68.3,
-    "SWE-Atlas Codebase QnA": 45.6,
-    "SWE-Atlas Refactoring": 33.81,
-    "SWE-Atlas Test Writing": 29.84,
-    "Artificial Analysis Coding Agent Index": 43,
-    "GPQA Diamond": 94.3,
-    "Humanity's Last Exam": 44.4,
-    "ARC-AGI-2": 77.1,
-    "MMMU Pro": 80.5,
-    "MCP Atlas": 78.2,
-    "OSWorld-Verified": 76.2,
-    "CharXiv Reasoning": 83.3,
-    "GDPval-AA": 1314
-   },
-   "md_url": "https://models.dev/models/google/gemini-3.1-pro-preview"
+   "benchmarks": {},
+   "md_url": "https://models.dev/models/google/gemini-3.1-pro-preview-customtools"
   },
   {
    "id": "gemini-3.5-flash",
