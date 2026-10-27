@@ -1,6 +1,6 @@
 {
- "generated": "2026-10-26T04:51:01.575158+00:00",
- "snapshot": "2026-10-26",
+ "generated": "2026-10-27T04:51:06.666765+00:00",
+ "snapshot": "2026-10-27",
  "fuente": "check-model-health.py F3 (2026-08-24)",
  "providers": {
   "opencode-go": {
@@ -15,7 +15,7 @@
    "enabled": 1,
    "probed": {
     "free": 42,
-    "noprobe": 43
+    "noprobe": 42
    },
    "total": 2
   },
@@ -31,30 +31,30 @@
   "ok": 27,
   "unk": 11,
   "free": 42,
-  "noprobe": 46
+  "noprobe": 45
  },
  "go_quota": {
-  "badge": "✅ Cuota Go OK (Continuo 0% (reinicia 33m) · Semanal 0% (reinicia 163h 9m) · Mensual 1% (reinicia 699h 30m))",
+  "badge": "✅ Cuota Go OK (Continuo 0% (reinicia 4h 59m) · Semanal 5% (reinicia 139h 9m) · Mensual 4% (reinicia 675h 30m))",
   "nivel": "ok",
   "source": "api",
   "buckets": {
    "rolling": {
     "percent": 0,
     "status": "ok",
-    "resets_at": "2026-10-26T05:23:59.000Z",
-    "resets_in_human": "33m"
+    "resets_at": "2026-10-27T09:50:01.425Z",
+    "resets_in_human": "4h 59m"
    },
    "weekly": {
-    "percent": 0,
+    "percent": 5,
     "status": "ok",
     "resets_at": "2026-11-02T00:00:00.000Z",
-    "resets_in_human": "163h 9m"
+    "resets_in_human": "139h 9m"
    },
    "monthly": {
-    "percent": 1,
+    "percent": 4,
     "status": "ok",
     "resets_at": "2026-11-24T08:20:24.000Z",
-    "resets_in_human": "699h 30m"
+    "resets_in_human": "675h 30m"
    }
   }
  },
@@ -410,12 +410,6 @@
    "provider": "opencode-zen",
    "estado": "free",
    "detalle": "no probado (protección cuota global free 100 req/día)"
-  },
-  {
-   "modelo": "deepseek-v4-flash",
-   "provider": "opencode-zen",
-   "estado": "noprobe",
-   "detalle": "no probeado (ahorro de crédito: usa Go para salud en vivo)"
   },
   {
    "modelo": "deepseek-v4-pro",
