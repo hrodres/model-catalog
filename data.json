@@ -1,12 +1,12 @@
 {
- "generated": "2026-10-27T04:50:01.024729+00:00",
- "snapshot": "2026-10-27 04:50 UTC",
+ "generated": "2026-10-28T04:50:01.153846+00:00",
+ "snapshot": "2026-10-28 04:50 UTC",
  "providers_3rd": [
   "opencode-go",
   "opencode-zen",
   "openrouter"
  ],
- "modelsdev_fetched": "2026-10-27 04:50 UTC",
+ "modelsdev_fetched": "2026-10-28 04:50 UTC",
  "modelsdev_count": 607,
  "price_matrix": {
   "currency": "USD",
@@ -2351,8 +2351,8 @@
  },
  "chain_method": "Modelo primario: opencode-go/deepseek-v4.1-flash.\nSi el primero falla, se prueba el siguiente automáticamente (cascada de respaldo).\nCadena activa: 2 Go · 0 Zen free · 0 Zen paid · 1 OpenRouter (leída de agents.defaults.model).\n✅ Cadena sin Zen paid: 0 crédito de pago de Zen en cualquier escalón.\nGo y Zen free no consumen crédito de pago; OpenRouter solo en cascada de fallo.",
  "chain_snapshot": {
-  "generated_at": "2026-10-27T04:50:01.024018+00:00",
-  "snapshot": "2026-10-27 04:50 UTC",
+  "generated_at": "2026-10-28T04:50:01.152535+00:00",
+  "snapshot": "2026-10-28 04:50 UTC",
   "source": "agents.defaults.model en openclaw.json (leída en build)",
   "links": [
    {
@@ -2374,31 +2374,31 @@
  },
  "status_badges": {
   "go_quota": {
-   "badge": "✅ Cuota Go OK (Continuo 0% (reinicia 33m) · Semanal 0% (reinicia 163h 9m) · Mensual 1% (reinicia 699h 30m))",
+   "badge": "✅ Cuota Go OK (Continuo 0% (reinicia 4h 59m) · Semanal 5% (reinicia 139h 9m) · Mensual 4% (reinicia 675h 30m))",
    "nivel": "ok",
    "source": "api",
    "buckets": {
     "rolling": {
      "percent": 0,
      "status": "ok",
-     "resets_at": "2026-10-26T05:23:59.000Z",
-     "resets_in_human": "33m"
+     "resets_at": "2026-10-27T09:50:01.425Z",
+     "resets_in_human": "4h 59m"
     },
     "weekly": {
-     "percent": 0,
+     "percent": 5,
      "status": "ok",
      "resets_at": "2026-11-02T00:00:00.000Z",
-     "resets_in_human": "163h 9m"
+     "resets_in_human": "139h 9m"
     },
     "monthly": {
-     "percent": 1,
+     "percent": 4,
      "status": "ok",
      "resets_at": "2026-11-24T08:20:24.000Z",
-     "resets_in_human": "699h 30m"
+     "resets_in_human": "675h 30m"
     }
    },
-   "generated": "2026-10-26T04:51:01.575158+00:00",
-   "snapshot": "2026-10-26"
+   "generated": "2026-10-27T04:51:06.666765+00:00",
+   "snapshot": "2026-10-27"
   },
   "balances": {
    "zen_paid_ok": true,
@@ -2418,7 +2418,7 @@
     "enabled": 1,
     "probed": {
      "free": 42,
-     "noprobe": 43
+     "noprobe": 42
     },
     "total": 2
    },
@@ -5897,21 +5897,21 @@
    "or_id": null,
    "or_price": null,
    "tier": "paid",
-   "name": "GPT-5 Chat (latest)",
-   "desc": "Chat-tuned GPT model for conversational assistance, writing, and tool workflows",
-   "context": 400000,
-   "output": 128000,
+   "name": "Gemini Flash Latest",
+   "desc": "High-efficiency Gemini model for agentic workflows, coding, and multimodal reasoning",
+   "context": 1048576,
+   "output": 65536,
    "reasoning": true,
-   "tool_call": false,
+   "tool_call": true,
    "structured": false,
    "multimodal": true,
    "open_weights": false,
-   "release": "2025-08-07",
-   "last_updated": "2025-08-07",
-   "knowledge": "2024-09-30",
+   "release": "2026-08-13",
+   "last_updated": "2026-08-13",
+   "knowledge": "2026-03",
    "swebench": null,
    "benchmarks": {},
-   "md_url": "https://models.dev/models/openai/gpt-5-chat-latest"
+   "md_url": "https://models.dev/models/google/gemini-flash-latest"
   }
  ]
 }

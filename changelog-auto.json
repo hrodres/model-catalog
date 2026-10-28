@@ -2,42 +2,6 @@
  "events": [
   {
    "date": "2026-09-07",
-   "text": "opencode-go/glm-5.1: ok → unk"
-  },
-  {
-   "date": "2026-09-07",
-   "text": "opencode-go/glm-5.2: ok → unk"
-  },
-  {
-   "date": "2026-09-07",
-   "text": "opencode-go/glm-5.3: down → unk"
-  },
-  {
-   "date": "2026-09-07",
-   "text": "opencode-go/glm-5.3-flash: ok → unk"
-  },
-  {
-   "date": "2026-09-07",
-   "text": "opencode-go/grok-4.5: down → unk"
-  },
-  {
-   "date": "2026-09-07",
-   "text": "opencode-go/hy3: ok → unk"
-  },
-  {
-   "date": "2026-09-07",
-   "text": "opencode-go/hy3-preview: indisponible → unk"
-  },
-  {
-   "date": "2026-09-07",
-   "text": "opencode-go/hy4-preview: ok → unk"
-  },
-  {
-   "date": "2026-09-07",
-   "text": "opencode-go/kimi-k2.6: ok → unk"
-  },
-  {
-   "date": "2026-09-07",
    "text": "opencode-go/kimi-k2.7-code: ok → unk"
   },
   {
@@ -1199,6 +1163,42 @@
   {
    "date": "2026-10-25",
    "text": "opencode-go/step-5-preview: cuota → ok"
+  },
+  {
+   "date": "2026-10-28",
+   "text": "opencode-go/claude-haiku-5-5: unk → ok"
+  },
+  {
+   "date": "2026-10-28",
+   "text": "opencode-go/gemini-4-argon: unk → ok"
+  },
+  {
+   "date": "2026-10-28",
+   "text": "opencode-go/glm-5.3-flash: ok → down"
+  },
+  {
+   "date": "2026-10-28",
+   "text": "opencode-go/gpt-5.6-luna: unk → ok"
+  },
+  {
+   "date": "2026-10-28",
+   "text": "opencode-go/gpt-6-luna: unk → ok"
+  },
+  {
+   "date": "2026-10-28",
+   "text": "opencode-go/grok-4.6: unk → ok"
+  },
+  {
+   "date": "2026-10-28",
+   "text": "opencode-go/grok-4.7: unk → ok"
+  },
+  {
+   "date": "2026-10-28",
+   "text": "opencode-go/hy4-preview: ok → down"
+  },
+  {
+   "date": "2026-10-28",
+   "text": "opencode-go/minimax-m2.7: unk → ok"
   }
  ]
 }
