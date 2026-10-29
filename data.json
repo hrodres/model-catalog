@@ -1,12 +1,12 @@
 {
- "generated": "2026-10-28T04:50:01.153846+00:00",
- "snapshot": "2026-10-28 04:50 UTC",
+ "generated": "2026-10-29T04:50:01.135315+00:00",
+ "snapshot": "2026-10-29 04:50 UTC",
  "providers_3rd": [
   "opencode-go",
   "opencode-zen",
   "openrouter"
  ],
- "modelsdev_fetched": "2026-10-28 04:50 UTC",
+ "modelsdev_fetched": "2026-10-29 04:50 UTC",
  "modelsdev_count": 607,
  "price_matrix": {
   "currency": "USD",
@@ -2351,8 +2351,8 @@
  },
  "chain_method": "Modelo primario: opencode-go/deepseek-v4.1-flash.\nSi el primero falla, se prueba el siguiente automáticamente (cascada de respaldo).\nCadena activa: 2 Go · 0 Zen free · 0 Zen paid · 1 OpenRouter (leída de agents.defaults.model).\n✅ Cadena sin Zen paid: 0 crédito de pago de Zen en cualquier escalón.\nGo y Zen free no consumen crédito de pago; OpenRouter solo en cascada de fallo.",
  "chain_snapshot": {
-  "generated_at": "2026-10-28T04:50:01.152535+00:00",
-  "snapshot": "2026-10-28 04:50 UTC",
+  "generated_at": "2026-10-29T04:50:01.133974+00:00",
+  "snapshot": "2026-10-29 04:50 UTC",
   "source": "agents.defaults.model en openclaw.json (leída en build)",
   "links": [
    {
@@ -2374,31 +2374,31 @@
  },
  "status_badges": {
   "go_quota": {
-   "badge": "✅ Cuota Go OK (Continuo 0% (reinicia 4h 59m) · Semanal 5% (reinicia 139h 9m) · Mensual 4% (reinicia 675h 30m))",
+   "badge": "✅ Cuota Go OK (Continuo 0% (reinicia 4h 59m) · Semanal 11% (reinicia 115h 9m) · Mensual 7% (reinicia 651h 30m))",
    "nivel": "ok",
    "source": "api",
    "buckets": {
     "rolling": {
      "percent": 0,
      "status": "ok",
-     "resets_at": "2026-10-27T09:50:01.425Z",
+     "resets_at": "2026-10-28T09:50:01.643Z",
      "resets_in_human": "4h 59m"
     },
     "weekly": {
-     "percent": 5,
+     "percent": 11,
      "status": "ok",
      "resets_at": "2026-11-02T00:00:00.000Z",
-     "resets_in_human": "139h 9m"
+     "resets_in_human": "115h 9m"
     },
     "monthly": {
-     "percent": 4,
+     "percent": 7,
      "status": "ok",
      "resets_at": "2026-11-24T08:20:24.000Z",
-     "resets_in_human": "675h 30m"
+     "resets_in_human": "651h 30m"
     }
    },
-   "generated": "2026-10-27T04:51:06.666765+00:00",
-   "snapshot": "2026-10-27"
+   "generated": "2026-10-28T04:51:29.214432+00:00",
+   "snapshot": "2026-10-28"
   },
   "balances": {
    "zen_paid_ok": true,
@@ -2409,10 +2409,11 @@
    "opencode-go": {
     "enabled": 1,
     "probed": {
-     "ok": 27,
-     "unk": 11
+     "ok": 32,
+     "down": 2,
+     "unk": 4
     },
-    "total": 2
+    "total": 3
    },
    "opencode-zen": {
     "enabled": 1,
@@ -2432,12 +2433,12 @@
   }
  },
  "counts": {
-  "total": 100,
-  "go": 38,
-  "zen": 84,
+  "total": 97,
+  "go": 30,
+  "zen": 83,
   "free": 9,
   "openrouter": 7,
-  "with_modelsdev": 91
+  "with_modelsdev": 89
  },
  "models": [
   {
@@ -3239,8 +3240,8 @@
    "or_id": null,
    "or_price": null,
    "tier": "paid",
-   "name": "Gemini 3.1 Pro Preview",
-   "desc": "Reasoning-first Gemini preview for agentic coding and complex problem solving",
+   "name": "Gemini 3.1 Pro Preview Custom Tools",
+   "desc": "Advanced Gemini model for complex reasoning, coding, and multimodal analysis",
    "context": 1048576,
    "output": 65536,
    "reasoning": true,
@@ -3252,23 +3253,8 @@
    "last_updated": "2026-02-19",
    "knowledge": "2025-01",
    "swebench": null,
-   "benchmarks": {
-    "SWE-Bench Pro": 15.1,
-    "Terminal-Bench": 68.3,
-    "SWE-Atlas Codebase QnA": 45.6,
-    "SWE-Atlas Refactoring": 33.81,
-    "SWE-Atlas Test Writing": 29.84,
-    "Artificial Analysis Coding Agent Index": 43,
-    "GPQA Diamond": 94.3,
-    "Humanity's Last Exam": 44.4,
-    "ARC-AGI-2": 77.1,
-    "MMMU Pro": 80.5,
-    "MCP Atlas": 78.2,
-    "OSWorld-Verified": 76.2,
-    "CharXiv Reasoning": 83.3,
-    "GDPval-AA": 1314
-   },
-   "md_url": "https://models.dev/models/google/gemini-3.1-pro-preview"
+   "benchmarks": {},
+   "md_url": "https://models.dev/models/google/gemini-3.1-pro-preview-customtools"
   },
   {
    "id": "gemini-3.5-flash",
@@ -3515,7 +3501,7 @@
   {
    "id": "glm-5.1",
    "providers": {
-    "go": true,
+    "go": false,
     "zen": true,
     "free": false,
     "or": false
@@ -4542,7 +4528,7 @@
   {
    "id": "grok-4.6",
    "providers": {
-    "go": true,
+    "go": false,
     "zen": true,
     "free": false,
     "or": false
@@ -4842,7 +4828,7 @@
   {
    "id": "kimi-k2.6",
    "providers": {
-    "go": true,
+    "go": false,
     "zen": true,
     "free": false,
     "or": false
@@ -5238,7 +5224,7 @@
   {
    "id": "minimax-m2.5",
    "providers": {
-    "go": true,
+    "go": false,
     "zen": true,
     "free": false,
     "or": false
@@ -5270,7 +5256,7 @@
   {
    "id": "minimax-m2.7",
    "providers": {
-    "go": true,
+    "go": false,
     "zen": true,
     "free": false,
     "or": false
@@ -5631,33 +5617,6 @@
    "md_url": "https://models.dev/models/nvidia/nemotron-3.5-super-vl-120b-a12b"
   },
   {
-   "id": "omen-alpha",
-   "providers": {
-    "go": true,
-    "zen": false,
-    "free": false,
-    "or": false
-   },
-   "or_id": null,
-   "or_price": null,
-   "tier": "go",
-   "name": "omen-alpha",
-   "desc": "Sin ficha en models.dev (solo catálogo opencode)",
-   "context": null,
-   "output": null,
-   "reasoning": null,
-   "tool_call": null,
-   "structured": null,
-   "multimodal": null,
-   "open_weights": null,
-   "release": "",
-   "last_updated": "",
-   "knowledge": "",
-   "swebench": null,
-   "benchmarks": {},
-   "md_url": null
-  },
-  {
    "id": "qwen3.5-plus",
    "providers": {
     "go": false,
@@ -5687,7 +5646,7 @@
   {
    "id": "qwen3.6-plus",
    "providers": {
-    "go": true,
+    "go": false,
     "zen": true,
     "free": false,
     "or": false
@@ -5710,43 +5669,6 @@
    "swebench": null,
    "benchmarks": {},
    "md_url": "https://models.dev/models/alibaba/qwen3.6-plus"
-  },
-  {
-   "id": "qwen3.7-max",
-   "providers": {
-    "go": true,
-    "zen": false,
-    "free": false,
-    "or": false
-   },
-   "or_id": null,
-   "or_price": null,
-   "tier": "go",
-   "name": "Qwen3.7 Max",
-   "desc": "Qwen frontier model tuned for agent frameworks, coding assistants, and long tasks",
-   "context": 1000000,
-   "output": 131072,
-   "reasoning": true,
-   "tool_call": true,
-   "structured": false,
-   "multimodal": false,
-   "open_weights": false,
-   "release": "2026-05-21",
-   "last_updated": "2026-05-21",
-   "knowledge": "",
-   "swebench": 80.4,
-   "benchmarks": {
-    "SWE-Bench Verified": 80.4,
-    "SWE-Bench Pro": 60.6,
-    "SWE-Bench Multilingual": 78.3,
-    "Terminal-Bench": 69.7,
-    "GPQA Diamond": 92.4,
-    "Humanity's Last Exam": 41.4,
-    "SciCode": 53.5,
-    "MCP Atlas": 76.4,
-    "NL2Repo": 47.2
-   },
-   "md_url": "https://models.dev/models/alibaba/qwen3.7-max"
   },
   {
    "id": "qwen3.7-plus",
@@ -5885,33 +5807,6 @@
    "swebench": null,
    "benchmarks": {},
    "md_url": "https://models.dev/models/stepfun/step-5-preview"
-  },
-  {
-   "id": "test",
-   "providers": {
-    "go": false,
-    "zen": true,
-    "free": false,
-    "or": false
-   },
-   "or_id": null,
-   "or_price": null,
-   "tier": "paid",
-   "name": "Gemini Flash Latest",
-   "desc": "High-efficiency Gemini model for agentic workflows, coding, and multimodal reasoning",
-   "context": 1048576,
-   "output": 65536,
-   "reasoning": true,
-   "tool_call": true,
-   "structured": false,
-   "multimodal": true,
-   "open_weights": false,
-   "release": "2026-08-13",
-   "last_updated": "2026-08-13",
-   "knowledge": "2026-03",
-   "swebench": null,
-   "benchmarks": {},
-   "md_url": "https://models.dev/models/google/gemini-flash-latest"
   }
  ]
 }

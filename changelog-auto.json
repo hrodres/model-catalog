@@ -2,18 +2,6 @@
  "events": [
   {
    "date": "2026-09-07",
-   "text": "opencode-go/kimi-k2.7-code: ok → unk"
-  },
-  {
-   "date": "2026-09-07",
-   "text": "opencode-go/kimi-k3: ok → unk"
-  },
-  {
-   "date": "2026-09-07",
-   "text": "opencode-go/longcat-2.0: ok → unk"
-  },
-  {
-   "date": "2026-09-07",
    "text": "opencode-go/mimo-v2.5: ok → unk"
   },
   {
@@ -1199,6 +1187,18 @@
   {
    "date": "2026-10-28",
    "text": "opencode-go/minimax-m2.7: unk → ok"
+  },
+  {
+   "date": "2026-10-29",
+   "text": "opencode-go/glm-5.3-flash: down → ok"
+  },
+  {
+   "date": "2026-10-29",
+   "text": "opencode-go/hy4-preview: down → ok"
+  },
+  {
+   "date": "2026-10-29",
+   "text": "opencode-go/qwen3.8-max: ok → down"
   }
  ]
 }
