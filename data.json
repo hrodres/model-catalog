@@ -1,12 +1,12 @@
 {
- "generated": "2026-10-29T04:50:01.135315+00:00",
- "snapshot": "2026-10-29 04:50 UTC",
+ "generated": "2026-10-30T04:50:01.279434+00:00",
+ "snapshot": "2026-10-30 04:50 UTC",
  "providers_3rd": [
   "opencode-go",
   "opencode-zen",
   "openrouter"
  ],
- "modelsdev_fetched": "2026-10-29 04:50 UTC",
+ "modelsdev_fetched": "2026-10-30 04:50 UTC",
  "modelsdev_count": 607,
  "price_matrix": {
   "currency": "USD",
@@ -2351,8 +2351,8 @@
  },
  "chain_method": "Modelo primario: opencode-go/deepseek-v4.1-flash.\nSi el primero falla, se prueba el siguiente automáticamente (cascada de respaldo).\nCadena activa: 2 Go · 0 Zen free · 0 Zen paid · 1 OpenRouter (leída de agents.defaults.model).\n✅ Cadena sin Zen paid: 0 crédito de pago de Zen en cualquier escalón.\nGo y Zen free no consumen crédito de pago; OpenRouter solo en cascada de fallo.",
  "chain_snapshot": {
-  "generated_at": "2026-10-29T04:50:01.133974+00:00",
-  "snapshot": "2026-10-29 04:50 UTC",
+  "generated_at": "2026-10-30T04:50:01.274917+00:00",
+  "snapshot": "2026-10-30 04:50 UTC",
   "source": "agents.defaults.model en openclaw.json (leída en build)",
   "links": [
    {
@@ -2374,31 +2374,31 @@
  },
  "status_badges": {
   "go_quota": {
-   "badge": "✅ Cuota Go OK (Continuo 0% (reinicia 4h 59m) · Semanal 11% (reinicia 115h 9m) · Mensual 7% (reinicia 651h 30m))",
+   "badge": "✅ Cuota Go OK (Continuo 0% (reinicia 4h 59m) · Semanal 22% (reinicia 91h 9m) · Mensual 13% (reinicia 627h 30m))",
    "nivel": "ok",
    "source": "api",
    "buckets": {
     "rolling": {
      "percent": 0,
      "status": "ok",
-     "resets_at": "2026-10-28T09:50:01.643Z",
+     "resets_at": "2026-10-29T09:50:01.518Z",
      "resets_in_human": "4h 59m"
     },
     "weekly": {
-     "percent": 11,
+     "percent": 22,
      "status": "ok",
      "resets_at": "2026-11-02T00:00:00.000Z",
-     "resets_in_human": "115h 9m"
+     "resets_in_human": "91h 9m"
     },
     "monthly": {
-     "percent": 7,
+     "percent": 13,
      "status": "ok",
      "resets_at": "2026-11-24T08:20:24.000Z",
-     "resets_in_human": "651h 30m"
+     "resets_in_human": "627h 30m"
     }
    },
-   "generated": "2026-10-28T04:51:29.214432+00:00",
-   "snapshot": "2026-10-28"
+   "generated": "2026-10-29T04:50:58.791234+00:00",
+   "snapshot": "2026-10-29"
   },
   "balances": {
    "zen_paid_ok": true,
@@ -2409,16 +2409,16 @@
    "opencode-go": {
     "enabled": 1,
     "probed": {
-     "ok": 32,
-     "down": 2,
-     "unk": 4
+     "ok": 25,
+     "unk": 4,
+     "down": 1
     },
     "total": 3
    },
    "opencode-zen": {
     "enabled": 1,
     "probed": {
-     "free": 42,
+     "free": 41,
      "noprobe": 42
     },
     "total": 2
@@ -2433,12 +2433,12 @@
   }
  },
  "counts": {
-  "total": 97,
-  "go": 30,
-  "zen": 83,
-  "free": 9,
-  "openrouter": 7,
-  "with_modelsdev": 89
+  "total": 92,
+  "go": 28,
+  "zen": 80,
+  "free": 8,
+  "openrouter": 5,
+  "with_modelsdev": 87
  },
  "models": [
   {
@@ -2865,33 +2865,6 @@
     "Chartography": 89
    },
    "md_url": "https://models.dev/models/anthropic/claude-opus-5-5"
-  },
-  {
-   "id": "claude-opus-5-5-backup",
-   "providers": {
-    "go": false,
-    "zen": true,
-    "free": false,
-    "or": false
-   },
-   "or_id": null,
-   "or_price": null,
-   "tier": "paid",
-   "name": "claude-opus-5-5-backup",
-   "desc": "Sin ficha en models.dev (solo catálogo opencode)",
-   "context": null,
-   "output": null,
-   "reasoning": null,
-   "tool_call": null,
-   "structured": null,
-   "multimodal": null,
-   "open_weights": null,
-   "release": "",
-   "last_updated": "",
-   "knowledge": "",
-   "swebench": null,
-   "benchmarks": {},
-   "md_url": null
   },
   {
    "id": "claude-sonnet-4-5",
@@ -4740,60 +4713,6 @@
    "md_url": null
   },
   {
-   "id": "jev-1.13",
-   "providers": {
-    "go": false,
-    "zen": true,
-    "free": false,
-    "or": false
-   },
-   "or_id": null,
-   "or_price": null,
-   "tier": "paid",
-   "name": "jev-1.13",
-   "desc": "Sin ficha en models.dev (solo catálogo opencode)",
-   "context": null,
-   "output": null,
-   "reasoning": null,
-   "tool_call": null,
-   "structured": null,
-   "multimodal": null,
-   "open_weights": null,
-   "release": "",
-   "last_updated": "",
-   "knowledge": "",
-   "swebench": null,
-   "benchmarks": {},
-   "md_url": null
-  },
-  {
-   "id": "jev-1.13-free",
-   "providers": {
-    "go": false,
-    "zen": true,
-    "free": true,
-    "or": false
-   },
-   "or_id": null,
-   "or_price": null,
-   "tier": "free",
-   "name": "jev-1.13-free",
-   "desc": "Sin ficha en models.dev (solo catálogo opencode)",
-   "context": null,
-   "output": null,
-   "reasoning": null,
-   "tool_call": null,
-   "structured": null,
-   "multimodal": null,
-   "open_weights": null,
-   "release": "",
-   "last_updated": "",
-   "knowledge": "",
-   "swebench": null,
-   "benchmarks": {},
-   "md_url": null
-  },
-  {
    "id": "kimi-k2.5",
    "providers": {
     "go": false,
@@ -4998,98 +4917,6 @@
     "FORTE": 73.2
    },
    "md_url": "https://models.dev/models/meituan/longcat-2.0"
-  },
-  {
-   "id": "mimo-v2.5",
-   "providers": {
-    "go": true,
-    "zen": false,
-    "free": false,
-    "or": true
-   },
-   "or_id": "xiaomi/mimo-v2.5",
-   "or_price": {
-    "in": 0.14,
-    "out": 0.28,
-    "context": 1050000
-   },
-   "tier": "go",
-   "name": "MiMo-V2.5",
-   "desc": "Open MiMo model for multimodal coding agents and long-context automation",
-   "context": 1048576,
-   "output": 131072,
-   "reasoning": true,
-   "tool_call": true,
-   "structured": false,
-   "multimodal": true,
-   "open_weights": true,
-   "release": "2026-04-22",
-   "last_updated": "2026-04-22",
-   "knowledge": "2024-12",
-   "swebench": null,
-   "benchmarks": {
-    "MiMo Coding Bench": 71.8,
-    "Claw-Eval": 23.8,
-    "Terminal-Bench": 65.8,
-    "SWE-Bench Pro": 56.1,
-    "CharXiv Reasoning": 81,
-    "MMMU-Pro": 77.9,
-    "HR-Bench": 88.5,
-    "OmniDocBench": 87.2,
-    "Video-MME": 87.7,
-    "DailyOmni": 83.5,
-    "VideoHolmes": 64
-   },
-   "md_url": "https://models.dev/models/xiaomi/mimo-v2.5"
-  },
-  {
-   "id": "mimo-v2.5-pro",
-   "providers": {
-    "go": true,
-    "zen": false,
-    "free": false,
-    "or": true
-   },
-   "or_id": "xiaomi/mimo-v2.5-pro",
-   "or_price": {
-    "in": 0.435,
-    "out": 0.87,
-    "context": 1050000
-   },
-   "tier": "go",
-   "name": "MiMo-V2.5-Pro",
-   "desc": "Stronger MiMo Pro tier for multimodal reasoning and coding-agent execution",
-   "context": 1048576,
-   "output": 131072,
-   "reasoning": true,
-   "tool_call": true,
-   "structured": false,
-   "multimodal": false,
-   "open_weights": true,
-   "release": "2026-04-22",
-   "last_updated": "2026-04-22",
-   "knowledge": "2024-12",
-   "swebench": 78.9,
-   "benchmarks": {
-    "SWE-Bench Verified": 78.9,
-    "SWE-Bench Pro": 57.2,
-    "GPQA Diamond": 86.6,
-    "DeepSWE": 19,
-    "ProgramBench": 12.5,
-    "MiMo Code Bench": 40.4,
-    "AutomationBench": 16,
-    "Toolathlon-Verified": 49.1,
-    "GDPval-AA": 1107,
-    "Agents' Last Exam": 13.2,
-    "Terminal-Bench": 65.2,
-    "JobBench": 25,
-    "CyberGym": 40,
-    "MiMo Cyber Bench": 0,
-    "ExploitGym": 0.2,
-    "ExploitBench": 16.6,
-    "SEC-Bench Pro": 17.7
-   },
-   "md_url": "https://models.dev/models/xiaomi/mimo-v2.5-pro"
   },
   {
    "id": "mimo-v2.6-flash",

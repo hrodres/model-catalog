@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-29T04:50:01.135315+00:00",
+ "generated": "2026-10-30T04:50:01.279434+00:00",
  "aliases": [
   {
    "id": "opencode-go/beam-free",
@@ -56,10 +56,6 @@
   {
    "id": "opencode-zen/claude-opus-5-5",
    "alias": "💰 Claude Opus 5.5 (Zen)"
-  },
-  {
-   "id": "opencode-zen/claude-opus-5-5-backup",
-   "alias": "💰 claude-opus-5-5-backup (Zen)"
   },
   {
    "id": "opencode-zen/claude-sonnet-4-5",
@@ -310,14 +306,6 @@
    "alias": "🚀 iceman-contributor-free (Go)"
   },
   {
-   "id": "opencode-zen/jev-1.13",
-   "alias": "💰 jev-1.13 (Zen)"
-  },
-  {
-   "id": "opencode-zen/jev-1.13-free",
-   "alias": "🌱 jev-1.13-free (Zen free)"
-  },
-  {
    "id": "opencode-zen/kimi-k2.5",
    "alias": "💰 Kimi K2.5 (Zen)"
   },
@@ -348,14 +336,6 @@
   {
    "id": "opencode-go/longcat-2.0",
    "alias": "🚀 LongCat-2.0 (Go)"
-  },
-  {
-   "id": "opencode-go/mimo-v2.5",
-   "alias": "🚀 MiMo-V2.5 (Go)"
-  },
-  {
-   "id": "opencode-go/mimo-v2.5-pro",
-   "alias": "🚀 MiMo-V2.5-Pro (Go)"
   },
   {
    "id": "opencode-go/mimo-v2.6-flash",
