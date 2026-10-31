@@ -2,10 +2,6 @@
  "events": [
   {
    "date": "2026-09-07",
-   "text": "opencode-go/mimo-v2.5-pro: down → unk"
-  },
-  {
-   "date": "2026-09-07",
    "text": "opencode-go/minimax-m2.5: ok → unk"
   },
   {
@@ -1199,6 +1195,10 @@
   {
    "date": "2026-10-30",
    "text": "opencode-go/qwen3.8-max: down → ok"
+  },
+  {
+   "date": "2026-10-31",
+   "text": "opencode-go/kimi-k2.7-code: ok → cuota"
   }
  ]
 }

@@ -1,12 +1,12 @@
 {
- "generated": "2026-10-30T04:50:01.279434+00:00",
- "snapshot": "2026-10-30 04:50 UTC",
+ "generated": "2026-10-31T04:50:01.239613+00:00",
+ "snapshot": "2026-10-31 04:50 UTC",
  "providers_3rd": [
   "opencode-go",
   "opencode-zen",
   "openrouter"
  ],
- "modelsdev_fetched": "2026-10-30 04:50 UTC",
+ "modelsdev_fetched": "2026-10-31 04:50 UTC",
  "modelsdev_count": 607,
  "price_matrix": {
   "currency": "USD",
@@ -2351,8 +2351,8 @@
  },
  "chain_method": "Modelo primario: opencode-go/deepseek-v4.1-flash.\nSi el primero falla, se prueba el siguiente automáticamente (cascada de respaldo).\nCadena activa: 2 Go · 0 Zen free · 0 Zen paid · 1 OpenRouter (leída de agents.defaults.model).\n✅ Cadena sin Zen paid: 0 crédito de pago de Zen en cualquier escalón.\nGo y Zen free no consumen crédito de pago; OpenRouter solo en cascada de fallo.",
  "chain_snapshot": {
-  "generated_at": "2026-10-30T04:50:01.274917+00:00",
-  "snapshot": "2026-10-30 04:50 UTC",
+  "generated_at": "2026-10-31T04:50:01.239064+00:00",
+  "snapshot": "2026-10-31 04:50 UTC",
   "source": "agents.defaults.model en openclaw.json (leída en build)",
   "links": [
    {
@@ -2374,31 +2374,31 @@
  },
  "status_badges": {
   "go_quota": {
-   "badge": "✅ Cuota Go OK (Continuo 0% (reinicia 4h 59m) · Semanal 22% (reinicia 91h 9m) · Mensual 13% (reinicia 627h 30m))",
+   "badge": "✅ Cuota Go OK (Continuo 0% (reinicia 3h 10m) · Semanal 26% (reinicia 67h 9m) · Mensual 15% (reinicia 603h 30m))",
    "nivel": "ok",
    "source": "api",
    "buckets": {
     "rolling": {
      "percent": 0,
      "status": "ok",
-     "resets_at": "2026-10-29T09:50:01.518Z",
-     "resets_in_human": "4h 59m"
+     "resets_at": "2026-10-30T08:00:38.000Z",
+     "resets_in_human": "3h 10m"
     },
     "weekly": {
-     "percent": 22,
+     "percent": 26,
      "status": "ok",
      "resets_at": "2026-11-02T00:00:00.000Z",
-     "resets_in_human": "91h 9m"
+     "resets_in_human": "67h 9m"
     },
     "monthly": {
-     "percent": 13,
+     "percent": 15,
      "status": "ok",
      "resets_at": "2026-11-24T08:20:24.000Z",
-     "resets_in_human": "627h 30m"
+     "resets_in_human": "603h 30m"
     }
    },
-   "generated": "2026-10-29T04:50:58.791234+00:00",
-   "snapshot": "2026-10-29"
+   "generated": "2026-10-30T04:50:48.980774+00:00",
+   "snapshot": "2026-10-30"
   },
   "balances": {
    "zen_paid_ok": true,
@@ -2410,15 +2410,14 @@
     "enabled": 1,
     "probed": {
      "ok": 25,
-     "unk": 4,
-     "down": 1
+     "unk": 3
     },
-    "total": 3
+    "total": 2
    },
    "opencode-zen": {
     "enabled": 1,
     "probed": {
-     "free": 41,
+     "free": 38,
      "noprobe": 42
     },
     "total": 2
@@ -2433,12 +2432,12 @@
   }
  },
  "counts": {
-  "total": 92,
+  "total": 90,
   "go": 28,
-  "zen": 80,
+  "zen": 78,
   "free": 8,
   "openrouter": 5,
-  "with_modelsdev": 87
+  "with_modelsdev": 85
  },
  "models": [
   {
@@ -3169,65 +3168,6 @@
    "swebench": null,
    "benchmarks": {},
    "md_url": null
-  },
-  {
-   "id": "gemini-3-flash",
-   "providers": {
-    "go": false,
-    "zen": true,
-    "free": false,
-    "or": false
-   },
-   "or_id": null,
-   "or_price": null,
-   "tier": "paid",
-   "name": "Gemini 3 Flash Preview",
-   "desc": "New Gemini flash lane bringing frontier-style multimodal reasoning to cheaper runs",
-   "context": 1048576,
-   "output": 65536,
-   "reasoning": true,
-   "tool_call": true,
-   "structured": false,
-   "multimodal": true,
-   "open_weights": false,
-   "release": "2025-12-17",
-   "last_updated": "2025-12-17",
-   "knowledge": "2025-01",
-   "swebench": null,
-   "benchmarks": {
-    "SWE-Bench Pro": 34.63,
-    "SWE-Atlas Codebase QnA": 8.2,
-    "SWE-Atlas Refactoring": 10,
-    "SWE-Atlas Test Writing": 30.3
-   },
-   "md_url": "https://models.dev/models/google/gemini-3-flash-preview"
-  },
-  {
-   "id": "gemini-3.1-pro",
-   "providers": {
-    "go": false,
-    "zen": true,
-    "free": false,
-    "or": false
-   },
-   "or_id": null,
-   "or_price": null,
-   "tier": "paid",
-   "name": "Gemini 3.1 Pro Preview Custom Tools",
-   "desc": "Advanced Gemini model for complex reasoning, coding, and multimodal analysis",
-   "context": 1048576,
-   "output": 65536,
-   "reasoning": true,
-   "tool_call": true,
-   "structured": false,
-   "multimodal": true,
-   "open_weights": false,
-   "release": "2026-02-19",
-   "last_updated": "2026-02-19",
-   "knowledge": "2025-01",
-   "swebench": null,
-   "benchmarks": {},
-   "md_url": "https://models.dev/models/google/gemini-3.1-pro-preview-customtools"
   },
   {
    "id": "gemini-3.5-flash",

@@ -1,21 +1,22 @@
 {
- "generated": "2026-10-30T04:50:48.980774+00:00",
- "snapshot": "2026-10-30",
+ "generated": "2026-10-31T04:50:53.697612+00:00",
+ "snapshot": "2026-10-31",
  "fuente": "check-model-health.py F3 (2026-08-24)",
  "providers": {
   "opencode-go": {
    "enabled": 1,
    "probed": {
-    "ok": 25,
-    "unk": 3
+    "ok": 24,
+    "unk": 3,
+    "cuota": 1
    },
-   "total": 2
+   "total": 3
   },
   "opencode-zen": {
    "enabled": 1,
    "probed": {
     "free": 38,
-    "noprobe": 42
+    "noprobe": 40
    },
    "total": 2
   },
@@ -28,33 +29,34 @@
   }
  },
  "counts": {
-  "ok": 25,
+  "ok": 24,
   "unk": 3,
+  "cuota": 1,
   "free": 38,
-  "noprobe": 45
+  "noprobe": 43
  },
  "go_quota": {
-  "badge": "✅ Cuota Go OK (Continuo 0% (reinicia 3h 10m) · Semanal 26% (reinicia 67h 9m) · Mensual 15% (reinicia 603h 30m))",
+  "badge": "✅ Cuota Go OK (Continuo 0% (reinicia 3h 34m) · Semanal 30% (reinicia 43h 9m) · Mensual 17% (reinicia 579h 30m))",
   "nivel": "ok",
   "source": "api",
   "buckets": {
    "rolling": {
     "percent": 0,
     "status": "ok",
-    "resets_at": "2026-10-30T08:00:38.000Z",
-    "resets_in_human": "3h 10m"
+    "resets_at": "2026-10-31T08:24:27.000Z",
+    "resets_in_human": "3h 34m"
    },
    "weekly": {
-    "percent": 26,
+    "percent": 30,
     "status": "ok",
     "resets_at": "2026-11-02T00:00:00.000Z",
-    "resets_in_human": "67h 9m"
+    "resets_in_human": "43h 9m"
    },
    "monthly": {
-    "percent": 15,
+    "percent": 17,
     "status": "ok",
     "resets_at": "2026-11-24T08:20:24.000Z",
-    "resets_in_human": "603h 30m"
+    "resets_in_human": "579h 30m"
    }
   }
  },
@@ -168,8 +170,8 @@
   {
    "modelo": "kimi-k2.7-code",
    "provider": "opencode-go",
-   "estado": "ok",
-   "detalle": "HTTP 200"
+   "estado": "cuota",
+   "detalle": "429 cuota agotada / rate-limit"
   },
   {
    "modelo": "kimi-k3",
@@ -368,18 +370,6 @@
    "provider": "opencode-zen",
    "estado": "free",
    "detalle": "no probado (protección cuota global free 100 req/día)"
-  },
-  {
-   "modelo": "gemini-3-flash",
-   "provider": "opencode-zen",
-   "estado": "noprobe",
-   "detalle": "no probeado (ahorro de crédito: usa Go para salud en vivo)"
-  },
-  {
-   "modelo": "gemini-3.1-pro",
-   "provider": "opencode-zen",
-   "estado": "noprobe",
-   "detalle": "no probeado (ahorro de crédito: usa Go para salud en vivo)"
   },
   {
    "modelo": "gemini-3.5-flash",

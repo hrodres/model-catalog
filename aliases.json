@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-30T04:50:01.279434+00:00",
+ "generated": "2026-10-31T04:50:01.239613+00:00",
  "aliases": [
   {
    "id": "opencode-go/beam-free",
@@ -96,14 +96,6 @@
   {
    "id": "opencode-zen/flint-40b-free",
    "alias": "🌱 flint-40b-free (Zen free)"
-  },
-  {
-   "id": "opencode-zen/gemini-3-flash",
-   "alias": "💰 Gemini 3 Flash Preview (Zen)"
-  },
-  {
-   "id": "opencode-zen/gemini-3.1-pro",
-   "alias": "💰 Gemini 3.1 Pro Preview Custom Tools (Zen)"
   },
   {
    "id": "opencode-zen/gemini-3.5-flash",
