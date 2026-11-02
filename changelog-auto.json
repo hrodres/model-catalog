@@ -2,10 +2,6 @@
  "events": [
   {
    "date": "2026-09-07",
-   "text": "opencode-go/omen-alpha: ok → unk"
-  },
-  {
-   "date": "2026-09-07",
    "text": "opencode-go/qwen3.5-plus: down → unk"
   },
   {
@@ -1199,6 +1195,10 @@
   {
    "date": "2026-11-01",
    "text": "opencode-go/kimi-k2.7-code: cuota → ok"
+  },
+  {
+   "date": "2026-11-02",
+   "text": "opencode-go/grok-4.7: down → ok"
   }
  ]
 }
