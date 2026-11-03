@@ -1,6 +1,6 @@
 {
- "generated": "2026-11-02T04:50:49.318197+00:00",
- "snapshot": "2026-11-02",
+ "generated": "2026-11-03T04:50:50.868515+00:00",
+ "snapshot": "2026-11-03",
  "fuente": "check-model-health.py F3 (2026-08-24)",
  "providers": {
   "opencode-go": {
@@ -14,7 +14,7 @@
   "opencode-zen": {
    "enabled": 1,
    "probed": {
-    "free": 38,
+    "free": 39,
     "noprobe": 40
    },
    "total": 2
@@ -30,31 +30,31 @@
  "counts": {
   "ok": 25,
   "unk": 3,
-  "free": 38,
+  "free": 39,
   "noprobe": 43
  },
  "go_quota": {
-  "badge": "✅ Cuota Go OK (Continuo 0% (reinicia 3h 10m) · Semanal 0% (reinicia 163h 9m) · Mensual 21% (reinicia 531h 30m))",
+  "badge": "✅ Cuota Go OK (Continuo 0% (reinicia 3h 10m) · Semanal 8% (reinicia 139h 9m) · Mensual 25% (reinicia 507h 30m))",
   "nivel": "ok",
   "source": "api",
   "buckets": {
    "rolling": {
     "percent": 0,
     "status": "ok",
-    "resets_at": "2026-11-02T08:00:35.000Z",
+    "resets_at": "2026-11-03T08:00:36.000Z",
     "resets_in_human": "3h 10m"
    },
    "weekly": {
-    "percent": 0,
+    "percent": 8,
     "status": "ok",
     "resets_at": "2026-11-09T00:00:00.000Z",
-    "resets_in_human": "163h 9m"
+    "resets_in_human": "139h 9m"
    },
    "monthly": {
-    "percent": 21,
+    "percent": 25,
     "status": "ok",
     "resets_at": "2026-11-24T08:20:24.000Z",
-    "resets_in_human": "531h 30m"
+    "resets_in_human": "507h 30m"
    }
   }
  },
@@ -689,6 +689,12 @@
   },
   {
    "modelo": "nemotron-3.5-super-vl-free",
+   "provider": "opencode-zen",
+   "estado": "free",
+   "detalle": "no probado (protección cuota global free 100 req/día)"
+  },
+  {
+   "modelo": "pulse-alpha-free",
    "provider": "opencode-zen",
    "estado": "free",
    "detalle": "no probado (protección cuota global free 100 req/día)"

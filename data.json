@@ -1,12 +1,12 @@
 {
- "generated": "2026-11-02T04:50:01.212472+00:00",
- "snapshot": "2026-11-02 04:50 UTC",
+ "generated": "2026-11-03T04:50:01.248304+00:00",
+ "snapshot": "2026-11-03 04:50 UTC",
  "providers_3rd": [
   "opencode-go",
   "opencode-zen",
   "openrouter"
  ],
- "modelsdev_fetched": "2026-11-02 04:50 UTC",
+ "modelsdev_fetched": "2026-11-03 04:50 UTC",
  "modelsdev_count": 607,
  "price_matrix": {
   "currency": "USD",
@@ -2351,8 +2351,8 @@
  },
  "chain_method": "Modelo primario: opencode-go/deepseek-v4.1-flash.\nSi el primero falla, se prueba el siguiente automáticamente (cascada de respaldo).\nCadena activa: 2 Go · 0 Zen free · 0 Zen paid · 1 OpenRouter (leída de agents.defaults.model).\n✅ Cadena sin Zen paid: 0 crédito de pago de Zen en cualquier escalón.\nGo y Zen free no consumen crédito de pago; OpenRouter solo en cascada de fallo.",
  "chain_snapshot": {
-  "generated_at": "2026-11-02T04:50:01.209621+00:00",
-  "snapshot": "2026-11-02 04:50 UTC",
+  "generated_at": "2026-11-03T04:50:01.247017+00:00",
+  "snapshot": "2026-11-03 04:50 UTC",
   "source": "agents.defaults.model en openclaw.json (leída en build)",
   "links": [
    {
@@ -2374,31 +2374,31 @@
  },
  "status_badges": {
   "go_quota": {
-   "badge": "✅ Cuota Go OK (Continuo 1% (reinicia 1h 25m) · Semanal 36% (reinicia 19h 9m) · Mensual 20% (reinicia 555h 30m))",
+   "badge": "✅ Cuota Go OK (Continuo 0% (reinicia 3h 10m) · Semanal 0% (reinicia 163h 9m) · Mensual 21% (reinicia 531h 30m))",
    "nivel": "ok",
    "source": "api",
    "buckets": {
     "rolling": {
-     "percent": 1,
+     "percent": 0,
      "status": "ok",
-     "resets_at": "2026-11-01T06:15:51.000Z",
-     "resets_in_human": "1h 25m"
+     "resets_at": "2026-11-02T08:00:35.000Z",
+     "resets_in_human": "3h 10m"
     },
     "weekly": {
-     "percent": 36,
+     "percent": 0,
      "status": "ok",
-     "resets_at": "2026-11-02T00:00:00.000Z",
-     "resets_in_human": "19h 9m"
+     "resets_at": "2026-11-09T00:00:00.000Z",
+     "resets_in_human": "163h 9m"
     },
     "monthly": {
-     "percent": 20,
+     "percent": 21,
      "status": "ok",
      "resets_at": "2026-11-24T08:20:24.000Z",
-     "resets_in_human": "555h 30m"
+     "resets_in_human": "531h 30m"
     }
    },
-   "generated": "2026-11-01T04:50:51.734678+00:00",
-   "snapshot": "2026-11-01"
+   "generated": "2026-11-02T04:50:49.318197+00:00",
+   "snapshot": "2026-11-02"
   },
   "balances": {
    "zen_paid_ok": true,
@@ -2409,11 +2409,10 @@
    "opencode-go": {
     "enabled": 1,
     "probed": {
-     "ok": 24,
-     "down": 1,
+     "ok": 25,
      "unk": 3
     },
-    "total": 3
+    "total": 2
    },
    "opencode-zen": {
     "enabled": 1,
@@ -2433,10 +2432,10 @@
   }
  },
  "counts": {
-  "total": 90,
+  "total": 91,
   "go": 28,
-  "zen": 78,
-  "free": 8,
+  "zen": 79,
+  "free": 9,
   "openrouter": 5,
   "with_modelsdev": 85
  },
@@ -5383,6 +5382,33 @@
    "swebench": null,
    "benchmarks": {},
    "md_url": "https://models.dev/models/nvidia/nemotron-3.5-super-vl-120b-a12b"
+  },
+  {
+   "id": "pulse-alpha-free",
+   "providers": {
+    "go": false,
+    "zen": true,
+    "free": true,
+    "or": false
+   },
+   "or_id": null,
+   "or_price": null,
+   "tier": "free",
+   "name": "pulse-alpha-free",
+   "desc": "Sin ficha en models.dev (solo catálogo opencode)",
+   "context": null,
+   "output": null,
+   "reasoning": null,
+   "tool_call": null,
+   "structured": null,
+   "multimodal": null,
+   "open_weights": null,
+   "release": "",
+   "last_updated": "",
+   "knowledge": "",
+   "swebench": null,
+   "benchmarks": {},
+   "md_url": null
   },
   {
    "id": "qwen3.5-plus",
