@@ -1,20 +1,21 @@
 {
- "generated": "2026-11-03T04:50:50.868515+00:00",
- "snapshot": "2026-11-03",
+ "generated": "2026-11-04T04:50:51.312072+00:00",
+ "snapshot": "2026-11-04",
  "fuente": "check-model-health.py F3 (2026-08-24)",
  "providers": {
   "opencode-go": {
    "enabled": 1,
    "probed": {
-    "ok": 25,
+    "ok": 24,
+    "down": 1,
     "unk": 3
    },
-   "total": 2
+   "total": 3
   },
   "opencode-zen": {
    "enabled": 1,
    "probed": {
-    "free": 39,
+    "free": 40,
     "noprobe": 40
    },
    "total": 2
@@ -28,33 +29,34 @@
   }
  },
  "counts": {
-  "ok": 25,
+  "ok": 24,
+  "down": 1,
   "unk": 3,
-  "free": 39,
+  "free": 40,
   "noprobe": 43
  },
  "go_quota": {
-  "badge": "✅ Cuota Go OK (Continuo 0% (reinicia 3h 10m) · Semanal 8% (reinicia 139h 9m) · Mensual 25% (reinicia 507h 30m))",
+  "badge": "✅ Cuota Go OK (Continuo 0% (reinicia 1h 45m) · Semanal 29% (reinicia 115h 9m) · Mensual 35% (reinicia 483h 30m))",
   "nivel": "ok",
   "source": "api",
   "buckets": {
    "rolling": {
     "percent": 0,
     "status": "ok",
-    "resets_at": "2026-11-03T08:00:36.000Z",
-    "resets_in_human": "3h 10m"
+    "resets_at": "2026-11-04T06:35:05.000Z",
+    "resets_in_human": "1h 45m"
    },
    "weekly": {
-    "percent": 8,
+    "percent": 29,
     "status": "ok",
     "resets_at": "2026-11-09T00:00:00.000Z",
-    "resets_in_human": "139h 9m"
+    "resets_in_human": "115h 9m"
    },
    "monthly": {
-    "percent": 25,
+    "percent": 35,
     "status": "ok",
     "resets_at": "2026-11-24T08:20:24.000Z",
-    "resets_in_human": "507h 30m"
+    "resets_in_human": "483h 30m"
    }
   }
  },
@@ -156,8 +158,8 @@
   {
    "modelo": "hy4-preview",
    "provider": "opencode-go",
-   "estado": "ok",
-   "detalle": "HTTP 200"
+   "estado": "down",
+   "detalle": "ERR The read operation timed out"
   },
   {
    "modelo": "iceman-contributor-free",
@@ -341,6 +343,12 @@
   },
   {
    "modelo": "claude-sonnet-5-5",
+   "provider": "opencode-zen",
+   "estado": "free",
+   "detalle": "no probado (protección cuota global free 100 req/día)"
+  },
+  {
+   "modelo": "crouton-alpha-free",
    "provider": "opencode-zen",
    "estado": "free",
    "detalle": "no probado (protección cuota global free 100 req/día)"
