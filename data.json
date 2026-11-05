@@ -1,13 +1,13 @@
 {
- "generated": "2026-11-04T04:50:01.219963+00:00",
- "snapshot": "2026-11-04 04:50 UTC",
+ "generated": "2026-11-05T04:50:01.138683+00:00",
+ "snapshot": "2026-11-05 04:50 UTC",
  "providers_3rd": [
   "opencode-go",
   "opencode-zen",
   "openrouter"
  ],
- "modelsdev_fetched": "2026-11-04 04:50 UTC",
- "modelsdev_count": 607,
+ "modelsdev_fetched": "2026-11-05 04:50 UTC",
+ "modelsdev_count": 608,
  "price_matrix": {
   "currency": "USD",
   "fetched": "2026-10-14T19:30:46.503996+00:00",
@@ -2351,8 +2351,8 @@
  },
  "chain_method": "Modelo primario: opencode-go/deepseek-v4.1-flash.\nSi el primero falla, se prueba el siguiente automáticamente (cascada de respaldo).\nCadena activa: 2 Go · 0 Zen free · 0 Zen paid · 1 OpenRouter (leída de agents.defaults.model).\n✅ Cadena sin Zen paid: 0 crédito de pago de Zen en cualquier escalón.\nGo y Zen free no consumen crédito de pago; OpenRouter solo en cascada de fallo.",
  "chain_snapshot": {
-  "generated_at": "2026-11-04T04:50:01.215498+00:00",
-  "snapshot": "2026-11-04 04:50 UTC",
+  "generated_at": "2026-11-05T04:50:01.134245+00:00",
+  "snapshot": "2026-11-05 04:50 UTC",
   "source": "agents.defaults.model en openclaw.json (leída en build)",
   "links": [
    {
@@ -2374,31 +2374,31 @@
  },
  "status_badges": {
   "go_quota": {
-   "badge": "✅ Cuota Go OK (Continuo 0% (reinicia 3h 10m) · Semanal 8% (reinicia 139h 9m) · Mensual 25% (reinicia 507h 30m))",
+   "badge": "✅ Cuota Go OK (Continuo 0% (reinicia 1h 45m) · Semanal 29% (reinicia 115h 9m) · Mensual 35% (reinicia 483h 30m))",
    "nivel": "ok",
    "source": "api",
    "buckets": {
     "rolling": {
      "percent": 0,
      "status": "ok",
-     "resets_at": "2026-11-03T08:00:36.000Z",
-     "resets_in_human": "3h 10m"
+     "resets_at": "2026-11-04T06:35:05.000Z",
+     "resets_in_human": "1h 45m"
     },
     "weekly": {
-     "percent": 8,
+     "percent": 29,
      "status": "ok",
      "resets_at": "2026-11-09T00:00:00.000Z",
-     "resets_in_human": "139h 9m"
+     "resets_in_human": "115h 9m"
     },
     "monthly": {
-     "percent": 25,
+     "percent": 35,
      "status": "ok",
      "resets_at": "2026-11-24T08:20:24.000Z",
-     "resets_in_human": "507h 30m"
+     "resets_in_human": "483h 30m"
     }
    },
-   "generated": "2026-11-03T04:50:50.868515+00:00",
-   "snapshot": "2026-11-03"
+   "generated": "2026-11-04T04:50:51.312072+00:00",
+   "snapshot": "2026-11-04"
   },
   "balances": {
    "zen_paid_ok": true,
@@ -2409,15 +2409,16 @@
    "opencode-go": {
     "enabled": 1,
     "probed": {
-     "ok": 25,
+     "ok": 24,
+     "down": 1,
      "unk": 3
     },
-    "total": 2
+    "total": 3
    },
    "opencode-zen": {
     "enabled": 1,
     "probed": {
-     "free": 39,
+     "free": 40,
      "noprobe": 40
     },
     "total": 2
@@ -2432,12 +2433,12 @@
   }
  },
  "counts": {
-  "total": 92,
-  "go": 28,
+  "total": 93,
+  "go": 29,
   "zen": 80,
   "free": 10,
   "openrouter": 5,
-  "with_modelsdev": 85
+  "with_modelsdev": 86
  },
  "models": [
   {
@@ -4624,6 +4625,33 @@
     "AA-LCR": 73.4
    },
    "md_url": "https://models.dev/models/tencent/hy3"
+  },
+  {
+   "id": "hy4",
+   "providers": {
+    "go": true,
+    "zen": false,
+    "free": false,
+    "or": false
+   },
+   "or_id": null,
+   "or_price": null,
+   "tier": "go",
+   "name": "Hy4",
+   "desc": "A next-generation multimodal productivity model with significantly enhanced Agent and complex task execution capabilities.",
+   "context": 1048576,
+   "output": 65536,
+   "reasoning": true,
+   "tool_call": true,
+   "structured": false,
+   "multimodal": true,
+   "open_weights": false,
+   "release": "2026-11-04",
+   "last_updated": "2026-11-04",
+   "knowledge": "",
+   "swebench": null,
+   "benchmarks": {},
+   "md_url": "https://models.dev/models/tencent/hy4"
   },
   {
    "id": "hy4-preview",
