@@ -2,10 +2,6 @@
  "events": [
   {
    "date": "2026-09-07",
-   "text": "opencode-go/qwen3.7-plus: ok → unk"
-  },
-  {
-   "date": "2026-09-07",
    "text": "opencode-go/qwen3.8-flash: ok → unk"
   },
   {
@@ -1199,6 +1195,10 @@
   {
    "date": "2026-11-05",
    "text": "opencode-go/hy4-preview: down → ok"
+  },
+  {
+   "date": "2026-11-06",
+   "text": "opencode-go/gemini-4-argon: na → ok"
   }
  ]
 }

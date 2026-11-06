@@ -1,12 +1,12 @@
 {
- "generated": "2026-11-05T04:50:46.940548+00:00",
- "snapshot": "2026-11-05",
+ "generated": "2026-11-06T04:50:51.026894+00:00",
+ "snapshot": "2026-11-06",
  "fuente": "check-model-health.py F3 (2026-08-24)",
  "providers": {
   "opencode-go": {
    "enabled": 1,
    "probed": {
-    "ok": 25,
+    "ok": 26,
     "na": 1,
     "unk": 3
    },
@@ -29,34 +29,34 @@
   }
  },
  "counts": {
-  "ok": 25,
+  "ok": 26,
   "na": 1,
   "unk": 3,
   "free": 40,
   "noprobe": 43
  },
  "go_quota": {
-  "badge": "✅ Cuota Go OK (Continuo 0% (reinicia 3h 10m) · Semanal 49% (reinicia 91h 9m) · Mensual 45% (reinicia 459h 30m))",
+  "badge": "✅ Cuota Go OK (Continuo 0% (reinicia 3h 10m) · Semanal 73% (reinicia 67h 9m) · Mensual 57% (reinicia 435h 30m))",
   "nivel": "ok",
   "source": "api",
   "buckets": {
    "rolling": {
     "percent": 0,
     "status": "ok",
-    "resets_at": "2026-11-05T08:00:48.000Z",
+    "resets_at": "2026-11-06T08:00:43.000Z",
     "resets_in_human": "3h 10m"
    },
    "weekly": {
-    "percent": 49,
+    "percent": 73,
     "status": "ok",
     "resets_at": "2026-11-09T00:00:00.000Z",
-    "resets_in_human": "91h 9m"
+    "resets_in_human": "67h 9m"
    },
    "monthly": {
-    "percent": 45,
+    "percent": 57,
     "status": "ok",
     "resets_at": "2026-11-24T08:20:24.000Z",
-    "resets_in_human": "459h 30m"
+    "resets_in_human": "435h 30m"
    }
   }
  },
@@ -96,6 +96,12 @@
    "detalle": "HTTP 200"
   },
   {
+   "modelo": "crouton-alpha-free",
+   "provider": "opencode-go",
+   "estado": "na",
+   "detalle": "HTTP 403: no accesible con tu plan/key"
+  },
+  {
    "modelo": "deepseek-v4-pro",
    "provider": "opencode-go",
    "estado": "ok",
@@ -110,8 +116,8 @@
   {
    "modelo": "gemini-4-argon",
    "provider": "opencode-go",
-   "estado": "na",
-   "detalle": "HTTP 403: no accesible con tu plan/key"
+   "estado": "ok",
+   "detalle": "HTTP 200"
   },
   {
    "modelo": "glm-5.2",

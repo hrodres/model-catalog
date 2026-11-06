@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-05T04:50:01.138683+00:00",
+ "generated": "2026-11-06T04:50:01.229972+00:00",
  "aliases": [
   {
    "id": "opencode-go/beam-free",
@@ -72,6 +72,10 @@
   {
    "id": "opencode-zen/claude-sonnet-5-5",
    "alias": "💰 Claude Sonnet 5.5 (Zen)"
+  },
+  {
+   "id": "opencode-go/crouton-alpha-free",
+   "alias": "🚀 crouton-alpha-free (Go)"
   },
   {
    "id": "opencode-zen/crouton-alpha-free",
